@@ -1,0 +1,58 @@
+
+<div class="container ">
+    <input type="text" class="form-control" name="filterPost" id="filterPost" placeholder="Buscar"  [(ngModel)]="filterpost" >
+    <div class="card">
+        <div class="card-header">
+            <h3>Este esta bueno</h3>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-hover">
+                <thead>
+                <tr class="text-center">
+
+                    <th>
+                        Numero de voucher
+                    </th>
+                    <th>
+                        Descripción del producto
+                    </th>
+                    <th>Total general</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ng-container *ngFor="let vouch of voucher  | ventasfilter:filterpost " >
+                        <tr class="text-center">
+                            <td *ngIf="filterpost ">{{vouch.vnumerodebusqueda }}</td>
+                            <td *ngIf="filterpost ">{{vouch.vtotal}}</td>
+                        </tr>
+                </ng-container>
+                </tbody>
+            </table>
+        </div >
+        <form action="" >
+            <div class="container">
+                <div class="row justify-content-end" *ngFor="let vouch of voucher | ventasfilter:filterpost | slice: -1" >
+
+                    <div class="form-group" *ngIf="filterpost">
+                        Medio de pago:
+                        <select [(ngModel)]='ventas' id="mediodepago" name="mediodepago" (change)="cuandoelijo(ventas)">
+                            <option [ngValue]="f" *ngFor="let f of mediopago " [selected]="mediopago[f.mpid] ">{{f.mpnombre}}</option>
+                        </select><br>
+                    </div>
+                    <div class="form-group" *ngIf="filterpost">
+                        Efectivo: <input  [(ngModel)]='devolver' name="devolucion" id="devolucion" placeholder="0" type="text" size="10" (change)='realizardevolucion(vouch,devolver, filterpost)'><br>
+                        Devolución: ${{this.ejerciciodevolucion.toString()}}
+                    </div>
+                    <div class="col-4 form-group" *ngIf="filterpost">Total a cancelar: {{vouch.vtotal }} <br>
+                        <div class="card-body text-center">
+                            <button type="submit" class="btn btn-lg btn-primary" *ngIf="filterpost" (click)="realizarlaventa(voucher,vouch ,devolver,ejerciciodevolucion,ventas)">Realizar pago</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

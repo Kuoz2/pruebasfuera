@@ -1,0 +1,77 @@
+<form action="">
+    <div class=" container-fluid  " style="border: solid;">
+
+
+        <div class="row"  >
+        <div class="col-md-6 border" >
+            <div class="card-header ">
+                <h3>Elección de productos</h3>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="filtrovoucher" id="filtroporvoucher"  placeholder="Buscar un producto" [(ngModel)]="filtrovoucher" />
+                </div>
+            </div>
+
+            <table class="table table-hover ">
+                <thead>
+                <tr class="text-center">
+                    <th>
+                        Código del producto
+                    </th>
+                     <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                  <tr class="text-center" *ngFor="let product of productos | voucher:filtrovoucher" >
+                      <td  >{{product.pcodigo}}</td>
+                      <td *ngIf="filtrovoucher">{{product.pdescripcion}}</td>
+                      <td *ngIf="filtrovoucher">{{product.pvalor}}</td>
+                      <td *ngIf="filtrovoucher">
+                          <button (click)="agregarproductos( product)" [disabled]="product.retoro"   class="btn btn-success">Agrerar Producto</button>
+                       </td>
+                    </tr>
+                    </tbody>
+                </table></div>
+        <div class="col-md-6 border">
+            <div class="card-header ">
+                <h3>Forma de pago</h3>
+            </div>
+<!--
+            <app-create-page>
+
+            </app-create-page>-->
+
+            <li>Forma de pago </li>
+             <label>
+                 <select [(ngModel)]="loseleccionadodelacompra"  name="loseleccionadelacompra" id="loseleccionadodelacompra" [value]="0" (change)="loelejidoes(loseleccionadodelacompra)">
+                     <option [ngValue]="0"></option>
+                     <option [ngValue]="i" *ngFor="let i  of selecciondecomra" [selected]="0">{{i.mpnombre}}</option>
+                 </select>
+             </label>
+           <li>Efectivo a pagar</li>
+             <input type="text" placeholder="Cantidad en efectivo" name="efectivoapagar" [(ngModel)]="efectivoapgar" (change)="devolucion(efectivoapgar)" >
+             <li>Total generado</li>
+             <h1 >{{ticketComponent.total()}}</h1>
+             <li>Devolción</li>
+             <h1>{{devolver}}</h1>
+        </div>
+        </div>
+    </div>
+
+    <hr>
+
+        <app-ticket [agregadoalalista] = agregadoalalista
+                    [loseleccionado] = loseleccionadodelacompra
+                    [elmontodelcliente]= efectivoapgar
+                    [devolucion]=" devolver "
+                    [eltotal]="eltotal"
+                    #ticketComponent>
+
+        </app-ticket>
+
+</form>
+
+

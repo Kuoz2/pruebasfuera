@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Medio</h3>
+        </div>
+        <div class="card-body">
+            <form #editform="ngForm" action="" >
+                <div class="form-group">
+                    <label for="">Medio pago</label>
+                    <input [(ngModel)]="mediopago.mpnombre"  type="text" class="form-control" name="category" id="category">
+                </div>
+
+                <button (click)="guardarmedio(mediopago)" class="btn btn-danger">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

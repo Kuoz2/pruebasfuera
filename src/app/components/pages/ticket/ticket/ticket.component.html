@@ -1,0 +1,70 @@
+<button class="oculto-impresion btn btn-success" (click)="imprimir('ticket')"> imprimir</button>
+<button  class="oculto-impresion btn btn-info" (click)="guardareldetallevoucher(agregadoalalista, busquedavoucher,loseleccionado,ingresodeunvaucher)"> Guardar voucher</button>
+<div id="register">
+    <div id="ticket">
+        <h3>Libreria Yanara</h3>
+        <h5>VOUCHER DE VENTA NO VALIDO COMO BOLETA</h5>
+
+        <table>
+
+            <tbody id="entries">
+             </tbody>
+            <tfoot>
+            <tr>
+                <th>
+                    
+                    Atendido por:
+                </th>
+                <th>
+                </th>
+                <th>
+                    Día:{{diadehoy}}
+                </th>
+           
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <th>
+                    COD:
+                    <ul   *ngFor=" let productitos of agregadoalalista"  >
+                        <p>{{productitos.pcodigo}} </p>
+
+                    </ul>
+
+                </th>
+                <th>
+                    CANT:
+                    <ul   *ngFor=" let productitos of agregadoalalista"  >
+                        <p>{{productitos.pvalor}}</p>
+                    </ul>
+                </th>
+                <th >
+                    ARTI:
+                    <ul   *ngFor=" let productitos of agregadoalalista"  >
+                        <p>{{productitos.pdescripcion}} <button (click)="borrarvoucher($event, productitos)" *ngIf="agregadoalalista">X</button></p>
+                        
+                    </ul>
+
+                </th>
+
+            </tr>
+
+            </tfoot>
+
+
+        </table>
+        <tr >
+            <th>Total: {{total()}}</th>
+        </tr>
+        <li *ngFor="let encuentra of busquedavoucher" >
+            <ngx-barcode [bc-value]= "encuentra.length" [bc-display-value]="true"></ngx-barcode>
+        </li>
+
+
+    </div>
+
+</div>
+
+

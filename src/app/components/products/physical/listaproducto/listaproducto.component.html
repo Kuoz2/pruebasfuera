@@ -1,0 +1,165 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Productos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="btn-popup pull-right">
+
+                       <ng-template #content2 let-modal2>
+                            <div class="modal-header">
+
+                                <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar producto</h5>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal2.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <label for="validationCustom012" class="mb-1">Nombre descriptivo del producto :</label>
+                                        <input class="form-control" [(ngModel)]="productoporid.pdescripcion" id="validationCustom012" type="text">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="validationCustom0122" class="mb-1">Detalle del producto :</label>
+                                        <textarea class="form-control" [(ngModel)]="productoporid.pdetalle" id="validationCustom0122" rows="5" cols="10" type="text">
+                                        </textarea>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" (click)="editarproductos(productoporid)" >Guardar</button>
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                                            (click)="modal2.dismiss('Cross click')">Cerrar</button>
+                                </div>
+                            </div>
+
+                        </ng-template>
+                    </div>
+
+                    <div class="btn-popup pull-right">
+
+                        <ng-template #content3 let-modal3>
+                            <div class="modal-header">
+
+                                <h5 class="modal-title f-w-600" id="exampleModalLabel3">Editar Stock</h5>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal3.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form">
+
+                                    <div class="form-group">
+                                        <label for="validationCustom01222" class="mb-1">Stock Actual:</label>
+                                        <input type="number" [(ngModel)]="stock_actualizado.pstock" class="form-control" id = "validationCustom01222" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom0122222" class="mb-1">Nuevo Stock:</label>
+                                        <input type="number" [(ngModel)]="stock_nuevo" class="form-control" id="validationCustom0122222" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom012222" class="mb-1">Stock Perdida Actual:</label>
+                                        <input type="number" class="form-control" [(ngModel)]="stock_actualizado.stock_lost" id="validationCustom012222" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom01222222" class="mb-1">Nuevas Perdidas:</label>
+                                        <input type="number" [(ngModel)]="stock_perdidas_nuevo" class="form-control" name="perdidas" id="validationCustom01222222">
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" (click)="editarstock(stock_actualizado, stock_nuevo,stock_perdidas_nuevo)" >Guardar</button>
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                                            (click)="modal3.dismiss('Cross click')">Cerrar</button>
+                                </div>
+                            </div>
+
+                        </ng-template>
+                    </div>
+
+
+                    <div id="batchDelete" class="category-table custom-datatable">
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Editar Producto</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                    Codigo del producto
+                                                </th>
+                                                <th>
+                                                    Nombre descriptivo
+                                                </th>
+                                                <th>Precio</th>
+                                                <th>Stock</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let category of listproductos  | paginate: {itemsPerPage:3, currentPage:d} " class="text-center">
+                                                <td>{{category.pcodigo  }}</td>
+                                                <td>{{category.pdescripcion }}</td>
+                                                <td>{{category.pvalor}}</td>
+                                                <td>{{category.stock.pstock}}</td>
+                                                <td>
+                                                    <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
+                                                    <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <pagination-controls (pageChange)="d = $event"></pagination-controls>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header">
+
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                  Detalle del producto
+                                                </th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let category of listproductos  | paginate: {itemsPerPage:1, currentPage:d} " class="text-center">
+                                                <td>{{category.pdetalle  }}</td>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

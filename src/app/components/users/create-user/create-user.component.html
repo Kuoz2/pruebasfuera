@@ -1,0 +1,126 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card tab2-card">
+                <div class="card-header">
+                    <h5> Crear nuevo usuario.</h5>
+                </div>
+                <div class="card-body tab2-card">
+                    <ngb-tabset class="tab-coupon">
+                        <ngb-tab title="Formulario de ingreso">
+                            <ng-template ngbTabContent>
+                                <div class="tab-pane fade active show" id="account" role="tabpanel" aria-labelledby="account-tab">
+                                    <form [formGroup]="userform" (ngSubmit)="createnuevousuario(userform)"
+                                        class="needs-validation user-add" novalidate="">
+                                        <div formGroupName="user">
+                                        <h4>Formulario de registro</h4>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Rut</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="rut_user" name="rut_user" id="validationCustom123"
+                                                   type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>
+                                                Nombre</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="name_user" id="validationCustom0"
+                                                type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Apellido paterno</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="f_lastname" id="validationCustom1"
+                                                type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Apellido materno </label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="m_lastname" id="validationCusto2"
+                                                   type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Teléfono de contacto </label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="p_contacts" id="validationCusto3"
+                                                   type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                Correo</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="email" id="validationCustom2" name="email"
+                                                type="text" required="">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="validationCustom2" class="col-xl-3 col-md-4"><span>*</span>
+                                                Dirección</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="address" id="validationCustom321"
+                                                   type="text" required="">
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="validationCustom3" class="col-xl-3 col-md-4"><span>*</span>
+                                                Contraseña</label>
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="password" id="validationCustom3" name="password"
+                                                type="text" required="">
+                                        </div>
+                                        </div>
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary">Guardar nuevo usuario</button>
+                                        </div>
+                                     </form>
+                                </div>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab>
+                            <ng-template ngbTabTitle>Asignar un rol
+                                <ng-template ngbTabContent>
+                                    <!--<form [formGroup]="userForm" (ngSubmit)="createnuevousuario()"
+                                        class="needs-validation user-add" novalidate="">-->
+                                        <div class="permission-block">
+                                            <div class="attribute-blocks">
+                                                <h5 class="f-w-600 mb-3">Rol del usuario</h5>
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-sm-4" >
+                                                        <label>Roles</label>
+                                                    </div>
+                                                    <div class="col-xl-9 col-sm-8">
+                                                        <div class="form-group m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
+                                                            <label class="d-block" for="edo-ani1">
+                                                                <input class="radio_animated" id="edo-ani1" value="Vendedor" type="radio"
+                                                                    name="rolnombre" checked="">
+                                                                Vendedor
+                                                            </label>
+                                                            <label class="d-block" for="edo-ani2">
+                                                                <input class="radio_animated"  id="edo-ani2" value="Cajero" type="radio"
+                                                                    name="rolnombre" >
+                                                                Cajero
+                                                            </label>
+                                                            <label class="d-block" for="edo-ani3">
+                                                                <input class="radio_animated" id="edo-ani3"  value="Encargado de tienda" type="radio"
+                                                                       name="rolnombre" >
+                                                                Encargado de tienda
+                                                            </label>
+                                                            <label class="d-block" for="edo-ani4">
+                                                                <input class="radio_animated" id="edo-ani4" value="Administrador" type="radio"
+                                                                       name="rolnombre" >
+                                                                Administrador
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <!--</form>-->
+
+                                </ng-template>
+
+                            </ng-template>
+
+                        </ngb-tab>
+
+                    </ngb-tabset>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->
