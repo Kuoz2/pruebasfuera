@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="306">
+              <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -386,7 +386,7 @@
       <workItem from="1590585786318" duration="15065000" />
       <workItem from="1590892104800" duration="2901000" />
       <workItem from="1590946428240" duration="8720000" />
-      <workItem from="1590974758585" duration="4451000" />
+      <workItem from="1590974758585" duration="4947000" />
     </task>
     <task id="LOCAL-00001" summary="workpace guardado">
       <created>1590946984902</created>
@@ -479,15 +479,28 @@
       <option name="project" value="LOCAL" />
       <updated>1590979453463</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="cambiando el error causando por ng build">
+      <created>1590979662873</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590979662873</updated>
+    </task>
+    <task id="LOCAL-00015" summary="haciendo otra prueba">
+      <created>1590980091803</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590980091803</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461281000" />
+    <option name="totallyTimeSpent" value="461777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="936" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27022654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -596,7 +609,9 @@
     <MESSAGE value="tambien agragando node serve" />
     <MESSAGE value="cambiando muchas cosas" />
     <MESSAGE value="cambiando una cosa faltante del packege.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambiando una cosa faltante del packege.json" />
+    <MESSAGE value="cambiando el error causando por ng build" />
+    <MESSAGE value="haciendo otra prueba" />
+    <option name="LAST_COMMIT_MESSAGE" value="haciendo otra prueba" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.ts">
@@ -959,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="306">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
         </state>
       </provider>
     </entry>
