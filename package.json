@@ -2,8 +2,8 @@
   "name": "multikart-backend",
   "version": "0.0.0",
   "scripts": {
-    "ng": "node server.js",
-    "start": "webpack",
+    "ng": "ng",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -82,8 +82,7 @@
     "ts-loader": "^5.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.7.5",
-    "webpack-cli": "^3.3.7"
+    "typescript": "^3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.7",
@@ -108,8 +107,7 @@
     "ts-loader": "^5.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.7.5",
-    "webpack-cli": "^3.3.7"
+    "typescript": "^3.7.5"
   },
   "engines": {
     "node": "12.5.0",
