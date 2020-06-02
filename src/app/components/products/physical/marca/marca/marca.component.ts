@@ -15,6 +15,7 @@ export class MarcaComponent implements OnInit {
   marcasForm: FormGroup;
   marca: Observable<Marca[]>;
   marcangmo: Marca = new Marca();
+  p:any;
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder, private servimarca: MarcaService) {
 
   }

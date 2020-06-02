@@ -9,7 +9,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ListPageComponent } from './list-page/list-page.component';
-import { CreatePageComponent } from './create-page/create-page.component';
 import { VoucherCreateComponent } from './voucher-create/voucher-create.component';
 import {SharedModule} from "../../shared/shared.module";
 import { TicketComponent } from './ticket/ticket/ticket.component';
@@ -18,7 +17,7 @@ import { NgxBarcodeModule } from 'ngx-barcode';
 import { ListavoucherComponent } from './listavoucher/listavoucher.component';
 import { MedioComponent } from './medio/medio.component';
 @NgModule({
-  declarations: [ListPageComponent, CreatePageComponent, VoucherCreateComponent, TicketComponent, HacerpagoComponent, ListavoucherComponent, MedioComponent],
+  declarations: [ListPageComponent, VoucherCreateComponent, TicketComponent, HacerpagoComponent, ListavoucherComponent, MedioComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

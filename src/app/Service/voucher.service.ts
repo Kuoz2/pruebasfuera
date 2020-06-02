@@ -5,6 +5,7 @@ import {Voucher} from "../components/Modulos/Voucher";
 import {Observable} from "rxjs";
 import {__await} from "tslib";
 import {GANANCIAS, V_Producto} from "../components/Modulos/GANANCIAS";
+import {Productos} from "../components/Modulos/Productos";
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class VoucherService {
 
   constructor(private http: HttpClient) { }
   //Ganancias del mes pasado
-  ganancia_mes_anterior(){
-      return this.http.get(this.URLmespasado);
+  ganancia_mes_anterior():Observable<Productos[]>{
+      return this.http.get<Productos[]>(this.URLmespasado);
   }
 
   //Ganancias este mes

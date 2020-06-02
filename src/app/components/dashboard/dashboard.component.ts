@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   //Lista de productos vendidos
   public lisprodsale:Sort_Prod[] = [];
    ganancias_mensuales =  GANANCIAS  ;
-   public ganancias_mes_pasado:[{}] = [{}];
+   public ganancias_mes_pasado:Productos[];
    public productos_vendidos: V_Producto[] = []  ;
   constructor(private gnc: PagosService, private cd: ChangeDetectorRef,
               private vouch:VoucherService, private produc:ProductserviceService) {
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   //Ordenamiento de productos mas vendidos.
    lista_producto_vendido(){
-    const valores_obtenidos = []
+    const valores_obtenidos = [];
     for (const pr of this.productos_vendidos){
           valores_obtenidos.push(pr.product)
     }
@@ -172,7 +172,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     //Ganancias del mes pasado
     this.vouch.ganancia_mes_anterior().
         pipe(takeUntil(this.unsubscribe$)).
-        subscribe(res => {this.ganancias_mes_pasado.push(res) ; this.cd.markForCheck();});
+        subscribe(res => {this.ganancias_mes_pasado  = res ; this.cd.markForCheck();});
     console.log("ganancias mes pasado", this.ganancias_mes_pasado);
     //ganancias mensuales
     this.vouch.cantidad_vendida().

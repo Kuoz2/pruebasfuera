@@ -1,7 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListPageComponent } from './list-page/list-page.component';
-import { CreatePageComponent } from './create-page/create-page.component';
 import {VoucherCreateComponent} from "./voucher-create/voucher-create.component";
 import {HacerpagoComponent} from "./hacerpago/hacerpago.component";
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
@@ -19,14 +18,7 @@ const routes: Routes = [
           breadcrumb: "List Page"
         }
       },
-      {
-        path: 'create-page',
-        component: CreatePageComponent,
-        data: {
-          title: "Crear pago",
-          breadcrumb: "Crear pago"
-        }
-      },
+
       {
         path: 'medio-pago',
         component: MedioComponent,
