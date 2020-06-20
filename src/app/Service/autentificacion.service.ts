@@ -6,6 +6,7 @@ import {Observable, BehaviorSubject} from "rxjs";
 import {HttpInterceptor} from "@angular/common/http";
 import {user} from "../components/Modulos/User";
 import {CanActivate} from "@angular/router";
+import {Local} from "protractor/built/driverProviders";
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +26,8 @@ export class AutentificacionService {
           console.log('res',res)
           if (!res.jti ) {
           }else {
-            this.saveToken(res.jti)
+            this.saveToken(res.jti);
+            this.saveRole(res.role)
           }
 
         })
@@ -33,12 +35,15 @@ export class AutentificacionService {
   }
 
 
-
-
   logout():void{
     this.token ='';
     localStorage.removeItem("ACCESS_TOKEN");
-    localStorage.removeItem("EXPIRES_IN")
+    localStorage.removeItem("EXPIRES_IN");
+    localStorage.removeItem("ACCESS_ROLE")
+  }
+
+  private saveRole(tokeRole:string):void{
+      localStorage.setItem("ACCESS_ROLE",tokeRole)
   }
 
   private saveToken(token:string):void{

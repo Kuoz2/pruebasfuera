@@ -6,6 +6,7 @@ import {VerificadorService} from "./Service/verificador.service";
 import {AuthRoutingModule} from "./components/auth/auth-routing.module";
 import {AuthModule} from "./components/auth/auth.module";
 import {LoginComponent} from "./components/auth/login/login.component";
+import {VerificadorRolService} from "./Service/verificador-rol.service";
 
 const routes: Routes = [
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    canActivate: [VerificadorService],
+    canActivate: [VerificadorService,VerificadorRolService],
     children: content
   },
 

@@ -11,6 +11,7 @@ user: {
     p_contacts: number,
     address: string,
     rut_user: string,
+    role:string
 }
 }
 

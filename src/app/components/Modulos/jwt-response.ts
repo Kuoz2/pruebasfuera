@@ -8,5 +8,7 @@ export interface JwtResponse {
         address: string,
         rut_user: string
         jti: string,
+        role:string
+
 
 }

@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   public list_produc: Productos[]= [];
   //Lista de productos vendidos
   public lisprodsale:Sort_Prod[] = [];
-   ganancias_mensuales =  GANANCIAS  ;
+   ganancias_mensuales:Productos[] ;
    public ganancias_mes_pasado:Productos[];
    public productos_vendidos: V_Producto[] = []  ;
   constructor(private gnc: PagosService, private cd: ChangeDetectorRef,
@@ -177,7 +177,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     //ganancias mensuales
     this.vouch.cantidad_vendida().
     pipe(takeUntil(this.unsubscribe$)).
-    subscribe(res => {this.ganancias_mensuales.push(res) ; this.cd.markForCheck();});
+    subscribe(res => {this.ganancias_mensuales = res ; this.cd.markForCheck();});
     console.log("ganancias mensual", this.ganancias_mensuales);
 
     //Los vouchers

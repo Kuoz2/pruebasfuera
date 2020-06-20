@@ -24,7 +24,8 @@ static CreateFormUserGroup(){
             f_lastname: new FormControl(''),
             m_lastname: new FormControl(''),
             p_contacts: new FormControl(''),
-            address: new FormControl('')
+            address: new FormControl(''),
+            role: new FormControl('')
         }),
 
     });
@@ -63,13 +64,14 @@ static CreateFormUserGroup(){
   get m_lastname(){return this.userform.get('m_lastname')}
   get p_contacts(){return this.userform.get('p_contacts')}
   get address(){return this.userform.get('address')}
+  get role(){return this.userform.get('role')}
 
 
   createnuevousuario(userform):void {
 
 
                    console.log('formularioregistro',userform.value)
-     this.userservi.guardarusuario(userform.value);
+     //this.userservi.guardarusuario(userform.value);
   }
 
 }

@@ -27,8 +27,8 @@ export class VoucherService {
   }
 
   //Ganancias este mes
-  cantidad_vendida(){
-      return this.http.get(this.UrlVentasTotal)
+  cantidad_vendida():Observable<Productos[]>{
+      return this.http.get<Productos[]>(this.UrlVentasTotal)
   }
 
   //Lista de productos vendidos.

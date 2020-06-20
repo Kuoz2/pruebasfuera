@@ -50,14 +50,14 @@ export class LoginComponent implements OnInit {
   navigate() {
     this.router.navigateByUrl('/dashboard/default');
   }
-
+//En esta parte se colocan los titulos que saldran en el ninicio de sesion con la informacion.
   owlcarousel = [
     {
-      title: "Welcome to Multikart",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
+      title: "Bienvenido a MiMinimarket",
+      desc: "Lorema Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {
-      title: "Welcome to Multikart",
+      title: "Que es MiMinimarket",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {

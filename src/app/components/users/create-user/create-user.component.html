@@ -61,9 +61,7 @@
                                                 type="text" required="">
                                         </div>
                                         </div>
-                                        <div class="pull-right">
-                                            <button type="submit" class="btn btn-primary">Guardar nuevo usuario</button>
-                                        </div>
+
                                      </form>
                                 </div>
                             </ng-template>
@@ -71,8 +69,8 @@
                         <ngb-tab>
                             <ng-template ngbTabTitle>Asignar un rol
                                 <ng-template ngbTabContent>
-                                    <!--<form [formGroup]="userForm" (ngSubmit)="createnuevousuario()"
-                                        class="needs-validation user-add" novalidate="">-->
+                                    <form [formGroup]="userform" (ngSubmit)="createnuevousuario(userform)"
+                                        class="needs-validation user-add" novalidate="">
                                         <div class="permission-block">
                                             <div class="attribute-blocks">
                                                 <h5 class="f-w-600 mb-3">Rol del usuario</h5>
@@ -80,6 +78,7 @@
                                                     <div class="col-xl-3 col-sm-4" >
                                                         <label>Roles</label>
                                                     </div>
+
                                                     <div class="col-xl-9 col-sm-8">
                                                         <div class="form-group m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
                                                             <label class="d-block" for="edo-ani1">
@@ -103,12 +102,16 @@
                                                                 Administrador
                                                             </label>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <div class="pull-right">
+                                                            <button type="submit" class="btn btn-primary">Guardar nuevo usuario</button>
+                                                        </div>
 
-                                    <!--</form>-->
+                                                    </div>
+                                                    </div>
+
+                                                </div>
+                                        </div>
+                                            </form>
 
                                 </ng-template>
 
