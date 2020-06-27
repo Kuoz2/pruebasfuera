@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 #register {
-  width: 30em;
+  width: 100em;
   height: 30em;
   margin: auto;
 }
@@ -29,8 +29,9 @@ body {
   text-align: center;
 }
 #ticket p{
-  text-align: left;
+  text-align: center;
   margin-top: 0;
+  position: center;
 }
 #ticket u {
   text-align: left;

@@ -1,7 +1,43 @@
-<form action="">
+
+<!-- agregando el modal para agregar la cantidad de que se quiere-->
+<div class="btn-popup pull-right">
+
+    <ng-template #content3 let-modal3>
+        <div class="modal-header">
+
+            <h5 class="modal-title f-w-600" id="exampleModalLabel3">Editar Stock</h5>
+            <button type="button" class="close" aria-label="Close"
+                    (click)="modal3.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form">
+
+                <div class="form-group">
+                    <label for="validationCustom01222" class="mb-1">Agregar cantidad:</label>
+                    <input type="number" [(ngModel)]="cantidad_requerido" class="form-control" id = "validationCustom01222" >
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" (click)="agregarcantidad(cantidad_requerido)" >Guardar</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                        (click)="modal3.dismiss('Cross click')">Cerrar</button>
+            </div>
+        </div>
+
+    </ng-template>
+</div>
+
+<!-- aqui empiesa lo que se agregara al voucher-->
+
+
+
     <div class=" container-fluid  " style="border: solid;">
 
-
+    <button (click)="cerrarsession()" >Cerrar session</button>
         <div class="row"  >
         <div class="col-md-6 border" >
             <div class="card-header ">
@@ -25,12 +61,13 @@
                 </thead>
                 <tbody>
 
+
                   <tr class="text-center" *ngFor="let product of productos | voucher:filtrovoucher" >
                       <td  >{{product.pcodigo}}</td>
                       <td *ngIf="filtrovoucher">{{product.pdescripcion}}</td>
                       <td *ngIf="filtrovoucher">{{product.pvalor}}</td>
                       <td *ngIf="filtrovoucher">
-                          <button (click)="agregarproductos( product)" [disabled]="product.retoro"   class="btn btn-success">Agrerar Producto</button>
+                          <button (click)="agregarproductos( product,content3)" [disabled]="product.retoro"   class="btn btn-success">Agrerar Producto</button>
                        </td>
                     </tr>
                     </tbody>
@@ -63,7 +100,9 @@
 
     <hr>
 
-        <app-ticket [agregadoalalista] = agregadoalalista
+
+
+        <app-ticket [agregadoalalista] = "agregadoalalista"
                     [loseleccionado] = loseleccionadodelacompra
                     [elmontodelcliente]= efectivoapgar
                     [devolucion]=" devolver "
@@ -72,6 +111,7 @@
 
         </app-ticket>
 
-</form>
+
+
 
 

@@ -90,8 +90,7 @@ export class HacerpagoComponent implements OnInit {
     this.cancelar.payment_id.half_payment_id = venta.id;
     // tslint:disable-next-line:new-parens
     this.cancelar.voucher_id = devolver.id;
-    this.vent.guardarventas(this.cancelar).subscribe();
-    console.log('pago',this.cancelar);
+    this.vent.guardarventas(this.cancelar).subscribe(res => {console.log('pagos',this.cancelar)});
 
 
   }

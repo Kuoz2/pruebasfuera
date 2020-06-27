@@ -3,7 +3,7 @@ import {Productos} from "./Productos";
 
 export class DetalleVoucher {
     id: number;
-    dvcantidad: number;
+    dvcantidad: number[];
     dvprecio: number;
     voucher_id= new Voucher();
     product_id = new Productos();

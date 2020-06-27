@@ -1,23 +1,24 @@
+<form  (ngSubmit)="guardareldetallevoucher(agregadoalalista, busquedavoucher,loseleccionado,ingresodeunvaucher,ticketForm)"  >
 <button class="oculto-impresion btn btn-success" (click)="imprimir('ticket')"> imprimir</button>
-<button  class="oculto-impresion btn btn-info" (click)="guardareldetallevoucher(agregadoalalista, busquedavoucher,loseleccionado,ingresodeunvaucher)"> Guardar voucher</button>
+<button  class="oculto-impresion btn btn-info" type="submit"> Guardar voucher</button>
 <div id="register">
-    <div id="ticket">
+    <div id="ticket" >
         <h3>Libreria Yanara</h3>
         <h5>VOUCHER DE VENTA NO VALIDO COMO BOLETA</h5>
 
-        <table>
+        <table  >
 
-            <tbody id="entries">
+            <tbody >
              </tbody>
-            <tfoot>
-            <tr>
+            <tfoot  >
+            <tr >
                 <th>
                     
                     Atendido por:
                 </th>
                 <th>
                 </th>
-                <th>
+                <th >
                     Día:{{diadehoy}}
                 </th>
            
@@ -25,29 +26,47 @@
             <tr>
 
             </tr>
-            <tr>
+            <tr *ngFor=" let productitos of agregadoalalista  " >
                 <th>
                     COD:
-                    <ul   *ngFor=" let productitos of agregadoalalista"  >
-                        <p>{{productitos.pcodigo}} </p>
+                    <ul >
+                        <p>{{productitos.pcodigo }} </p>
 
                     </ul>
 
                 </th>
                 <th>
                     CANT:
-                    <ul   *ngFor=" let productitos of agregadoalalista"  >
+                    <ul    >
                         <p>{{productitos.pvalor}}</p>
                     </ul>
                 </th>
                 <th >
                     ARTI:
-                    <ul   *ngFor=" let productitos of agregadoalalista"  >
-                        <p>{{productitos.pdescripcion}} <button (click)="borrarvoucher($event, productitos)" *ngIf="agregadoalalista">X</button></p>
-                        
+                    <ul    >
+                        <p>{{productitos.pdescripcion  }} </p>
+
                     </ul>
 
                 </th>
+
+
+
+                                <th>
+                                    Cantidad de productos
+                                    <ul >
+                                <p>{{productitos.cantidad}}</p>
+                                </ul>
+                                </th>
+                                <th>
+                                    Eliminar
+                                    <ul  >
+                                        <p>  <button (click)="borrarvoucher($event)" >X</button></p>
+
+                                    </ul>
+                                </th>
+
+
 
             </tr>
 
@@ -68,3 +87,4 @@
 </div>
 
 
+</form>

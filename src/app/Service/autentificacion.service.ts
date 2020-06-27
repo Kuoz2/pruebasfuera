@@ -16,7 +16,7 @@ export class AutentificacionService {
   AUT_SERVER: string = 'http://localhost:3000/';
   authSubject =  new BehaviorSubject(false);
   private token: string;
-
+  private token_Role: string;
 
   login(user: user): Observable<JwtResponse>{
        return this.http.post<JwtResponse>(`${this.AUT_SERVER
@@ -27,7 +27,7 @@ export class AutentificacionService {
           if (!res.jti ) {
           }else {
             this.saveToken(res.jti);
-            this.saveRole(res.role)
+            this.saveRole(res.role);
           }
 
         })
@@ -43,13 +43,21 @@ export class AutentificacionService {
   }
 
   private saveRole(tokeRole:string):void{
-      localStorage.setItem("ACCESS_ROLE",tokeRole)
+      localStorage.setItem("ACCESS_ROLE",tokeRole);
+      this.token_Role = tokeRole;
   }
 
   private saveToken(token:string):void{
     localStorage.setItem("ACCESS_TOKEN", token);
    // localStorage.setItem("EXPIRES_IN", expiresIn);
     this.token = token;
+  }
+
+  private getTokenRole():string{
+      if (!this.token_Role){
+          this.token_Role = localStorage.getItem("ACCESS_ROLE")
+      }
+      return this.token_Role
   }
 
   private getToken():string{

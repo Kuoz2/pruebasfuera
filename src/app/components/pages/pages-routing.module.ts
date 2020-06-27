@@ -5,6 +5,8 @@ import {VoucherCreateComponent} from "./voucher-create/voucher-create.component"
 import {HacerpagoComponent} from "./hacerpago/hacerpago.component";
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
+import {VerificadorService} from "../../Service/verificador.service";
+import {VerificadorRoleService} from "../../Service/verificador-role.service";
 
 const routes: Routes = [
   {
@@ -32,7 +34,7 @@ const routes: Routes = [
       {
         path: 'create-voucher',
         component: VoucherCreateComponent,
-        data:{
+               data:{
           title: "Crear voucher",
           breadcrumb: "Crear voucher"
         }

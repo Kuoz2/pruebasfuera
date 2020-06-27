@@ -5,8 +5,7 @@ import {
   OnDestroy,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Output,
-  EventEmitter
+  OnChanges
 } from '@angular/core';
 import {VoucherService} from "../../../../Service/voucher.service";
 import {DetalleVoucher} from "../../../Modulos/DetalleVoucher";
@@ -14,11 +13,11 @@ import {Ventas} from "../../../Modulos/Ventas";
 import {VentasService} from "../../../../Service/ventas.service";
 import {Medio} from "../../../Modulos/Medio";
 import {Voucher} from "../../../Modulos/Voucher";
-import {flatMap, map, retry, takeUntil, timeout} from "rxjs/operators";
+import {takeUntil} from "rxjs/operators";
 import {Observable, Subject} from "rxjs";
-import {promise} from "selenium-webdriver";
-import when = promise.when;
-import {id} from "@swimlane/ngx-charts/release/utils";
+
+import {Form, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {SimpleChanges} from "@angular/core";
 
 @Component({
   selector: 'app-ticket',
@@ -26,23 +25,27 @@ import {id} from "@swimlane/ngx-charts/release/utils";
   styleUrls: ['./ticket.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TicketComponent implements OnInit, OnDestroy {
+export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   private unsubscribe$ = new Subject<void>();
 
-  @Input() agregadoalalista = [];
+
   @Input()  busquedavoucher = [];
   @Input() loseleccionado: Medio;
   @Input() elmontodelcliente: number = 0;
   @Input() devolucion: number;
   @Input() eltotal: number;
+  @Input() agregadoalalista = [];
+
+  cantidad_requerida: number[];
 
   cancelar = new Ventas();
   ingresodeunvaucher = new DetalleVoucher();
   pasarelformulario = new DetalleVoucher();
-
-  voucheraingresar: DetalleVoucher;
-  ventarealizada: Ventas[];
   voucherult: Voucher;
+// Formulario para agregar el ticket
+  ticketForm: FormGroup;
+  //guardando denuevo los productos.
+  guardar_productos_analisados = [];
 
   fecha = new Date();
   h = this.fecha.getHours();
@@ -54,7 +57,8 @@ export class TicketComponent implements OnInit, OnDestroy {
   mes = this.fecha.getMonth();
   anio = this.fecha.getFullYear();
 
-  constructor( private vouchservicio: VoucherService, private vent: VentasService, private cd:ChangeDetectorRef) {
+  constructor(private form:FormBuilder, private vouchservicio: VoucherService, private vent: VentasService, private cd:ChangeDetectorRef) {
+
 
     this.vouchservicio.ultimovoucher().pipe(
         takeUntil(this.unsubscribe$)
@@ -63,6 +67,7 @@ export class TicketComponent implements OnInit, OnDestroy {
   numerobuscado: number;
   diadehoy: string;
 
+
   ngOnInit() {
 
     this.diadehoy = this.dia +'/'+this.mes +'/'+ this.anio;
@@ -70,9 +75,16 @@ export class TicketComponent implements OnInit, OnDestroy {
       this.busquedavoucher.push( busqueda);
       this.cd.markForCheck()
        });
-    console.log(this.busquedavoucher)
+    this.ticketForm = this.form.group({
+        cantidades: this.form.array([this.form.group({cantidad:['']})])
+    });
+
+
   }
 
+    ngOnChanges(changes: SimpleChanges): void {
+      console.log("cambios", changes)
+    }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
@@ -89,31 +101,39 @@ export class TicketComponent implements OnInit, OnDestroy {
   }
 
 
-  guardareldetallevoucher(detallevaucher, busquedavoucher, loseleccionado: Medio, ingresodeunvaucher: DetalleVoucher):void {
+
+
+  guardareldetallevoucher(detallevaucher, busquedavoucher, loseleccionado: Medio, ingresodeunvaucher: DetalleVoucher, tiketForm):void {
     // tslint:disable-next-line:forin max-line-length
+
+          console.log("cantidad", tiketForm.value)
+    console.log("productos i ngresadas", this.agregadoalalista)
+
     this.numerobuscado = busquedavoucher[0].length;
-    console.log("numero", this.numerobuscado);
-    this.ingresodeunvaucher.dvcantidad = detallevaucher.length;
+    console.log("cantidad de productos", this.agregadoalalista)
+
+    this.ingresodeunvaucher.dvcantidad = this.cantidad_requerida;
     this.ingresodeunvaucher.voucher_id.vtotal = this.total();
     this.ingresodeunvaucher.voucher_id.vnumerodebusqueda = this.numerobuscado;
 
     this.vouchservicio.ultimovoucher().subscribe(res => {
-      this.voucherult = res;
+     this.voucherult = res;
     });
-    console.log('ultimoregistro', this.voucherult);
 
-    for (const i of detallevaucher) {
+      console.log("Guardando tiketForm", tiketForm.value)
+
+    for (const i of this.agregadoalalista) {
+
       this.ingresodeunvaucher.product_id = i.id;
-      console.log('guardarvaucher', this.ingresodeunvaucher);
-
-      this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res})
+      this.ingresodeunvaucher.dvcantidad = i.cantidad;
+        this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res})
     }
     //   setTimeout(() =>{this.guardarventa()}, 1000)
     this.cancelar.payment_id.pagomonto = this.total();
     this.cancelar.payment_id.pagovuelto = this.devolucion;
     this.cancelar.payment_id.half_payment_id = this.loseleccionado.id;
     this.cancelar.voucher_id = this.voucherult.id +1;
-    console.log('locancelado', this.cancelar);
+    console.log("lo cancelado", this.cancelar)
     this.vent.guardarventas(this.cancelar).subscribe(res => {return res});
 
   }
@@ -127,11 +147,10 @@ export class TicketComponent implements OnInit, OnDestroy {
     return total;
   }
 
-  borrarvoucher( evento, boton) {
+  borrarvoucher( evento) {
     // tslint:disable-next-line:forin
-    console.log("evento", evento)
-    console.log("boton", boton)
-    const i = this.agregadoalalista.indexOf(boton);
+
+    const i = this.agregadoalalista.indexOf(evento.value);
     const l = this.agregadoalalista.indexOf(evento);
     this.agregadoalalista.splice(i, 1 );
   }

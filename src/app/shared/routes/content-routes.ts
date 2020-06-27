@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import {VerificadorService} from "../../Service/verificador.service";
+import {verify} from "crypto";
 
 export const content: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('../../components/dashboard/dashboard.module').then(m => m.DashboardModule),
-    canActivate:[VerificadorService]
+
   },
   {
     path: 'products',

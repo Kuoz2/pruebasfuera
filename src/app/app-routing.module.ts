@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule,CanActivate } from '@angular/router';
 import { content } from './shared/routes/content-routes';
 import { ContentLayoutComponent } from './shared/layout/content-layout/content-layout.component';
-import {VerificadorService} from "./Service/verificador.service";
-import {AuthRoutingModule} from "./components/auth/auth-routing.module";
-import {AuthModule} from "./components/auth/auth.module";
+
 import {LoginComponent} from "./components/auth/login/login.component";
-import {VerificadorRolService} from "./Service/verificador-rol.service";
+import {VerificadorRoleService} from "./Service/verificador-role.service";
+import {VerificadorService} from "./Service/verificador.service";
 
 const routes: Routes = [
 
@@ -15,12 +14,12 @@ const routes: Routes = [
     path: '',
     redirectTo: 'dashboard/default',
     pathMatch: 'full',
-
   },
   {
     path: '',
     component: ContentLayoutComponent,
-    canActivate: [VerificadorService,VerificadorRolService],
+    canActivate: [VerificadorService],
+
     children: content
   },
 

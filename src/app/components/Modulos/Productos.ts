@@ -14,6 +14,7 @@ export class Productos {
     pvalor: number;
     stock_id: Stock =  new Stock()
     stock:Stock = new Stock()
+    cantidad:number;
 }
 
 

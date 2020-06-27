@@ -21,6 +21,8 @@ private URLStock = 'http://localhost:3000/stocks';
    products() {
     return this.http.get<Productos[]>(this.UrlProductos);
   }
+
+
 //Buscar un producto por su ID
   buscarproductoporID(id:number){
       return this.http.get<Productos>(this.UrlProductos + '/'+ id)
