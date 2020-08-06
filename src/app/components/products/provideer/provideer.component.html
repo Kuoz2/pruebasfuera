@@ -1,0 +1,155 @@
+<div class="container-fluid"  >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ficha nuevo proveedor</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row product-adding">
+
+
+                        <div class="col-xl-7">
+                            <form class="needs-validation" [formGroup]="provideer" (ngSubmit)="guardarprovider()" novalidate>
+                                <div class="add-product-form" >
+                                    <div class="form-group row">
+                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Nombre del proveedor:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom01"
+                                               type="text" formControlName = "nombre_provider" required>
+                                   <!--     <div *ngIf="pdescripcion.touched && pdescripcion.errors?.required"
+                                             class="text text-danger">
+                                            La descripción es necesaria.
+                                        </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Rut:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom02"
+                                               type="text" formControlName="rut_provider" required="">
+                                       <!-- <div *ngIf="pvalor.touched && pvalor.errors?.required"
+                                             class="text text-danger">
+                                            Precio del producto requerido
+                                        </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom23" class="col-xl-3 col-sm-4 mb-0">Direccion:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom23"
+                                               type="text" formControlName="direccion_provider" required="">
+                                       <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                             class="text text-danger">
+                                            Producto <Code></Code> Es requerido.
+                                        </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom13" class="col-xl-3 col-sm-4 mb-0">Comuna del proveedor:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom13"
+                                               type="text" formControlName="comuna_provider" required="">
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom33" class="col-xl-3 col-sm-4 mb-0">Telefono del fijo:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom33"
+                                               type="number" formControlName="telefono_provider" required="">
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom43" class="col-xl-3 col-sm-4 mb-0">Telefono personal
+                                            :</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom43"
+                                               type="number" formControlName="telefono_persona_provider" required="">
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom53" class="col-xl-3 col-sm-4 mb-0">Correo
+                                            :</label>
+                                        <input [class.is-invalid]="provideer.get('correo_provider').invalid && provideer.get('correo_provider').touched" class="form-control col-xl-8 col-sm-7" id="validationCustom53"
+                                               type="email" formControlName="correo_provider" required>
+                                        <div *ngIf="(primerEmail.invalid && primerEmail.touched) || primerEmail.dirty">
+                                            <small *ngIf="primerEmail.errors?.required" class="text-danger ">Es necesario un correo</small>
+                                            <small *ngIf="primerEmail.errors?.pattern" class="text-danger">Por favor ingrese un correo valido</small>
+                                        </div>
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom63" class="col-xl-3 col-sm-4 mb-0">Sitio web
+                                            :</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom63"
+                                               type="text" formControlName="web_provider" required="">
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label for="validationCustom1013" class="col-xl-3 col-sm-4 mb-0">Banco del proveedor:</label>
+                                        <select class="form-control col-xl-8 col-sm-7" (select)="0" id="validationCustom1013" formControlName="banco_provider" [value]="" required="">
+                                            <option value="" selected=""></option>
+                                            <option [ngValue]="i" *ngFor="let i of tipos_banco" >{{i.nombre}}</option>
+                                        </select>
+                                        <!-- <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
+                                              class="text text-danger">
+                                             Producto <Code></Code> Es requerido.
+                                         </div>-->
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-xl-3 col-sm-4">Agregar detalle del proveedor :</label>
+                                        <div class="col-xl-8 col-sm-7 pl-0 description-sm">
+                                            <label for="editor1"></label>
+                                            <textarea type="text" id="editor1" language="es" formControlName="detalle_provider" rows="10" cols="50"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-5">
+                                    <div class="add-product">
+                                        <div class="row">
+
+                                            <div class="col-xl-9 xl-50 col-sm-6 col-9">
+                                                <img [src]="url[0].img" alt=""  class="img-fluid image_zoom_1">
+                                            </div>
+
+                                            <div class="col-xl-3 xl-50 col-sm-6 col-3">
+                                                <ul class="file-upload-product">
+                                                    <li *ngFor="let item of url; let i=index">
+                                                        <div class="box-input-file">
+                                                            <input class="upload" type="file" formControlName="factura_provider" (change)="readUrl($event,i)">
+                                                            <img class="imgUpload"  alt=""  [src]="item.img"></div>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row mb-0">
+                                    <div class="product-buttons col-sm-8 offset-xl-3 offset-sm-4">
+                                        <button type="submit" class="btn btn-primary mr-1"  >Guardar</button>
+                                        <button type="button" class="btn btn-light" (click)="resetiarform()">Descartar</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

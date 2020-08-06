@@ -9,7 +9,7 @@ export class VentasService {
 
   constructor(private http:HttpClient) { }
 
-  Urlventas= 'http://localhost:3000/sales'
+  Urlventas= 'https://marketmini.herokuapp.com/sales';
 
   mostrarventas(){
    return this.http.get<Ventas>(this.Urlventas)

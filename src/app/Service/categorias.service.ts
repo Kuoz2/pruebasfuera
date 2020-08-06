@@ -10,7 +10,7 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
 
-  UrlCategorias = 'http://localhost:3000/categories';
+  UrlCategorias = 'https://marketmini.herokuapp.com/categories';
 //Mostrar
   mostrarcategorias(): Observable<Categories[]>{
     return this.http.get<Categories[]>(this.UrlCategorias)

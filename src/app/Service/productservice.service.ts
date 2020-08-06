@@ -14,16 +14,16 @@ import {Provideer} from "../components/Modulos/Provideer";
 })
 export class ProductserviceService {
 
-private UrlProductos= 'http://localhost:3000/products';
-private UrlMarca= 'http://localhost:3000/brands';
-private UrlCategorias= 'http://localhost:3000/categories';
-private URLStock = 'http://localhost:3000/stocks';
-private URLStockPerdida = 'http://localhost:3000/stocks/mostrar_stock_de_perdidas';
-private URLStockPerdidaAnterior = 'http://localhost:3000/stocks/p_mes_anterior';
-private URL_STOCK_PRODUCTOS = 'http://localhost:3000/stocks/stock_products';
-private URL_STOCK_PERDIDA = 'http://localhost:3000/stocks/mostrar_stock_de_perdidas';
-private URL_STCK_GRF_PERDIDAS = 'http://localhost:3000/stocks/buscar_las_fechas_perdidas';
-private URL_PROVIDERS = 'http://localhost:3000/providers';
+private UrlProductos= 'https://marketmini.herokuapp.com/products';
+private UrlMarca= 'https://marketmini.herokuapp.com/brands';
+private UrlCategorias= 'https://marketmini.herokuapp.com/categories';
+private URLStock = 'https://marketmini.herokuapp.com/stocks';
+private URLStockPerdida = 'https://marketmini.herokuapp.com/stocks/mostrar_stock_de_perdidas';
+private URLStockPerdidaAnterior = 'https://marketmini.herokuapp.com/stocks/p_mes_anterior';
+private URL_STOCK_PRODUCTOS = 'https://marketmini.herokuapp.com/stocks/stock_products';
+private URL_STOCK_PERDIDA = 'https://marketmini.herokuapp.com/mostrar_stock_de_perdidas';
+private URL_STCK_GRF_PERDIDAS = 'https://marketmini.herokuapp.com/stocks/buscar_las_fechas_perdidas';
+private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
 //Variables publicas
 
   constructor(private http: HttpClient) { }

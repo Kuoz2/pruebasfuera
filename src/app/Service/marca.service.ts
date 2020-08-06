@@ -10,7 +10,7 @@ export class MarcaService {
 
   constructor( private http: HttpClient) { }
 
-  UrlMarca = 'http://localhost:3000/brands';
+  UrlMarca = 'https://marketmini.herokuapp.com/brands';
 
   lalista: any;
 

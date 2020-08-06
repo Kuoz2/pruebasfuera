@@ -11,7 +11,7 @@ export class UsuarioService {
 
 
   constructor(private http: HttpClient) {  }
-    URlusuario= 'http://localhost:3000/regi';
+    URlusuario= 'https://marketmini.herokuapp.com/regi';
 
 
  guardarusuario(user: user){

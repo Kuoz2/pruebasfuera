@@ -16,15 +16,15 @@ import {
 })
 export class VoucherService {
 
-  Urldetallevaucher = 'http://localhost:3000/voucher_details';//Muestra el detalle del detalle del voucher con el producto en general
-  Urlvoucher = 'http://localhost:3000/vouchers';//Muestra el voucher completo
-  UrlUltvoucher = 'http://localhost:3000/vouchers/showlast';//Muestra el ultimo producto vendido
-  URLVntMes = 'http://localhost:3000/voucher_details/show_date';//Muestra el estado de las venta con el voucher y el producto vendido este mes.
-  UrlVentasTotal = 'http://localhost:3000/voucher_details/show_cantidad';//Muesta la cantidad ganada este mes
-  URLmespasado = 'http://localhost:3000/voucher_details/show_after_month';//Muestra las ganancas del mes anterior
-  URLproductosV = 'http://localhost:3000/voucher_details/producto_max_vend';//Muestra los productos mas vendidos
-  UTLtotalganancias = 'http://localhost:3000/voucher_details/las_ganancias_totales_meses';//Muestra el total de las ganancias.
-  URLTOTALGANANCIAS_FV = 'http://localhost:3000/vouchers/mostrar_ganancias_por_mes'; //MUESTRA LAS GANANCIAS POR CADA MES Y MUESTRA EL RESULTADO.
+  Urldetallevaucher = 'https://marketmini.herokuapp.com/voucher_details';//Muestra el detalle del detalle del voucher con el producto en general
+  Urlvoucher = 'https://marketmini.herokuapp.com/vouchers';//Muestra el voucher completo
+  UrlUltvoucher = 'https://marketmini.herokuapp.com/vouchers/showlast';//Muestra el ultimo producto vendido
+  URLVntMes = 'https://marketmini.herokuapp.com/voucher_details/show_date';//Muestra el estado de las venta con el voucher y el producto vendido este mes.
+  UrlVentasTotal = 'https://marketmini.herokuapp.com/voucher_details/show_cantidad';//Muesta la cantidad ganada este mes
+  URLmespasado = 'https://marketmini.herokuapp.com/voucher_details/show_after_month';//Muestra las ganancas del mes anterior
+  URLproductosV = 'https://marketmini.herokuapp.com/voucher_details/producto_max_vend';//Muestra los productos mas vendidos
+  UTLtotalganancias = 'https://marketmini.herokuapp.com/voucher_details/las_ganancias_totales_meses';//Muestra el total de las ganancias.
+  URLTOTALGANANCIAS_FV = 'https://marketmini.herokuapp.com/vouchers/mostrar_ganancias_por_mes'; //MUESTRA LAS GANANCIAS POR CADA MES Y MUESTRA EL RESULTADO.
 
   constructor(private http: HttpClient) { }
   //Ganancias totales del mes pasado.
