@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavService } from '../../service/nav.service';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounce, zoomOut, zoomIn, fadeIn, bounceIn } from 'ng-animate';
+//import * as chartData from "../../data/chart";
 
 @Component({
   selector: 'app-content-layout',
@@ -16,11 +17,16 @@ import { bounce, zoomOut, zoomIn, fadeIn, bounceIn } from 'ng-animate';
 })
 export class ContentLayoutComponent implements OnInit {
 
+
+
   public right_side_bar: boolean;
   public layoutType: string = 'RTL';
   public layoutClass: boolean = false;
 
-  constructor(public navServices: NavService) { }
+  constructor(public navServices: NavService) {
+
+  }
+  //public chart3 = chartData.chart3;
 
   public getRouterOutletState(outlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';
@@ -42,6 +48,8 @@ export class ContentLayoutComponent implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
 }

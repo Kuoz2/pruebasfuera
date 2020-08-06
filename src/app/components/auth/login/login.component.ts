@@ -57,11 +57,11 @@ export class LoginComponent implements OnInit {
       desc: "Lorema Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {
-      title: "Que es MiMinimarket",
+      title: "Que es PaltAnes",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {
-      title: "Welcome to Multikart",
+      title: "El servicio",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     }
   ]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsuarioService} from "../../../Service/usuario.service";
 import {Router} from "@angular/router";
 import {Productos} from "../../Modulos/Productos";
@@ -17,22 +17,23 @@ userform: FormGroup;
 static CreateFormUserGroup(){
     return new FormGroup({
         user: new FormGroup({
-            email: new FormControl(''),
-            password: new FormControl(''),
-            rut_user: new FormControl(''),
-            name_user: new FormControl(''),
-            f_lastname: new FormControl(''),
-            m_lastname: new FormControl(''),
-            p_contacts: new FormControl(''),
-            address: new FormControl(''),
+            email: new FormControl('',[Validators.required]),
+            password: new FormControl('',[Validators.required]),
+            rut_user: new FormControl('',[Validators.required]),
+            name_user: new FormControl('',[Validators.required]),
+            f_lastname: new FormControl('',[Validators.required]),
+            m_lastname: new FormControl('',[Validators.required]),
+            p_contacts: new FormControl('',[Validators.required]),
+            address: new FormControl('',[Validators.required]),
             role: new FormControl('')
         }),
 
     });
 
 }
-  constructor(private formBuilder: FormBuilder, private userservi: UsuarioService, private router: Router) {
-    this.userform= CreateUserComponent.CreateFormUserGroup();
+  constructor(private userservi:UsuarioService) {
+
+this.userform = CreateUserComponent.CreateFormUserGroup()
 
   }
 
@@ -71,7 +72,7 @@ static CreateFormUserGroup(){
 
 
                    console.log('formularioregistro',userform.value)
-     //this.userservi.guardarusuario(userform.value);
+     this.userservi.guardarusuario(userform.value);
   }
 
 }

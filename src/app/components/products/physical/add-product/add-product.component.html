@@ -2,7 +2,7 @@
 
 
 <!-- Eliminar la herramienta de formato -->
-<div class="container-fluid" >
+<div class="container-fluid"  >
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
@@ -26,6 +26,7 @@
                                                 <div class="box-input-file">
                                                     <input class="upload" type="file" formControlName="ppicture" (change)="readUrl($event,i)">
                                                     <img class="imgUpload"  alt=""  [src]="item.img"></div>
+                                                <small>Ingrese una imagen aqui</small>
                                             </li>
                                             </form>
                                         </ul>
@@ -53,8 +54,20 @@
                                             type="number" formControlName="pvalor" required="">
                                         <div *ngIf="pvalor.touched && pvalor.errors?.required"
                                             class="text text-danger">
-                                            Precio del producto requerido
+                                            Precio del producto es requerido
                                         </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom2121" class="col-xl-3 col-sm-4 mb-0">Proveedor :</label>
+                                        <select id="validationCustom2121" class="form-control digits col-xl-8 col-sm-7" formControlName="provider_id">
+                                            <option [ngValue]="p" *ngFor="let p of proveedor" [selected]="proveedor[p.nombre_provider]">{{p.nombre_provider}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom023" class="col-xl-3 col-sm-4 mb-0">Precio del proveedor :</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom023"
+                                               type="number" formControlName="precio_provider" required="">
+
                                     </div>
                                     <div class="form-group row">
                                         <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código del  producto
@@ -81,7 +94,7 @@
                                             :</label>
                                         <select class="form-control digits col-xl-8 col-sm-7" formControlName="brand_id" name="marca"
                                                 id="exampleFormControlSelect2">
-                                            <option [ngValue]="f" *ngFor="let f of marca" [selected]="marca[f.id]">{{f.bnombre}}</option>
+                                            <option [ngValue]="f" *ngFor="let f of (marca| async)" [selected]="marca[f.id]">{{f.bnombre}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group row" formGroupName="stock_id">

@@ -11,7 +11,7 @@ import {UsuarioService} from "../../../Service/usuario.service";
 })
 export class SidebarComponent {
 
-  public menuItems: Menu[];
+  public  menuItems: Menu[];
   public url: any;
   public fileurl: any;
 

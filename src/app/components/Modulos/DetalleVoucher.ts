@@ -3,12 +3,12 @@ import {Productos} from "./Productos";
 
 export class DetalleVoucher {
     id: number;
-    dvcantidad: number[];
+    dvcantidad: number;
     dvprecio: number;
-    voucher_id= new Voucher();
-    product_id = new Productos();
+    voucher_id: number;
+    product_id: number;
     product: Productos[];
-    voucher: Voucher[];
+    voucher = new Voucher();
     created_at: string;
 }
 

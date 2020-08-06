@@ -18,6 +18,8 @@ import {Observable, Subject} from "rxjs";
 
 import {Form, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {SimpleChanges} from "@angular/core";
+import {Productos} from "../../../Modulos/Productos";
+import {ProductserviceService} from "../../../../Service/productservice.service";
 
 @Component({
   selector: 'app-ticket',
@@ -36,11 +38,12 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   @Input() eltotal: number;
   @Input() agregadoalalista = [];
 
-  cantidad_requerida: number[];
+  cantidad_requerida: number;
 
   cancelar = new Ventas();
   ingresodeunvaucher = new DetalleVoucher();
   pasarelformulario = new DetalleVoucher();
+  productos_actualizado = new Productos()
   voucherult: Voucher;
 // Formulario para agregar el ticket
   ticketForm: FormGroup;
@@ -57,7 +60,7 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   mes = this.fecha.getMonth();
   anio = this.fecha.getFullYear();
 
-  constructor(private form:FormBuilder, private vouchservicio: VoucherService, private vent: VentasService, private cd:ChangeDetectorRef) {
+  constructor(private form:FormBuilder, private vouchservicio: VoucherService, private vent: VentasService, private cd:ChangeDetectorRef, private prodi: ProductserviceService) {
 
 
     this.vouchservicio.ultimovoucher().pipe(
@@ -107,14 +110,12 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
     // tslint:disable-next-line:forin max-line-length
 
           console.log("cantidad", tiketForm.value)
-    console.log("productos i ngresadas", this.agregadoalalista)
 
     this.numerobuscado = busquedavoucher[0].length;
-    console.log("cantidad de productos", this.agregadoalalista)
 
     this.ingresodeunvaucher.dvcantidad = this.cantidad_requerida;
-    this.ingresodeunvaucher.voucher_id.vtotal = this.total();
-    this.ingresodeunvaucher.voucher_id.vnumerodebusqueda = this.numerobuscado;
+    this.ingresodeunvaucher.voucher.vtotal = this.total();
+    this.ingresodeunvaucher.voucher.vnumerodebusqueda = this.numerobuscado;
 
     this.vouchservicio.ultimovoucher().subscribe(res => {
      this.voucherult = res;
@@ -126,15 +127,24 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
 
       this.ingresodeunvaucher.product_id = i.id;
       this.ingresodeunvaucher.dvcantidad = i.cantidad;
-        this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res})
+               this.productos_actualizado= i;
+        this.productos_actualizado.stock.pstock = i.stock.pstock -i.cantidad;
+                    //se generea la boleta para realizar el pago
+       this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res});
+
+      //Actualizar el stock del producto
+   this.prodi.actualizarstock(this.productos_actualizado.stock).subscribe()
     }
+
+
     //   setTimeout(() =>{this.guardarventa()}, 1000)
     this.cancelar.payment_id.pagomonto = this.total();
     this.cancelar.payment_id.pagovuelto = this.devolucion;
     this.cancelar.payment_id.half_payment_id = this.loseleccionado.id;
     this.cancelar.voucher_id = this.voucherult.id +1;
     console.log("lo cancelado", this.cancelar)
-    this.vent.guardarventas(this.cancelar).subscribe(res => {return res});
+    //Se guarda el pago realizado.
+ this.vent.guardarventas(this.cancelar).subscribe(res => {return res});
 
   }
 
@@ -142,7 +152,7 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   total() {
     let total = 0;
     for (const a of this.agregadoalalista) {
-      total += a.pvalor;
+      total += (a.pvalor * a.cantidad);
     }
     return total;
   }

@@ -107,7 +107,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let category of listproductos  | paginate: {itemsPerPage:3, currentPage:d} " class="text-center">
+                                            <tr *ngFor="let category of (listproductos |async ) | paginate: {itemsPerPage:3, currentPage:d} " class="text-center">
                                                 <td>{{category.pcodigo  }}</td>
                                                 <td>{{category.pdescripcion }}</td>
                                                 <td>{{category.pvalor}}</td>
@@ -143,7 +143,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let category of listproductos  | paginate: {itemsPerPage:1, currentPage:d} " class="text-center">
+                                            <tr *ngFor="let category of (listproductos | async)  | paginate: {itemsPerPage:1, currentPage:d} " class="text-center">
                                                 <td>{{category.pdetalle  }}</td>
 
                                             </tr>

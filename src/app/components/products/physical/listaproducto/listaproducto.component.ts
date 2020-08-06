@@ -6,6 +6,7 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {productos} from "../../../Modulos/GANANCIAS";
 import {stripComments} from "tslint/lib/utils";
+import {Observable} from "rxjs";
 
 @Component({
     selector: 'app-listaproducto',
@@ -15,7 +16,7 @@ import {stripComments} from "tslint/lib/utils";
 export class ListaproductoComponent implements OnInit {
     public closeResult: string;
     constructor(private prod: ProductserviceService,private modalService: NgbModal, private formBuilder: FormBuilder) { }
-    listproductos: Productos[] = [];
+    listproductos: Observable<Productos[]> ;
     productoFomr: FormGroup;
     productoporid: Productos = new Productos();
     stock_actualizado: Stock = new Stock();
@@ -26,7 +27,11 @@ export class ListaproductoComponent implements OnInit {
 
     ngOnInit() {
 
-        this.prod.products().subscribe(data => {this.listproductos= data})
+    this.productosAsync()
+    }
+
+    productosAsync(){
+        this.listproductos = this.prod.products()
     }
 
     editarproductos(producto: Productos){

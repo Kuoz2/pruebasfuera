@@ -6,6 +6,7 @@ import { AddProductComponent } from './physical/add-product/add-product.componen
 
 import {MarcaComponent} from "./physical/marca/marca/marca.component";
 import {ListaproductoComponent} from "./physical/listaproducto/listaproducto.component";
+import {ProvideerComponent} from "./provideer/provideer.component";
 
 const routes: Routes = [
   {
@@ -38,21 +39,21 @@ const routes: Routes = [
         }
       },
       {
-        path: 'physical/sub-category',
-        component: SubCategoryComponent,
-        data: {
-          title: "Sub Category",
-          breadcrumb: "Sub Category"
-        }
-      },
-      {
         path: 'physical/lista-editar',
         component: ListaproductoComponent,
         data:{
           title: 'lista y editar producto',
           breadcrumb:'lista editar producto'
         }
-       }
+       },
+      {
+        path:'physical/proveedor',
+        component: ProvideerComponent,
+        data:{
+          title:'Ingreso proveedor',
+          breadcrumb:'Nuevo Proveedor'
+        }
+      }
     ]
   }
 ];

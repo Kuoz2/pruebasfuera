@@ -1,0 +1,107 @@
+<!--
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+
+        </div>
+
+        <div class="col-xs-5 col-md-4 col-sm-4 col-lg-4">
+
+        </div>
+    </div>
+</div>
+-->
+<ng-template #content2 let-modal2>
+    <form action="" [formGroup]="app_venta">
+
+    <div class="modal-header">
+        <h5 class="modal-title f-w-600" id="exampleModalLabel2">Formato de pago</h5>
+        <button type="button" class="close" aria-label="Close"
+                (click)="modal2.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="shopping-cart-header">
+            <div class="shopping-cart-total">
+                <span class="lighter-text">Total:</span>
+                <span class="main-color-text" >${{totalPrice}}</span>
+            </div>
+        </div>
+        <div class="form">
+            <div class="form-group">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Unidades</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let productos of items" >
+                    <tr >
+                            <th>{{productos.pdescripcion}}</th>
+                            <th>{{productos.quantity}} <button type="button" class="close" aria-label="close"> <span aria-hidden="true" (click)="remover_producto(productos)">&times;</span></button></th>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <label for="loseleccionadodelacompra" class="mb-1">Forma de pago :</label>
+            <div class="input-group input-group-sm mb-3">
+                <select  formControlName="loseleccionadodelacompra" class="custom-select mr-sm-2"  name="loseleccionadelacompra" id="loseleccionadodelacompra" [value]="0">
+                    <option [ngValue]="0"></option>
+                    <option [ngValue]="i" *ngFor="let i  of selecciondecomra" [selected]="0">{{i.mpnombre}}</option>
+                </select>
+            </div>
+            <label> Efectivo:</label>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Sizing example input"  name="efectivo" id="efectivo" formControlName="efectivo">
+            </div>
+
+            <label> Devolucion:</label>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm2">$</span>
+                </div>
+                <hi class="display-3">{{devolucion_app()}}</hi>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" (click)="guardarVentaApp()" >Guardar</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                        (click)="cancelar_venta()">Cancelar</button>
+            </div>
+
+        </div>
+
+
+    </div>
+    </form>
+</ng-template>
+
+<nav class="navbar navbar-light">
+        <div class="shopping-cart-header">
+            <i class="fa fa-shopping-cart cart-icon" (click)="open2(content2)"></i><span class="badge">{{totalQuantity}}</span>
+            <div class="shopping-cart-total">
+                <span class="lighter-text">Total:</span>
+                <span class="main-color-text">${{totalPrice}}</span>
+            </div>
+        </div> <!--end shopping-cart-header -->
+    <form class="form-inline my-2 my-lg-0 mb-3">
+
+        <div  class="input-group mb-3">
+        <div  class="input-group-prepend">
+            <select name="semarca" id="semarca" (input)=_buscandoCategoria($event) class="form-control mr-sm-2 border border-primary  mdb-select md-form colorful-select dropdown-primary">
+                <option value="0"></option>
+                <option [ngValue]="i" *ngFor="let i of categorias" [selected]="categorias[i.id]">{{i.cnombre}}</option>
+            </select>
+        </div>
+        <input class="form-control mr-sm-2 border border-primary" type="search" placeholder="Buscar" aria-label="Search" size="10" (input) = _buscadorProducto($event)>
+        </div>
+    </form>
+</nav>
+

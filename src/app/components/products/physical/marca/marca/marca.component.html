@@ -83,7 +83,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor=" let category of list_marca | paginate: {itemsPerPage:5, currentPage:p}" class="text-center">
+                                            <tr *ngFor=" let category of (list_marca | async | paginate: {itemsPerPage:5, currentPage:p})" class="text-center">
                                                 <td>{{category.id}}</td>
                                                 <td>{{category.bnombre}}</td>
                                                 <td>

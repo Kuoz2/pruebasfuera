@@ -13,10 +13,10 @@ export class VerificadorService implements CanActivate{
             }else {
 
                 switch (localStorage.getItem( "ACCESS_ROLE" )) {
-                    case 'admin':
+                    case 'administrador':
                         return true;
 
-                    case "vendedor":
+                    case "Vendedor":
                         this.route.navigateByUrl('/create-voucher')
                     break;
                     case null:

@@ -4,9 +4,10 @@ import {Marca} from "./Marca";
 export class Productos {
     pvactivacioncatalogo: boolean;
     pactivado: boolean;
+    category: Categories[];
     category_id: Categories[];
     brand_id: Marca[];
-    ppictures: any;
+    ppicture: any;
     id: number;
     pdescripcion: string;
     pcodigo: number;
@@ -15,6 +16,7 @@ export class Productos {
     stock_id: Stock =  new Stock()
     stock:Stock = new Stock()
     cantidad:number;
+    quantity: number
 }
 
 

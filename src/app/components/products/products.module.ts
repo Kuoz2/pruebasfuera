@@ -24,6 +24,7 @@ import { ListaproductoComponent } from './physical/listaproducto/listaproducto.c
 import {NgxDatatableModule} from "@swimlane/ngx-datatable";
 import {NgxPaginationModule} from "ngx-pagination";
 import { StockComponent } from './physical/stock/stock.component';
+import { ProvideerComponent } from './provideer/provideer.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -38,7 +39,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     AddProductComponent,
     MarcaComponent,
     ListaproductoComponent,
-    StockComponent],
+    StockComponent,
+    ProvideerComponent],
     imports: [
         CommonModule,
         FormsModule,

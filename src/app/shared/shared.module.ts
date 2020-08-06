@@ -17,6 +17,9 @@ import { RightSidebarComponent } from './components/right-sidebar/right-sidebar.
 import { PipePipe } from './Pipe/pipe.pipe';
 import { BuscarproductoPipe } from './Pipe/buscarproducto.pipe';
 import { VentasfilterPipe } from './Pipe/ventasfilter.pipe';
+import { BusquedaAppPipe } from './Pipe/busqueda-app.pipe';
+import { TranformarImagenPipe } from './Pipe/tranformar-imagen.pipe';
+import { BusquedacategoriappPipe } from './Pipe/busquedacategoriapp.pipe';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { VentasfilterPipe } from './Pipe/ventasfilter.pipe';
     PipePipe,
     BuscarproductoPipe,
     VentasfilterPipe,
+    BusquedaAppPipe,
+    TranformarImagenPipe,
+    BusquedacategoriappPipe,
 
   ],
   imports: [
@@ -39,6 +45,6 @@ import { VentasfilterPipe } from './Pipe/ventasfilter.pipe';
     RouterModule
   ],
   providers: [NavService, WINDOW_PROVIDERS],
-    exports: [FeatherIconsComponent, ToggleFullscreenDirective, PipePipe, BuscarproductoPipe, VentasfilterPipe]
+    exports: [FeatherIconsComponent, ToggleFullscreenDirective, PipePipe, BuscarproductoPipe, VentasfilterPipe, BusquedaAppPipe, TranformarImagenPipe, BusquedacategoriappPipe]
 })
 export class SharedModule { }

@@ -4,3 +4,10 @@ export class Marca {
     created_at:any;
     updated_at:any;
 }
+
+
+export class MarcaPrueba {
+
+    bnombre: string;
+    id: number;
+}

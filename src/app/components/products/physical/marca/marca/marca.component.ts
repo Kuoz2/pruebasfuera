@@ -14,7 +14,7 @@ export class MarcaComponent implements OnInit {
   public closeResult: string;
   marcasForm: FormGroup;
   marca: Observable<Marca[]>;
-  list_marca: Marca[];
+  list_marca: Observable<Marca[]>;
   marcangmo: Marca = new Marca();
   p:any;
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder, private servimarca: MarcaService) {
@@ -25,8 +25,11 @@ export class MarcaComponent implements OnInit {
     this.marcasForm = this.formBuilder.group({
       bnombre:['']
     });
+   this.carga_marca_async()
+  }
 
-    this.servimarca.mostrarmarcas().subscribe(res => {this.list_marca = res})
+  carga_marca_async(){
+    this.list_marca = this.servimarca.mostrarmarcas()
   }
 
   editarmarca(marca: Marca){

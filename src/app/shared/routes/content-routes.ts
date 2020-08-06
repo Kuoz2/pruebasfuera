@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import {VerificadorService} from "../../Service/verificador.service";
-import {verify} from "crypto";
+
 
 export const content: Routes = [
   {
@@ -12,7 +11,7 @@ export const content: Routes = [
     path: 'products',
     loadChildren: () => import('../../components/products/products.module').then(m => m.ProductsModule),
     data: {
-      breadcrumb: "Products"
+      breadcrumb: "Productos"
     }
   },
 
@@ -20,14 +19,14 @@ export const content: Routes = [
     path: 'pages',
     loadChildren: () => import('../../components/pages/pages.module').then(m => m.PagesModule),
     data: {
-      breadcrumb: "Pages"
+      breadcrumb: "Pagos"
     }
   },
   {
     path: 'auth',
     loadChildren: () => import('../../components/auth/auth.module').then(m => m.AuthModule),
     data:{
-      breadcrumb: "Auth"
+      breadcrumb: "Autentificación"
     }
   },
 
@@ -35,7 +34,7 @@ export const content: Routes = [
     path: 'users',
     loadChildren: () => import('../../components/users/users.module').then(m => m.UsersModule),
     data: {
-      breadcrumb: "Users"
+      breadcrumb: "Usuario"
     }
   },
 

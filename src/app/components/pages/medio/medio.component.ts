@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PagosService} from "../../../Service/pagos.service";
 import {Medio} from "../../Modulos/Medio";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-medio',
@@ -8,16 +9,38 @@ import {Medio} from "../../Modulos/Medio";
   styleUrls: ['./medio.component.scss']
 })
 export class MedioComponent implements OnInit {
+  public medioForm: FormGroup;
 
-  constructor(private medio: PagosService) { }
-nuevomedio: Medio;
-  mediopago = new Medio();
-  ngOnInit() {
-
+  static CreateFormProvider(){
+    return new FormGroup({
+      mpnombre: new FormControl('',[Validators.required])
+    })
   }
 
-  guardarmedio(medio:Medio){
-    return this.medio.guardarmododepago(medio).subscribe(data => {this.nuevomedio = data})
+  constructor(private medio: PagosService) {
+    this.medioForm = MedioComponent.CreateFormProvider();
+  }
+nuevomedio: Medio;
+  mediopago = new Medio();
+  tomarmedio:Medio[];
+  ngOnInit() {
+    this.medio.mostrarmediodepago().subscribe(data => {this.tomarmedio = data})
+  }
+
+
+  guardarmedio(){
+const data = []
+    for (const o of this.tomarmedio){
+      data.push(o.mpnombre)
+    }
+    if (data.includes(this.medioForm.value.mpnombre.toLowerCase()) != true){
+ this.medioForm.value.mpnombre = this.medioForm.value.mpnombre.toLowerCase()
+return this.medio.guardarmododepago(this.medioForm.value).subscribe(res => {this.mediopago = res})
+  }
+    else
+  {
+    alert("El medio de pago ya existe" + this.medioForm.value.mpnombre.toLowerCase())
+  }
   }
 
 }

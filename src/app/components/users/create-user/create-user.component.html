@@ -60,6 +60,36 @@
                                             <input class="form-control col-xl-8 col-md-7" formControlName="password" id="validationCustom3" name="password"
                                                 type="text" required="">
                                         </div>
+                                            <div class="attribute-blocks">
+                                                <h5 class="f-w-600 mb-3">Rol del usuario</h5>
+                                                <div class="row">
+                                                    <div class="col-xl-3 col-sm-4" >
+                                                        <label>Roles</label>
+                                                    </div>
+
+                                                    <div class="col-xl-9 col-sm-8">
+                                                        <div class="form-group m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
+                                                            <label class="d-block" for="edo-ani1">
+                                                                <input class="radio_animated" id="edo-ani1" value="vendedor" type="radio"
+                                                                       name="role" checked="" formControlName="role" >
+                                                                Vendedor
+                                                            </label>
+
+
+                                                            <label class="d-block" for="edo-ani4">
+                                                                <input class="radio_animated" id="edo-ani4" value="administrador" type="radio" checked
+                                                                       name="role" formControlName="role">
+                                                                Administrador
+                                                            </label>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <button type="submit" class="btn btn-primary">Guardar nuevo usuario</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
 
                                      </form>
@@ -72,44 +102,7 @@
                                     <form [formGroup]="userform" (ngSubmit)="createnuevousuario(userform)"
                                         class="needs-validation user-add" novalidate="">
                                         <div class="permission-block">
-                                            <div class="attribute-blocks">
-                                                <h5 class="f-w-600 mb-3">Rol del usuario</h5>
-                                                <div class="row">
-                                                    <div class="col-xl-3 col-sm-4" >
-                                                        <label>Roles</label>
-                                                    </div>
 
-                                                    <div class="col-xl-9 col-sm-8">
-                                                        <div class="form-group m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
-                                                            <label class="d-block" for="edo-ani1">
-                                                                <input class="radio_animated" id="edo-ani1" value="Vendedor" type="radio"
-                                                                    name="rolnombre" checked="">
-                                                                Vendedor
-                                                            </label>
-                                                            <label class="d-block" for="edo-ani2">
-                                                                <input class="radio_animated"  id="edo-ani2" value="Cajero" type="radio"
-                                                                    name="rolnombre" >
-                                                                Cajero
-                                                            </label>
-                                                            <label class="d-block" for="edo-ani3">
-                                                                <input class="radio_animated" id="edo-ani3"  value="Encargado de tienda" type="radio"
-                                                                       name="rolnombre" >
-                                                                Encargado de tienda
-                                                            </label>
-                                                            <label class="d-block" for="edo-ani4">
-                                                                <input class="radio_animated" id="edo-ani4" value="Administrador" type="radio"
-                                                                       name="rolnombre" >
-                                                                Administrador
-                                                            </label>
-                                                        </div>
-                                                        <div class="pull-right">
-                                                            <button type="submit" class="btn btn-primary">Guardar nuevo usuario</button>
-                                                        </div>
-
-                                                    </div>
-                                                    </div>
-
-                                                </div>
                                         </div>
                                             </form>
 

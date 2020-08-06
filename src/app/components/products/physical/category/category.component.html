@@ -48,7 +48,7 @@
                             <div class="modal-body">
                                     <div class="form">
                                         <div class="form-group">
-                                            <label for="validationCustom01" class="mb-1">Nombre de la categoria :</label>
+                                            <label for="validationCustom012" class="mb-1">Nombre de la categoria :</label>
                                             <input class="form-control" [(ngModel)]="categoriaID.cnombre" id="validationCustom012" type="text">
                                         </div>
 
@@ -83,7 +83,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let category of (categorias | async) | paginate: {itemsPerPage:5, currentPage:p} " class="text-center">
+                                            <tr *ngFor="let category of (categorias | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
                                                 <td>{{category.id  }}</td>
                                                 <td>{{category.cnombre }}</td>
                                                 <td>

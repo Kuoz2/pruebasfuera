@@ -16,8 +16,11 @@ import { HacerpagoComponent } from './hacerpago/hacerpago.component';
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { ListavoucherComponent } from './listavoucher/listavoucher.component';
 import { MedioComponent } from './medio/medio.component';
+import { AppsaleComponent } from './appsale/appsale.component';
+import { ListproductComponent } from './appsale/listproduct/listproduct.component';
+import { ContenedorAppComponent } from './contenedor-app/contenedor-app.component';
 @NgModule({
-  declarations: [ListPageComponent, VoucherCreateComponent, TicketComponent, HacerpagoComponent, ListavoucherComponent, MedioComponent],
+  declarations: [ListPageComponent, VoucherCreateComponent, TicketComponent, HacerpagoComponent, ListavoucherComponent, MedioComponent, AppsaleComponent, ListproductComponent, ContenedorAppComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

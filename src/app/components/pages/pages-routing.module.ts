@@ -5,8 +5,9 @@ import {VoucherCreateComponent} from "./voucher-create/voucher-create.component"
 import {HacerpagoComponent} from "./hacerpago/hacerpago.component";
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
-import {VerificadorService} from "../../Service/verificador.service";
-import {VerificadorRoleService} from "../../Service/verificador-role.service";
+import {AppsaleComponent} from "./appsale/appsale.component";
+import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
+
 
 const routes: Routes = [
   {
@@ -53,6 +54,14 @@ const routes: Routes = [
         data:{
           title: "Crear pago",
           breadcrumb: "Crear pago"
+        }
+      },
+      {
+        path:'app-pago',
+        component:ContenedorAppComponent,
+        data:{
+          title:"Pago movil",
+          breadcrumb:"App pago"
         }
       }
     ]

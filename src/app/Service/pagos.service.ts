@@ -24,7 +24,7 @@ export class PagosService {
   }
 
   mostrarmediodepago(){
-      return this.http.get<Medio[]>(this.urlmedio)
+    return   this.http.get<Medio[]>(this.urlmedio)
   }
 
   guardarmododepago(med: Medio){

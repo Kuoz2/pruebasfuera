@@ -19,6 +19,11 @@ console.log('servisuer',user )
    return  this.http.post<user>(this.URlusuario,user ).subscribe(data => console.error('error',data));
 }
 
-
+mostrarousuarios(){
+ 
+ }
 
 }
+
+
+

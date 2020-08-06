@@ -5,4 +5,5 @@ export class Voucher {
     vnumerodebusqueda: number;
     vtotal: number;
     vnumero: number;
+    created_at:string
 }

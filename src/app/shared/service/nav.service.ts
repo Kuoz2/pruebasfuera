@@ -43,26 +43,23 @@ export class NavService {
 		},
 		{
 			title: 'Productos', icon: 'box', type: 'sub', active: false,  children: [
-				{
-					title: 'Acciones', type: 'sub', children: [
+
 						{ path: '/products/physical/category', title: 'Categorias', type: 'link'},
 						{ path: '/products/physical/lista-editar', title: 'Lista y editar productos', type: 'link' },
 						{ path: '/products/physical/add-product', title: 'Agregar producto', type: 'link' },
-						{path: '/products/physical/agregar-marca', title: ' Agregar marca', type: 'link'}
-					]
-				},
+						{path: '/products/physical/agregar-marca', title: ' Agregar marca', type: 'link'},
+						{ path: '/products/physical/proveedor', title:'Proveedor', type:'link'}
+
 			]
 		},
 
 
 		{
 			title: 'Pagos', icon: 'clipboard', type: 'sub', active: false, children: [
-				{ path: '/pages/list-page', title: 'Lista pago', type: 'link' },
-				{ path: '/pages/create-page', title: 'Crear pago', type: 'link' },
 				{path: '/pages/create-voucher', title: 'Crear Voucher', type: 'link'},
-				{path: '/pages/crear-pago', title: 'Crear pago', type: 'link'},
 				{path: '/pages/lista-voucher', title: 'Lista Voucher', type: 'link'},
-				{path: '/pages/medio-pago', title: 'Medio de pago', type: 'link'}
+				{path: '/pages/medio-pago', title: 'Medio de pago', type: 'link'},
+				{path:'/pages/app-pago', title:'App de pago', type:'link'}
 			]
 		},
 		{

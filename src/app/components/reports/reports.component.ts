@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as chartData from '../../shared/data/chart';
+//import * as chartData from '../../shared/data/chart';
 import { reportDB } from 'src/app/shared/tables/report';
 
 @Component({
@@ -15,7 +15,7 @@ export class ReportsComponent implements OnInit {
   }
 
   // lineChart
-  public salesChartData = chartData.salesChartData;
+  /* public salesChartData = chartData.salesChartData;
   public salesChartLabels = chartData.salesChartLabels;
   public salesChartOptions = chartData.salesChartOptions;
   public salesChartColors = chartData.salesChartColors;
@@ -47,7 +47,7 @@ export class ReportsComponent implements OnInit {
         title: 'Total'
       },
     },
-  };
+  };*/
 
   ngOnInit() {
   }
