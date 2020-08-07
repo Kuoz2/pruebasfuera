@@ -47,7 +47,6 @@ file:File;
   get stock_lost(){return this.productForm.get('stock_lost')}
   get stock_security(){return this.productForm.get('stock_security')}
   get provider_id(){return this.productForm.get('provider_id')}
-  get precio_provider(){return this.productForm.get('precio_provider')}
 
 
   constructor(private servi: ProductserviceService,
@@ -172,12 +171,4 @@ resetiarform(){
 
   }
 
-
-   cate_marc_estan():void {
-        for (let de of this.prueba_marca){
-          console.log(de)
-        }
-
-
-    }
 }

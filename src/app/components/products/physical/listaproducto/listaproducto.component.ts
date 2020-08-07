@@ -17,10 +17,9 @@ export class ListaproductoComponent implements OnInit {
     public closeResult: string;
     constructor(private prod: ProductserviceService,private modalService: NgbModal, private formBuilder: FormBuilder) { }
     listproductos: Observable<Productos[]> ;
-    productoFomr: FormGroup;
     productoporid: Productos = new Productos();
     stock_actualizado: Stock = new Stock();
-    ck = new Stock
+    ck = new Stock;
     stock_nuevo: number;
     stock_perdidas_nuevo: number;
     d: any;
@@ -45,29 +44,24 @@ export class ListaproductoComponent implements OnInit {
         const edicion_producto = stck;
 
         if (stnuevo == 0 && stlost == 0 || stnuevo == null && stlost == null) {
-            console.log( "producto editado en 0 ", edicion_producto );
         }else {
             if (stnuevo != 0 && stlost == 0 || stlost == null){
                 edicion_producto.pstock += stnuevo;
                 edicion_producto.stock_lost += 0;
-                console.log("stock nuevo no es vacio", edicion_producto)
             } else {
                 if (stlost != 0 && stnuevo == 0 || stnuevo == null){
                     edicion_producto.stock_lost += stlost;
                     edicion_producto.pstock += 0;
-                    console.log("stock de perdida no esta vacio", edicion_producto)
                 }else {
                     if (stnuevo != 0 && stlost != 0 && stnuevo != null && stlost != null){
                         edicion_producto.pstock += stnuevo;
                         edicion_producto.stock_lost += stlost;
-                        console.log( "producto editado ", edicion_producto );
 
                     }
                 }
 
             }
-            console.log("productos",stck)
-            console.log("edicion del producto", edicion_producto)
+
             this.prod.actualizarstock(stck).subscribe(data => { return data});
             console.log(edicion_producto)
         }

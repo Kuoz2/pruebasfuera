@@ -36,11 +36,12 @@
           },
           "configurations": {
             "production": {
-
-              "index": {
-                "input": "src/index.prod.html",
-                "output": "index.html"
-              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

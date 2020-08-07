@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {UsuarioService} from "../../../Service/usuario.service";
 import {Router} from "@angular/router";
 import {AutentificacionService} from "../../../Service/autentificacion.service";
-import {JwtResponse} from "../../Modulos/jwt-response";
-import {user} from "../../Modulos/User";
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
+  @ViewChild('container') container: ElementRef;
+  ngAfterViewInit(): void {
+    this.container.nativeElement.addEventListener('scroll', (evt: any) => {
+      console.log('scroll', evt)
+    }, {passive: true})
+  }
+
   ngForm: FormGroup;
   static CreateLoginFormGroup(){
     return new FormGroup({
@@ -22,6 +27,7 @@ export class LoginComponent implements OnInit {
     });
 
   }
+  new_admin: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private autentificacion: AutentificacionService, private router: Router) {
         this.ngForm = LoginComponent.CreateLoginFormGroup()
@@ -34,7 +40,6 @@ export class LoginComponent implements OnInit {
   get password(){return this.ngForm.get('password')}
 
   onLogin(form):void {
-    console.log('logi', form.value)
     this.autentificacion.login(form.value).subscribe(res =>{
       if(res.jti !== null){
         this.router.navigateByUrl('/dashboard/default')
@@ -75,11 +80,11 @@ export class LoginComponent implements OnInit {
   };
 
 
-  createRegisterForm() {
+  cancelar_venta() {
 
   }
 
+  guardarAdmin() {
 
-
-
+  }
 }

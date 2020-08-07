@@ -17,8 +17,8 @@ import {Marca} from "../../../Modulos/Marca";
 export class CategoryComponent implements OnInit {
   public closeResult: string;
   categoriasForm: FormGroup;
-  categorias: Observable<Categories[]>
-  categoriaID: Categories = new Categories()
+  categorias: Observable<Categories[]>;
+  categoriaID: Categories = new Categories();
   p: any;
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder, private servi: CategoriasService) {
   }
@@ -37,7 +37,6 @@ this.categoriaAsync()
   }
 
   guardarcategoria(){
-    console.log(this.categoriasForm.value);
     this.servi.guardarcategorias(this.categoriasForm.value);
     this.categoriasForm.reset();
   }
@@ -60,8 +59,6 @@ this.categoriaAsync()
 
   editar(){
     const id = localStorage.getItem('idc');
-    console.log(id);
-
     this.servi.mostrarporID(+id).subscribe(data => {this.categoriaID = data})
   }
 

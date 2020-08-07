@@ -15,19 +15,12 @@ import {DetalleVoucher} from "../Modulos/DetalleVoucher";
 import {ProductserviceService} from "../../Service/productservice.service";
 import {Productos, Stock} from "../Modulos/Productos";
 import {  Sort_Prod, V_Producto} from "../Modulos/GANANCIAS";
-import {Stock_productos} from "../Modulos/stock_productos";
-import {ChartType} from "ng-chartist";
-import {BubbleChartModule} from "@swimlane/ngx-charts";
 import * as Chart from "chart.js";
 import {
-    Perdidas_este_mes,
     Reporte_grafico,
     Venta_mes_atras,
     Venta_por_mes,
-    Ventas_mes_ganancias_fv
 } from "../Modulos/reporte_grafico";
-import {error} from "selenium-webdriver";
-import ElementNotSelectableError = error.ElementNotSelectableError;
 
 
 @Component({
@@ -104,7 +97,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
             const producto = registro;
             matriz[JSON.stringify( producto )] = matriz[JSON.stringify( producto )] ? (matriz[JSON.stringify( producto )] + 1) : 1;
         } );
-        console.log( matriz );
         matriz = Object.keys( matriz ).map( (producto) => {
 
             return {
@@ -381,8 +373,7 @@ if (!res) {
             if (!res) {
                 for (const d of res) {
                     for (const h of Object.keys( d )) {
-                        dg2.push( [h] )
-                        console.log( "dg2", dg2 )
+                        dg2.push( [h] );
                     }
                     for (const l of Object.values( d )) {
                         vg2.push( parseInt( l.toString() ) );

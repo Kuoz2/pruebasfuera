@@ -13,7 +13,7 @@
 </div>
 -->
 <ng-template #content2 let-modal2>
-    <form action="" [formGroup]="app_venta">
+    <form action="" [formGroup]="app_venta" (ngSubmit)="guardarVentaApp()">
 
     <div class="modal-header">
         <h5 class="modal-title f-w-600" id="exampleModalLabel2">Formato de pago</h5>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" (click)="guardarVentaApp()" >Guardar</button>
+                <button type="submit" class="btn btn-primary"  >Guardar</button>
                 <button class="btn btn-secondary" type="button" data-dismiss="modal"
                         (click)="cancelar_venta()">Cancelar</button>
             </div>
