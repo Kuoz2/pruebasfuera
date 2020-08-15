@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UsuarioService} from "../../../Service/usuario.service";
-import {Router} from "@angular/router";
-import {Productos} from "../../Modulos/Productos";
-import { user} from "../../Modulos/User";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-create-user',
@@ -70,9 +66,7 @@ this.userform = CreateUserComponent.CreateFormUserGroup()
 
   createnuevousuario(userform):void {
 
-
-                   console.log('formularioregistro',userform.value)
-     this.userservi.guardarusuario(userform.value);
+    this.userservi.guardarusuario(userform.value);
   }
 
 }

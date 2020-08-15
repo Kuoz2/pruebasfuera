@@ -1,17 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 import {JwtResponse} from "../components/Modulos/jwt-response";
 import {tap} from "rxjs/operators";
-import {Observable, BehaviorSubject} from "rxjs";
-import {HttpInterceptor} from "@angular/common/http";
+import {BehaviorSubject, Observable} from "rxjs";
 import {user} from "../components/Modulos/User";
-import {CanActivate} from "@angular/router";
-import {Local} from "protractor/built/driverProviders";
+import "rxjs-compat/add/operator/map";
+
 @Injectable({
   providedIn: 'root'
 })
 export class AutentificacionService {
-
+    public data: boolean;
   constructor(private http: HttpClient) { }
   AUT_SERVER: string = 'https://marketmini.herokuapp.com/';
   authSubject =  new BehaviorSubject(false);
@@ -19,11 +18,9 @@ export class AutentificacionService {
   private token_Role: string;
 
   login(user: user): Observable<JwtResponse>{
-       return this.http.post<JwtResponse>(`${this.AUT_SERVER
-    }logi`,user).pipe(
+       return this.http.post<JwtResponse>(`${this.AUT_SERVER}logi`,user).pipe(
 
         tap((res: JwtResponse) =>{
-          console.log('res',res)
           if (!res.jti ) {
           }else {
             this.saveToken(res.jti);
@@ -67,6 +64,10 @@ export class AutentificacionService {
       this.token = localStorage.getItem("ACCESS_TOKEN")
     }
     return this.token
+  }
+
+  public mostrar_users():Observable<Array<object>>{
+      return this.http.get<Array<object>>(`${'https://marketmini.herokuapp.com/'}mostrar_usuarios`)
   }
 
 }

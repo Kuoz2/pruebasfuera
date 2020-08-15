@@ -11,19 +11,19 @@
                         <ngb-tab title="Formulario de ingreso">
                             <ng-template ngbTabContent>
                                 <div class="tab-pane fade active show" id="account" role="tabpanel" aria-labelledby="account-tab">
-                                    <form [formGroup]="userform" (ngSubmit)="createnuevousuario(userform)"
+                                    <form [formGroup]="userform" (Submit)="createnuevousuario(userform)"
                                         class="needs-validation user-add" novalidate="">
                                         <div formGroupName="user">
                                         <h4>Formulario de registro</h4>
                                         <div class="form-group row">
-                                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Rut</label>
+                                            <label for="validationCustom1" class="col-xl-3 col-md-4"> Rut</label>
                                             <input class="form-control col-xl-8 col-md-7" formControlName="rut_user" name="rut_user" id="validationCustom123"
                                                    type="text" required="">
                                         </div>
                                         <div class="form-group row">
                                             <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span>
                                                 Nombre</label>
-                                            <input class="form-control col-xl-8 col-md-7" formControlName="name_user" id="validationCustom0"
+                                            <input class="form-control col-xl-8 col-md-7" formControlName="email" id="validationCustom0"
                                                 type="text" required="">
                                         </div>
                                         <div class="form-group row">

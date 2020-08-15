@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Productos} from "../components/Modulos/Productos";
-import {Observable} from "rxjs";
-import {Marca} from "../components/Modulos/Marca";
 import {user} from "../components/Modulos/User";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,9 +17,11 @@ console.log('servisuer',user )
    return  this.http.post<user>(this.URlusuario,user ).subscribe(data => console.error('error',data));
 }
 
-mostrarousuarios(){
- 
+guardaradmin(admin){
+     return this.http.post(this.URlusuario,admin).subscribe(data => console.error('error', data));
  }
+
+
 
 }
 

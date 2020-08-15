@@ -1,7 +1,9 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {AutentificacionService} from "../../../Service/autentificacion.service";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {UsuarioService} from "../../../Service/usuario.service";
 
 
 @Component({
@@ -9,31 +11,68 @@ import {AutentificacionService} from "../../../Service/autentificacion.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, AfterViewInit {
-  @ViewChild('container') container: ElementRef;
-  ngAfterViewInit(): void {
-    this.container.nativeElement.addEventListener('scroll', (evt: any) => {
-      console.log('scroll', evt)
-    }, {passive: true})
-  }
+export class LoginComponent implements OnInit {
+
+  public closeResult: string;
+  public usuarios: boolean;
 
   ngForm: FormGroup;
   static CreateLoginFormGroup(){
     return new FormGroup({
       user: new FormGroup({
-          email: new FormControl(''),
-          password: new FormControl('')
+        rut_user: new FormControl(''),
+        email: new FormControl(''),
+          password: new FormControl(''),
+          rol:new FormControl('')
+
       })
     });
 
   }
+
+
   new_admin: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private autentificacion: AutentificacionService, private router: Router) {
-        this.ngForm = LoginComponent.CreateLoginFormGroup()
+  static  CreateAdmin(){
+    return new FormGroup({
+      user: new FormGroup({
+        email: new FormControl('',[Validators.required]),
+        rut_user: new FormControl('',[Validators.required]),
+        password: new FormControl(''),
+          role:new FormControl('',[Validators.required])
+      })
+    })
+  }
+
+  public guardarnuevoadmin(admin){
+   admin.value.user.password = admin.value.user.rut_user.slice(0,10).split(".").join("")
+      admin.value.user.role = 'administrador';
+        this.serviadmin.guardaradmin(admin.value)
+  }
+
+  constructor(private formBuilder: FormBuilder,
+              private autentificacion: AutentificacionService,
+              private router: Router, private modalService: NgbModal,
+              private serviadmin: UsuarioService
+  ) {
+        this.ngForm = LoginComponent.CreateLoginFormGroup();
+        this.new_admin = LoginComponent.CreateAdmin()
+
   }
   ngOnInit() {
+    this.loqumu()
+  }
 
+
+ async loqumu(){
+    this.autentificacion.mostrar_users().map(res => res).forEach((x) => {
+      let infor:string;
+      let destranform:boolean
+      infor = JSON.stringify(x)
+      destranform = JSON.parse(infor)
+      this.usuarios = destranform
+        console.log("retorna", this.usuarios)
+    })
   }
 
   get email(){return this.ngForm.get('email')}
@@ -52,9 +91,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     });
   }
-  navigate() {
-    this.router.navigateByUrl('/dashboard/default');
-  }
+
 //En esta parte se colocan los titulos que saldran en el ninicio de sesion con la informacion.
   owlcarousel = [
     {
@@ -69,7 +106,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       title: "El servicio",
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     }
-  ]
+  ];
 
 
 
@@ -83,8 +120,23 @@ export class LoginComponent implements OnInit, AfterViewInit {
   cancelar_venta() {
 
   }
+  open(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 
-  guardarAdmin() {
 
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

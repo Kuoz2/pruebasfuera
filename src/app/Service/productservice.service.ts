@@ -1,6 +1,6 @@
-import {Injectable, Provider} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject, Observable, pipe} from "rxjs";
+import {Observable} from "rxjs";
 import {Productos, Stock} from "../components/Modulos/Productos";
 import {Marca} from "../components/Modulos/Marca";
 import {Categories} from "../components/Modulos/Categories";
@@ -21,7 +21,7 @@ private URLStock = 'https://marketmini.herokuapp.com/stocks';
 private URLStockPerdida = 'https://marketmini.herokuapp.com/stocks/mostrar_stock_de_perdidas';
 private URLStockPerdidaAnterior = 'https://marketmini.herokuapp.com/stocks/p_mes_anterior';
 private URL_STOCK_PRODUCTOS = 'https://marketmini.herokuapp.com/stocks/stock_products';
-private URL_STOCK_PERDIDA = 'https://marketmini.herokuapp.com/mostrar_stock_de_perdidas';
+private URL_STOCK_PERDIDA = 'https://marketmini.herokuapp.com/stocks/mostrar_stock_de_perdidas';
 private URL_STCK_GRF_PERDIDAS = 'https://marketmini.herokuapp.com/stocks/buscar_las_fechas_perdidas';
 private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
 //Variables publicas

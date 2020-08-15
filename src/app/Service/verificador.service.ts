@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AutentificacionService} from "./autentificacion.service";
-import { CanActivate, Router} from "@angular/router";
+import {CanActivate, Router} from "@angular/router";
 
 
 @Injectable({
@@ -16,7 +16,7 @@ export class VerificadorService implements CanActivate{
                     case 'administrador':
                         return true;
 
-                    case "Vendedor":
+                    case "vendedor":
                         this.route.navigateByUrl('/create-voucher')
                     break;
                     case null:
