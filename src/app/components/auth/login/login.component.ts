@@ -67,11 +67,10 @@ export class LoginComponent implements OnInit {
  async loqumu(){
     this.autentificacion.mostrar_users().map(res => res).forEach((x) => {
       let infor:string;
-      let destranform:boolean
-      infor = JSON.stringify(x)
-      destranform = JSON.parse(infor)
-      this.usuarios = destranform
-        console.log("retorna", this.usuarios)
+      let destranform:boolean;
+      infor = JSON.stringify(x);
+      destranform = JSON.parse(infor);
+      this.usuarios = destranform;
     })
   }
 
