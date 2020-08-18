@@ -94,16 +94,16 @@ export class LoginComponent implements OnInit {
 //En esta parte se colocan los titulos que saldran en el ninicio de sesion con la informacion.
   owlcarousel = [
     {
-      title: "Bienvenido a MiMinimarket",
-      desc: "Lorema Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
+      title: "Bienvenido a Paltanes",
+      desc: "El sistema actualmente se encuentra en un BETA.",
     },
     {
       title: "Que es PaltAnes",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
+      desc: "PaltAnes es un sistema de control de ventas para pymes de retails. Donde podra encontrar graficos de medicion de sus ventas perdidas etc.",
     },
     {
       title: "El servicio",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
+      desc: "El servicio es de un cobro mensual donde cliente, puede solicitar cambios en la pagina. Ej: nuevos modulos, mas graficos, cambio de apariencia, etc.",
     }
   ];
 

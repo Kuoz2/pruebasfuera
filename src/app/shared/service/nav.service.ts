@@ -1,7 +1,7 @@
-import { Injectable, HostListener, Inject } from '@angular/core';
-import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
-import { WINDOW } from "./windows.service";
-import {VerificadorService} from "../../Service/verificador.service";
+import {HostListener, Inject, Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
+import {WINDOW} from "./windows.service";
+
 // Menu
 export interface Menu {
 	path?: string;
@@ -62,12 +62,7 @@ export class NavService {
 				{path:'/pages/app-pago', title:'App de pago', type:'link'}
 			]
 		},
-		{
-			title: 'Usuario', icon: 'user-plus', type: 'sub', active: false, children: [
-				{ path: '/users/list-user', title: 'User List', type: 'link' },
-				{ path: '/users/create-user', title: 'Create User', type: 'link' },
-			]
-		},
+
 		{
 			title: 'Reportes', path: '/reports', icon: 'bar-chart', type: 'link', active: false
 		},
