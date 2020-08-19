@@ -63,9 +63,7 @@ export class NavService {
 			]
 		},
 
-		{
-			title: 'Reportes', path: '/reports', icon: 'bar-chart', type: 'link', active: false
-		},
+
 		{
 			title: 'Inicio',path: '/auth/login', icon: 'log-in', type: 'link', active: false
 		}

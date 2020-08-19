@@ -61,8 +61,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
+            <state relative-caret-position="331">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -469,14 +472,7 @@
       <workItem from="1597596025648" duration="27240000" />
       <workItem from="1597689676773" duration="1792000" />
       <workItem from="1597770632829" duration="12005000" />
-      <workItem from="1597840412618" duration="2980000" />
-    </task>
-    <task id="LOCAL-00033" summary="cambiando ng a npm">
-      <created>1591130274205</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1591130274205</updated>
+      <workItem from="1597840412618" duration="3968000" />
     </task>
     <task id="LOCAL-00034" summary="re instalando npm">
       <created>1591133546588</created>
@@ -814,11 +810,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597844333357</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="realizando el buildproduct">
+      <created>1597855478460</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1597855478460</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1259317000" />
+    <option name="totallyTimeSpent" value="1260305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -830,7 +833,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22654584" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1340,8 +1344,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
+        <state relative-caret-position="331">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
