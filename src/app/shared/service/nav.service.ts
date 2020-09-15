@@ -56,8 +56,8 @@ export class NavService {
 
 		{
 			title: 'Pagos', icon: 'clipboard', type: 'sub', active: false, children: [
-				{path: '/pages/create-Pago', title: 'Crear Pago', type: 'link'},
-				{path: '/pages/lista-Pago', title: 'Lista Pagos', type: 'link'},
+				{path: '/pages/create-pago', title: 'Crear Pago', type: 'link'},
+				{path: '/pages/lista-pago', title: 'Lista Pagos', type: 'link'},
 				{path: '/pages/medio-pago', title: 'Medio de pago', type: 'link'},
 				{path:'/pages/app-pago', title:'App de pago', type:'link'}
 			]

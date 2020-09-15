@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="realizando el buildproduct">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -58,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="600">
               <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="e#0#63#0" expanded="true" />
@@ -80,27 +79,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/auth/login/login.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="123" selection-start-line="28" selection-start-column="123" selection-end-line="28" selection-end-column="123" />
-              <folding>
-                <element signature="e#312#319#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -140,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.ts" />
@@ -191,6 +168,7 @@
         <option value="$PROJECT_DIR$/src/app/components/auth/login/login.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" />
         <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/dist/multikart-admin/index.html" />
       </list>
     </option>
   </component>
@@ -225,6 +203,11 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -232,6 +215,13 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -246,7 +236,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,14 +463,7 @@
       <workItem from="1597689676773" duration="1792000" />
       <workItem from="1597770632829" duration="12005000" />
       <workItem from="1597840412618" duration="5172000" />
-      <workItem from="1600199071771" duration="544000" />
-    </task>
-    <task id="LOCAL-00035" summary="npm funciona correctamente ahr solo queda heroku">
-      <created>1591139906167</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1591139906167</updated>
+      <workItem from="1600199071771" duration="4162000" />
     </task>
     <task id="LOCAL-00036" summary="esto resultara">
       <created>1591140661162</created>
@@ -818,11 +801,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597856834569</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="realizando el buildproduct">
+      <created>1600199811801</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1600199811802</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1262053000" />
+    <option name="totallyTimeSpent" value="1265671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,8 +825,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22867803" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22867803" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -854,7 +845,7 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49520257" visible="true" weight="0.29252437" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49520257" weight="0.43770313" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50479746" side_tool="true" weight="0.9534128" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -973,13 +964,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/common/http/http.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="2449" column="25" selection-start-line="2449" selection-start-column="25" selection-end-line="2449" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1177,13 +1161,6 @@
     <entry file="file://$PROJECT_DIR$/dist/multikart-admin/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/multikart-admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1311,13 +1288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/auth/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1328,12 +1298,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="391">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/multikart-admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/layout/content-layout/content-layout.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1345,10 +1335,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="600">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
