@@ -1,12 +1,11 @@
-import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ListPageComponent } from './list-page/list-page.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ListPageComponent} from './list-page/list-page.component';
 import {VoucherCreateComponent} from "./voucher-create/voucher-create.component";
-import {HacerpagoComponent} from "./hacerpago/hacerpago.component";
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
-import {AppsaleComponent} from "./appsale/appsale.component";
 import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
+import {VerificadorService} from "../../Service/verificador.service";
 
 
 const routes: Routes = [
@@ -28,7 +27,8 @@ const routes: Routes = [
         data: {
           title: "Medio de pago",
           breadcrumb: "Formas de pago"
-        }
+        },
+        canActivate: [VerificadorService],
       },
 
 
@@ -49,8 +49,8 @@ const routes: Routes = [
         },
       },
       {
-        path: 'crear-pago',
-        component: HacerpagoComponent,
+        path: 'create-voucher',
+        component: VoucherCreateComponent,
         data:{
           title: "Crear pago",
           breadcrumb: "Crear pago"

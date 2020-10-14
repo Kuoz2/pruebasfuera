@@ -1,12 +1,10 @@
-import { Stock} from "./Productos";
+import {Stock} from "./Productos";
 import {Categories} from "./Categories";
-import {Marca} from "./Marca";
 
 export class Item {
     pvactivacioncatalogo: boolean;
     pactivado: boolean;
     category_id: Categories[];
-    brand_id: Marca[];
     ppictures: any;
     id: number;
     pdescripcion: string;

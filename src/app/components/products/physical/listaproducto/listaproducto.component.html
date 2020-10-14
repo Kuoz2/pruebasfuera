@@ -90,10 +90,10 @@
                             <div class="container ">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3>Editar Producto</h3>
+                                        <h3>Inventario sin stock</h3>
                                     </div>
                                     <div class="card-body">
-                                        <table class="table table-hover">
+                                        <table class="table table-hover" id="table3">
                                             <thead>
                                             <tr class="text-center">
                                                 <th>
@@ -104,14 +104,16 @@
                                                 </th>
                                                 <th>Precio</th>
                                                 <th>Stock</th>
+                                                <th>Estado</th>
                                             </tr>
                                             </thead>
-                                            <tbody>
-                                            <tr *ngFor="let category of (listproductos |async ) | paginate: {itemsPerPage:3, currentPage:d} " class="text-center">
-                                                <td>{{category.pcodigo  }}</td>
-                                                <td>{{category.pdescripcion }}</td>
-                                                <td>{{category.pvalor}}</td>
-                                                <td>{{category.stock.pstock}}</td>
+                                            <tbody id="tbody3">
+                                            <tr *ngFor="let category of (invpeligro | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index  " class="text-center" id="tr3">
+                                                <td id="td111">{{category.pcodigo  }}</td>
+                                                <td id="td222">{{category.pdescripcion }}</td>
+                                                <td id="td333">{{category.pvalor}}</td>
+                                                <td id="td444">{{category.stock.pstock}}</td>
+                                                <td [attr.id]="'peligro' + i + j "  >{{cambiarColorSinStock(category.stock.pstock,i, j)}}</td>
                                                 <td>
                                                     <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
                                                     <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
@@ -119,36 +121,7 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <pagination-controls (pageChange)="d = $event"></pagination-controls>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="table-responsive">
-                            <div class="container ">
-                                <div class="card">
-                                    <div class="card-header">
-
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-hover">
-                                            <thead>
-                                            <tr class="text-center">
-                                                <th>
-                                                  Detalle del producto
-                                                </th>
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr *ngFor="let category of (listproductos | async)  | paginate: {itemsPerPage:1, currentPage:d} " class="text-center">
-                                                <td>{{category.pdetalle  }}</td>
-
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                        <pagination-controls (pageChange)="j = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination3"></pagination-controls>
 
                                     </div>
                                 </div>
@@ -156,6 +129,94 @@
 
                         </div>
                     </div>
+                    <div class="table-responsive">
+                        <div class="container ">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>Inventario en gestión</h3>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-hover" id="table2">
+                                        <thead>
+                                        <tr class="text-center">
+                                            <th>
+                                                Codigo del producto
+                                            </th>
+                                            <th>
+                                                Nombre descriptivo
+                                            </th>
+                                            <th>Precio</th>
+                                            <th>Stock</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tbody2">
+                                        <tr *ngFor="let category of (invpeligro | async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
+                                            <td id="td11">{{category.pcodigo  }}</td>
+                                            <td id="td22">{{category.pdescripcion }}</td>
+                                            <td id="td33">{{category.pvalor}}</td>
+                                            <td id="td44">{{category.stock.pstock}}</td>
+                                            <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(category.stock.pstock,i, d)}}</td>
+                                            <td>
+                                                <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
+                                                <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <pagination-controls (pageChange)="d = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination2"></pagination-controls>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Inventario sano</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-hover" id="table1">
+                                            <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                    Codigo del producto
+                                                </th>
+                                                <th>
+                                                    Nombre descriptivo
+                                                </th>
+                                                <th>Precio</th>
+                                                <th>Stock</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tbody1">
+                                            <tr *ngFor="let category of (listproductos |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index " class="text-center" id="tr1">
+                                                <ng-container *ngIf="category.stock.pstock > 10">
+                                                <td id="td1">{{category.pcodigo  }}</td>
+                                                <td id="td2">{{category.pdescripcion }}</td>
+                                                <td id="td3">{{category.pvalor}}</td>
+                                                <td id="td4">{{category.stock.pstock}}</td>
+                                                <td [attr.id]="'estado' + i + h"  >{{cambiadColor(category.stock.pstock,i, h)}}</td>
+                                                <td>
+                                                    <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
+                                                    <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
+                                                </td>
+                                                </ng-container>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <pagination-controls (pageChange)="h = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination1"></pagination-controls>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
 
                         </div>
                     </div>

@@ -1,21 +1,21 @@
-import {Component, OnInit, Provider} from '@angular/core';
-import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProductserviceService} from "../../../../Service/productservice.service";
 import {Categories} from "../../../Modulos/Categories";
-import {Marca, MarcaPrueba} from "../../../Modulos/Marca";
-import {any} from "codelyzer/util/function";
-import {Productos} from "../../../Modulos/Productos";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs";
-import {MarcaService} from "../../../../Service/marca.service";
+import {Observable, Subject} from "rxjs";
 import {Provideer} from "../../../Modulos/Provideer";
+import {ImpuestosService} from "../../../../Service/impuestos.service";
+import {Impuestos} from "../../../Modulos/impuestos";
+import {takeUntil} from "rxjs/operators";
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.scss']
 })
-export class AddProductComponent implements OnInit {
-  public imagen: any;
+export class AddProductComponent implements OnInit, OnDestroy {
+    private unsubscribe$ = new Subject<void>();
+    public imagen: any;
   public counter: number = 1;
   public counter2: number = 1;
   public url = [{
@@ -24,14 +24,10 @@ export class AddProductComponent implements OnInit {
       ];
   public proveedor: Provideer[];
 categorias: Categories[];
-marca: Observable<Marca[]>;
-
-
-public prueba_marca:  MarcaPrueba[];
-
-
+public immp: Observable<Impuestos[]>;
 file:File;
     productForm: FormGroup;
+    prdiva;
 
   get pactivado(){return this.productForm.get('pactivado')}
   get pdescripcion() { return this.productForm.get('pdescripcion')};
@@ -41,18 +37,16 @@ file:File;
   get pstockcatalogo(){ return this.productForm.get('pstockcatalogo')};
   get pvalor(){ return this.productForm.get('pvalor')};
   get ppicture(){ return this.productForm.get('ppicture')};
-  get brand_id(){return this.productForm.get('marca')}
   get category_id(){ return this.productForm.get('categorias')}
   get pvactivacioncatalogo(){ return this.productForm.get('pvactivacioncatalogo')}
   get stock_lost(){return this.productForm.get('stock_lost')}
   get stock_security(){return this.productForm.get('stock_security')}
   get provider_id(){return this.productForm.get('provider_id')}
-
+  get tax_id(){return this.productForm.get('tax_id')}
 
   constructor(private servi: ProductserviceService,
               private formBuilder: FormBuilder,
-              private router: Router,
-              private servimarca: MarcaService
+              private impt: ImpuestosService
   ) {
 
 
@@ -66,54 +60,56 @@ file:File;
               provider_id: new FormControl('',[Validators.required]),
               precio_provider: new FormControl('',[Validators.required]),
               category_id: new FormControl ('', [Validators.required]),
-              brand_id: new FormControl('', [Validators.required]),
               pactivado: new FormControl(false),
-              stock_id: new FormGroup( {
+
+          stock_id: new FormGroup( {
                   pstock: new FormControl( '',[Validators.required] ),
                   pstockcatalogo: new FormControl( '' ),
                   stock_lost: new FormControl( '' ,[Validators.required]),
                   stock_security: new FormControl('',[Validators.required])
 
               }),
-
-
-
-
+              tax_id: [],
+              piva: new FormControl('',[])
       });
 
   }
 
   ngOnInit() {
      this.servi.categorias().subscribe(data => {this.categorias = data });
-      console.log(this.categorias);
-    console.log(this.marca);
-    console.log(this.imagen);
-      this.carga_marca_async()
+
+
+     //Buscar el impuesto
+      this.buscarimpuesto();
       //Busqueda de las marcas
-      this.servimarca.prueba().subscribe(res => this.prueba_marca = res)
       this.servi.__tomaproveedores().subscribe(res => {this.proveedor = res})
   }
 
+  async buscarimpuesto(){
+        this.immp = this.impt.obtneriIMP().pipe(takeUntil(this.unsubscribe$))
+  }
 
-  guardarproducto(){
+  guardarproducto():void{
       this.productForm.value.category_id = this.productForm.value.category_id.id;
-      this.productForm.value.brand_id = this.productForm.value.brand_id.id;
         this.productForm.value.ppicture = this.url[0].img;
         this.productForm.value.ppicture = btoa(this.productForm.value.ppicture);
-        this.productForm.value.provider_id = this.productForm.value.provider_id.id
-      console.log("Provider", this.productForm.value);
-      //this.servi.guardarproductos(this.productForm.value).subscribe(res =>{ console.log("guardado en el res ",res);   return res })
-      this.productForm.reset()
+        this.productForm.value.provider_id = this.productForm.value.provider_id.id;
+          //  this.servi.guardarproductos(this.productForm.value).subscribe(res =>{ console.log("guardado en el res ",res);   return res })
+            console.log("iva", this.productForm.value);
+           // this.productForm.reset()
+
+
 
   }
+
+
+
     cambio_category(evento){
 console.log(this.productForm.value.category_id.id)
   }
 
 
-  carga_marca_async(){
-      this.marca = this.servimarca.mostrarmarcas()
-  }
+
 
 resetiarform(){
     this.productForm.reset();
@@ -149,6 +145,11 @@ resetiarform(){
     decrement4() {
         this.counter2 -= 1;
     }
+    noseenvia(eve){
+      if(eve.keyCode == 13){
+      return     eve.returnValue== false
+      }
+    }
 
 
     //FileUpload
@@ -171,4 +172,33 @@ resetiarform(){
 
   }
 
+    ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+    }
+
+    calImp(imp,valor):number {
+
+        const n = parseInt(imp.value.timpuesto);
+        const n2 = parseInt(valor.value);
+        const multiva = (n * n2);
+        const resultiva:number = multiva / 100;
+        console.log("impuesto", resultiva);
+        this.prdiva = resultiva;
+        //@ts-ignore
+        return resultiva
+    }
+
+    datos(pvalor) {
+      if (pvalor.value != null){
+            //@ts-ignore
+          window.document.getElementById('tax_id').disabled = false;
+
+      } else {
+          // @ts-ignore
+          window.document.getElementById( 'tax_id' ).disabled = true;
+          // @ts-ignore
+          window.document.getElementById('tax_id').value = ''
+      }
+      }
 }

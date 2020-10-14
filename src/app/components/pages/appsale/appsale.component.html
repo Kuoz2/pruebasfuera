@@ -49,7 +49,7 @@
             </div>
             <label for="loseleccionadodelacompra" class="mb-1">Forma de pago :</label>
             <div class="input-group input-group-sm mb-3">
-                <select  formControlName="loseleccionadodelacompra" class="custom-select mr-sm-2"  name="loseleccionadelacompra" id="loseleccionadodelacompra" [value]="0">
+                <select  formControlName="loseleccionadodelacompra" class="custom-select mr-sm-2"  id="loseleccionadodelacompra" [value]="0">
                     <option [ngValue]="0"></option>
                     <option [ngValue]="i" *ngFor="let i  of selecciondecomra" [selected]="0">{{i.mpnombre}}</option>
                 </select>
@@ -95,9 +95,9 @@
 
         <div  class="input-group mb-3">
         <div  class="input-group-prepend">
-            <select name="semarca" id="semarca" (input)=_buscandoCategoria($event) class="form-control mr-sm-2 border border-primary  mdb-select md-form colorful-select dropdown-primary">
-                <option value="0"></option>
-                <option [ngValue]="i" *ngFor="let i of categorias" [selected]="categorias[i.id]">{{i.cnombre}}</option>
+            <select name="semarca" id="semarca"  (input)=_buscandoCategoria($event) class="form-control mr-sm-2 border border-primary  mdb-select md-form colorful-select dropdown-primary">
+                <option value="0" selected></option>
+                <option [ngValue]="i" *ngFor="let i of categorias" >{{i.cnombre}}</option>
             </select>
         </div>
         <input class="form-control mr-sm-2 border border-primary" type="search" placeholder="Buscar" aria-label="Search" size="10" (input) = _buscadorProducto($event)>

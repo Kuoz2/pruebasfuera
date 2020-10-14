@@ -1,18 +1,14 @@
-import {Component, Input, OnInit, OnDestroy, Output, ViewChild, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {Productos} from "../../Modulos/Productos";
 import {ProductserviceService} from "../../../Service/productservice.service";
 import {VoucherService} from "../../../Service/voucher.service";
 import {Voucher} from "../../Modulos/Voucher";
 import {Medio} from "../../Modulos/Medio";
 import {PagosService} from "../../../Service/pagos.service";
-import {VentasService} from "../../../Service/ventas.service";
-import {Ventas} from "../../Modulos/Ventas";
-import {Observable, Subject} from "rxjs";
+import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {AutentificacionService} from "../../../Service/autentificacion.service";
 import {Router} from "@angular/router";
-import {FormGroup} from "@angular/forms";
-import {TicketComponent} from "../ticket/ticket/ticket.component";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -23,7 +19,7 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
 
   private unsubscribe$ = new Subject<void>();
-
+  public pcventas: Productos[]
   filtrovoucher: number;
   productos: Productos[];
  agregadoalalista = [];
@@ -31,7 +27,8 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
    @Input() efectivoapgar: number;
     @Input() devolver: number;
   @Input()loseleccionadodelacompra= Medio;
-  eltotal: number;
+
+    eltotal: number;
   busquedavoucher = [];
   voucher = new Voucher();
   fecha = new Date();
@@ -76,8 +73,13 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
 }
 
   loelejidoes(d){
-    console.log("formadepago",d);
-    console.log('formadepagar',this.loseleccionadodelacompra)
+        var metodo = Object.values(d)[1]
+      console.log("da", metodo)
+        if (metodo == 'efectivo' && this.loseleccionadodelacompra != null && typeof(metodo) != 'undefined') {
+            window.document.getElementById( 'elefectivo' ).hidden = false
+        }else{
+            window.document.getElementById('elefectivo').hidden = true
+        }
   }
 
     cerrarsession(){
@@ -85,22 +87,64 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
         location.reload()
     }
 
-  agregarproductos( product, content3) {
-
+  agregarproductos( product: Productos[], content3) {
       // impedir numero repetidos
-    const indicadordeproductos = this.agregar_producto_lista.indexOf( product )
-          if (this.agregar_producto_lista.indexOf(product) > -1){
-              alert("este producto ya esta agregado")
-          }else {
-              this.agregar_producto_lista.push(product)
-              this.modalService.open(content3, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-                  this.closeResult = `Closed with: ${result}`;
-              }, (reason) => {
-                  this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-              });
+        /*let elemento= {cantidad:1};
+      console.log("productos", product)
+      for (const pr of product){
+          console.log("pr", pr)
+            if (pr.cantidad >= elemento.cantidad){
+                if (this.agregadoalalista){
+                    let ObjecIndex = this.agregadoalalista.findIndex((obj => obj.id == pr.id))
+                    if (ObjecIndex != -1){
+                        this.modalService.open( content3, {ariaLabelledBy: 'modal-basic-title'} ).result.then( (result) => {
+                            this.closeResult = `Closed with: ${result}`;
+                        }, (reason) => {
+                            this.closeResult = `Dismissed ${this.getDismissReason( reason )}`;
+                        } );
+                    }else{
+                        this.agregadoalalista = [];
+                        this.agregadoalalista.push(pr)
+                    }
+                }
+            } else{
+                if (this.agregadoalalista){
+                    let ObjecIndex = this.agregadoalalista.findIndex((obj => obj.id == pr.id))
+                    if (ObjecIndex != -1){
+                        Object.assign(pr, elemento)
+                            //this.pcventas[ObjecIndex].vpcventa += 1
+                        this.modalService.open( content3, {ariaLabelledBy: 'modal-basic-title'} ).result.then( (result) => {
+                            this.closeResult = `Closed with: ${result}`;
+                        }, (reason) => {
+                            this.closeResult = `Dismissed ${this.getDismissReason( reason )}`;
+                        } );
+                    }else{
+                        this.agregadoalalista.push(pr)
+                    }
+                }else{
+                    Object.assign(pr, elemento)
 
-              this.filtrovoucher = null;
-          }
+                    this.agregadoalalista = [];
+                    this.agregadoalalista.push(pr)
+                }
+            }*/
+        for (const l of product) {
+            let ObjecIndex = this.agregadoalalista.findIndex((obj => obj.id == l.id))
+            if (ObjecIndex != -1) {
+                alert( "este producto ya esta agregado" )
+
+            } else {
+                this.agregar_producto_lista.push( l )
+                this.modalService.open( content3, {ariaLabelledBy: 'modal-basic-title'} ).result.then( (result) => {
+                    this.closeResult = `Closed with: ${result}`;
+                }, (reason) => {
+                    this.closeResult = `Dismissed ${this.getDismissReason( reason )}`;
+                } );
+
+                this.filtrovoucher = null;
+
+            }
+        }
 
       // tslint:disable-next-line:no-unused-expression
      /* this.agregadoalalista.push(product);
@@ -131,24 +175,26 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
   }
 
   devolucion(d){
-    const lo =  d - this.eltotal;
+        console.log("cancela",this.total())
+    const lo =  d - this.total();
     return this.devolver = lo;
   }
 
 
    total() {
-    let total = 0;
-    for (const a of this.agregadoalalista) {
-      total += a.pvalor;
-    }
-    return total;
+       let total = 0;
+       for (const a of this.agregadoalalista) {
+           total += (a.pvalor * a.cantidad);
+       }
+       return total;
   }
 
-    agregarcantidad(cantidad_requerido: any){
+    async agregarcantidad(cantidad_requerido: any){
             const pruebaaaa = []
         pruebaaaa.push(this.agregar_producto_lista.pop())
 
         for (const i of pruebaaaa){
+            console.log("lo almacenado",i);
             i.cantidad = cantidad_requerido;
             this.agregadoalalista.push(i)
         }
@@ -157,5 +203,11 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
         const nuwvo = this.agregadoalalista;
         console.log( 'subida', nuwvo );
         this.calculartotal( nuwvo );
+    }
+
+    nosenvia($event) {
+        if ($event.keyCode == 13){
+            return $event.returnValue = false;
+        }
     }
 }

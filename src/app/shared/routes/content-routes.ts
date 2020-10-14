@@ -1,11 +1,14 @@
 import {Routes} from '@angular/router';
+import {VerificadorService} from "../../Service/verificador.service";
 
 
 export const
     content: Routes = [
+
   {
     path: 'dashboard',
     loadChildren: () => import('../../components/dashboard/dashboard.module').then(m => m.DashboardModule),
+    canActivate: [VerificadorService],
 
   },
   {
@@ -21,7 +24,8 @@ export const
     loadChildren: () => import('../../components/pages/pages.module').then(m => m.PagesModule),
     data: {
       breadcrumb: "Pagos"
-    }
+    },
+
   },
   {
     path: 'auth',
@@ -34,11 +38,18 @@ export const
   {
     path: 'users',
     loadChildren: () => import('../../components/users/users.module').then(m => m.UsersModule),
+    canActivate: [VerificadorService],
     data: {
       breadcrumb: "Usuario"
     }
   },
-
+  {
+   path:'merma',
+   loadChildren: () => import('../../components/merma/merma.module').then(m => m.MermaModule),
+   data: {
+     breadcrumb: "Mermas"
+    }
+  },
   {
     path: 'reports',
     loadChildren: () => import('../../components/reports/reports.module').then(m => m.ReportsModule),

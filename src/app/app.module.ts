@@ -15,6 +15,8 @@ import {SettingModule} from './components/setting/setting.module';
 import {ReportsModule} from './components/reports/reports.module';
 import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {Ng2Rut} from "ng2-rut";
+import {MermaModule} from "./components/merma/merma.module";
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     UsersModule,
     ReactiveFormsModule,
       HttpClientModule,
+      Ng2Rut,
+      MermaModule
 
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],

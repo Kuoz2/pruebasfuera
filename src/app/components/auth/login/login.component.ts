@@ -80,7 +80,8 @@ export class LoginComponent implements OnInit {
   onLogin(form):void {
     this.autentificacion.login(form.value).subscribe(res =>{
       if(res.jti !== null){
-        this.router.navigateByUrl('/dashboard/default')
+
+        this.router.navigateByUrl('')
 
       }else{
         alert("Contraseña o email invalidos")

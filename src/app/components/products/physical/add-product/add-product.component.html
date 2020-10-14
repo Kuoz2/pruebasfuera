@@ -21,7 +21,7 @@
 
                                     <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                         <ul class="file-upload-product">
-                                            <form  [formGroup]="productForm">
+                                            <form  [formGroup]="productForm" (keypress)="noseenvia($event)">
                                             <li *ngFor="let item of url; let i=index">
                                                 <div class="box-input-file">
                                                     <input class="upload" type="file" formControlName="ppicture" (change)="readUrl($event,i)">
@@ -36,11 +36,22 @@
                             </div>
                         </div>
                         <div class="col-xl-7">
-                            <form class="needs-validation" [formGroup]="productForm" (ngSubmit)="guardarproducto()" novalidate>
+                            <form class="needs-validation" [formGroup]="productForm" (ngSubmit)="guardarproducto()" novalidate (keypress)="noseenvia($event)">
                                 <div class="add-product-form" >
                                     <div class="form-group row">
-                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Nombre descriptivo
-                                            :</label>
+                                        <label for="validationCustom2121" class="col-xl-3 col-sm-4 mb-0">Proveedor:</label>
+                                        <select id="validationCustom2121" class="form-control digits col-xl-8 col-sm-7" formControlName="provider_id">
+                                            <option [ngValue]="p" *ngFor="let p of proveedor" [selected]="proveedor[p.nombre_provider]">{{p.nombre_provider}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom023" class="col-xl-3 col-sm-4 mb-0">Precio del proveedor:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom023"
+                                               type="number" formControlName="precio_provider" required="" autocomplete="off">
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Nombre descriptivo:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="validationCustom01"
                                             type="text" formControlName = "pdescripcion" required>
                                         <div *ngIf="pdescripcion.touched && pdescripcion.errors?.required"
@@ -49,29 +60,25 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Precio :</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom02"
-                                            type="number" formControlName="pvalor" required="">
+                                        <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Precio administrativo:</label>
+                                        <input class="form-control col-xl-4 col-sm-7" id="validationCustom02"
+                                            type="number" formControlName="pvalor" (change)="datos(pvalor)" autocomplete="off" required>
+                                        <select class="form-control col-xl-4 col-sm-7" formControlName="tax_id" id="tax_id"  (change)="calImp(tax_id, pvalor)" disabled>
+                                            <option value="" selected></option>
+                                            <option *ngFor="let im of (immp | async)" [ngValue]="im">{{im.tnombre}} </option>
+                                        </select>
+
                                         <div *ngIf="pvalor.touched && pvalor.errors?.required"
                                             class="text text-danger">
                                             Precio del producto es requerido
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="validationCustom2121" class="col-xl-3 col-sm-4 mb-0">Proveedor :</label>
-                                        <select id="validationCustom2121" class="form-control digits col-xl-8 col-sm-7" formControlName="provider_id">
-                                            <option [ngValue]="p" *ngFor="let p of proveedor" [selected]="proveedor[p.nombre_provider]">{{p.nombre_provider}}</option>
-                                        </select>
+                                        <label for="iva2" class="col-xl-3 col-sm-4 mb-0"> IVA:</label>
+                                        <input type="text" [(ngModel)]="prdiva" class="form-control col-xl-8 col-sm-7" id="iva2"  formControlName="piva" disabled >
                                     </div>
                                     <div class="form-group row">
-                                        <label for="validationCustom023" class="col-xl-3 col-sm-4 mb-0">Precio del proveedor :</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom023"
-                                               type="number" formControlName="precio_provider" required="">
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código del  producto
-                                            :</label>
+                                        <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código del  producto:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="validationCustom03"
                                             type="number" formControlName="pcodigo" required="">
                                         <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
@@ -84,19 +91,10 @@
                                             :</label>
                                         <select class="form-control digits col-xl-8 col-sm-7" formControlName="category_id" name="categorias"
                                             id="exampleFormControlSelect1" (change)="cambio_category($event)">
-
-                                            <option [ngValue]="i" *ngFor="let i of categorias" [selected]="categorias[i.id]">{{i.cnombre}}</option>
+                                            <option value="0" selected></option>
+                                            <option [ngValue]="i" *ngFor="let i of categorias" >{{i.cnombre}}</option>
                                         </select>
                                         </div>
-
-                                    <div class="form-group row">
-                                        <label  class="col-xl-3 col-sm-4 mb-0">Seleccione una marca
-                                            :</label>
-                                        <select class="form-control digits col-xl-8 col-sm-7" formControlName="brand_id" name="marca"
-                                                id="exampleFormControlSelect2">
-                                            <option [ngValue]="f" *ngFor="let f of (marca| async)" [selected]="marca[f.id]">{{f.bnombre}}</option>
-                                        </select>
-                                    </div>
                                     <div class="form-group row" formGroupName="stock_id">
                                         <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock :</label>
                                         <div class="qty-box1">

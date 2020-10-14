@@ -2,15 +2,33 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h5>User Details</h5>
+            <h5>Lista de usuarios</h5>
         </div>
         <div class="card-body">
             <div class="btn-popup pull-right">
-                <a class="btn btn-secondary" [routerLink]="'/users/create-user'">Create User</a>
             </div>
             <div id="batchDelete" class="category-table custom-datatable transcation-datatable user-image">
                 <div class="table-responsive">
-                    <ng2-smart-table [settings]="settings" [source]="user_list"></ng2-smart-table>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr class="text-center">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Nombre Usuario
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let usuario of (usuarios | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
+                            <td>{{usuario.user.id  }}</td>
+                            <td>{{usuario.user.name_user }}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event" previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 export interface JwtResponse {
-        id: number,
+        id: string,
         email: string,
         name_user: string,
         m_lastname: string,

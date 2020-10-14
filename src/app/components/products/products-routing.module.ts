@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { CategoryComponent } from './physical/category/category.component';
-import { SubCategoryComponent } from './physical/sub-category/sub-category.component';
-import { AddProductComponent } from './physical/add-product/add-product.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {CategoryComponent} from './physical/category/category.component';
+import {AddProductComponent} from './physical/add-product/add-product.component';
 
-import {MarcaComponent} from "./physical/marca/marca/marca.component";
 import {ListaproductoComponent} from "./physical/listaproducto/listaproducto.component";
 import {ProvideerComponent} from "./provideer/provideer.component";
+import {PromocionesComponent} from "./physical/promociones/promociones.component";
+import {ImpuestosComponent} from "./physical/impuestos/impuestos.component";
 
 const routes: Routes = [
   {
@@ -28,14 +28,12 @@ const routes: Routes = [
           breadcrumb: 'Agregar producto'
         }
       },
-
-
       {
-        path: 'physical/agregar-marca',
-        component: MarcaComponent,
+        path: 'physical/impuestos',
+        component: ImpuestosComponent,
         data:{
-          title: "Marca",
-          breadcrumb: "Marca"
+          title:'Agregar impuestos',
+          breadcrumb: 'Agregar impuestos'
         }
       },
       {
@@ -52,6 +50,14 @@ const routes: Routes = [
         data:{
           title:'Ingreso proveedor',
           breadcrumb:'Nuevo Proveedor'
+        }
+      },
+      {
+        path:'physical/promociones',
+        component: PromocionesComponent,
+        data:{
+          title:'Crear promociones',
+          breadcrumb:'Nuevas promociones'
         }
       }
     ]

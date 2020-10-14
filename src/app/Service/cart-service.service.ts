@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Item} from "../components/Modulos/Item";
-import {Productos} from "../components/Modulos/Productos";
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +14,10 @@ export class CartServiceService {
     //Obtener el valor actual
 
     let listCart = this.cart.getValue();
-    console.log("lo del carrito", listCart)
     //Si no es el primer item del carrito
     if(listCart){
       //Buscamos si ya cargamos ese item en el carrito
       let objIndex = listCart.findIndex((obj => obj.id == newData.id));
-      console.log("el item", listCart.findIndex((obj => obj.id == newData.id)))
     if(objIndex != -1){
       //Si ya cargamos uno aumentamos su cantidad
       listCart[objIndex].quantity += 1;
@@ -31,7 +28,6 @@ export class CartServiceService {
     else {
       //Si es el primer elemento se inicializa
       listCart = [];
-      console.log("listcart", listCart)
       listCart.push(newData);
 
     }

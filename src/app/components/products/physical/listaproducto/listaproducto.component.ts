@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductserviceService} from "../../../../Service/productservice.service";
 import {Productos, Stock} from "../../../Modulos/Productos";
-import {Categories} from "../../../Modulos/Categories";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {productos} from "../../../Modulos/GANANCIAS";
-import {stripComments} from "tslint/lib/utils";
+import {FormBuilder} from "@angular/forms";
 import {Observable} from "rxjs";
 
 @Component({
@@ -15,6 +12,8 @@ import {Observable} from "rxjs";
 })
 export class ListaproductoComponent implements OnInit {
     public closeResult: string;
+    public listproductosG: Observable<Productos[]>;
+    public invpeligro: Observable<Productos[]>;
     constructor(private prod: ProductserviceService,private modalService: NgbModal, private formBuilder: FormBuilder) { }
     listproductos: Observable<Productos[]> ;
     productoporid: Productos = new Productos();
@@ -22,23 +21,48 @@ export class ListaproductoComponent implements OnInit {
     ck = new Stock;
     stock_nuevo: number;
     stock_perdidas_nuevo: number;
-    d: any;
+    d: number = 0;
+    h:number = 0;
+    j: number = 0;
 
     ngOnInit() {
-
-    this.productosAsync()
+    this.productosAsync();
     }
 
+     cambiadColor(EsPr,i,id){
+         console.log("el intervalor", i, id );
+        if (EsPr > 10 || EsPr == 10){
+            var cambio = document.getElementById('estado' + i + id);
+             cambio.style.backgroundColor = '#B5FF33';
+        }
+     }
+
+     cambiarColorGestion(EsPr, i, id){
+         if (EsPr < 10 && EsPr != 0){
+             var cambio2 = document.getElementById('gestionar' + i + id);
+             cambio2.style.backgroundColor = '#F9FF33';
+         }
+     }
+
+     cambiarColorSinStock(EsPr, i, id){
+         if (EsPr == 0 ){
+             var cambio3 = document.getElementById('peligro' + i + id);
+             cambio3.style.backgroundColor = '#FA0000';
+         }
+     }
+
+
     productosAsync(){
-        this.listproductos = this.prod.products()
+        this.listproductos = this.prod.products();
+        this.listproductosG = this.prod.products();
+        this.invpeligro = this.prod.products()
     }
 
     editarproductos(producto: Productos){
         this.prod.actualizarproducto(producto).subscribe(data => { return data});
-
-
-
     }
+
+
 
     editarstock(stck: Stock, stnuevo, stlost){
         const edicion_producto = stck;

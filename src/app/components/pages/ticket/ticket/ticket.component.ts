@@ -1,12 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  OnDestroy,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  OnChanges
-} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit,} from '@angular/core';
 import {VoucherService} from "../../../../Service/voucher.service";
 import {DetalleVoucher} from "../../../Modulos/DetalleVoucher";
 import {Ventas} from "../../../Modulos/Ventas";
@@ -14,10 +6,9 @@ import {VentasService} from "../../../../Service/ventas.service";
 import {Medio} from "../../../Modulos/Medio";
 import {Voucher} from "../../../Modulos/Voucher";
 import {takeUntil} from "rxjs/operators";
-import {Observable, Subject} from "rxjs";
+import {Subject} from "rxjs";
 
-import {Form, FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {SimpleChanges} from "@angular/core";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {Productos} from "../../../Modulos/Productos";
 import {ProductserviceService} from "../../../../Service/productservice.service";
 
@@ -27,7 +18,7 @@ import {ProductserviceService} from "../../../../Service/productservice.service"
   styleUrls: ['./ticket.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TicketComponent implements OnInit, OnDestroy, OnChanges {
+export class TicketComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
 
 
@@ -43,25 +34,16 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   cancelar = new Ventas();
   ingresodeunvaucher = new DetalleVoucher();
   pasarelformulario = new DetalleVoucher();
-  productos_actualizado = new Productos()
+  productos_actualizado = new Productos();
   voucherult: Voucher;
 // Formulario para agregar el ticket
   ticketForm: FormGroup;
   //guardando denuevo los productos.
   guardar_productos_analisados = [];
 
-  fecha = new Date();
-  h = this.fecha.getHours();
-  m= this.fecha.getMinutes();
-  s = this.fecha.getSeconds();
-  hora: string = this.h+ ':'+ this.m +':'+this.s;
 
-  dia = this.fecha.getDay();
-  mes = this.fecha.getMonth();
-  anio = this.fecha.getFullYear();
 
   constructor(private form:FormBuilder, private vouchservicio: VoucherService, private vent: VentasService, private cd:ChangeDetectorRef, private prodi: ProductserviceService) {
-
 
     this.vouchservicio.ultimovoucher().pipe(
         takeUntil(this.unsubscribe$)
@@ -70,11 +52,38 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
   numerobuscado: number;
   diadehoy: string;
 
+  eldiadehoy(){
+    const  fecha = new Date();
+     var h = fecha.getHours();
+     var m= fecha.getMinutes();
+     var s = fecha.getSeconds();
+     const hora: string = h+ ':'+ m +':'+s;
+     let ap = (h < 12) ? "AM":"PM";
+        h = (h == 0) ? 12 : h;
+        h = (h > 12) ? h - 12 : h;
+        h = this.contadorhora(h);
+        m = this.contadorhora(m);
+        s = this.contadorhora(s);
+      const dia = fecha.getUTCDay();
+     const mes = fecha.getMonth();
+      const anio = fecha.getFullYear();
+      this.diadehoy = h +':'+m +':' +s + ap;
+      setInterval(() => {
+          this.eldiadehoy()
+      } , 500 );
+  }
+  contadorhora(i){
+      if (i < 10) {
+          i = "0" + i;
+      }
+      return i;
+  }
 
   ngOnInit() {
 
-    this.diadehoy = this.dia +'/'+this.mes +'/'+ this.anio;
-    this.vouchservicio.mostrarvoucher().pipe(takeUntil(this.unsubscribe$)).subscribe(busqueda => {
+
+      this.eldiadehoy();
+      this.vouchservicio.mostrarvoucher().pipe(takeUntil(this.unsubscribe$)).subscribe(busqueda => {
       this.busquedavoucher.push( busqueda);
       this.cd.markForCheck()
        });
@@ -85,9 +94,7 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
 
   }
 
-    ngOnChanges(changes: SimpleChanges): void {
-      console.log("cambios", changes)
-    }
+
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
@@ -116,10 +123,9 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
     this.ingresodeunvaucher.dvcantidad = this.cantidad_requerida;
     this.ingresodeunvaucher.voucher.vtotal = this.total();
     this.ingresodeunvaucher.voucher.vnumerodebusqueda = this.numerobuscado;
-
-    this.vouchservicio.ultimovoucher().subscribe(res => {
-     this.voucherult = res;
-    });
+    this.ingresodeunvaucher.voucher.vhora = this.diadehoy
+        console.log("voucher", this.ingresodeunvaucher)
+    this.vouchservicio.ultimovoucher().subscribe(res => {this.voucherult = res;    });
 
       console.log("Guardando tiketForm", tiketForm.value)
 
@@ -130,7 +136,7 @@ export class TicketComponent implements OnInit, OnDestroy, OnChanges {
                this.productos_actualizado= i;
         this.productos_actualizado.stock.pstock = i.stock.pstock -i.cantidad;
                     //se generea la boleta para realizar el pago
-       this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res});
+      this.vouchservicio.crearvoucher(this.ingresodeunvaucher).subscribe(res => {return res});
 
       //Actualizar el stock del producto
    this.prodi.actualizarstock(this.productos_actualizado.stock).subscribe()

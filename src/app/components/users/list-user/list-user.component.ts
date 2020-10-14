@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { userListDB } from 'src/app/shared/tables/list-users';
+import {Component, OnInit} from '@angular/core';
+import {AutentificacionService} from "../../../Service/autentificacion.service";
+import {Observable} from "rxjs";
+import {user} from "../../Modulos/User";
 
 @Component({
   selector: 'app-list-user',
@@ -7,37 +9,20 @@ import { userListDB } from 'src/app/shared/tables/list-users';
   styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
-  public user_list = []
-
-  constructor() {
-    this.user_list = userListDB.list_user;
+  public user_list = [];
+  public usuarios:Observable<user[]>;
+  constructor(private us: AutentificacionService) {
   }
 
-  public settings = {
-    columns: {
-      avatar: {
-        title: 'Avatar',
-        type: 'html'
-      },
-      fName: {
-        title: 'First Name',
-      },
-      lName: {
-        title: 'Last Name'
-      },
-      email: {
-        title: 'Email'
-      },
-      last_login: {
-        title: 'Last Login'
-      },
-      role: {
-        title: 'Role'
-      },
-    },
-  };
+  async buscaruser(){
+    this.usuarios = this.us.mostrarlosusers()
+  }
+
+
+  p: any;
 
   ngOnInit() {
+    this.buscaruser()
   }
 
 }

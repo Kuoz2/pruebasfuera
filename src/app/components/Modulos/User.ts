@@ -1,5 +1,5 @@
 
-export interface user{
+export class user{
 
 user: {
     id: number,

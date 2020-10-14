@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Pagos} from "../components/Modulos/Pagos";
 import {Observable} from "rxjs";
@@ -12,7 +12,7 @@ export class PagosService {
   constructor(private http: HttpClient) { }
 
 
-  Url = 'https://marketmini.herokuapp.com/payments';
+  Url = 'http://localhost:3000/payments';
     urlmedio = 'https://marketmini.herokuapp.com/half_payments';
 
   mostrarpagos(){

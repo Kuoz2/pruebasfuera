@@ -1,29 +1,34 @@
-<!--suppress ALL -->
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Marca del producto</h5>
+                    <h5>Impuestos</h5>
                 </div>
                 <div class="card-body">
                     <div class="btn-popup pull-right">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-original-title="test"
-                                data-target="#exampleModal" (click)="open(content)">Agregar marca</button>
+                                data-target="#exampleModal" (click)="open(content)">Agregar categoria</button>
                         <ng-template #content let-modal>
                             <div class="modal-header">
-                                <h5 class="modal-title f-w-600" id="exampleModalLabel">Agregar nueva marca</h5>
+                                <h5 class="modal-title f-w-600" id="exampleModalLabel">Agregar nuevo impuesto</h5>
                                 <button type="button" class="close" aria-label="Close"
                                         (click)="modal.dismiss('Cross click')">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form class="needs-validation" [formGroup]="marcasForm" (ngSubmit)="guardarmarca()">
+                                <form class="needs-validation" [formGroup]="impuestos" (ngSubmit)="guardarimpuesto(impuestos)">
                                     <div class="form">
                                         <div class="form-group">
-                                            <label for="validationCustom01" class="mb-1">Nombre de la marca :</label>
-                                            <input class="form-control" formControlName="bnombre" id="validationCustom01" type="text">
+                                            <label for="validationCustom01" class="mb-1">Nombre impuesto :</label>
+                                            <input class="form-control" formControlName="tnombre" id="validationCustom01" type="text" autocomplete="off" required>
+                                        </div>
+                                    </div>
+                                    <div class="form">
+                                        <div class="form-group">
+                                            <label for="validationCustom0122" class="mb-1">Porsentaje de impuesto:</label>
+                                            <input class="form-control" formControlName="timpuesto" id="validationCustom0122" type="text" required>
                                         </div>
 
                                     </div>
@@ -36,27 +41,28 @@
                             </div>
 
                         </ng-template>
+
                         <ng-template #content2 let-modal2>
                             <div class="modal-header">
-                                <h5 class="modal-title f-w-600" id="exampleModalLabeledit">Editar marca</h5>
+                                <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar impuesto</h5>
                                 <button type="button" class="close" aria-label="Close"
                                         (click)="modal2.dismiss('Cross click')">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                    <div class="form">
-                                        <div class="form-group">
-                                            <label for="validationCustom01" class="mb-1">Nombre de la marca :</label>
-                                            <input class="form-control" [(ngModel)]="marcangmo.bnombre" id="validationCustom01edit" type="text">
-                                        </div>
+                                <div class="form">
+                                    <div class="form-group">
+                                        <label for="validationCustom012" class="mb-1">Nombre del impuesto:</label>
+                                        <input class="form-control" [(ngModel)]="impuestoID.tnombre" id="validationCustom012" type="text">
+                                    </div>
 
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" (click)="editarmarca(marcangmo)" >Guardar</button>
-                                        <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                                                (click)="modal2.dismiss('Cross click')">Cerrar</button>
-                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" (click)="editarimpuesto(impuestoID)" >Guardar</button>
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                                            (click)="modal2.dismiss('Cross click')">Cerrar</button>
+                                </div>
                             </div>
 
                         </ng-template>
@@ -66,9 +72,8 @@
                             <div class="container ">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3>Marcas</h3>
+                                        <h3>Categorías</h3>
                                     </div>
-
                                     <div class="card-body">
                                         <table class="table table-hover">
                                             <thead>
@@ -77,17 +82,21 @@
                                                     ID
                                                 </th>
                                                 <th>
-                                                    Nombre de la marca
+                                                    Nombre impuesto
                                                 </th>
-                                                <th>Gestionar</th>
+                                                <th>
+                                                    Pocentaje %
+                                                </th>
+                                                <th>Cambiar</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor=" let category of (list_marca | async | paginate: {itemsPerPage:5, currentPage:p})" class="text-center">
-                                                <td>{{category.id}}</td>
-                                                <td>{{category.bnombre}}</td>
+                                            <tr *ngFor="let IMP of (IMPs | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
+                                                <td>{{IMP.id  }}</td>
+                                                <td>{{IMP.tnombre}}
+                                                <td>{{IMP.timpuesto}}</td>
                                                 <td>
-                                                    <button  class="btn btn-warning" (click)="open2(content2, category)" >Editar</button>
+                                                    <button  class="btn btn-warning" (click)="open2(content2, IMP)">Editar</button>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -95,7 +104,6 @@
                                         <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
                                     </div>
-
                                 </div>
                             </div>
 

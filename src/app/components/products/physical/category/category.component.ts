@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { categoryDB } from '../../../../shared/tables/category';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {Component, OnInit} from '@angular/core';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {CategoriasService} from "../../../../Service/categorias.service";
-import {LocalDataSource, ServerDataSource} from "ng2-smart-table";
-import {HttpClient} from "@angular/common/http";
 import {Categories} from "../../../Modulos/Categories";
 import {Observable} from "rxjs";
-import {Marca} from "../../../Modulos/Marca";
 
 @Component({
   selector: 'app-category',

@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ListUserComponent } from './list-user/list-user.component';
-import { CreateUserComponent } from './create-user/create-user.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ListUserComponent} from './list-user/list-user.component';
+import {CreateUserComponent} from './create-user/create-user.component';
+import {VerificadorService} from "../../Service/verificador.service";
 
 const routes: Routes = [
+
   {
     path: '',
     children: [
@@ -11,8 +13,8 @@ const routes: Routes = [
         path: 'list-user',
         component: ListUserComponent,
         data: {
-          title: "User List",
-          breadcrumb: "User List"
+          title: "Lista de usuario",
+          breadcrumb: "Lista usuario"
         }
       },
       {
@@ -21,9 +23,11 @@ const routes: Routes = [
         data: {
           title: "Create User",
           breadcrumb: "Create User"
-        }
+        },
+        canActivate: [VerificadorService],
       }
     ]
+
   }
 ];
 

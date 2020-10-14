@@ -1,30 +1,30 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { CKEditorModule } from 'ngx-ckeditor';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
+import {CKEditorModule} from 'ngx-ckeditor';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { ProductsRoutingModule } from './products-routing.module';
-import { CategoryComponent } from './physical/category/category.component';
-import { SubCategoryComponent } from './physical/sub-category/sub-category.component';
-import { AddProductComponent } from './physical/add-product/add-product.component';
+import {ProductsRoutingModule} from './products-routing.module';
+import {CategoryComponent} from './physical/category/category.component';
+import {SubCategoryComponent} from './physical/sub-category/sub-category.component';
+import {AddProductComponent} from './physical/add-product/add-product.component';
 
-import { GalleryModule } from '@ks89/angular-modal-gallery';
+import {GalleryModule} from '@ks89/angular-modal-gallery';
 import 'hammerjs';
 import 'mousetrap';
 
-import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
-import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
-import { MarcaComponent } from './physical/marca/marca/marca.component';
+import {DROPZONE_CONFIG, DropzoneConfigInterface, DropzoneModule} from 'ngx-dropzone-wrapper';
 import {SharedModule} from "../../shared/shared.module";
-import { ListaproductoComponent } from './physical/listaproducto/listaproducto.component';
+import {ListaproductoComponent} from './physical/listaproducto/listaproducto.component';
 import {NgxDatatableModule} from "@swimlane/ngx-datatable";
 import {NgxPaginationModule} from "ngx-pagination";
-import { StockComponent } from './physical/stock/stock.component';
-import { ProvideerComponent } from './provideer/provideer.component';
+import {StockComponent} from './physical/stock/stock.component';
+import {ProvideerComponent} from './provideer/provideer.component';
+import {InventarioGestionComponent} from './physical/listaproducto/inventario-gestion/inventario-gestion.component';
+import {PromocionesComponent} from './physical/promociones/promociones.component';
+import {ImpuestosComponent} from './physical/impuestos/impuestos.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -37,10 +37,12 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   declarations: [CategoryComponent,
     SubCategoryComponent,
     AddProductComponent,
-    MarcaComponent,
     ListaproductoComponent,
     StockComponent,
-    ProvideerComponent],
+    ProvideerComponent,
+    InventarioGestionComponent,
+    PromocionesComponent,
+    ImpuestosComponent],
     imports: [
         CommonModule,
         FormsModule,

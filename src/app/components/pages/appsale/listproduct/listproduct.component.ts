@@ -1,13 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {productDB} from "../../../../shared/tables/product-list";
 import {CartServiceService} from "../../../../Service/cart-service.service";
 import {Productos} from "../../../Modulos/Productos";
 import {ProductserviceService} from "../../../../Service/productservice.service";
 import {Item} from "../../../Modulos/Item";
 import {Observable} from "rxjs";
-import {element} from "protractor";
-import {TranformarImagenPipe} from "../../../../shared/Pipe/tranformar-imagen.pipe";
-import {DomSanitizer, SafeScript, SafeUrl} from "@angular/platform-browser";
+import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 
 class IItem {
 }
@@ -47,20 +44,10 @@ export class ListproductComponent implements OnInit {
 
       console.log("data", data.quantity)
     if (data.quantity >= elemento.quantity){
-
-      console.log("elemento1",elemento.quantity)
-      console.log("cambio",data.quantity)
       this.carservice.changeCart(data)
-
     }else {
       const cambio = Object.assign( product, elemento )
-
-      console.log("produ", cambio.quantity)
-      console.log("elemento", elemento.quantity)
       this.carservice.changeCart(cambio)
-
-
-
   }
   }
 

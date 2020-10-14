@@ -2,11 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Productos, Stock} from "../components/Modulos/Productos";
-import {Marca} from "../components/Modulos/Marca";
 import {Categories} from "../components/Modulos/Categories";
 import {Stock_productos} from "../components/Modulos/stock_productos";
 import {Perdidas_este_mes} from "../components/Modulos/reporte_grafico";
 import {Provideer} from "../components/Modulos/Provideer";
+import {Promociones} from "../components/Modulos/Promociones";
+import {FormGroup} from "@angular/forms";
+import {Mermas} from "../components/Modulos/mermas";
 
 
 @Injectable({
@@ -15,7 +17,6 @@ import {Provideer} from "../components/Modulos/Provideer";
 export class ProductserviceService {
 
 private UrlProductos= 'https://marketmini.herokuapp.com/products';
-private UrlMarca= 'https://marketmini.herokuapp.com/brands';
 private UrlCategorias= 'https://marketmini.herokuapp.com/categories';
 private URLStock = 'https://marketmini.herokuapp.com/stocks';
 private URLStockPerdida = 'https://marketmini.herokuapp.com/stocks/mostrar_stock_de_perdidas';
@@ -24,6 +25,7 @@ private URL_STOCK_PRODUCTOS = 'https://marketmini.herokuapp.com/stocks/stock_pro
 private URL_STOCK_PERDIDA = 'https://marketmini.herokuapp.com/stocks/mostrar_stock_de_perdidas';
 private URL_STCK_GRF_PERDIDAS = 'https://marketmini.herokuapp.com/stocks/buscar_las_fechas_perdidas';
 private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
+private UR_MERMAS = 'https://marketmini.herokuapp.com/decreases';
 //Variables publicas
 
   constructor(private http: HttpClient) { }
@@ -62,14 +64,7 @@ private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
    guardarproductos(p: Productos):Observable<Productos>{
     return this.http.post<Productos>(this.UrlProductos, p);
   }
-    //Tomar todas las marcas
-   marcas(): Observable<Marca[]> {
-        return this.http.get<Marca[]>(this.UrlMarca)
-  }
-    //Guardar una marca
-   marcassave(d: Marca){
-      return this.http.post<Marca>(this.UrlMarca,d);
-  }
+
 
   //Tomar todas las categorias
    categorias(): Observable<Categories[]>{
@@ -115,6 +110,21 @@ private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
         //Guardar un proveedor
     guardarProvider(c:Provideer){
       return this.http.post<Provideer>(this.URL_PROVIDERS, c)
+    }
+
+    //Guardar la promoción
+    guardarPromo(pr:Promociones){
+
+    }
+
+    //Guardar una merma
+    guardarMerma(merma:FormGroup){
+    return this.http.post<FormGroup>(this.UR_MERMAS,merma)
+    }
+
+    //Buscar mermas
+    mermasdeldia():Observable<Mermas[]>{
+    return this.http.get<Mermas[]>(this.UR_MERMAS)
     }
 
 
