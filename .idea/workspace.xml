@@ -1,75 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="realizando el buildproduct">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/app/Service/autentificacioncancan.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/categorias.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/app/Service/conconcan.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/app/Service/impuestos.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Modulos/impuestos.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Modulos/mermas.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/merma/merma-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/merma/merma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/products/physical/impuestos/impuestos.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/products/physical/impuestos/impuestos.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/medio.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/pagos.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/usuario.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/ventas.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/verificador-role.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/verificador.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/pagos.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/pagos.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/verificador.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/verificador.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Modulos/Item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/Item.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Modulos/Productos.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/Productos.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Modulos/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Modulos/Voucher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/Voucher.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Modulos/jwt-response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/jwt-response.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/auth/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/category/category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/category/category.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/category/category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/category/category.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/impuestos/impuestos.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Modulos/Promociones.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/physical/impuestos/impuestos.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/physical/marca/marca/marca.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/products-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/products-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/products/products.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/products/products.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/create-user/create-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/list-user/list-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/list-user/list-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/list-user/list-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/list-user/list-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/users-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/users-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/users/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/Pipe/busquedacategoriapp.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/Pipe/busquedacategoriapp.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/components/sidebar/sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/routes/content-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/routes/content-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -85,48 +36,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/Service/autentificacion.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-437">
               <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Service/impuestos.service.ts">
+        <entry file="file://$PROJECT_DIR$/angular.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="189">
+              <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Service/medio.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/Service/pagos.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,9 +130,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -229,12 +165,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/app/Service" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.scss" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" />
@@ -285,6 +220,7 @@
         <option value="$PROJECT_DIR$/src/app/Service/categorias.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/impuestos.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/pagos.service.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -349,6 +285,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="media" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -357,7 +301,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="merma" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="merma" type="462c0819:PsiDirectoryNode" />
+              <item name="merma" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -366,61 +319,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="contenedor-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="hacerpago" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="list-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="listavoucher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="medio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="ticket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="voucher-create" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -429,6 +327,25 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="products" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="physical" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="physical" type="462c0819:PsiDirectoryNode" />
+              <item name="promociones" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -704,14 +621,7 @@
       <workItem from="1602520069200" duration="11604000" />
       <workItem from="1602540530505" duration="5993000" />
       <workItem from="1602603523924" duration="19957000" />
-      <workItem from="1602658350734" duration="1389000" />
-    </task>
-    <task id="LOCAL-00037" summary="esto resultara">
-      <created>1591145052753</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1591145052781</updated>
+      <workItem from="1602658350734" duration="3016000" />
     </task>
     <task id="LOCAL-00038" summary="esto resultara">
       <created>1591211048743</created>
@@ -1049,11 +959,18 @@
       <option name="project" value="LOCAL" />
       <updated>1600206518198</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="realizando el buildproduct">
+      <created>1602683069805</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1602683069806</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1612010000" />
+    <option name="totallyTimeSpent" value="1613637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1066,7 +983,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2707889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1210,20 +1126,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/components/auth/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2380">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/jwt-response.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-264">
@@ -1556,23 +1458,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Service/pagos.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Service/productservice.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,6 +1513,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-437">
           <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Service/pagos.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

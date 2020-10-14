@@ -1,0 +1,100 @@
+<div class="container-fluid"  >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ingresar merma</h5>
+                </div>
+                <div class="form-group row col-sm-12 offset-sm-0 ">
+                    <div class="col-sm-1 offset-xl-11" id="hora">
+                        {{hora_horarica()}}
+                    </div>
+                </div>
+                <div class="card-body" style="border:solid;">
+                    <div class="col-xl-17" >
+
+                        <form [formGroup]="mermasForm"  (ngSubmit)="guardarmerma(mermasForm)">
+
+                      <div class=" offset-md-0 col-xl-12 " >
+                         <div class="form-group row" >
+                        <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="categoriasMrm" (change)="cambiofrm()" >
+                            <option value="0" selected></option>
+                            <option *ngFor="let l of productos | async" >{{ l.cnombre}}</option>
+                        </select>
+
+                        <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="product_id" (change)="cambioselect(product_id)" >
+                            <option value="0" selected></option>
+                            <option [ngValue]="d.id"  *ngFor="let d of ( categorias |async) | buscarselectP: frmCategoria  "   >{{d.pdescripcion}}</option>
+                        </select>
+                        <input type="number" class="col-xl-3 col-sm-4 mb-0"  placeholder="Unidades" formControlName="unidadesMrm">
+                        <select  class="col-xl-3 col-sm-4 mb-0" placeholder="Causa"  formControlName="causaMrm">
+                        <option value="0" selected></option>
+                            <option value="Vencido">Vencido</option>
+                            <option value="Quebrado o roto">Quebrado o roto</option>
+                            <option value="No venia en la factura">No venia en la factura</option>
+                            <option value="Entregué más vuelto">Entregué más vuelto</option>
+                        </select>
+                         </div>
+                    </div>
+                            <button type="submit" class="btn btn-warning"> Guardar merma</button>
+                        </form>
+                </div>
+        </div>
+    </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5>Mermas del día</h5>
+                </div>
+
+                <div class="card-body" >
+                    <div class="col-xl-17">
+
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Mermas</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-hover">
+                                            <thead>
+                                            <tr class="text-center">
+                                                <th>
+                                                    ID
+                                                </th>
+                                                <th>
+                                                    Causa
+                                                </th>
+                                                <th>Unidades</th>
+                                                <th>
+                                                    Categoria
+                                                </th>
+                                                <th>
+                                                    Producto
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let category of (mermas_dia | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
+                                                <td>{{category.id  }}</td>
+                                                <td>{{category.causaMrm }}</td>
+                                                <td>{{category.unidadesMrm}}</td>
+                                                <td>{{category.categoriasMrm}}</td>
+                                                <td>{{category.product.pdescripcion}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <pagination-controls (pageChange)="p = $event" previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
