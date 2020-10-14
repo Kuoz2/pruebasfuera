@@ -7,6 +7,7 @@ import {Productos} from "../../Modulos/Productos";
 import {Categories} from "../../Modulos/Categories";
 import {Mermas} from "../../Modulos/mermas";
 
+
 @Component({
   selector: 'app-merma',
   templateUrl: './merma.component.html',
@@ -87,8 +88,6 @@ this.frmCategoria = this.mermasForm.value.categoriasMrm
   }
 
   hora_horarica(){
-    var moment = require('moment-timezone');
-    return moment.tz( "America/Santiago" ).format( 'H:mm' )
   }
 
   ngOnDestroy(): void {
