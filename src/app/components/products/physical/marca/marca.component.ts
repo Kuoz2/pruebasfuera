@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MarcaService} from "../../../../Service/marca.service";
 import {Marca} from "../../../Modulos/Marca";
-import "rxjs-compat/add/observable/of";
 import {Observable} from "rxjs";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
