@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="realizando el buildproduct">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/categorias.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/categorias.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/conconcan.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/conconcan.service.ts" afterDir="false" />
@@ -27,16 +26,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1219">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -139,12 +138,12 @@
         <option value="$PROJECT_DIR$/src/app/Service/usuario.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/ventas.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/voucher.service.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/node_modules/ng2-rut/dist/rut-value-accessor.d.ts.__ivy_ngcc_bak" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -181,20 +180,7 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="ng2-rut" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="ng2-rut" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -451,7 +437,7 @@
       <workItem from="1602868230948" duration="23810000" />
       <workItem from="1602953287491" duration="30223000" />
       <workItem from="1603039276821" duration="24433000" />
-      <workItem from="1603118979157" duration="13348000" />
+      <workItem from="1603118979157" duration="15099000" />
     </task>
     <task id="LOCAL-00040" summary="Guardando el inicio de sesion con los roles">
       <created>1592671342064</created>
@@ -800,7 +786,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1714587000" />
+    <option name="totallyTimeSpent" value="1716338000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1276,13 +1262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1219">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ng2-rut/dist/rut-value-accessor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237" />
@@ -1318,6 +1297,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
     </entry>
