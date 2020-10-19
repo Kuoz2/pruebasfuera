@@ -17,7 +17,6 @@ import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Ng2Rut} from "ng2-rut";
 import {MermaModule} from "./components/merma/merma.module";
-import {HoraActualService} from "./Service/hora-actual.service";
 import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.component";
 
 @NgModule({
@@ -45,7 +44,7 @@ import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.compo
         FormsModule
 
     ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, HoraActualService],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
