@@ -12,7 +12,7 @@ export class PagosService {
   constructor(private http: HttpClient) { }
 
 
-  Url = 'http://localhost:3000/payments';
+  Url = 'https://marketmini.herokuapp.com/payments';
     urlmedio = 'https://marketmini.herokuapp.com/half_payments';
 
   mostrarpagos(){

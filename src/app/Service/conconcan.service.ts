@@ -15,7 +15,6 @@ export class ConconcanService implements CanActivate{
       this.route.navigateByUrl('/login');
       return false
     }else {
-      this.route.navigateByUrl('/');
       return true
     }
   }

@@ -14,11 +14,10 @@ const helper = new JwtHelperService()
 
 export class AutentificacionService {
 
-    // @ts-ignore
     private loggedIn = new BehaviorSubject<boolean>(false);
 
     public data: boolean;
-  constructor(private http: HttpClient) { this.consultaToken()}
+  constructor(private http: HttpClient) { }
   AUT_SERVER: string = 'https://marketmini.herokuapp.com/';
   authSubject =  new BehaviorSubject(false);
   private token: string;
@@ -39,10 +38,10 @@ export class AutentificacionService {
           if (!res.jti ) {
           }else {
             this.saveToken(res.jti);
-            this.saveRole(res.role);
+            //  this.loggedIn.next(true)
+              this.saveRole(res.role);
             this.saveUser(res.id);
             this.saveNamber(res.name_user)
-              this.loggedIn.next(true)
 
           }
 
@@ -54,17 +53,18 @@ export class AutentificacionService {
   logout():void{
     this.token ='';
     localStorage.removeItem("ACCESS_TOKEN");
+     // this.loggedIn.next(true);
       localStorage.removeItem("EXPIRES_IN");
       localStorage.removeItem("ACCESS_ROLE")
       localStorage.removeItem("ACCES_USER")
       localStorage.removeItem("ACCESS_NAMBER")
-      this.loggedIn.next(false)
+
   }
 
 private consultaToken(){
       const userToken = localStorage.getItem('ACCESS_TOKEN');
       const expiretoken= helper.isTokenExpired(userToken);
-      expiretoken ? this.logout() : this.loggedIn.next(true)
+      expiretoken ? this.logout() : this.loggedIn.next(false)
 
 }
 

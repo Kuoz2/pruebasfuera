@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="cambiado cosas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/categorias.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/categorias.service.ts" afterDir="false" />
@@ -504,7 +504,7 @@
       <workItem from="1602868230948" duration="23810000" />
       <workItem from="1602953287491" duration="30223000" />
       <workItem from="1603039276821" duration="24433000" />
-      <workItem from="1603118979157" duration="19116000" />
+      <workItem from="1603118979157" duration="20861000" />
     </task>
     <task id="LOCAL-00041" summary="Guardando el inicio de sesion con los roles">
       <created>1592671724981</created>
@@ -853,7 +853,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1720355000" />
+    <option name="totallyTimeSpent" value="1722100000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -867,7 +867,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -886,8 +886,8 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50586355" side_tool="true" weight="0.55687976" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49413645" weight="0.6619718" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.6619718" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4936034" visible="true" weight="0.6619718" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -949,7 +949,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cambiando el error causando por ng build" />
     <MESSAGE value="haciendo otra prueba" />
     <MESSAGE value="haciendo otra prueba workpace" />
     <MESSAGE value="ng serve" />
@@ -974,7 +973,8 @@
     <MESSAGE value="Guardando el inicio de sesion con los roles" />
     <MESSAGE value="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren" />
     <MESSAGE value="realizando el buildproduct" />
-    <option name="LAST_COMMIT_MESSAGE" value="realizando el buildproduct" />
+    <MESSAGE value="cambiado cosas" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambiado cosas" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">

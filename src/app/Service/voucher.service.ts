@@ -1,15 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {DetalleVoucher} from "../components/Modulos/DetalleVoucher";
 import {Voucher} from "../components/Modulos/Voucher";
 import {Observable} from "rxjs";
-import { V_Producto} from "../components/Modulos/GANANCIAS";
+import {V_Producto} from "../components/Modulos/GANANCIAS";
 
-import {
-    Reporte_grafico,
-    Venta_mes_atras,
-    Venta_por_mes, Ventas_mes_ganancias_fv,
-} from "../components/Modulos/reporte_grafico";
+import {Reporte_grafico, Venta_mes_atras, Venta_por_mes,} from "../components/Modulos/reporte_grafico";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +15,7 @@ export class VoucherService {
   Urldetallevaucher = 'https://marketmini.herokuapp.com/voucher_details';//Muestra el detalle del detalle del voucher con el producto en general
   Urlvoucher = 'https://marketmini.herokuapp.com/vouchers';//Muestra el voucher completo
   UrlUltvoucher = 'https://marketmini.herokuapp.com/vouchers/showlast';//Muestra el ultimo producto vendido
-  URLVntMes = 'https://marketmini.herokuapp.com/voucher_details/show_date';//Muestra el estado de las venta con el voucher y el producto vendido este mes.
+  URLVntMes = 'https://marketmini.herokuapp.com/show_date';//Muestra el estado de las venta con el voucher y el producto vendido este mes.
   UrlVentasTotal = 'https://marketmini.herokuapp.com/voucher_details/show_cantidad';//Muesta la cantidad ganada este mes
   URLmespasado = 'https://marketmini.herokuapp.com/voucher_details/show_after_month';//Muestra las ganancas del mes anterior
   URLproductosV = 'https://marketmini.herokuapp.com/voucher_details/producto_max_vend';//Muestra los productos mas vendidos

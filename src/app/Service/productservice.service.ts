@@ -61,7 +61,7 @@ private UR_MERMAS = 'https://marketmini.herokuapp.com/decreases';
       return this.http.put<Stock>(this.URLStock + '/' + stck.id, stck)
     }
     //Guardar un nuevo producto
-   guardarproductos(p: Productos):Observable<Productos>{
+   guardarproductos(p):Observable<Productos>{
     return this.http.post<Productos>(this.UrlProductos, p);
   }
 

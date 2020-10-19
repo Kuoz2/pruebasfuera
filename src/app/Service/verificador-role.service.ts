@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {CanActivateChild, Router} from "@angular/router";
 
 @Injectable({
@@ -15,7 +15,7 @@ export class VerificadorRoleService implements CanActivateChild{
          return true;
 
        case "vendedor":
-        return true
+        return false
      }
   }
 }
