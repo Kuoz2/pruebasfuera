@@ -7,6 +7,8 @@ import {Provideer} from "../../../Modulos/Provideer";
 import {ImpuestosService} from "../../../../Service/impuestos.service";
 import {Impuestos} from "../../../Modulos/impuestos";
 import {takeUntil} from "rxjs/operators";
+import {Marca} from "../../../Modulos/Marca";
+import {MarcaService} from "../../../../Service/marca.service";
 
 @Component({
   selector: 'app-add-product',
@@ -24,6 +26,7 @@ export class AddProductComponent implements OnInit, OnDestroy {
       ];
   public proveedor: Provideer[];
 categorias: Categories[];
+marcas: Marca[];
 public immp: Observable<Impuestos[]>;
 file:File;
     productForm: FormGroup;
@@ -43,10 +46,11 @@ file:File;
   get stock_security(){return this.productForm.get('stock_security')}
   get provider_id(){return this.productForm.get('provider_id')}
   get tax_id(){return this.productForm.get('tax_id')}
-
+    get brand_id(){return this.productForm.get('brand_id')}
   constructor(private servi: ProductserviceService,
               private formBuilder: FormBuilder,
-              private impt: ImpuestosService
+              private impt: ImpuestosService,
+              private marc: MarcaService
   ) {
 
 
@@ -61,23 +65,24 @@ file:File;
               precio_provider: new FormControl('',[Validators.required]),
               category_id: new FormControl ('', [Validators.required]),
               pactivado: new FormControl(false),
-
-          stock_id: new FormGroup( {
+              tax_id: new FormControl('',[Validators.required]),
+              brand_id: new FormControl('',[Validators.required]),
+              piva: new FormControl('',[Validators.required]),
+              stock_id: new FormGroup( {
                   pstock: new FormControl( '',[Validators.required] ),
                   pstockcatalogo: new FormControl( '' ),
                   stock_lost: new FormControl( '' ,[Validators.required]),
                   stock_security: new FormControl('',[Validators.required])
 
               }),
-              tax_id: [],
-              piva: new FormControl('',[])
+
       });
 
   }
 
   ngOnInit() {
      this.servi.categorias().subscribe(data => {this.categorias = data });
-
+     this.marc.buscarmarca2().subscribe(data => {this.marcas =  data})
 
      //Buscar el impuesto
       this.buscarimpuesto();
@@ -90,14 +95,20 @@ file:File;
   }
 
   guardarproducto():void{
-      this.productForm.value.category_id = this.productForm.value.category_id.id;
-        this.productForm.value.ppicture = this.url[0].img;
-        this.productForm.value.ppicture = btoa(this.productForm.value.ppicture);
-        this.productForm.value.provider_id = this.productForm.value.provider_id.id;
-          //  this.servi.guardarproductos(this.productForm.value).subscribe(res =>{ console.log("guardado en el res ",res);   return res })
-            console.log("iva", this.productForm.value);
-           // this.productForm.reset()
 
+
+    this.productForm.value.category_id = this.productForm.value.category_id.id;
+    this.productForm.value.ppicture = this.url[0].img;
+    this.productForm.value.ppicture = btoa( this.productForm.value.ppicture );
+    this.productForm.value.provider_id = this.productForm.value.provider_id.id;
+    this.productForm.value.tax_id = this.productForm.value.tax_id.id;
+    this.productForm.value.brand_id = this.productForm.value.brand_id.id;
+    this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
+        console.log( "guardado en el res ", res );
+    } )
+    console.log( "productos", this.productForm.value );
+
+    this.productForm.reset()
 
 
   }

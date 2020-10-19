@@ -5,7 +5,6 @@ import {VoucherCreateComponent} from "./voucher-create/voucher-create.component"
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
 import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
-import {VerificadorService} from "../../Service/verificador.service";
 
 
 const routes: Routes = [
@@ -28,7 +27,6 @@ const routes: Routes = [
           title: "Medio de pago",
           breadcrumb: "Formas de pago"
         },
-        canActivate: [VerificadorService],
       },
 
 

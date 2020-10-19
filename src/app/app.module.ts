@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -17,32 +17,35 @@ import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Ng2Rut} from "ng2-rut";
 import {MermaModule} from "./components/merma/merma.module";
+import {HoraActualService} from "./Service/hora-actual.service";
+import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    PruebaRelojComponent
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule,
-    DashboardModule,
-    SettingModule,
-    ReportsModule,
-    AuthModule,
-    SharedModule,
-    LocalizationModule,
-    ProductsModule,
-    PagesModule,
-    UsersModule,
-    ReactiveFormsModule,
-      HttpClientModule,
-      Ng2Rut,
-      MermaModule
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule.withServerTransition( {appId: 'serverApp'} ),
+        AppRoutingModule,
+        DashboardModule,
+        SettingModule,
+        ReportsModule,
+        AuthModule,
+        SharedModule,
+        LocalizationModule,
+        ProductsModule,
+        PagesModule,
+        UsersModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        Ng2Rut,
+        MermaModule,
+        FormsModule
 
-  ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],
+    ],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, HoraActualService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

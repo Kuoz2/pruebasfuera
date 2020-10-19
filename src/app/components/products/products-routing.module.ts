@@ -7,11 +7,20 @@ import {ListaproductoComponent} from "./physical/listaproducto/listaproducto.com
 import {ProvideerComponent} from "./provideer/provideer.component";
 import {PromocionesComponent} from "./physical/promociones/promociones.component";
 import {ImpuestosComponent} from "./physical/impuestos/impuestos.component";
+import {MarcaComponent} from "./physical/marca/marca.component";
 
 const routes: Routes = [
   {
     path: '',
     children: [
+      {
+        path:'physical/marca',
+        component: MarcaComponent,
+        data:{
+          title:"Marcas",
+          breadcrumb: "Marcas"
+        }
+      },
       {
         path: 'physical/category',
         component: CategoryComponent,

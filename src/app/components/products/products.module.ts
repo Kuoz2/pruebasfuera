@@ -25,6 +25,7 @@ import {ProvideerComponent} from './provideer/provideer.component';
 import {InventarioGestionComponent} from './physical/listaproducto/inventario-gestion/inventario-gestion.component';
 import {PromocionesComponent} from './physical/promociones/promociones.component';
 import {ImpuestosComponent} from './physical/impuestos/impuestos.component';
+import {MarcaComponent} from './physical/marca/marca.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -42,7 +43,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ProvideerComponent,
     InventarioGestionComponent,
     PromocionesComponent,
-    ImpuestosComponent],
+    ImpuestosComponent,
+    MarcaComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -62,7 +64,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
       provide: DROPZONE_CONFIG,
       useValue: DEFAULT_DROPZONE_CONFIG
     },
-    NgbActiveModal
+    NgbActiveModal,
   ]
 })
 export class ProductsModule { }

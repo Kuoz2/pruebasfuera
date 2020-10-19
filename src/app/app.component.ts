@@ -1,5 +1,4 @@
-import {ChangeDetectionStrategy,Component} from '@angular/core';
-import {AutentificacionService} from "./Service/autentificacion.service";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {UsuarioService} from "./Service/usuario.service";
 
 

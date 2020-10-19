@@ -22,7 +22,7 @@
                         </thead>
                         <tbody>
                         <tr *ngFor="let usuario of (usuarios | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
-                            <td>{{usuario.user.id  }}</td>
+                            <td>{{usuario.user.rut_user  }}</td>
                             <td>{{usuario.user.name_user }}</td>
 
                         </tr>

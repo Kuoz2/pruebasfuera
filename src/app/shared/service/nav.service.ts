@@ -53,7 +53,8 @@ export class NavService {
 						{ path: '/products/physical/add-product', title: 'Agregar producto', type: 'link' },
 						{ path: '/products/physical/proveedor', title:'Proveedor', type:'link'},
 						{ path: '/products/physical/promociones', title:'Promociones', type:'link'},
-						{ path: '/products/physical/impuestos', title:'Impuestos', type:'link'}
+						{ path: '/products/physical/impuestos', title:'Impuestos', type:'link'},
+						{path: '/products/physical/marca', title:'Marcas', type:'link'}
 
 			]
 		},

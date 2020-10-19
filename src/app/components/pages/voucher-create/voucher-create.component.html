@@ -1,7 +1,7 @@
 
 <!-- agregando el modal para agregar la cantidad de que se quiere-->
 <div class="btn-popup pull-right">
-    <ng-template #content3 let-modal3>
+    <ng-template #content3 let-modal3 >
         <div class="modal-header">
             <h5 class="modal-title f-w-600" id="exampleModalLabel3">Editar Stock</h5>
             <button type="button" class="close" aria-label="Close"
@@ -9,17 +9,21 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" >
             <div class="form">
                 <div class="form-group">
                     <label for="validationCustom01222" class="mb-1">Agregar cantidad:</label>
-                    <input type="number" [(ngModel)]="cantidad_requerido" class="form-control" id = "validationCustom01222" >
+                    <input type="number" [(ngModel)]="cantidad_requerido" class="form-control" id = "validationCustom01222" value="1">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" (click)="agregarcantidad(cantidad_requerido)" >Guardar</button>
-                <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                        (click)="modal3.dismiss('Cross click')">Cerrar</button>
+                <button type="submit" class="btn btn-primary" (click)="agregarcantidad(cantidad_requerido)"  >Guardar</button>
+                <div *ngIf="variable === false; else bloque1">
+                </div>
+               <ng-template #bloque1>
+                        {{modal3.dismiss('Cross click')}}
+               </ng-template>
+
             </div>
         </div>
     </ng-template>
@@ -27,7 +31,7 @@
 <!-- aqui empiesa lo que se agregara al voucher-->
 
     <div class=" container-fluid  " style="border: solid;">
-    <button (click)="cerrarsession()" >Cerrar session</button>
+
         <div class="row"  >
         <div class="col-md-6 border" >
             <div class="card-header ">
@@ -91,10 +95,8 @@
             [elmontodelcliente]=efectivoapgar
             [devolucion]=" devolver "
             [eltotal]="eltotal"
-            #ticketComponent
->
+            #ticketComponent>
 </app-ticket>
-
 
 
 

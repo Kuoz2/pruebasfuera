@@ -1,10 +1,9 @@
-<form  (ngSubmit)="guardareldetallevoucher(agregadoalalista, busquedavoucher,loseleccionado,ingresodeunvaucher,ticketForm)"  >
+<form  (ngSubmit)="guardareldetallevoucher(agregadoalalista, busquedavoucher)"  >
 <button class="oculto-impresion btn btn-success" (click)="imprimir('ticket')"> imprimir</button>
 <button  class="oculto-impresion btn btn-info" type="submit"> Guardar voucher</button>
 <div id="register">
     <div id="ticket" >
         <h3>Productos:</h3>
-
         <table  >
 
             <tbody >
@@ -12,18 +11,18 @@
             <tfoot  >
             <tr >
                 <th>
-                    
                     Atendido por:
                 </th>
                 <th>
                 </th>
-                <th >
-                    Hora: <div id="hora_venta"></div>
+                <th>
+                    Fecha: <div>{{dia}} {{fecha}}</div>
                 </th>
-           
+                <th >
+                    Hora: <span id="#horas"></span>:<span id="#minutos"></span>:<span id="#segundos"></span><span id="#ampm"></span>
+                </th>
             </tr>
             <tr>
-
             </tr>
             <tr *ngFor=" let productitos of agregadoalalista  " >
                 <th>
@@ -56,26 +55,14 @@
                                     Eliminar
                                     <ul  >
                                         <p>  <button (click)="borrarvoucher($event)" >X</button></p>
-
                                     </ul>
                                 </th>
-
-
-
             </tr>
-
             </tfoot>
-
-
         </table>
         <tr >
             <th>Total: {{total()}}</th>
         </tr>
-        <li *ngFor="let encuentra of busquedavoucher" >
-            <ngx-barcode [bc-value]= "encuentra.length" [bc-display-value]="true"></ngx-barcode>
-        </li>
-
-
     </div>
 
 </div>

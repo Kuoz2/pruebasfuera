@@ -6,7 +6,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CKEditorModule} from 'ngx-ckeditor';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
-
 import {PagesRoutingModule} from './pages-routing.module';
 import {ListPageComponent} from './list-page/list-page.component';
 import {VoucherCreateComponent} from './voucher-create/voucher-create.component';
@@ -19,6 +18,7 @@ import {MedioComponent} from './medio/medio.component';
 import {AppsaleComponent} from './appsale/appsale.component';
 import {ListproductComponent} from './appsale/listproduct/listproduct.component';
 import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component';
+import {HoraActualService} from "../../Service/hora-actual.service";
 
 @NgModule({
   declarations:
@@ -40,6 +40,7 @@ import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component'
         NgxDatatableModule,
         SharedModule,
         NgxBarcodeModule
-    ]
+    ],
+    providers:[HoraActualService]
 })
 export class PagesModule { }

@@ -37,6 +37,8 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
   anio = this.fecha.getFullYear();
     agregar_producto_lista = [];
 
+    variable: boolean = false;
+
   diadehoy: string = this.dia +'/'+this.mes +'/'+ this.anio;
   constructor(private router:Router,private serviproducto: ProductserviceService, private vouchservicio: VoucherService, private sermedio: PagosService, private offsession: AutentificacionService, private modalService: NgbModal) {
   }
@@ -156,6 +158,7 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
   }
 
     private getDismissReason(reason: any): string {
+        console.log("la rason", this.variable)
         if (reason === ModalDismissReasons.ESC) {
             return 'by pressing ESC';
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -189,20 +192,26 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
        return total;
   }
 
-    async agregarcantidad(cantidad_requerido: any){
+    async agregarcantidad(cantidad_requerido: any) {
+        console.log("agregado a la lista",this.variable)
+        if (cantidad_requerido == null || cantidad_requerido <= 0 || cantidad_requerido === []) {
+            alert("Debe ingresar un valor superior a 1")
+           this.variable = false
+        } else {
+            this.variable = true
             const pruebaaaa = []
-        pruebaaaa.push(this.agregar_producto_lista.pop())
+            pruebaaaa.push( this.agregar_producto_lista.pop() )
 
-        for (const i of pruebaaaa){
-            console.log("lo almacenado",i);
-            i.cantidad = cantidad_requerido;
-            this.agregadoalalista.push(i)
+            for (const i of pruebaaaa) {
+                console.log( "lo almacenado", i );
+                i.cantidad = cantidad_requerido;
+                this.agregadoalalista.push( i )
+            }
+            this.cantidad_requerido = null;
+            const nuwvo = this.agregadoalalista;
+            this.calculartotal( nuwvo );
+
         }
-        this.cantidad_requerido = null;
-        console.log(this.agregadoalalista)
-        const nuwvo = this.agregadoalalista;
-        console.log( 'subida', nuwvo );
-        this.calculartotal( nuwvo );
     }
 
     nosenvia($event) {

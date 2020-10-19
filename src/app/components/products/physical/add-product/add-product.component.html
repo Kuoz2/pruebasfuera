@@ -50,6 +50,16 @@
                                                type="number" formControlName="precio_provider" required="" autocomplete="off">
 
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label  class="col-xl-3 col-sm-4 mb-0">Nombre de la marca
+                                            :</label>
+                                        <select class="form-control digits col-xl-8 col-sm-7" formControlName="brand_id" name="categorias"
+                                                id="exampleFormControlSelect15" >
+                                            <option value="0" selected></option>
+                                            <option [ngValue]="y" *ngFor="let y of marcas" >{{y.bnombre}}</option>
+                                        </select>
+                                    </div>
                                     <div class="form-group row">
                                         <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Nombre descriptivo:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="validationCustom01"
@@ -95,6 +105,7 @@
                                             <option [ngValue]="i" *ngFor="let i of categorias" >{{i.cnombre}}</option>
                                         </select>
                                         </div>
+
                                     <div class="form-group row" formGroupName="stock_id">
                                         <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock :</label>
                                         <div class="qty-box1">

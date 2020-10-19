@@ -28,19 +28,22 @@ nuevomedio: Medio;
   }
 
 
-  guardarmedio(){
-const data = []
-    for (const o of this.tomarmedio){
-      data.push(o.mpnombre)
+  guardarmedio() {
+    if (this.medioForm.valid) {
+      const data = []
+      for (const o of this.tomarmedio) {
+        data.push( o.mpnombre )
+      }
+      if (data.includes( this.medioForm.value.mpnombre.toLowerCase() ) != true) {
+        this.medioForm.value.mpnombre = this.medioForm.value.mpnombre.toLowerCase()
+        return this.medio.guardarmododepago( this.medioForm.value ).subscribe( res => {
+          this.mediopago = res
+        } )
+      } else {
+        alert( "El medio de pago ya existe" + this.medioForm.value.mpnombre.toLowerCase() )
+      }
+    }else {
+      alert("Debe agregar un medio de pago.")
     }
-    if (data.includes(this.medioForm.value.mpnombre.toLowerCase()) != true){
- this.medioForm.value.mpnombre = this.medioForm.value.mpnombre.toLowerCase()
-return this.medio.guardarmododepago(this.medioForm.value).subscribe(res => {this.mediopago = res})
   }
-    else
-  {
-    alert("El medio de pago ya existe" + this.medioForm.value.mpnombre.toLowerCase())
-  }
-  }
-
 }
