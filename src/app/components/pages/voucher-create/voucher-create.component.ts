@@ -158,7 +158,7 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
   }
 
     private getDismissReason(reason: any): string {
-        console.log("la rason", this.variable)
+        console.log("la rason", reason)
         if (reason === ModalDismissReasons.ESC) {
             return 'by pressing ESC';
         } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -193,7 +193,7 @@ export class VoucherCreateComponent implements OnInit , OnDestroy, OnChanges{
   }
 
     async agregarcantidad(cantidad_requerido: any) {
-        console.log("agregado a la lista",this.variable)
+        console.log("agregado a la lista",cantidad_requerido)
         if (cantidad_requerido == null || cantidad_requerido <= 0 || cantidad_requerido === []) {
             alert("Debe ingresar un valor superior a 1")
            this.variable = false
