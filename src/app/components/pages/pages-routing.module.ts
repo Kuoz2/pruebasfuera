@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ListPageComponent} from './list-page/list-page.component';
 import {VoucherCreateComponent} from "./voucher-create/voucher-create.component";
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
@@ -11,14 +10,6 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      {
-        path: 'list-page',
-        component: ListPageComponent,
-        data: {
-          title: "List Page",
-          breadcrumb: "List Page"
-        }
-      },
 
       {
         path: 'medio-pago',

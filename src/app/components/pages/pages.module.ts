@@ -6,7 +6,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CKEditorModule} from 'ngx-ckeditor';
 
 import {PagesRoutingModule} from './pages-routing.module';
-import {ListPageComponent} from './list-page/list-page.component';
 import {VoucherCreateComponent} from './voucher-create/voucher-create.component';
 import {SharedModule} from "../../shared/shared.module";
 import {TicketComponent} from './ticket/ticket/ticket.component';
@@ -20,7 +19,7 @@ import {HoraActualService} from "../../Service/hora-actual.service";
 
 @NgModule({
   declarations:
-      [ListPageComponent,
+      [
       VoucherCreateComponent,
       TicketComponent,
       HacerpagoComponent,
