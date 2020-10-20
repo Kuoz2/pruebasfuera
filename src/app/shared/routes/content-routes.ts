@@ -54,12 +54,6 @@ export const
     path: 'reports',
     loadChildren: () => import('../../components/reports/reports.module').then(m => m.ReportsModule),
   },
-  {
-    path: 'settings',
-    loadChildren: () => import('../../components/setting/setting.module').then(m => m.SettingModule),
-    data: {
-      breadcrumb: "Settings"
-    }
-  },
+
 
 ];

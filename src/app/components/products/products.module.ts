@@ -18,11 +18,9 @@ import 'mousetrap';
 import {DROPZONE_CONFIG, DropzoneConfigInterface, DropzoneModule} from 'ngx-dropzone-wrapper';
 import {SharedModule} from "../../shared/shared.module";
 import {ListaproductoComponent} from './physical/listaproducto/listaproducto.component';
-import {NgxDatatableModule} from "@swimlane/ngx-datatable";
 import {NgxPaginationModule} from "ngx-pagination";
 import {StockComponent} from './physical/stock/stock.component';
 import {ProvideerComponent} from './provideer/provideer.component';
-import {InventarioGestionComponent} from './physical/listaproducto/inventario-gestion/inventario-gestion.component';
 import {PromocionesComponent} from './physical/promociones/promociones.component';
 import {ImpuestosComponent} from './physical/impuestos/impuestos.component';
 import {MarcaComponent} from './physical/marca/marca.component';
@@ -41,7 +39,6 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ListaproductoComponent,
     StockComponent,
     ProvideerComponent,
-    InventarioGestionComponent,
     PromocionesComponent,
     ImpuestosComponent,
     MarcaComponent],
@@ -56,7 +53,6 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         DropzoneModule,
         GalleryModule.forRoot(),
         SharedModule,
-        NgxDatatableModule,
         NgxPaginationModule
     ],
   providers: [
