@@ -10,8 +10,7 @@ import {SharedModule} from './shared/shared.module';
 import {ProductsModule} from './components/products/products.module';
 import {PagesModule} from './components/pages/pages.module';
 import {UsersModule} from './components/users/users.module';
-import {LocalizationModule} from './components/localization/localization.module';
-import {SettingModule} from './components/setting/setting.module';
+
 import {ReportsModule} from './components/reports/reports.module';
 import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
@@ -29,11 +28,9 @@ import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.compo
         BrowserModule.withServerTransition( {appId: 'serverApp'} ),
         AppRoutingModule,
         DashboardModule,
-        SettingModule,
         ReportsModule,
         AuthModule,
         SharedModule,
-        LocalizationModule,
         ProductsModule,
         PagesModule,
         UsersModule,
