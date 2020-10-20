@@ -8,7 +8,6 @@ import {CKEditorModule} from "ngx-ckeditor";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import {GalleryModule} from "@ks89/angular-modal-gallery";
 import {SharedModule} from "../../shared/shared.module";
-import {NgxDatatableModule} from "@swimlane/ngx-datatable";
 import {NgxPaginationModule} from "ngx-pagination";
 import {MermaRoutingModule} from "./merma-routing.module";
 
@@ -32,7 +31,6 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     DropzoneModule,
     GalleryModule.forRoot(),
     SharedModule,
-    NgxDatatableModule,
     NgxPaginationModule
   ],
   providers: [
