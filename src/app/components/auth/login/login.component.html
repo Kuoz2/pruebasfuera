@@ -1,3 +1,8 @@
+<!-- Aanaliszar esta sutiacion despues.
+<div *ngIf="usuarios = false" >
+    <button (click)="open(content)" class="btn btn-warning">Agregar un administrador</button>
+</div>-->
+
 
 <ng-template #content let-modal >
     <div class="modal-header">
@@ -44,10 +49,6 @@
 </ng-template>
 
 <div class="page-wrapper"  >
-
-    <ng-container *ngIf="usuarios == false; then content" >
-
-    </ng-container>
     <div class="authentication-box">
         <div class="container">
             <div class="row">

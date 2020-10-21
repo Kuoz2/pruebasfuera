@@ -70,6 +70,7 @@ export class LoginComponent implements OnInit {
       let destranform:boolean;
       infor = JSON.stringify(x);
       destranform = JSON.parse(infor);
+      console.log(destranform)
       this.usuarios = destranform;
     })
   }
@@ -100,11 +101,11 @@ export class LoginComponent implements OnInit {
     },
     {
       title: "Que es PaltAnes",
-      desc: "PaltAnes es un sistema de control de ventas para pymes de retails. Donde podra encontrar graficos de medicion de sus ventas perdidas etc.",
+      desc: "Sistema en beta",
     },
     {
       title: "El servicio",
-      desc: "El servicio es de un cobro mensual donde cliente, puede solicitar cambios en la pagina. Ej: nuevos modulos, mas graficos, cambio de apariencia, etc.",
+      desc: "El servicio esta por definir.",
     }
   ];
 
