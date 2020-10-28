@@ -1,26 +1,15 @@
-import {
-    Component,
-    OnInit,
-    OnDestroy,
-    ChangeDetectorRef,
-    ChangeDetectionStrategy,
-
-} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit,} from '@angular/core';
 import {PagosService} from "../../Service/pagos.service";
 import {Pagos} from "../Modulos/Pagos";
-import {Observable, Subject, Subscription} from "rxjs";
+import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {VoucherService} from "../../Service/voucher.service";
 import {DetalleVoucher} from "../Modulos/DetalleVoucher";
 import {ProductserviceService} from "../../Service/productservice.service";
-import {Productos, Stock} from "../Modulos/Productos";
-import {  Sort_Prod, V_Producto} from "../Modulos/GANANCIAS";
+import {Productos} from "../Modulos/Productos";
+import {Sort_Prod, V_Producto} from "../Modulos/GANANCIAS";
 import * as Chart from "chart.js";
-import {
-    Reporte_grafico,
-    Venta_mes_atras,
-    Venta_por_mes,
-} from "../Modulos/reporte_grafico";
+import {Reporte_grafico, Venta_mes_atras, Venta_por_mes,} from "../Modulos/reporte_grafico";
 
 
 @Component({

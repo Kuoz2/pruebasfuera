@@ -5,7 +5,7 @@ import {Productos} from "../../Modulos/Productos";
 import {Medio} from "../../Modulos/Medio";
 import {PagosService} from "../../../Service/pagos.service";
 import {Categories} from "../../Modulos/Categories";
-import {FormBuilder, FormControl, FormGroup, NgModel} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ProductserviceService} from "../../../Service/productservice.service";
 import {DetalleVoucher} from "../../Modulos/DetalleVoucher";
@@ -92,6 +92,15 @@ export class AppsaleComponent implements OnInit {
     });
 
 
+  }
+
+  imprimir(register){
+    var ficha = document.getElementById(register);
+    var ventimp =  window.open( ' ', 'popimpr');
+    ventimp.document.write(ficha.innerHTML);
+    ventimp.document.close();
+    ventimp.print();
+    ventimp.close()
   }
 
 

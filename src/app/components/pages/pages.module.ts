@@ -16,6 +16,7 @@ import {AppsaleComponent} from './appsale/appsale.component';
 import {ListproductComponent} from './appsale/listproduct/listproduct.component';
 import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component';
 import {HoraActualService} from "../../Service/hora-actual.service";
+import {BoletaComponent} from './boleta/boleta.component';
 
 @NgModule({
   declarations:
@@ -27,7 +28,8 @@ import {HoraActualService} from "../../Service/hora-actual.service";
       MedioComponent,
       AppsaleComponent,
       ListproductComponent,
-      ContenedorAppComponent],
+      ContenedorAppComponent,
+      BoletaComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

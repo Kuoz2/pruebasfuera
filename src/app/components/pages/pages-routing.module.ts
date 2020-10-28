@@ -4,6 +4,7 @@ import {VoucherCreateComponent} from "./voucher-create/voucher-create.component"
 import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
 import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
+import {BoletaComponent} from "./boleta/boleta.component";
 
 
 const routes: Routes = [
@@ -51,6 +52,14 @@ const routes: Routes = [
         data:{
           title:"Pago movil",
           breadcrumb:"App pago"
+        }
+      },
+      {
+        path:'boleta',
+        component: BoletaComponent,
+        data:{
+          title:'Boleta',
+          breadcrumb:'Boleta'
         }
       }
     ]

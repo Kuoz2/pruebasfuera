@@ -18,7 +18,9 @@ export class MermaComponent implements OnInit,OnDestroy {
   private unsubscribe$ = new Subject<void>();
   public categorias: Observable<Productos[]>;
   public frmCategoria: String = "";
+  public frmMarca: String ="";
   public productos: Observable<Categories[]>;
+  public marcas: Observable<Productos[]>;
   public productos_select:Productos[];
   public mermas_dia:Observable<Mermas[]>;
   public p: any;
@@ -31,7 +33,8 @@ export class MermaComponent implements OnInit,OnDestroy {
       product_id: [''],
       unidadesMrm:[''] ,
       causaMrm: [''],
-      hora:[this.hora_horarica()]
+      hora:[this.hora_horarica()],
+      marcaMrm: [''],
     })
 
   }
@@ -39,6 +42,7 @@ export class MermaComponent implements OnInit,OnDestroy {
   get product_id(){ return this.mermasForm.get('product_id')}
   get unidadesMrm(){ return this.mermasForm.get('unidadesMrm')}
   get causaMrm(){ return this.mermasForm.get('causaMrm')}
+  get marcaMarm(){return this.mermasForm.get('marcaMrm')}
   mermasForm: FormGroup;
 
 
@@ -49,9 +53,14 @@ export class MermaComponent implements OnInit,OnDestroy {
     this.hora_horarica();
     this.mermashoy();
     this.actualizarhoras()
+    this.busquedaproductos()
   }
   async busquedaproducto(){
     return this.productos = this.categoryservice.categorias().pipe(takeUntil(this.unsubscribe$))
+  }
+
+  async busquedaproductos(){
+      return this.marcas = this.categoryservice.products()
   }
 
   async categoriasAsync()
@@ -84,7 +93,10 @@ actualizarhoras(){
 
   cambiofrm(){
 this.frmCategoria = this.mermasForm.value.categoriasMrm
+  }
 
+  cambiarmarca(){
+    this.frmMarca = this.mermasForm.value.categoriasMrm
   }
 
   hora_horarica(){

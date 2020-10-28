@@ -25,6 +25,7 @@ import {AgregarmasmermasPipe} from './Pipe/agregarmasmermas.pipe';
 import {InventarioGestionPipe} from './Pipe/inventario-gestion.pipe';
 import {InventarionsanoPipe} from './Pipe/inventarionsano.pipe';
 import {InventariopeligroPipe} from './Pipe/inventariopeligro.pipe';
+import {BuscarmarcaPipe} from './Pipe/buscarmarca.pipe';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import {InventariopeligroPipe} from './Pipe/inventariopeligro.pipe';
     InventarioGestionPipe,
     InventarionsanoPipe,
     InventariopeligroPipe,
+    BuscarmarcaPipe,
 
   ],
   imports: [
@@ -55,6 +57,6 @@ import {InventariopeligroPipe} from './Pipe/inventariopeligro.pipe';
     RouterModule
   ],
   providers: [NavService, WINDOW_PROVIDERS],
-    exports: [FeatherIconsComponent, ToggleFullscreenDirective, PipePipe, BuscarproductoPipe, VentasfilterPipe, BusquedaAppPipe, TranformarImagenPipe, BusquedacategoriappPipe, BuscarselectPPipe, AgregarmasmermasPipe, InventarioGestionPipe, InventarionsanoPipe, InventariopeligroPipe]
+    exports: [FeatherIconsComponent, ToggleFullscreenDirective, PipePipe, BuscarproductoPipe, VentasfilterPipe, BusquedaAppPipe, TranformarImagenPipe, BusquedacategoriappPipe, BuscarselectPPipe, AgregarmasmermasPipe, InventarioGestionPipe, InventarionsanoPipe, InventariopeligroPipe, BuscarmarcaPipe]
 })
 export class SharedModule { }

@@ -6,8 +6,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class BuscarselectPPipe implements PipeTransform {
 
     transform(value: [any], ...args: string[]): any {
-        console.log( "argumento", args )
-        console.log("valores", value)
+
         const productos = [];
 
         if (args[0] != "0" && args[0] != '' && typeof (args[0]) != "undefined") {

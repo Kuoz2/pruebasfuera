@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
   }
 
   public guardarnuevoadmin(admin){
+      console.log(admin.value.user.rut_user.slice(0,10).split(".").join(""))
    admin.value.user.password = admin.value.user.rut_user.slice(0,10).split(".").join("")
       admin.value.user.role = 'administrador';
         this.serviadmin.guardaradmin(admin.value)
@@ -61,18 +62,22 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
     this.loqumu()
+
   }
 
 
  async loqumu(){
-    this.autentificacion.mostrar_users().map(res => res).forEach((x) => {
-      let infor:string;
-      let destranform:boolean;
-      infor = JSON.stringify(x);
-      destranform = JSON.parse(infor);
-      console.log(destranform)
-      this.usuarios = destranform;
-    })
+    this.autentificacion.mostrar_users().subscribe(
+        x => {
+
+             let data =Object.values( x[0])
+                // @ts-ignore
+            this.usuarios = data[0]
+            if (this.usuarios == false){
+
+            }
+        }
+    )
   }
 
   get email(){return this.ngForm.get('email')}
@@ -122,6 +127,8 @@ export class LoginComponent implements OnInit {
 
   }
   open(content) {
+      console.log(content)
+      console.log()
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

@@ -4,53 +4,14 @@
 </div>-->
 
 
-<ng-template #content let-modal >
-    <div class="modal-header">
-        <h5 class="modal-title f-w-600" id="exampleModalLabel">Crear un adminstrador</h5>
-        <button type="button" class="close" aria-label="Close"
-                (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <form class="needs-validation" [formGroup]="new_admin" (ngSubmit)="guardarnuevoadmin(new_admin)">
-            <div formGroupName="user">
-            <div class="form">
 
-                <div class="form-group row">
-                    <label for="validationCustom123" class="col-xl-3 col-md-4"> Rut</label>
-                    <input class="form-control col-xl-8 col-md-7" formControlName="rut_user" name="rut_user" id="validationCustom123"
-                           type="text" required="">
-                </div>
 
-                <div class="form-group row">
-                    <label for="validationCustom2" class="col-xl-3 col-md-4">Correo</label>
-                    <input class="form-control col-xl-8 col-md-7" formControlName="email" id="validationCustom2" name="email"
-                           type="text" required>
-                </div>
 
-                <div class="form-group row">
-                    <label for="validationCustom22" class="col-xl-3 col-md-4">Correo</label>
-                    <input class="form-control col-xl-8 col-md-7" formControlName="role" id="validationCustom22" name="role"
-                           type="text" value="administrador" placeholder="administrador" readonly required>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                        (click)="modal.dismiss('Cross click')">Cerrar
-                </button>
-            </div>
-            </div>
-        </form>
-    </div>
-
-</ng-template>
 
 <div class="page-wrapper"  >
     <div class="authentication-box">
         <div class="container">
+
             <div class="row">
                 <div class="col-md-5 p-0 card-left">
                     <div class="card bg-primary">
@@ -174,6 +135,7 @@
                                         <div>
                                             <h3>{{data.title}}</h3>
                                             <p>{{data.desc}}</p>
+
                                         </div>
                                     </ng-template>
                                 </ng-container>
@@ -188,6 +150,7 @@
                                 <ngb-tab>
 
                                     <ng-template ngbTabTitle><i class="icon-user mr-2"></i>Inicio de sesion</ng-template>
+
                                     <ng-template ngbTabContent>
                                         <form [formGroup]="ngForm" class="login-container" (ngSubmit)="onLogin(ngForm)">
                                         <div formGroupName="user">
@@ -216,8 +179,44 @@
                                         </form>
                                     </ng-template>
                                 </ngb-tab>
-                                <ngb-tab>
+                                <ngb-tab *ngIf="usuarios != true">
 
+                                    <ng-template ngbTabTitle><i class="icon-unlock mr-2"></i> Administrador
+
+                                    <ng-template ngbTabContent>
+                                        <form class="needs-validation" [formGroup]="new_admin" (ngSubmit)="guardarnuevoadmin(new_admin)">
+                                            <div formGroupName="user">
+                                                <div class="form">
+
+                                                    <div class="form-group row">
+                                                        <label for="validationCustom123" class="col-xl-3 col-md-4"> Rut</label>
+                                                        <input class="form-control col-xl-8 col-md-7" formControlName="rut_user" name="rut_user" id="validationCustom123"
+                                                               type="text" required="">
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="validationCustom2" class="col-xl-3 col-md-4">Correo</label>
+                                                        <input class="form-control col-xl-8 col-md-7" formControlName="email" id="validationCustom2" name="email"
+                                                               type="text" required>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="validationCustom22" class="col-xl-3 col-md-4">Correo</label>
+                                                        <input class="form-control col-xl-8 col-md-7" formControlName="role" id="validationCustom22" name="role"
+                                                               type="text" value="administrador" placeholder="administrador" readonly required>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </ng-template>
+
+                                </ng-template>
                                 </ngb-tab>
                             </ngb-tabset>
                         </div>

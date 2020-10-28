@@ -193,7 +193,7 @@
                                             </thead>
                                             <tbody id="tbody1">
                                             <tr *ngFor="let category of (listproductos |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index " class="text-center" id="tr1">
-                                                <ng-container *ngIf="category.stock.pstock > 10">
+                                                <ng-container *ngIf="category.stock.pstock >= 10">
                                                 <td id="td1">{{category.pcodigo  }}</td>
                                                 <td id="td2">{{category.pdescripcion }}</td>
                                                 <td id="td3">{{category.pvalor}}</td>

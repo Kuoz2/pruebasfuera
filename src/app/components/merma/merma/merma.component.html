@@ -17,14 +17,20 @@
 
                       <div class=" offset-md-0 col-xl-12 " >
                          <div class="form-group row" >
-                        <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="categoriasMrm" (change)="cambiofrm()" >
+
+
+                             <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="categoriasMrm" (change)="cambiofrm()" >
                             <option value="0" selected></option>
                             <option *ngFor="let l of productos | async" >{{ l.cnombre}}</option>
                         </select>
+                             <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="marcaMrm" (change)="cambiarmarca()" >
+                                 <option value="0" selected></option>
+                                 <option *ngFor="let d of (marcas | async | buscarmarca:frmCategoria)" >{{ d.brand.bnombre}}</option>
+                             </select>
 
                         <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="product_id" (change)="cambioselect(product_id)" >
                             <option value="0" selected></option>
-                            <option [ngValue]="d.id"  *ngFor="let d of ( categorias |async) | buscarselectP: frmCategoria  "   >{{d.pdescripcion}}</option>
+                            <option [ngValue]="d.id"  *ngFor="let d of ( categorias |async) | buscarselectP: frmMarca  "   >{{d.pdescripcion}}</option>
                         </select>
                         <input type="number" class="col-xl-3 col-sm-4 mb-0"  placeholder="Unidades" formControlName="unidadesMrm">
                         <select  class="col-xl-3 col-sm-4 mb-0" placeholder="Causa"  formControlName="causaMrm">
@@ -32,7 +38,6 @@
                             <option value="Vencido">Vencido</option>
                             <option value="Quebrado o roto">Quebrado o roto</option>
                             <option value="No venia en la factura">No venia en la factura</option>
-                            <option value="Entregué más vuelto">Entregué más vuelto</option>
                             <option value="Consumo">Consumo</option>
                         </select>
                          </div>
@@ -42,7 +47,6 @@
                 </div>
         </div>
     </div>
-
             <div class="card">
                 <div class="card-header">
                     <h5>Mermas del día</h5>

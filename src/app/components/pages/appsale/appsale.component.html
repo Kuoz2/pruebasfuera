@@ -74,6 +74,8 @@
                 <button type="submit" class="btn btn-primary"  >Guardar</button>
                 <button class="btn btn-secondary" type="button" data-dismiss="modal"
                         (click)="cancelar_venta()">Cancelar</button>
+                <button class="oculto-impresion btn btn-success" (click)="imprimir('ticket')"> imprimir</button>
+
             </div>
 
         </div>
@@ -81,6 +83,9 @@
 
     </div>
     </form>
+
+    <app-boleta></app-boleta>
+
 </ng-template>
 
 <nav class="navbar navbar-light">

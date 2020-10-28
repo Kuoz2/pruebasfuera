@@ -65,7 +65,8 @@ export class NavService {
 				{path: '/pages/create-voucher', title: 'Crear Pago', type: 'link'},
 				{path: '/pages/lista-pago', title: 'Lista Pagos', type: 'link'},
 				{path: '/pages/medio-pago', title: 'Medio de pago', type: 'link',},
-				{path:'/pages/app-pago', title:'App de pago', type:'link'}
+				{path:'/pages/app-pago', title:'App de pago', type:'link'},
+				{path:'/pages/boleta', title:'Boleta', type: 'link'}
 			]
 		},
 

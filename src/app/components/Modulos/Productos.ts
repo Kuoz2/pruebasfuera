@@ -1,4 +1,5 @@
 import {Categories} from "./Categories";
+import {Marca} from "./Marca";
 
 export class Productos {
     pvactivacioncatalogo: boolean;
@@ -18,6 +19,7 @@ export class Productos {
     munidades:number;
     piva:number;
     vpcventa:number;
+    brand: Marca;
 }
 
 
