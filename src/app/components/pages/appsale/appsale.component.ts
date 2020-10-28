@@ -95,12 +95,30 @@ export class AppsaleComponent implements OnInit {
   }
 
   imprimir(register){
-    var ficha = document.getElementById(register);
-    var ventimp =  window.open( ' ', 'popimpr');
-    ventimp.document.write(ficha.innerHTML);
-    ventimp.document.close();
-    ventimp.print();
-    ventimp.close()
+    if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+
+      var showPoup = false;
+      window.onbeforeunload = function () {
+      if (showPoup) {
+        return 'you must use the cancel button to close the print preview window. \n';
+      }else {
+        showPoup = true;
+      }
+      }
+      var ficha = document.getElementById( register );
+      var ventimp = window.open( ' ', 'popimpr' );
+      ventimp.document.write( ficha.innerHTML );
+      ventimp.document.close();
+      ventimp.print();
+      ventimp.close()
+    }else{
+      var ficha = document.getElementById( register );
+      var ventimp = window.open( ' ', 'popimpr' );
+      ventimp.document.write( ficha.innerHTML );
+      ventimp.document.close();
+      ventimp.print();
+      ventimp.close()
+    }
   }
 
 
