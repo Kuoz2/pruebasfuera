@@ -97,16 +97,18 @@ export class AppsaleComponent implements OnInit {
   imprimir(register){
 
     var ficha = window.document.getElementById(register);
-    var vetimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta','PRINT', 'height=400,width=600');
-    vetimp.document.write('<html><head><title>' + document.title  + '</title>');
-    vetimp.document.write('</head><body >');
-    vetimp.document.write('<h1>' + document.title  + '</h1>');
-    vetimp.document.write(ficha.innerHTML);
-    vetimp.document.write('</body></html>');
-    vetimp.document.close();
-    vetimp.focus();
-    vetimp.print();
-    vetimp.close()
+    var vetimp = window.open( '','PRINT', 'height=400,width=600');
+
+    setTimeout(()=>{
+
+      vetimp.document.write(ficha.innerHTML);
+      vetimp.document.close();
+      vetimp.focus();
+      vetimp.print();
+      vetimp.close();
+    }, 1000);
+
+
     return true
   }
 
