@@ -104,12 +104,12 @@ export class AppsaleComponent implements OnInit {
       vetimp.document.write(ficha.innerHTML);
       vetimp.document.close();
       vetimp.focus();
-      vetimp.print();
+      vetimp.document.execCommand('print')
       vetimp.close();
     }, 1000);
 
 
-    return true
+    return false
   }
 
 
