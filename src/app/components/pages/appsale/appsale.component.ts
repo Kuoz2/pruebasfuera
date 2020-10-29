@@ -106,14 +106,14 @@ export class AppsaleComponent implements OnInit {
       }
       }
       var ficha = document.getElementById( register );
-      var ventimp = window.open( ' ', 'popimpr' );
+      var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta', 'popimpr' );
       ventimp.document.write( ficha.innerHTML );
       ventimp.document.close();
       ventimp.print();
       ventimp.close()
     }else{
       var ficha = document.getElementById( register );
-      var ventimp = window.open( ' ', 'popimpr' );
+      var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta', 'popimpr' );
       ventimp.document.write( ficha.innerHTML );
       ventimp.document.close();
       ventimp.print();
