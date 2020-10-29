@@ -95,13 +95,15 @@ export class AppsaleComponent implements OnInit {
   }
 
   imprimir(register){
-
-    var ficha = window.document.getElementById(register);
-    var pagina = document.body.innerText;
+    var contenido= document.getElementById(register).innerHTML;
+    var contenidoOriginal= document.body.innerHTML;
     setTimeout(()=>{
-      document.body.innerText = ficha.innerText
-      window.print()
-      document.body.innerText = pagina
+
+      document.body.innerHTML = contenido;
+
+      window.print();
+
+      document.body.innerHTML = contenidoOriginal;
     }, 1000);
 
 
