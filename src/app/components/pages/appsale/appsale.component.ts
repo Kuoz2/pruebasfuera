@@ -95,7 +95,13 @@ export class AppsaleComponent implements OnInit {
   }
 
   imprimir(register){
-   window.print()
+
+    var ficha = document.getElementById(register)
+    var vetimp = window.open( '','PRINT', 'height=400,width=600')
+    vetimp.document.write(ficha.innerHTML);
+    vetimp.document.close()
+    vetimp.print()
+    vetimp.close()
   }
 
 
