@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -36,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+            <state relative-caret-position="408">
+              <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -48,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="43" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="43" />
+            <state relative-caret-position="51">
+              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -141,10 +142,10 @@
         <option value="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
       </list>
     </option>
   </component>
@@ -555,7 +556,7 @@
       <workItem from="1603819240688" duration="20401000" />
       <workItem from="1603899651323" duration="10534000" />
       <workItem from="1603929827783" duration="8960000" />
-      <workItem from="1603983751306" duration="10047000" />
+      <workItem from="1603983751306" duration="15637000" />
     </task>
     <task id="LOCAL-00044" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596740523240</created>
@@ -904,7 +905,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1784307000" />
+    <option name="totallyTimeSpent" value="1789897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1454,13 +1455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1470,11 +1464,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+        <state relative-caret-position="408">
+          <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
     </entry>
