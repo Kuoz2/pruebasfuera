@@ -96,14 +96,16 @@ export class AppsaleComponent implements OnInit {
 
   imprimir(register){
     var contenido= document.getElementById(register).innerHTML;
-    var contenidoOriginal= document.body.innerHTML;
+    var contenidoOriginal= document.body.innerHTML
+    var objeto=document.getElementById(register);  //obtenemos el objeto a imprimir
+    var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva;
     setTimeout(()=>{
 
-      document.body.innerHTML = contenido;
+      ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+      ventana.document.close();  //cerramos el documento
+      ventana.print();  //imprimimos la ventana
+      ventana.close();  //cerramos la ventana
 
-      window.print();
-
-      document.body.innerHTML = contenidoOriginal;
     }, 1000);
 
 
