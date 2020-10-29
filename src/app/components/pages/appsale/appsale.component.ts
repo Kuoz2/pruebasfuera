@@ -95,6 +95,8 @@ export class AppsaleComponent implements OnInit {
   }
 
   imprimir(register){
+    var ficha = document.getElementById( register );
+    var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta' );
     if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
 
       var showPoup = false;
@@ -104,16 +106,13 @@ export class AppsaleComponent implements OnInit {
       }else {
         showPoup = true;
       }
-      }
-      var ficha = document.getElementById( register );
-      var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta', 'popimpr' );
+      };
       ventimp.document.write( ficha.innerHTML );
       ventimp.document.close();
       ventimp.print();
       ventimp.close()
     }else{
-      var ficha = document.getElementById( register );
-      var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta', 'popimpr' );
+
       ventimp.document.write( ficha.innerHTML );
       ventimp.document.close();
       ventimp.print();
