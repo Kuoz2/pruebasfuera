@@ -95,28 +95,7 @@ export class AppsaleComponent implements OnInit {
   }
 
   imprimir(register){
-    var ficha = document.getElementById( register );
-    var ventimp = window.open( 'https://paltanes.herokuapp.com/#/pages/boleta' );
-
-    if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
-
-      var showPoup = false;
-      window.onbeforeunload = function () {
-      if (showPoup) {
-        return 'you must use the cancel button to close the print preview window. \n';
-      }else {
-        showPoup = true;
-      }
-      };
-      ventimp.document.write( ficha.innerHTML );
-      ventimp.print();
-      ventimp.close()
-    }else{
-
-      ventimp.document.write( ficha.innerHTML );
-      ventimp.print();
-      ventimp.close()
-    }
+   window.print()
   }
 
 
