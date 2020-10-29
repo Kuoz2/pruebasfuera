@@ -98,13 +98,12 @@ export class AppsaleComponent implements OnInit {
 
     var ficha = window.document.getElementById(register);
     var vetimp = window.open( '','PRINT', 'height=400,width=600');
-
+    vetimp.document.write(ficha.innerHTML);
+    vetimp.document.close();
+    vetimp.focus();
+    vetimp.print()
     setTimeout(()=>{
 
-      vetimp.document.write(ficha.innerHTML);
-      vetimp.document.close();
-      vetimp.focus();
-      vetimp.document.execCommand('print')
       vetimp.close();
     }, 1000);
 
