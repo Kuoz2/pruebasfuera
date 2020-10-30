@@ -14,6 +14,7 @@ import {Ventas} from "../../Modulos/Ventas";
 import {VentasService} from "../../../Service/ventas.service";
 import {VoucherService} from "../../../Service/voucher.service";
 
+
 @Component({
   selector: 'app-appsale',
   templateUrl: './appsale.component.html',
@@ -94,22 +95,27 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-  imprimir(register){
+  async imprimir(register){
 
-    var divContents = document.getElementById(register).innerHTML;
-    var printWindow = window.open('', '', 'fullscreen');
+   try {
+   var mywindow = window.open('', 'my div', 'height=600,width=1000');
+   mywindow.document.write('<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>');
+   mywindow.document.write('</head><body>');
+   mywindow.document.write(document.getElementById(register).innerHTML.trim());
+   mywindow.document.write('</body></html>');
+   mywindow.document.close(); // necessary for IE >= 10
+   mywindow.focus(); // necessary for IE >= 10
+   setTimeout(function(){ mywindow.print(); mywindow.close(); }, 500);
+ } catch (ex) {
+   alert('Hubo un error al imprimir. Intente de nuevo.');
+   console.log(ex);
+ }
+    if (window.stop) {
+      location.reload(); //triggering unload (e.g. reloading the page) makes the print dialog appear
+      window.stop(); //immediately stop reloading
+    }
 
-    printWindow.window.document.write(divContents);
-    printWindow.print();
-    window.setTimeout(function () {
-      printWindow.document.close()
-    },5000)
-    printWindow.window.focus();
-
-
-      printWindow.close();
-
-    return true
+    return false
   }
 
 
