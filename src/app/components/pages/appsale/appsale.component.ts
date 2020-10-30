@@ -95,7 +95,7 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-  async imprimir(register){
+   imprimir(register):Boolean{
   try {
     var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
     mywindow.document.write( '<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>' );
@@ -113,7 +113,7 @@ export class AppsaleComponent implements OnInit {
     console.log( ex );
   }
 
-    return true
+    return false
   }
 
 
