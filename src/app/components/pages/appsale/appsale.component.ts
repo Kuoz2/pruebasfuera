@@ -97,17 +97,17 @@ export class AppsaleComponent implements OnInit {
   imprimir(register){
 
     var divContents = document.getElementById(register).innerHTML;
-    var printWindow = window.open('', '', 'height=600,width=900');
-    printWindow.document.write('<html><head><title>Print DIV Content</title>');
-    printWindow.document.write('</head><body >');
-    printWindow.document.write(divContents);
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-    printWindow.focus()
-    setTimeout(()=>{
-      printWindow.print();
-      printWindow.close()
-    }, 1000);
+    var printWindow = window.open('', '', 'fullscreen');
+
+    printWindow.window.document.write(divContents);
+    printWindow.print();
+    window.setTimeout(function () {
+      printWindow.document.close()
+    },5000)
+    printWindow.window.focus();
+
+
+      printWindow.close();
 
     return true
   }
