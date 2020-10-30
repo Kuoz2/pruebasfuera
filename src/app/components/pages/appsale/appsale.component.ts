@@ -96,26 +96,24 @@ export class AppsaleComponent implements OnInit {
   }
 
   async imprimir(register){
+  try {
+    var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
+    mywindow.document.write( '<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>' );
+    mywindow.document.write( '</head><body>' );
+    mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
+    mywindow.document.write( '</body></html>' );
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10
+    setTimeout( function () {
+      mywindow.print();
+      mywindow.close();
+    }, 500 );
+  } catch (ex) {
+    alert( 'Hubo un error al imprimir. Intente de nuevo.' );
+    console.log( ex );
+  }
 
-   try {
-   var mywindow = window.open('', 'my div', 'height=600,width=1000');
-   mywindow.document.write('<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>');
-   mywindow.document.write('</head><body>');
-   mywindow.document.write(document.getElementById(register).innerHTML.trim());
-   mywindow.document.write('</body></html>');
-   mywindow.document.close(); // necessary for IE >= 10
-   mywindow.focus(); // necessary for IE >= 10
-   setTimeout(function(){ mywindow.print(); mywindow.close(); }, 500);
- } catch (ex) {
-   alert('Hubo un error al imprimir. Intente de nuevo.');
-   console.log(ex);
- }
-    if (window.stop) {
-      location.reload(); //triggering unload (e.g. reloading the page) makes the print dialog appear
-      window.stop(); //immediately stop reloading
-    }
-
-    return false
+    return true
   }
 
 
