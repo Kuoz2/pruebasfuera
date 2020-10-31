@@ -110,6 +110,7 @@ export class AppsaleComponent implements OnInit {
     alert( 'Hubo un error al imprimir. Intente de nuevo.' );
     console.log( ex );
   }*/
+
   this.printer.printDiv(register)
 
   }
