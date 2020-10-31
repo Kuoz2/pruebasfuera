@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+            <state relative-caret-position="185">
+              <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -564,7 +564,7 @@
       <workItem from="1603929827783" duration="8960000" />
       <workItem from="1603983751306" duration="16463000" />
       <workItem from="1604021571019" duration="5782000" />
-      <workItem from="1604072036731" duration="9302000" />
+      <workItem from="1604072036731" duration="11395000" />
     </task>
     <task id="LOCAL-00044" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596740523240</created>
@@ -913,7 +913,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1805807000" />
+    <option name="totallyTimeSpent" value="1807900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1477,8 +1477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="115" column="16" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
+        <state relative-caret-position="185">
+          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
