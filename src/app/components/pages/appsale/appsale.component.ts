@@ -97,10 +97,7 @@ export class AppsaleComponent implements OnInit {
 
    imprimir(register):Boolean{
   try {
-    var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
-
-      mywindow.print();
-      mywindow.close();
+    window.print()
 
   } catch (ex) {
     alert( 'Hubo un error al imprimir. Intente de nuevo.' );
