@@ -97,21 +97,21 @@ export class AppsaleComponent implements OnInit {
   }
 
    imprimir(register){
-  /*try {
+  try {
     var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
     mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
     mywindow.document.close(); // necessary for IE >= 10
     mywindow.focus(); // necessary for IE >= 10
     setTimeout( function () {
-      mywindow.print();
+    mywindow.onload =  mywindow.print;
       mywindow.close();
     }, 1000 );
   } catch (ex) {
     alert( 'Hubo un error al imprimir. Intente de nuevo.' );
     console.log( ex );
-  }*/
+  }
 
-  this.printer.printDiv(register)
+ // this.printer.printDiv(register)
 
   }
 
