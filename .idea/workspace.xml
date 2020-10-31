@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="cambiado cosas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -25,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="76" column="100" selection-start-line="76" selection-start-column="94" selection-end-line="76" selection-end-column="100" />
+            <state relative-caret-position="215">
+              <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -59,11 +68,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
@@ -86,8 +90,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="444">
+              <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -175,11 +188,11 @@
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -515,7 +528,7 @@
       <workItem from="1603983751306" duration="16463000" />
       <workItem from="1604021571019" duration="5782000" />
       <workItem from="1604072036731" duration="16239000" />
-      <workItem from="1604159491135" duration="7879000" />
+      <workItem from="1604159491135" duration="9093000" />
     </task>
     <task id="LOCAL-00045" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596741177971</created>
@@ -864,7 +877,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1820623000" />
+    <option name="totallyTimeSpent" value="1821837000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -879,7 +892,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -889,7 +902,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49413645" weight="0.3531961" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4936034" visible="true" weight="0.3531961" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -897,7 +910,7 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50586355" side_tool="true" weight="0.3531961" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.3531961" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49253732" weight="0.9328277" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
@@ -1365,36 +1378,10 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1408,15 +1395,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="215">
+          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1425,10 +1418,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="76" column="100" selection-start-line="76" selection-start-column="94" selection-end-line="76" selection-end-column="100" />
+        <state relative-caret-position="861">
+          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>
