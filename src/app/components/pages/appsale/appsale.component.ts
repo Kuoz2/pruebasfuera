@@ -96,7 +96,7 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-   imprimir(register):Boolean{
+   imprimir(register){
   /*try {
     var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
     mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
@@ -112,7 +112,6 @@ export class AppsaleComponent implements OnInit {
   }*/
   this.printer.printDiv(register)
 
-    return false
   }
 
 

@@ -38,7 +38,7 @@ import {NgxPrinterModule} from "ngx-printer";
         ReactiveFormsModule,
         CKEditorModule,
         SharedModule,
-        NgxPrinterModule.forRoot({printOpenWindow: false}),
+        NgxPrinterModule.forRoot({printOpenWindow: true}),
 
     ],
     providers:[HoraActualService]
