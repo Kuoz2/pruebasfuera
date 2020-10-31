@@ -2,57 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-print-marker-position.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-button.directive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-marker.directive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.directive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-service-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/ngx-printer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/public_api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-print-marker-position.enum.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-service-config.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/CopyrightNotice.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/public_api.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,13 +25,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
-              <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+              <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -90,14 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#70#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3">
+              <caret line="120" column="33" lean-forward="true" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -124,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="17" selection-start-column="17" selection-end-column="48" />
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -212,11 +167,11 @@
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
       </list>
     </option>
   </component>
@@ -285,6 +240,16 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="appsale" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="appsale" type="462c0819:PsiDirectoryNode" />
+              <item name="listproduct" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -552,7 +517,7 @@
       <workItem from="1603983751306" duration="16463000" />
       <workItem from="1604021571019" duration="5782000" />
       <workItem from="1604072036731" duration="16239000" />
-      <workItem from="1604159491135" duration="2637000" />
+      <workItem from="1604159491135" duration="3329000" />
     </task>
     <task id="LOCAL-00044" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596740523240</created>
@@ -901,7 +866,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1815381000" />
+    <option name="totallyTimeSpent" value="1816073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -916,7 +881,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1362,9 +1327,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/category/category.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-896" />
@@ -1424,13 +1386,6 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -1445,13 +1400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1459,13 +1407,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3">
+          <caret line="120" column="33" lean-forward="true" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
         </state>
       </provider>
     </entry>
