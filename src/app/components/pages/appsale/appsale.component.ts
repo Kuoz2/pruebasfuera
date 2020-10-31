@@ -95,10 +95,19 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-   imprimir(register):Boolean{
+   imprimir(register):Bo{
   try {
-    window.print()
-
+    var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
+    mywindow.document.write( '<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>' );
+    mywindow.document.write( '</head><body>' );
+    mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
+    mywindow.document.write( '</body></html>' );
+    mywindow.document.close(); // necessary for IE >= 10
+    mywindow.focus(); // necessary for IE >= 10
+    setTimeout( function () {
+      mywindow.print();
+      mywindow.close();
+    }, 10000 );
   } catch (ex) {
     alert( 'Hubo un error al imprimir. Intente de nuevo.' );
     console.log( ex );
