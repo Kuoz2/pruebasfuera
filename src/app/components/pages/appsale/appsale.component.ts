@@ -95,7 +95,7 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-   imprimir(register):Bo{
+   imprimir(register):Boolean{
   try {
     var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
     mywindow.document.write( '<html moznomarginboxes mozdisallowselectionprint lang="ES"><head><title>Sticker #1</title>' );
