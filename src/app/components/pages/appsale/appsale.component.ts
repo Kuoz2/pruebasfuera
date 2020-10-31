@@ -28,7 +28,6 @@ export class AppsaleComponent implements OnInit {
   selecciondecomra: Medio[];
   loseleccionadodelacompra= Medio;
   public cancelar2 = new Ventas();
-  public stock_ide: number = 0
   public detallevoucher = new DetalleVoucher;
   public voucher_add: Voucher;
   public productos_add = new Productos();
