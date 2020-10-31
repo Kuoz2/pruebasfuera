@@ -75,6 +75,7 @@
     "ngx-dropzone-wrapper": "^8.0.0",
     "ngx-owl-carousel-o": "^2.0.1",
     "ngx-pagination": "^5.0.0",
+    "ngx-printer": "^0.8.2",
     "ngx-spinner": "^9.0.2",
     "protractor": "~5.4.0",
     "rxjs": "~6.5.2",

@@ -13,6 +13,7 @@ import {Voucher} from "../../Modulos/Voucher";
 import {Ventas} from "../../Modulos/Ventas";
 import {VentasService} from "../../../Service/ventas.service";
 import {VoucherService} from "../../../Service/voucher.service";
+import {NgxPrinterService} from "ngx-printer";
 
 
 @Component({
@@ -49,6 +50,7 @@ export class AppsaleComponent implements OnInit {
               private serviCat:ProductserviceService,
               private vent: VentasService,
               private vouchservicio: VoucherService,
+              private printer: NgxPrinterService
   ) {
 
     //Formulario de ingreso.
@@ -95,7 +97,7 @@ export class AppsaleComponent implements OnInit {
 
   }
 
-   imprimir(register,tabla):Boolean{
+   imprimir(register):Boolean{
   /*try {
     var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
     mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
@@ -109,7 +111,7 @@ export class AppsaleComponent implements OnInit {
     alert( 'Hubo un error al imprimir. Intente de nuevo.' );
     console.log( ex );
   }*/
-
+  this.printer.printDiv(register)
 
     return false
   }

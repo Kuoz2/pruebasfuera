@@ -1,333 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="cambiado cosas">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-print-marker-position.enum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-button.directive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-marker.directive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.directive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-service-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/ngx-printer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/public_api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-print-marker-position.enum.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-service-config.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/CopyrightNotice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/ngx-printer/public_api.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/Barcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/Barcode.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128A.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128A.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128B.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128C.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128C.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128_AUTO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE128_AUTO.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE39" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/CODE39.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN13.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN13.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN2.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN5.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN8.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN_UPC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/EAN_UPC.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ErrorHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ErrorHandler.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/GenericBarcode" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/GenericBarcode.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF14.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ITF14.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/JsBarcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/JsBarcode.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI10.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI1010.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI1010.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI11.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI1110.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/MSI1110.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/UPC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/UPC.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/UPCE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/UPCE.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/auto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/auto.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/barcodes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/barcodes.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/canvas.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/checksums.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/checksums.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/codabar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/codabar.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/constants.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/defaults.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/encoder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/encoder.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/exceptions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/exceptions.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/exceptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/exceptions.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/fixOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/fixOptions.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/getOptionsFromElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/getOptionsFromElement.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/getRenderProperties.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/getRenderProperties.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/help" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/help.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/index.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/index.tmp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/index.tmp.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/linearizeEncodings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/linearizeEncodings.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/merge.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/object.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/options" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/options.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/optionsFromStrings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/optionsFromStrings.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/pharmacode" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/pharmacode.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/renderers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/renderers.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/shared.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/shared.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/svg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/svg.js.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/.eslintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/MIT-LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/barcode-building.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/building.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/linting.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/misc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/releasing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/automation/shared.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/JsBarcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/Barcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/CODE128.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/CODE128A.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/CODE128B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/CODE128C.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/CODE128_AUTO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/auto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE128/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/CODE39/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/EAN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/EAN13.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/EAN2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/EAN5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/EAN8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/UPC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/UPCE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/encoder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/EAN_UPC/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/GenericBarcode/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/ITF/ITF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/ITF/ITF14.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/ITF/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/ITF/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/MSI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/MSI10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/MSI1010.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/MSI11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/MSI1110.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/checksums.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/MSI/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/codabar/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/index.tmp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/barcodes/pharmacode/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/exceptions/ErrorHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/exceptions/exceptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/fixOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/getOptionsFromElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/getRenderProperties.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/linearizeEncodings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/help/optionsFromStrings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/options/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/renderers/canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/renderers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/renderers/object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/renderers/shared.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bin/renderers/svg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/JsBarcode.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/JsBarcode.all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.codabar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.code128.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.code39.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.ean-upc.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.itf.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.msi.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/dist/barcodes/JsBarcode.pharmacode.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/example/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/example/toBase64.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/jsbarcode.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/JsBarcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/Barcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/CODE128.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/CODE128A.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/CODE128B.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/CODE128C.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/CODE128_AUTO.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/auto.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE128/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/CODE39/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/EAN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/EAN13.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/EAN2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/EAN5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/EAN8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/UPC.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/UPCE.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/encoder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/EAN_UPC/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/GenericBarcode/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/ITF/ITF.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/ITF/ITF14.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/ITF/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/ITF/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/MSI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/MSI10.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/MSI1010.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/MSI11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/MSI1110.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/checksums.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/MSI/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/codabar/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/barcodes/pharmacode/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/exceptions/ErrorHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/exceptions/exceptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/fixOptions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/getOptionsFromElement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/getRenderProperties.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/linearizeEncodings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/help/optionsFromStrings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/options/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/renderers/canvas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/renderers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/renderers/object.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/renderers/shared.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/src/renderers/svg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/canvasTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/canvasTest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/help/jquery-2.2.3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/initTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/jQueryTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/jQueryTest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/svgTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/svgTest.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/browser/tests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/coverage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/CODE128.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/CODE39.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/EAN-UPC.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/ITF-14.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/ITF.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/JsBarcode.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/MSI.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/Object-Render.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/codabar.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/help/help.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/nodesvg.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jsbarcode/test/node/pharmacode.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/README.MD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/__ivy_ngcc__/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.component.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.component.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/ngx-barcode.module.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-barcode/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/__ivy_ngcc__/fesm2015/ngx-printer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/__ivy_ngcc__/fesm2015/ngx-printer.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/bundles/ngx-printer.umd.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-print-marker-position.enum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.component.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/ngx-printer.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-button.directive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item-marker.directive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.directive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/lib/print-service-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/ngx-printer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/esm2015/public_api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/fesm2015/ngx-printer.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-print-marker-position.enum.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-button.directive.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item-marker.directive.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-service-config.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts.__ivy_ngcc_bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/CopyrightNotice.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/modules/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.es6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/node_modules/tslib/tslib.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/public_api.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
@@ -357,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
+            <state relative-caret-position="167">
               <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
             </state>
           </provider>
@@ -366,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="9" />
+            <state relative-caret-position="85">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -375,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1270">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="374">
+              <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -385,10 +103,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+              <caret column="17" selection-start-column="17" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -457,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/app/components/merma/merma.module.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/products.module.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/routes/content-routes.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/marca/marca.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/marca.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/productservice.service.ts" />
@@ -478,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
@@ -514,6 +250,41 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="appsale" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -781,7 +552,7 @@
       <workItem from="1603983751306" duration="16463000" />
       <workItem from="1604021571019" duration="5782000" />
       <workItem from="1604072036731" duration="16239000" />
-      <workItem from="1604159491135" duration="2039000" />
+      <workItem from="1604159491135" duration="2637000" />
     </task>
     <task id="LOCAL-00044" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596740523240</created>
@@ -1130,7 +901,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1814783000" />
+    <option name="totallyTimeSpent" value="1815381000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1145,7 +916,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1289,15 +1060,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/components/auth/auth.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Service/autentificacioncancan.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1659,45 +1421,48 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
+          <caret column="17" selection-start-column="17" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+        <state relative-caret-position="532">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1270">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="374">
+          <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
