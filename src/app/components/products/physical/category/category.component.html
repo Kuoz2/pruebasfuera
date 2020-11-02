@@ -4,12 +4,12 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Categorias</h5>
+                    <h5>Categorías</h5>
                 </div>
                 <div class="card-body">
                     <div class="btn-popup pull-right">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-original-title="test"
-                            data-target="#exampleModal" (click)="open(content)">Agregar categoria</button>
+                            data-target="#exampleModal" (click)="open(content)">Agregar categoría</button>
                         <ng-template #content let-modal>
                             <div class="modal-header">
                                 <h5 class="modal-title f-w-600" id="exampleModalLabel">Agregar nueva categoria</h5>
@@ -22,7 +22,7 @@
                                 <form class="needs-validation" [formGroup]="categoriasForm" (ngSubmit)="guardarcategoria()">
                                     <div class="form">
                                         <div class="form-group">
-                                            <label for="validationCustom01" class="mb-1">Nombre de la categoria :</label>
+                                            <label for="validationCustom01" class="mb-1">Nombre de la categoría :</label>
                                             <input class="form-control" formControlName="cnombre" id="validationCustom01" type="text">
                                         </div>
 
@@ -39,7 +39,7 @@
 
                         <ng-template #content2 let-modal2>
                             <div class="modal-header">
-                                <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar categoria</h5>
+                                <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar categoría</h5>
                                 <button type="button" class="close" aria-label="Close"
                                         (click)="modal2.dismiss('Cross click')">
                                     <span aria-hidden="true">&times;</span>
@@ -48,13 +48,13 @@
                             <div class="modal-body">
                                     <div class="form">
                                         <div class="form-group">
-                                            <label for="validationCustom012" class="mb-1">Nombre de la categoria :</label>
+                                            <label for="validationCustom012" class="mb-1">Nombre de la categoría :</label>
                                             <input class="form-control" [(ngModel)]="categoriaID.cnombre" id="validationCustom012" type="text">
                                         </div>
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary" (click)="editarcategoria(categoriaID)" >Guardar</button>
+                                        <button type="button" class="btn btn-primary" (click)="editarcategoria(categoriaID)" >Guardar</button>
                                         <button class="btn btn-secondary" type="button" data-dismiss="modal"
                                                 (click)="modal2.dismiss('Cross click')">Cerrar</button>
                                     </div>

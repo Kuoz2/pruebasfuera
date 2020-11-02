@@ -185,15 +185,11 @@ remover_producto(producto:Item){
       this.detallevoucher.dvcantidad = i.quantity;
       this.productos_add.stock.id = i.stock.id;
       this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
-      console.log("el ingreso del voucher", this.detallevoucher)
-      console.log("actualizacion de productos", this.productos_add.stock)
-
-      //Guardar el voucher generado.
+          //Guardar el voucher generado.
     this.vouchservicio.crearvoucher(this.detallevoucher).subscribe(res => {return res})
 
       //Actualiza el stcok generado.
-    this.serviCat.actualizarstock(this.productos_add.stock).subscribe()
-
+    this.serviCat.actualizarstock(this.productos_add.stock).subscribe(res => {return res})
     }
 
     this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;

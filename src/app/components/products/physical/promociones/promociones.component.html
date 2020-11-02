@@ -24,7 +24,7 @@
                                             <div class="row no-gutters">
                                     <div class="form-group col-sm-6 col-xl-6 row"  >
 
-                                        <label for="validationCustom02" class="col-sm-4">Categoria:</label>
+                                        <label for="validationCustom02" class="col-sm-4">Categoría:</label>
                                         <select class="form-control  col-xl-3 col-sm-4" id="validationCustom02" [(ngModel)]="Lacategoria" (change)="ngmodelcambia()">
                                             <option value="0" selected></option>
                                             <option [ngValue]="i" *ngFor="let i of categorias | async" >{{i.cnombre}}</option>
@@ -33,7 +33,7 @@
                                     </div>
                                         <div class="form-group col-sm-6 col-xl-6 row"  >
 
-                                        <label for="validationCustom01" class=" col-sm-4" >Ingreso de la promocion :</label>
+                                        <label for="validationCustom01" class=" col-sm-4" >Ingreso de la promoción :</label>
                                         <select class="form-control  col-xl-5 col-sm-4" id="validationCustom01" [(ngModel)]="registros" (dblclick)="guardarseleccion(registros,$event)" multiple>
                                             <option [ngValue]="d"  *ngFor="let d of ( productos |async) | buscarselectP:loseleccionado "   >{{d.pdescripcion}}</option>
 
