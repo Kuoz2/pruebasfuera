@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../../Modulos/Item";
+import {HoraActualService, valorReloj} from "../../../Service/hora-actual.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-boleta',
@@ -8,9 +10,25 @@ import {Item} from "../../Modulos/Item";
 })
 export class BoletaComponent implements OnInit {
 
-  constructor() { }
+  constructor( public secoind:HoraActualService) { }
+  datos$: Observable<valorReloj>;
+  hora: number;
+  minutos: string;
+  dia: string;
+  fecha: string;
+  ampm: string;
+  segundos: string;
 
   ngOnInit(): void {
+    this.datos$=this.secoind.getInfoReloj();
+    this.datos$.subscribe( x => {
+      document.getElementById("#horas").innerHTML = String( x.hora );
+      document.getElementById("#minutos").innerHTML = x.minutos;
+      document.getElementById('#dia').innerHTML= x.diadesemana;
+      document.getElementById('#fecha').innerHTML= x.diaymes;
+      document.getElementById("#ampm").innerHTML = x.ampm;
+      document.getElementById("#segundos").innerHTML = x.segundo;}
+    )
   }
 
   @Input() item: Array<Item>
