@@ -1,5 +1,6 @@
 import {Stock} from "./Productos";
 import {Categories} from "./Categories";
+import {Marca} from "./Marca";
 
 export class Item {
     pvactivacioncatalogo: boolean;
@@ -15,6 +16,9 @@ export class Item {
     stock = new Stock();
     cantidad:number;
     quantity: number;
+    category = new Categories()
+    brand = new Marca()
+    piva: number
 }
 export interface IItem {
     id:number,

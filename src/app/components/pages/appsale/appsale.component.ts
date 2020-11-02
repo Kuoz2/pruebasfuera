@@ -13,7 +13,6 @@ import {Voucher} from "../../Modulos/Voucher";
 import {Ventas} from "../../Modulos/Ventas";
 import {VentasService} from "../../../Service/ventas.service";
 import {VoucherService} from "../../../Service/voucher.service";
-import {NgxPrinterService} from "ngx-printer";
 
 
 @Component({
@@ -41,7 +40,6 @@ export class AppsaleComponent implements OnInit {
   //Variable para el formulario
   app_venta: FormGroup
   public categorias: Categories[];
-  private printWindowSubscription;
 
 
 
@@ -52,7 +50,6 @@ export class AppsaleComponent implements OnInit {
               private serviCat:ProductserviceService,
               private vent: VentasService,
               private vouchservicio: VoucherService,
-              private printer: NgxPrinterService
   ) {
 
     //Formulario de ingreso.
@@ -131,44 +128,8 @@ export class AppsaleComponent implements OnInit {
          '@page  {size: auto; margin: 0}' +
          'header,footer,aside{display: none }' +
          '</style>' +
-         '<title></title></head>'+
-         '<div style="font-size: xx-small;  text-align: center;"> '
-         +'<div style="border: solid blue">' +
-         '<div style="border: solid yellow;" >' +
-         'Botillería Poma v10' +
-         '<br> Calama, Av Huaytiquina #947' +
-         ' <br>Rut:' +
-         '<br>BOLETA ELECTRONICA No.' +
-         '<br>23/08/2017 08:22 a.m.' +
-         '</div>' +
-         '<table style=" margin: 0  auto;">' +
-         '<thead style="font-size: xx-small; " >' +
-         '<tr>' +
-         '<th >IVA</th>' +
-         '<th >Producto</th>' +
-         '<th >$$</th>' +
-         '</tr>' +
-         '</thead>' +
-         '<tbody style="font-size: xx-small;" >' +
-         '<tr>' +
-         '<td >1.00</td>' +
-         '<td>Cristal</td>' +
-         '<td>$1000</td>' +
-         '</tr>' +
-         '<tr>' +
-         '<td>2.00</td>' +
-         '<td>Royal</td>' +
-         '<td>$4000</td>' +
-         '</tr>' +
-         '<tr>' +
-         '<td>3.00</td>' +
-         '<td>Baltica</td>' +
-         '<td>$5000</td>' +
-         '</tr>' +
-         '</tbody>' +
-         '</table>'
-         +'</div>'
-         +'</div>'
+         '<title></title></head>' +
+         document.getElementById(register).innerHTML
 
      )
 
@@ -176,6 +137,8 @@ export class AppsaleComponent implements OnInit {
      setTimeout( function () {
 
        mywindow.print()
+       mywindow.location.reload()
+
      }, 100)
   }
 

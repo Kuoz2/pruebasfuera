@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Item} from "../../Modulos/Item";
 
 @Component({
   selector: 'app-boleta',
@@ -11,6 +12,8 @@ export class BoletaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input() item: Array<Item>
 
     imprimir() {
       var mywindow = window;

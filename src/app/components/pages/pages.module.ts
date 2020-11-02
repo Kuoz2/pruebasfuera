@@ -17,7 +17,6 @@ import {ListproductComponent} from './appsale/listproduct/listproduct.component'
 import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component';
 import {HoraActualService} from "../../Service/hora-actual.service";
 import {BoletaComponent} from './boleta/boleta.component';
-import {NgxPrinterModule} from "ngx-printer";
 
 @NgModule({
   declarations:
@@ -38,7 +37,6 @@ import {NgxPrinterModule} from "ngx-printer";
         ReactiveFormsModule,
         CKEditorModule,
         SharedModule,
-        NgxPrinterModule.forRoot({printOpenWindow: false}),
 
     ],
     providers:[HoraActualService]

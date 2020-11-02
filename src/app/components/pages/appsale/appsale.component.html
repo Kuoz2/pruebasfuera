@@ -41,7 +41,8 @@
                     <tbody *ngFor="let productos of items" >
                     <tr >
                             <th>{{productos.pdescripcion}}</th>
-                            <th>{{productos.quantity}} <button type="button" class="close" aria-label="close"> <span aria-hidden="true" (click)="remover_producto(productos)">&times;</span></button></th>
+                            <th>{{productos.quantity}}
+                                <button type="button" class="close" aria-label="close"> <span aria-hidden="true" (click)="remover_producto(productos)">&times;</span></button></th>
                     </tr>
                     </tbody>
                 </table>
@@ -78,6 +79,7 @@
         </div>
     </div>
            </form>
+    <app-boleta [item]="items"></app-boleta>
 </ng-template>
 
 <nav class="navbar navbar-light">

@@ -4,39 +4,32 @@
 <div class="centrarCaja">
         <div class="card ticket"  >
 
-    <div class="centrado">Botillería Poma
+    <div class="centrado" style="font-size: xx-small;">Botillería Poma
         <br>Calama, Av Huaytiquina #947
         <br>Rut:
         <br>BOLETA ELECTRONICA No.
         <br>23/08/2017 08:22 a.m.</div>
     <table >
-        <thead>
+        <thead style="font-size: xx-small;">
         <tr>
             <th class="cantidad">IVA</th>
             <th class="producto">PRODUCTO</th>
+            <th class="producto">CANT</th>
             <th class="precio">$$</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size: xx-small;" *ngFor="let product of item">
         <tr>
-            <td class="cantidad">1.00</td>
-            <td class="producto">CHEETOS VERDES 80 G</td>
-            <td class="precio">$8.50</td>
+            <td class="cantidad">{{product.piva}}</td>
+            <td class="producto">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
+            <td class="precio">{{product.quantity}}</td>
+            <td class="precio">{{product.pvalor}}</td>
         </tr>
-        <tr>
-            <td class="cantidad">2.00</td>
-            <td class="producto">KINDER DELICE</td>
-            <td class="precio">$10.00</td>
-        </tr>
-        <tr>
-            <td class="cantidad">1.00</td>
-            <td class="producto">COCA COLA 600 ML</td>
-            <td class="precio">$10.00</td>
-        </tr>
+
         <tr>
             <td class="cantidad"></td>
             <td class="producto">TOTAL</td>
-            <td class="precio">$28.50</td>
+            <td class="precio">$por agregar</td>
         </tr>
         <tr>
             <td class="cantidad"></td>
@@ -45,8 +38,7 @@
         </tr>
         </tbody>
     </table>
-    <p class="centrado">¡GRACIAS POR SU COMPRA!
-        <br>parzibyte.me</p>
+    <p class="centrado" style="font-size: xx-small;">¡GRACIAS POR SU COMPRA!
     </div>
     </div>
 
