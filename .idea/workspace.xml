@@ -1,8 +1,971 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+    <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="cambiado cosas">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ad.ca31a793a936aace4d62.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ae.d6dbe72b1c0c91eb290d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/af.3edf6ac55b1034f0d28c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ag.02bcf9e64b55190e587d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ai.bf2bb51d67f3de45a12b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/al.0c8f35616f3b4b85efa8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/am.0d5a20b88add27ad82af.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ao.12686c0e54f1c7dade6a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/aq.f30ea4ab70f763cf650f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ar.a6308b511c3a2d2227fa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/as.6799736fbb80fd1bddbc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/activity.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/airplay.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/alert-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/alert-octagon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/alert-triangle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/align-center.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/align-justify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/align-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/align-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/anchor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/aperture.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/archive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-down-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-down-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-down-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-left-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-right-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-up-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-up-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-up-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/arrow-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/at-sign.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/award.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bar-chart-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bar-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/battery-charging.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/battery.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bell-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bell.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bluetooth.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bold.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/book-open.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/book.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/bookmark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/box.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/briefcase.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/camera-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/camera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cast.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/check-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/check-square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevron-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevron-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevron-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevron-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevrons-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevrons-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevrons-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chevrons-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/chrome.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/clipboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud-drizzle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud-lightning.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud-rain.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud-snow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/code.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/codepen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/command.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/compass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-down-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-down-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-left-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-left-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-right-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-right-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-up-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/corner-up-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/cpu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/credit-card.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/crop.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/crosshair.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/database.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/disc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/dollar-sign.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/download-cloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/download.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/droplet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/edit-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/edit-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/edit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/external-link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/eye-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/fast-forward.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/feather.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/file-minus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/file-plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/file-text.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/film.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/filter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/flag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/folder-minus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/folder-plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/folder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/gift.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/git-branch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/git-commit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/git-merge.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/git-pull-request.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/github.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/gitlab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/grid.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/hard-drive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/hash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/headphones.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/heart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/help-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/image.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/inbox.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/italic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/layers.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/layout.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/life-buoy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/link-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/linkedin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/list.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/loader.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/lock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/log-in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/log-out.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/mail.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/map-pin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/map.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/maximize-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/maximize.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/message-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/message-square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/mic-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/mic.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/minimize-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/minimize.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/minus-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/minus-square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/minus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/monitor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/moon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/more-horizontal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/more-vertical.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/move.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/music.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/navigation-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/navigation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/octagon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/package.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/paperclip.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/pause-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/pause.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/percent.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-call.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-forwarded.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-incoming.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-missed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone-outgoing.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/pie-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/play-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/play.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/plus-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/plus-square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/pocket.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/power.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/printer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/radio.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/refresh-ccw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/refresh-cw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/repeat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/rewind.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/rotate-ccw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/rotate-cw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/rss.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/save.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/scissors.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/send.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/server.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/settings.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/share-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/share.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/shield-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/shield.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/shopping-bag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/shopping-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/shuffle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/sidebar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/skip-back.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/skip-forward.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/slack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/slash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/sliders.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/smartphone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/speaker.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/stop-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/sun.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/sunrise.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/sunset.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/tablet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/tag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/target.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/terminal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/thermometer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/thumbs-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/thumbs-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/toggle-left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/toggle-right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/trash-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/trash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/trending-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/trending-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/triangle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/truck.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/tv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/twitter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/type.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/umbrella.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/underline.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/unlock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/upload-cloud.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/upload.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/user-check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/user-minus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/user-plus.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/user-x.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/users.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/video-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/video.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/voicemail.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/volume-1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/volume-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/volume-x.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/volume.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/watch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/wifi-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/wifi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/wind.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/x-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/x-square.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/x.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/zap-off.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/zap.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/zoom-in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/feather/zoom-out.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ad.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ae.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/af.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ai.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/al.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/am.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ao.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/aq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/as.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/at.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/au.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/aw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ax.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/az.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ba.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/be.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/br.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/by.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/bz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ca.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ci.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ck.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/co.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cx.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/cz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/de.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/dj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/dk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/dm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/do.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/dz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ec.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ee.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/eg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/eh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/er.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/es-ct.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/es.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/et.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/eu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/fr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ga.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gb-eng.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gb-nir.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gb-sct.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gb-wls.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ge.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/gy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/hk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/hm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/hn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/hr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ht.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/hu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/id.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ie.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/il.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/im.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/in.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/io.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/iq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ir.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/is.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/it.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/je.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/jm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/jo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/jp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ke.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ki.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/km.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ky.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/kz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/la.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/li.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ls.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/lv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ly.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ma.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/md.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/me.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ml.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mq.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ms.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mx.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/my.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/mz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/na.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ne.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ng.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ni.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/no.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/np.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/nz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/om.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ph.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ps.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/pw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/py.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/qa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/re.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ro.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/rs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ru.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/rw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/se.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sh.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/si.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/so.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ss.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/st.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sx.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/sz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/td.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/th.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tj.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tk.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/to.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tr.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tv.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/tz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ua.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ug.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/um.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/un.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/us.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/uy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/uz.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/va.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/vc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ve.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/vg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/vi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/vn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/vu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/wf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ws.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/ye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/yt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/za.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/zm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/flag-icon/zw.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/ico/icofont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/ico/icofont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/ico/icofont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/ico/icofont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/slick.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/slick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/slick.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/slick.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify/themify.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify/themify.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify/themify.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/fonts/themify/themify.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/beer-311090_1280.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/cat3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/boy-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/designer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/login-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/man.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/multikart-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/product/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/stats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/dashboard/user5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/3d-design.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/application.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/css.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/ebooks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/graphic-design.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/html.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/lecture-video-recorder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/main.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/php.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/web-dev.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/web-element.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/digital-product/wordpress.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/electronics/product/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/fashion/pro/06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/fashion/pro/shoes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/fashion/product/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/fashion/product/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/fashion/product/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/furniture/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/furniture/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/furniture/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/furniture/product/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/furniture/product/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/game/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/game/top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/jewellery/pro/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/jewellery/pro/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/jewellery/pro/26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/pro3/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/pro3/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/pro3/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/product-list/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/size-chart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/team/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/team/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/team/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/images/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/chartist/_chartist-settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/chartist/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/feather-icon/_feather-icon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/flag-icon/_flag-icon-base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/flag-icon/_flag-icon-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/flag-icon/_flag-icon-more.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/font-awesome/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/icoicon/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_extras.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_themify-icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/themify/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/icons/whether-icon/_whether-icon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/theme/_admin_style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/theme/_datatable.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/theme/_rtl.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/theme/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/assets/scss/theme/chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/at.5309bda704bf6ba0cfb8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/au.94a2e0cd6c36e044c482.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/aw.de558b83521f73d7337e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ax.10c85636250faa8673a9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/az.c03b04167198f809a2c5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ba.1d0373f7dca222babc03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bb.46ccdb98b09fb56324f8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bd.7a30395b2f93bfd130e1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/be.ae873fc082ea79d67af9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bf.ee6777409fbfbd1fc232.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bg.a7d1a4f049fa79946b67.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bh.92f2a89e21cbc16190c5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bi.b1421422e30f6e34abf4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bj.b0825519a8b4028c26d1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bl.42145fe6a1251343a271.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bm.d459fce0b62e27fc5d04.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bn.bd6ba1f4d7aa1e46b6e1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bo.134662950791c2ba51c6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bq.606dd5875941d39f7c12.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/br.ed4137cfd44daa13ea49.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bs.e6d66fa2d415babf0b2a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bt.cf9596dedd2478ca2fd0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bv.ad7cca2596d6d9a95ba5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bw.84fd039a0d9309eea30a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/by.f59e5e2a62b34fa8f392.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/bz.bdc3e89f02c74252734c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ca.35dd01991458aa7271c4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cc.29a6a20c83da130db097.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cd.f5e1294f8e517b15a527.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cf.542a8c123b3c19f53fbc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cg.6c02ddb7f4311a74692c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ch.ab7dda100b5bbf81412c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ci.92d4ba02727e231ec072.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ck.749147077a09d8f95e03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cl.7635ca97906941277112.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cm.217204e81f8ef5008151.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cn.98d6f169ac7a66efed4d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/co.36a0e0e10fe4d2b22f42.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cr.f3b91dfaac3611a2bb56.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cu.f33777307068cda04f1e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cv.5779e00be9a36ac84200.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cw.81ac7a6fc60f33b11f8d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cx.d4d3fe794c045f315725.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cy.254506ce880e90b3c0cd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/cz.c0c9d9a505678e515514.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/de.888f6bdce53030a6e80f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/dj.189ca57c7abd43199551.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/dk.fc98a12960b87d3b9e07.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/dm.13b72fbecbdf1ccf7809.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/do.b9b509413af90ea6f577.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/dz.a4060b64ec782b9d491b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ec.9f4a6c3a4146a5ce960c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ee.e8920bf0542ed7d1e49b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/eg.cc70ccd77020873ecbb9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/eh.362f24810003916e2364.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/er.8186bf8d55de0b12503b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/es-ct.4a8f7a70be8381d17082.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/es.5399741c6f0109f01162.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/et.af379dccd7cf32303aac.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/eu.537d37f4bea4bf5f85d8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fi.6147315aa1e35f139e8d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fj.897bc8adca0bbd54b558.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fk.eb650a35194366974b13.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fm.feb0dd190dfb09c78184.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fo.be7dab642db4b6fac975.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fontawesome-webfont.20fd1704ea223900efa9.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fontawesome-webfont.8b43027f47b20503057d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fontawesome-webfont.f691f37e57f04c152e23.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/fr.da032352a4efd19ac25a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ga.656c7fedf6bc69dd79d1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gb-eng.c79b0bfc6d43f890a499.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gb-nir.58c5571943fe23fc6e02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gb-sct.98ff327f4bcf8b90343c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gb-wls.9c138db83115bbf972fe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gb.a063eb2f1d9579017098.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gd.f881a0d2ea7719d39685.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ge.0d56bacc20b37fdcbbca.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gf.317ee07d2728c97b15f0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gg.2645dca345466de0c97f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gh.e14d619d2991f5eb2641.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gi.edc0a90556507b115001.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gl.5482d73939a64c274602.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gm.f42f77707f1ab37d7bb1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gn.be503e12b5bb96bc525b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gp.ec5c714d6742bfeb8be2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gq.8094747272b38dab1871.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gr.eac01dcd2c839b33cb54.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gs.0216ae6087986fe857ae.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gt.a3fb60698fc52d78477d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gu.127e67ee10729427919d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gw.40e7b7d27af3f239f291.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/gy.507baf962a6d394365ea.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/hk.a4e9643c21d3a2e3f519.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/hm.6837577b2861110dc100.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/hn.9140ac8170526aebca9f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/hr.08dfb4c1440307bc11ae.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ht.c42053a84a02ae87fc5e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/hu.5b5c4c8373e5f208d3ac.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/icofont.4f7f7bf78dfd2979cbba.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/icofont.556fa8050e7e3b9a829d.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/icofont.c2bb62e2c5c6870a5cb5.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/icofont.dae25655dd28a58eb576.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/id.915dbe7cfc0e2733a808.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ie.a3d22622729fbbb14da9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/il.3dba417ae18611c0f9c6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/im.d70438cbae06b6ff5aac.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/in.ff7549f7f779430e01aa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/io.51e37fc19eeea15825cc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/iq.fccaaef97d971ff7c84e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ir.7ffbb75e40eb98fe7410.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/is.542a47fe6652001b3dfd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/it.fd6a03b76b2a20eb3aea.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/je.428ee52a62f1f269fac4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/jm.d3cc5212b7096dd7cbae.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/jo.fd70ed53d23fa7996a84.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/jp.e88bdf022faaac9c6aab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ke.142690140c31e8c7eedf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kg.1b7cb64f53991640f77b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kh.9c4fe4438e93cf02afaa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ki.b15f1c5f7d485491a594.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/km.fb930327745992be4eca.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kn.a41408223acfe9dd6b66.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kp.190eda65c04aaef16c5d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kr.69cc2723c3244b005bc0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kw.ec2cbfd83734469d03da.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ky.4c51dd9a6b8316706d90.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/kz.0b7cc5e4ae1cd812cb22.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/la.4c14a3ce2f25efa37bd2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lb.c4293ad7d99789b123a3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lc.ab0355788cfb2e14fee5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/li.67956510ad59f57af330.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lk.e31bd4522b8de69169ab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/login-bg.57b40a435417e8b6d7f8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lr.4a32c68ca8a95c56f4c8.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ls.a497d746a55018cd5f58.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lt.18f279c12753cfb88ffa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lu.ea32843f342611313a04.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/lv.ae523190f36e2f04b9a0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ly.0b0f3f3b3e5a038701bd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ma.1147dd897a2b167632af.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/main-es2015.42c132c38f37e2909edf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/main-es5.42c132c38f37e2909edf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mc.40c202f79e0a848930a2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/md.a829fc4868897053147b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/me.c76494939c9c9edb3784.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mf.b8f1a4ef0f6f26d08484.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mg.b6fef7e6f7df43304fab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mh.aa0c01100fc344a66086.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mk.c5e8b09d4e81ebd0c41c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ml.5204de404d88281e5c79.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mm.8ac531e1a069c5abec5e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mn.88f9e99a5733804b690e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mo.c31ad393b9be2177b000.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mp.4ac904225c98259e8495.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mq.68b83ca57cebe252aec5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mr.fe0c99da894753ceb49e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ms.1e01db4943c166d0d99d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mt.8bb217f8dbf3757be544.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mu.fac1d9e56b6fc4d70f6b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mv.cca45d07fdeb8b51efed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mw.47096f61604dcc35a736.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mx.2c3e6269a1d360cc4372.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/my.07a2b954a852d400cf1b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/mz.437e5e7e8baee752f624.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/na.341c9a95c15f7724623d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nc.8964e9d288bee6d017d0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ne.63d98e604e2655fa7560.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nf.491e2cb1ed059769ee6c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ng.63d11526ba189073cf88.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ni.a6a663fc3a131ea0338a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nl.90d37ba2f87b97413d72.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/no.ebc5cbbf9191fccacfa6.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/np.376ba69ac7efe6dd021e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nr.7203adcc9109f98a90ce.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nu.e0ebb0a0c1c386928744.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/nz.80de009680b35194008b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/om.a4165f8b917d1cf2a306.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pa.c57742ff6c56050ca899.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pe.bfc1b7612f46b109eaa9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pf.ced522d0c623c1ed205e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pg.26ccc1adfdea63a62cec.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ph.ac201247831436678b2e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pk.60cd1fcc109cbd09784d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pl.72ad527630e5a5340bfa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pm.3177972a5fba1b438ed4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pn.3a7ee56fbb32fb452408.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/polyfills-es2015.0d2e52711b9d4725747f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/polyfills-es5.f8cf9db5cb6f42d609f2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pr.f3e7609efc8f44b5b298.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ps.5f0171cf87f7834bb406.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pt.a0d9acfb1c2a4e986423.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/pw.c7ab5051febfb1b8c4fd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/py.5779800eac3b4129d113.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/qa.d9ba99e670733eb59fa0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/re.9cd28549edb07c04561c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ro.10df4fddff9f7332c736.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/rs.a06ce391e44f88818594.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ru.b15eaf603b43f783e205.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/runtime-es2015.1eba213af0b233498d9d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/runtime-es5.1eba213af0b233498d9d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/rw.1d3a2837fd88af6dbbaf.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sa.04d0731eccf0867160fe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sb.c4f275867785f7b9da7f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sc.ca4d15445e80eaf27701.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sd.43885ad7472d8493cb68.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/se.7c4e34cc7d59651cea5d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sg.ea25cc8306d5c50f6f9c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sh.51e2a5b4e26e4356fd3e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/si.ca179ac4c194b1ae22ae.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sj.ed3091f90ca33e68a478.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sk.ea01c9d3ae7b2a623a53.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sl.5b42385a9d1c7c1c0845.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sm.9be0b31804b75d372956.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sn.4cebb6bcfdc50dabee8f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/so.cb850010c79a4a5e80e1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sr.8a55c8800af3f3ef29da.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ss.b514a452c753222edb74.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/st.b6fe2ffad19ccf2a2668.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/styles.ae57c4454dc744d528e6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sv.727fdda95d0726a2f855.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sx.4c1191e8b14455ea4c37.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sy.0f554814ab873be01612.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/sz.39530ef0f606019c0c8e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tc.ff2766b3075c3d42c445.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/td.e8da56cbebbb3dde4144.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tf.a9e5f1da0851049e7588.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tg.b43eae00ae1ff50f3c54.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/th.7af9785ea63515b716b2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/themify.29b39089170885ae2967.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/themify.9bad94440d49256265a5.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/themify.c4292f34297f1004471a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/themify.eda8b94308c6f538f04a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tj.6c2162b3efdb36b87d7e.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tk.1455c0103ac60cfa8ded.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tl.7d28e8d40168ce954275.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tm.a4225f49582a3e6efb79.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tn.8c354710fc62c5463e7a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/to.349c2891172b7c5d52c9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tr.b3a2944bab002e3d54a9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tt.2202ac07ae4c9dac909d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tv.0e4df57cb9c9807e406f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tw.e09246826e565fc6c51b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/tz.dc6b0e6b7a66c83d6308.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ua.bfb189806941462b4a66.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ug.ea13afded4e1f51ebdd0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/um.ff13e83804d6e8c8e0a9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/un.31da6099b952c8ddfb54.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/us.6721ec1703d6c70217dc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/uy.acae891c26de107e0055.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/uz.768aad8665624dc7dbe9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/va.92d8e5deb8a06804acc9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/vc.7ede03d79eb30e0b9e39.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ve.16965260962de6c0cc26.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/vg.6522df4ca6b807d31bf1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/vi.ddcb2a05ad0cafc4d624.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/vn.dc5c01120d8c744071c7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/vu.b3180467e2c843cb399a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/wf.b1cd4b7cbf8e0ed52a02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ws.e3d730a023004cd1c4c4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/ye.67becdbb6b9c41ee1d8c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/yt.9e7546c6fbbba992e773.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/za.ec2f0f1e801da0e00cbd.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/zm.c9457bd128c84512d2c4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/multikart-admin/zw.f4d026d62b64ba5d54f7.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.component.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.module.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/ngx-printer.service.d.ts" afterDir="false" />
@@ -11,13 +974,18 @@
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/lib/print-item.directive.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/ngx-printer.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ngx-printer/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -36,11 +1004,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+            <state relative-caret-position="435">
+              <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -48,22 +1016,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+            <state relative-caret-position="321">
+              <caret line="133" column="21" lean-forward="true" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
               <folding>
-                <element signature="e#0#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#94#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,18 +1033,51 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="542">
+              <caret line="71" column="13" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="71" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -124,9 +1119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/prueba-reloj/prueba-reloj.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/components/prueba-reloj/prueba-reloj.component.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/hora-actual.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/prueba-reloj/prueba-reloj.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/prueba-reloj/prueba-reloj.component.ts" />
@@ -168,13 +1160,16 @@
         <option value="$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -202,6 +1197,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,11 +1240,19 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="appsale" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="boleta" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +1273,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -510,7 +1514,9 @@
       <workItem from="1603983751306" duration="16463000" />
       <workItem from="1604021571019" duration="5782000" />
       <workItem from="1604072036731" duration="16239000" />
-      <workItem from="1604159491135" duration="12479000" />
+      <workItem from="1604159491135" duration="14553000" />
+      <workItem from="1604189277963" duration="7855000" />
+      <workItem from="1604245133754" duration="35155000" />
     </task>
     <task id="LOCAL-00045" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596741177971</created>
@@ -859,7 +1865,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1825223000" />
+    <option name="totallyTimeSpent" value="1870307000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,9 +1878,41 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2771855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2835821" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4936034" weight="0.3531961" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.3531961" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49253732" visible="true" weight="0.22860238" />
+      <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32928804" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -895,39 +1933,6 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.3531961" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49253732" weight="0.9328277" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.32928804" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4946695" weight="0.3531961" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.6619718" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4936034" weight="0.12026002" />
-      <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32876712" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -989,6 +1994,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/paltanes" />
+    </ignored-roots>
     <MESSAGE value="haciendo otra prueba" />
     <MESSAGE value="haciendo otra prueba workpace" />
     <MESSAGE value="ng serve" />
@@ -1018,24 +2026,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/Service/cart-service.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Service/categorias.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-117">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Service/conconcan.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1306,13 +2296,6 @@
         <state relative-caret-position="-896" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/ticket/ticket/ticket.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
@@ -1347,16 +2330,6 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="49" column="42" lean-forward="true" selection-start-line="49" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1370,13 +2343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1386,23 +2352,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
+        <state relative-caret-position="838">
           <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -1410,20 +2362,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+        <state relative-caret-position="435">
+          <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="71" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="133" column="21" lean-forward="true" selection-start-line="133" selection-start-column="21" selection-end-line="133" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
         </state>
       </provider>
     </entry>
