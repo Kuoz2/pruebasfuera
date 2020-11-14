@@ -102,13 +102,13 @@ imagenjpg
      //});
  //this.printer.printDiv('ticket')
      const code = "hola";
-     var mywindow = window;
+     var mywindow = window.open("http://google.com", '__blank','location=no');
      mywindow.document.write(
          '<head>' +
          '<style type="text/css">' +
          '@page  { margin: 0 ; size: 58mm 100mm;  }' +
          ' body.receipt .sheet { width: 58mm; height: 100mm } /* sheet size */\n' +
-         'section { width: 58mm; height: 100mm; padding-10mm}' +
+         'section { width: 58mm; height: 100mm; padding: 10mm}' +
          '    @media print { body.receipt { width: 58mm } } /* fix for Chrome */' +
          'header,footer,aside{display: none }' +
          '\n' +
@@ -174,6 +174,7 @@ imagenjpg
             document.getElementById(register).innerHTML+
          '</body>'
      );
+     mywindow.document.close();
      setTimeout( function () {
        mywindow.print();
        mywindow.close()
