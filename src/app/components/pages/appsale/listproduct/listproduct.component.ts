@@ -23,26 +23,18 @@ export class ListproductComponent implements OnInit {
   @Input()encontrandoCategoriasApp:string = "";
   constructor(private carservice:CartServiceService, private productos_car:ProductserviceService, private sanitizar:DomSanitizer) {
   }
-
   ngOnInit() {
       this.listaproductoAsync()
   }
-
   listaproductoAsync() {
     this.Productos_lista = this.productos_car.item_productos();
   }
-
   PurificandoLink(dato):SafeUrl{
     return this.sanitizar.bypassSecurityTrustUrl(dato)
   }
-
-
-
   addCart(product: Item) {
     const data = product;
     const elemento = {quantity: 1};
-
-      console.log("data", data.quantity)
     if (data.quantity >= elemento.quantity){
       this.carservice.changeCart(data)
     }else {

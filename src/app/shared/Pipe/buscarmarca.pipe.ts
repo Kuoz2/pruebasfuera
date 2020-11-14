@@ -7,15 +7,19 @@ export class BuscarmarcaPipe implements PipeTransform {
 
   transform(value: [any], ...args: string[]): any {
     const marca = [];
+    const marca2 = []
     if (args[0] != "0" && args[0] != '' && typeof (args[0]) != "undefined") {
       for (const ca of value) {
         if (ca.category.cnombre.indexOf( args ) > -1) {
-          marca.push( ca )
+          marca2.push( ca );
         }
       }
-      return marca
+      const data = Object.values( marca2.reduce( (prev, next) => Object.assign( prev, {[next.brand]: next} ), {} ) );
+        for (const de of data){
+          marca.push(de)
+        }
     }
-    return null;
+    return marca
   }
-
 }
+

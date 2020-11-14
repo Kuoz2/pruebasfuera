@@ -14,7 +14,7 @@ export interface Menu {
 	active?: boolean;
 	bookmark?: boolean;
 	children?: Menu[];
-
+	rol?:string;
 }
 
 
@@ -43,15 +43,14 @@ export class NavService {
 	MENUITEMS: Menu[] = [
 
 		{
-			path: '/dashboard/default', title: 'Dashboard', icon: 'home', type: 'link', badgeType: 'primary', active: false
+			path: '/dashboard/default',rol:"", title: 'Dashboard', icon: 'home', type: 'link', badgeType: 'primary', active: false
 		},
 		{
-			title: 'Productos',icon: 'box', type: 'sub',active: false,  children: [
+			title: 'Productos' ,icon: 'box', type: 'sub',active: false,  children: [
 
-						{ path: '/products/physical/category', title: 'Categorias', type: 'link'},
-						{ path: '/products/physical/lista-editar', title: 'Inventario', type: 'link' },
+						{ path: '/products/physical/lista-editar'  , title: 'Inventario', type: 'link' },
 						{ path: '/products/physical/add-product', title: 'Agregar producto', type: 'link' },
-						{ path: '/products/physical/proveedor', title:'Proveedor', type:'link'},
+						{ path: '/products/physical/proveedor',title:'Proveedor', type:'link'},
 						{ path: '/products/physical/promociones', title:'Promociones', type:'link'},
 						{ path: '/products/physical/impuestos', title:'Impuestos', type:'link'},
 						{path: '/products/physical/marca', title:'Marcas', type:'link'}
@@ -71,7 +70,7 @@ export class NavService {
 		},
 
 		{
-			title: 'Usuarios', icon:'user-plus', type: 'sub', active: false, children: [
+			title: 'Usuarios',rol:"", icon:'user-plus', type: 'sub', active: false, children: [
 				{
 					path: '/users/create-user', title: "Crear usuario", type: 'link'
 				},
@@ -83,7 +82,7 @@ export class NavService {
 
 
 		{
-			title: 'Inicio',path: '/auth/login', icon: 'log-in', type: 'link', active: false
+			title: 'Inicio',path: '/auth/login',rol:"vendedor", icon: 'log-in', type: 'link', active: false
 		},
 		{
 			title: 'Mermas', type: 'sub', icon: 'book', children:[

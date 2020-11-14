@@ -5,6 +5,7 @@ import {ListavoucherComponent} from "./listavoucher/listavoucher.component";
 import {MedioComponent} from "./medio/medio.component";
 import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
 import {BoletaComponent} from "./boleta/boleta.component";
+import {CierrecajaComponent} from "./cierrecaja/cierrecaja.component";
 
 
 const routes: Routes = [
@@ -60,6 +61,14 @@ const routes: Routes = [
         data:{
           title:'Boleta',
           breadcrumb:'Boleta'
+        }
+      },
+      {
+        path:'cierre',
+        component: CierrecajaComponent,
+        data:{
+          title:'cierre de caja',
+          breadcrumb:'caja'
         }
       }
     ]

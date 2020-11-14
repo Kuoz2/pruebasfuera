@@ -79,7 +79,10 @@
         </div>
     </div>
            </form>
-    <app-boleta [item]="items"></app-boleta>
+    <app-boleta [item]="items"
+    [totalPrices] = "totalPrice"
+
+    ></app-boleta>
 </ng-template>
 
 <nav class="navbar navbar-light">
@@ -104,3 +107,5 @@
     </form>
 </nav>
 
+
+<img src="{{imagenjpg}}">

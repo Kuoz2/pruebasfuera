@@ -1,47 +1,70 @@
-
 <div id="ticket" name="ticket" >
-
+    <section class="sheet padding-10mm">
 <div class="centrarCaja">
         <div class="card ticket"  >
-
-    <div class="centrado" style="font-size: xx-small;">Botillería Poma
-        <br>Calama, Av Huaytiquina #947
-        <br>Rut:
-        <br>BOLETA ELECTRONICA No.
-        <br>Fecha:<span id="#dia" style="font-size: xx-small"></span><span id="#fecha" style="font-size: xx-small"></span>
-        <br>Hora: <span id="#horas" style="font-size: xx-small"></span>:<span id="#minutos"style="font-size: xx-small"></span>:<span id="#segundos"style="font-size: xx-small"></span><span id="#ampm"style="font-size: xx-small"></span></div>
+            <div class="centrado" style="font-size: xx-small;">
+        <h2>Botillería Poma</h2>
+        <h2>Calama, Av Huaytiquina #947</h2>
+        <h2>Rut:</h2>
+        <h2>BOLETA ELECTRONICA No.</h2>
+        <h2>Fecha:<span id="#fecha" ></span></h2>
+        <h2>Hora: <span id="#horas" ></span>:<span id="#minutos"></span>:<span id="#segundos"></span><span id="#ampm"></span></h2>
+            </div>
     <table >
         <thead style="font-size: xx-small;">
         <tr>
-            <th class="producto">IVA</th>
+            <th class="cantidad">IVA</th>
             <th class="producto">PROD</th>
-            <th class="producto">CANT</th>
-            <th class="precio">$$</th>
+            <th class="cantidad">CAN</th>
+            <th class="cantidad">$$</th>
         </tr>
         </thead>
         <tbody style="font-size: xx-small;" *ngFor="let product of item">
         <tr>
             <td class="cantidad">{{product.piva}}</td>
             <td class="producto">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
-            <td class="precio">{{product.quantity}}</td>
-            <td class="precio">{{product.pvalor}}</td>
+            <td class="cantidad">{{product.quantity}}</td>
+            <td class="cantidad">{{product.pvalor}}</td>
         </tr>
 
         <tr>
             <td class="cantidad"></td>
             <td class="producto">TOTAL</td>
-            <td class="precio">$por agregar</td>
+            <td class="cantidad">${{totalPrices}}</td>
         </tr>
         <tr>
             <td class="cantidad"></td>
-            <td class="producto">IMP</td>
-            <td class="precio"></td>
+            <td class="cantidad">IMP</td>
+            <td class="cantidad"></td>
         </tr>
         </tbody>
     </table>
+            <canvas id="barcode" hidden ></canvas >
+            <img src="" id="imagen">
     <p class="centrado" style="font-size: xx-small;">¡GRACIAS POR SU COMPRA!
     </div>
     </div>
+    </section>
+</div>
 
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar cantidad y DTE</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="boletaform" (submit)="guardarformato(boletaform)">
+                <div class="form-group" >
+                    <label for="DTE">Código</label>
+                    <input formControlName="dtecode"  type="text" class="form-control" name="category" id="DTE">
+                </div>
+                <div class="form-group" >
+                    <label for="cantidad">Cantidad de boletas</label>
+                    <input formControlName="cantidad"  type="text" class="form-control" name="category" id="cantidad">
+                </div>
 
+                <button type="submit" class="btn btn-danger">Guardar</button>
+            </form>
+        </div>
+    </div>
 </div>

@@ -10,5 +10,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ckeditor" level="application" />
     <orderEntry type="library" name="cpgadget" level="application" />
+    <orderEntry type="library" name="libbcmath" level="application" />
+    <orderEntry type="library" name="bcmath" level="application" />
+    <orderEntry type="library" name="pdf417" level="application" />
   </component>
 </module>

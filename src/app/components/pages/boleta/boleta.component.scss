@@ -16,14 +16,14 @@ td,
 th,
 tr,
 table {
-  border-top: 1px solid black;
+  border-top: 1px ;
   border-collapse: collapse;
 }
 
 td.producto,
 th.producto {
-  width: 75px;
-  max-width: 75px;
+  width: 80px;
+  max-width: 80px;
 }
 .centrarCaja {
   position:relative;
@@ -49,11 +49,11 @@ th.precio {
 }
 
 .ticket {
-  width: 155px;
-  max-width: 155px;
+  width: 200px;
+  max-width: 200px;
 }
 
 img {
-  max-width: inherit;
-  width: inherit;
+  width: 150px;
+  height: 150px;
 }

@@ -21,10 +21,8 @@ export class MermaComponent implements OnInit,OnDestroy {
   public frmMarca: String ="";
   public productos: Observable<Categories[]>;
   public marcas: Observable<Productos[]>;
-  public productos_select:Productos[];
   public mermas_dia:Observable<Mermas[]>;
   public p: any;
-  public hora_actual;
   constructor(private categoryservice: ProductserviceService, private formBuilder: FormBuilder) {
 
 
@@ -52,20 +50,20 @@ export class MermaComponent implements OnInit,OnDestroy {
   this.busquedaproducto();
     this.hora_horarica();
     this.mermashoy();
-    this.actualizarhoras()
+    this.actualizarhoras();
     this.busquedaproductos()
   }
   async busquedaproducto(){
     return this.productos = this.categoryservice.categorias().pipe(takeUntil(this.unsubscribe$))
   }
 
-  async busquedaproductos(){
+   busquedaproductos(){
       return this.marcas = this.categoryservice.products()
   }
 
   async categoriasAsync()
   {
-   return this.categorias = this.categoryservice.products().pipe( takeUntil( this.unsubscribe$ ) )
+   return this.categorias = this.categoryservice.products()
 
   }
   async mermashoy(){
@@ -77,8 +75,8 @@ export class MermaComponent implements OnInit,OnDestroy {
   }
 
 actualizarhoras(){
-   var hora =  window.document.getElementById('hora')
-  setTimeout("hora", 1000)
+   var hora =  window.document.getElementById('hora');
+  setTimeout("hora", 1000);
   console.log("la hora", this.hora_horarica())
 }
   refrescar(){
@@ -94,9 +92,10 @@ actualizarhoras(){
   cambiofrm(){
 this.frmCategoria = this.mermasForm.value.categoriasMrm
   }
+  cambicatego() {
+    console.log(this.mermasForm.value.marcaMrm)
+    this.frmMarca = this.mermasForm.value.marcaMrm
 
-  cambiarmarca(){
-    this.frmMarca = this.mermasForm.value.categoriasMrm
   }
 
   hora_horarica(){
@@ -107,14 +106,23 @@ this.frmCategoria = this.mermasForm.value.categoriasMrm
     this.unsubscribe$.complete();
   }
 
-  guardarmerma(mermasForm: FormGroup) {
-    console.log("lo seleccionado", this.productos_select)
-    console.log("Merma", mermasForm.value)
-    this.categoryservice.guardarMerma(mermasForm.value).subscribe()
-    this.mermasForm.reset()
+   guardarmerma(mermasForm) {
+    // this.categoryservice.buscarelstockporID(mermasForm.value.product_id).subscribe(  (res) => {
+      //   this.stockactulizar = res });
+
+      const da = mermasForm.value.product_id;
+     const de = JSON.parse(da);
+     mermasForm.value.product_id = de.id;
+     if (mermasForm.value.causaMrm != "No, en factura") {     de.stock.pstock = de.stock.pstock - mermasForm.value.unidadesMrm; }
+     de.stock.stock_lost = de.stock.stock_lost + mermasForm.value.unidadesMrm;
+     console.log("mermas", de.stock);
+
+     this.categoryservice.guardarMerma(mermasForm.value).subscribe()
+
+     this.categoryservice.actualizarstock(de.stock).subscribe(res =>{return res});
+    //this.mermasForm.reset()
   }
 
-  cambioselect(ProductosMrm) {
-    console.log("el cabio producto", ProductosMrm)
-  }
+
+
 }

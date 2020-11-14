@@ -17,6 +17,8 @@ import {ListproductComponent} from './appsale/listproduct/listproduct.component'
 import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component';
 import {HoraActualService} from "../../Service/hora-actual.service";
 import {BoletaComponent} from './boleta/boleta.component';
+import {CierrecajaComponent} from './cierrecaja/cierrecaja.component';
+
 
 @NgModule({
   declarations:
@@ -29,7 +31,8 @@ import {BoletaComponent} from './boleta/boleta.component';
       AppsaleComponent,
       ListproductComponent,
       ContenedorAppComponent,
-      BoletaComponent],
+      BoletaComponent,
+      CierrecajaComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

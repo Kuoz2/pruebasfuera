@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit,} from '@angular/core';
 import {PagosService} from "../../Service/pagos.service";
 import {Pagos} from "../Modulos/Pagos";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";
 import {VoucherService} from "../../Service/voucher.service";
 import {DetalleVoucher} from "../Modulos/DetalleVoucher";
@@ -9,7 +9,10 @@ import {ProductserviceService} from "../../Service/productservice.service";
 import {Productos} from "../Modulos/Productos";
 import {Sort_Prod, V_Producto} from "../Modulos/GANANCIAS";
 import * as Chart from "chart.js";
+import {ChartOptions, ChartType} from "chart.js";
 import {Reporte_grafico, Venta_mes_atras, Venta_por_mes,} from "../Modulos/reporte_grafico";
+import {Label} from "ng2-charts";
+import {Mermas} from "../Modulos/mermas";
 
 
 @Component({
@@ -20,6 +23,60 @@ import {Reporte_grafico, Venta_mes_atras, Venta_por_mes,} from "../Modulos/repor
 })
 export class DashboardComponent implements OnInit, OnDestroy {
     private unsubscribe$ = new Subject<void>();
+    public mermas: Observable<Mermas[]>;
+    public nmbrMerma = [];
+    public uniMerma = [];
+    public pieChartOptions: ChartOptions = {
+        responsive: true,
+        legend: {
+            position: 'top',
+        },
+        plugins: {
+            datalabels: {
+                formatter: (value, ctx) => {
+                    const label = ctx.chart.data.labels[ctx.dataIndex];
+                    return label;
+                },
+            },
+        }
+    };
+
+
+    public pieChartLabels: Label[] = this.nmbrMerma;
+    public pieChartData: number[] = this.uniMerma;
+    public pieChartType: ChartType = 'pie';
+    public pieChartLegend = true;
+    public pieChartPlugins = [];
+    public pieChartColors = [
+        {
+            backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
+        },
+    ];
+
+
+
+
+
+    addSlice(): void {
+        this.pieChartLabels.push([this.nmbrMerma.toString()]);
+        this.pieChartData.push(400);
+        this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
+    }
+
+    removeSlice(): void {
+        this.pieChartLabels.pop();
+        this.pieChartData.pop();
+        this.pieChartColors[0].backgroundColor.pop();
+    }
+
+    changeLegendPosition(): void {
+        this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
+    }
+
+
+    //fin del grafico-
+
+
 
    // public doughnutData = doughnutData;
     //public pieData = pieData;
@@ -63,6 +120,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     public ganancias_mes_pasado: Venta_mes_atras;
     public productos_vendidos: V_Producto[] = [];
     p: number = 1;
+
 
     constructor(private gnc: PagosService, private cd: ChangeDetectorRef,
                 private vouch: VoucherService, private produc: ProductserviceService) {
@@ -159,61 +217,6 @@ if (!res) {
 
 
 
-/*
-  // doughnut 2
-  public view = chartData.view;
-  public doughnutChartColorScheme = chartData.doughnutChartcolorScheme;
-  public doughnutChartShowLabels = chartData.doughnutChartShowLabels;
-  public doughnutChartGradient = chartData.doughnutChartGradient;
-  public doughnutChartTooltip = chartData.doughnutChartTooltip;
-
-  public chart5 = chartData.chart5;
-
-
-  // lineChart
-  public lineChartData = chartData.lineChartData;
-  public lineChartLabels = chartData.lineChartLabels;
-  public lineChartOptions = chartData.lineChartOptions;
-  public lineChartColors = chartData.lineChartColors;
-  public lineChartLegend = chartData.lineChartLegend;
-  public lineChartType = chartData.lineChartType;
-
-  // lineChart
-  public smallLineChartData = chartData.smallLineChartData;
-  public smallLineChartLabels = chartData.smallLineChartLabels;
-  public smallLineChartOptions = chartData.smallLineChartOptions;
-  public smallLineChartColors = chartData.smallLineChartColors;
-  public smallLineChartLegend = chartData.smallLineChartLegend;
-  public smallLineChartType = chartData.smallLineChartType;
-
-  // lineChart
-  public smallLine2ChartData = chartData.smallLine2ChartData;
-  public smallLine2ChartLabels = chartData.smallLine2ChartLabels;
-  public smallLine2ChartOptions = chartData.smallLine2ChartOptions;
-  public smallLine2ChartColors = chartData.smallLine2ChartColors;
-  public smallLine2ChartLegend = chartData.smallLine2ChartLegend;
-  public smallLine2ChartType = chartData.smallLine2ChartType;
-
-  // lineChart
-  public smallLine3ChartData = chartData.smallLine3ChartData;
-  public smallLine3ChartLabels = chartData.smallLine3ChartLabels;
-  public smallLine3ChartOptions = chartData.smallLine3ChartOptions;
-  public smallLine3ChartColors = chartData.smallLine3ChartColors;
-  public smallLine3ChartLegend = chartData.smallLine3ChartLegend;
-  public smallLine3ChartType = chartData.smallLine3ChartType;
-
-  // lineChart
-  public smallLine4ChartData = chartData.smallLine4ChartData;
-  public smallLine4ChartLabels = chartData.smallLine4ChartLabels;
-  public smallLine4ChartOptions = chartData.smallLine4ChartOptions;
-  public smallLine4ChartColors = chartData.smallLine4ChartColors;
-  public smallLine4ChartLegend = chartData.smallLine4ChartLegend;
-  public smallLine4ChartType = chartData.smallLine4ChartType;
-
-    public chart3 = chartData.chart3;
-
-*/
-
 
 
 
@@ -226,6 +229,15 @@ if (!res) {
 
 
   ngOnInit(){
+
+      //las mermas.
+      this.obtmermas().subscribe(res => {
+          const reducer = (accumulator, currentValue) => accumulator + currentValue;
+            const acumlador = 0
+          const datos = Object.values( res.reduce( (prev, next) => Object.assign( prev, {[(next.causaMrm )]: next} ), {} ) );
+        console.log(datos)
+          })
+
     //Los pagos
     this.gnc.mostrarpagos().
     pipe(takeUntil(this.unsubscribe$)).
@@ -308,8 +320,7 @@ if (!res) {
                   for (const l of Object.values(d)){
                       vg.push(parseInt(l.toString()));
                       vs.push(parseInt(l.toString()))
-                      console.log("vg",vg)
-                      console.log("vs",vs.reverse())
+
                   }
               }
 
@@ -320,17 +331,13 @@ if (!res) {
                       labels: dg,
                       datasets:[
                           {
-                              label:'Mes anterior',
+                              label:'Perdidas',
                           data: vg,
-
-                          fill:false
-                      },
-                          {
-                              label:'Este mes',
-                              data: vs.reverse(),
                               backgroundColor:'#ff6384',
+
                               fill:false
-                          }
+                      },
+
                       ],
 
                   },
@@ -433,5 +440,8 @@ if (!res) {
         });
     }
 
+    obtmermas():Observable<Mermas[]>{
+        return this.mermas = this.produc.mermasdeldia()
+    }
 
 }

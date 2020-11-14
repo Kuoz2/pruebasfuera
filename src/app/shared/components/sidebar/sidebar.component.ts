@@ -1,7 +1,7 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { NavService, Menu } from '../../service/nav.service';
-import {UsuarioService} from "../../../Service/usuario.service";
+import {Component, ViewEncapsulation} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {Menu, NavService} from '../../service/nav.service';
+import {AutentificacionService} from "../../../Service/autentificacion.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -15,22 +15,25 @@ export class SidebarComponent {
   public url: any;
   public fileurl: any;
 
-  constructor(private router: Router, public navServices: NavService, private log: UsuarioService) {
+  constructor(private router: Router, public navServices: NavService, private log: AutentificacionService) {
     this.navServices.items.subscribe(menuItems => {
       this.menuItems = menuItems
-      this.router.events.subscribe((event) => {
+      this.menuItems.forEach(
+          res => { res.rol = localStorage.getItem("ACCESS_ROLE"); });
+        this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          menuItems.filter(items => {
-            if (items.path === event.url)
-              this.setNavActive(items)
+            menuItems.filter(items => {
+              console.log(items)
             if (!items.children) return false
             items.children.filter(subItems => {
+              this.setNavActive(subItems)
               if (subItems.path === event.url)
-                this.setNavActive(subItems)
+              this.setNavActive(subItems)
               if (!subItems.children) return false
               subItems.children.filter(subSubItems => {
+
                 if (subSubItems.path === event.url)
-                  this.setNavActive(subSubItems)
+                this.setNavActive(subSubItems)
               })
             })
           })
@@ -41,13 +44,15 @@ export class SidebarComponent {
 
   // Active Nave state
   setNavActive(item) {
+
     this.menuItems.filter(menuItem => {
       if (menuItem != item)
-        menuItem.active = false
+        menuItem.active = false;
       if (menuItem.children && menuItem.children.includes(item))
-        menuItem.active = true
+        menuItem.active = true;
       if (menuItem.children) {
         menuItem.children.filter(submenuItems => {
+
           if (submenuItems.children && submenuItems.children.includes(item)) {
             menuItem.active = true
             submenuItems.active = true

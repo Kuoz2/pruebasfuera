@@ -31,3 +31,11 @@ export class Stock {
     stock_lost:number;
     stock_security:number;
 }
+
+export interface stock2 {
+    id:number,
+    pstock:number,
+    pstockcatalogo:number,
+    stock_lost:number,
+    stock_security:number
+}

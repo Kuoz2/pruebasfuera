@@ -102,15 +102,15 @@ export class LoginComponent implements OnInit {
   owlcarousel = [
     {
       title: "Bienvenido a Paltanes",
-      desc: "El sistema actualmente se encuentra en un BETA.",
+      desc: " sistema actualmente en BETA.",
     },
     {
       title: "Que es PaltAnes",
       desc: "Sistema en beta",
     },
     {
-      title: "El servicio",
-      desc: "El servicio esta por definir.",
+      title: " servicio",
+      desc: " servicio está por definir.",
     }
   ];
 

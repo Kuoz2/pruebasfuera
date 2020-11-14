@@ -6,5 +6,5 @@ export class Mermas {
     unidadesMrm:number;
     causaMrm:string;
     product = new Productos;
-    created_at
+
 }
