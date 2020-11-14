@@ -101,8 +101,8 @@ imagenjpg
      //  console.log('Print window is open:', val);
      //});
  //this.printer.printDiv('ticket')
-     const code = "hola";
-     var mywindow = window.open("http://google.com", '__blank','location=no');
+     var mywindow = window.open("http://google.com", 'name','toolbar=1,scrollbars=1,location=1,statusbar=0,menubar=1,resizable=1,width=800,height=600');
+
      mywindow.document.write(
          '<head>' +
          '<style type="text/css">' +
@@ -179,7 +179,11 @@ imagenjpg
        mywindow.print();
        mywindow.close()
      }, 100)
+
   }
+
+
+
   //LAS FORMAS DE CERRAR EL MODAL
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
