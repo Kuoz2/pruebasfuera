@@ -101,7 +101,9 @@ imagenjpg
      //  console.log('Print window is open:', val);
      //});
  //this.printer.printDiv('ticket')
-     var mywindow = window.open("http://google.com", 'name','toolbar=1,scrollbars=1,location=1,statusbar=0,menubar=1,resizable=1,width=800,height=600');
+     var mywindow = window.open("http://google.com", 'name','toolbar=1,scrollbars=1,location=1,status=1,menubar=1,resizable=1,width=800,height=600');
+         if (window.focus) {mywindow.focus()}
+
 
      mywindow.document.write(
          '<head>' +
@@ -178,8 +180,8 @@ imagenjpg
      setTimeout( function () {
        mywindow.print();
        mywindow.close()
-     }, 100)
-
+     }, 100);
+         return false;
   }
 
 
