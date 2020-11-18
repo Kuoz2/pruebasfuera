@@ -2,7 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/css/printer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/appveyor.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/Derivation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/DocumentPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/NodeType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/OperationType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/Utility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/WriterState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLAttribute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLCData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLCharacterData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLComment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDOMConfiguration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDOMErrorHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDOMImplementation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDOMStringList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDTDAttList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDTDElement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDTDEntity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDTDNotation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDeclaration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDocType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDocument.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDocumentCB.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDocumentFragment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLDummy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLElement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLNamedNodeMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLNode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLNodeFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLNodeList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLProcessingInstruction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLRaw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLStreamWriter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLStringWriter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLStringifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLText.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLTypeInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLUserDataHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/XMLWriterBase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/typings/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
@@ -10,7 +58,12 @@
       <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -46,8 +99,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="38" />
+            <state relative-caret-position="-158">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding>
+                <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="103" column="151" selection-start-line="103" selection-start-column="151" selection-end-line="103" selection-end-column="151" />
+            <state relative-caret-position="340">
+              <caret line="172" selection-start-line="172" selection-end-line="172" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -65,28 +121,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Service/productservice.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="51">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="6" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -128,14 +166,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/shared/routes/content-routes.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/products/physical/marca/marca.component.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/marca.service.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/voucher.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/Modulos/resultados.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" />
         <option value="$PROJECT_DIR$/src/app/app.component.scss" />
         <option value="$PROJECT_DIR$/src/app/components/Modulos/Item.ts" />
         <option value="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" />
@@ -155,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/fds.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/pages.module.ts" />
         <option value="$PROJECT_DIR$/node_modules/pdf417-generator/examples/browser/index.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/busquedacategoriapp.pipe.ts" />
         <option value="$PROJECT_DIR$/node_modules/xmlbuilder2/lib/interfaces.js" />
@@ -170,14 +204,18 @@
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarmarca.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/components/Modulos/Productos.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss" />
         <option value="$PROJECT_DIR$/src/app/Service/productservice.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/printer.scss" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss" />
+        <option value="$PROJECT_DIR$/src/assets/css/printer.css" />
+        <option value="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" />
       </list>
     </option>
@@ -205,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -242,16 +281,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="merma" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="merma" type="462c0819:PsiDirectoryNode" />
-              <item name="merma" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -261,11 +291,41 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="appsale" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="boleta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,11 +356,11 @@
       <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\assets\css" />
+      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\assets" />
+      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\assets\scss" />
+      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\app\components\pages\appsale" />
       <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\node_modules\xmlbuilder2\lib" />
-      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\app\components\merma" />
-      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\assets\images" />
-      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend" />
-      <recent name="C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -547,21 +607,10 @@
       <workItem from="1605137835568" duration="574000" />
       <workItem from="1605192140609" duration="9628000" />
       <workItem from="1605218076270" duration="15210000" />
-      <workItem from="1605370043461" duration="10950000" />
-    </task>
-    <task id="LOCAL-00052" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
-      <created>1596750773191</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1596750773191</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
-      <created>1596751887287</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1596751887287</updated>
+      <workItem from="1605370043461" duration="28175000" />
+      <workItem from="1605454982721" duration="54023000" />
+      <workItem from="1605626580964" duration="38240000" />
+      <workItem from="1605710902470" duration="14291000" />
     </task>
     <task id="LOCAL-00054" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596754408222</created>
@@ -892,11 +941,25 @@
       <option name="project" value="LOCAL" />
       <updated>1605385560226</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="reactualizar los datos">
+      <created>1605390362356</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1605390362356</updated>
+    </task>
+    <task id="LOCAL-00102" summary="reactualizar los datos">
+      <created>1605391762602</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1605391762602</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2063679000" />
+    <option name="totallyTimeSpent" value="2187458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -911,7 +974,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16950959" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -929,8 +992,8 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.3531961" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49253732" weight="0.93391114" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5079957" side_tool="true" weight="0.26868907" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" visible="true" weight="0.26868907" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -944,7 +1007,7 @@
       <window_info anchor="right" id="Database" order="8" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22707888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -962,8 +1025,8 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5063966" side_tool="true" weight="0.3531961" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49253732" weight="0.42686892" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5079957" side_tool="true" weight="0.26868907" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" visible="true" weight="0.26868907" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -1053,49 +1116,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/readers/JSONReader.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/readers/JSONReader.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/readers/BaseReader.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/builder/BuilderFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1049" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/builder/BuilderFunctionsCB.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/builder/dom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-352" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/cli/commands/version-impl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/cli/tasks/install-package.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/globals.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="236" column="12" selection-start-line="236" selection-start-column="12" selection-end-line="236" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/writers/BaseWriter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13770" />
@@ -1122,13 +1142,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/writers/XMLCBWriter.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="11066" column="4" selection-start-line="11066" selection-start-column="4" selection-end-line="11066" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/xmlbuilder2/lib/interfaces.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1184,16 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/service/nav.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
@@ -1232,13 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/mermas.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1284,15 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
@@ -1314,13 +1301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="237" column="7" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/buscarmarca.pipe.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1335,17 +1315,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/components/merma/merma.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="38" />
+        <state relative-caret-position="187">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/merma/merma/merma.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1356,36 +1348,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/merma/merma.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/printer.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/src/internal/operators/window.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/merma/merma/merma.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="121" column="35" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="16" column="80" lean-forward="true" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/mermas.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-730">
+          <caret line="241" column="54" selection-start-line="241" selection-start-column="54" selection-end-line="241" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/__cdn.ckeditor.com_4.7.1_full_ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1039" column="382" selection-start-line="1039" selection-start-column="382" selection-end-line="1039" selection-end-column="382" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_www.google.com_cloudprint_client_cpgadget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="43" column="287" selection-start-line="43" selection-start-column="287" selection-end-line="43" selection-end-column="287" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#70#341#1" expanded="true" />
+            <element signature="e#937#1404#1" expanded="true" />
+            <element signature="e#719#1086#1" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="215">
+          <caret line="18714" column="6" lean-forward="true" selection-start-line="18714" selection-start-column="6" selection-end-line="18714" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/structural.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="103" column="151" selection-start-line="103" selection-start-column="151" selection-end-line="103" selection-end-column="151" />
+        <state relative-caret-position="340">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>

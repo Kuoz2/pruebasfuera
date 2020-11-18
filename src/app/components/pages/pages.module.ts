@@ -18,6 +18,7 @@ import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component'
 import {HoraActualService} from "../../Service/hora-actual.service";
 import {BoletaComponent} from './boleta/boleta.component';
 import {CierrecajaComponent} from './cierrecaja/cierrecaja.component';
+import {NgxPrintModule} from "ngx-print";
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import {CierrecajaComponent} from './cierrecaja/cierrecaja.component';
         ReactiveFormsModule,
         CKEditorModule,
         SharedModule,
+        NgxPrintModule,
 
     ],
     providers:[HoraActualService]

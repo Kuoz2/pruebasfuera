@@ -76,6 +76,7 @@
     "ngx-dropzone-wrapper": "^8.0.0",
     "ngx-owl-carousel-o": "^2.0.1",
     "ngx-pagination": "^5.0.0",
+    "ngx-print": "^1.2.0-beta.5",
     "ngx-spinner": "^9.0.2",
     "pdf417-generator": "^1.0.2",
     "protractor": "~5.4.0",

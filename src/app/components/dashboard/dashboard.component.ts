@@ -235,7 +235,12 @@ if (!res) {
           const reducer = (accumulator, currentValue) => accumulator + currentValue;
             const acumlador = 0
           const datos = Object.values( res.reduce( (prev, next) => Object.assign( prev, {[(next.causaMrm )]: next} ), {} ) );
-        console.log(datos)
+            for (let i in datos){
+                // @ts-ignore
+                this.nmbrMerma.push(datos[i].causaMrm)
+                // @ts-ignore
+                this.uniMerma.push(datos[i].unidadesMrm)
+            }
           })
 
     //Los pagos

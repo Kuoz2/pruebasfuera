@@ -1,8 +1,16 @@
-<div id="ticket" name="ticket" >
-    <section class="sheet padding-10mm">
+
+<!--<button type="button" class="oculto-impresion btn btn-success"
+        styleSheetFile="assets/css/printer.css"
+        printSectionId="ticket"
+        ngxPrint> imprimir</button>-->
+
+
+
+<div id="ticket" >
+    <section class="sheet">
 <div class="centrarCaja">
-        <div class="card ticket"  >
-            <div class="centrado" style="font-size: xx-small;">
+        <div class="card ">
+            <div class="centrado" >
         <h2>Botillería Poma</h2>
         <h2>Calama, Av Huaytiquina #947</h2>
         <h2>Rut:</h2>
@@ -14,17 +22,17 @@
         <thead style="font-size: xx-small;">
         <tr>
             <th class="cantidad">IVA</th>
-            <th class="producto">PROD</th>
+            <th class="cantidad">PROD</th>
             <th class="cantidad">CAN</th>
             <th class="cantidad">$$</th>
         </tr>
         </thead>
-        <tbody style="font-size: xx-small;" *ngFor="let product of item">
-        <tr>
-            <td class="cantidad">{{product.piva}}</td>
-            <td class="producto">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
-            <td class="cantidad">{{product.quantity}}</td>
-            <td class="cantidad">{{product.pvalor}}</td>
+        <tbody >
+        <tr *ngFor="let product of item">
+            <td class="precio">{{product.piva}}</td>
+            <td class="precio">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
+            <td class="precio">{{product.quantity}}</td>
+            <td class="precio">{{product.pvalor}}</td>
         </tr>
 
         <tr>

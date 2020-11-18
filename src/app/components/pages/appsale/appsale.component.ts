@@ -80,109 +80,124 @@ imagenjpg
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-     imprimir(register){
-  /*try {
-    var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
-    mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
-    mywindow.document.close(); // necessary for IE >= 10
-    mywindow.focus(); // necessary for IE >= 10
-
-    setTimeout( function () {
-      mywindow.addEventListener('load', function (e) {
-        mywindow.print()
-      },false);
-      mywindow.close();
-    }, 1000 );
-  } catch (ex) {
-    alert( 'Hubo un error al imprimir. Intente de nuevo.' );
-    console.log( ex );
-  }*/
-   //  this.printWindowSubscription = this.printer.$printWindowOpen.subscribe(val => {
-     //  console.log('Print window is open:', val);
-     //});
- //this.printer.printDiv('ticket')
-     var mywindow = window.open("http://google.com", 'name','toolbar=1,scrollbars=1,location=1,status=1,menubar=1,resizable=1,width=800,height=600');
-         if (window.focus) {mywindow.focus()}
 
 
-     mywindow.document.write(
-         '<head>' +
-         '<style type="text/css">' +
-         '@page  { margin: 0 ; size: 58mm 100mm;  }' +
-         ' body.receipt .sheet { width: 58mm; height: 100mm } /* sheet size */\n' +
-         'section { width: 58mm; height: 100mm; padding: 10mm}' +
-         '    @media print { body.receipt { width: 58mm } } /* fix for Chrome */' +
-         'header,footer,aside{display: none }' +
-         '\n' +
-         'h2{      grid-column-start: -1;' +
-         '      grid-column-end: -1;\n}' +
-         'td,\n' +
-         'th,\n' +
-         'tr,\n' +
-         'table {\n' +
-         'margin: 0;'+
-         '  border-top: 1px ;\n' +
-         '  border-collapse: collapse;\n' +
-         '}\n' +
-         '\n' +
-         'td.producto,\n' +
-         'th.producto {\n' +
-         '  font-size: 14px;\n' +
-         '  font-family: \\\'Times New Roman\\\', serif;\n' +
-         '  width: 80px;\n' +
-         '  max-width: 80px;\n' +
-         '}\n' +
-         '.centrarCaja {\n' +
-         'margin: auto;' +
-         '  position:relative;\n' +
-         '  left:40%;\n' +
-         '}\n' +
-         'td.cantidad,\n' +
-         'th.cantidad {\n' +
-         '  width: 40px;\n' +
-         'font-size: 14px;\n' +
-         'font-family:Times New Roman, serif;\n' +
-         '  max-width: 40px;\n' +
-         '  word-break: break-all;\n' +
-         '}\n' +
-         '\n' +
-         'td.precio,\n' +
-         'th.precio {\n' +
-         '  width: 40px;\n' +
-         '  max-width: 40px;\n' +
-         '  word-break: break-all;\n' +
-         '}\n' +
-         '\n' +
-         '.centrado {\n' +
-         '  text-align: center;\n' +
-         '  align-content: center;\n' +
-         '}\n' +
-         '\n' +
-         '\n' +
-         '.ticket {\n' +
-         '  width: 200px;\n' +
-         '  max-width: 300px;\n' +
-         '}\n' +
-         '\n' +
-         'img {\n' +
-         'display: block;' +
-         'margin: 0 ;'  +
-         '  max-width: 500px;\n' +
-         '  height: 100px;\n' +
-         '}' +
-         '</style>' +
-         '<title></title></head>' +
-         '<body>' +
-            document.getElementById(register).innerHTML+
-         '</body>'
-     );
-     mywindow.document.close();
-     setTimeout( function () {
-       mywindow.print();
-       mywindow.close()
-     }, 100);
-         return false;
-  }
+  //Modulo para imprimir.
+     imprimir(register) {
+       /*try {
+         var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
+         mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
+         mywindow.document.close(); // necessary for IE >= 10
+         mywindow.focus(); // necessary for IE >= 10
+
+         setTimeout( function () {
+           mywindow.addEventListener('load', function (e) {
+             mywindow.print()
+           },false);
+           mywindow.close();
+         }, 1000 );
+       } catch (ex) {
+         alert( 'Hubo un error al imprimir. Intente de nuevo.' );
+         console.log( ex );
+       }*/
+       //  this.printWindowSubscription = this.printer.$printWindowOpen.subscribe(val => {
+       //  console.log('Print window is open:', val);
+       //});
+       //this.printer.printDiv('ticket')
+       const data = '<head>' +
+           '<style type="text/css">' +
+           '@page  { margin: 0 ; size: A6; }' +
+           ' body.receipt.sheet { width: 570mm; height: 570mm;} /* sheet size */\n' +
+           '    @media print { .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {\n' +
+           '    display:none !important;\n' +
+           '    height:570mm !important;\n' +
+           '  }} /* fix for Chrome */' +
+           'header,footer,aside{display: none }' +
+           '\n' +
+           'h2{   font-size: 28px;\n position: center;\n }' +
+           'td,\n' +
+           'th,\n' +
+           'tr,\n' +
+           'table {\n' +
+           'margin: auto;' +
+           '  border-collapse: collapse;\n' +
+           '}\n' +
+           '\n' +
+           'td.producto,\n' +
+           'th.producto {\n' +
+           '  font-size: 25px;\n' +
+           '  font-family: \\\'Times New Roman\\\', serif;\n' +
+           '  width: 100px;\n' +
+           '  max-width: 80px;\n' +
+           '}\n' +
+           '.centrarCaja {\n' +
+           'margin: 0;' +
+           '  position:center;\n' +
+           '}\n' +
+           'td.cantidad,\n' +
+           'th.cantidad {\n' +
+           '  width: 80px;\n' +
+           'font-size: 30px;\n' +
+           'font-family:Times New Roman, serif;\n' +
+           '  max-width: 80px;\n' +
+           '  word-break: break-all;\n' +
+           'margin: auto;\n' +
+           '}\n' +
+           '\n' +
+           'td.precio,\n' +
+           'th.precio {\n' +
+           'text-align: center;\n' +
+           'font-size: 30px;\n' +
+           '  width: 110px;\n' +
+           '  max-width: 110mm;\n' +
+           '  word-break: 100mm;\n' +
+           '}\n' +
+           '\n' +
+           '.centrado {\n' +
+           '  text-align: center;\n' +
+           '  align-content: center;\n' +
+           '}\n' +
+           '\n' +
+           '\n' +
+           '.ticket {\n' +
+           'margin: auto;\n' +
+           '  width: 570mm;\n' +
+           '  max-width: 570mm;\n' +
+           '}\n' +
+           '\n' +
+           'img {\n' +
+           'margin: auto ;' +
+           '  width: 203mm;\n' +
+           '  max-width: 480mm;\n' +
+           '}' +
+           '</style>' +
+           '<title></title></head>' +
+           '<body >' +
+           document.getElementById( register ).innerHTML +
+           '</body>'
+       var mywindow = window.open( '', '_blank' )
+       mywindow.opener
+
+       mywindow.document.open();
+       mywindow.document.write( data );
+       mywindow.document.close();
+
+       mywindow.onload = function(){
+            mywindow.focus()
+             mywindow.print()
+       }
+
+     }
+
+
+
+
+
+
+
+  
+
+
 
 
 
