@@ -26,7 +26,6 @@ import {InventarioGestionPipe} from './Pipe/inventario-gestion.pipe';
 import {InventarionsanoPipe} from './Pipe/inventarionsano.pipe';
 import {InventariopeligroPipe} from './Pipe/inventariopeligro.pipe';
 import {BuscarmarcaPipe} from './Pipe/buscarmarca.pipe';
-import {RangoFechaPipe} from './Pipe/rango-fecha.pipe';
 
 
 @NgModule({
@@ -51,7 +50,6 @@ import {RangoFechaPipe} from './Pipe/rango-fecha.pipe';
     InventarionsanoPipe,
     InventariopeligroPipe,
     BuscarmarcaPipe,
-    RangoFechaPipe,
 
   ],
   imports: [
