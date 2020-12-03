@@ -1,0 +1,57 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ventas realizadas emitidas</h5>
+
+                </div>
+                <div class="card-body">
+                    <div class="custom-datatable">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr class="text-center">
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Cantidad vendida
+                                </th>
+                                <th>
+                                    Código del producto
+                                </th>
+                                <th>
+                                    Detalle del producto
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>
+                                    Fecha
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let bl of (boletas |async | paginate: {itemsPerPage:5, currentPage:p}) "  class="text-center">
+                                <td>{{bl.id  }}</td>
+                                <td>{{bl.dvcantidad }}</td>
+                                <td >{{bl.product.pcodigo}}</td>
+                                <td>{{bl.product.pdetalle}}</td>
+                                <td >{{bl.voucher.vtotal}} </td>
+                                <td>{{bl.voucher.created_at}}</td>
+                                <button (click)="agregaboleta(bl)"> Guardar registro</button>
+                            </tr >
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+                    </div>
+                    <div>
+                        <button (click)="crearxml()">Crear informe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

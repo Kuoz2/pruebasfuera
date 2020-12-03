@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
@@ -43,26 +46,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8901" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1802">
-              <caret line="106" column="63" lean-forward="true" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
+              <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -80,7 +67,16 @@
         <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+              <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="172" selection-start-line="29" selection-start-column="172" selection-end-line="29" selection-end-column="172" />
             </state>
           </provider>
         </entry>
@@ -88,33 +84,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Service/pagos.service.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-680" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1389">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="409">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -122,8 +102,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/Productos.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="9" />
+            <state relative-caret-position="34">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/sub-category/sub-category.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/components/pages/boleta/fs.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/fds.ts" />
         <option value="$PROJECT_DIR$/node_modules/pdf417-generator/examples/browser/index.html" />
         <option value="$PROJECT_DIR$/src/app/components/pages/appsale/listproduct/listproduct.component.ts" />
@@ -178,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/app/components/Modulos/mermas.ts" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarmarca.pipe.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.html" />
         <option value="$PROJECT_DIR$/src/app/Service/productservice.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/merma/merma/merma.component.ts" />
@@ -192,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/pipe.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/busqueda-app.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.html" />
         <option value="$PROJECT_DIR$/src/app/Service/xmlboleta.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/cierrecaja/cierrecaja.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
@@ -217,7 +214,10 @@
         <option value="$PROJECT_DIR$/src/app/Service/pagos.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/service/nav.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.html" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts" />
       </list>
     </option>
   </component>
@@ -296,39 +296,7 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="products" type="462c0819:PsiDirectoryNode" />
               <item name="physical" type="462c0819:PsiDirectoryNode" />
-              <item name="add-product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-              <item name="physical" type="462c0819:PsiDirectoryNode" />
               <item name="listaproducto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -625,7 +593,7 @@
       <workItem from="1605972282541" duration="15501000" />
       <workItem from="1606062780906" duration="37615000" />
       <workItem from="1606848962018" duration="13238000" />
-      <workItem from="1606922448475" duration="13226000" />
+      <workItem from="1606922448475" duration="16314000" />
     </task>
     <task id="LOCAL-00055" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596775916856</created>
@@ -974,7 +942,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2292577000" />
+    <option name="totallyTimeSpent" value="2295665000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -988,7 +956,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.19616205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -998,7 +966,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.58071506" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4936034" weight="0.36511377" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4936034" weight="0.7508126" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1007,7 +975,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5079957" side_tool="true" weight="0.26868907" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" visible="true" weight="0.6186349" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" weight="0.8949079" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" visible="true" weight="0.32936078" />
@@ -1131,44 +1099,6 @@
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/busqueda-app.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/Voucher.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Service/voucher.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/DetalleVoucher.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/category/category.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="94" column="154" selection-start-line="72" selection-start-column="37" selection-end-line="94" selection-end-column="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/rango-fecha.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/rango-fecha.pipe.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1361,13 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Service/productservice.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1398,13 +1321,6 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8901" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/Productos.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="9" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/voucher-create/voucher-create.component.html">
@@ -1439,7 +1355,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/listaproducto/listaproducto.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1802">
-          <caret line="106" column="63" lean-forward="true" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
+          <caret line="106" column="63" selection-start-line="106" selection-start-column="63" selection-end-line="106" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -1453,14 +1369,64 @@
     <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/sub-category/sub-category.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/sub-category/sub-category.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Modulos/Productos.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Service/productservice.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/products/physical/promociones/promociones.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="172" selection-start-line="29" selection-start-column="172" selection-end-line="29" selection-end-column="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/Pipe/buscarselect-p.pipe.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Service/xmlboleta.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
