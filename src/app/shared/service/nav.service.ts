@@ -1,7 +1,6 @@
 import {HostListener, Inject, Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {WINDOW} from "./windows.service";
-import {ConconcanService} from "../../Service/conconcan.service";
 
 // Menu
 export interface Menu {
@@ -27,7 +26,7 @@ export class NavService {
 	public screenWidth: any
 	public collapseSidebar: boolean = false
 
-	constructor(@Inject(WINDOW) private window, private act: ConconcanService) {
+	constructor(@Inject(WINDOW) private window, ) {
 		this.onResize();
 		if (this.screenWidth < 991) {
 			this.collapseSidebar = true
@@ -43,51 +42,47 @@ export class NavService {
 	MENUITEMS: Menu[] = [
 
 		{
-			path: '/dashboard/default',rol:"", title: 'Dashboard', icon: 'home', type: 'link', badgeType: 'primary', active: false
+			path: '/dashboard/default',rol:'administrador', title: 'Dashboard', icon: 'home', type: 'link', badgeType: 'primary', active: false
 		},
 		{
-			title: 'Productos' ,icon: 'box', type: 'sub',active: false,  children: [
+			title: 'Productos' ,icon: 'box',rol:'', type: 'sub',active: false,  children: [
 
-						{ path: '/products/physical/lista-editar'  , title: 'Inventario', type: 'link' },
-						{ path: '/products/physical/add-product', title: 'Agregar producto', type: 'link' },
-						{ path: '/products/physical/proveedor',title:'Proveedor', type:'link'},
-						{ path: '/products/physical/promociones', title:'Promociones', type:'link'},
-						{ path: '/products/physical/impuestos', title:'Impuestos', type:'link'},
-						{path: '/products/physical/marca', title:'Marcas', type:'link'}
+						{ path: '/products/physical/lista-editar'  ,rol:'', title: 'Inventario', type: 'link' },
+						{ path: '/products/physical/add-product',rol:'', title: 'Agregar producto', type: 'link' },
+						{ path: '/products/physical/proveedor',rol:'',title:'Proveedor', type:'link'},
+						{ path: '/products/physical/promociones',rol:'', title:'Promociones', type:'link'},
+						{ path: '/products/physical/impuestos',rol:'', title:'Impuestos', type:'link'},
+						{path: '/products/physical/marca',rol:'', title:'Marcas', type:'link'}
 
 			]
 		},
 
 
 		{
-			title: 'Pagos', icon: 'clipboard', type: 'sub', active: false, children: [
-				{path: '/pages/create-voucher', title: 'Crear Pago', type: 'link'},
-				{path: '/pages/lista-pago', title: 'Lista Pagos', type: 'link'},
-				{path: '/pages/medio-pago', title: 'Medio de pago', type: 'link',},
-				{path:'/pages/app-pago', title:'App de pago', type:'link'},
-				{path:'/pages/boleta', title:'Boleta', type: 'link'}
+			title: 'Pagos', icon: 'clipboard',rol:'', type: 'sub', active: false, children: [
+				{path: '/pages/create-voucher',rol:'', title: 'Crear Pago', type: 'link'},
+				{path: '/pages/lista-pago',rol:'', title: 'Lista Pagos', type: 'link'},
+				{path: '/pages/medio-pago',rol:'', title: 'Medio de pago', type: 'link',},
+				{path:'/pages/app-pago',rol:'', title:'App de pago', type:'link'},
+				{path:'/pages/boleta',rol:'administrador', title:'Boleta', type: 'link'}
 			]
 		},
 
 		{
-			title: 'Usuarios',rol:"", icon:'user-plus', type: 'sub', active: false, children: [
+			title: 'Usuarios',rol:'administrador', icon:'user-plus', type: 'sub', active: false, children: [
 				{
-					path: '/users/create-user', title: "Crear usuario", type: 'link'
+					path: '/users/create-user',rol:'administrador', title: "Crear usuario", type: 'link'
 				},
 				{
-					path: '/users/list-user', title:"Lista usuario", type:'´link'
+					path: '/users/list-user',rol:'', title:"Lista usuario", type:'´link'
 				}
 			]
 		},
 
-
 		{
-			title: 'Inicio',path: '/auth/login',rol:"vendedor", icon: 'log-in', type: 'link', active: false
-		},
-		{
-			title: 'Mermas', type: 'sub', icon: 'book', children:[
+			title: 'Mermas', type: 'sub',rol:'', icon: 'book',active: false, children:[
 				{
-					path:'/merma/ingresar', title: "Situación", type: 'link'
+					path:'/merma/ingresar', rol:'',title: "Situación", type: 'link'
 				}
 			]
 		}

@@ -108,15 +108,16 @@
                                             </tr>
                                             </thead>
                                             <tbody id="tbody3">
-                                            <tr *ngFor="let category of (invpeligro | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index  " class="text-center" id="tr3">
-                                                <td id="td111">{{category.pcodigo  }}</td>
-                                                <td id="td222">{{category.pdescripcion }}</td>
-                                                <td id="td333">{{category.pvalor}}</td>
-                                                <td id="td444">{{category.stock.pstock}}</td>
-                                                <td [attr.id]="'peligro' + i + j "  >{{cambiarColorSinStock(category.stock.pstock,i, j)}}</td>
+                                            <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index  " class="text-center" id="tr3">
+
+                                                <td id="td111">{{p.pcodigo  }}</td>
+                                                <td id="td222">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                                <td id="td333">{{p.pvalor}}</td>
+                                                <td id="td444">{{p.stock.pstock}}</td>
+                                                <td [attr.id]="'peligro' + i + j "  >{{cambiarColorSinStock(p.stock.pstock,i, j)}}</td>
                                                 <td>
-                                                    <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
-                                                    <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
+                                                    <button  class="btn btn-warning" (click)="open2(content2, p)">Editar</button>
+                                                    <button class="btn btn-success-gradien" (click)="open3(content3, p.stock)">Stock</button>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -151,15 +152,15 @@
                                         </tr>
                                         </thead>
                                         <tbody id="tbody2">
-                                        <tr *ngFor="let category of (invpeligro | async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
-                                            <td id="td11">{{category.pcodigo  }}</td>
-                                            <td id="td22">{{category.pdescripcion }}</td>
-                                            <td id="td33">{{category.pvalor}}</td>
-                                            <td id="td44">{{category.stock.pstock}}</td>
-                                            <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(category.stock.pstock,i, d)}}</td>
+                                        <tr *ngFor="let p of (listproductosG | async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
+                                            <td id="td11">{{p.pcodigo  }}</td>
+                                            <td id="td22">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                            <td id="td33">{{p.pvalor}}</td>
+                                            <td id="td44">{{p.stock.pstock}}</td>
+                                            <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(p.stock.pstock,i, d)}}</td>
                                             <td>
-                                                <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
-                                                <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
+                                                <button  class="btn btn-warning" (click)="open2(content2, p)">Editar</button>
+                                                <button class="btn btn-success-gradien" (click)="open3(content3, p.stock)">Stock</button>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -192,19 +193,25 @@
                                             </tr>
                                             </thead>
                                             <tbody id="tbody1">
-                                            <tr *ngFor="let category of (listproductos |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index " class="text-center" id="tr1">
-                                                <ng-container *ngIf="category.stock.pstock >= 10">
-                                                <td id="td1">{{category.pcodigo  }}</td>
-                                                <td id="td2">{{category.pdescripcion }}</td>
-                                                <td id="td3">{{category.pvalor}}</td>
-                                                <td id="td4">{{category.stock.pstock}}</td>
-                                                <td [attr.id]="'estado' + i + h"  >{{cambiadColor(category.stock.pstock,i, h)}}</td>
-                                                <td>
-                                                    <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
-                                                    <button class="btn btn-success-gradien" (click)="open3(content3, category.stock)">Stock</button>
-                                                </td>
+                                            <ng-container *ngFor="let p of (listproductosG |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index ">
+                                            <tr  class="text-center" id="tr1">
+                                                <ng-container *ngIf="p.stock.pstock >= 10">
+                                                    <td id="td1">{{p.pcodigo  }}</td>
+                                                    <td id="td2">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                                    <td id="td3">{{p.pvalor}}</td>
+                                                    <td id="td4">{{p.stock.pstock}}</td>
+                                                    <td [attr.id]="'estado' + i + h">{{cambiadColor(p.stock.pstock, i, h)}}</td>
+                                                    <td>
+                                                        <button class="btn btn-warning"
+                                                                (click)="open2(content2, p)">Editar
+                                                        </button>
+                                                        <button class="btn btn-success-gradien"
+                                                                (click)="open3(content3, p.stock)">Stock
+                                                        </button>
+                                                    </td>
                                                 </ng-container>
                                             </tr>
+                                            </ng-container>
                                             </tbody>
                                         </table>
                                         <pagination-controls (pageChange)="h = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination1"></pagination-controls>

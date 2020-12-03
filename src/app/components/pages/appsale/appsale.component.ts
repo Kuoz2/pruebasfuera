@@ -24,6 +24,7 @@ export class AppsaleComponent implements OnInit {
   totalQuantity: number = 0;
   totalPrice: number = 0;
   items: Array<Item>;
+  se_Imprio:Boolean = false;
   selecciondecomra: Medio[];
   loseleccionadodelacompra= Medio;
   public cancelar2 = new Ventas();
@@ -33,6 +34,7 @@ export class AppsaleComponent implements OnInit {
   public efectivo: number = 0;
   public devolucion:number = 0;
   public closeResult: string;
+  public devoluciones: number= 0;
   @Output()
   public textoCambiado: EventEmitter<string> = new EventEmitter();
   @Output()
@@ -70,6 +72,7 @@ imagenjpg
     this.vouchservicio.ultimovoucher().subscribe(res => {
       this.voucher_add = res;
     });
+    this.Imprimcion()
   }
   //Habrir el modal al precionar el carrito de compra
   open2(content2):void
@@ -84,31 +87,12 @@ imagenjpg
 
   //Modulo para imprimir.
      imprimir(register) {
-       /*try {
-         var mywindow = window.open( '', 'my div', 'height=600,width=1000' );
-         mywindow.document.write( document.getElementById( register ).innerHTML.trim() );
-         mywindow.document.close(); // necessary for IE >= 10
-         mywindow.focus(); // necessary for IE >= 10
 
-         setTimeout( function () {
-           mywindow.addEventListener('load', function (e) {
-             mywindow.print()
-           },false);
-           mywindow.close();
-         }, 1000 );
-       } catch (ex) {
-         alert( 'Hubo un error al imprimir. Intente de nuevo.' );
-         console.log( ex );
-       }*/
-       //  this.printWindowSubscription = this.printer.$printWindowOpen.subscribe(val => {
-       //  console.log('Print window is open:', val);
-       //});
-       //this.printer.printDiv('ticket')
        const data = '<head>' +
            '<style type="text/css">' +
-           '@page  { margin: 0 ; size: A6; }' +
+           '@page  { margin: 0 ; }' +
            ' body.receipt.sheet { width: 570mm; height: 570mm;} /* sheet size */\n' +
-           '    @media print { .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {\n' +
+           '    @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {\n' +
            '    display:none !important;\n' +
            '    height:570mm !important;\n' +
            '  }} /* fix for Chrome */' +
@@ -166,15 +150,16 @@ imagenjpg
            '}\n' +
            '\n' +
            'img {\n' +
-           'margin: auto ;' +
-           '  width: 203mm;\n' +
+           '  width: 8.5cm;\n' +
+           'position: relative;\n' +
+           'height: 4.7cm;' +
            '  max-width: 480mm;\n' +
            '}' +
            '</style>' +
            '<title></title></head>' +
            '<body >' +
            document.getElementById( register ).innerHTML +
-           '</body>'
+           '</body>';
        var mywindow = window.open( '', '_blank' )
        mywindow.opener
 
@@ -185,21 +170,13 @@ imagenjpg
        mywindow.onload = function(){
             mywindow.focus()
              mywindow.print()
-       }
-
+       };
+      this.se_Imprio = true;
      }
-
-
-
-
-
-
-
-  
-
-
-
-
+     //Probrando si se imprimio el documento
+  Imprimcion(){
+  console.log(this.se_Imprio)
+  }
 
   //LAS FORMAS DE CERRAR EL MODAL
   private getDismissReason(reason: any): string {
@@ -222,28 +199,38 @@ remover_producto(producto:Item){
   }
 //Aca se guardaran las ventas cuando se precione guardar luego se actualizara
   guardarVentaApp() {
-    this.detallevoucher.voucher.vtotal = this.totalPrice;
-    this.detallevoucher.dvcantidad = this.totalPrice;
-    for (const i of this.items){
-      this.detallevoucher.product_id = i.id;
-      this.detallevoucher.dvcantidad = i.quantity;
-      this.productos_add.stock.id = i.stock.id;
-      this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
-          //Guardar el voucher generado.
-    this.vouchservicio.crearvoucher(this.detallevoucher).subscribe(res => {return res});
-    //Actualiza el stcok generado.
-    this.serviCat.actualizarstock(this.productos_add.stock).subscribe(res => {return res})
+    if (this.se_Imprio == false) {
+        alert("No se puede guardar, debe imprimir la boleta")
+    } else {
+      this.detallevoucher.voucher.vtotal = this.totalPrice;
+      this.detallevoucher.dvcantidad = this.totalPrice;
+      for (const i of this.items) {
+        this.detallevoucher.product_id = i.id;
+        this.detallevoucher.dvcantidad = i.quantity;
+        this.productos_add.stock.id = i.stock.id;
+        this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
+        //Guardar el voucher generado.
+        this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
+          return res
+        } );
+        //Actualiza el stcok generado.
+        this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
+          return res
+        } )
+      }
+      this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
+      this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
+      this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
+      this.cancelar2.voucher_id = this.voucher_add.id += 1;
+      //Se guarda lo cancelado
+      this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
+        return res
+      } );
+      this.app_venta.reset();
+      this.items.splice( 0, this.items.length );
+      this.totalPrice = 0;
+      this.totalQuantity = 0
     }
-    this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
-    this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
-    this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
-    this.cancelar2.voucher_id = this.voucher_add.id +=1;
-    //Se guarda lo cancelado
-    this.vent.guardarventas(this.cancelar2).subscribe(res => {return res});
-    this.app_venta.reset();
-    this.items.splice(0,this.items.length);
-    this.totalPrice = 0;
-    this.totalQuantity = 0
   }
   devolucion_app(){
     let total = 0 ;
@@ -260,5 +247,12 @@ remover_producto(producto:Item){
     this.totalPrice = 0;
     this.totalQuantity = 0;
     alert("La venta se cancelo")
+  }
+
+
+  nosenvia($event) {
+    if ($event.keyCode == 13){
+      return $event.returnValue = false;
+    }
   }
 }

@@ -7,7 +7,7 @@ export class DetalleVoucher {
     dvprecio: number;
     voucher_id: number;
     product_id: number;
-    product: Productos[];
+    product: Productos;
     voucher = new Voucher();
     created_at: string;
 }

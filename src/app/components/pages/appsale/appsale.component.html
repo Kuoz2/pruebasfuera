@@ -60,21 +60,20 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm">$</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Sizing example input"  name="efectivo" id="efectivo" formControlName="efectivo">
+                <input type="number" class="form-control" aria-label="Sizing example input" (keypress)="nosenvia($event)"  name="efectivo" id="efectivo" formControlName="efectivo">
             </div>
 
-            <label> Devolucion:</label>
+            <label> Devolución:</label>
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-sm2">$</span>
                 </div>
-                <hi class="display-3">{{devolucion_app()}}</hi>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary"  >Guardar</button>
                 <button class="btn btn-secondary" type="button" data-dismiss="modal"
                         (click)="cancelar_venta()">Cancelar</button>
-                <button type="button" class="oculto-impresion btn btn-success" (click)="imprimir('ticket')"> imprimir</button>
+                <button type="button" class="oculto-impresion btn btn-success" (click)="imprimir('ticket');Imprimcion()"> imprimir</button>
             </div>
         </div>
     </div>

@@ -11,24 +11,21 @@ import {ProductsModule} from './components/products/products.module';
 import {PagesModule} from './components/pages/pages.module';
 import {UsersModule} from './components/users/users.module';
 
-import {ReportsModule} from './components/reports/reports.module';
 import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {Ng2Rut} from "ng2-rut";
 import {MermaModule} from "./components/merma/merma.module";
-import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PruebaRelojComponent
   ],
     imports: [
         BrowserAnimationsModule,
         BrowserModule.withServerTransition( {appId: 'serverApp'} ),
         AppRoutingModule,
         DashboardModule,
-        ReportsModule,
         AuthModule,
         SharedModule,
         ProductsModule,

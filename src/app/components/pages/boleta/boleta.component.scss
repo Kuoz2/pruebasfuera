@@ -1,11 +1,4 @@
 
-@media print
-{
-  .noprint {
-    display:none !important;
-    height:0 !important;
-  }
-}
 
 * {
   font-size: 12px;
@@ -22,12 +15,14 @@ table {
 
 td.producto,
 th.producto {
+
   width: 80px;
   max-width: 80px;
 }
 .centrarCaja {
-  position:relative;
-  left:40%;
+
+  position :relative !important;
+  left: 40% !important;
 }
 td.cantidad,
 th.cantidad {
@@ -48,12 +43,24 @@ th.precio {
   align-content: center;
 }
 
-.ticket {
-  width: 200px;
-  max-width: 200px;
+.ticket2 {
+  width: 450px;
+  max-width: 500px;
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 450px;
+  height: 250px;
+
 }
+.ticket{
+  margin: 0;
+  width: 200px;
+  max-width: 200px;
+}
+canvas{
+  margin: 0;
+  width: 90mm;
+  height: 40.7mm;
+}
+

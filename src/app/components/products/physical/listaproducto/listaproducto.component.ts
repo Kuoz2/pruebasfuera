@@ -4,6 +4,7 @@ import {Productos, Stock} from "../../../Modulos/Productos";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder} from "@angular/forms";
 import {Observable} from "rxjs";
+import {PagosService} from "../../../../Service/pagos.service";
 
 @Component({
     selector: 'app-listaproducto',
@@ -13,8 +14,7 @@ import {Observable} from "rxjs";
 export class ListaproductoComponent implements OnInit {
     public closeResult: string;
     public listproductosG: Observable<Productos[]>;
-    public invpeligro: Observable<Productos[]>;
-    constructor(private prod: ProductserviceService,private modalService: NgbModal, private formBuilder: FormBuilder) { }
+    constructor(private prod: ProductserviceService,private modalService: NgbModal, private formBuilder: FormBuilder, private pd: PagosService) { }
     listproductos: Observable<Productos[]> ;
     productoporid: Productos = new Productos();
     stock_actualizado: Stock = new Stock();
@@ -55,7 +55,6 @@ export class ListaproductoComponent implements OnInit {
     productosAsync(){
         this.listproductos = this.prod.products();
         this.listproductosG = this.prod.products();
-        this.invpeligro = this.prod.products()
     }
 
     editarproductos(producto: Productos){
@@ -87,7 +86,6 @@ export class ListaproductoComponent implements OnInit {
             }
 
             this.prod.actualizarstock(stck).subscribe(data => { return data});
-            console.log(edicion_producto)
         }
     }
 
@@ -95,7 +93,6 @@ export class ListaproductoComponent implements OnInit {
 
     editar(){
         const id = localStorage.getItem('idc');
-        console.log(id);
 
         this.prod.buscarproductoporID(+id).subscribe(data => {this.productoporid = data})
     }
@@ -115,8 +112,6 @@ export class ListaproductoComponent implements OnInit {
 
     editar2(){
         const id = localStorage.getItem('idc2');
-        console.log(id);
-
         this.prod.buscarelstockporID(+id).subscribe(data => {this.stock_actualizado = data})
     }
 
@@ -127,7 +122,6 @@ export class ListaproductoComponent implements OnInit {
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         });
-            console.log("id que muestra", catego.id);
         localStorage.setItem('idc2', catego.id.toString());
         this.editar2();
 

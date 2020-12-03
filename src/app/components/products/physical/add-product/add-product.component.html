@@ -14,11 +14,9 @@
                         <div class="col-xl-5">
                             <div class="add-product">
                                 <div class="row">
-
                                     <div class="col-xl-9 xl-50 col-sm-6 col-9">
                                         <img [src]="url[0].img" alt=""  class="img-fluid image_zoom_1">
                                     </div>
-
                                     <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                         <ul class="file-upload-product">
                                             <form  [formGroup]="productForm" (keypress)="noseenvia($event)">
@@ -30,7 +28,6 @@
                                             </li>
                                             </form>
                                         </ul>
-
                                     </div>
                                 </div>
                             </div>
@@ -46,11 +43,8 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="validationCustom023" class="col-xl-3 col-sm-4 mb-0">Precio del proveedor:</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom023"
-                                               type="number" formControlName="precio_provider" required="" autocomplete="off">
-
+                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom023" type="number" formControlName="precio_provider" required="" autocomplete="off">
                                     </div>
-
                                     <div class="form-group row">
                                         <label  class="col-xl-3 col-sm-4 mb-0">Nombre de la marca
                                             :</label>
@@ -84,21 +78,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="iva2" class="col-xl-3 col-sm-4 mb-0"> IVA:</label>
+                                        <label for="iva2" class="col-xl-3 col-sm-4 mb-0">IVA:</label>
                                         <input type="text" [(ngModel)]="prdiva" class="form-control col-xl-8 col-sm-7" id="iva2"  formControlName="piva" disabled >
                                     </div>
                                     <div class="form-group row">
-                                        <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código del  producto:</label>
+                                        <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código producto:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="validationCustom03"
-                                            type="number" formControlName="pcodigo" required="">
+                                            type="number" formControlName="pcodigo" (keypress)="nosenvia($event)" required="">
                                         <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
                                             class="text text-danger">
                                             Producto <Code></Code> Es requerido.
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label  class="col-xl-3 col-sm-4 mb-0">Seleccione una categoría
-                                            :</label>
+                                        <label  class="col-xl-3 col-sm-4 mb-0">Seleccione una categoría:</label>
                                         <select class="form-control digits col-xl-8 col-sm-7" formControlName="category_id" name="categorias"
                                             id="exampleFormControlSelect1" (change)="cambio_category($event)">
                                             <option value="0" selected></option>
@@ -107,7 +100,7 @@
                                         </div>
 
                                     <div class="form-group row" formGroupName="stock_id">
-                                        <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock :</label>
+                                        <label class="col-xl-3 col-sm-4 mb-0">Ingresar stock :</label>
                                         <div class="qty-box1">
                                             <div class="input-group">
                                                 <i class="fa fa-minus btnGtr1" (click)=decrement()></i>

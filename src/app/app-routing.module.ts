@@ -5,7 +5,6 @@ import {ContentLayoutComponent} from './shared/layout/content-layout/content-lay
 
 import {LoginComponent} from "./components/auth/login/login.component";
 import {ConconcanService} from "./Service/conconcan.service";
-import {PruebaRelojComponent} from "./components/prueba-reloj/prueba-reloj.component";
 
 const routes: Routes = [
 
@@ -24,10 +23,6 @@ const routes: Routes = [
     component: LoginComponent
 
   },
-  {
-    path:'pruebareloj',
-    component: PruebaRelojComponent
-  }
 
 ];
 

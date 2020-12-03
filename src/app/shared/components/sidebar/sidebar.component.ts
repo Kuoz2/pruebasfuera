@@ -14,33 +14,36 @@ export class SidebarComponent {
   public  menuItems: Menu[];
   public url: any;
   public fileurl: any;
-
+  private rol: string = "";
   constructor(private router: Router, public navServices: NavService, private log: AutentificacionService) {
-    this.navServices.items.subscribe(menuItems => {
+    this.navServices.items.subscribe( menuItems => {
       this.menuItems = menuItems
       this.menuItems.forEach(
-          res => { res.rol = localStorage.getItem("ACCESS_ROLE"); });
-        this.router.events.subscribe((event) => {
+          res => {
+            res.rol = localStorage.getItem( "ACCESS_ROLE" );
+          } );
+      this.router.events.subscribe( (event) => {
         if (event instanceof NavigationEnd) {
-            menuItems.filter(items => {
-              console.log(items)
+          menuItems.filter( items => {
             if (!items.children) return false
-            items.children.filter(subItems => {
-              this.setNavActive(subItems)
+            items.children.filter( subItems => {
+              this.setNavActive( subItems )
               if (subItems.path === event.url)
-              this.setNavActive(subItems)
+                this.setNavActive( subItems )
               if (!subItems.children) return false
-              subItems.children.filter(subSubItems => {
+              subItems.children.filter( subSubItems => {
 
                 if (subSubItems.path === event.url)
-                this.setNavActive(subSubItems)
-              })
-            })
-          })
+                  this.setNavActive( subSubItems )
+              } )
+            } )
+          } )
         }
-      })
-    })
+      } )
+    } );
+    this.roles()
   }
+
 
   // Active Nave state
   setNavActive(item) {
@@ -49,7 +52,7 @@ export class SidebarComponent {
       if (menuItem != item)
         menuItem.active = false;
       if (menuItem.children && menuItem.children.includes(item))
-        menuItem.active = true;
+        menuItem.active = false;
       if (menuItem.children) {
         menuItem.children.filter(submenuItems => {
 
@@ -95,5 +98,10 @@ export class SidebarComponent {
       this.url = reader.result;
     }
   }
+
+  roles(){
+    this.rol = localStorage.getItem( "ACCESS_ROLE" )
+  }
+
 
 }

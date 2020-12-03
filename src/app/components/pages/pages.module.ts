@@ -18,7 +18,9 @@ import {ContenedorAppComponent} from './contenedor-app/contenedor-app.component'
 import {HoraActualService} from "../../Service/hora-actual.service";
 import {BoletaComponent} from './boleta/boleta.component';
 import {CierrecajaComponent} from './cierrecaja/cierrecaja.component';
-import {NgxPrintModule} from "ngx-print";
+import {QRCodeModule} from "angularx-qrcode";
+import {ListPageComponent} from "./list-page/list-page.component";
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import {NgxPrintModule} from "ngx-print";
       ListproductComponent,
       ContenedorAppComponent,
       BoletaComponent,
-      CierrecajaComponent],
+      CierrecajaComponent,
+      ListPageComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,
@@ -41,7 +44,8 @@ import {NgxPrintModule} from "ngx-print";
         ReactiveFormsModule,
         CKEditorModule,
         SharedModule,
-        NgxPrintModule,
+        QRCodeModule,
+        NgxPaginationModule,
 
     ],
     providers:[HoraActualService]

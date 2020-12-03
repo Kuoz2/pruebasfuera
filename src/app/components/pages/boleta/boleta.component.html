@@ -1,19 +1,21 @@
-
 <!--<button type="button" class="oculto-impresion btn btn-success"
         styleSheetFile="assets/css/printer.css"
         printSectionId="ticket"
         ngxPrint> imprimir</button>-->
 
 
+<div class="container">
+    <div class="col-xs-12">
 
-<div id="ticket" >
+<div id="ticket" class="ticket">
     <section class="sheet">
 <div class="centrarCaja">
-        <div class="card ">
+    <div class=" ticket2">
+        <div class=" card ">
             <div class="centrado" >
         <h2>Botillería Poma</h2>
         <h2>Calama, Av Huaytiquina #947</h2>
-        <h2>Rut:</h2>
+        <h2>Rut:10.658.138-K</h2>
         <h2>BOLETA ELECTRONICA No.</h2>
         <h2>Fecha:<span id="#fecha" ></span></h2>
         <h2>Hora: <span id="#horas" ></span>:<span id="#minutos"></span>:<span id="#segundos"></span><span id="#ampm"></span></h2>
@@ -21,9 +23,9 @@
     <table >
         <thead style="font-size: xx-small;">
         <tr>
-            <th class="cantidad">IVA</th>
-            <th class="cantidad">PROD</th>
-            <th class="cantidad">CAN</th>
+            <th class="cantidad">I</th>
+            <th class="cantidad">P</th>
+            <th class="cantidad">C</th>
             <th class="cantidad">$$</th>
         </tr>
         </thead>
@@ -36,25 +38,25 @@
         </tr>
 
         <tr>
-            <td class="cantidad"></td>
-            <td class="producto">TOTAL</td>
-            <td class="cantidad">${{totalPrices}}</td>
+            <td class="precio">Total:${{totalPrices}}</td>
         </tr>
         <tr>
-            <td class="cantidad"></td>
-            <td class="cantidad">IMP</td>
-            <td class="cantidad"></td>
+            <td class="cantidad">TIVA:{{totaliva}}</td>
         </tr>
         </tbody>
     </table>
-            <canvas id="barcode" hidden ></canvas >
+
+            <canvas id="barcode" hidden  ></canvas >
             <img src="" id="imagen">
-    <p class="centrado" style="font-size: xx-small;">¡GRACIAS POR SU COMPRA!
+
+            <p class="centrado" >¡GRACIAS POR SU COMPRA!</p>
+    </div>
     </div>
     </div>
     </section>
 </div>
-
+</div>
+</div>
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -62,13 +64,53 @@
         </div>
         <div class="card-body">
             <form [formGroup]="boletaform" (submit)="guardarformato(boletaform)">
-                <div class="form-group" >
-                    <label for="DTE">Código</label>
-                    <input formControlName="dtecode"  type="text" class="form-control" name="category" id="DTE">
+
+                <div class="form-group row">
+                    <label class="col-xl-3 col-sm-4">Codigo CAF :</label>
+                    <div class="col-xl-8 col-sm-7 pl-0 description-sm">
+                        <label for="editor1"></label>
+                        <textarea type="text" id="editor1" language="es" formControlName="dtecode" rows="10" cols="50"></textarea>
+                    </div>
                 </div>
                 <div class="form-group" >
+                    <label for="emisor">Rut el emisor</label>
+                    <input formControlName="emisor"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="emisor">
+                </div>
+
+                <div class="form-group" >
+                    <label for="rason">Rason social</label>
+                    <input formControlName="emisor" placeholder="Ejemplo S.A." type="text" class="form-control col-xl-1 col-sm-1" name="category" id="rason">
+                </div>
+
+                <div class="form-group" >
+                    <label for="folio">Tipo de folio</label>
+                    <input formControlName="emisor" placeholder="Ejemplo S.A." type="text" class="form-control col-xl-1 col-sm-1" name="category" id="folio">
+                </div>
+
+                <div class="form-group" >
+                    <label for="inicial">Rango inicial</label>
+                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
+                </div>
+
+                <div class="form-group" >
+                    <label for="final">Rango final</label>
+                    <input formControlName="cantidad" placeholder="Ejemplo 100"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="final">
+                </div>
+
+                <div class="form-group" >
+                    <label for="inicial">Fecha de autorización</label>
+                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
+                </div>
+
+                <div class="form-group" >
+                    <label for="inicial">Fecha de autorización</label>
+                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
+                </div>
+
+
+                <div class="form-group" >
                     <label for="cantidad">Cantidad de boletas</label>
-                    <input formControlName="cantidad"  type="text" class="form-control" name="category" id="cantidad">
+                    <input formControlName="cantidad"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="cantidad">
                 </div>
 
                 <button type="submit" class="btn btn-danger">Guardar</button>

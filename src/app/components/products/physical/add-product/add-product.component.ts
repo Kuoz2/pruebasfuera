@@ -212,4 +212,10 @@ resetiarform(){
           window.document.getElementById('tax_id').value = ''
       }
       }
+
+    nosenvia($event) {
+        if ($event.keyCode == 13){
+            return $event.returnValue = false;
+        }
+    }
 }

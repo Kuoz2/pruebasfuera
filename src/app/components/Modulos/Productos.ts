@@ -20,6 +20,7 @@ export class Productos {
     piva:number;
     vpcventa:number;
     brand: Marca;
+    categoria: Categories;
     categorie = new Categories()
 }
 

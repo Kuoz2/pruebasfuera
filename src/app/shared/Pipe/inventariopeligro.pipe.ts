@@ -12,7 +12,6 @@ export class InventariopeligroPipe implements PipeTransform {
         peligro.push(p)
       }
     }
-
     return peligro;
   }
 

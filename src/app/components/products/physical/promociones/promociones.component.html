@@ -5,10 +5,6 @@
                 <div class="card-header ">
                     <h5>Ingreso de promociones</h5>
                 </div>
-                <div class="card-body">
-
-
-                            </div>
                 <div id="batchDelete" class="category-table custom-datatable">
                     <div class="table-responsive">
                         <div class="container ">
@@ -17,9 +13,7 @@
                                     <h3>Crear promociones</h3>
                                 </div>
                                 <div class="card-body ">
-
                                     <div class="add-product-form"  >
-
                                         <div class="container">
                                             <div class="row no-gutters">
                                     <div class="form-group col-sm-6 col-xl-6 row"  >
@@ -28,19 +22,16 @@
                                         <select class="form-control  col-xl-3 col-sm-4" id="validationCustom02" [(ngModel)]="Lacategoria" (change)="ngmodelcambia()">
                                             <option value="0" selected></option>
                                             <option [ngValue]="i" *ngFor="let i of categorias | async" >{{i.cnombre}}</option>
-
                                         </select>
                                     </div>
                                         <div class="form-group col-sm-6 col-xl-6 row"  >
-
-                                        <label for="validationCustom01" class=" col-sm-4" >Ingreso de la promoción :</label>
+                                        <label for="validationCustom01" class=" col-sm-4" >Listado producto:</label>
                                         <select class="form-control  col-xl-5 col-sm-4" id="validationCustom01" [(ngModel)]="registros" (dblclick)="guardarseleccion(registros,$event)" multiple>
-                                            <option [ngValue]="d"  *ngFor="let d of ( productos |async) | buscarselectP:loseleccionado "   >{{d.pdescripcion}}</option>
-
+                                            <option [ngValue]="d"  *ngFor="let d of ( productos |async) | buscarselectP:loseleccionado ">{{d.pdescripcion}}</option>
                                         </select>
                                         </div>
                                             </div>
-                                                <div class="col-12" style="border: solid">
+                                                <div class="col-12" >
 
                                                     <table class="table table-hover" id="table3">
                                                         <thead>
@@ -51,34 +42,25 @@
                                                             <th >
                                                                 Productos
                                                             </th>
-
-
-
                                                         </tr>
                                                         </thead>
                                                         <tbody id="tbody3">
                                                         <tr >
-                                                            <td rowspan="2"><input type="text" placeholder="Precio"></td>
+                                                            <td rowspan="2"><input class="form-control col-xl-8 col-sm-7" type="text" placeholder="Precio"></td>
                                                             <td *ngFor="let p of promociones; let i = index"  class="text-center" id="tr3">{{p.pdescripcion }}/<p>Unidades:</p>{{p.munidades}} </td>
-
                                                         </tr>
                                                         <tr>
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-
-
                                                         </tbody>
                                                     </table>
                                                 </div>
                                         </div>
-
                                     <div>
                                     <button type="button" class="btn btn-primary" (click)="guardarpromo()">Ingresar promoción</button>
                                     </div>
-
                                 </div>
-
                                 </div>
                     </div>
                 </div>

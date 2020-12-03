@@ -50,10 +50,7 @@ export const
      breadcrumb: "Mermas"
     }
   },
-  {
-    path: 'reports',
-    loadChildren: () => import('../../components/reports/reports.module').then(m => m.ReportsModule),
-  },
+
 
 
 ];

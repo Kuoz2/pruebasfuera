@@ -6,6 +6,7 @@ import {MedioComponent} from "./medio/medio.component";
 import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component";
 import {BoletaComponent} from "./boleta/boleta.component";
 import {CierrecajaComponent} from "./cierrecaja/cierrecaja.component";
+import {ListPageComponent} from "./list-page/list-page.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,14 @@ const routes: Routes = [
                data:{
           title: "Crear voucher",
           breadcrumb: "Crear voucher"
+        }
+      },
+      {
+        path:'lista-pago',
+        component:ListPageComponent,
+        data:{
+          title: "Ventas",
+          breadcrumb:'Lista de ventas'
         }
       },
       {

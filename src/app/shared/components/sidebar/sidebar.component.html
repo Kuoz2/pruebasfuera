@@ -5,25 +5,25 @@
 <div class="sidebar custom-scrollbar">
 
   <ul class="sidebar-menu">
-    <li *ngFor="let menuItem of menuItems" [ngClass]="{active: menuItem.active}" >
+    <li *ngFor="let menuItem of menuItems" [ngClass]="{active: menuItem.active}"  >
       <!-- Sub -->
-      <a  href="javascript:void(0)" class="sidebar-header" *ngIf="menuItem.type === 'sub'"
+      <a  href="javascript:void(0)" class="sidebar-header" *ngIf="menuItem.type === 'sub' && menuItem.rol === rol || menuItem.rol === ''"
         (click)="toggletNavActive(menuItem)">
-        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title}}<span
-            class="badge badge-{{menuItem.badgeType}} ml-3"
+        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title}}
+        <span class="badge badge-{{menuItem.badgeType}} ml-3"
             *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
         <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
       </a>
       <!-- Link -->
       <a [routerLink]="!menuItem.type ? null : [menuItem.path]" routerLinkActive="active" class="sidebar-header"
-        *ngIf="menuItem.type === 'link'">
+        *ngIf="menuItem.type === 'link' && menuItem.rol === rol || menuItem.rol === '' ">
         <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title}}<span
             class="badge badge-{{menuItem.badgeType}} ml-3"
             *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
         <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
       </a>
       <!-- External Link -->
-      <a  href="{{ !menuItem.type ? null : menuItem.path }}" class="sidebar-header" *ngIf="menuItem.type === 'extLink'">
+      <a  href="{{ !menuItem.type ? null : menuItem.path }}" class="sidebar-header" *ngIf="menuItem.type === 'extLink' ">
         <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title}}<span
             class="badge badge-{{menuItem.badgeType}} ml-3"
             *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
@@ -39,22 +39,23 @@
       </a>
       <!-- 2nd Level Menu -->
       <ul class="sidebar-submenu" [ngClass]="{'menu-open': menuItem.active, 'menu-close': !menuItem.active }"
-        *ngIf="menuItem.children">
+        *ngIf="menuItem.children ">
         <li *ngFor="let childrenItem of menuItem.children" [ngClass]="{active: childrenItem.active}">
           <!-- Sub -->
-          <a href="javascript:void(0)" *ngIf="childrenItem.type === 'sub'" (click)="toggletNavActive(childrenItem)">
+          <a href="javascript:void(0)" *ngIf="childrenItem.type === 'sub' " (click)="toggletNavActive(childrenItem)">
             <i class="fa fa-circle"></i><span> {{childrenItem.title}} <span
                 class="badge badge-{{childrenItem.badgeType}} pull-right"
                 *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span> </span>
             <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
           </a>
           <!-- Link -->
-          <a [routerLink]="!childrenItem.type ? null : [childrenItem.path]" *ngIf="childrenItem.type === 'link'"
+          <a [routerLink]="!childrenItem.type ? null : [childrenItem.path]" *ngIf="childrenItem.type === 'link' && childrenItem.rol === rol || childrenItem.rol ==='' "
             routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <i class="fa fa-circle"></i><span>{{childrenItem.title}} <span
+            <i class="fa fa-circle"></i><span >{{childrenItem.title}}
+            <span
                 class="badge badge-{{childrenItem.badgeType}} pull-right"
-                *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span></span>
-            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
+                *ngIf="childrenItem.badgeType  ">{{childrenItem.badgeValue}}</span></span>
+            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children "></i>
           </a>
           <!-- External Link -->
           <a href="{{ !childrenItem.type ? null : childrenItem.path }}" *ngIf="childrenItem.type === 'extLink'"
