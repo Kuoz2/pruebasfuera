@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/hora-actual.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/hora-actual.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/pagos.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/pagos.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/productservice.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/voucher.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -593,14 +583,7 @@
       <workItem from="1605972282541" duration="15501000" />
       <workItem from="1606062780906" duration="37615000" />
       <workItem from="1606848962018" duration="13238000" />
-      <workItem from="1606922448475" duration="16314000" />
-    </task>
-    <task id="LOCAL-00055" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
-      <created>1596775916856</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1596775916856</updated>
+      <workItem from="1606922448475" duration="17020000" />
     </task>
     <task id="LOCAL-00056" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
       <created>1596777346118</created>
@@ -938,11 +921,18 @@
       <option name="project" value="LOCAL" />
       <updated>1605728942392</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="reactualizar los datos">
+      <created>1606981716899</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1606981716900</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2295665000" />
+    <option name="totallyTimeSpent" value="2296371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -956,7 +946,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.19616205" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -975,7 +965,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5079957" side_tool="true" weight="0.26868907" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" weight="0.8949079" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49200428" visible="true" weight="0.7746479" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" visible="true" weight="0.32936078" />
