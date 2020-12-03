@@ -87,7 +87,7 @@ export class PromocionesComponent implements OnInit, OnDestroy {
 
 
     ngmodelcambia() {
-
+            console.log(this.Lacategoria.cnombre)
         this.loseleccionado = this.Lacategoria.cnombre
     }
 }

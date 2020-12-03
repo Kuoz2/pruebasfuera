@@ -27,7 +27,7 @@
                                         <div class="form-group col-sm-6 col-xl-6 row"  >
                                         <label for="validationCustom01" class=" col-sm-4" >Listado producto:</label>
                                         <select class="form-control  col-xl-5 col-sm-4" id="validationCustom01" [(ngModel)]="registros" (dblclick)="guardarseleccion(registros,$event)" multiple>
-                                            <option [ngValue]="d"  *ngFor="let d of ( productos |async) | buscarselectP:loseleccionado ">{{d.pdescripcion}}</option>
+                                            <option [ngValue]="d"  *ngFor="let d of ( productos |async) | buscarselectP:loseleccionado ">{{d.pdescripcion}}{{d.brand.bnombre}}</option>
                                         </select>
                                         </div>
                                             </div>
@@ -47,7 +47,7 @@
                                                         <tbody id="tbody3">
                                                         <tr >
                                                             <td rowspan="2"><input class="form-control col-xl-8 col-sm-7" type="text" placeholder="Precio"></td>
-                                                            <td *ngFor="let p of promociones; let i = index"  class="text-center" id="tr3">{{p.pdescripcion }}/<p>Unidades:</p>{{p.munidades}} </td>
+                                                            <td *ngFor="let p of promociones; let i = index"  class="text-center" id="tr3">{{p.brand.bnombre }}/<p>Unidades:</p>{{p.munidades}} </td>
                                                         </tr>
                                                         <tr>
                                                             <td></td>
