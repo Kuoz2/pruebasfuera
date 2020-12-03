@@ -5,9 +5,8 @@ import {tap} from "rxjs/operators";
 import {BehaviorSubject, Observable} from "rxjs";
 import {user} from "../components/Modulos/User";
 import "rxjs-compat/add/operator/map";
-import {JwtHelperService} from "@auth0/angular-jwt";
 
-const helper = new JwtHelperService()
+//const helper = new JwtHelperService();
 @Injectable({
   providedIn: 'root'
 })
@@ -55,18 +54,18 @@ export class AutentificacionService {
     localStorage.removeItem("ACCESS_TOKEN");
      // this.loggedIn.next(true);
       localStorage.removeItem("EXPIRES_IN");
-      localStorage.removeItem("ACCESS_ROLE")
-      localStorage.removeItem("ACCES_USER")
+      localStorage.removeItem("ACCESS_ROLE");
+      localStorage.removeItem("ACCES_USER");
       localStorage.removeItem("ACCESS_NAMBER")
 
   }
 
-private consultaToken(){
-      const userToken = localStorage.getItem('ACCESS_TOKEN');
-      const expiretoken= helper.isTokenExpired(userToken);
-      expiretoken ? this.logout() : this.loggedIn.next(false)
+//private consultaToken(){
+  //    const userToken = localStorage.getItem('ACCESS_TOKEN');
+    //  const expiretoken= helper.isTokenExpired(userToken);
+    //  expiretoken ? this.logout() : this.loggedIn.next(false)
 
-}
+//}
 
   private saveRole(tokeRole:string):void{
       localStorage.setItem("ACCESS_ROLE",tokeRole);
@@ -74,7 +73,7 @@ private consultaToken(){
   }
 
   private saveNamber(tokenNamber:string):void{
-      localStorage.setItem("ACCESS_NAMBER", tokenNamber)
+      localStorage.setItem("ACCESS_NAMBER", tokenNamber);
       this.token_Namber = tokenNamber
   }
 
@@ -85,7 +84,7 @@ private consultaToken(){
   }
 
   private saveUser(tokenUser: string):void{
-      localStorage.setItem("ACCES_USER", tokenUser)
+      localStorage.setItem("ACCES_USER", tokenUser);
       this.token_User = tokenUser
   }
 

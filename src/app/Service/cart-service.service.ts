@@ -35,7 +35,7 @@ export class CartServiceService {
   }
   public removeElementCart(newData:Item){
     //Se obteiene el valor real del carrito
-    let listCart = this.cart.getValue()
+    let listCart = this.cart.getValue();
     //Se busca el item del carrito que se quiere eliminar.
     let objIndex = listCart.findIndex((obj => obj.id == newData.id));
     if (objIndex != -1){

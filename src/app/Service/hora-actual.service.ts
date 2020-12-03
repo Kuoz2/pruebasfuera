@@ -15,7 +15,7 @@ export class valorReloj {
 }
 export class HoraActualService {
     constructor() {
-        this.clock = timer(0,1000).pipe(map(t => new Date()),shareReplay(1));
+        this.clock = timer(0,1000).pipe(map(() => new Date()),shareReplay(1));
     }
     clock: Observable <Date>;
    private infofecha$ = new Subject<valorReloj>();
@@ -37,7 +37,7 @@ export class HoraActualService {
                 diaymes: t.toLocaleString('es-CH', { day: '2-digit', month: 'long' }).replace('.', '').replace('-', ' '),
                 diadesemana: t.toLocaleString('es-CH', { weekday: 'long' }).replace('.', ''),
                 segundo: t.getSeconds() < 10 ? '0' + t.getSeconds() : t.getSeconds().toString(),
-            }
+            };
 
             this.infofecha$.next(this.vr);
         });

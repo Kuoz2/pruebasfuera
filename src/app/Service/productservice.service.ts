@@ -6,7 +6,6 @@ import {Categories} from "../components/Modulos/Categories";
 import {Stock_productos} from "../components/Modulos/stock_productos";
 import {Perdidas_este_mes} from "../components/Modulos/reporte_grafico";
 import {Provideer} from "../components/Modulos/Provideer";
-import {Promociones} from "../components/Modulos/Promociones";
 import {FormGroup} from "@angular/forms";
 import {Mermas} from "../components/Modulos/mermas";
 
@@ -57,7 +56,7 @@ private UR_MERMAS = 'https://marketmini.herokuapp.com/decreases';
 
     //Actializar el stock de los productos.
     actualizarstock(stck: Stock){
-      console.log("stck", stck)
+      console.log("stck", stck);
       return this.http.put<Stock>(this.URLStock + '/' + stck.id, stck)
     }
     //Guardar un nuevo producto
@@ -112,10 +111,7 @@ private UR_MERMAS = 'https://marketmini.herokuapp.com/decreases';
       return this.http.post<Provideer>(this.URL_PROVIDERS, c)
     }
 
-    //Guardar la promoción
-    guardarPromo(pr:Promociones){
 
-    }
 
     //Guardar una merma
     guardarMerma(merma:FormGroup){
