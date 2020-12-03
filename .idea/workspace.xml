@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="cambiodecosas">
-      <change afterPath="$PROJECT_DIR$/node_modules/ng2-rut/dist/rut-value-accessor.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/autentificacion.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/cart-service.service.ts" afterDir="false" />
@@ -61,8 +60,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node_modules/ng2-rut/dist/rut-value-accessor.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -555,20 +557,6 @@
       <workItem from="1606848962018" duration="13238000" />
       <workItem from="1606922448475" duration="17020000" />
     </task>
-    <task id="LOCAL-00058" summary="Arreglando las ventas ahr se se ingresan la cantidad de productos que se requieren">
-      <created>1596820666578</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1596820666580</updated>
-    </task>
-    <task id="LOCAL-00059" summary="realizando el buildproduct">
-      <created>1597535567606</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1597535567607</updated>
-    </task>
     <task id="LOCAL-00060" summary="realizando el buildproduct">
       <created>1597538382574</created>
       <option name="number" value="00060" />
@@ -898,11 +886,25 @@
       <option name="project" value="LOCAL" />
       <updated>1607026413465</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="cambiodecosas">
+      <created>1607027771520</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1607027771520</updated>
+    </task>
+    <task id="LOCAL-00108" summary="cambiodecosas">
+      <created>1607028431281</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1607028431281</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2300240000" />
+    <option name="totallyTimeSpent" value="2301964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1379,8 +1381,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ng2-rut/dist/rut-value-accessor.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
