@@ -13,7 +13,6 @@ import {UsersModule} from './components/users/users.module';
 
 import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
-import {Ng2Rut} from "ng2-rut";
 import {MermaModule} from "./components/merma/merma.module";
 
 
@@ -33,7 +32,6 @@ import {MermaModule} from "./components/merma/merma.module";
         UsersModule,
         ReactiveFormsModule,
         HttpClientModule,
-        Ng2Rut,
         MermaModule,
         FormsModule
 
