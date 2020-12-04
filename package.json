@@ -71,7 +71,6 @@
     "ng2-completer": "^3.0.2",
     "ng2-datepicker": "^3.1.1",
     "ng2-google-charts": "^4.0.0",
-    "ng2-rut": "^0.3.2",
     "ng2-smart-table": "^1.5.0",
     "ngx-ckeditor": "^8.0.0",
     "ngx-dropzone-wrapper": "^8.0.0",
@@ -119,6 +118,6 @@
   },
   "engines": {
     "node": "12.5.0",
-    "npm": "6.14.8"
+    "npm": "6.14.9"
   }
 }

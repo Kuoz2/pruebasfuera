@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UsuarioService} from "../../../Service/usuario.service";
-import {RutValidator} from "ng2-rut";
 import {user} from "../../Modulos/User";
 
 @Component({
@@ -23,14 +22,14 @@ export class CreateUserComponent implements OnInit {
     get role(){return this.userform.get('user.role')}
 
 
-    constructor(private userservi:UsuarioService, private formbuilder:FormBuilder,rv: RutValidator) {
+    constructor(private userservi:UsuarioService, private formbuilder:FormBuilder) {
 
 
         this.userform = formbuilder.group({
             user: this.formbuilder.group( {
                 email: ['', [Validators.required, Validators.pattern(this.emailpinterer)] ],
                 password: [ '' ],
-                rut_user: [ '', [Validators.required, rv] ],
+                rut_user: [ '', [Validators.required] ],
                 name_user: [ '', [Validators.required] ],
                 f_lastname: [ '', [Validators.required] ],
                 m_lastname: [ '', [Validators.required] ],

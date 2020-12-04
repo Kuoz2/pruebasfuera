@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Ng2Rut} from "ng2-rut";
 
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {UsersRoutingModule} from './users-routing.module';
@@ -19,7 +18,6 @@ import {NgxPaginationModule} from "ngx-pagination";
         Ng2SmartTableModule,
         ReactiveFormsModule,
         UsersRoutingModule,
-        Ng2Rut,
         NgxPaginationModule,
     ]
 })
