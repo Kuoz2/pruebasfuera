@@ -34,6 +34,7 @@
     "@angular/router": "~9.1.9",
     "@auth0/angular-jwt": "^5.0.1",
     "@ckeditor/ckeditor5-angular": "^1.1.2",
+    "@fdograph/rut-utilities": "^1.2.4",
     "@ks89/angular-modal-gallery": "^7.2.4",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
     "@nguniversal/express-engine": "^8.1.1",

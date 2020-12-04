@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UsuarioService} from "../../../Service/usuario.service";
 import {user} from "../../Modulos/User";
+import {validateRut} from '@fdograph/rut-utilities';
 
 @Component({
   selector: 'app-create-user',
@@ -11,7 +12,7 @@ import {user} from "../../Modulos/User";
 export class CreateUserComponent implements OnInit {
     userform: FormGroup;
     emailpinterer: any = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
-
+    estadodelrut:boolean;
     get email(){return this.userform.get('user.email')}
     get rut_user(){return this.userform.get('user.rut_user');}
     get name_user(){return this.userform.get('user.name_user');}
@@ -20,6 +21,7 @@ export class CreateUserComponent implements OnInit {
     get p_contacts(){return this.userform.get('user.p_contacts')}
     get address(){return this.userform.get('user.address')}
     get role(){return this.userform.get('user.role')}
+
 
 
     constructor(private userservi:UsuarioService, private formbuilder:FormBuilder) {
@@ -95,4 +97,10 @@ static CreateFormUserGroup(){
 
   }
 
+    validadorRut(rut_user: AbstractControl) {
+
+      this.estadodelrut = validateRut(rut_user["value"])
+
+        console.log(this.estadodelrut)
+    }
 }
