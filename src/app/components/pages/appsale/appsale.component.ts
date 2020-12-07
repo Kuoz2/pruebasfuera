@@ -89,12 +89,6 @@ imagenjpg
 
        const data = '<head>' +
            '<style type="text/css">' +
-           '@page  { margin: 0 ; }' +
-           ' body.receipt.sheet { width: 570mm; height: 570mm;} /* sheet size */\n' +
-           '    @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {\n' +
-           '    display:none !important;\n' +
-           '    height:570mm !important;\n' +
-           '  }} /* fix for Chrome */' +
            'header,footer,aside{display: none }' +
            '\n' +
            'h2{   font-size: 28px;\n position: center;\n }' +
@@ -148,8 +142,8 @@ imagenjpg
            '}'+
            '\n' +
            'img {\n' +
-           'width: 450px;\n' +
-           '  height: 100px;' +
+           'width: 400px;\n' +
+           '  height: 150px;' +
            '}' +
            '</style>' +
            '<title></title></head>' +
