@@ -142,17 +142,14 @@ imagenjpg
            '}\n' +
            '\n' +
            '\n' +
-           '.ticket {\n' +
-           'margin: auto;\n' +
-           '  width: 570mm;\n' +
-           '  max-width: 570mm;\n' +
-           '}\n' +
+           '.ticket2 {\n' +
+           '  width: 600px;\n' +
+           '  max-width: 600px;\n' +
+           '}'+
            '\n' +
            'img {\n' +
-           '  width: 8.5cm;\n' +
-           'position: relative;\n' +
-           'height: 4.7cm;' +
-           '  max-width: 480mm;\n' +
+           'width: 450px;\n' +
+           '  height: 100px;' +
            '}' +
            '</style>' +
            '<title></title></head>' +
