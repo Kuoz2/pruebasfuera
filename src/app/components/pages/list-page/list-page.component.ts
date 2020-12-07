@@ -4,6 +4,7 @@ import {VoucherService} from "../../../Service/voucher.service";
 import {Observable} from "rxjs";
 import {XMLBuilder} from "xmlbuilder2/lib/interfaces";
 import {create} from "xmlbuilder2";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-list-page',
@@ -15,7 +16,10 @@ export class ListPageComponent implements OnInit {
     p: any;
   boletas:  Observable<DetalleVoucher[]>;
     datos = [];
-  constructor(private bol:VoucherService) {
+    cortar;
+    closeResult = '';
+
+    constructor(private bol:VoucherService, private modalService: NgbModal) {
   }
  async ngOnInit() {
     this.boletas = this.bol.detalledeventa()
@@ -23,9 +27,14 @@ export class ListPageComponent implements OnInit {
   }
 
     agregaboleta(da) {
-     this.datos.push(da)
+                this.datos.push( da );
+                    console.log(da)
+            this.cortar  = this.datos.filter((item, index) => {
+                return this.datos.indexOf(item) === index;
+            });
 
-        console.log(this.datos)
+        console.log(this.cortar)
+
     }
 
 
@@ -183,5 +192,24 @@ export class ListPageComponent implements OnInit {
         element.click();
 
         document.body.removeChild(element);
+    }
+
+
+    open(content) {
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+    }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return `with: ${reason}`;
+        }
     }
 }

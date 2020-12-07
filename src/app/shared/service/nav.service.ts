@@ -52,7 +52,9 @@ export class NavService {
 						{ path: '/products/physical/proveedor',rol:'',title:'Proveedor', type:'link'},
 						{ path: '/products/physical/promociones',rol:'', title:'Promociones', type:'link'},
 						{ path: '/products/physical/impuestos',rol:'', title:'Impuestos', type:'link'},
-						{path: '/products/physical/marca',rol:'', title:'Marcas', type:'link'}
+						{path: '/products/physical/marca',rol:'', title:'Marcas', type:'link'},
+						{path: '/products/physical/category',rol:'', title:'Categoría', type:'link'}
+
 
 			]
 		},

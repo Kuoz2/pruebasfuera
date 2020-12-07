@@ -69,9 +69,8 @@ imagenjpg
     );
     this.sermedio.mostrarmediodepago().subscribe(res => {this.selecciondecomra =  res});
     this.serviCat.categorias().subscribe(data => {this.categorias = data});
-    this.vouchservicio.ultimovoucher().subscribe(res => {
-      this.voucher_add = res;
-    });
+    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data});
+
     this.Imprimcion()
   }
   //Habrir el modal al precionar el carrito de compra
@@ -198,9 +197,9 @@ remover_producto(producto:Item){
     this.textoCambiado2.emit(valor.target.value)
   }
 //Aca se guardaran las ventas cuando se precione guardar luego se actualizara
-  guardarVentaApp() {
+   guardarVentaApp() {
     if (this.se_Imprio == false) {
-        alert("No se puede guardar, debe imprimir la boleta")
+      alert("No se puede guardar, debe imprimir la boleta")
     } else {
       this.detallevoucher.voucher.vtotal = this.totalPrice;
       this.detallevoucher.dvcantidad = this.totalPrice;
@@ -218,20 +217,24 @@ remover_producto(producto:Item){
           return res
         } )
       }
+
       this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
       this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
       this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
       this.cancelar2.voucher_id = this.voucher_add.id += 1;
+
       //Se guarda lo cancelado
       this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
         return res
       } );
+
       this.app_venta.reset();
       this.items.splice( 0, this.items.length );
       this.totalPrice = 0;
       this.totalQuantity = 0
     }
   }
+
   devolucion_app(){
     let total = 0 ;
     if (this.totalPrice != 0 && this.app_venta.value.efectivo != 0 && this.totalPrice < this.app_venta.value.efectivo){

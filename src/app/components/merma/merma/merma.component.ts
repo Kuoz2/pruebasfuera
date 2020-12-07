@@ -25,7 +25,6 @@ export class MermaComponent implements OnInit,OnDestroy {
   public p: any;
   constructor(private categoryservice: ProductserviceService, private formBuilder: FormBuilder) {
 
-
     this.mermasForm = this.formBuilder.group({
       categoriasMrm: [''] ,
       product_id: [''],
@@ -52,6 +51,7 @@ export class MermaComponent implements OnInit,OnDestroy {
     this.mermashoy();
     this.actualizarhoras();
     this.busquedaproductos()
+
   }
   async busquedaproducto(){
     return this.productos = this.categoryservice.categorias().pipe(takeUntil(this.unsubscribe$))

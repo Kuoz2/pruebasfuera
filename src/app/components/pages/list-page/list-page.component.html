@@ -1,4 +1,76 @@
 <!-- Container-fluid starts-->
+<ng-template #content let-c="close" let-d="dismiss">
+
+    <div class="modal-content">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        </div>
+    <div class="modal-body">
+       <div id="EnvioLibro">
+    EnvioLibro ID="ID_LIBRO_"<br>
+        <div id="Caratula">
+        Caratula<br>
+        RutEmisorLibro <p>1111111-1 </p><br>
+        RutEnvia <p>22222222-2</p> <br>
+        PeriodoTributario<p>2020-09</p><br>
+        FchReso <p>2020-08-31</p><br>
+        NroReso<p>l0</p><br>
+        TipoOperacion <p>VENTA</p><br>
+        TipoLibro<p>ESPECIAL</p><br>
+        TipoEnvio<p>TOTAL</p><br>
+        FolioNotificacion<p>1</p><br>
+        Caratula
+        </div>
+           <div id="ResumenPeriodo">
+            ResumenPeriodo<br>
+             TotalesPeriodo<br>
+                TpoDoc <p>39</p> <br>
+                TotDoc <p>1</p> <br>
+                TotMntExe <p>49241</p> <br>
+                TotMntNeto <p>18448292</p> <br>
+                TotMntIVA <p>3505175</p><br>
+                TotMntTotal <p>22002708</p> <br>
+             TotalesPeriodo<br>
+            ResumenPeriodo<br>
+           </div>
+           <div id="Detalle" *ngFor="let l of cortar">
+               <div *ngFor="let o of cortar.product.category">
+        Detalle<br>
+
+         TpoDoc <p>39</p><br>
+         NroDoc <p>10</p> <br>
+         TasaImp <p>19%</p> <br>
+         FchDoc <p>2020-09-01</p> <br>
+         RUTDoc <p>66666666-6</p> <br>
+         TipoProd<p>{{o.cnombre}}</p> <br>
+         RznSoc <p>Razon Social de Cliente</p> <br>
+         MntNeto <p>1422876</p> <br>
+         MntIVA <p>270346</p> <br>
+         MntTotal <p>1693222</p> <br>
+        Detalle<br>
+               </div>
+           </div>
+         TmstFirma 2020-09-01T11:17:16 <br>
+    EnvioLibro<br>
+       </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    </div>
+
+    </div>
+    </div>
+</ng-template>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">

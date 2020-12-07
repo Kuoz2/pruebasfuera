@@ -40,11 +40,11 @@ p: any
   async informacionasync(){
     this.elnombre = this.Smarca.buscarmarca2()
   }
-nombre
+nombre;
   ngOnInit(): void {
 
-    this.informacionasync()
-    console.log(this.elnombre)
+    this.informacionasync();
+    console.log(this.elnombre);
     this.Smarca.buscarmarca();
   }
 
@@ -88,9 +88,8 @@ nombre
     }
 
     guardarmarca(fbm) {
-        if (this.marcasForm.valid){
-            this.Smarca.guardarmarca(fbm.value)
+
+            this.Smarca.guardarmarca(fbm.value);
             this.marcasForm.reset()
-        }
-    }
+          }
 }

@@ -22,7 +22,7 @@ th.producto {
 .centrarCaja {
 
   position :relative !important;
-  left: 40% !important;
+  left: 10% !important;
 }
 td.cantidad,
 th.cantidad {
@@ -44,23 +44,12 @@ th.precio {
 }
 
 .ticket2 {
-  width: 450px;
-  max-width: 500px;
+  border: solid;
+  width: 600px;
+  max-width: 600px;
 }
 
-img {
-  width: 450px;
-  height: 250px;
 
-}
-.ticket{
-  margin: 0;
-  width: 200px;
-  max-width: 200px;
-}
-canvas{
-  margin: 0;
-  width: 90mm;
-  height: 40.7mm;
-}
+
+
 

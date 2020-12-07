@@ -5,116 +5,145 @@
 
 
 <div class="container">
-    <div class="col-xs-12">
+    <div class="">
 
-<div id="ticket" class="ticket">
-    <section class="sheet">
-<div class="centrarCaja">
-    <div class=" ticket2">
-        <div class=" card ">
-            <div class="centrado" >
-        <h2>Botillería Poma</h2>
-        <h2>Calama, Av Huaytiquina #947</h2>
-        <h2>Rut:10.658.138-K</h2>
-        <h2>BOLETA ELECTRONICA No.</h2>
-        <h2>Fecha:<span id="#fecha" ></span></h2>
-        <h2>Hora: <span id="#horas" ></span>:<span id="#minutos"></span>:<span id="#segundos"></span><span id="#ampm"></span></h2>
-            </div>
-    <table >
-        <thead style="font-size: xx-small;">
-        <tr>
-            <th class="cantidad">I</th>
-            <th class="cantidad">P</th>
-            <th class="cantidad">C</th>
-            <th class="cantidad">$$</th>
-        </tr>
-        </thead>
-        <tbody >
-        <tr *ngFor="let product of item">
-            <td class="precio">{{product.piva}}</td>
-            <td class="precio">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
-            <td class="precio">{{product.quantity}}</td>
-            <td class="precio">{{product.pvalor}}</td>
-        </tr>
+        <div id="ticket" class="ticket">
+            <section class="sheet">
+                <div class="centrarCaja">
+                    <div class=" ticket2">
+                        <div class=" card ">
+                            <div class="centrado">
+                                <h2>Botillería Poma</h2>
+                                <h2>Calama, Av Huaytiquina #947</h2>
+                                <h2>Rut:10.658.138-K</h2>
+                                <h2>BOLETA ELECTRONICA No.</h2>
+                                <h2>Fecha:<span id="#fecha"></span></h2>
+                                <h2>Hora: <span id="#horas"></span>:<span id="#minutos"></span>:<span
+                                        id="#segundos"></span><span id="#ampm"></span></h2>
+                            </div>
+                            <table>
+                                <thead style="font-size: xx-small;">
+                                <tr>
+                                    <th class="cantidad">I</th>
+                                    <th class="cantidad">P</th>
+                                    <th class="cantidad">C</th>
+                                    <th class="cantidad">$$</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let product of item">
+                                    <td class="precio">{{product.piva}}</td>
+                                    <td class="precio">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
+                                    <td class="precio">{{product.quantity}}</td>
+                                    <td class="precio">{{product.pvalor}}</td>
+                                </tr>
 
-        <tr>
-            <td class="precio">Total:${{totalPrices}}</td>
-        </tr>
-        <tr>
-            <td class="cantidad">TIVA:{{totaliva}}</td>
-        </tr>
-        </tbody>
-    </table>
+                                <tr>
+                                    <td class="precio">Total:${{totalPrices}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="cantidad">TIVA:{{totaliva}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
 
-            <canvas id="barcode" hidden  ></canvas >
-            <img src="" id="imagen">
+                            <canvas id="barcode" hidden ></canvas>
+                            <img src="" id="imagen" >
 
-            <p class="centrado" >¡GRACIAS POR SU COMPRA!</p>
-    </div>
-    </div>
-    </div>
-    </section>
-</div>
-</div>
-</div>
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h3>Agregar cantidad y DTE</h3>
-        </div>
-        <div class="card-body">
-            <form [formGroup]="boletaform" (submit)="guardarformato(boletaform)">
-
-                <div class="form-group row">
-                    <label class="col-xl-3 col-sm-4">Codigo CAF :</label>
-                    <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                        <label for="editor1"></label>
-                        <textarea type="text" id="editor1" language="es" formControlName="dtecode" rows="10" cols="50"></textarea>
+                            <p class="centrado">¡GRACIAS POR SU COMPRA!</p>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group" >
-                    <label for="emisor">Rut el emisor</label>
-                    <input formControlName="emisor"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="emisor">
-                </div>
-
-                <div class="form-group" >
-                    <label for="rason">Rason social</label>
-                    <input formControlName="emisor" placeholder="Ejemplo S.A." type="text" class="form-control col-xl-1 col-sm-1" name="category" id="rason">
-                </div>
-
-                <div class="form-group" >
-                    <label for="folio">Tipo de folio</label>
-                    <input formControlName="emisor" placeholder="Ejemplo S.A." type="text" class="form-control col-xl-1 col-sm-1" name="category" id="folio">
-                </div>
-
-                <div class="form-group" >
-                    <label for="inicial">Rango inicial</label>
-                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
-                </div>
-
-                <div class="form-group" >
-                    <label for="final">Rango final</label>
-                    <input formControlName="cantidad" placeholder="Ejemplo 100"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="final">
-                </div>
-
-                <div class="form-group" >
-                    <label for="inicial">Fecha de autorización</label>
-                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
-                </div>
-
-                <div class="form-group" >
-                    <label for="inicial">Fecha de autorización</label>
-                    <input formControlName="cantidad" placeholder="Ejemplo 1" type="text" class="form-control col-xl-1 col-sm-1" name="category" id="inicial">
-                </div>
-
-
-                <div class="form-group" >
-                    <label for="cantidad">Cantidad de boletas</label>
-                    <input formControlName="cantidad"  type="text" class="form-control col-xl-1 col-sm-1" name="category" id="cantidad">
-                </div>
-
-                <button type="submit" class="btn btn-danger">Guardar</button>
-            </form>
+            </section>
         </div>
     </div>
+</div>
+
+<div class="container">
+    <div class="col-xl-12">
+    <div class="card">
+        <div class="card-header">
+            <h1>Configuración de boleta</h1>
+        </div>
+        <div class="card-body">
+            <div class="col-xl-7">
+                <div class="add-product-form">
+                    <form [formGroup]="boletaform" (submit)="guardarformato(boletaform)">
+
+                        <div class="form-group">
+                            <label for="RutEmpresa">Rut empresa</label>
+                            <input formControlName="RutEmpresa" type="text" class="form-control col-xl-1 col-sm-1"
+                                   name="RutEmpresa" id="RutEmpresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="rasonSocial">Rason social</label>
+                            <input formControlName="rasonSocial" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="rasonSocial" id="rasonSocial">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fechaEmision">Fecha de emisión</label>
+                            <input formControlName="fechaEmision" placeholder="Ejemplo S.A." type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="fechaEmision" id="fechaEmision">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="RutReceptor">Rut del receptor</label>
+                            <input formControlName="RutReceptor" placeholder="Ejemplo S.A." type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="RutReceptor" id="RutReceptor">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="TipoDocumento">Tipo de documento</label>
+                            <input formControlName="TipoDocumento" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="TipoDocumento" id="TipoDocumento">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="CantidadDesde">Cantidad inicial</label>
+                            <input formControlName="CantidadDesde" placeholder="Ejemplo 100" type="number"
+                                   class="form-control col-xl-1 col-sm-1" name="CantidadDesde" id="CantidadDesde">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="CantidadHasta">Cantidad final</label>
+                            <input formControlName="CantidadHasta" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="CantidadHasta" id="CantidadHasta">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numeroFolio">Numero de folio</label>
+                            <input formControlName="numeroFolio" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="numeroFolio" id="numeroFolio">
+                        </div>
+                        <div class="form-group">
+                            <label for="moduloLLave">LLave publica</label>
+                            <input formControlName="moduloLLave" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="moduloLLave" id="moduloLLave">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ExponenteLLave">Exponente de la llave</label>
+                            <input formControlName="ExponenteLLave" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="ExponenteLLave" id="ExponenteLLave">
+                        </div>
+                        <div class="form-group">
+                            <label for="identidadLLave">Identificación llave</label>
+                            <input formControlName="identidadLLave" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="identidadLLave" id="identidadLLave">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firmaTimbre">Firma en SHA1withRSA</label>
+                            <input formControlName="firmaTimbre" placeholder="Ejemplo 1" type="text"
+                                   class="form-control col-xl-1 col-sm-1" name="firmaTimbre" id="firmaTimbre"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

@@ -108,7 +108,7 @@ file:File;
     } )
     console.log( "productos", this.productForm.value );
 
-    this.productForm.reset()
+    //this.productForm.reset()
 
 
   }
