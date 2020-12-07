@@ -91,6 +91,9 @@ imagenjpg
            '<style type="text/css">' +
            '@page  { margin: 0 ; }' +
            ' body.receipt.sheet { width: 570mm; height: 570mm;}  }}' +
+           '\' body.receipt.sheet { width: 570mm; height: 570mm;} /* sheet size */\\n\' +\n' +
+           '  @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {'+
+           '    display:none !important;' +'    height:570mm !important;}} ' +
            'header,footer,aside{display: none }' +
            '\n' +
            'h2{   font-size: 28px;\n position: center;\n }' +
