@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+            <state relative-caret-position="129">
+              <caret line="92" column="68" selection-start-line="92" selection-start-column="68" selection-end-line="92" selection-end-column="68" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -569,14 +569,7 @@
       <workItem from="1607123654287" duration="7955000" />
       <workItem from="1607185959619" duration="18200000" />
       <workItem from="1607274465957" duration="28036000" />
-      <workItem from="1607352962950" duration="19268000" />
-    </task>
-    <task id="LOCAL-00066" summary="realizando el buildproduct">
-      <created>1597600047167</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1597600047167</updated>
+      <workItem from="1607352962950" duration="20373000" />
     </task>
     <task id="LOCAL-00067" summary="realizando el buildproduct">
       <created>1597600305658</created>
@@ -914,11 +907,18 @@
       <option name="project" value="LOCAL" />
       <updated>1607371985110</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="probandoinstalacion">
+      <created>1607373804859</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1607373804859</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2392815000" />
+    <option name="totallyTimeSpent" value="2393920000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -931,7 +931,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.20895523" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
@@ -952,7 +951,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50852877" side_tool="true" weight="0.5969664" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" weight="0.5254605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" visible="true" weight="0.5254605" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" visible="true" weight="0.32936078" />
@@ -1441,8 +1440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        <state relative-caret-position="129">
+          <caret line="92" column="68" selection-start-line="92" selection-start-column="68" selection-end-line="92" selection-end-column="68" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>

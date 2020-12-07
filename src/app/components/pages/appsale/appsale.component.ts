@@ -89,6 +89,8 @@ imagenjpg
 
        const data = '<head>' +
            '<style type="text/css">' +
+           '@page  { margin: 0 ; }' +
+           ' body.receipt.sheet { width: 570mm; height: 570mm;}  }}' +
            'header,footer,aside{display: none }' +
            '\n' +
            'h2{   font-size: 28px;\n position: center;\n }' +
