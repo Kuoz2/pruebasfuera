@@ -144,7 +144,7 @@ imagenjpg
            '}'+
            '\n' +
            'img {\n' +
-           'width: 250px;\n' +
+           'width: 280px;\n' +
            '  height: 300px;' +
            '}' +
            '</style>' +

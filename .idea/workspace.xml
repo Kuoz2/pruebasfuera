@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="146" column="27" lean-forward="true" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
+            <state relative-caret-position="163">
+              <caret line="144" column="17" lean-forward="true" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -568,21 +568,7 @@
       <workItem from="1607123654287" duration="7955000" />
       <workItem from="1607185959619" duration="18200000" />
       <workItem from="1607274465957" duration="28036000" />
-      <workItem from="1607352962950" duration="24794000" />
-    </task>
-    <task id="LOCAL-00073" summary="realizando el buildproduct">
-      <created>1597622935748</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1597622935748</updated>
-    </task>
-    <task id="LOCAL-00074" summary="realizando el buildproduct">
-      <created>1597624391658</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1597624391658</updated>
+      <workItem from="1607352962950" duration="26058000" />
     </task>
     <task id="LOCAL-00075" summary="realizando el buildproduct">
       <created>1597625584436</created>
@@ -913,11 +899,25 @@
       <option name="project" value="LOCAL" />
       <updated>1607379527314</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="probandoinstalacion">
+      <created>1607380437531</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1607380437531</updated>
+    </task>
+    <task id="LOCAL-00123" summary="probandoinstalacion">
+      <created>1607381116597</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1607381116597</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2398341000" />
+    <option name="totallyTimeSpent" value="2399605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -930,7 +930,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.20895523" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
@@ -1440,8 +1439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="146" column="27" lean-forward="true" selection-start-line="146" selection-start-column="27" selection-end-line="146" selection-end-column="27" />
+        <state relative-caret-position="163">
+          <caret line="144" column="17" lean-forward="true" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
           </folding>
