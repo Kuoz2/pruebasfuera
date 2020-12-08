@@ -146,8 +146,8 @@ imagenjpg
            '  max-width: 600px;\n' +
            '}'+
            '\n' +
-           'width: 77mm;\n' +
            'img {\n' +
+           'width: 77mm;\n' +
            '  height: 500px;' +
            '}' +
            '</style>' +
