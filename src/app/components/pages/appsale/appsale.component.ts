@@ -142,12 +142,12 @@ imagenjpg
            '\n' +
            '\n' +
            '.ticket2 {\n' +
-           '  width: 600px;\n' +
+           '  width: 570px;\n' +
            '  max-width: 600px;\n' +
            '}'+
            '\n' +
            'img {\n' +
-           'width: 390px;\n' +
+           'width: 50mm;\n' +
            '  height: 500px;' +
            '}' +
            '</style>' +
