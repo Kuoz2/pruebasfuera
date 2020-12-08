@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Service/marca.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Service/marca.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -53,11 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="826">
-              <caret line="138" column="38" lean-forward="true" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#70#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="146">
+              <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -569,21 +565,7 @@
       <workItem from="1607123654287" duration="7955000" />
       <workItem from="1607185959619" duration="18200000" />
       <workItem from="1607274465957" duration="28036000" />
-      <workItem from="1607352962950" duration="31998000" />
-    </task>
-    <task id="LOCAL-00080" summary="realizando el buildproduct">
-      <created>1597782785830</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1597782785830</updated>
-    </task>
-    <task id="LOCAL-00081" summary="realizando el buildproduct">
-      <created>1597844333357</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1597844333357</updated>
+      <workItem from="1607352962950" duration="33278000" />
     </task>
     <task id="LOCAL-00082" summary="realizando el buildproduct">
       <created>1597855478460</created>
@@ -914,11 +896,25 @@
       <option name="project" value="LOCAL" />
       <updated>1607394500014</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="probandoinstalacion">
+      <created>1607395373059</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1607395373059</updated>
+    </task>
+    <task id="LOCAL-00130" summary="probandoinstalacion">
+      <created>1607396158295</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1607396158295</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2405545000" />
+    <option name="totallyTimeSpent" value="2406825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -930,8 +926,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.20895523" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
@@ -952,7 +947,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50852877" side_tool="true" weight="0.5969664" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" weight="0.5254605" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" visible="true" weight="0.5254605" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" visible="true" weight="0.32936078" />
@@ -1441,11 +1436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/appsale/appsale.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="138" column="38" lean-forward="true" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="146">
+          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
         </state>
       </provider>
     </entry>
