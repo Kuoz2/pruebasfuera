@@ -1,4 +1,4 @@
-<!-- Container-fluid starts-->
+  <!-- Container-fluid starts-->
 
 <div class="container-fluid">
     <div class="row">
@@ -12,7 +12,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Ganancia actual</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mensuales?.ventas_mensual" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mensuales?.ventas_mensual | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Este mes</small></h3>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Ganancia anterior</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mes_pasado?.mes_anterior_es" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mes_pasado?.mes_anterior_es | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Mes anterior</small></h3>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Pérdida actual</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_este_mes" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_este_mes?.stock_lost | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Este mes</small></h3>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Pérdida anterior</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_anterior" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_anterior | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Mes anterior</small></h3>
                         </div>
                     </div>

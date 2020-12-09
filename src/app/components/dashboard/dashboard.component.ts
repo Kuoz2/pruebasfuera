@@ -274,7 +274,7 @@ if (!res) {
     //El stock de perdidas de este mes.
     this.produc.stock_perida_este_mes().
     pipe(takeUntil(this.unsubscribe$)).
-    subscribe(data => { this.stock_perdidas_este_mes = data; this.cd.markForCheck()});
+    subscribe(data => { this.stock_perdidas_este_mes = data; this.cd.markForCheck() });
 
     //Stock peridasd del mes anterior
     this.produc.stock_perdida_anterior().
@@ -336,7 +336,7 @@ if (!res) {
                       labels: dg,
                       datasets:[
                           {
-                              label:'Perdidas',
+                              label:'Pérdidas',
                           data: vg,
                               backgroundColor:'#ff6384',
 
@@ -448,5 +448,6 @@ if (!res) {
     obtmermas():Observable<Mermas[]>{
         return this.mermas = this.produc.mermasdeldia()
     }
+
 
 }

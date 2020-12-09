@@ -47,6 +47,8 @@ file:File;
   get provider_id(){return this.productForm.get('provider_id')}
   get tax_id(){return this.productForm.get('tax_id')}
     get brand_id(){return this.productForm.get('brand_id')}
+
+
   constructor(private servi: ProductserviceService,
               private formBuilder: FormBuilder,
               private impt: ImpuestosService,

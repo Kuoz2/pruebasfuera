@@ -72,71 +72,71 @@
 
                         <div class="form-group">
                             <label for="RutEmpresa">Rut empresa</label>
-                            <input formControlName="RutEmpresa" type="text" class="form-control col-xl-1 col-sm-1"
-                                   name="RutEmpresa" id="RutEmpresa">
+                            <input formControlName="RutEmpresa" type="text" class="form-control digits col-xl-8 col-sm-7"
+                                   name="RutEmpresa" id="RutEmpresa" placeholder="Ejemplo: 111111111-1">
                         </div>
                         <div class="form-group">
                             <label for="rasonSocial">Rason social</label>
-                            <input formControlName="rasonSocial" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="rasonSocial" id="rasonSocial">
+                            <input formControlName="rasonSocial" placeholder="Ejemplo: Botillería S.A" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="rasonSocial" id="rasonSocial">
                         </div>
 
                         <div class="form-group">
-                            <label for="fechaEmision">Fecha de emisión</label>
-                            <input formControlName="fechaEmision" placeholder="Ejemplo S.A." type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="fechaEmision" id="fechaEmision">
+                            <label for="fechaEmision">Fecha de autorizado el rango de folio</label>
+                            <input formControlName="FechaAutori" placeholder="Ejemplo: 2002-10-03" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="fechaEmision" id="fechaEmision">
                         </div>
 
                         <div class="form-group">
                             <label for="RutReceptor">Rut del receptor</label>
                             <input formControlName="RutReceptor" placeholder="Ejemplo S.A." type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="RutReceptor" id="RutReceptor">
+                                   class="form-control digits col-xl-8 col-sm-7" name="RutReceptor" id="RutReceptor">
                         </div>
 
                         <div class="form-group">
                             <label for="TipoDocumento">Tipo de documento</label>
-                            <input formControlName="TipoDocumento" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="TipoDocumento" id="TipoDocumento">
+                            <input formControlName="TipoDocumento" placeholder="Ejemplo: 39" type="number"
+                                   class="form-control digits col-xl-8 col-sm-7" name="TipoDocumento" id="TipoDocumento">
                         </div>
 
                         <div class="form-group">
                             <label for="CantidadDesde">Cantidad inicial</label>
-                            <input formControlName="CantidadDesde" placeholder="Ejemplo 100" type="number"
-                                   class="form-control col-xl-1 col-sm-1" name="CantidadDesde" id="CantidadDesde">
+                            <input formControlName="CantidadDesde" placeholder="Ejemplo: 1" type="number"
+                                   class="form-control digits col-xl-8 col-sm-7" name="CantidadDesde" id="CantidadDesde">
                         </div>
 
                         <div class="form-group">
                             <label for="CantidadHasta">Cantidad final</label>
-                            <input formControlName="CantidadHasta" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="CantidadHasta" id="CantidadHasta">
+                            <input formControlName="CantidadHasta" placeholder="Ejemplo: 100" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="CantidadHasta" id="CantidadHasta">
                         </div>
 
                         <div class="form-group">
                             <label for="numeroFolio">Numero de folio</label>
-                            <input formControlName="numeroFolio" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="numeroFolio" id="numeroFolio">
+                            <input formControlName="numeroFolio" placeholder="Ejemplo: 122" type="number"
+                                   class="form-control digits col-xl-8 col-sm-7" name="numeroFolio" id="numeroFolio">
                         </div>
                         <div class="form-group">
                             <label for="moduloLLave">LLave publica</label>
-                            <input formControlName="moduloLLave" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="moduloLLave" id="moduloLLave">
+                            <input formControlName="moduloLLave" placeholder="Ejemplo: AMPa7mxz8ysTRazehr5/Oiau98/lku7y2twwndI/142ds54aWjqd" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="moduloLLave" id="moduloLLave">
                         </div>
 
                         <div class="form-group">
                             <label for="ExponenteLLave">Exponente de la llave</label>
-                            <input formControlName="ExponenteLLave" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="ExponenteLLave" id="ExponenteLLave">
+                            <input formControlName="ExponenteLLave" placeholder="Ejemplo: aw==<" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="ExponenteLLave" id="ExponenteLLave">
                         </div>
                         <div class="form-group">
                             <label for="identidadLLave">Identificación llave</label>
-                            <input formControlName="identidadLLave" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="identidadLLave" id="identidadLLave">
+                            <input formControlName="identidadLLave" placeholder="Ejemplo: fds5f4ds65f4qa65sf4as65f45g61f5gfdg45af4qfw64fw+65sdf1sdf5w1" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="identidadLLave" id="identidadLLave">
                         </div>
 
                         <div class="form-group">
                             <label for="firmaTimbre">Firma en SHA1withRSA</label>
-                            <input formControlName="firmaTimbre" placeholder="Ejemplo 1" type="text"
-                                   class="form-control col-xl-1 col-sm-1" name="firmaTimbre" id="firmaTimbre"/>
+                            <input formControlName="firmaTimbre" placeholder="Ejemplo: GkdhiwT5a4…09UjhGfsR7l/ " type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="firmaTimbre" id="firmaTimbre"/>
                         </div>
 
                         <button type="submit" class="btn btn-danger">Guardar</button>
