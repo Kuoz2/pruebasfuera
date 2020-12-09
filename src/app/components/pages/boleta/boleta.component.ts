@@ -4,7 +4,6 @@ import {HoraActualService, valorReloj} from "../../../Service/hora-actual.servic
 import {Observable} from "rxjs";
 import PDF417 from "pdf417-generator";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {CnfgBoletaService} from "../../../Service/cnfg-boleta.service";
 
 
 @Component({
@@ -17,7 +16,7 @@ export class BoletaComponent implements OnInit {
     boletaform: FormGroup;
     totaliva: number = 0;
 
-  constructor( public secoind:HoraActualService, private fm:FormBuilder, private cnf: CnfgBoletaService) {
+  constructor( public secoind:HoraActualService, private fm:FormBuilder) {
       this.boletaform = this.fm.group({
           RutEmpresa: new FormControl('',[Validators.required]),
           FechaAutori: new FormControl('',[Validators.required]),
@@ -127,7 +126,6 @@ export class BoletaComponent implements OnInit {
   }
 
     guardarformato(boletaform) {
-        this.cnf.guardarInfoBoleta(boletaform.value)
     }
 
 

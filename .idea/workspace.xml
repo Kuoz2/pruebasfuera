@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b14ba7-fe4d-46fc-8232-03dc2de22143" name="Default Changelist" comment="probandoinstalacion">
-      <change afterPath="$PROJECT_DIR$/src/app/Service/cnfg-boleta.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/shared/Pipe/ceparador.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -107,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+            <state relative-caret-position="863">
+              <caret line="67" column="82" selection-start-line="67" selection-start-column="82" selection-end-line="67" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -199,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.ts" />
         <option value="$PROJECT_DIR$/src/app/components/pages/boleta/boleta.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/products/physical/add-product/add-product.component.html" />
         <option value="$PROJECT_DIR$/src/app/shared/Pipe/ceparador.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html" />
       </list>
     </option>
   </component>
@@ -270,14 +268,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-              <item name="Pipe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -590,14 +580,7 @@
       <workItem from="1607274465957" duration="28036000" />
       <workItem from="1607352962950" duration="35105000" />
       <workItem from="1607412239093" duration="776000" />
-      <workItem from="1607441590568" duration="23683000" />
-    </task>
-    <task id="LOCAL-00089" summary="realizando el buildproduct">
-      <created>1603140973171</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1603140973171</updated>
+      <workItem from="1607441590568" duration="23952000" />
     </task>
     <task id="LOCAL-00090" summary="cambiado cosas">
       <created>1603153687179</created>
@@ -935,11 +918,18 @@
       <option name="project" value="LOCAL" />
       <updated>1607522130152</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="probandoinstalacion">
+      <created>1607522428494</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1607522428494</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2433111000" />
+    <option name="totallyTimeSpent" value="2433380000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -952,7 +942,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.21321961" />
       <window_info id="Structure" order="1" sideWeight="0.503268" side_tool="true" weight="0.19616205" />
@@ -973,7 +962,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32827735" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50852877" side_tool="true" weight="0.5969664" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" visible="true" weight="0.5254605" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" weight="0.5254605" />
       <window_info anchor="bottom" id="TypeScript" order="12" sideWeight="0.49626866" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="bottom" id="Dependency Viewer" order="14" visible="true" weight="0.32936078" />
@@ -1488,8 +1477,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/list-page/list-page.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        <state relative-caret-position="863">
+          <caret line="67" column="82" selection-start-line="67" selection-start-column="82" selection-end-line="67" selection-end-column="82" />
         </state>
       </provider>
     </entry>
