@@ -1,0 +1,66 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Actualizar registros de boleta</h5>
+                </div>
+                <div class="card-body">
+                    <div id="batchDelete" class="category-table custom-datatable">
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Formulario actualización</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <form [formGroup]="boletaform" (submit)="guardarformato(boletaform)">
+                                        <div class="form-group row">
+                                            <label for="CantidadDesde" class="col-xl-3 col-sm-4 mb-0">Nueva cantidad inicial de boletas:</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="CantidadDesde" type="number" placeholder="Ejemplo: 1" formControlName="CantidadDesde" required="" autocomplete="off">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="CantidadHasta" class="col-xl-3 col-sm-4 mb-0">Nueva cantidad hasta de boletas:</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="CantidadHasta" type="number" placeholder="Ejemplo: 100" formControlName="CantidadHasta" required="" autocomplete="off">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="moduloLLave" class="col-xl-3 col-sm-4 mb-0">Modulo de la nueva llave:</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="moduloLLave" type="number" placeholder="Ejemplo: sÀº½ÔÐ N\zñ" formControlName="moduloLLave" required="" autocomplete="off">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ExponenteLLave" class="col-xl-3 col-sm-4 mb-0">Exponente de la nueva llave:</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="ExponenteLLave" type="number" placeholder=" Ejemplo: ÆH" formControlName="ExponenteLLave" required="" autocomplete="off">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="identidadLLave" class="col-xl-3 col-sm-4 mb-0">Llave del certificado electronico(solamente si a cambiado de proveedor):</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="identidadLLave" type="number" placeholder="Ejemplo: ²¬séË7" formControlName="identidadLLave" required="" autocomplete="off">
+                                            <button type="button" (click)="tranformarIdentidad(identidadLLave)">Trandoformar a SHA1conRSA</button><br>
+                                            <div *ngIf="encript != [] && taag != []">
+                                                <div *ngFor="let o of encript">
+                                                  Certificado:{{o}}
+                                                </div><br>
+                                                <div *ngFor="let o of taag">
+                                                   Identificacion:{{o}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="firmaTimbre" class="col-xl-3 col-sm-4 mb-0">Identificacion de la Llave(solamente si a cambiado de proveedor):</label>
+                                            <input class="form-control col-xl-8 col-sm-7" id="firmaTimbre" placeholder="Ejemplo: #°êÌîa©I«lM" type="number" formControlName="firmaTimbre" required="" autocomplete="off">
+                                        </div>
+                                            <div class="form-group row mb-0">
+                                                <div class="product-buttons col-sm-8 offset-xl-3 offset-sm-4">
+                                                    <button type="submit" class="btn btn-secondary-gradien mr-1"  >Actualizar registro</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

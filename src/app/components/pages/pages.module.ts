@@ -21,6 +21,7 @@ import {CierrecajaComponent} from './cierrecaja/cierrecaja.component';
 import {QRCodeModule} from "angularx-qrcode";
 import {ListPageComponent} from "./list-page/list-page.component";
 import {NgxPaginationModule} from "ngx-pagination";
+import {ActualizarbolComponent} from './actualizarbol/actualizarbol.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {NgxPaginationModule} from "ngx-pagination";
       ContenedorAppComponent,
       BoletaComponent,
       CierrecajaComponent,
-      ListPageComponent],
+      ListPageComponent,
+      ActualizarbolComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

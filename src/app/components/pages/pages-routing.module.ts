@@ -7,6 +7,7 @@ import {ContenedorAppComponent} from "./contenedor-app/contenedor-app.component"
 import {BoletaComponent} from "./boleta/boleta.component";
 import {CierrecajaComponent} from "./cierrecaja/cierrecaja.component";
 import {ListPageComponent} from "./list-page/list-page.component";
+import {ActualizarbolComponent} from "./actualizarbol/actualizarbol.component";
 
 
 const routes: Routes = [
@@ -78,6 +79,14 @@ const routes: Routes = [
         data:{
           title:'cierre de caja',
           breadcrumb:'caja'
+        }
+      },
+      {
+        path: 'actualizar_boleta',
+        component: ActualizarbolComponent,
+        data:{
+          title:' Actualizar boleta',
+          breadcrumb: 'Actualizar boleta'
         }
       }
     ]

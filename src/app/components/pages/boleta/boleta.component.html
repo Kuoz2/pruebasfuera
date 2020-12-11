@@ -128,13 +128,22 @@
                                    class="form-control digits col-xl-8 col-sm-7" name="ExponenteLLave" id="ExponenteLLave">
                         </div>
                         <div class="form-group">
-                            <label for="identidadLLave">Identificación llave</label>
-                            <input formControlName="identidadLLave" placeholder="Ejemplo: fds5f4ds65f4qa65sf4as65f45g61f5gfdg45af4qfw64fw+65sdf1sdf5w1" type="text"
+                            <label for="identidadLLave">Identidad de la firma digital SHA1withRSA</label>
+                            <input formControlName="identidadLLave" placeholder="Ejemplo: %´cy.!©]ãHdZ" type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="identidadLLave" id="identidadLLave">
+                            <button type="button" (click)="tranformarIdentidad(identidadLLave)">Trandoformar a SHA1conRSA</button><br>
+                            <div *ngIf="encript != [] && taag != []">
+                            <div *ngFor="let o of encript">
+                                {{o}}
+                            </div><br>
+                                <div *ngFor="let o of taag">
+                                    {{o}}
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="firmaTimbre">Firma en SHA1withRSA</label>
+                            <label for="firmaTimbre">Llave de la firma digital SHA1withRSA</label>
                             <input formControlName="firmaTimbre" placeholder="Ejemplo: GkdhiwT5a4…09UjhGfsR7l/ " type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="firmaTimbre" id="firmaTimbre"/>
                         </div>
