@@ -15,14 +15,14 @@
     EnvioLibro ID="ID_LIBRO_"<br>
         <div id="Caratula">
         Caratula<br>
-        RutEmisorLibro <p>1111111-1 </p><br>
-        RutEnvia <p>22222222-2</p> <br>
+        RutEmisorLibro <p>{{rutEmisor}}</p><br>
+        RutEnvia <p>{{rutEmisor}}</p> <br>
         PeriodoTributario<p>2020-09</p><br>
-        FchReso <p>2020-08-31</p><br>
+        FchReso <p>{{fecha_resolucion}}</p><br>
         NroReso<p>l0</p><br>
         TipoOperacion <p>VENTA</p><br>
-        TipoLibro<p>ESPECIAL</p><br>
-        TipoEnvio<p>TOTAL</p><br>
+        TipoLibro<p>Libro de boletas</p><br>
+        TipoEnvio<p>{{tipodeDoc}}</p><br>
         FolioNotificacion<p>1</p><br>
         Caratula
         </div>
@@ -30,46 +30,49 @@
             ResumenPeriodo<br>
              TotalesPeriodo<br>
                 TpoDoc <p>39</p> <br>
-                TotDoc <p>1</p> <br>
+                TotDoc <p>{{cantidadDoc}}</p> <br>
                 TotMntExe <p>49241</p> <br>
-                TotMntNeto <p>18448292</p> <br>
-                TotMntIVA <p>3505175</p><br>
-                TotMntTotal <p>22002708</p> <br>
+                TotMntNeto <p>{{valortotalneto}}</p> <br>
+                TotMntIVA <p>{{TotalValorIVA}}</p><br>
+                TotMntTotal <p>{{totalTodo}}</p> <br>
              TotalesPeriodo<br>
             ResumenPeriodo<br>
            </div>
-           <div id="Detalle" *ngFor="let l of cortar">
-               <div *ngFor="let o of cortar.product.category">
+           <div id="Detalle" *ngFor="let l of datoscategory">
+               <div *ngFor="let o of datos">
         Detalle<br>
-
          TpoDoc <p>39</p><br>
          NroDoc <p>10</p> <br>
          TasaImp <p>19%</p> <br>
-         FchDoc <p>2020-09-01</p> <br>
-         RUTDoc <p>66666666-6</p> <br>
-         TipoProd<p>{{o.cnombre}}</p> <br>
-         RznSoc <p>Razon Social de Cliente</p> <br>
+         FchDoc <p>{{l.fecha_emision}}</p> <br>
+         RutEmi <p>{{rutEmisor}}</p> <br>
+         TipoProd<p>{{ l }}</p> <br>
+         RznSoc <p>{{rasonSoci}}</p> <br>
          MntNeto <p>1422876</p> <br>
-         MntIVA <p>270346</p> <br>
-         MntTotal <p>1693222</p> <br>
+         MntIVA <p>{{o.product.piva}}</p> <br>
+         MntTotal <p>{{o.voucher.vtotal}}</p> <br>
         Detalle<br>
                </div>
-           </div>
-         TmstFirma 2020-09-01T11:17:16 <br>
+             </div>
+         TmstFirma {{hora}}<br>
     EnvioLibro<br>
        </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
-    </div>
 
     </div>
     </div>
 </ng-template>
 <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ejemplo XML</button>
-
-
-
-
+<div class="form-group row">
+    <select class="form-control digits col-xl-8 col-sm-7" [(ngModel)]="tipodeDoc"  name="categorias" id="exampleFormControlSelect1" >
+        <option value="" selected><--- Tipo de libro ---></option>
+        <option value="Incompleto">Incompleto</option>
+        <option value="Completo">Completo</option>
+    </select>
+</div>
+<div class="form-group row">
+    <label for="fchatributaria" class="col-xl-3 col-sm-4 mb-0">Fecha tributaria:</label>
+    <input class="form-control col-xl-8 col-sm-7" id="fchatributaria" type="date" min="2000/01/01" [(ngModel)]="fecha_tributaria"  autocomplete="off">
+</div>
 
 <div class="container-fluid">
     <div class="row">

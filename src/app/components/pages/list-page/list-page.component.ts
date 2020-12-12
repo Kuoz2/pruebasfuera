@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {XMLBuilder} from "xmlbuilder2/lib/interfaces";
 import {create} from "xmlbuilder2";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {HoraActualService, valorReloj} from "../../../Service/hora-actual.service";
 
 @Component({
   selector: 'app-list-page',
@@ -18,27 +19,73 @@ export class ListPageComponent implements OnInit {
     datos = [];
     cortar;
     closeResult = '';
+    datoscategory = [];
+    rasonSoci:string= '';
+    rutEmisor:string='';
+    tipodeDoc:string='';
+    cantidadDoc: number;
+    private datos$: Observable<valorReloj>;
+    private fecha;
+    hora: string;
+    fecha_resolucion: string;
+    fecha_tributaria: string;
+    valortotalneto = [];
+    TotalValorIVA= [];
+    totalvalorexent = [];
+    totalTodo= [];
 
-    constructor(private bol:VoucherService, private modalService: NgbModal) {
+    constructor(private bol:VoucherService, private modalService: NgbModal, public secoind: HoraActualService) {
   }
  async ngOnInit() {
     this.boletas = this.bol.detalledeventa()
+     this.informacionesLocal()
 
+     this.datos$ = this.secoind.getInfoReloj();
+     this.fecha =  this.datos$.subscribe( x => {
+         this.hora = x.diaymes + "T"+ x.hora.toString() +":"+ x.minutos + ":"+ x.segundo;
+         this.fecha_resolucion = x.diaymes
+     })
   }
 
     agregaboleta(da) {
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const dproducto = [];
+        const valornet = [];
+        const valorIVA = [];
+        const valortotal= [];
                 this.datos.push( da );
-                    console.log(da)
+        console.log(da)
             this.cortar  = this.datos.filter((item, index) => {
                 return this.datos.indexOf(item) === index;
             });
+                    for (const o of this.datos){
+                        dproducto.push(o.product);
+
+                        valornet.push(o.product.pvalor);
+                        valorIVA.push(o.product.piva);
+                        this.valortotalneto = valornet.reduce(reducer);
+                        this.TotalValorIVA = valorIVA.reduce(reducer);
+                       valortotal.push(this.valortotalneto, this.TotalValorIVA);
+                       this.totalTodo = valortotal.reduce(reducer)
+                        for (const u of dproducto){
+                            this.datoscategory.push(u.category.cnombre)
+                        }
+                    }
+                    this.cantidadDoc = this.datos.length
 
         console.log(this.cortar)
 
     }
 
+    informacionesLocal(){
+      this.rasonSoci =  localStorage.getItem('rasonS');
+      this.rutEmisor = localStorage.getItem('rutE')
+    }
+
 
     crearxml(){
+        this.fecha.unsubscribe()
+
         const xmlStr = '<?xml version="1.0" encoding="iso-8859-1"?>\n' +
             '<LibroCompraVenta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte LibroCV_v10.xsd" version="1.0"\n' +
             '    xmlns="http://www.sii.cl/SiiDte">\n' +
@@ -196,7 +243,10 @@ export class ListPageComponent implements OnInit {
 
 
     open(content) {
+        this.fecha.unsubscribe()
+
         this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

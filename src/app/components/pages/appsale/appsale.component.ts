@@ -69,12 +69,17 @@ imagenjpg;
   minutos: string;
   dia: string;
   fechaE: string;
+  fecha_emision: string;
+  hora_emision: string;
   ngOnInit(): void {
 
     this.datos$ = this.secoind.getInfoReloj();
     this.fecha =  this.datos$.subscribe( x => {
           this.hora = x.diaymes + "T"+ x.hora.toString() +":"+ x.minutos + ":"+ x.segundo;
           this.fechaE = x.diaymes
+      this.fecha_emision = x.diaymes;
+          this.hora_emision = x.hora.toString() + ":"+ x.minutos + ":" +  x.segundo
+
         }
     );
 
@@ -219,8 +224,11 @@ remover_producto(producto:Item){
     if (this.se_Imprio == false) {
       alert("No se puede guardar, debe imprimir la boleta")
     } else {
+      this.fecha.unsubscribe
       this.detallevoucher.voucher.vtotal = this.totalPrice;
       this.detallevoucher.dvcantidad = this.totalPrice;
+      this.detallevoucher.fecha_emision = this.fecha_emision;
+      this.detallevoucher.hora_emision = this.hora_emision;
       for (const i of this.items) {
         this.detallevoucher.product_id = i.id;
         this.detallevoucher.dvcantidad = i.quantity;

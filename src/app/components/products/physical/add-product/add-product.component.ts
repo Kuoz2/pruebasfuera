@@ -47,6 +47,7 @@ file:File;
   get provider_id(){return this.productForm.get('provider_id')}
   get tax_id(){return this.productForm.get('tax_id')}
     get brand_id(){return this.productForm.get('brand_id')}
+    get pvneto(){ return this.productForm.get('pvneto')}
 
 
   constructor(private servi: ProductserviceService,
@@ -77,6 +78,7 @@ file:File;
                   stock_security: new FormControl('',[Validators.required])
 
               }),
+              pvneto: new FormControl('',[Validators.required])
 
       });
 

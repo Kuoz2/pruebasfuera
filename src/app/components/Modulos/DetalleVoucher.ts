@@ -9,6 +9,8 @@ export class DetalleVoucher {
     product_id: number;
     product: Productos;
     voucher = new Voucher();
+    fecha_emision: string;
+    hora_emision: string;
     created_at: string;
 }
 
