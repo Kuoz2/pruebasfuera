@@ -18,6 +18,7 @@ export class BoletaComponent implements OnInit {
     totaliva: number = 0;
     encript: Array<[]>;
     taag: Array<[]>;
+    estadoConfi: boolean = false;
     constructor(public secoind: HoraActualService, private fm: FormBuilder, private url: ConfigBoucherService) {
         this.boletaform = this.fm.group( {
             RutEmpresa: new FormControl( '', [Validators.required] ),
@@ -31,7 +32,8 @@ export class BoletaComponent implements OnInit {
             ExponenteLLave: new FormControl( '', [Validators.required] ),
             identidadLLave: new FormControl( '', [Validators.required] ),
             firmaTimbre: new FormControl( '', [Validators.required] ),
-            rasonSocial: new FormControl( '', [Validators.required] )
+            rasonSocial: new FormControl( '', [Validators.required] ),
+            identificacionLlave: new FormControl('', [Validators.required]),
         } );
 
     }
@@ -84,19 +86,20 @@ export class BoletaComponent implements OnInit {
         return this.boletaform.get( 'rasonSocial' )
     }
 
+    get identificacionLlave(){ return this.boletaform.get('identificacionLlave')}
+
 
     datos$: Observable<valorReloj>;
     hora: number;
     minutos: string;
     dia: string;
-    fecha: string;
+    fecha;
+    fechas:string = '';
     segundos: string;
 
     ngOnInit(): void {
-
-
         this.datos$ = this.secoind.getInfoReloj();
-        this.datos$.subscribe( x => {
+        this.fecha =  this.datos$.subscribe( x => {
                 document.getElementById( "#horas" ).innerHTML = String( x.hora );
                 document.getElementById( "#minutos" ).innerHTML = x.minutos;
                 document.getElementById( '#fecha' ).innerHTML = x.diaymes;
@@ -104,41 +107,46 @@ export class BoletaComponent implements OnInit {
                 document.getElementById( "#segundos" ).innerHTML = x.segundo;
             }
         );
+
         this.generate();
         this.sumariva();
 
     }
 
+
     @Input() item: Array<Item>;
     @Input() totalPrices: number;
+    @Input() lahora: number;
+    @Input() fechaE:string;
 
     generate() {
         // language=HTML
         var code = "<TED version='1.0'><DD>" +
-            "<RE>17246370-3</RE>" +
+            "<RE>"+localStorage.getItem("rutE")+"</RE>" +
             "<TD>39</TD>" +
             "<F>122</F>" +
-            "<FE>2002-06-11</FE>" +
-            "<RR>17246370-3</RR>" +
+            "<FE>"+this.fechaE+"</FE>" +
+            "<RR>11111111-1</RR>" +
             "<RSR>Sin infomacion</RSR>" +
-            "<MNT>50000</MNT>" +
+            "<MNT>"+this.totalPrices+"</MNT>" +
             "<CAF version='1.0'>" +
             "<DA>" +
             "<RE>11111111-1</RE>" +
-            "<RS>Ejemplo S.A.</RS>" +
+            "<RS>"+localStorage.getItem("folio")+"</RS>" +
             "<TD>39</TD>" +
             "<RNG>" +
-            "<D>50</D>" +
-            "<H>101</H>" +
+            "<D>"+localStorage.getItem("iniBol")+"</D>" +
+            "<H>"+localStorage.getItem("hasBol")+"</H>" +
             "</RNG>" +
             "<FA>2002-06-10</FA><RSAPK>" +
-            "<M>"+localStorage.getItem("modulo")+" </M>" +
-            "<E>"+localStorage.getItem("exponente")+"</E>" + "</RSAPK><IDK>1</IDK>" + "</DA>" +
-            "<FRMT algoritmo=”SHA1RSA”>fds5f4ds65f4qa65sf4as65f45g61f5gfdg45af4qfw64fw+65sdf1sdf5w1</FRMT>" +
-            "<TSTED>2002-06-11T07:34:15</TSTED>" +
-            "</DD><FRMT algoritmo=”SHA1withRSA”>GkdhiwT5a4…09UjhGfsR7l/=</FRMT>" +
+            "<M>"+localStorage.getItem("modulo")+"</M>" +
+            "<E>"+localStorage.getItem("exponente")+"</E>" + "</RSAPK><IDK>"+localStorage.getItem("IDK")+"</IDK>" + "</DA>" +
+            "<FRMT algoritmo=”SHA1RSA”>"+localStorage.getItem("crypto")+"</FRMT>" +
+            "<TSTED>"+ this.lahora  +"</TSTED>" +
+            "</DD><FRMT algoritmo=”SHA1withRSA”>"+localStorage.getItem("tag")+"</FRMT>" +
             "</TED>";
-            console.log(code);
+
+        console.log(code)
         var canvas = document.getElementById( "barcode" );
 
         var imgObject = new Image();
@@ -152,7 +160,7 @@ export class BoletaComponent implements OnInit {
 
     sumariva() {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        const iva = [];
+        const iva = [0];
         if (this.item != []) {
             for (let d in this.item) {
                 iva.push( this.item[d].piva * this.item[d].quantity )
@@ -162,33 +170,44 @@ export class BoletaComponent implements OnInit {
     }
 
     guardarformato(boletaform) {
-        var md = forge.md.sha1.create();
-        var md2 = forge.md.sha1.create();
-        md2.update(boletaform.value.identidadLLave);
-        md.update(boletaform.value.firmaTimbre);
-        //Codificacion del codigo a SHA1
-         boletaform.value.identidadLLave = md2.digest().toHex();
-        boletaform.value.firmaTimbre = md.digest().toHex();
+        if (this.boletaform.valid) {
 
-        //Informacion tranformada en 64BIT
-        boletaform.value.identidadLLave = btoa( boletaform.value.identidadLLave );
-        boletaform.value.firmaTimbre = btoa( boletaform.value.firmaTimbre );
-        boletaform.value.moduloLLave = btoa( boletaform.value.moduloLLave );
-        boletaform.value.ExponenteLLave = btoa( boletaform.value.ExponenteLLave );
+            var md = forge.md.sha1.create();
+            var md2 = forge.md.sha1.create();
+            md2.update( boletaform.value.identidadLLave );
+            md.update( boletaform.value.firmaTimbre );
+            //Codificacion del codigo a SHA1
+            boletaform.value.identidadLLave = md2.digest().toHex();
+            boletaform.value.firmaTimbre = md.digest().toHex();
 
-        localStorage.setItem('exponente', boletaform.value.ExponenteLLave);
-        localStorage.setItem('modulo', boletaform.value.ExponenteLLave);
-        localStorage.setItem('tag', boletaform.value.identidadLLave);
-        localStorage.setItem('crypto', boletaform.value.firmaTimbre);
-        localStorage.setItem('iniBol', boletaform.value.CantidadDesde);
-        localStorage.setItem('hasBol', boletaform.value.CantidadHasta);
+            //Informacion tranformada en 64BIT
+            boletaform.value.identidadLLave = btoa( boletaform.value.identidadLLave );
+            boletaform.value.firmaTimbre = btoa( boletaform.value.firmaTimbre );
+            boletaform.value.moduloLLave = btoa( boletaform.value.moduloLLave );
+            boletaform.value.ExponenteLLave = btoa( boletaform.value.ExponenteLLave );
 
-     
-        //this.url.guardarboucher(boletaform.value)
-
+            localStorage.setItem( 'exponente', boletaform.value.ExponenteLLave );
+            localStorage.setItem( 'modulo', boletaform.value.ExponenteLLave );
+            localStorage.setItem( 'tag', boletaform.value.identidadLLave );
+            localStorage.setItem( 'crypto', boletaform.value.firmaTimbre );
+            localStorage.setItem( 'iniBol', boletaform.value.CantidadDesde );
+            localStorage.setItem( 'hasBol', boletaform.value.CantidadHasta );
+            localStorage.setItem( 'IDK', boletaform.value.identificacionLlave );
+            localStorage.setItem('folio', boletaform.value.numeroFolio);
+            localStorage.setItem('rutE', boletaform.value.RutEmpresa);
+            localStorage.setItem('rasonS', boletaform.value.rasonSocial);
+            localStorage.setItem('fechA', boletaform.value.FechaAutori)
+            // this.url.guardarboucher(boletaform.value)
+        }else{
+            alert("No debe dejar ningun campo vacío")
+        }
 
     }
 
+    DatosBoleta(){
+        const criptografico = localStorage.getItem('crypto')
+        this.estadoConfi = criptografico != null || typeof (criptografico) == 'undefined';
+    }
 
     tranformarIdentidad(firmaTimbre) {
         var lll = [];

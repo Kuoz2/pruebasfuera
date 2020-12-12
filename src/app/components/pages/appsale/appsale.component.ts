@@ -13,6 +13,8 @@ import {Voucher} from "../../Modulos/Voucher";
 import {Ventas} from "../../Modulos/Ventas";
 import {VentasService} from "../../../Service/ventas.service";
 import {VoucherService} from "../../../Service/voucher.service";
+import {Observable} from "rxjs";
+import {HoraActualService, valorReloj} from "../../../Service/hora-actual.service";
 
 
 @Component({
@@ -24,6 +26,7 @@ export class AppsaleComponent implements OnInit {
   totalQuantity: number = 0;
   totalPrice: number = 0;
   items: Array<Item>;
+  fechahora:string;
   se_Imprio:Boolean = false;
   selecciondecomra: Medio[];
   loseleccionadodelacompra= Medio;
@@ -34,7 +37,6 @@ export class AppsaleComponent implements OnInit {
   public efectivo: number = 0;
   public devolucion:number = 0;
   public closeResult: string;
-  public devoluciones: number= 0;
   @Output()
   public textoCambiado: EventEmitter<string> = new EventEmitter();
   @Output()
@@ -42,7 +44,11 @@ export class AppsaleComponent implements OnInit {
   //Variable para el formulario
   app_venta: FormGroup;
   public categorias: Categories[];
-imagenjpg
+imagenjpg;
+  private datos$: Observable<valorReloj>;
+  unafecha: string = '';
+  private fecha;
+  detener;
   constructor(private carservice:CartServiceService,
               private sermedio:PagosService,
               private modalService: NgbModal,
@@ -50,6 +56,7 @@ imagenjpg
               private serviCat:ProductserviceService,
               private vent: VentasService,
               private vouchservicio: VoucherService,
+              public secoind: HoraActualService
   ) {
     //Formulario de ingreso.
     this.app_venta = this.FormBuild.group({
@@ -57,7 +64,20 @@ imagenjpg
       efectivo: new FormControl('')
     })
   }
+
+  hora: string;
+  minutos: string;
+  dia: string;
+  fechaE: string;
   ngOnInit(): void {
+
+    this.datos$ = this.secoind.getInfoReloj();
+    this.fecha =  this.datos$.subscribe( x => {
+          this.hora = x.diaymes + "T"+ x.hora.toString() +":"+ x.minutos + ":"+ x.segundo;
+          this.fechaE = x.diaymes
+        }
+    );
+
     this.carservice.currentDataCart$.subscribe(
         x => {
           if (x){
@@ -86,6 +106,7 @@ imagenjpg
 
   //Modulo para imprimir.
      imprimir(register) {
+    this.fecha.unsubscribe
 
        const data = '<head>' +
            '<style type="text/css">' +
@@ -167,10 +188,11 @@ imagenjpg
              mywindow.print()
        };
       this.se_Imprio = true;
+
+
      }
      //Probrando si se imprimio el documento
   Imprimcion(){
-  console.log(this.se_Imprio)
   }
 
   //LAS FORMAS DE CERRAR EL MODAL

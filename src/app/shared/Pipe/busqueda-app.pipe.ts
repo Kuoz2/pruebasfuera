@@ -5,21 +5,18 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class BusquedaAppPipe implements PipeTransform {
 
-  transform(value: any, ...args: string[]): any {
+  transform(value: any[], args: string): any {
     //Esta condicional almacena lo buscado.
-    console.log(value)
     const producto_app = [];
-    if (args) {
-      for (const p of value){
-        if (p.pcodigo.toString().indexOf(args) > -1 ){
-          producto_app.push(p)
+    if (typeof (args) != 'undefined' && value != null && value == []) {
+
+      for (const p in value) {
+        if (value[p].pcodigo.toString().indexOf( args ) > -1) {
+          producto_app.push( value[p] )
         }
       }
-      return producto_app;
-    }else {
-      return ""
+      return producto_app
     }
-
+    return value
   }
-
 }
