@@ -4,8 +4,8 @@ import {HoraActualService, valorReloj} from "../../../Service/hora-actual.servic
 import {Observable} from "rxjs";
 import PDF417 from "pdf417-generator";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ConfigBoucherService} from "../../../Service/config-boucher.service";
 import forge from 'node-forge'
+import {VoucherService} from "../../../Service/voucher.service";
 
 @Component({
   selector: 'app-boleta',
@@ -19,7 +19,7 @@ export class BoletaComponent implements OnInit {
     encript: Array<[]>;
     taag: Array<[]>;
     estadoConfi: boolean = false;
-    constructor(public secoind: HoraActualService, private fm: FormBuilder, private url: ConfigBoucherService) {
+    constructor(public secoind: HoraActualService, private fm: FormBuilder, private url: VoucherService) {
         this.boletaform = this.fm.group( {
             RutEmpresa: new FormControl( '', [Validators.required] ),
             FechaAutori: new FormControl( '', [Validators.required] ),
@@ -199,7 +199,7 @@ export class BoletaComponent implements OnInit {
             localStorage.setItem('rasonS', boletaform.value.rasonSocial);
             localStorage.setItem('fechA', boletaform.value.FechaAutori);
             localStorage.setItem('rutEmi', boletaform.value.rutEmisor);
-            // this.url.guardarboucher(boletaform.value)
+             this.url.guardarboucher(boletaform.value)
         }else{
             alert("No, debe dejar ningun campo vacío")
         }
