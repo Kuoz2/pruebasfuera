@@ -21,6 +21,7 @@ export class VoucherService {
   URLproductosV = 'https://marketmini.herokuapp.com/voucher_details/producto_max_vend';//Muestra los productos mas vendidos
   UTLtotalganancias = 'https://marketmini.herokuapp.com/voucher_details/las_ganancias_totales_meses';//Muestra el total de las ganancias.
   URLTOTALGANANCIAS_FV = 'https://marketmini.herokuapp.com/vouchers/mostrar_ganancias_por_mes'; //MUESTRA LAS GANANCIAS POR CADA MES Y MUESTRA EL RESULTADO.
+  URLGuardarconfig = 'https://marketmini.herokuapp.com/config_vouchers'  ;
 
   constructor(private http: HttpClient) { }
   //Ganancias totales del mes pasado.
@@ -73,6 +74,10 @@ export class VoucherService {
     //Muesta el total de las ganancias este mes. CON LOS RESULTADOS Y EL MES.
     mostrar_ganancias_fv(){
         return this.http.get<any[]>(this.URLTOTALGANANCIAS_FV)
+    }
+
+    guardarcambios(d){
+      this.http.post(this.URLGuardarconfig, d)
     }
 
 }
