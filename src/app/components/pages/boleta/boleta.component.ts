@@ -34,6 +34,7 @@ export class BoletaComponent implements OnInit {
             firmaTimbre: new FormControl( '', [Validators.required] ),
             rasonSocial: new FormControl( '', [Validators.required] ),
             identificacionLlave: new FormControl('', [Validators.required]),
+            rutEmisor: new FormControl('', [Validators.required])
         } );
 
     }
@@ -87,7 +88,7 @@ export class BoletaComponent implements OnInit {
     }
 
     get identificacionLlave(){ return this.boletaform.get('identificacionLlave')}
-
+    get rutEmisor(){return this.boletaform.get('rutEmisor')}
 
     datos$: Observable<valorReloj>;
     hora: number;
@@ -124,7 +125,7 @@ export class BoletaComponent implements OnInit {
         var code = "<TED version='1.0'><DD>" +
             "<RE>"+localStorage.getItem("rutE")+"</RE>" +
             "<TD>39</TD>" +
-            "<F>122</F>" +
+            "<F>"+localStorage.getItem("folio")+"</F>" +
             "<FE>"+this.fechaE+"</FE>" +
             "<RR>11111111-1</RR>" +
             "<RSR>Sin infomacion</RSR>" +
@@ -132,7 +133,7 @@ export class BoletaComponent implements OnInit {
             "<CAF version='1.0'>" +
             "<DA>" +
             "<RE>11111111-1</RE>" +
-            "<RS>"+localStorage.getItem("folio")+"</RS>" +
+            "<RS>"+localStorage.getItem('rasonS')+"</RS>" +
             "<TD>39</TD>" +
             "<RNG>" +
             "<D>"+localStorage.getItem("iniBol")+"</D>" +
@@ -187,7 +188,7 @@ export class BoletaComponent implements OnInit {
             boletaform.value.ExponenteLLave = btoa( boletaform.value.ExponenteLLave );
 
             localStorage.setItem( 'exponente', boletaform.value.ExponenteLLave );
-            localStorage.setItem( 'modulo', boletaform.value.ExponenteLLave );
+            localStorage.setItem( 'modulo', boletaform.value.moduloLLave );
             localStorage.setItem( 'tag', boletaform.value.identidadLLave );
             localStorage.setItem( 'crypto', boletaform.value.firmaTimbre );
             localStorage.setItem( 'iniBol', boletaform.value.CantidadDesde );
@@ -196,17 +197,18 @@ export class BoletaComponent implements OnInit {
             localStorage.setItem('folio', boletaform.value.numeroFolio);
             localStorage.setItem('rutE', boletaform.value.RutEmpresa);
             localStorage.setItem('rasonS', boletaform.value.rasonSocial);
-            localStorage.setItem('fechA', boletaform.value.FechaAutori)
+            localStorage.setItem('fechA', boletaform.value.FechaAutori);
+            localStorage.setItem('rutEmi', boletaform.value.rutEmisor);
             // this.url.guardarboucher(boletaform.value)
         }else{
-            alert("No debe dejar ningun campo vacío")
+            alert("No, debe dejar ningun campo vacío")
         }
 
     }
 
     DatosBoleta(){
         const criptografico = localStorage.getItem('crypto')
-        this.estadoConfi = criptografico != null || typeof (criptografico) == 'undefined';
+            this.estadoConfi = criptografico != null || typeof (criptografico) == 'undefined';
     }
 
     tranformarIdentidad(firmaTimbre) {

@@ -45,14 +45,7 @@
                                         <label for="validationCustom023" class="col-xl-3 col-sm-4 mb-0">Precio del proveedor:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="validationCustom023" type="number" formControlName="precio_provider" required="" autocomplete="off">
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="valornet" class="col-xl-3 col-sm-4 mb-0">Valor neto:</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="valornet"
-                                               type="number" formControlName="pvneto" (keypress)="nosenvia($event)" required="">
-                                        <div *ngIf="pvneto.touched && pvneto.errors?.required"
-                                             class="text text-danger">Valor neto <Code></Code> Es requerido.
-                                        </div>
-                                    </div>
+
                                     <div class="form-group row">
                                         <label  class="col-xl-3 col-sm-4 mb-0">Nombre de la marca
                                             :</label>
@@ -72,9 +65,18 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label for="valornet" class="col-xl-3 col-sm-4 mb-0">Valor neto:</label>
+                                        <input class="form-control col-xl-8 col-sm-7" id="valornet"
+                                               type="number" formControlName="pvneto"  required="">
+                                        <div *ngIf="pvneto.touched && pvneto.errors?.required"
+                                             class="text text-danger">Valor neto <Code></Code> Es requerido.
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
                                         <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Precio administrativo:</label>
                                         <input class="form-control col-xl-4 col-sm-7" id="validationCustom02"
                                             type="number" formControlName="pvalor" (change)="datos(pvalor)" autocomplete="off" required>
+
                                         <select class="form-control col-xl-4 col-sm-7" formControlName="tax_id" id="tax_id"  (change)="calImp(tax_id, pvalor)" disabled>
                                             <option value="" selected></option>
                                             <option *ngFor="let im of (immp | async)" [ngValue]="im">{{im.tnombre}} </option>

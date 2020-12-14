@@ -33,6 +33,13 @@ export class ListPageComponent implements OnInit {
     TotalValorIVA= [];
     totalvalorexent = [];
     totalTodo= [];
+    numeroresolu: number;
+    Nfolionotificacion: number;
+    moduloLLave:string;
+    exponentellave:string;
+    moduloCertificadoLLave:string;
+    exponenteCertificadoLLave:string;
+    rutEmisiorBoleta:string;
 
     constructor(private bol:VoucherService, private modalService: NgbModal, public secoind: HoraActualService) {
   }
@@ -54,13 +61,13 @@ export class ListPageComponent implements OnInit {
         const valorIVA = [];
         const valortotal= [];
                 this.datos.push( da );
-        console.log(da)
             this.cortar  = this.datos.filter((item, index) => {
                 return this.datos.indexOf(item) === index;
             });
+
+            console.log(this.cortar)
                     for (const o of this.datos){
                         dproducto.push(o.product);
-
                         valornet.push(o.product.pvalor);
                         valorIVA.push(o.product.piva);
                         this.valortotalneto = valornet.reduce(reducer);
@@ -71,155 +78,74 @@ export class ListPageComponent implements OnInit {
                             this.datoscategory.push(u.category.cnombre)
                         }
                     }
-                    this.cantidadDoc = this.datos.length
-
-        console.log(this.cortar)
+                    this.cantidadDoc = this.cortar.length
 
     }
 
     informacionesLocal(){
       this.rasonSoci =  localStorage.getItem('rasonS');
-      this.rutEmisor = localStorage.getItem('rutE')
+      this.rutEmisor = localStorage.getItem('rutE');
+      this.moduloLLave = localStorage.getItem('modulo');
+      this.exponentellave = localStorage.getItem('exponente');
+      this.moduloCertificadoLLave = localStorage.getItem('tag');
+      this.exponenteCertificadoLLave = localStorage.getItem('crypto');
+      this.rutEmisiorBoleta = localStorage.getItem('rutEmi')
+
+
     }
 
 
-    crearxml(){
-        this.fecha.unsubscribe()
 
-        const xmlStr = '<?xml version="1.0" encoding="iso-8859-1"?>\n' +
-            '<LibroCompraVenta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sii.cl/SiiDte LibroCV_v10.xsd" version="1.0"\n' +
-            '    xmlns="http://www.sii.cl/SiiDte">\n' +
-            '    <EnvioLibro ID="ID_LIBRO_">\n' +
-            '        <Caratula>\n' +
-            '            <RutEmisorLibro>11111111-1</RutEmisorLibro>\n' +
-            '            <RutEnvia>22222222-2</RutEnvia>\n' +
-            '            <PeriodoTributario>2020-09</PeriodoTributario>\n' +
-            '            <FchResol>2020-08-31</FchResol>\n' +
-            '            <NroResol>0</NroResol>\n' +
-            '            <TipoOperacion>VENTA</TipoOperacion>\n' +
-            '            <TipoLibro>ESPECIAL</TipoLibro>\n' +
-            '            <TipoEnvio>TOTAL</TipoEnvio>\n' +
-            '            <FolioNotificacion>1</FolioNotificacion>\n' +
-            '        </Caratula>\n' +
-            '        <ResumenPeriodo>\n' +
-            '            <TotalesPeriodo>\n' +
-            '                <TpoDoc>33</TpoDoc>\n' +
-            '                <TotDoc>4</TotDoc>\n' +
-            '                <TotMntExe>49241</TotMntExe>\n' +
-            '                <TotMntNeto>18448292</TotMntNeto>\n' +
-            '                <TotMntIVA>3505175</TotMntIVA>\n' +
-            '                <TotMntTotal>22002708</TotMntTotal>\n' +
-            '            </TotalesPeriodo>\n' +
-            '            <TotalesPeriodo>\n' +
-            '                <TpoDoc>61</TpoDoc>\n' +
-            '                <TotDoc>3</TotDoc>\n' +
-            '                <TotMntExe>35523</TotMntExe>\n' +
-            '                <TotMntNeto>7157915</TotMntNeto>\n' +
-            '                <TotMntIVA>1360004</TotMntIVA>\n' +
-            '                <TotMntTotal>8553442</TotMntTotal>\n' +
-            '            </TotalesPeriodo>\n' +
-            '            <TotalesPeriodo>\n' +
-            '                <TpoDoc>56</TpoDoc>\n' +
-            '                <TotDoc>1</TotDoc>\n' +
-            '                <TotMntExe>0</TotMntExe>\n' +
-            '                <TotMntNeto>0</TotMntNeto>\n' +
-            '                <TotMntIVA>0</TotMntIVA>\n' +
-            '                <TotMntTotal>0</TotMntTotal>\n' +
-            '            </TotalesPeriodo>\n' +
-            '        </ResumenPeriodo>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>33</TpoDoc>\n' +
-            '            <NroDoc>10</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntNeto>1422876</MntNeto>\n' +
-            '            <MntIVA>270346</MntIVA>\n' +
-            '            <MntTotal>1693222</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>33</TpoDoc>\n' +
-            '            <NroDoc>11</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntNeto>10446492</MntNeto>\n' +
-            '            <MntIVA>1984833</MntIVA>\n' +
-            '            <MntTotal>12431325</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>33</TpoDoc>\n' +
-            '            <NroDoc>12</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntExe>35523</MntExe>\n' +
-            '            <MntNeto>2032682</MntNeto>\n' +
-            '            <MntIVA>386210</MntIVA>\n' +
-            '            <MntTotal>2454415</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>33</TpoDoc>\n' +
-            '            <NroDoc>13</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntExe>13718</MntExe>\n' +
-            '            <MntNeto>4546242</MntNeto>\n' +
-            '            <MntIVA>863786</MntIVA>\n' +
-            '            <MntTotal>5423746</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>61</TpoDoc>\n' +
-            '            <NroDoc>10</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntNeto>0</MntNeto>\n' +
-            '            <MntTotal>0</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>61</TpoDoc>\n' +
-            '            <NroDoc>11</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntNeto>5125233</MntNeto>\n' +
-            '            <MntIVA>973794</MntIVA>\n' +
-            '            <MntTotal>6099027</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>61</TpoDoc>\n' +
-            '            <NroDoc>12</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntExe>35523</MntExe>\n' +
-            '            <MntNeto>2032682</MntNeto>\n' +
-            '            <MntIVA>386210</MntIVA>\n' +
-            '            <MntTotal>2454415</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <Detalle>\n' +
-            '            <TpoDoc>56</TpoDoc>\n' +
-            '            <NroDoc>10</NroDoc>\n' +
-            '            <TasaImp>0.19</TasaImp>\n' +
-            '            <FchDoc>2020-09-01</FchDoc>\n' +
-            '            <RUTDoc>66666666-6</RUTDoc>\n' +
-            '            <RznSoc>Razon Social de Cliente</RznSoc>\n' +
-            '            <MntNeto>0</MntNeto>\n' +
-            '            <MntTotal>0</MntTotal>\n' +
-            '        </Detalle>\n' +
-            '        <TmstFirma>2020-09-01T11:17:16</TmstFirma>\n' +
-            '    </EnvioLibro>\n' +
-            '    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">...</Signature>\n' +
-            '</LibroCompraVenta>'
+
+
+    crearxml(){
+        this.fecha.unsubscribe();
+
+
+        const xmlStr = '\t\t\t<?xml version="1.0" encoding="iso-8859-1"?>\n' +
+            '\t\t\t<LibroCompraVenta xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SiiDte="http://www.sii.cl/SiiDte" >\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<EnvioLibro ID="ID_LIBRO_">\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<Caratula>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<RutEmisorLibro>'+this.rutEmisor+'</RutEmisorLibro>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<RutEnvia>'+this.rutEmisor+'</RutEnvia>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<PeriodoTributario>'+this.fecha_tributaria+'</PeriodoTributario>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<FchResol>'+this.fecha_resolucion+'</FchResol>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<NroResol>'+this.numeroresolu+'</NroResol>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TipoOperacion>VENTA</TipoOperacion>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TipoLibro>'+'Libro de boletas'+'</TipoLibro>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TipoEnvio>'+this.tipodeDoc+'</TipoEnvio>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<FolioNotificacion>'+this.Nfolionotificacion+'</FolioNotificacion>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</Caratula>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t<ResumenPeriodo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotalesPeriodo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TpoDoc>39</TpoDoc>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotDoc>'+this.cantidadDoc+'</TotDoc>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotMntExe>49241</TotMntExe>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotMntNeto>'+this.valortotalneto+'</TotMntNeto>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotMntIVA>'+this.TotalValorIVA+'</TotMntIVA>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotMntTotal>'+this.totalTodo+'</TotMntTotal>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t</TotalesPeriodo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t</ResumenPeriodo>\n' +
+             		                        document.getElementById("detallebole").innerHTML +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TmstFirma>2020-09-01T11:17:16</TmstFirma>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t</EnvioLibro>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t<AlforitTranform>SHA1withRSA</AlforitTranform>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<AlgoritDiges>'+this.moduloCertificadoLLave+'</AlgoritDiges>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ValorDiges>'+this.exponenteCertificadoLLave+'</ValorDiges>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</Signature>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SignatureValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ValorFrm>'+13000+'</ValorFirm>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\</SignatureValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<KeyInfo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<KeyValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<RSAKeyValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<Modulo>'+this.moduloLLave+'</Modulo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<Exponente>'+this.exponentellave+'</Exponente>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</RSAKeyValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</KeyValue>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</KeyInfo>\n' +
+            '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</LibroCompraVenta>\n';
         let doc: XMLBuilder;
         doc = create( xmlStr ).dec( {version: "1.0",encoding: 'ISO-8859-1'} );
 // append a 'baz' element to the root node of the document
@@ -227,7 +153,7 @@ export class ListPageComponent implements OnInit {
         const xml = doc.end({ prettyPrint: true });
 
 
-        let filename = 'people.xml';
+        let filename =  this.fecha_resolucion+'.xml';
         let text =  xml
         let element = document.createElement('a');
         element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(text));

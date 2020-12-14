@@ -111,7 +111,7 @@ imagenjpg;
 
   //Modulo para imprimir.
      imprimir(register) {
-    this.fecha.unsubscribe
+    this.fecha.unsubscribe()
 
        const data = '<head>' +
            '<style type="text/css">' +
@@ -224,7 +224,7 @@ remover_producto(producto:Item){
     if (this.se_Imprio == false) {
       alert("No se puede guardar, debe imprimir la boleta")
     } else {
-      this.fecha.unsubscribe
+      this.fecha.unsubscribe()
       this.detallevoucher.voucher.vtotal = this.totalPrice;
       this.detallevoucher.dvcantidad = this.totalPrice;
       this.detallevoucher.fecha_emision = this.fecha_emision;

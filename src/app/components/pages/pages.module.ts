@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -50,6 +50,9 @@ import {ActualizarbolComponent} from './actualizarbol/actualizarbol.component';
         NgxPaginationModule,
 
     ],
-    providers:[HoraActualService]
+    providers:[HoraActualService],
+    schemas:[
+        NO_ERRORS_SCHEMA
+    ]
 })
 export class PagesModule { }

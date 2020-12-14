@@ -31,7 +31,7 @@ public immp: Observable<Impuestos[]>;
 file:File;
     productForm: FormGroup;
     prdiva;
-
+    pivacambia;
   get pactivado(){return this.productForm.get('pactivado')}
   get pdescripcion() { return this.productForm.get('pdescripcion')};
   get pdetalle(){ return this.productForm.get('pdetalle')};
@@ -205,9 +205,14 @@ resetiarform(){
     }
 
     datos(pvalor) {
+            // @ts-ignore
+        document.getElementById('tax_id').value = "";
+        // @ts-ignore
+        document.getElementById('iva2').value = "";
       if (pvalor.value != null){
             //@ts-ignore
           window.document.getElementById('tax_id').disabled = false;
+
 
       } else {
           // @ts-ignore

@@ -94,6 +94,11 @@
                             <input formControlName="RutReceptor" placeholder="Ejemplo S.A." type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="RutReceptor" id="RutReceptor" required>
                         </div>
+                        <div class="form-group">
+                            <label for="RutReceptor">Rut del emisor</label>
+                            <input formControlName="rutEmisor" placeholder="Ejemplo 11111111-1" type="text"
+                                   class="form-control digits col-xl-8 col-sm-7" name="rutEmisor" id="rutEmisor" required>
+                        </div>
 
                         <div class="form-group">
                             <label for="TipoDocumento">Tipo de documento</label>
@@ -124,7 +129,7 @@
                                    class="form-control digits col-xl-8 col-sm-7" name="numeroFolio" id="numeroFolio" required>
                         </div>
                         <div class="form-group">
-                            <label for="moduloLLave">LLave publica</label>
+                            <label for="moduloLLave">Modulo de la llave</label>
                             <input formControlName="moduloLLave" placeholder="Ejemplo: AMPa7mxz8ysTRazehr5/Oiau98/lku7y2twwndI/142ds54aWjqd" type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="moduloLLave" id="moduloLLave" required>
                         </div>
@@ -135,7 +140,7 @@
                                    class="form-control digits col-xl-8 col-sm-7" name="ExponenteLLave" id="ExponenteLLave" required>
                         </div>
                         <div class="form-group">
-                            <label for="identidadLLave">Identidad de la firma digital SHA1withRSA</label>
+                            <label for="identidadLLave">Modulo de la firma digital SHA1withRSA</label>
                             <input formControlName="identidadLLave" placeholder="Ejemplo: %´cy.!©]ãHdZ" type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="identidadLLave" id="identidadLLave" required>
                             <button type="button" (click)="tranformarIdentidad(identidadLLave)">Trandoformar a SHA1conRSA</button><br>
@@ -150,7 +155,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="firmaTimbre">Llave de la firma digital SHA1withRSA</label>
+                            <label for="firmaTimbre">Exponente de la firma digital SHA1withRSA</label>
                             <input formControlName="firmaTimbre" placeholder="Ejemplo: GkdhiwT5a4…09UjhGfsR7l/ " type="text"
                                    class="form-control digits col-xl-8 col-sm-7" name="firmaTimbre" id="firmaTimbre" required/>
                         </div>
