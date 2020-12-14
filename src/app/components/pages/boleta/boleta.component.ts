@@ -199,7 +199,7 @@ export class BoletaComponent implements OnInit {
             localStorage.setItem('rasonS', boletaform.value.rasonSocial);
             localStorage.setItem('fechA', boletaform.value.FechaAutori);
             localStorage.setItem('rutEmi', boletaform.value.rutEmisor);
-             this.url.guardarboucher(boletaform.value)
+             this.url.guardarconfiguracion(boletaform.value)
         }else{
             alert("No, debe dejar ningun campo vacío")
         }
