@@ -173,7 +173,7 @@ imagenjpg;
            '}'+
            '\n' +
            'img {\n' +
-           'width: 105mm;\n' +
+           'width: 110mm;\n' +
            '  height: 500px;' +
            '}' +
            '</style>' +
