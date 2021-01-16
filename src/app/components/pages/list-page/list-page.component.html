@@ -4,7 +4,7 @@
     <div class="modal-content">
 
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+        <h4 class="modal-title" id="modal-basic-title">Formato XML</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -64,7 +64,7 @@
     </div>
     </div>
 </ng-template>
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Ejemplo XML</button>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Vista archivo XML</button>
 <div class="form-group row">
     <select class="form-control digits col-xl-8 col-sm-7" [(ngModel)]="tipodeDoc"  name="categorias" id="exampleFormControlSelect1" >
         <option value="" selected><--- Tipo de libro ---></option>
@@ -73,12 +73,12 @@
     </select>
 </div>
 <div class="form-group row">
-    <label for="fecha_resolucion" class="col-xl-3 col-sm-4 mb-0">Fecha resolución:</label>
-    <input class="form-control col-xl-8 col-sm-7" id="fecha_resolucion" type="date" min="2000/01/01" [(ngModel)]="fecha_resolucion"  autocomplete="off">
+    <label for="fchareso" class="col-xl-3 col-sm-4 mb-0">Fecha resolución:</label>
+    <input class="form-control col-xl-8 col-sm-7" id="fchareso" type="date" min="2000/01/01" [(ngModel)]="fecha_resolucion"  autocomplete="off">
 </div>
 <div class="form-group row">
     <label for="fchatributaria" class="col-xl-3 col-sm-4 mb-0">Fecha tributaria:</label>
-    <input class="form-control col-xl-8 col-sm-7" id="fchatributaria" type="date" min="2000/01/01" [(ngModel)]="fecha_tributaria"  autocomplete="off">
+    <input class="form-control col-xl-8 col-sm-7" id="fchatributaria" type="date" min="2001/01/01" [(ngModel)]="fecha_tributaria"  autocomplete="off">
 </div>
 <div class="form-group row">
     <label for="numeroresolu" class="col-xl-3 col-sm-4 mb-0">Número de resolución:</label>
@@ -123,6 +123,9 @@
                                 <th>
                                     Fecha
                                 </th>
+                                <th>
+                                    Valor neto
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -133,6 +136,7 @@
                                 <td>{{bl.product.pdetalle}}</td>
                                 <td >{{bl.voucher.vtotal}} </td>
                                 <td>{{bl.voucher.created_at}}</td>
+                                <td>{{bl.product.pvneto}}</td>
                                 <button (click)="agregaboleta(bl)"> Guardar registro</button>
                             </tr >
                             </tbody>

@@ -88,7 +88,6 @@ static CreateFormUserGroup(){
   createnuevousuario(userform):void {
       if (this.userform.valid){
             userform.value.user.password = userform.value.user.rut_user;
-          console.log("usuario", userform.value);
          this.userservi.guardarusuario(userform.value);
           this.onResetForm();
       }else {

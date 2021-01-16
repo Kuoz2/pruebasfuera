@@ -22,6 +22,7 @@ export class Productos {
     brand: Marca;
     categoria: Categories;
     categorie = new Categories()
+    pvneto: number;
 }
 
 
