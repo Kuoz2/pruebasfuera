@@ -10,6 +10,8 @@ import {GalleryModule} from "@ks89/angular-modal-gallery";
 import {SharedModule} from "../../shared/shared.module";
 import {NgxPaginationModule} from "ngx-pagination";
 import {MermaRoutingModule} from "./merma-routing.module";
+import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
+import { SolucionMermaComponent } from './solucion-merma/solucion-merma.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -18,21 +20,22 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 
 
 @NgModule({
-  declarations: [MermaComponent],
+  declarations: [MermaComponent, SolucionMermaComponent],
 
-  imports: [
-    CommonModule,
-    FormsModule,
-    MermaRoutingModule,
-    ReactiveFormsModule,
-    CKEditorModule,
-    Ng2SmartTableModule,
-    NgbModule,
-    DropzoneModule,
-    GalleryModule.forRoot(),
-    SharedModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        MermaRoutingModule,
+        ReactiveFormsModule,
+        CKEditorModule,
+        Ng2SmartTableModule,
+        NgbModule,
+        DropzoneModule,
+        GalleryModule.forRoot(),
+        SharedModule,
+        NgxPaginationModule,
+        Ng4LoadingSpinnerModule
+    ],
   providers: [
     {
       provide: DROPZONE_CONFIG,

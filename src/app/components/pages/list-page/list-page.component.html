@@ -1,4 +1,10 @@
 <!-- Container-fluid starts-->
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 1)"
+             size="medium"
+             color="#000"
+             type="ball-scale-multiple">
+</ngx-spinner>
 <ng-template #content let-c="close" let-d="dismiss">
 
     <div class="modal-content">
@@ -39,7 +45,7 @@
             ResumenPeriodo<br>
            </div>
                <div *ngFor="let o of cortar">
-                   <div id="detallebole">
+                   <div id="detallebole" >
         <Detalle><br>
             <TpoDoc>39</TpoDoc> <br>
              <NroDoc>10</NroDoc>  <br>

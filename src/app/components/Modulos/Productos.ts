@@ -1,5 +1,5 @@
-import {Categories} from "./Categories";
-import {Marca} from "./Marca";
+import {Categories} from './Categories';
+import {Marca} from './Marca';
 
 export class Productos {
     pvactivacioncatalogo: boolean;
@@ -12,32 +12,32 @@ export class Productos {
     pcodigo: number;
     pdetalle: string;
     pvalor: number;
-    stock_id: Stock =  new Stock()
-    stock:Stock = new Stock()
-    cantidad:number;
+    // tslint:disable-next-line:variable-name
+    stock_id: Stock =  new Stock();
+    stock: Stock = new Stock();
+    cantidad: number;
     quantity: number;
-    munidades:number;
-    piva:number;
-    vpcventa:number;
+    munidades: number;
+    piva: number;
+    vpcventa: number;
     brand: Marca;
     categoria: Categories;
-    categorie = new Categories()
+    categorie = new Categories();
     pvneto: number;
 }
 
 
 export class Stock {
-    id:number;
-    pstock:number;
-    pstockcatalogo:number;
-    stock_lost:number;
-    stock_security:number;
+    id: number;
+    pstock: number;
+    stock_lost: number;
+    stock_security: number;
 }
 
 export interface stock2 {
-    id:number,
-    pstock:number,
-    pstockcatalogo:number,
-    stock_lost:number,
-    stock_security:number
+    id: number;
+    pstock: number;
+    pstockcatalogo: number;
+    stock_lost: number;
+    stock_security: number;
 }

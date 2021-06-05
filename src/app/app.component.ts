@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {UsuarioService} from "./Service/usuario.service";
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {UsuarioService} from './Service/usuario.service';
 
 
 @Component({
@@ -9,10 +9,15 @@ import {UsuarioService} from "./Service/usuario.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'paltanes';
 
-constructor(private userservi: UsuarioService){
+constructor(private userservi: UsuarioService) {
 
 }
+
+
+
+  ngOnInit(): void {
+  }
 }

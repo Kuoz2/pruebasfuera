@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {AutentificacionService} from '../../../Service/autentificacion.service';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {UsuarioService} from '../../../Service/usuario.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private autentificacion: AutentificacionService,
               private modalService: NgbModal,
-              private serviadmin: UsuarioService
+              private serviadmin: UsuarioService,
+              private ngxspinner: NgxSpinnerService
   ) {
         this.ngForm = LoginComponent.CreateLoginFormGroup();
         this.new_admin = LoginComponent.CreateAdmin();
@@ -87,7 +89,9 @@ export class LoginComponent implements OnInit {
       admin.value.user.role = 'administrador';
       this.serviadmin.guardaradmin(admin.value);
   }
-  ngOnInit() {
+
+  async ngOnInit() {
+    this.ngxspinner.show();
     this.loqumu();
 
   }
@@ -100,15 +104,18 @@ export class LoginComponent implements OnInit {
              const data = Object.values( x[0]);
                 // @ts-ignore
              this.usuarios = data[0];
-             if (this.usuarios == false) {
+             if (this.usuarios === false) {
 
             }
+
+             this.ngxspinner.hide();
         }
-    );
+
+ );
   }
 
   onLogin(form): void {
-      console.log(form.value)
+      console.log(form.value);
       this.autentificacion.login( form.value );
 
   }

@@ -8,6 +8,7 @@ import {ProvideerComponent} from "./provideer/provideer.component";
 import {PromocionesComponent} from "./physical/promociones/promociones.component";
 import {ImpuestosComponent} from "./physical/impuestos/impuestos.component";
 import {MarcaComponent} from "./physical/marca/marca.component";
+import {VencimientosComponent} from "./physical/vencimientos/vencimientos.component";
 
 const routes: Routes = [
   {
@@ -67,6 +68,14 @@ const routes: Routes = [
         data:{
           title:'Crear promociones',
           breadcrumb:'Nuevas promociones'
+        }
+      },
+      {
+        path:'physical/vencimiento',
+        component: VencimientosComponent,
+        data:{
+          title:'Vencimiento',
+          breadcrumb:'Productos vencidos'
         }
       }
     ]

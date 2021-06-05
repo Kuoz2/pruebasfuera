@@ -8,7 +8,7 @@ import {CreateUserComponent} from './create-user/create-user.component';
 
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {NgxPaginationModule} from "ngx-pagination";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [ListUserComponent, CreateUserComponent],

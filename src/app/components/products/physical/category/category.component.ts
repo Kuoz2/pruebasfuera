@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {CategoriasService} from "../../../../Service/categorias.service";
-import {Categories} from "../../../Modulos/Categories";
-import {Observable} from "rxjs";
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {CategoriasService} from '../../../../Service/categorias.service';
+import {Categories} from '../../../Modulos/Categories';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-category',
@@ -24,20 +24,19 @@ export class CategoryComponent implements OnInit {
       cnombre: ['']
     });
 
-this.categoriaAsync()
+    this.categoriaAsync();
   }
 
-  categoriaAsync()
-  {
-    this.categorias = this.servi.mostrarcategorias()
+  categoriaAsync() {
+    this.categorias = this.servi.mostrarcategorias();
   }
 
-  guardarcategoria(){
+  guardarcategoria() {
     this.servi.guardarcategorias(this.categoriasForm.value);
     this.categoriasForm.reset();
   }
-  open2(content2, catego: Categories):void
-  {
+
+  open2(content2, catego: Categories): void {
     this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -49,13 +48,13 @@ this.categoriaAsync()
 
   }
 
-  editarcategoria(categoria: Categories){
-    this.servi.actualizarcategoria(categoria).subscribe(data => {this.categoriaID = data})
+  editarcategoria(categoria: Categories) {
+    this.servi.actualizarcategoria(categoria).subscribe(data => {this.categoriaID = data; });
   }
 
-  editar(){
+  editar() {
     const id = localStorage.getItem('idc');
-    this.servi.mostrarporID(+id).subscribe(data => {this.categoriaID = data})
+    this.servi.mostrarporID(+id).subscribe(data => {this.categoriaID = data; });
   }
 
 

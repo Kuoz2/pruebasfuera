@@ -24,6 +24,9 @@ import {ProvideerComponent} from './provideer/provideer.component';
 import {PromocionesComponent} from './physical/promociones/promociones.component';
 import {ImpuestosComponent} from './physical/impuestos/impuestos.component';
 import {MarcaComponent} from './physical/marca/marca.component';
+import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
+import { VencimientosComponent } from './physical/vencimientos/vencimientos.component';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -41,7 +44,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ProvideerComponent,
     PromocionesComponent,
     ImpuestosComponent,
-    MarcaComponent],
+    MarcaComponent,
+    VencimientosComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -53,7 +57,9 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         DropzoneModule,
         GalleryModule.forRoot(),
         SharedModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        Ng4LoadingSpinnerModule,
+        NgxSpinnerModule
     ],
   providers: [
     {

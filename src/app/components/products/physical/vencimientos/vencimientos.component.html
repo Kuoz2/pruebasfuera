@@ -1,0 +1,33 @@
+
+<ngx-spinner  bdColor="rgba(51, 51, 51)"
+              size="medium"
+              color="#000"
+              type="ball-scale-multiple">
+    <p>Cargando...</p>
+</ngx-spinner>
+
+
+<div class="container-fluid "  >
+    <div class="row">
+        <div class="col-xl-7 xl-50">
+            <div class="card" >
+                <div class="card-header"><h5>Vencimiento</h5></div>
+                <div class="card-body"  *ngFor="let i of resultado" >
+                    <div class="progress"  >
+                        <div class="progress-bar" role="progressbar" style="width: 3%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{i.queda_un}}</div>
+                    </div>
+                    <span>Quedan unos {{i.vence_en}} días para que venza</span>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-7 xl-50">
+            <div class="card-header">
+                <h5>Por vencer el siguiente mes</h5>
+            </div>
+            <div class="card-body">
+
+            </div>
+        </div>
+    </div>
+</div>

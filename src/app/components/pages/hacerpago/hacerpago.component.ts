@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Ventas} from "../../Modulos/Ventas";
-import {Voucher} from "../../Modulos/Voucher";
-import {DetalleVoucher} from "../../Modulos/DetalleVoucher";
-import {Medio} from "../../Modulos/Medio";
-import {Pagos} from "../../Modulos/Pagos";
-import {Documentos} from "../../Modulos/Documentos";
-import {PagosService} from "../../../Service/pagos.service";
-import {MedioService} from "../../../Service/medio.service";
-import {VoucherService} from "../../../Service/voucher.service";
-import {VentasService} from "../../../Service/ventas.service";
+import {Ventas} from '../../Modulos/Ventas';
+import {Voucher} from '../../Modulos/Voucher';
+import {DetalleVoucher} from '../../Modulos/DetalleVoucher';
+import {Medio} from '../../Modulos/Medio';
+import {Pagos} from '../../Modulos/Pagos';
+import {Documentos} from '../../Modulos/Documentos';
+import {PagosService} from '../../../Service/pagos.service';
+import {MedioService} from '../../../Service/medio.service';
+import {VoucherService} from '../../../Service/voucher.service';
+import {VentasService} from '../../../Service/ventas.service';
 
 @Component({
   selector: 'app-hacerpago',
@@ -19,7 +19,7 @@ export class HacerpagoComponent implements OnInit {
   estotengo = new Ventas();
   voucher: Voucher[];
   detallevoucher: DetalleVoucher[];
-  filterpost: number;
+  filterpost =  '';
   ejerciciodevolucion: number;
   estevoucher = new Voucher();
   ventas = new Ventas();
@@ -35,7 +35,7 @@ export class HacerpagoComponent implements OnInit {
   mes = this.fecha.getMonth();
   anio = this.fecha.getFullYear();
 
-  diadehoy: string = this.dia +'/'+this.mes +'/'+ this.anio;
+  diadehoy: string = this.dia + '/' + this.mes + '/' + this.anio;
 
   constructor(private pagoser: PagosService, private medio: MedioService, private vouch: VoucherService, private vent: VentasService) { }
 
@@ -80,8 +80,8 @@ export class HacerpagoComponent implements OnInit {
     // tslint:disable-next-line:forin
 
 
-    console.log('mediopago', this.medio)
-    console.log('nose',venta)
+    console.log('mediopago', this.medio);
+    console.log('nose', venta);
     this.estevoucher = devolver.vnumero;
     console.log(this.estevoucher);
     console.log(this.voucher);
@@ -90,7 +90,7 @@ export class HacerpagoComponent implements OnInit {
     this.cancelar.payment_id.half_payment_id = venta.id;
     // tslint:disable-next-line:new-parens
     this.cancelar.voucher_id = devolver.id;
-    this.vent.guardarventas(this.cancelar).subscribe(res => {console.log('pagos',this.cancelar)});
+    this.vent.guardarventas(this.cancelar).subscribe(res => {console.log('pagos', this.cancelar); });
 
 
   }

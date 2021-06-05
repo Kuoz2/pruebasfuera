@@ -2,6 +2,8 @@
 
 
 <!-- Eliminar la herramienta de formato -->
+<ngx-spinner [type]=spinnerType>
+</ngx-spinner>
 <div class="container-fluid"  >
     <div class="row">
         <div class="col-sm-12">
@@ -64,6 +66,14 @@
                                             La descripción es necesaria.
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label for="fecha_Vencimiento" class="col-xl-3 col-sm-4 mb-0">Fecha vencimiento:</label>
+                                        <input (change)="fecha(fechaguardada)"  autocomplete="off"
+                                               class="form-control col-xl-8 col-sm-7"  formControlName="fecha_vencimiento" id="fecha_Vencimiento"
+                                               min="2000/01/01" type="date">
+                                    </div>
+
                                     <div class="form-group row">
                                         <label for="valornet" class="col-xl-3 col-sm-4 mb-0">Valor neto:</label>
                                         <input class="form-control col-xl-8 col-sm-7" id="valornet"
@@ -130,7 +140,7 @@
                                                 </div>
                                             </div>
 
-                                        <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock de catálogo:</label>
+                                       <!-- <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock de catálogo:</label>
                                         <div class="qty-box1">
                                             <div class="input-group">
                                                 <i class="fa fa-minus btnGtr1" (click)=decrement2()></i>
@@ -138,7 +148,7 @@
                                                        type="number">
                                                 <i class="fa fa-plus btnLess1" (click)=increment2()></i>
                                             </div>
-                                        </div>
+                                        </div>-->
 
                                        <label class="col-xl-3 col-sm-4 mb-0">Ingreso de stock de seguridad:</label>
                                         <div class="qty-box1">
@@ -151,6 +161,7 @@
                                         </div>
 
                                     </div>
+                                    <!--
                                     <div class="form-group ">
                                         <label class="col-form-label "><span>*</span> Vender en catálogo </label>
                                         <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">
@@ -160,7 +171,7 @@
                                             </label>
 
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="form-group ">
                                         <label class="col-form-label "><span>*</span> Vender en la tienda </label>
                                         <div class="m-checkbox-inline mb-0 custom-radio-ml d-flex radio-animated">

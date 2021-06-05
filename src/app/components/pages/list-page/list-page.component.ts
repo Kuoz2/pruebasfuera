@@ -6,6 +6,7 @@ import {XMLBuilder} from 'xmlbuilder2/lib/interfaces';
 import {create} from 'xmlbuilder2';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-list-page',
@@ -26,7 +27,9 @@ export class ListPageComponent implements OnInit {
     private datos$: Observable<valorReloj>;
     private fecha;
     hora: string;
+    // tslint:disable-next-line:variable-name
     fecha_resolucion = '';
+    // tslint:disable-next-line:variable-name
     fecha_tributaria = '';
     valortotalneto = [];
     valortotalNetos = [];
@@ -40,17 +43,20 @@ export class ListPageComponent implements OnInit {
     exponenteCertificadoLLave: string;
     rutEmisiorBoleta: string;
 
-    constructor(private bol: VoucherService, private modalService: NgbModal, public secoind: HoraActualService) {
-  }
+    // tslint:disable-next-line:max-line-length
+    constructor(private bol: VoucherService, private modalService: NgbModal, public secoind: HoraActualService, private ngxspinner: NgxSpinnerService ) { }
  async ngOnInit() {
-    this.boletas = this.bol.detalledeventa();
-    this.informacionesLocal();
+    this.ngxspinner.show();
+    this.boletas = await this.bol.detalledeventa();
+    await this.informacionesLocal();
 
-    this.datos$ = this.secoind.getInfoReloj();
+    this.datos$ = await this.secoind.getInfoReloj();
     this.fecha =  this.datos$.subscribe( x => {
          this.hora = x.diaymes + 'T' + x.hora.toString() + ':' + x.minutos + ':' + x.segundo;
-     });
-  }
+         this.ngxspinner.hide();
+    } );
+
+ }
 
     agregaboleta(da) {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -64,6 +70,8 @@ export class ListPageComponent implements OnInit {
                 return this.datos.indexOf(item) === index;
             });
 
+        console.log('ingresados', this.cortar);
+
         for (const o of this.datos) {
                         dproducto.push(o.product);
                         valornet.push(o.product.pvalor);
@@ -76,8 +84,8 @@ export class ListPageComponent implements OnInit {
                         this.totalTodo = valortotal.reduce(reducer);
 
                     }
+        console.log('rut', this.cortar.map(res => res.product.pcodigo));
         this.cantidadDoc = this.cortar.length;
-
     }
 
     informacionesLocal() {
@@ -121,7 +129,8 @@ export class ListPageComponent implements OnInit {
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TotMntTotal>${this.totalTodo}</TotMntTotal>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</TotalesPeriodo>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</ResumenPeriodo>
-${document.getElementById( 'detallebole' ).innerHTML}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TmstFirma>${this.hora}</TmstFirma>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t${this.detalleCmpr().map(res => res ) }
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<TmstFirma>${this.hora}</TmstFirma>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t</EnvioLibro>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t<AlforitTranform>SHA1withRSA</AlforitTranform>
@@ -141,6 +150,7 @@ ${document.getElementById( 'detallebole' ).innerHTML}\t\t\t\t\t\t\t\t\t\t\t\t\t\
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</KeyInfo>
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</LibroCompraVenta>
 `;
+        console.log(document.getElementById( 'detallebole' ).innerHTML);
         let doc: XMLBuilder;
         doc = create( xmlStr ).dec( {version: '1.0', encoding: 'ISO-8859-1'} );
 // append a 'baz' element to the root node of the document
@@ -160,6 +170,34 @@ ${document.getElementById( 'detallebole' ).innerHTML}\t\t\t\t\t\t\t\t\t\t\t\t\t\
         element.click();
 
         document.body.removeChild(element);
+        this.detalleCmpr();
+        console.log('detalle de la funcion', this.detalleCmpr().map(res => res.toString()) );
+    }
+
+    detalleCmpr() {
+        const detalle = [];
+        for (const o of this.cortar) {
+            console.log('detalle del o', o);
+            detalle.push( `
+         <Detalle>
+            <TpoDoc>39</TpoDoc>
+             <NroDoc>10</NroDoc>
+            <TasaImp>19%</TasaImp>
+            <FchDoc>${o.fecha_emision}</FchDoc>
+            <RutEmi>${this.rutEmisor} </RutEmi>
+             <TipoProd>${o.product.category.cnombre}</TipoProd>
+             <RznSoc>${this.rasonSoci}</RznSoc>
+             <MntNeto>1422876</MntNeto>
+             <MntIVA>${o.product.piva}</MntIVA>
+             <MntTotal>${o.voucher.vtotal}</MntTotal>
+             ${o.product.id}
+        </Detalle>`);
+        }
+
+        console.log('Detalle comprado', detalle[0]);
+        console.log('Detalle comprado 2', detalle[1]);
+
+        return detalle;
     }
 
 

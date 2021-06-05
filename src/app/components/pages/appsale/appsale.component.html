@@ -12,6 +12,7 @@
     </div>
 </div>
 -->
+
 <ng-template #content2 let-modal2>
     <form action="" [formGroup]="app_venta" (ngSubmit)="guardarVentaApp()">
 
@@ -80,7 +81,8 @@
            </form>
     <app-boleta [hidden]="true" [item] = "items"    [totalPrices] = "totalPrice" [lahora]="hora" [fechaE]="fechaE"  ></app-boleta>
 </ng-template>
-
+<ngx-spinner [type]=spinnerType>
+</ngx-spinner>
 <nav class="navbar navbar-light">
         <div class="shopping-cart-header">
             <i class="fa fa-shopping-cart cart-icon" (click)="open2(content2)"></i><span class="badge">{{totalQuantity}}</span>

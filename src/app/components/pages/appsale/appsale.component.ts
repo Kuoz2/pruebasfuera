@@ -1,20 +1,21 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {CartServiceService} from "../../../Service/cart-service.service";
-import {Item} from "../../Modulos/Item";
-import {Productos} from "../../Modulos/Productos";
-import {Medio} from "../../Modulos/Medio";
-import {PagosService} from "../../../Service/pagos.service";
-import {Categories} from "../../Modulos/Categories";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ProductserviceService} from "../../../Service/productservice.service";
-import {DetalleVoucher} from "../../Modulos/DetalleVoucher";
-import {Voucher} from "../../Modulos/Voucher";
-import {Ventas} from "../../Modulos/Ventas";
-import {VentasService} from "../../../Service/ventas.service";
-import {VoucherService} from "../../../Service/voucher.service";
-import {Observable} from "rxjs";
-import {HoraActualService, valorReloj} from "../../../Service/hora-actual.service";
+import {CartServiceService} from '../../../Service/cart-service.service';
+import {Item} from '../../Modulos/Item';
+import {Productos} from '../../Modulos/Productos';
+import {Medio} from '../../Modulos/Medio';
+import {PagosService} from '../../../Service/pagos.service';
+import {Categories} from '../../Modulos/Categories';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {ProductserviceService} from '../../../Service/productservice.service';
+import {DetalleVoucher} from '../../Modulos/DetalleVoucher';
+import {Voucher} from '../../Modulos/Voucher';
+import {Ventas} from '../../Modulos/Ventas';
+import {VentasService} from '../../../Service/ventas.service';
+import {VoucherService} from '../../../Service/voucher.service';
+import {Observable} from 'rxjs';
+import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 
 @Component({
@@ -23,84 +24,86 @@ import {HoraActualService, valorReloj} from "../../../Service/hora-actual.servic
   styleUrls: ['./appsale.component.scss']
 })
 export class AppsaleComponent implements OnInit {
-  totalQuantity: number = 0;
-  totalPrice: number = 0;
+  totalQuantity = 0;
+  totalPrice = 0;
   items: Array<Item>;
-  fechahora:string;
-  se_Imprio:Boolean = false;
+  fechahora: string;
+  se_Imprio: Boolean = false;
   selecciondecomra: Medio[];
-  loseleccionadodelacompra= Medio;
+  loseleccionadodelacompra = Medio;
   public cancelar2 = new Ventas();
   public detallevoucher = new DetalleVoucher;
   public voucher_add: Voucher;
   public productos_add = new Productos();
-  public efectivo: number = 0;
-  public devolucion:number = 0;
+  public efectivo = 0;
+  public devolucion = 0;
   public closeResult: string;
   @Output()
   public textoCambiado: EventEmitter<string> = new EventEmitter();
   @Output()
   public textoCambiado2: EventEmitter<string> =  new EventEmitter();
-  //Variable para el formulario
+  // Variable para el formulario
+  // tslint:disable-next-line:variable-name
   app_venta: FormGroup;
   public categorias: Categories[];
 imagenjpg;
   private datos$: Observable<valorReloj>;
-  unafecha: string = '';
   private fecha;
-  detener;
-  constructor(private carservice:CartServiceService,
-              private sermedio:PagosService,
+  private spinnerType = 'la-ball-8bits';
+
+  constructor(private carservice: CartServiceService,
+              private sermedio: PagosService,
               private modalService: NgbModal,
-              private FormBuild:FormBuilder,
-              private serviCat:ProductserviceService,
+              private FormBuild: FormBuilder,
+              private serviCat: ProductserviceService,
               private vent: VentasService,
               private vouchservicio: VoucherService,
-              public secoind: HoraActualService
-  ) {
-    //Formulario de ingreso.
+              public secoind: HoraActualService,
+              private spinner: NgxSpinnerService  ) {
+    // Formulario de ingreso.
     this.app_venta = this.FormBuild.group({
       loseleccionadodelacompra: new FormControl(''),
       efectivo: new FormControl('')
-    })
+    });
   }
 
   hora: string;
   minutos: string;
   dia: string;
   fechaE: string;
+  // tslint:disable-next-line:variable-name
   fecha_emision: string;
+  // tslint:disable-next-line:variable-name
   hora_emision: string;
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.spinner.show();
 
-    this.datos$ = this.secoind.getInfoReloj();
-    this.fecha =  this.datos$.subscribe( x => {
-          this.hora = x.diaymes + "T"+ x.hora.toString() +":"+ x.minutos + ":"+ x.segundo;
-          this.fechaE = x.diaymes
-      this.fecha_emision = x.diaymes;
-          this.hora_emision = x.hora.toString() + ":"+ x.minutos + ":" +  x.segundo
+    this.fecha = await this.datos$.subscribe( x => {
+          this.hora = x.diaymes + 'T' + x.hora.toString() + ':' + x.minutos + ':' + x.segundo;
+          this.fechaE = x.diaymes;
+          this.fecha_emision = x.diaymes;
+          this.hora_emision = x.hora.toString() + ':' + x.minutos + ':' +  x.segundo;
 
         }
     );
 
-    this.carservice.currentDataCart$.subscribe(
+    await this.carservice.currentDataCart$.subscribe(
         x => {
-          if (x){
+          if (x) {
             this.items = x;
             this.totalQuantity = x.length;
-            this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor * current.quantity), 0 )
+            this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor * current.quantity), 0 );
           }
         }
     );
-    this.sermedio.mostrarmediodepago().subscribe(res => {this.selecciondecomra =  res});
-    this.serviCat.categorias().subscribe(data => {this.categorias = data});
-    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data});
+    await this.sermedio.mostrarmediodepago().subscribe(res => {this.selecciondecomra =  res; });
+    await this.serviCat.categorias().subscribe(data => {this.categorias = data; this.spinner.hide(); });
+    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data;      } ,  );
 
-    this.Imprimcion()
+    this.Imprimcion();
   }
-  //Habrir el modal al precionar el carrito de compra
-  open2(content2):void
-  {
+  // Habrir el modal al precionar el carrito de compra
+  open2(content2): void {
     this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -109,17 +112,17 @@ imagenjpg;
   }
 
 
-  //Modulo para imprimir.
+  // Modulo para imprimir.
      imprimir(register) {
-    this.fecha.unsubscribe()
+    this.fecha.unsubscribe();
 
-       const data = '<head>' +
+    const data = '<head>' +
            '<style type="text/css">' +
            '@page  { margin: 0 ; }' +
            ' body.receipt.sheet { width: 570mm; height: 570mm;}  }}' +
-           ' body.receipt.sheet { width: 570mm; height: 570mm;} '+
-           '  @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {'+
-           '    display:none !important;' +'    height:570mm !important;}} ' +
+           ' body.receipt.sheet { width: 570mm; height: 570mm;} ' +
+           '  @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {' +
+           '    display:none !important;' + '    height:570mm !important;}} ' +
            'header,footer,aside{display: none }' +
            '\n' +
            'h2{   font-size: 28px;\n position: center;\n }' +
@@ -170,7 +173,7 @@ imagenjpg;
            '.ticket2 {\n' +
            '  width: 570px;\n' +
            '  max-width: 600px;\n' +
-           '}'+
+           '}' +
            '\n' +
            'img {\n' +
            'width: 110mm;\n' +
@@ -181,26 +184,26 @@ imagenjpg;
            '<body >' +
            document.getElementById( register ).innerHTML +
            '</body>';
-       var mywindow = window.open( '', '_blank' )
-       mywindow.opener
+    const mywindow = window.open( '', '_blank' );
+    mywindow.opener;
 
-       mywindow.document.open();
-       mywindow.document.write( data );
-       mywindow.document.close();
+    mywindow.document.open();
+    mywindow.document.write( data );
+    mywindow.document.close();
 
-       mywindow.onload = function(){
-            mywindow.focus()
-             mywindow.print()
+    mywindow.onload = function() {
+            mywindow.focus();
+            mywindow.print();
        };
-      this.se_Imprio = true;
+    this.se_Imprio = true;
 
 
      }
-     //Probrando si se imprimio el documento
-  Imprimcion(){
+     // Probrando si se imprimio el documento
+  Imprimcion() {
   }
 
-  //LAS FORMAS DE CERRAR EL MODAL
+  // LAS FORMAS DE CERRAR EL MODAL
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -210,21 +213,21 @@ imagenjpg;
       return `with: ${reason}`;
     }
   }
-remover_producto(producto:Item){
-  this.carservice.removeElementCart(producto)
+remover_producto(producto: Item) {
+  this.carservice.removeElementCart(producto);
 }
   _buscadorProducto(value) {
-    this.textoCambiado.emit(value.target.value)
+    this.textoCambiado.emit(value.target.value);
   }
   _buscandoCategoria(valor) {
-    this.textoCambiado2.emit(valor.target.value)
+    this.textoCambiado2.emit(valor.target.value);
   }
-//Aca se guardaran las ventas cuando se precione guardar luego se actualizara
+// Aca se guardaran las ventas cuando se precione guardar luego se actualizara
    guardarVentaApp() {
     if (this.se_Imprio == false) {
-      alert("No se puede guardar, debe imprimir la boleta")
+      alert('No se puede guardar, debe imprimir la boleta');
     } else {
-      this.fecha.unsubscribe()
+      this.fecha.unsubscribe();
       this.detallevoucher.voucher.vtotal = this.totalPrice;
       this.detallevoucher.dvcantidad = this.totalPrice;
       this.detallevoucher.fecha_emision = this.fecha_emision;
@@ -234,40 +237,40 @@ remover_producto(producto:Item){
         this.detallevoucher.dvcantidad = i.quantity;
         this.productos_add.stock.id = i.stock.id;
         this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
-        //Guardar el voucher generado.
+        // Guardar el voucher generado.
         this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
-          return res
+          return res;
         } );
-        //Actualiza el stcok generado.
+        // Actualiza el stcok generado.
         this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
-          return res
-        } )
+          return res;
+        } );
       }
 
       this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
       this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
       this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
-      this.cancelar2.voucher_id = this.voucher_add.id += 1;
+      this.cancelar2.voucher_id = this.voucher_add.id;
 
-      //Se guarda lo cancelado
+      // Se guarda lo cancelado
       this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
-        return res
+        return res;
       } );
 
       this.app_venta.reset();
       this.items.splice( 0, this.items.length );
       this.totalPrice = 0;
-      this.totalQuantity = 0
+      this.totalQuantity = 0;
     }
   }
 
-  devolucion_app(){
+  devolucion_app() {
     let total = 0 ;
-    if (this.totalPrice != 0 && this.app_venta.value.efectivo != 0 && this.totalPrice < this.app_venta.value.efectivo){
+    if (this.totalPrice != 0 && this.app_venta.value.efectivo != 0 && this.totalPrice < this.app_venta.value.efectivo) {
       total = (this.app_venta.value.efectivo - this.totalPrice);
-      return total
+      return total;
     } else {
-      return total
+      return total;
     }
   }
   cancelar_venta() {
@@ -275,12 +278,12 @@ remover_producto(producto:Item){
     this.items.splice(0, this.items.length);
     this.totalPrice = 0;
     this.totalQuantity = 0;
-    alert("La venta se cancelo")
+    alert('La venta se cancelo');
   }
 
 
   nosenvia($event) {
-    if ($event.keyCode == 13){
+    if ($event.keyCode == 13) {
       return $event.returnValue = false;
     }
   }

@@ -22,6 +22,8 @@ import {QRCodeModule} from "angularx-qrcode";
 import {ListPageComponent} from "./list-page/list-page.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ActualizarbolComponent} from './actualizarbol/actualizarbol.component';
+import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import {ActualizarbolComponent} from './actualizarbol/actualizarbol.component';
         SharedModule,
         QRCodeModule,
         NgxPaginationModule,
+        Ng4LoadingSpinnerModule,
+        NgxSpinnerModule,
 
     ],
     providers:[HoraActualService],

@@ -10,6 +10,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartistModule } from 'ng-chartist';
 import { SharedModule } from '../../shared/shared.module';
 import {NgxPaginationModule} from "ngx-pagination";
+import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {NgxPaginationModule} from "ngx-pagination";
         NgxChartsModule,
         ChartistModule,
         NgxPaginationModule,
+        Ng4LoadingSpinnerModule,
+        NgxSpinnerModule,
     ]
 })
 export class DashboardModule { }

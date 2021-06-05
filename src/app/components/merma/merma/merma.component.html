@@ -1,3 +1,38 @@
+
+<ng4-loading-spinner  [threshold]="2000" [timeout]="4000"  [loadingText]="'Porfavor espere...'" [zIndex]="9999"> </ng4-loading-spinner>
+<ng-template #Contenido let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title f-w-600" id="exampleModalLabel2">Ingresar solución</h5>
+        <button type="button" class="close" aria-label="Close"
+                (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form">
+            <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">Datos de la merma</li>
+                <li class="list-group-item"><p class="fw-bolder">Hora de ingreso: {{this.datosMermas.hora}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Categoría: {{this.datosMermas.categoriasMrm}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Motivo: {{this.datosMermas.causaMrm}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Unidades merma: {{this.datosMermas.unidadesMrm}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Código producto: {{this.datosMermas.product.pcodigo}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Descripción: {{this.datosMermas.product.pdescripcion}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Precío neto: {{this.datosMermas.pvneto}}</p></li>
+                <li class="list-group-item"><p class="fw-bolder">Estado de la merma: {{this.datosMermas.solution_boolean}}</p></li>
+
+            </ul>
+        </div>
+        <form [formGroup]="this.formMermaEstado" (submit)="UpdateStadoMerma(this.datosMermas)">
+        <div class="form-group">
+            <label for="motivo" class="mb-1"><p class="fs-3">Ingrese como se soluciono la merma:</p></label>
+            <textarea id="motivo" name="motivo" rows="4" cols="60" formControlName="mrmsolucion" [(ngModel)]="MotivoActualizado" o required></textarea>
+        </div>
+
+        <button type="submint" class="btn btn-success-gradien" >Actualizar registro</button>
+        </form>
+    </div>
+</ng-template>
 <div class="container-fluid"  >
     <div class="row">
         <div class="col-sm-12">
@@ -28,9 +63,9 @@
                                  <option *ngFor="let d of (marcas | async | buscarmarca:frmCategoria)" >{{ d.brand.bnombre}}</option>
                              </select>
 
-                        <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="product_id"  >
+                        <select class="custom-select custom-select-sm col-sm-2  mb-0"  formControlName="product_id"  [(ngModel)]="idproducto">
                             <option value="0" selected></option>
-                            <option value="{{d | json}}"  *ngFor="let d of ( categorias |async) | buscarselectP:frmMarca  "   >{{d.pdescripcion}}</option>
+                            <option [ngValue]="h"  *ngFor="let h of ( categorias |async) | buscarselectP:frmMarca">{{h.pdescripcion}}</option>
                         </select>
                         <input type="number" class="col-xl-3 col-sm-4 mb-0"  placeholder="Unidades" formControlName="unidadesMrm">
                         <select  class="col-xl-3 col-sm-4 mb-0" placeholder="Causa"  formControlName="causaMrm">
@@ -78,15 +113,19 @@
                                                 <th>
                                                     Producto
                                                 </th>
+                                                <th>
+                                                    Estado
+                                                </th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let category of (mermas_dia | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
-                                                <td>{{category.id  }}</td>
+                                            <tr *ngFor="let category of (mermas_dia | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center" (dblclick)="press(Contenido, category)">
+                                                <td >{{category.id  }}</td>
                                                 <td>{{category.causaMrm }}</td>
                                                 <td>{{category.unidadesMrm}}</td>
                                                 <td>{{category.categoriasMrm}}</td>
                                                 <td>{{category.product.pdescripcion}}</td>
+                                                <td>{{category.solution_boolean}}</td>
                                             </tr>
                                             </tbody>
                                         </table>

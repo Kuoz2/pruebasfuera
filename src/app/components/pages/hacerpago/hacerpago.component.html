@@ -37,7 +37,7 @@
                     <div class="form-group" *ngIf="filterpost">
                         Medio de pago:
                         <select [(ngModel)]='ventas' id="mediodepago" name="mediodepago" (change)="cuandoelijo(ventas)">
-                            <option [ngValue]="f" *ngFor="let f of mediopago " [selected]="mediopago[f.mpid] ">{{f.mpnombre}}</option>
+                            <option [ngValue]="f" *ngFor="let f of mediopago " [selected]="mediopago[f.mpnombre] ">{{f.mpnombre}}</option>
                         </select><br>
                     </div>
                     <div class="form-group" *ngIf="filterpost">
