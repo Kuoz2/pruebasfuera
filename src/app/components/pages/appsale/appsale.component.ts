@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {CartServiceService} from '../../../Service/cart-service.service';
 import {Item} from '../../Modulos/Item';
 import {Productos} from '../../Modulos/Productos';
@@ -13,9 +13,10 @@ import {Voucher} from '../../Modulos/Voucher';
 import {Ventas} from '../../Modulos/Ventas';
 import {VentasService} from '../../../Service/ventas.service';
 import {VoucherService} from '../../../Service/voucher.service';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {takeUntil} from "rxjs/operators";
 
 
 @Component({
@@ -23,11 +24,11 @@ import {NgxSpinnerService} from 'ngx-spinner';
   templateUrl: './appsale.component.html',
   styleUrls: ['./appsale.component.scss']
 })
-export class AppsaleComponent implements OnInit {
+export class AppsaleComponent implements OnInit, OnDestroy {
   totalQuantity = 0;
   totalPrice = 0;
   items: Array<Item>;
-  fechahora: string;
+  private unsubscribe$ = new Subject<void>();
   se_Imprio: Boolean = false;
   selecciondecomra: Medio[];
   loseleccionadodelacompra = Medio;
@@ -49,7 +50,7 @@ export class AppsaleComponent implements OnInit {
 imagenjpg;
   private datos$: Observable<valorReloj>;
   private fecha;
-  private spinnerType = 'la-ball-8bits';
+   spinnerType = 'la-ball-8bits';
 
   constructor(private carservice: CartServiceService,
               private sermedio: PagosService,
@@ -59,7 +60,8 @@ imagenjpg;
               private vent: VentasService,
               private vouchservicio: VoucherService,
               public secoind: HoraActualService,
-              private spinner: NgxSpinnerService  ) {
+              private spinner: NgxSpinnerService,
+              private cd: ChangeDetectorRef) {
     // Formulario de ingreso.
     this.app_venta = this.FormBuild.group({
       loseleccionadodelacompra: new FormControl(''),
@@ -77,30 +79,36 @@ imagenjpg;
   hora_emision: string;
   async ngOnInit() {
     this.spinner.show();
+    this.datos$ = this.secoind.getInfoReloj();
 
-    this.fecha = await this.datos$.subscribe( x => {
+    this.fecha =  this.datos$.subscribe( x => {
           this.hora = x.diaymes + 'T' + x.hora.toString() + ':' + x.minutos + ':' + x.segundo;
           this.fechaE = x.diaymes;
           this.fecha_emision = x.diaymes;
           this.hora_emision = x.hora.toString() + ':' + x.minutos + ':' +  x.segundo;
-
         }
     );
 
-    await this.carservice.currentDataCart$.subscribe(
+    await this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
         x => {
           if (x) {
             this.items = x;
             this.totalQuantity = x.length;
             this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor * current.quantity), 0 );
+            this.cd.markForCheck();
           }
         }
     );
-    await this.sermedio.mostrarmediodepago().subscribe(res => {this.selecciondecomra =  res; });
-    await this.serviCat.categorias().subscribe(data => {this.categorias = data; this.spinner.hide(); });
-    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data;      } ,  );
+    // tslint:disable-next-line:max-line-length
+    await this.sermedio.mostrarmediodepago().pipe(takeUntil(this.unsubscribe$)).subscribe(res => {
+      this.selecciondecomra =  res;  this.cd.markForCheck(); });
+    await this.serviCat.categorias().pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
+      this.categorias = data;  this.cd.markForCheck();     this.spinner.hide();});
+    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data; this.cd.markForCheck();
+    } ,  );
 
     this.Imprimcion();
+
   }
   // Habrir el modal al precionar el carrito de compra
   open2(content2): void {
@@ -286,5 +294,10 @@ remover_producto(producto: Item) {
     if ($event.keyCode == 13) {
       return $event.returnValue = false;
     }
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

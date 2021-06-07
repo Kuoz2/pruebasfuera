@@ -202,7 +202,7 @@ this.frmCategoria = this.mermasForm.value.categoriasMrm;
     }
 
    actualizar_estado(actm ) {
-      actm.solution_boolean =  true;
+        actm.solution_boolean =  true;
       console.log("esto entra", actm)
       this.categoryservice.UpdateMermaEstado(actm);
     }

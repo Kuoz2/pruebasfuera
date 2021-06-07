@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
+import {ProductserviceService} from '../../../Service/productservice.service';
 
 @Component({
   selector: 'app-solucion-merma',
@@ -9,44 +10,65 @@ import * as Chart from 'chart.js';
 export class SolucionMermaComponent implements OnInit {
 
   public GrTableMerma: Chart;
-  constructor() {
+  public datosobtenidos;
+  isloading: boolean;
+  constructor( private stcn: ProductserviceService) {
+  this.isloading = false;
   }
 
-  ngOnInit(): void {
-    this.grafico_mermas();
+  async ngOnInit() {
 
+    await this.obteniendodatos();
+    console.log('datos', this.datosobtenidos[0].Consumo);
+    await this.grafico_mermas();
   }
 
+  obteniendodatos() {
+   return this.stcn.cantidadesObtenidas().then(
+       res => this.datosobtenidos = res
+   ).finally(() =>  {
+     this.isloading = true;
+   }).catch(
+      err => {console.log('se obtuvo un error', err); }
+   );
+  }
 
   grafico_mermas() {
-
+    console.log('entrante', this.datosobtenidos[3]);
     return this.GrTableMerma = new Chart('tablemerma', {
       type: 'bar',
       data: {
-        labels: ['Ene', 'Feb', 'Marz', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Ago', 'Sep', 'Nov', 'Dic'],
+        labels: ['Consumo', 'No, factura', 'Quebrado', 'Vencido'],
 
         datasets: [{
-          label: 'perdida',
+          label: 'Mermas',
           data: [
-            {y: 1000},
-            {y: 100 },
-            {y: 300}
-          ],
+            this.datosobtenidos[0].Consumo,
+  ],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(201, 203, 207, 0.2)'
+            'rgba(240, 14, 14, 1)',
           ],
-        }]
+        },
+          {
+            label: 'Factura',
+            data: [0, this.datosobtenidos[1].noFacutra , 0 , 0],
+            backgroundColor: ['rgba(197, 29, 196, 1)', 'rgba(197, 29, 196, 1)', 'rgba(197, 29, 196, 1)']
+          },
+          {
+            label: 'Quebrado',
+            data: [0, 0, this.datosobtenidos[2].quebrado, 0],
+            backgroundColor: ['rgba(184, 241, 232, 1)', 'rgba(184, 241, 232, 1)', 'rgba(184, 241, 232, 1)']
+          },
+          {
+            label: 'Vencidos',
+            data: [0, 0, 0, this.datosobtenidos[3].vencido],
+            backgroundColor: ['rgba( 91, 175, 174, 1)', 'rgba( 91, 175, 174, 1)', 'rgba( 91, 175, 174, 1)', 'rgba( 91, 175, 174, 1)']
+          },
+        ],
       },
 
      options: {
        scales: {
-
          ticks: {
            suggestedMin: 10,
            suggestedMax: 200,

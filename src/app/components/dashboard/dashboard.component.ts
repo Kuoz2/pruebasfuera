@@ -129,7 +129,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     changeLegendPosition(): void {
         this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
     }
-
+    // Se destruye la comunicacion si no se esta utilizando
     ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
