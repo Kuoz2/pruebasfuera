@@ -193,7 +193,7 @@ this.frmCategoria = this.mermasForm.value.categoriasMrm;
             } else {
           try {
               await  this.actualizar_estado(datosMermas);
-            await this.guardarregistromerma(datosMermas);
+              await this.guardarregistromerma(datosMermas);
           } catch (e) {
               console.log('ocurrio un error', e);
           }
@@ -203,8 +203,8 @@ this.frmCategoria = this.mermasForm.value.categoriasMrm;
 
    actualizar_estado(actm ) {
         actm.solution_boolean =  true;
-      console.log("esto entra", actm)
-      this.categoryservice.UpdateMermaEstado(actm);
+        console.log('esto entra', actm);
+        this.categoryservice.UpdateMermaEstado(actm);
     }
 
     guardarregistromerma(mermas) {

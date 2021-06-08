@@ -12,6 +12,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {MermaRoutingModule} from "./merma-routing.module";
 import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
 import { SolucionMermaComponent } from './solucion-merma/solucion-merma.component';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -34,7 +35,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         GalleryModule.forRoot(),
         SharedModule,
         NgxPaginationModule,
-        Ng4LoadingSpinnerModule
+        Ng4LoadingSpinnerModule,
+        NgxSpinnerModule
     ],
   providers: [
     {
