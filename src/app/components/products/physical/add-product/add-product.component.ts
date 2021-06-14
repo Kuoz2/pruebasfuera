@@ -55,7 +55,6 @@ file: File;
     get pvneto() { return this.productForm.get('pvneto'); }
     get fecha_vencimiento() {return  this.productForm.get('fecha_vencimiento'); }
 
-
     dateValidator(c: AbstractControl): { [key: string]: boolean } {
         const value = c.value;
         if (value && typeof value === 'string') {
@@ -94,15 +93,16 @@ file: File;
               tax_id: new FormControl('', [Validators.required]),
               brand_id: new FormControl('', [Validators.required]),
               piva: new FormControl('', [Validators.required]),
-              stock_id: new FormGroup( {
+            stock_attributes: new FormGroup( {
                   pstock: new FormControl( '', [Validators.required] ),
                   stock_lost: new FormControl( '' , [Validators.required]),
                   stock_security: new FormControl('')
-
+              }),
+            date_expirations_attributes: new FormGroup({
+                fecha_vencimiento: new FormControl(''),
+                 stock_expiration: new FormControl(0)
               }),
               pvneto: new FormControl('', [Validators.required]),
-          // tslint:disable-next-line:max-line-length
-              fecha_vencimiento : new FormControl('')
       });
 
   }
@@ -134,20 +134,26 @@ file: File;
   }
 
   guardarproducto(): void {
+        if (!this.productForm.valid) {
+            try {
+                this.productForm.value.category_id = this.productForm.value.category_id.id;
+                this.productForm.value.ppicture = this.url[0].img;
+                this.productForm.value.ppicture = btoa( this.productForm.value.ppicture );
+                this.productForm.value.provider_id = this.productForm.value.provider_id.id;
+                this.productForm.value.tax_id = this.productForm.value.tax_id.id;
+                this.productForm.value.brand_id = this.productForm.value.brand_id.id;
+                this.productForm.value.date_expirations_attributes.stock_expiration = this.productForm.value.stock_attributes.pstock;
+               // this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
+                 //   console.log( 'guardado en el res ', res );
+                //} );
+                console.log( 'productos', this.productForm.value );
+                //this.productForm.reset();
 
+            } catch (e) {
+                console.log( 'ocurrio un error', e );
+            }
+        }
 
-    this.productForm.value.category_id = this.productForm.value.category_id.id;
-    this.productForm.value.ppicture = this.url[0].img;
-    this.productForm.value.ppicture = btoa( this.productForm.value.ppicture );
-    this.productForm.value.provider_id = this.productForm.value.provider_id.id;
-    this.productForm.value.tax_id = this.productForm.value.tax_id.id;
-    this.productForm.value.brand_id = this.productForm.value.brand_id.id;
-    this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
-        console.log( 'guardado en el res ', res );
-    } );
-    console.log( 'productos', this.productForm.value );
-
-    // this.productForm.reset()
 
 
   }

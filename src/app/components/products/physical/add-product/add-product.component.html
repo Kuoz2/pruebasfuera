@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group row">
+                                    <div class="form-group row" formGroupName="date_expirations_attributes">
                                         <label for="fecha_Vencimiento" class="col-xl-3 col-sm-4 mb-0">Fecha vencimiento:</label>
                                         <input (change)="fecha(fechaguardada)"  autocomplete="off"
                                                class="form-control col-xl-8 col-sm-7"  formControlName="fecha_vencimiento" id="fecha_Vencimiento"
@@ -119,7 +119,7 @@
                                         </select>
                                         </div>
 
-                                    <div class="form-group row" formGroupName="stock_id">
+                                    <div class="form-group row" formGroupName="stock_attributes">
                                         <label class="col-xl-3 col-sm-4 mb-0">Ingresar stock :</label>
                                         <div class="qty-box1">
                                             <div class="input-group">

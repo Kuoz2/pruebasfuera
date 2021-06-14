@@ -11,5 +11,14 @@ export class Fecha_vencimiento {
     fecha_vencimiento: string;
     id: number;
     pdescripcion: string;
+    // tslint:disable-next-line:variable-name
+    date_expiration: DateExpiration = new DateExpiration();
+
+}
+
+
+export class DateExpiration {
+    // tslint:disable-next-line:variable-name
+    fecha_vencimiento: string;
 
 }

@@ -1,20 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductserviceService} from '../../../../Service/productservice.service';
 import {Productos, Stock} from '../../../Modulos/Productos';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder} from '@angular/forms';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {PagosService} from '../../../../Service/pagos.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {error} from 'selenium-webdriver';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
     selector: 'app-listaproducto',
     templateUrl: './listaproducto.component.html',
     styleUrls: ['./listaproducto.component.scss']
 })
-export class ListaproductoComponent implements OnInit {
+export class ListaproductoComponent implements OnInit, OnDestroy {
     public closeResult: string;
     public listproductosG: Observable<Productos[]>;
+    private unsubscribe$ = new Subject<void>();
     constructor(private prod: ProductserviceService,
                 private modalService: NgbModal,
                 private formBuilder: FormBuilder,
@@ -35,9 +38,10 @@ export class ListaproductoComponent implements OnInit {
     h = 0;
     j = 0;
 
-  async  ngOnInit() {
-        this.ngxspinner.show()
-       await this.productosAsync();
+  async ngOnInit() {
+        this.ngxspinner.show();
+        await  this.productosAsync();
+        await this.busquedaAsync2();
 
     }
 
@@ -67,19 +71,32 @@ export class ListaproductoComponent implements OnInit {
      }
 
 
-    productosAsync() {
-        this.listproductos = this.prod.products();
-        this.listproductosG = this.prod.products();
-        this.ngxspinner.hide();
+   async productosAsync() {
+       try {
+           this.listproductos = this.prod.products().pipe(takeUntil(this.unsubscribe$));
+           this.ngxspinner.hide();
+       } catch (e) {
+           console.log('Ocurrio un error', e);
+       }
+       return this.listproductos;
+   }
+
+  async busquedaAsync2() {
+       try {
+           this.listproductosG = this.prod.products().pipe(takeUntil(this.unsubscribe$));
+       } catch (e) {
+           console.log('Ocurrion un error', e);
+       }
+       return this.listproductosG;
+   }
+
+   async editarproductos(producto: Productos) {
+       await this.prod.actualizarproducto(producto).subscribe(data => data);
     }
 
-    editarproductos(producto: Productos) {
-        this.prod.actualizarproducto(producto).subscribe(data => data);
-    }
 
 
-
-    editarstock(stck: Stock, stnuevo, stlost) {
+    async editarstock(stck: Stock, stnuevo, stlost) {
         // tslint:disable-next-line:variable-name
         const edicion_producto = stck;
 
@@ -106,16 +123,17 @@ export class ListaproductoComponent implements OnInit {
 
             }
 
-            this.prod.actualizarstock(stck).subscribe(data => data);
+            await this.prod.actualizarstock(stck).subscribe(data => data);
+            window.location.reload()
         }
     }
 
 
 
-    editar() {
+   async editar() {
         const id = localStorage.getItem('idc');
 
-        this.prod.buscarproductoporID(+id).subscribe(data => {this.productoporid = data; });
+        await  this.prod.buscarproductoporID(+id).subscribe(data => {this.productoporid = data; });
     }
 
     open2(content2, catego: Productos): void {
@@ -130,9 +148,9 @@ export class ListaproductoComponent implements OnInit {
 
     }
 
-    editar2() {
+   async editar2() {
         const id = localStorage.getItem('idc2');
-        this.prod.buscarelstockporID(+id).subscribe(data => {this.stock_actualizado = data; });
+        await this.prod.buscarelstockporID(+id).subscribe(data => {this.stock_actualizado = data; });
     }
 
     open3(content3, catego: Stock): void {
@@ -155,6 +173,11 @@ export class ListaproductoComponent implements OnInit {
         } else {
             return `with: ${reason}`;
         }
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
     }
 
 

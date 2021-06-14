@@ -51,12 +51,13 @@ export class VencimientosComponent implements OnInit {
          res => {
            this.fechas_avencer = res;
            this.dia_avencer =  res;
+           console.log('obtengo', this.fechas_avencer)
              // tslint:disable-next-line:radix max-line-length
-           console.log('fechas', this.fechas_avencer.forEach(respuesta => { this.obtener_mes.push(parseInt(respuesta.fecha_vencimiento.slice(5, -3)));
+           console.log('fechas', this.fechas_avencer.forEach(respuesta => { this.obtener_mes.push(parseInt(respuesta.date_expiration.fecha_vencimiento.slice(5, -3)));
                // tslint:disable-next-line:max-line-length radix
-                                                                            this.obtener_dias.push(parseInt(respuesta.fecha_vencimiento.slice(8)));
+                                                                            this.obtener_dias.push(parseInt(respuesta.date_expiration.fecha_vencimiento.slice(8)));
                // tslint:disable-next-line:max-line-length radix
-                                                                            this.obtener_anio.push(parseInt(respuesta.fecha_vencimiento.slice(0, 4)));
+                                                                            this.obtener_anio.push(parseInt(respuesta.date_expiration.fecha_vencimiento.slice(0, 4)));
                                                                             this.obtener_nombre_prd.push(respuesta.pdescripcion);
 
 

@@ -161,7 +161,7 @@
                                         </tr>
                                         </thead>
                                         <tbody id="tbody2">
-                                        <tr *ngFor="let p of (listproductosG | async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
+                                        <tr *ngFor="let p of (listproductosG |async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
                                             <td id="td11">{{p.pcodigo  }}</td>
                                             <td id="td22">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                             <td id="td33">{{p.pvalor}}</td>
@@ -202,7 +202,7 @@
                                             </tr>
                                             </thead>
                                             <tbody id="tbody1">
-                                            <ng-container *ngFor="let p of (listproductosG |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index ">
+                                            <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index ">
                                             <tr  class="text-center" id="tr1">
                                                 <ng-container *ngIf="p.stock.pstock >= 10">
                                                     <td id="td1">{{p.pcodigo  }}</td>

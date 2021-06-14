@@ -24,6 +24,7 @@ export class MermaComponent implements OnInit, OnDestroy {
   public frmMarca = '';
   public productos: Observable<Categories[]>;
   public marcas: Observable<Productos[]>;
+    // tslint:disable-next-line:variable-name
   public mermas_dia: Observable<Mermas[]>;
   public p: any;
   public closeResult: string;
