@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Pagos} from "../components/Modulos/Pagos";
-import {Observable} from "rxjs";
-import {Medio} from "../components/Modulos/Medio";
+import {HttpClient} from '@angular/common/http';
+import {Pagos} from '../components/Modulos/Pagos';
+import {Observable} from 'rxjs';
+import {Medio} from '../components/Modulos/Medio';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +15,21 @@ export class PagosService {
   Url = 'https://marketmini.herokuapp.com/payments';
     urlmedio = 'https://marketmini.herokuapp.com/half_payments';
 
-  mostrarpagos(){
-   return  this.http.get<Pagos[]>(this.Url)
+      urlpaymentsprueba = 'http://localhost:3000/payments';
+        urlmediopagoprueba = 'http://localhost:3000/half_payments';
+  mostrarpagos() {
+   return  this.http.get<Pagos[]>(this.urlpaymentsprueba);
   }
 
-  guardapagos(pago:Pagos):Observable<Pagos> {
-   return  this.http.post<Pagos>(this.Url, pago)
+  guardapagos(pago: Pagos): Observable<Pagos> {
+   return  this.http.post<Pagos>(this.urlpaymentsprueba, pago);
   }
 
-  mostrarmediodepago(){
-    return   this.http.get<Medio[]>(this.urlmedio)
+  mostrarmediodepago() {
+    return   this.http.get<Medio[]>(this.urlmediopagoprueba);
   }
 
-  guardarmododepago(med: Medio){
-      return this.http.post<Medio>(this.urlmedio, med)
+  guardarmododepago(med: Medio) {
+      return this.http.post<Medio>(this.urlmediopagoprueba, med);
   }
 }

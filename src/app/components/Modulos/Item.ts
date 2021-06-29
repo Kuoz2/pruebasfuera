@@ -1,4 +1,4 @@
-import {Stock} from "./Productos";
+import {date_expiration, Stock} from "./Productos";
 import {Categories} from "./Categories";
 import {Marca} from "./Marca";
 
@@ -19,6 +19,8 @@ export class Item {
     category = new Categories()
     brand = new Marca()
     piva: number
+    // tslint:disable-next-line:variable-name
+    date_expiration = new date_expiration();
 }
 export interface IItem {
     id:number,

@@ -1,22 +1,291 @@
 
-<ngx-spinner>
+<ngx-spinner type="pacman">
 </ngx-spinner>
-
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Productos</h5>
+                    <h5>Inventario</h5>
                 </div>
+                <ngb-tabset justify="fill">
+                    <ngb-tab>
+                        <ng-template ngbTabTitle><b>Inventario</b> sin stock</ng-template>
+                        <ng-template ngbTabContent>
+                            <div id="batchDelete" class="category-table custom-datatable">
+                                <div class="table-responsive">
+                                    <div class="container ">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3>Inventario sin stock</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table table-hover" id="table3">
+                                                    <thead>
+                                                    <tr class="text-center">
+                                                        <th>
+                                                            Código del producto
+                                                        </th>
+                                                        <th>
+                                                            Nombre descriptivo
+                                                        </th>
+                                                        <th>Précio</th>
+                                                        <th>Stock</th>
+                                                        <th>Fecha vencimiento</th>
+                                                        <th>Estado</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tbody3">
+                                                    <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index"  (dblclick)="open2(content2, p)" class="text-center" id="tr3" >
+                                                        <td id="td111">{{p.pcodigo  }}</td>
+                                                        <td id="td222">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                                        <td id="td333">{{p.pvalor}}</td>
+                                                        <td id="td444">{{p.stock.pstock}}</td>
+                                                        <td>{{p.date_expiration.fecha_vencimiento}}</td>
+                                                        <td [attr.id]="'peligro' + i + j "  >{{cambiarColorSinStock(p.stock.pstock,i, j)}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <pagination-controls (pageChange)="j = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination3"></pagination-controls>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3>Segundo inventario sin stock</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <table class="table table-hover" id="table3">
+                                                    <thead>
+                                                    <tr class="text-center">
+                                                        <th>Fecha vencimiento</th>
+                                                        <th>Código producto</th>
+                                                        <th>Categoría y marca</th>
+                                                        <th>Nombre descriptivo</th>
+                                                        <th>Precio</th>
+                                                        <th>Stock</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="tbody3">
+                                                    <tr *ngFor="let l of (listproductosG | inventariosinstock2  ) | paginate: {id:'pagination8',itemsPerPage:3, currentPage:n} ; let i=index"   class="text-center" >
+                                                        <td >{{l.fecha_vencimiento  }}</td>
+                                                            <td >{{l.product.pcodigo}}</td>
+                                                            <td >{{l.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
+                                                            <td >{{l.product.pdescripcion}}</td>
+                                                            <td>{{l.product.pvalor}}</td>
+                                                            <td>{{l.stock_expiration}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <pagination-controls (pageChange)="n = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination8"></pagination-controls>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab>
+                        <ng-template ngbTabTitle><b>Inventario</b> en gestion</ng-template>
+                        <ng-template ngbTabContent>
+                            <div class="table-responsive">
+                                <div class="container ">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3>Inventario en gestión</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table table-hover" id="table2">
+                                                <thead>
+                                                <tr class="text-center">
+                                                    <th>
+                                                        Código del producto
+                                                    </th>
+                                                    <th>
+                                                        Nombre descriptivo
+                                                    </th>
+                                                    <th>Précio</th>
+                                                    <th>Stock</th>
+                                                    <th>Estado</th>
+                                                    <th>Fecha vencimiento</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tbody2">
+                                                <tr *ngFor="let p of (listproductosG |async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " (dblclick)="open2(content2, p)" class="text-center" id="tr2">
+                                                    <td id="td11">{{p.pcodigo  }}</td>
+                                                    <td id="td22">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                                    <td id="td33">{{p.pvalor}}</td>
+                                                    <td id="td44">{{p.stock.pstock}}</td>
+                                                    <td>{{p.date_expiration.fecha_vencimiento}}</td>
+                                                    <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(p.stock.pstock,i, d)}}</td>
+
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <pagination-controls (pageChange)="d = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination2"></pagination-controls>
+
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3>Segundo inventario en gestión</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table table-hover" id="table2">
+                                                <thead>
+                                                <tr class="text-center">
+                                                    <th>Fecha vencimiento</th>
+                                                    <th>Código producto</th>
+                                                    <th>Categoría y marca</th>
+                                                    <th>Nombre descriptivo</th>
+                                                    <th>Precio</th>
+                                                    <th>Stock</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody >
+                                                <tr *ngFor="let x of (tomanuevoinventario | inventariogestion2) | paginate: {id:'pagination7',itemsPerPage:3, currentPage:k} ; let i=index  " >
+                                                    <td >{{x.fecha_vencimiento  }}</td>
+                                                    <td >{{x.product.pcodigo}}</td>
+                                                    <td >{{x.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
+                                                    <td >{{x.product.pdescripcion}}</td>
+                                                    <td>{{x.product.pvalor}}</td>
+                                                    <td>{{x.stock_expiration}}</td>
+
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <pagination-controls (pageChange)="k = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination7"></pagination-controls>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab >
+                        <ng-template ngbTabTitle><b>Inventario</b> en estado sano</ng-template>
+                        <ng-template ngbTabContent>
+                            <div class="table-responsive">
+                                <div class="container ">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3>Inventario sano</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table table-hover" id="table1">
+                                                <thead>
+                                                <tr class="text-center">
+                                                    <th>
+                                                        Código del producto
+                                                    </th>
+                                                    <th>
+                                                        Nombre descriptivo
+                                                    </th>
+                                                    <th>Précio</th>
+                                                    <th>Stock</th>
+                                                    <th>Fecha vencimiento</th>
+                                                    <th>Estado</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tbody1">
+                                                <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index "  >
+                                                    <tr  class="text-center" id="tr1" (dblclick)="open2(content2, p)" >
+                                                        <ng-container *ngIf="p.stock.pstock >= 10">
+                                                            <td id="td1">{{p.pcodigo  }}</td>
+                                                            <td id="td2">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
+                                                            <td id="td3">{{p.pvalor}}</td>
+                                                            <td id="td4">{{p.stock.pstock}}</td>
+                                                            <td>{{p.date_expiration.fecha_vencimiento}}</td>
+                                                            <td [attr.id]="'estado' + i + h">{{cambiadColor(p.stock.pstock, i, h)}}</td>
+
+                                                        </ng-container>
+                                                    </tr>
+                                                </ng-container>
+                                                </tbody>
+                                            </table>
+                                            <pagination-controls (pageChange)="h = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination1"></pagination-controls>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3>Segundo inventario sano</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table table-hover" >
+                                                <thead>
+                                                <tr class="text-center">
+                                                    <th>Fecha vencimiento</th>
+                                                    <th>Código producto</th>
+                                                    <th>Categoría y marca</th>
+                                                    <th>Nombre descriptivo</th>
+                                                    <th>Precio</th>
+                                                    <th>Stock</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody >
+                                                <ng-container  *ngFor="let u of (tomanuevoinventario    |inventariosano2 ) | paginate: {id:'pagination5',itemsPerPage:3, currentPage:g}; let i=index "  >
+                                                    <tr  class="text-center"  >
+                                                        <ng-container *ngIf="u.cantidad_cambiadas >= 10">
+                                                            <td >{{u.fecha_vencimiento  }}</td>
+                                                            <td >{{u.product.pcodigo}}</td>
+                                                            <td >{{u.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
+                                                            <td >{{u.product.pdescripcion}}</td>
+                                                            <td>{{u.product.pvalor}}</td>
+                                                            <td>{{u.stock_expiration}}</td>
+                                                        </ng-container>
+                                                    </tr>
+                                                </ng-container>
+                                                </tbody>
+                                            </table>
+                                            <pagination-controls (pageChange)="g = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination5"></pagination-controls>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
                 <div class="card-body">
                     <div class="btn-popup pull-right">
 
+                        <ng-template #content3 let-modal>
+                            <div class="modal-header">
+                                <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cross click'); open2(content2, productoporid) ">Volber a actualizar registros</button>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form  (ngSubmit)="guardarnewFyS(fechavencimiento, producstock, stockperdida)">
+                                    <div class="form">
+                                        <div class="form-group">
+                                            <label for="ingresonuevafecha" class="mb-1">Ingrese la nueva fecha</label>
+                                            <input type="date" id="ingresonuevafecha" class="form-control" [(ngModel)]="fechavencimiento" name="fecha">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nuevo_stock" class="mb-1">Agregar otro stock</label>
+                                            <input type="number" class="form-control" id="nuevo_stock" [(ngModel)]="producstock" name="prstock">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="perdidas">Agregar otra perdida</label>
+                                            <input type="number" class="form-control" id="perdidas" [(ngModel)]="stockperdida" name="stcperdida">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Guardar iformación</button>
+                                 </form>
+                            </div>
+                        </ng-template>
+
                        <ng-template #content2 let-modal2>
                             <div class="modal-header">
-
-                                <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar producto</h5>
+                                <div class="btn-group " role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-secondary" (click)="modal2.dismiss('Cross click'); open4(content3) ">Guardar un nuevo stock y fecha</button>
+                                </div>
                                 <button type="button" class="close" aria-label="Close"
                                         (click)="modal2.dismiss('Cross click')">
                                     <span aria-hidden="true">&times;</span>
@@ -38,36 +307,9 @@
                                         <textarea class="form-control" [(ngModel)]="productoporid.pdetalle" id="validationCustom0122" rows="5" cols="10" type="text">
                                         </textarea>
                                     </div>
-
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" (click)="editarproductos(productoporid)" >Guardar</button>
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                                            (click)="modal2.dismiss('Cross click')">Cerrar</button>
-                                </div>
-                            </div>
-
-                        </ng-template>
-                    </div>
-
-                    <div class="btn-popup pull-right">
-
-                        <ng-template #content3 let-modal3>
-                            <div class="modal-header">
-
-                                <h5 class="modal-title f-w-600" id="exampleModalLabel3">Editar Stock</h5>
-                                <button type="button" class="close" aria-label="Close"
-                                        (click)="modal3.dismiss('Cross click')">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form">
-
                                     <div class="form-group">
                                         <label for="validationCustom01222" class="mb-1">Stock Actual:</label>
-                                        <input type="number" [(ngModel)]="stock_actualizado.pstock" class="for m-control" id = "validationCustom01222" disabled>
+                                        <input type="number" [(ngModel)]="productoporid.stock.pstock" class="for m-control" id = "validationCustom01222" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom0122222" class="mb-1">Nuevo Stock:</label>
@@ -75,165 +317,113 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom012222" class="mb-1">Stock Pérdida Actual:</label>
-                                        <input type="number" class="form-control" [(ngModel)]="stock_actualizado.stock_lost" id="validationCustom012222" disabled>
+                                        <input type="number" class="form-control" [(ngModel)]="productoporid.stock.stock_lost" id="validationCustom012222" disabled>
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom01222222" class="mb-1">Nuevas Pérdidas:</label>
                                         <input type="number" [(ngModel)]="stock_perdidas_nuevo" class="form-control" name="perdidas" id="validationCustom01222222">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="fecha_vencimiento">Fecha vencimiento</label>
+                                        <input type="text" id="fecha_vencimiento" [(ngModel)]="productoporid.date_expiration.fecha_vencimiento" class="form-control" disabled>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" (click)="editarstock(stock_actualizado, stock_nuevo,stock_perdidas_nuevo)" >Guardar</button>
+                                    <button type="button" class="btn btn-primary" (click)="editarproductos(productoporid, stock_nuevo, stock_perdidas_nuevo)" >Guardar</button>
                                     <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                                            (click)="modal3.dismiss('Cross click')">Cerrar</button>
+                                            (click)="modal2.dismiss('Cross click')">Cerrar</button>
+                                </div>
+                            </div>
+
+                        </ng-template>
+
+                        <ng-template #content4 let-modal4>
+                            <div class="modal-header">
+                                <button type="button" class="btn btn-secondary" (click)="modal4.dismiss('Cross click'); open2(content5, productoporid) ">Volber a actualizar registros</button>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal4.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form  (ngSubmit)="guardarinventario2(fechavencimiento, producstock, stockperdida)">
+                                    <div class="form">
+                                        <div class="form-group">
+                                            <label for="ingresonuevafecha2" class="mb-1">Ingrese la nueva fecha</label>
+                                            <input type="date" id="ingresonuevafecha2" class="form-control" [(ngModel)]="fechavencimiento" name="fecha">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nuevo_stock2" class="mb-1">Agregar otro stock</label>
+                                            <input type="number" class="form-control" id="nuevo_stock2" [(ngModel)]="producstock" name="prstock">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="perdidas2">Agregar otra perdida</label>
+                                            <input type="number" class="form-control" id="perdidas2" [(ngModel)]="stockperdida" name="stcperdida">
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Guardar iformación</button>
+                                </form>
+                            </div>
+                        </ng-template>
+
+                        <ng-template #content5 let-modal5>
+                            <div class="modal-header">
+                                <div class="btn-group " role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-secondary" (click)="modal5.dismiss('Cross click'); open5(content4, inventario2) ">Guardar un nuevo stock y fecha</button>
+                                </div>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal5.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form">
+                                    <div class="form-group">
+                                        <label for="nombredescripcion" class="mb-1">Nombre descriptivo del producto :</label>
+                                        <input class="form-control" [ngModel]='inventario2?.product?.pdescripcion' id="nombredescripcion" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="montoneto1" class="mb-1">Monto neto :</label>
+                                        <input class="form-control" [ngModel]="inventario2?.product?.pvneto" id="montoneto1" type="text">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="datelleproducto" class="mb-1">Detalle del producto :</label>
+                                        <textarea class="form-control" [ngModel]="inventario2?.product?.pdetalle" id="datelleproducto" rows="5" cols="10" type="text">
+                                        </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="actulstock" class="mb-1">Stock Actual:</label>
+                                        <input type="number" [ngModel]="inventario2.product?.stock?.pstock" class="for m-control" id = "actulstock" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nuevostock" class="mb-1">Nuevo Stock:</label>
+                                        <input type="number" [ngModel]="stock_nuevo" class="form-control" id="nuevostock" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stockperdida" class="mb-1">Stock Pérdida Actual:</label>
+                                        <input type="number" class="form-control" [ngModel]="inventario2?.product?.stock?.pstock" id="stockperdida" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nuevaperdida" class="mb-1">Nuevas Pérdidas:</label>
+                                        <input type="number" [ngModel]="stock_perdidas_nuevo" class="form-control" name="perdidas" id="nuevaperdida">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vencimientofecha">Fecha vencimiento</label>
+                                        <input type="text" id="vencimientofecha" [ngModel]="inventario2?.fecha_vencimiento" class="form-control" disabled>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" (click)="editarproducto2(productoporid, stock_nuevo, stock_perdidas_nuevo)" >Guardar</button>
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                                            (click)="modal5.dismiss('Cross click')">Cerrar</button>
                                 </div>
                             </div>
 
                         </ng-template>
                     </div>
-
-
-                    <div id="batchDelete" class="category-table custom-datatable">
-                        <div class="table-responsive">
-                            <div class="container ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Inventario sin stock</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-hover" id="table3">
-                                            <thead>
-                                            <tr class="text-center">
-                                                <th>
-                                                    Código del producto
-                                                </th>
-                                                <th>
-                                                    Nombre descriptivo
-                                                </th>
-                                                <th>Précio</th>
-                                                <th>Stock</th>
-                                                <th>Estado</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="tbody3">
-                                            <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index  " class="text-center" id="tr3">
-
-                                                <td id="td111">{{p.pcodigo  }}</td>
-                                                <td id="td222">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
-                                                <td id="td333">{{p.pvalor}}</td>
-                                                <td id="td444">{{p.stock.pstock}}</td>
-                                                <td [attr.id]="'peligro' + i + j "  >{{cambiarColorSinStock(p.stock.pstock,i, j)}}</td>
-                                                <td>
-                                                    <button  class="btn btn-warning" (click)="open2(content2, p)">Editar</button>
-                                                    <button class="btn btn-success-gradien" (click)="open3(content3, p.stock)">Stock</button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                        <pagination-controls (pageChange)="j = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination3"></pagination-controls>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <div class="container ">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3>Inventario en gestión</h3>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table table-hover" id="table2">
-                                        <thead>
-                                        <tr class="text-center">
-                                            <th>
-                                                Código del producto
-                                            </th>
-                                            <th>
-                                                Nombre descriptivo
-                                            </th>
-                                            <th>Précio</th>
-                                            <th>Stock</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody id="tbody2">
-                                        <tr *ngFor="let p of (listproductosG |async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " class="text-center" id="tr2">
-                                            <td id="td11">{{p.pcodigo  }}</td>
-                                            <td id="td22">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
-                                            <td id="td33">{{p.pvalor}}</td>
-                                            <td id="td44">{{p.stock.pstock}}</td>
-                                            <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(p.stock.pstock,i, d)}}</td>
-                                            <td>
-                                                <button  class="btn btn-warning" (click)="open2(content2, p)">Editar</button>
-                                                <button class="btn btn-success-gradien" (click)="open3(content3, p.stock)">Stock</button>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <pagination-controls (pageChange)="d = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination2"></pagination-controls>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="table-responsive">
-                            <div class="container ">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Inventario sano</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <table class="table table-hover" id="table1">
-                                            <thead>
-                                            <tr class="text-center">
-                                                <th>
-                                                    Código del producto
-                                                </th>
-                                                <th>
-                                                    Nombre descriptivo
-                                                </th>
-                                                <th>Précio</th>
-                                                <th>Stock</th>
-                                                <th>Estado</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="tbody1">
-                                            <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index ">
-                                            <tr  class="text-center" id="tr1">
-                                                <ng-container *ngIf="p.stock.pstock >= 10">
-                                                    <td id="td1">{{p.pcodigo  }}</td>
-                                                    <td id="td2">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
-                                                    <td id="td3">{{p.pvalor}}</td>
-                                                    <td id="td4">{{p.stock.pstock}}</td>
-                                                    <td [attr.id]="'estado' + i + h">{{cambiadColor(p.stock.pstock, i, h)}}</td>
-                                                    <td>
-                                                        <button class="btn btn-warning"
-                                                                (click)="open2(content2, p)">Editar
-                                                        </button>
-                                                        <button class="btn btn-success-gradien"
-                                                                (click)="open3(content3, p.stock)">Stock
-                                                        </button>
-                                                    </td>
-                                                </ng-container>
-                                            </tr>
-                                            </ng-container>
-                                            </tbody>
-                                        </table>
-                                        <pagination-controls (pageChange)="h = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination1"></pagination-controls>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-
                         </div>
                     </div>
                 </div>

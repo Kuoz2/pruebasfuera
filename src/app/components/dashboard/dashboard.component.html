@@ -1,6 +1,6 @@
 <!-- Container-fluid starts-->
 
-<ngx-spinner>
+<ngx-spinner name="spinnerdashboard">
 </ngx-spinner>
 <div class="container-fluid">
     <div class="row">
@@ -274,25 +274,25 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Ventas/Ganancias/Pérdidas</h5>
-                </div>
-                <div class="card-body sell-graph">
-                 <!--   <canvas baseChart id="myGraph" [datasets]="lineChartData" [labels]="lineChartLabels"
-                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
-                        [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></canvas>-->
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6 xl-100">
+        <!-- <div class="col-sm-12">
+             <div class="card">
+                 <div class="card-header">
+                     <h5>Ventas/Ganancias/Pérdidas</h5>
+                 </div>
+                 <div class="card-body sell-graph">
+                     <canvas baseChart id="myGraph" [datasets]="lineChartData" [labels]="lineChartLabels"
+                         [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                         [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                         (chartClick)="chartClicked($event)"></canvas>
+                 </div>
+             </div>
+         </div>-->
+        <!--  <div class="col-xl-6 xl-100">
             <div class="card height-equal">
                 <div class="card-header">
                     <h5>Productos y stock</h5>
                 </div>
-             <!--   <div class="card-body">
+              <div class="card-body">
                     <div class="user-status table-responsive products-table">
                       <table class="table table-bordernone mb-0">
                             <thead>
@@ -349,148 +349,148 @@
                             </tbody>
                         </table>
                     </div>
-                </div>-->
+                </div>
             </div>
-        </div>
-        <div class="col-xl-6 xl-100">
-            <div class="card height-equal">
-                <div class="card-header">
-                    <h5>Estado de empleados</h5>
-                </div>
-                <div class="card-body">
-                    <div class="user-status table-responsive products-table">
-                    <!--  <table class="table table-bordernone mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Designation</th>
-                                    <th scope="col">Skill Level</th>
-                                    <th scope="col">Experience</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="bd-t-none u-s-tb">
-                                        <div class="align-middle image-sm-size"><img
-                                                class="img-radius align-top m-r-15 rounded-circle"
-                                                src="assets/images/dashboard/user2.jpg" alt="" data-original-title=""
-                                                title="">
-                                            <div class="d-inline-block">
-                                                <h6>John Deo <span class="text-muted digits">(14+ Online)</span></h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Designer</td>
-                                    <td>
-                                        <div class="progress-showcase">
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                    style="width: 30%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="digits">2 Year</td>
-                                </tr>
-                                <tr>
-                                    <td class="bd-t-none u-s-tb">
-                                        <div class="align-middle image-sm-size"><img
-                                                class="img-radius align-top m-r-15 rounded-circle"
-                                                src="assets/images/dashboard/user1.jpg" alt="" data-original-title=""
-                                                title="">
-                                            <div class="d-inline-block">
-                                                <h6>Holio Mako <span class="text-muted digits">(250+ Online)</span></h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Developer</td>
-                                    <td>
-                                        <div class="progress-showcase">
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-secondary" role="progressbar"
-                                                    style="width: 70%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="digits">3 Year</td>
-                                </tr>
-                                <tr>
-                                    <td class="bd-t-none u-s-tb">
-                                        <div class="align-middle image-sm-size"><img
-                                                class="img-radius align-top m-r-15 rounded-circle"
-                                                src="assets/images/dashboard/man.png" alt="" data-original-title=""
-                                                title="">
-                                            <div class="d-inline-block">
-                                                <h6>Mohsib lara<span class="text-muted digits">(99+ Online)</span></h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Tester</td>
-                                    <td>
-                                        <div class="progress-showcase">
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                    style="width: 60%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="digits">5 Month</td>
-                                </tr>
-                                <tr>
-                                    <td class="bd-t-none u-s-tb">
-                                        <div class="align-middle image-sm-size"><img
-                                                class="img-radius align-top m-r-15 rounded-circle"
-                                                src="assets/images/dashboard/user.png" alt="" data-original-title=""
-                                                title="">
-                                            <div class="d-inline-block">
-                                                <h6>Hileri Soli <span class="text-muted digits">(150+ Online)</span>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Designer</td>
-                                    <td>
-                                        <div class="progress-showcase">
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-secondary" role="progressbar"
-                                                    style="width: 30%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="digits">3 Month</td>
-                                </tr>
-                                <tr>
-                                    <td class="bd-t-none u-s-tb">
-                                        <div class="align-middle image-sm-size"><img
-                                                class="img-radius align-top m-r-15 rounded-circle"
-                                                src="assets/images/dashboard/designer.jpg" alt=""
-                                                data-original-title="" title="">
-                                            <div class="d-inline-block">
-                                                <h6>Pusiz bia <span class="text-muted digits">(14+ Online)</span></h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Designer</td>
-                                    <td>
-                                        <div class="progress-showcase">
-                                            <div class="progress" style="height: 8px;">
-                                                <div class="progress-bar bg-primary" role="progressbar"
-                                                    style="width: 90%" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="digits">5 Year</td>
-                                </tr>
-                            </tbody>
-                        </table> -->
-                    </div>
-                </div>
-            </div>-->
-        </div>
+        </div>-->
+        <!--   <div class="col-xl-6 xl-100">
+             <div class="card height-equal">
+                 <div class="card-header">
+                     <h5>Estado de empleados</h5>
+                 </div>
+                 <div class="card-body">
+                     <div class="user-status table-responsive products-table">
+                     <table class="table table-bordernone mb-0">
+                             <thead>
+                                 <tr>
+                                     <th scope="col">Name</th>
+                                     <th scope="col">Designation</th>
+                                     <th scope="col">Skill Level</th>
+                                     <th scope="col">Experience</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td class="bd-t-none u-s-tb">
+                                         <div class="align-middle image-sm-size"><img
+                                                 class="img-radius align-top m-r-15 rounded-circle"
+                                                 src="assets/images/dashboard/user2.jpg" alt="" data-original-title=""
+                                                 title="">
+                                             <div class="d-inline-block">
+                                                 <h6>John Deo <span class="text-muted digits">(14+ Online)</span></h6>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td>Designer</td>
+                                     <td>
+                                         <div class="progress-showcase">
+                                             <div class="progress" style="height: 8px;">
+                                                 <div class="progress-bar bg-primary" role="progressbar"
+                                                     style="width: 30%" aria-valuenow="50" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td class="digits">2 Year</td>
+                                 </tr>
+                                 <tr>
+                                     <td class="bd-t-none u-s-tb">
+                                         <div class="align-middle image-sm-size"><img
+                                                 class="img-radius align-top m-r-15 rounded-circle"
+                                                 src="assets/images/dashboard/user1.jpg" alt="" data-original-title=""
+                                                 title="">
+                                             <div class="d-inline-block">
+                                                 <h6>Holio Mako <span class="text-muted digits">(250+ Online)</span></h6>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td>Developer</td>
+                                     <td>
+                                         <div class="progress-showcase">
+                                             <div class="progress" style="height: 8px;">
+                                                 <div class="progress-bar bg-secondary" role="progressbar"
+                                                     style="width: 70%" aria-valuenow="50" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td class="digits">3 Year</td>
+                                 </tr>
+                                 <tr>
+                                     <td class="bd-t-none u-s-tb">
+                                         <div class="align-middle image-sm-size"><img
+                                                 class="img-radius align-top m-r-15 rounded-circle"
+                                                 src="assets/images/dashboard/man.png" alt="" data-original-title=""
+                                                 title="">
+                                             <div class="d-inline-block">
+                                                 <h6>Mohsib lara<span class="text-muted digits">(99+ Online)</span></h6>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td>Tester</td>
+                                     <td>
+                                         <div class="progress-showcase">
+                                             <div class="progress" style="height: 8px;">
+                                                 <div class="progress-bar bg-primary" role="progressbar"
+                                                     style="width: 60%" aria-valuenow="50" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td class="digits">5 Month</td>
+                                 </tr>
+                                 <tr>
+                                     <td class="bd-t-none u-s-tb">
+                                         <div class="align-middle image-sm-size"><img
+                                                 class="img-radius align-top m-r-15 rounded-circle"
+                                                 src="assets/images/dashboard/user.png" alt="" data-original-title=""
+                                                 title="">
+                                             <div class="d-inline-block">
+                                                 <h6>Hileri Soli <span class="text-muted digits">(150+ Online)</span>
+                                                 </h6>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td>Designer</td>
+                                     <td>
+                                         <div class="progress-showcase">
+                                             <div class="progress" style="height: 8px;">
+                                                 <div class="progress-bar bg-secondary" role="progressbar"
+                                                     style="width: 30%" aria-valuenow="50" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td class="digits">3 Month</td>
+                                 </tr>
+                                 <tr>
+                                     <td class="bd-t-none u-s-tb">
+                                         <div class="align-middle image-sm-size"><img
+                                                 class="img-radius align-top m-r-15 rounded-circle"
+                                                 src="assets/images/dashboard/designer.jpg" alt=""
+                                                 data-original-title="" title="">
+                                             <div class="d-inline-block">
+                                                 <h6>Pusiz bia <span class="text-muted digits">(14+ Online)</span></h6>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td>Designer</td>
+                                     <td>
+                                         <div class="progress-showcase">
+                                             <div class="progress" style="height: 8px;">
+                                                 <div class="progress-bar bg-primary" role="progressbar"
+                                                     style="width: 90%" aria-valuenow="50" aria-valuemin="0"
+                                                     aria-valuemax="100"></div>
+                                             </div>
+                                         </div>
+                                     </td>
+                                     <td class="digits">5 Year</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         </div>-->
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header">

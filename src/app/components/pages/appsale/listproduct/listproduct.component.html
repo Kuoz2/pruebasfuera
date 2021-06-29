@@ -15,10 +15,28 @@
                                 <h5 class="card-title"><small class="text-muted">Nombre:{{product.brand.bnombre}} {{product.pdescripcion}}</small></h5>
                                 <p class="card-text"><small class="text-muted">Detalle: {{product.pdetalle}}</small></p>
                                 <p class="card-text"><small class="text-muted">Precio: ${{product.pvalor}}</small></p>
+                                <p class="card-text"><small class="text-muted">Fecha vencimiento: {{product.date_expiration.fecha_vencimiento}}</small></p>
                             </div>
                     </div>
                     <button type="button" class="btn btn-outline-primary btn-sm" (click)="addCart(product)">Añadir</button>
                 </div>
             </div>
         </div>
+        <!-- segundo inventario -->
+        <div class="col-xs-4 col-md-6" *ngFor="let product2 of Productos_sin_id">
+            <div class="card"*ngIf="product2.stock_expiration != 0">
+                <div class="card-header"><h5>Inventario 2</h5></div>
+                <div class="card-body product-box">
+                    <div class="img-wrapper">
+                        <div class="card-body">
+                                <h5 class="card-title"><small class="text-muted">Nombre: {{product2.product.category.cnombre}} {{product2.product.brand.bnombre}} </small></h5>
+                             <p class="card-text"><small class="text-muted">Detalle: {{product2.product.pdetalle}}</small></p>
+                                <p class="card-text"><small class="text-muted">Precio: ${{product2.product.pvalor}}</small></p>
+                                <p class="card-text"><small class="text-muted">Fecha vencimiento: {{product2.fecha_vencimiento}}</small></p>
+                            </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-sm" (click)="addCart(product2)">Añadir</button>
+                </div>
+            </div>
+            </div>
 </div>

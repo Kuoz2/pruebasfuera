@@ -1,12 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductserviceService} from '../../../../Service/productservice.service';
-import {Productos, Stock} from '../../../Modulos/Productos';
+import {date_expiration, Productos, Stock} from '../../../Modulos/Productos';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder} from '@angular/forms';
 import {Observable, Subject} from 'rxjs';
 import {PagosService} from '../../../../Service/pagos.service';
 import {NgxSpinnerService} from 'ngx-spinner';
-import {error} from 'selenium-webdriver';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
@@ -15,17 +14,30 @@ import {takeUntil} from 'rxjs/operators';
     styleUrls: ['./listaproducto.component.scss']
 })
 export class ListaproductoComponent implements OnInit, OnDestroy {
+
+    active = 1;
     public closeResult: string;
     public listproductosG: Observable<Productos[]>;
     private unsubscribe$ = new Subject<void>();
+    public tomanuevoinventario;
+    listproductos: Observable<Productos[]> ;
+    productoporid: Productos = new Productos();
+    public inventario2;
+    isloading: boolean;
+    inventario2_datexpiration: date_expiration = new date_expiration();
+    inventario2_stocknuevo: Stock =  new Stock();
+
+    // tslint:disable-next-line:variable-name
     constructor(private prod: ProductserviceService,
                 private modalService: NgbModal,
                 private formBuilder: FormBuilder,
                 private pd: PagosService,
-                private ngxspinner: NgxSpinnerService
-    ) { }
-    listproductos: Observable<Productos[]> ;
-    productoporid: Productos = new Productos();
+                private ngxspinner: NgxSpinnerService,
+                private cd: ChangeDetectorRef
+    ) {
+    this.isloading = false;
+
+    }
     // tslint:disable-next-line:variable-name new-parens
     stock_actualizado: Stock = new Stock();
     // tslint:disable-next-line:new-parens
@@ -37,16 +49,33 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
     d = 0;
     h = 0;
     j = 0;
+    g = 0;
+    k = 0;
+    n = 0;
+    fechavencimiento: string;
+    producstock: number;
+    stockperdida: number;
+
 
   async ngOnInit() {
         this.ngxspinner.show();
         await  this.productosAsync();
         await this.busquedaAsync2();
+        await this.newinventario();
+        console.log('inventario 2', this.tomanuevoinventario);
 
     }
 
+    // Tomando el inventario nuevo.
+     newinventario() {
+      return this.prod.getnewinventario().then(
+          res =>  {this.tomanuevoinventario = res; }
+      ).finally(() => { this.isloading = true; }).catch(
+          err => { console.log('Ocurrio un error', err); }
+      );
+    }
+
      cambiadColor(EsPr, i, id) {
-         console.log('el intervalor', i, id );
          // tslint:disable-next-line:triple-equals
          if (EsPr > 10 || EsPr == 10) {
             const cambio = document.getElementById('estado' + i + id);
@@ -74,10 +103,10 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
    async productosAsync() {
        try {
            this.listproductos = this.prod.products().pipe(takeUntil(this.unsubscribe$));
-           this.ngxspinner.hide();
        } catch (e) {
            console.log('Ocurrio un error', e);
        }
+       this.ngxspinner.hide();
        return this.listproductos;
    }
 
@@ -90,8 +119,11 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
        return this.listproductosG;
    }
 
-   async editarproductos(producto: Productos) {
-       await this.prod.actualizarproducto(producto).subscribe(data => data);
+   async editarproductos(producto: Productos, nuevo, perdida) {
+      console.log('lo que se quiere actualizar', producto);
+      await this.prod.actualizarproducto(producto).subscribe(data => data);
+      const stock = producto.stock;
+      await this.editarstock(stock, nuevo, perdida);
     }
 
 
@@ -123,8 +155,8 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
 
             }
 
-            await this.prod.actualizarstock(stck).subscribe(data => data);
-            window.location.reload()
+            await this.prod.actualizarstock(stck).pipe(takeUntil(this.unsubscribe$)).subscribe( data => this.cd.markForCheck() );
+            window.location.reload();
         }
     }
 
@@ -133,24 +165,60 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
    async editar() {
         const id = localStorage.getItem('idc');
 
-        await  this.prod.buscarproductoporID(+id).subscribe(data => {this.productoporid = data; });
+       // tslint:disable-next-line:max-line-length
+        await this.prod.buscarproductoporID(+id).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {this.productoporid = data; this.cd.markForCheck(); });
     }
 
     open2(content2, catego: Productos): void {
-        this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+
+      console.log('lo que entra', catego.id);
+      this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         });
 
-        localStorage.setItem('idc', catego.id.toString());
-        this.editar();
+      localStorage.setItem('idc', catego.id.toString());
+      localStorage.setItem('idc2', catego.id.toString());
 
+      this.editar();
+      this.editar2();
+
+
+    }
+
+    open4(content) {
+        this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+            this.closeResult = `Closed with: ${result}`;
+        },
+            (reason) => {
+                this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+            }
+            );
+    }
+
+    async open5(content, inv2) {
+        localStorage.setItem('inv2', inv2.id.toString());
+        await this.editar5();
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+      },
+          (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          }
+      );
     }
 
    async editar2() {
         const id = localStorage.getItem('idc2');
         await this.prod.buscarelstockporID(+id).subscribe(data => {this.stock_actualizado = data; });
+    }
+
+      editar5() {
+        const id = localStorage.getItem('inv2');
+         // tslint:disable-next-line:max-line-length
+        this.prod.segundoinventarioID(+id).then((res) => {this.inventario2 = res; console.log('respuesta', this.inventario2.product.pdescripcion); }
+        ).catch((err) => {console.log('se obtuvo un error', err); }).finally(() => {this.isloading = true; });
     }
 
     open3(content3, catego: Stock): void {
@@ -159,8 +227,6 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
         });
-        localStorage.setItem('idc2', catego.id.toString());
-        this.editar2();
 
     }
 
@@ -181,5 +247,25 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
     }
 
 
+    guardarnewFyS(fechavencimiento, producstock, stockperdida) {
+        this.inventario2_datexpiration.fecha_vencimiento = fechavencimiento;
+        this.inventario2_datexpiration.stock_expiration = producstock;
+        this.inventario2_datexpiration.cambio_fecha = true
+        this.inventario2_datexpiration.cantidad_cambiadas = stockperdida;
+        this.inventario2_datexpiration.actualizado_stock = true
+        this.inventario2_datexpiration.product_id = this.productoporid.id
+        this.inventario2_stocknuevo.product_id = this.productoporid.id;
+        this.inventario2_stocknuevo.pstock = producstock;
+        this.inventario2_stocknuevo.stock_lost = stockperdida;
+        console.log('guardar inventario', this.inventario2_datexpiration, this.inventario2_stocknuevo);
+        this.prod._stockinventario2(this.inventario2_stocknuevo).subscribe((res) => console.log('resultado stock',res));
+        this.prod._guardarfechainventario2(this.inventario2_datexpiration).subscribe((res) =>  console.log('resultado fecha', res));
+    }
+    guardarinventario2(fechavencimiento, producstock, stockperdida){
+        
+    }
 
+    editarproducto2(productoporid, stock_nuevo, stock_perdidas_nuevo){
+
+    }
 }

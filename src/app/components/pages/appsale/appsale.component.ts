@@ -16,7 +16,7 @@ import {VoucherService} from '../../../Service/voucher.service';
 import {Observable, Subject} from 'rxjs';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
-import {takeUntil} from "rxjs/operators";
+import {takeUntil} from 'rxjs/operators';
 
 
 @Component({
@@ -103,7 +103,7 @@ imagenjpg;
     await this.sermedio.mostrarmediodepago().pipe(takeUntil(this.unsubscribe$)).subscribe(res => {
       this.selecciondecomra =  res;  this.cd.markForCheck(); });
     await this.serviCat.categorias().pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-      this.categorias = data;  this.cd.markForCheck();     this.spinner.hide();});
+      this.categorias = data;  this.cd.markForCheck();     this.spinner.hide(); });
     this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data; this.cd.markForCheck();
     } ,  );
 
@@ -235,40 +235,49 @@ remover_producto(producto: Item) {
     if (this.se_Imprio == false) {
       alert('No se puede guardar, debe imprimir la boleta');
     } else {
-      this.fecha.unsubscribe();
-      this.detallevoucher.voucher.vtotal = this.totalPrice;
-      this.detallevoucher.dvcantidad = this.totalPrice;
-      this.detallevoucher.fecha_emision = this.fecha_emision;
-      this.detallevoucher.hora_emision = this.hora_emision;
-      for (const i of this.items) {
-        this.detallevoucher.product_id = i.id;
-        this.detallevoucher.dvcantidad = i.quantity;
-        this.productos_add.stock.id = i.stock.id;
-        this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
-        // Guardar el voucher generado.
-        this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
+      try {
+        this.fecha.unsubscribe();
+        this.detallevoucher.voucher.vtotal = this.totalPrice;
+        this.detallevoucher.dvcantidad = this.totalPrice;
+        this.detallevoucher.fecha_emision = this.fecha_emision;
+        this.detallevoucher.hora_emision = this.hora_emision;
+        for (const i of this.items) {
+          this.detallevoucher.product_id = i.id;
+          this.detallevoucher.dvcantidad = i.quantity;
+          this.productos_add.stock.id = i.stock.id;
+          this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
+          this.productos_add.date_expiration.id = i.id;
+          this.productos_add.date_expiration.stock_expiration = i.date_expiration.stock_expiration - i.quantity;
+          console.log('actualizaciones', this.productos_add)
+          // Guardar el voucher generado.
+          this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
+            return res;
+          } );
+          // Actualiza el stcok generado.
+          this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
+            return res;
+          } );
+          this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
+        }
+
+        this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
+        this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
+        this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
+        this.cancelar2.voucher_id = this.voucher_add.id;
+
+        // Se guarda lo cancelado
+        this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
           return res;
         } );
-        // Actualiza el stcok generado.
-        this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
-          return res;
-        } );
+
+        this.app_venta.reset();
+        this.items.splice( 0, this.items.length );
+        this.totalPrice = 0;
+        this.totalQuantity = 0;
+    } catch (e) {
+        console.log('ocurrio un error', e);
       }
 
-      this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
-      this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
-      this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
-      this.cancelar2.voucher_id = this.voucher_add.id;
-
-      // Se guarda lo cancelado
-      this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
-        return res;
-      } );
-
-      this.app_venta.reset();
-      this.items.splice( 0, this.items.length );
-      this.totalPrice = 0;
-      this.totalQuantity = 0;
     }
   }
 

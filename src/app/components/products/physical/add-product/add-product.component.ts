@@ -96,7 +96,8 @@ file: File;
             stock_attributes: new FormGroup( {
                   pstock: new FormControl( '', [Validators.required] ),
                   stock_lost: new FormControl( '' , [Validators.required]),
-                  stock_security: new FormControl('')
+                  stock_security: new FormControl(''),
+                  product_id: new FormControl(0)
               }),
             date_expirations_attributes: new FormGroup({
                 fecha_vencimiento: new FormControl(''),
@@ -143,11 +144,11 @@ file: File;
                 this.productForm.value.tax_id = this.productForm.value.tax_id.id;
                 this.productForm.value.brand_id = this.productForm.value.brand_id.id;
                 this.productForm.value.date_expirations_attributes.stock_expiration = this.productForm.value.stock_attributes.pstock;
-               // this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
-                 //   console.log( 'guardado en el res ', res );
-                //} );
+                this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
+                   console.log( 'guardado en el res ', res );
+                } );
                 console.log( 'productos', this.productForm.value );
-                //this.productForm.reset();
+                this.productForm.reset();
 
             } catch (e) {
                 console.log( 'ocurrio un error', e );

@@ -24,20 +24,45 @@ export class Productos {
     categoria: Categories;
     categorie = new Categories();
     pvneto: number;
+    // tslint:disable-next-line:variable-name
+    date_expiration: date_expiration = new date_expiration();
 }
 
 
 export class Stock {
     id: number;
     pstock: number;
+    // tslint:disable-next-line:variable-name
     stock_lost: number;
+    // tslint:disable-next-line:variable-name
     stock_security: number;
+    product_id: number;
 }
 
+// tslint:disable-next-line:class-name
 export interface stock2 {
     id: number;
     pstock: number;
     pstockcatalogo: number;
     stock_lost: number;
     stock_security: number;
+}
+
+// tslint:disable-next-line:class-name
+export class date_expiration {
+    id: number;
+    // tslint:disable-next-line:variable-name
+    fecha_vencimiento: string;
+    // tslint:disable-next-line:variable-name
+    stock_expiration: number;
+    // tslint:disable-next-line:variable-name
+    cambio_fecha: boolean;
+    // tslint:disable-next-line:variable-name
+    cantidad_cambiadas: number;
+    // tslint:disable-next-line:variable-name
+    actualizado_stock: boolean;
+    // tslint:disable-next-line:variable-name
+    product_id: number;
+    product: Productos ;
+
 }

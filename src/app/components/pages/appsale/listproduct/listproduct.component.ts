@@ -1,3 +1,4 @@
+import { date_expiration } from './../../../Modulos/Productos';
 import {Component, Input, OnInit} from '@angular/core';
 import {CartServiceService} from "../../../../Service/cart-service.service";
 import {Productos} from "../../../Modulos/Productos";
@@ -17,17 +18,32 @@ class IItem {
 export class ListproductComponent implements OnInit {
 
   Productos_lista: Observable<Productos[]>;
+  Productos_sin_id;
+  isloading: boolean;
   //Aqui se almacenara lo que se este mandando desde el componente hermano
   @Input()encontrandoApp: string = "";
   //Aqui mandaremos la categoria para filtrar los productos
   @Input()encontrandoCategoriasApp:string = "";
-  constructor(private carservice:CartServiceService, private productos_car:ProductserviceService, private sanitizar:DomSanitizer) {
+  constructor(private carservice:CartServiceService, 
+    private productos_car:ProductserviceService,
+     private sanitizar:DomSanitizer) {
   }
-  ngOnInit() {
+   ngOnInit() {
+    this.isloading = false
+
       this.listaproductoAsync()
+      this.listaproductossinid()
   }
   listaproductoAsync() {
-    this.Productos_lista = this.productos_car.item_productos();
+    this.Productos_lista = this.productos_car .item_productos();
+  }
+  listaproductossinid(){
+  return this.productos_car._buscandolasfechasin_productid().then((res) => {
+    this.Productos_sin_id = res
+    console.log(this.Productos_sin_id)
+  }).catch((err) => {console.log('Se, encontro un error', err)}).finally(() => {this.isloading = true})
+
+console.log('date expiration', this.Productos_sin_id)
   }
   PurificandoLink(dato):SafeUrl{
     return this.sanitizar.bypassSecurityTrustUrl(dato)

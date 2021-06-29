@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Categories} from "../components/Modulos/Categories";
-import {Observable} from "rxjs";
+import {HttpClient} from '@angular/common/http';
+import {Categories} from '../components/Modulos/Categories';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +11,22 @@ export class CategoriasService {
   constructor(private http: HttpClient) { }
 
   UrlCategorias = 'https://marketmini.herokuapp.com/categories';
-//Mostrar
-  mostrarcategorias(): Observable<Categories[]>{
-    return this.http.get<Categories[]>(this.UrlCategorias)
+  UrlpruebaCategoria = 'http://localhost:3000/categories';
+// Mostrar
+  mostrarcategorias(): Observable<Categories[]> {
+    return this.http.get<Categories[]>(this.UrlpruebaCategoria);
   }
-//Por ID
-  mostrarporID(id: number){
-  return this.http.get<Categories>(this.UrlCategorias + '/'+ id)
+// Por ID
+  mostrarporID(id: number) {
+  return this.http.get<Categories>(this.UrlpruebaCategoria + '/' + id);
   }
-//Guardar
+// Guardar
   guardarcategorias(c: Categories) {
-    this.http.post<Categories>(this.UrlCategorias, c).subscribe()
+    this.http.post<Categories>(this.UrlpruebaCategoria, c).subscribe();
   }
-//Editar
-  actualizarcategoria( cat: Categories){
-  return this.http.put<Categories>(this.UrlCategorias + '/' + cat.id, cat)
+// Editar
+  actualizarcategoria( cat: Categories) {
+  return this.http.put<Categories>(this.UrlpruebaCategoria + '/' + cat.id, cat);
   }
 
 

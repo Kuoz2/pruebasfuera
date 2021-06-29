@@ -232,7 +232,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
 
   async ngOnInit() {
-        this.spinner.show();
+        this.spinner.show("spinnerdashboard", {
+            type: "pacman",
+            size: "large",
+            color: "white"
+        });
         await this.obtenermermas();
         await   this.pagosrealizados();
         await this.listaventasdetectadis();
@@ -248,6 +252,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         await this.gananciaspormes();
         // Detectar el navagador
         this.detectando();
+        this.cd.markForCheck();
+
   }// Fin del OnInit
 
     obtenermermas() {
@@ -477,11 +483,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
                     }
                 }
             });
-
-            this.cd.markForCheck();
-            this.spinner.hide();
+           
+            
         });
-
+        this.spinner.hide();
 
     }
     detectando() {

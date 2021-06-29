@@ -18,7 +18,10 @@ export class Fecha_vencimiento {
 
 
 export class DateExpiration {
+    id: number;
     // tslint:disable-next-line:variable-name
     fecha_vencimiento: string;
+    // tslint:disable-next-line:variable-name
+    stock_expiration: number;
 
 }
