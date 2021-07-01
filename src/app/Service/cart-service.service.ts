@@ -6,7 +6,7 @@ import {Item} from "../components/Modulos/Item";
   providedIn: 'root'
 })
 export class CartServiceService {
-  private cart = new BehaviorSubject<Array<Item>>(null); //Bahiorsubject, valor inicial siempre
+  private cart = new BehaviorSubject<Array<any>>(null); //Bahiorsubject, valor inicial siempre
   public currentDataCart$ = this.cart.asObservable(); //Observable con el valor actual
   constructor() { }
 

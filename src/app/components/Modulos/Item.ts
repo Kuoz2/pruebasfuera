@@ -21,7 +21,22 @@ export class Item {
     piva: number
     // tslint:disable-next-line:variable-name
     date_expiration = new date_expiration();
+    Sinventario: boolean = false;
 }
+
+export class Item2{
+    actualizado_stockm: number;
+    cambio_fecha: boolean;
+    cantidad_cambiadas: number;
+    fecha_vencimiento: string;
+    id: number;
+    product = new Item;
+    product_id: number;
+    stock_expiration: number;
+    quantity: number;
+    Sinventario: boolean;
+}
+
 export interface IItem {
     id:number,
     img:string,

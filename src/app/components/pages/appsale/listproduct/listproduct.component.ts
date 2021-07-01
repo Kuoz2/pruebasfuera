@@ -48,7 +48,17 @@ console.log('date expiration', this.Productos_sin_id)
   PurificandoLink(dato):SafeUrl{
     return this.sanitizar.bypassSecurityTrustUrl(dato)
   }
-  addCart(product: Item) {
+  addCart(product: any) {
+    console.log()
+    delete product.sinventario
+    delete product.sinventario2
+    console.log('lo que entra', product)
+
+    if(product.pcodigo){
+      Object.assign(product, {sinventario:true})
+    }else{
+      Object.assign(product, {sinventario2:false})
+    }
     const data = product;
     const elemento = {quantity: 1};
     if (data.quantity >= elemento.quantity){

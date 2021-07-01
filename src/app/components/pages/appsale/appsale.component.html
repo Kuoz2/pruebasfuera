@@ -40,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody *ngFor="let productos of items" >
-                    <tr  >
+                    <tr *ngIf = "productos.sinventario == true">
                             <th>  {{productos.pdescripcion}}</th>
                             <th>{{productos.quantity}}
                                 <button type="button" class="close" aria-label="close"> <span aria-hidden="true" (click)="remover_producto(productos)">&times;</span></button></th>

@@ -27,7 +27,7 @@ import {takeUntil} from 'rxjs/operators';
 export class AppsaleComponent implements OnInit, OnDestroy {
   totalQuantity = 0;
   totalPrice = 0;
-  items: Array<Item>;
+  items: Array<any>;
   private unsubscribe$ = new Subject<void>();
   se_Imprio: Boolean = false;
   selecciondecomra: Medio[];
@@ -77,6 +77,8 @@ imagenjpg;
   fecha_emision: string;
   // tslint:disable-next-line:variable-name
   hora_emision: string;
+  sitiene = [];
+  notiene = []
   async ngOnInit() {
     this.spinner.show();
     this.datos$ = this.secoind.getInfoReloj();
@@ -91,12 +93,16 @@ imagenjpg;
 
     await this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
         x => {
-          if (x) {
+          
+          if (x) { 
+          
+
             this.items = x;
             this.totalQuantity = x.length;
-            this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor * current.quantity), 0 );
+            this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor || current.product.pvalor * current.quantity), 0 )
             this.cd.markForCheck();
           }
+        
         }
     );
     // tslint:disable-next-line:max-line-length
@@ -250,14 +256,14 @@ remover_producto(producto: Item) {
           this.productos_add.date_expiration.stock_expiration = i.date_expiration.stock_expiration - i.quantity;
           console.log('actualizaciones', this.productos_add)
           // Guardar el voucher generado.
-          this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
-            return res;
-          } );
+          //this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
+            //return res;
+          //} );
           // Actualiza el stcok generado.
-          this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
-            return res;
-          } );
-          this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
+          //this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
+            //return res;
+          //} );
+          //this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
         }
 
         this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
@@ -266,9 +272,9 @@ remover_producto(producto: Item) {
         this.cancelar2.voucher_id = this.voucher_add.id;
 
         // Se guarda lo cancelado
-        this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
-          return res;
-        } );
+       // this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
+         // return res;
+        //} );
 
         this.app_venta.reset();
         this.items.splice( 0, this.items.length );
