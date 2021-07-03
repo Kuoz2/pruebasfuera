@@ -27,6 +27,7 @@ export class ListproductComponent implements OnInit {
   constructor(private carservice:CartServiceService, 
     private productos_car:ProductserviceService,
      private sanitizar:DomSanitizer) {
+       this.encontrandoApp
   }
    ngOnInit() {
     this.isloading = false

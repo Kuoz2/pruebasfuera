@@ -23,7 +23,7 @@
             </div>
         </div>
         <!-- segundo inventario -->
-        <div class="col-xs-4 col-md-6" *ngFor="let product2 of Productos_sin_id">
+        <div class="col-xs-4 col-md-6" *ngFor="let product2 of Productos_sin_id | busqueda2inventario:encontrandoApp ">
             <div class="card"*ngIf="product2.stock_expiration != 0">
                 <div class="card-header"><h5>Inventario 2</h5></div>
                 <div class="card-body product-box">

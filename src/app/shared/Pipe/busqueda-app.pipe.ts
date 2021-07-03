@@ -8,6 +8,7 @@ export class BusquedaAppPipe implements PipeTransform {
   transform(value: any[], args: string): any {
     //Esta condicional almacena lo buscado.
     const producto_app = [];
+    if(args == ''){ return []}
 
     if (typeof (args) != 'undefined') {
       console.log('entrante', args)
