@@ -49,7 +49,6 @@ console.log('date expiration', this.Productos_sin_id)
     return this.sanitizar.bypassSecurityTrustUrl(dato)
   }
   addCart(product: any) {
-    console.log()
     delete product.sinventario
     delete product.sinventario2
     console.log('lo que entra', product)

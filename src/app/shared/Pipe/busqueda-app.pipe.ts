@@ -8,7 +8,9 @@ export class BusquedaAppPipe implements PipeTransform {
   transform(value: any[], args: string): any {
     //Esta condicional almacena lo buscado.
     const producto_app = [];
-    if (typeof (args) != 'undefined' && value != null && value == []) {
+
+    if (typeof (args) != 'undefined') {
+      console.log('entrante', args)
 
       for (const p in value) {
         if (value[p].pcodigo.toString().indexOf( args ) > -1) {
@@ -17,6 +19,6 @@ export class BusquedaAppPipe implements PipeTransform {
       }
       return producto_app
     }
-    return value
+    return []
   }
 }

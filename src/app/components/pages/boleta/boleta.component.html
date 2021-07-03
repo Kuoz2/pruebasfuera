@@ -32,10 +32,16 @@
                                 </thead>
                                 <tbody>
                                 <tr *ngFor="let product of item">
-                                    <td class="precio">{{product.piva}}</td>
-                                    <td class="precio">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
-                                    <td class="precio">{{product.quantity}}</td>
-                                    <td class="precio">{{product.pvalor}}</td>
+                                    <td class="precio" *ngIf="product.sinventario == true">{{product.piva}}</td>
+                                    <td class="precio" *ngIf="product.sinventario == true">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
+                                    <td class="precio" *ngIf="product.sinventario == true">{{product.quantity}}</td>
+                                    <td class="precio" *ngIf="product.sinventario == true">{{product.pvalor}}</td>
+                                    
+                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.piva}}</td>
+                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.brand.bnombre}}{{product.product.pdescripcion}}</td>
+                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.quantity}}</td>
+                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.pvalor}}</td>
+                                    
                                 </tr>
 
                                 <tr>

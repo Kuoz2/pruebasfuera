@@ -203,4 +203,10 @@ actualizar_stock_fecha(fchAct: date_expiration) {
     return this.http.get(this.prueba_buscarnoproduct_id).toPromise();
   }
 
+  // Actualizar la fecha vencimiento.
+
+  _actualizar_fechavence(dt: date_expiration){
+      return this.http.put(this.prueba_guardarfechainventario2 + '/' + dt.id, dt)
+  }
+
 }

@@ -99,7 +99,7 @@ export class BoletaComponent implements OnInit {
     segundos: string;
 
 
-    @Input() item: Array<Item>;
+    @Input() item: Array<any>;
     @Input() totalPrices: number;
     @Input() lahora: number;
     @Input() fechaE: string;
@@ -164,7 +164,7 @@ export class BoletaComponent implements OnInit {
         const iva = [0];
         if (this.item != []) {
             for (const d in this.item) {
-                iva.push( this.item[d].piva * this.item[d].quantity );
+                iva.push( this.item[d].piva * this.item[d].quantity || this.item[d].product.piva * this.item[d].quantity);
             }
             this.totaliva = iva.reduce( reducer );
         }
