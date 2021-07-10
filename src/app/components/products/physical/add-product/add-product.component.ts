@@ -1,3 +1,4 @@
+import { date_expiration } from './../../../Modulos/Productos';
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProductserviceService} from '../../../../Service/productservice.service';
@@ -93,15 +94,16 @@ file: File;
               tax_id: new FormControl('', [Validators.required]),
               brand_id: new FormControl('', [Validators.required]),
               piva: new FormControl('', [Validators.required]),
-            stock_attributes: new FormGroup( {
+              stock: new FormGroup( {
                   pstock: new FormControl( '', [Validators.required] ),
                   stock_lost: new FormControl( '' , [Validators.required]),
                   stock_security: new FormControl(''),
                   product_id: new FormControl(0)
               }),
-            date_expirations_attributes: new FormGroup({
+              date_expiration: new FormGroup({
                 fecha_vencimiento: new FormControl(''),
-                 stock_expiration: new FormControl(0)
+                 stock_expiration: new FormControl(''),
+                 product_id: new FormControl(0)
               }),
               pvneto: new FormControl('', [Validators.required]),
       });
@@ -143,12 +145,12 @@ file: File;
                 this.productForm.value.provider_id = this.productForm.value.provider_id.id;
                 this.productForm.value.tax_id = this.productForm.value.tax_id.id;
                 this.productForm.value.brand_id = this.productForm.value.brand_id.id;
-                this.productForm.value.date_expirations_attributes.stock_expiration = this.productForm.value.stock_attributes.pstock;
-                this.servi.guardarproductos( this.productForm.value ).subscribe( res => {
-                   console.log( 'guardado en el res ', res );
-                } );
+                this.productForm.value.date_expiration.stock_expiration = this.productForm.value.stock.pstock;
+                this.productForm.value.stock.product_id = 0;
+                this.productForm.value.date_expiration.product_id = 0;
+                this.servi.guardarproductos( this.productForm.value ).subscribe(res =>  {console.log('lo guardado', res); });;
                 console.log( 'productos', this.productForm.value );
-                this.productForm.reset();
+               // this.productForm.reset();
 
             } catch (e) {
                 console.log( 'ocurrio un error', e );

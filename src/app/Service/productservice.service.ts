@@ -172,11 +172,19 @@ private URLINFORME = 'https://marketmini.herokuapp.com/mrmsolutions';
           );
     }
 
-    // Productos que estan por vencer.
-    GetPorvencer() {
+        //Productos que venceran el siguiente mes.
 
+    GetPorvencer() {
         return this.http.get<Fecha_vencimiento[]>(this.UrlPrueba + '/vencimientoproximomes').toPromise();
     }
+
+        // Productos que estan por vencer.
+    Getprodvencmes(){
+      return this.http.get<any[]>(this.UrlPrueba + '/obtener_fecha_productos_mes').toPromise();
+    }
+
+    //Productos que venceran el siguiente mes.
+    
     // Actualizar el stock de las fechas
 actualizar_stock_fecha(fchAct: date_expiration) {
         return this.http.put<date_expiration>(this.pruebaActualizarFechaVenta + '/' + fchAct.id, fchAct);

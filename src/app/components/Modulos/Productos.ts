@@ -13,7 +13,6 @@ export class Productos {
     pdetalle: string;
     pvalor: number;
     // tslint:disable-next-line:variable-name
-    stock_id: Stock =  new Stock();
     stock: Stock = new Stock();
     cantidad: number;
     quantity: number;
@@ -60,9 +59,7 @@ export class date_expiration {
     // tslint:disable-next-line:variable-name
     cantidad_cambiadas: number;
     // tslint:disable-next-line:variable-name
-    actualizado_stock: boolean;
+    actualizado_stockm: boolean;
     // tslint:disable-next-line:variable-name
     product_id: number;
-    product: Productos ;
-
 }

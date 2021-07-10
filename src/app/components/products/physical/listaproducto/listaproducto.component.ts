@@ -252,7 +252,7 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
         this.inventario2_datexpiration.stock_expiration = producstock;
         this.inventario2_datexpiration.cambio_fecha = true
         this.inventario2_datexpiration.cantidad_cambiadas = stockperdida;
-        this.inventario2_datexpiration.actualizado_stock = true
+        this.inventario2_datexpiration.actualizado_stockm = true
         this.inventario2_datexpiration.product_id = this.productoporid.id
         this.inventario2_stocknuevo.product_id = this.productoporid.id;
         this.inventario2_stocknuevo.pstock = producstock;

@@ -9,7 +9,7 @@ export class Inventariosinstock2Pipe implements PipeTransform {
     const peligro = [];
     if (value) {
       for (let p of value) {
-        if (p.stock.pstock === 0) {
+        if (p.product.stock.pstock === 0) {
           peligro.push( p )
         }
       }
