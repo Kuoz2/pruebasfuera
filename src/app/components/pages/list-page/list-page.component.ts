@@ -182,7 +182,7 @@ export class ListPageComponent implements OnInit {
 <LibroCompraVenta xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SiiDte="http://www.sii.cl/SiiDte" >
 <EnvioLibro ID="ID_LIBRO_">
 <Caratula>
-<RutEmisorLibro>172463703</RutEmisorLibro>
+<RutEmisorLibro>NNNNNN</RutEmisorLibro>
 <RutEnvia>5555</RutEnvia>
 <PeriodoTributario>55555</PeriodoTributario>
 <FchResol>55555555</FchResol>
