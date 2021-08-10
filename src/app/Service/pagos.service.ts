@@ -18,18 +18,18 @@ export class PagosService {
       urlpaymentsprueba = 'http://localhost:3000/payments';
         urlmediopagoprueba = 'http://localhost:3000/half_payments';
   mostrarpagos() {
-   return  this.http.get<Pagos[]>(this.urlpaymentsprueba);
+   return  this.http.get<Pagos[]>(this.Url);
   }
 
   guardapagos(pago: Pagos): Observable<Pagos> {
-   return  this.http.post<Pagos>(this.urlpaymentsprueba, pago);
+   return  this.http.post<Pagos>(this.Url, pago);
   }
 
   mostrarmediodepago() {
-    return   this.http.get<Medio[]>(this.urlmediopagoprueba);
+    return   this.http.get<Medio[]>(this.urlmedio);
   }
 
   guardarmododepago(med: Medio) {
-      return this.http.post<Medio>(this.urlmediopagoprueba, med);
+      return this.http.post<Medio>(this.urlmedio, med);
   }
 }

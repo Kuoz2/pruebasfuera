@@ -14,10 +14,10 @@ export class MedioService {
   probandoMedioPago = 'http://localhost:3000/half_payments';
 
   mostrartodolosmedios() {
-    return this.http.get<Medio[]>(this.probandoMedioPago);
+    return this.http.get<Medio[]>(this.UrlMedio);
   }
 
   guardarmediodepago(medio: Medio) {
-    return this.http.post<Medio[]>(this.probandoMedioPago, medio);
+    return this.http.post<Medio[]>(this.UrlMedio, medio);
   }
 }

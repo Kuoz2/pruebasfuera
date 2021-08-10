@@ -12,11 +12,11 @@ export class VentasService {
   Urlventas = 'https://marketmini.herokuapp.com/sales';
   PruebaVentas = 'http://localhost:3000/sales';
   mostrarventas() {
-   return this.http.get<Ventas>(this.PruebaVentas);
+   return this.http.get<Ventas>(this.Urlventas);
   }
 
   guardarventas(vebta: Ventas) {
-    return this.http.post<Ventas[]>(this.PruebaVentas, vebta);
+    return this.http.post<Ventas[]>(this.Urlventas, vebta);
   }
 
 }

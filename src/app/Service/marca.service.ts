@@ -20,12 +20,12 @@ export class MarcaService {
   }
   buscarmarca2(): Observable<Marca[]> {
 
-   return  this.http.get<Marca[]>(this.UrlPrueba);
+   return  this.http.get<Marca[]>(this.urlmarca);
   }
 
   // Guardar una marca.
   guardarmarca(m: Marca) {
-    this.http.post(this.UrlPrueba , m).subscribe();
+    this.http.post(this.urlmarca , m).subscribe();
   }
   // Actualizar una marca.
   actualizarmarca(m: Marca) {

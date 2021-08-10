@@ -30,6 +30,7 @@ private URL_STCK_GRF_PERDIDAS = 'https://marketmini.herokuapp.com/stocks/buscar_
 private URL_PROVIDERS = 'https://marketmini.herokuapp.com/providers';
 private UR_MERMAS = 'https://marketmini.herokuapp.com/decreases';
 private URLINFORME = 'https://marketmini.herokuapp.com/mrmsolutions';
+private URLFECHAS = 'https://marketmini.herokuapp.com/date_expirations'
 
  UrlPrueba = 'http://localhost:3000/products';
  urlPruebaMerma = 'http://localhost:3000/decreases';
@@ -50,124 +51,124 @@ private URLINFORME = 'https://marketmini.herokuapp.com/mrmsolutions';
  prueba_buscarnoproduct_id = 'http://localhost:3000/date_expirations/date_product_id_on'
 
     // Actualizar la fecha al realizar una venta.
-    def;
+    
   // Tomar todos los productos
    products(): Observable<Productos[]> {
-    return this.http.get<Productos[]>(this.UrlPrueba);
+    return this.http.get<Productos[]>(this.UrlProductos);
   }
   // Tomar algunos datos para los items del carrito.
     item_productos(): Observable<Productos[]> {
-      return this.http.get<Productos[]>(this.UrlPrueba);
+      return this.http.get<Productos[]>(this.UrlProductos);
     }
 
     // Tomar la cantidad del inventario que se debe gestionar
     inventario_gestion() {
-      return this.http.get(this.UrlPrueba + '/inventario_gestionable' ).toPromise();
+      return this.http.get(this.UrlProductos + '/inventario_gestionable' ).toPromise();
     }
 
 
 // Buscar un producto por su ID
   buscarproductoporID(id: number) {
-      return this.http.get<Productos>(this.UrlPrueba + '/' + id);
+      return this.http.get<Productos>(this.UrlProductos + '/' + id);
 
   }
 
   // Buscar el el stock por su ID
   buscarelstockporID(id: number) {
-      return this.http.get<Stock>(this.urlpruebastock + '/' + id);
+      return this.http.get<Stock>(this.URLStock + '/' + id);
   }
 // Actualizar productos (detalle, texto referencia)
     actualizarproducto(produ: Productos) {
-        return this.http.put<Productos>(this.UrlPrueba + '/' + produ.id , produ);
+        return this.http.put<Productos>(this.UrlProductos + '/' + produ.id , produ);
     }
 
     // Actializar el stock de los productos.
     actualizarstock(stck: Stock) {
       console.log('stck', stck);
-      return this.http.put<Stock>(this.urlpruebastock + '/' + stck.id, stck);
+      return this.http.put<Stock>(this.URLStock + '/' + stck.id, stck);
     }
     // Guardar un nuevo producto
    guardarproductos(p) {
-    return this.http.post<Productos>(this.UrlPrueba, p);
+    return this.http.post<Productos>(this.UrlProductos, p);
   }
 
 
   // Tomar todas las categorias
    categorias(): Observable<Categories[]> {
-      return this.http.get<Categories[]>(this.UrlpruebaCategoria);
+      return this.http.get<Categories[]>(this.UrlCategorias);
   }
 
   // Guardar una categoria
    categoriassave(c: Categories) {
-    return this.http.post<Categories>(this.UrlpruebaCategoria, c);
+    return this.http.post<Categories>(this.UrlCategorias, c);
   }
 
 
   // Tomar el stock perdida de este mes.
     stock_perida_este_mes() {
-      return this.http.get(this.stockperdida);
+      return this.http.get(this.URLStockPerdida);
     }
 
     // Tomar el stock de perdidas del mes anterior
     stock_perdida_anterior() {
-      return this.http.get(this.urlstockperdiudanaterior);
+      return this.http.get(this.URLStockPerdidaAnterior);
     }
 
     // Busca el stock de perdidas con el precio del producto para poder ser multiplicados y a si sacar el valor de la perdida
     _stock_productos() {
-      return this.http.get<Stock_productos[]>(this.prueba_stock_productos);
+      return this.http.get<Stock_productos[]>(this.URL_STOCK_PRODUCTOS);
     }
 
     // Guardar el nuevo stock para el inventario 2 
     _stockinventario2(stck: Stock):Observable<Stock>{
-      return this.http.post<Stock>(this.prueba_guardar_stock,stck);
+      return this.http.post<Stock>(this.URLStock,stck);
     }
 
     // Busca las perdidas de este mes
     _stock_perdidas_hoy() {
-      return this.http.get<Perdidas_este_mes[]>(this.pruebastockperdida);
+      return this.http.get<Perdidas_este_mes[]>(this.URL_STOCK_PERDIDA);
     }
 
     __graf_perdidas() {
      // return this.http.get<Chart[]>(this.URL_STCK_GRF_PERDIDAS)
-      return  this.http.get<any[]>(this.pruebaSTCKGRFPERDIDAS);
+      return  this.http.get<any[]>(this.URL_STCK_GRF_PERDIDAS);
   }
 
   // Aqui se conecta a los proveedores
     __tomaproveedores() {
-      return this.http.get<Provideer[]>(this.urlpruebaProveedores);
+      return this.http.get<Provideer[]>(this.URL_PROVIDERS);
     }
 
         // Guardar un proveedor
     guardarProvider(c: Provideer) {
-      return this.http.post<Provideer>(this.urlpruebaProveedores, c);
+      return this.http.post<Provideer>(this.URL_PROVIDERS, c);
     }
 
 
 
     // Guardar una merma
     guardarMerma(merma) {
-    return this.http.post(this.urlPruebaMerma, merma);
+    return this.http.post(this.UR_MERMAS, merma);
     }
 
     // Buscar mermas
     mermasdeldia(): Observable<Mermas[]> {
-    return this.http.get<Mermas[]>(this.urlPruebaMerma);
+    return this.http.get<Mermas[]>(this.UR_MERMAS);
     }
 
     // Cantidad de mermas realizadas
     cantidadesObtenidas() {
-      return this.http.get(this.urlPruebaMerma + '/muestra_situaciones').toPromise();
+      return this.http.get(this.UR_MERMAS + '/muestra_situaciones').toPromise();
     }
     // Actualizar registro merma
     UpdateMermaEstado(mrm) {
       console.log('id de la info', mrm.id);
-      return this.http.put(this.urlPruebaMerma + '/' + mrm.id, mrm ).subscribe(error => console.log(error));
+      return this.http.put(this.UR_MERMAS + '/' + mrm.id, mrm ).subscribe(error => console.log(error));
     }
 
     // Guardar el informe de la merma, del como se soluciono.
     GuardarRegistro(regimrm) {
-      return this.http.post(this.urlPruebMrmInforme, regimrm).subscribe(
+      return this.http.post(this.URLINFORME, regimrm).subscribe(
           (error) => {console.log('ah, ocurrido un error', error); }
           );
     }
@@ -175,46 +176,46 @@ private URLINFORME = 'https://marketmini.herokuapp.com/mrmsolutions';
         //Productos que venceran el siguiente mes.
 
     GetPorvencer() {
-        return this.http.get<Fecha_vencimiento[]>(this.UrlPrueba + '/vencimientoproximomes').toPromise();
+        return this.http.get<Fecha_vencimiento[]>(this.UrlProductos + '/vencimientoproximomes').toPromise();
     }
 
         // Productos que estan por vencer.
     Getprodvencmes(){
-      return this.http.get<any[]>(this.UrlPrueba + '/obtener_fecha_productos_mes').toPromise();
+      return this.http.get<any[]>(this.UrlProductos + '/obtener_fecha_productos_mes').toPromise();
     }
 
     //Productos que venceran el siguiente mes.
     
     // Actualizar el stock de las fechas
 actualizar_stock_fecha(fchAct: date_expiration) {
-        return this.http.put<date_expiration>(this.pruebaActualizarFechaVenta + '/' + fchAct.id, fchAct);
+        return this.http.put<date_expiration>(this.URLFECHAS + '/' + fchAct.id, fchAct);
     }
 
     // Tomando el nuevo inventario con su stock de perdida y fecha de vencimiento.
     getnewinventario() {
-       return this.http.get(this.pruebanuevoinventario + '/date_product_id_on').toPromise();
+       return this.http.get(this.URLFECHAS + '/date_product_id_on').toPromise();
     }
 
     // Buscar la fecha del nuevo inventario
     segundoinventarioID(id: number) {
-     return  this.http.get(this.pruebanuevoinventario + '/' + id ).toPromise();
+     return  this.http.get(this.URLFECHAS + '/' + id ).toPromise();
     }
 
     // Guardar la fecha actual del inventario 2
   _guardarfechainventario2(dtex:date_expiration):Observable<date_expiration>{
-    return this.http.post<date_expiration>(this.prueba_guardarfechainventario2, dtex)
+    return this.http.post<date_expiration>(this.URLFECHAS, dtex)
   }
 
   // Get a las fechas y productos que estan registrados en el segundo inventario.
 
   _buscandolasfechasin_productid(){
-    return this.http.get(this.prueba_buscarnoproduct_id).toPromise();
+    return this.http.get(this.URLFECHAS + '/date_product_id_on').toPromise();
   }
 
   // Actualizar la fecha vencimiento.
 
   _actualizar_fechavence(dt: date_expiration){
-      return this.http.put(this.prueba_guardarfechainventario2 + '/' + dt.id, dt)
+      return this.http.put(this.URLFECHAS + '/' + dt.id, dt)
   }
 
 }

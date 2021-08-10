@@ -14,19 +14,19 @@ export class CategoriasService {
   UrlpruebaCategoria = 'http://localhost:3000/categories';
 // Mostrar
   mostrarcategorias(): Observable<Categories[]> {
-    return this.http.get<Categories[]>(this.UrlpruebaCategoria);
+    return this.http.get<Categories[]>(this.UrlCategorias);
   }
 // Por ID
   mostrarporID(id: number) {
-  return this.http.get<Categories>(this.UrlpruebaCategoria + '/' + id);
+  return this.http.get<Categories>(this.UrlCategorias + '/' + id);
   }
 // Guardar
   guardarcategorias(c: Categories) {
-    this.http.post<Categories>(this.UrlpruebaCategoria, c).subscribe();
+    this.http.post<Categories>(this.UrlCategorias, c).subscribe();
   }
 // Editar
   actualizarcategoria( cat: Categories) {
-  return this.http.put<Categories>(this.UrlpruebaCategoria + '/' + cat.id, cat);
+  return this.http.put<Categories>(this.UrlCategorias + '/' + cat.id, cat);
   }
 
 

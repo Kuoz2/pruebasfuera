@@ -16,21 +16,21 @@ export class ImpuestosService {
 
   // Guardar impuesto
  async guardarIMP(im: Impuestos) {
-     this.HTTP.post<Impuestos>(this.httptaxprueb, im).subscribe();
+     this.HTTP.post<Impuestos>(this.HTTP_TAXES, im).subscribe();
   }
 
   // Obtener el impuesto
   obtneriIMP(): Observable<Impuestos[]> {
-    return this.HTTP.get<Impuestos[]>(this.httptaxprueb);
+    return this.HTTP.get<Impuestos[]>(this.HTTP_TAXES);
   }
 
   // Buscar por la id
   impuestosporID(id: number): Observable<Impuestos> {
-    return this.HTTP.get<Impuestos>(this.httptaxprueb + '/' + id);
+    return this.HTTP.get<Impuestos>(this.HTTP_TAXES + '/' + id);
   }
 
   actualizarimpuesto( imp: Impuestos) {
-    return this.HTTP.put<Impuestos>(this.httptaxprueb + '/' + imp.id, imp);
+    return this.HTTP.put<Impuestos>(this.HTTP_TAXES + '/' + imp.id, imp);
   }
 
 }
