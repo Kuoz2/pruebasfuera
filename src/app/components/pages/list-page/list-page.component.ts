@@ -7,6 +7,7 @@ import {create} from 'xmlbuilder2';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import { DefaultSerializer } from 'v8';
 
 @Component({
   selector: 'app-list-page',
@@ -15,7 +16,7 @@ import {NgxSpinnerService} from 'ngx-spinner';
 })
 export class ListPageComponent implements OnInit {
   public selected = [];
-    p: any;
+    p: number = 0;
   boletas: Observable<DetalleVoucher[]>;
     datos = [];
     cortar;
@@ -105,7 +106,7 @@ export class ListPageComponent implements OnInit {
 
 
     crearxml() {
-        const xmlStr = `\t\t\t<?xml version="1.0" encoding="iso-8859-1"?>
+        const xmlStr =`<?xml version="1.0" encoding="iso-8859-1"?>
 \t\t\t<LibroCompraVenta xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SiiDte="http://www.sii.cl/SiiDte" >
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<EnvioLibro ID="ID_LIBRO_">
 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<Caratula>
@@ -162,17 +163,48 @@ export class ListPageComponent implements OnInit {
         const text =  xml;
         const element = document.createElement('a');
         element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(text));
+        
         element.setAttribute('download', filename);
 
         element.style.display = 'none';
         document.body.appendChild(element);
-
+        console.log("el elemento", document.body.appendChild(element))
         element.click();
 
         document.body.removeChild(element);
         this.detalleCmpr();
         console.log('detalle de la funcion', this.detalleCmpr().map(res => res.toString()) );
     }
+
+
+    pruebaenvioXML(){
+        const prueb =`<?xml version="1.0" encoding="iso-8859-1"?>
+<LibroCompraVenta xmlns="http://www.sii.cl/SiiDte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SiiDte="http://www.sii.cl/SiiDte" >
+<EnvioLibro ID="ID_LIBRO_">
+<Caratula>
+<RutEmisorLibro>172463703</RutEmisorLibro>
+<RutEnvia>5555</RutEnvia>
+<PeriodoTributario>55555</PeriodoTributario>
+<FchResol>55555555</FchResol>
+<NroResol>55555555</NroResol>
+<TipoOperacion>VENTA</TipoOperacion>
+<TipoLibro>Librodeboletas</TipoLibro>
+<TipoEnvio>5555555</TipoEnvio>
+<FolioNotificacion>55555555</FolioNotificacion>
+</Caratula>
+</EnvioLibro>
+</LibroCompraVenta>`
+
+var xml = 'data:text/xml;charset=utf-8,' + encodeURIComponent(prueb);
+var byte = {nombreXML: btoa(xml)};
+console.log(byte.nombreXML)
+
+this.bol.PostANDSendXML(byte)
+console.log("bytes", byte.nombreXML)
+console.log("decodificado",atob(byte.nombreXML))
+
+            }
+    
 
     detalleCmpr() {
         const detalle = [];

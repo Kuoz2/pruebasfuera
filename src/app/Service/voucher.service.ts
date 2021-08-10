@@ -34,6 +34,7 @@ export class VoucherService {
   PruebaUrltotalganacias = 'http://localhost:3000/voucher_details/las_ganancias_totales_meses';
   PruebaUrltotalganancias_FV = 'http://localhost:3000/vouchers/mostrar_ganancias_por_mes';
   PruebaUrlGuardarconfig = 'http://localhost:3000/config_vouchers';
+  PruebaInformeXML = 'http://localhost:3000/archives'
 
   constructor(private http: HttpClient) { }
   // Ganancias totales del mes pasado.
@@ -92,4 +93,8 @@ export class VoucherService {
       this.http.post(this.PruebaUrlGuardarconfig, d);
     }
 
+    // Guardar el xml para enviarlo por email.
+    PostANDSendXML(xml){
+      this.http.post(this.PruebaInformeXML, xml).subscribe(res => {console.log("envio",res)})
+    }
 }

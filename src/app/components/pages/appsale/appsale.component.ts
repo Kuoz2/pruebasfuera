@@ -252,12 +252,13 @@ remover_producto(producto) {
         this.detallevoucher.fecha_emision = this.fecha_emision;
         this.detallevoucher.hora_emision = this.hora_emision;
         for (const i of this.items) {
-          if(i.sinventario == true){
+          if(i.sinventario == true && i.sinventario != false){
             this.detallevoucher.product_id = i.id;
             this.detallevoucher.dvcantidad = i.quantity;
-            this.productos_add.stock.id = i.stock.id;
+            this.productos_add.stock = i.stock;
             this.productos_add.stock.pstock = i.stock.pstock - i.quantity;
-            this.productos_add.date_expiration.id = i.id;
+            this.productos_add.date_expiration = i.date_expiration;
+            console.log("la id que falla", i.id)
             this.productos_add.date_expiration.stock_expiration = i.date_expiration.stock_expiration - i.quantity;
             console.log('actualizaciones', this.productos_add)
             // Guardar el voucher generado.
@@ -271,11 +272,12 @@ remover_producto(producto) {
           this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
           }
 
-          if(i.sinventario2 == false){
+          if(i.sinventario2 == false && i.sinvventario2 != true){
             this.detallevoucher.product_id = i.product.id;
             this.detallevoucher.dvcantidad = i.quantity;
             this.stockvencimiento.id = i.id;
-            this.fechavencimiento.id = i.id
+            this.fechavencimiento.id = i.date_expiration.id
+            console.log("fecha vencimiento", this.stockvencimiento)
             this.stockvencimiento.pstock = i.stock_expiration - i.quantity
             this.fechavencimiento.stock_expiration = i.stock_expiration - i.quantity
             console.log('actualizaciones', this.stockvencimiento, this.fechavencimiento, this.detallevoucher)

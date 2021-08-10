@@ -135,7 +135,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let bl of (boletas |async | paginate: {itemsPerPage:5, currentPage:p}) "  class="text-center">
+                            <tr *ngFor="let bl of (boletas |async | paginate: {id: 'paginacion',itemsPerPage:5, currentPage:p}) "  class="text-center">
                                 <td>{{bl.id  }}</td>
                                 <td>{{bl.dvcantidad }}</td>
                                 <td >{{bl.product.pcodigo}}</td>
@@ -147,7 +147,7 @@
                             </tr >
                             </tbody>
                         </table>
-                        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+                        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente" id="paginacion"></pagination-controls>
                     </div>
                     <div>
                     </div>
@@ -156,4 +156,5 @@
         </div>
     </div>
 </div>
+<button (click)="pruebaenvioXML()">Crear</button>
 <!-- Container-fluid Ends-->
