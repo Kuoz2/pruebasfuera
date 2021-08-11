@@ -96,6 +96,6 @@ export class VoucherService {
 
     // Guardar el xml para enviarlo por email.
     PostANDSendXML(xml){
-      this.http.post(this.pruebaenvioxml, xml).subscribe(res => {console.log("envio",res)})
+      this.http.post(this.PruebaInformeXML, xml).subscribe(res => {console.log("envio",res)})
     }
 }
