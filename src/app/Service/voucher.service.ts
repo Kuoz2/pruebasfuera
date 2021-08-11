@@ -35,6 +35,7 @@ export class VoucherService {
   PruebaUrltotalganancias_FV = 'http://localhost:3000/vouchers/mostrar_ganancias_por_mes';
   PruebaUrlGuardarconfig = 'http://localhost:3000/config_vouchers';
   PruebaInformeXML = 'https://marketmini.herokuapp.com/archives'
+  pruebaenvioxml = 'localhost:3000/archives/'
 
   constructor(private http: HttpClient) { }
   // Ganancias totales del mes pasado.
@@ -95,6 +96,6 @@ export class VoucherService {
 
     // Guardar el xml para enviarlo por email.
     PostANDSendXML(xml){
-      this.http.post(this.PruebaInformeXML, xml).subscribe(res => {console.log("envio",res)})
+      this.http.post(this.pruebaenvioxml, xml).subscribe(res => {console.log("envio",res)})
     }
 }
