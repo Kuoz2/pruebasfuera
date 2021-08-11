@@ -50,6 +50,7 @@ export class AutentificacionService {
                 }
             }))
             .subscribe( (res) => {
+                console.log(res)
                 const token = res.headers.get('authorization').replace('Bearer', '');
                 console.log(token)
                 if (token == null) {

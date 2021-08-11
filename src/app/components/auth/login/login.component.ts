@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
   async ngOnInit() {
     this.ngxspinner.show();
     this.loqumu();
-
+    this.ngxspinner.hide();
   }
 
 
@@ -117,7 +117,7 @@ export class LoginComponent implements OnInit {
 
             }
 
-             this.ngxspinner.hide();
+            
         }
 
  );
