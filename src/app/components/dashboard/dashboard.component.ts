@@ -23,13 +23,38 @@ import {NgxSpinnerService} from 'ngx-spinner';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-
+    isloading: boolean;
 
     constructor(private gnc: PagosService, private cd: ChangeDetectorRef,
                 private vouch: VoucherService, private produc: ProductserviceService, private spinner: NgxSpinnerService) {
        // Object.assign( this, {doughnutData, pieData} );
+       this.isloading = false;
 
     }
+    async ngOnInit() {
+        this.spinner.show("spinnerdashboard", {
+            type: "pacman",
+            size: "large",
+            color: "white"
+        });
+        await this.pagosrealizados();
+        await this.listaventasdetectadis();
+        await this.ganancias_mepasado();
+        await this.ganancias_mensual();
+        await this.losvoucher();
+        await this.losproductos();
+        await this.stockperdiasdestemes();
+        await this.perdiasmesanterior();
+        await this.perdiadsestemes();
+        await this.datosgrafico();
+        await this.gananciasobtenidas();
+        await this.gananciaspormes();
+        await this.obtenermermas();
+        // Detectar el navagador
+        this.detectando();
+
+
+  }// Fin del OnInit
     private unsubscribe$ = new Subject<void>();
     public mermas: Observable<Mermas[]>;
     public nmbrMerma = [];
@@ -231,34 +256,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
 
 
-  async ngOnInit() {
-        this.spinner.show("spinnerdashboard", {
-            type: "pacman",
-            size: "large",
-            color: "white"
-        });
-        await this.obtenermermas();
-        await   this.pagosrealizados();
-        await this.listaventasdetectadis();
-        await this.ganancias_mepasado();
-        await this.ganancias_mensual();
-        await this.losvoucher();
-        await this.losproductos();
-        await this.stockperdiasdestemes();
-        await this.perdiasmesanterior();
-        await this.perdiadsestemes();
-        await this.datosgrafico();
-        await this.gananciasobtenidas();
-        await this.gananciaspormes();
-        // Detectar el navagador
-        this.detectando();
-        this.cd.markForCheck();
 
-  }// Fin del OnInit
 
     obtenermermas() {
         // las mermas.
-        this.obtmermas().subscribe(res => {
+        this.obtmermas().pipe(takeUntil(this.unsubscribe$)).subscribe(res => {
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
             const acumlador = 0;
             const datos = Object.values( res.reduce( (prev, next) => Object.assign( prev, {[(next.causaMrm )]: next} ), {} ) );
@@ -267,7 +269,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 this.nmbrMerma.push(datos[i].causaMrm);
                 // @ts-ignore
                 this.uniMerma.push(datos[i].unidadesMrm);
-            }
+            };
+            this.cd.markForCheck();
         });
     }
 
@@ -484,9 +487,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
                 }
             });
            
-            
+            this.cd.markForCheck();
+
         });
-        this.spinner.hide();
 
     }
     detectando() {
@@ -507,7 +510,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }
 
     obtmermas(): Observable<Mermas[]> {
-        return this.mermas = this.produc.mermasdeldia();
+        this.spinner.hide("spinnerdashboard");
+
+        return this.mermas = this.produc.mermasdeldia().pipe(takeUntil(this.unsubscribe$));
+
     }
 
 
