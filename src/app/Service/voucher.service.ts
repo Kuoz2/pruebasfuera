@@ -58,7 +58,7 @@ export class VoucherService {
   }
 
   crearvoucher(deta: DetalleVoucher): Observable<DetalleVoucher> {
-    return this.http.post<DetalleVoucher>(this.Urldetallevaucher, deta);
+    return this.http.post<DetalleVoucher>(this.Pruebaurldetallevoucher, deta);
   }
   crearunvoucher(vouch: Voucher) {
     return  this.http.post<Voucher>(this.Urlvoucher, vouch);
