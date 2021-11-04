@@ -148,7 +148,7 @@ file: File;
                 this.productForm.value.date_expiration.stock_expiration = this.productForm.value.stock.pstock;
                 this.productForm.value.stock.product_id = 0;
                 this.productForm.value.date_expiration.product_id = 0;
-                this.servi.guardarproductos( this.productForm.value ).subscribe(res =>  {console.log('lo guardado', res); });;
+                this.servi.guardarproductos( this.productForm.value )
                 console.log( 'productos', this.productForm.value );
                // this.productForm.reset();
 
@@ -213,12 +213,18 @@ resetiarform() {
 
     // FileUpload
   readUrl(event: any, i) {
+    console.log("tamaño de imagen", event.target.files[0].size)
+
     if (event.target.files.length === 0) {
       return;
     }
+    if( event.target.files[0].size > 89458){
+      alert("El tamaño de la imagen supera los 88kb")
+          return;
+    }
     // Image upload validation
     const mimeType = event.target.files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
+    if (mimeType.match(/image\/*/) == null ) {
       return;
     }
     // Image upload
@@ -278,4 +284,5 @@ resetiarform() {
         // @ts-ignore
         console.log('fecha ngmodel', this.fechaguardada);
     }
+
 }

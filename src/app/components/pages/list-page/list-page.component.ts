@@ -7,7 +7,6 @@ import {create} from 'xmlbuilder2';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
-import { DefaultSerializer } from 'v8';
 
 @Component({
   selector: 'app-list-page',
@@ -43,6 +42,8 @@ export class ListPageComponent implements OnInit {
     moduloCertificadoLLave: string;
     exponenteCertificadoLLave: string;
     rutEmisiorBoleta: string;
+    public fechaIni: string;
+    public fechaFin: string;
 
     // tslint:disable-next-line:max-line-length
     constructor(private bol: VoucherService, private modalService: NgbModal, public secoind: HoraActualService, private ngxspinner: NgxSpinnerService ) { }

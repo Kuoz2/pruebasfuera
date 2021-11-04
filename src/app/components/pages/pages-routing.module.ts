@@ -1,3 +1,4 @@
+import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {VoucherCreateComponent} from "./voucher-create/voucher-create.component";
@@ -87,6 +88,14 @@ const routes: Routes = [
         data:{
           title:' Actualizar boleta',
           breadcrumb: 'Actualizar boleta'
+        }
+      },
+      {
+        path: 'comparar',
+        component: ComparacionVentaComponent,
+        data: {
+          title: 'Comparar ventas',
+          breadcrumb: 'Compare sus ventas'
         }
       }
     ]

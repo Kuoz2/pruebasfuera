@@ -3246,7 +3246,7 @@ window.global = window;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\kuoz2\Desktop\Nueva carpeta (4)\backend\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\kuoz2\pruebadeproyecto\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

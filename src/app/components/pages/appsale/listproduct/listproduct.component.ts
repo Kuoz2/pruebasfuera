@@ -41,7 +41,6 @@ export class ListproductComponent implements OnInit {
   listaproductossinid(){
   return this.productos_car._buscandolasfechasin_productid().then((res) => {
     this.Productos_sin_id = res
-    console.log(this.Productos_sin_id)
   }).catch((err) => {console.log('Se, encontro un error', err)}).finally(() => {this.isloading = true})
 
 console.log('date expiration', this.Productos_sin_id)

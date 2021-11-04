@@ -50,7 +50,10 @@ export const
      breadcrumb: "Mermas"
     }
   },
-
-
+  {
+    path:"pruebanavegacion",
+    loadChildren: () => import('../../components/pruebanavegacion/pruebanavegacion.module').then(m => m.PruebanavegacionModule)
+  },
 
 ];
+

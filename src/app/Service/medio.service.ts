@@ -10,14 +10,13 @@ export class MedioService {
   constructor(private http: HttpClient) { }
 
 
-  UrlMedio = 'https://marketmini.herokuapp.com/half_payments';
-  probandoMedioPago = 'http://localhost:3000/half_payments';
+  probandoMedioPago = 'https://multikart-norte.herokuapp.com/half_payments';
 
   mostrartodolosmedios() {
-    return this.http.get<Medio[]>(this.UrlMedio);
+    return this.http.get<Medio[]>(this.probandoMedioPago);
   }
 
   guardarmediodepago(medio: Medio) {
-    return this.http.post<Medio[]>(this.UrlMedio, medio);
+    return this.http.post<Medio[]>(this.probandoMedioPago, medio);
   }
 }

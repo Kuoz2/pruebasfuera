@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <div class="card">
+            <div class="card text-center" style="width: 1000px;">
                 <div class="card-header">
                     <h5>Inventario</h5>
                 </div>
@@ -21,24 +21,20 @@
                                                 <h3>Inventario sin stock</h3>
                                             </div>
                                             <div class="card-body">
-                                                <table class="table table-hover" id="table3">
+                                                <table class="table table-bordered" id="table3">
                                                     <thead>
                                                     <tr class="text-center">
                                                         <th>
-                                                            Código del producto
-                                                        </th>
-                                                        <th>
-                                                            Nombre descriptivo
+                                                            Nombre
                                                         </th>
                                                         <th>Précio</th>
                                                         <th>Stock</th>
-                                                        <th>Fecha vencimiento</th>
+                                                        <th>Fecha</th>
                                                         <th>Estado</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="tbody3">
                                                     <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index"  (dblclick)="open2(content2, p)" class="text-center" id="tr3" >
-                                                        <td id="td111">{{p.pcodigo  }}</td>
                                                         <td id="td222">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                                         <td id="td333">{{p.pvalor}}</td>
                                                         <td id="td444">{{p.stock.pstock}}</td>
@@ -50,18 +46,17 @@
                                                 <pagination-controls (pageChange)="j = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination3"></pagination-controls>
                                             </div>
                                         </div>
-                                        <div class="card">
+                                        <div class="card text-center" style="width: 1000px;">
                                             <div class="card-header">
                                                 <h3>Segundo inventario sin stock</h3>
                                             </div>
                                             <div class="card-body">
-                                                <table class="table table-hover" id="table3">
+                                                <table class="table table-bordered" id="table3">
                                                     <thead>
                                                     <tr class="text-center">
-                                                        <th>Fecha vencimiento</th>
-                                                        <th>Código producto</th>
-                                                        <th>Categoría y marca</th>
-                                                        <th>Nombre descriptivo</th>
+                                                        <th>Fecha</th>
+                                                        <th>Categoría/marca</th>
+                                                        <th>Nombre</th>
                                                         <th>Precio</th>
                                                         <th>Stock</th>
                                                     </tr>
@@ -69,7 +64,6 @@
                                                     <tbody id="tbody3">
                                                     <tr *ngFor="let l of (tomanuevoinventario | inventariosinstock2  ) | paginate: {id:'pagination8',itemsPerPage:3, currentPage:n} ; let i=index"   class="text-center" >
                                                         <td >{{l.fecha_vencimiento  }}</td>
-                                                            <td >{{l.product.pcodigo}}</td>
                                                             <td >{{l.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
                                                             <td >{{l.product.pdescripcion}}</td>
                                                             <td>{{l.product.pvalor}}</td>
@@ -92,29 +86,25 @@
                         <ng-template ngbTabContent>
                             <div class="table-responsive">
                                 <div class="container ">
-                                    <div class="card">
+                                    <div class="card text-center" style="width: 1000px;">
                                         <div class="card-header">
                                             <h3>Inventario en gestión</h3>
                                         </div>
-                                        <div class="card-body">
-                                            <table class="table table-hover" id="table2">
+                                        <div class="card-body" style="width: auto;">
+                                            <table class="table table-bordered" id="table2">
                                                 <thead>
                                                 <tr class="text-center">
-                                                    <th>
-                                                        Código del producto
-                                                    </th>
                                                     <th>
                                                         Nombre descriptivo
                                                     </th>
                                                     <th>Précio</th>
                                                     <th>Stock</th>
                                                     <th>Estado</th>
-                                                    <th>Fecha vencimiento</th>
+                                                    <th>Fecha</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody id="tbody2">
                                                 <tr *ngFor="let p of (listproductosG |async| inventarioGestion ) | paginate: {id:'pagination2',itemsPerPage:3, currentPage:d} ; let i=index  " (dblclick)="open2(content2, p)" class="text-center" id="tr2">
-                                                    <td id="td11">{{p.pcodigo  }}</td>
                                                     <td id="td22">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                                     <td id="td33">{{p.pvalor}}</td>
                                                     <td id="td44">{{p.stock.pstock}}</td>
@@ -128,18 +118,17 @@
 
                                         </div>
                                     </div>
-                                    <div class="card">
+                                    <div class="card text-center" style="width: 1000px;">
                                         <div class="card-header">
                                             <h3>Segundo inventario en gestión</h3>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-hover" id="table2">
+                                            <table class="table table-bordered" id="table2">
                                                 <thead>
                                                 <tr class="text-center">
-                                                    <th>Fecha vencimiento</th>
-                                                    <th>Código producto</th>
-                                                    <th>Categoría y marca</th>
-                                                    <th>Nombre descriptivo</th>
+                                                    <th>Fecha</th>
+                                                    <th>Categoría/marca</th>
+                                                    <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Stock</th>
                                                 </tr>
@@ -147,7 +136,6 @@
                                                 <tbody >
                                                 <tr *ngFor="let x of (tomanuevoinventario | inventariogestion2) | paginate: {id:'pagination7',itemsPerPage:3, currentPage:k} ; let i=index  " >
                                                     <td >{{x.fecha_vencimiento  }}</td>
-                                                    <td >{{x.product.pcodigo}}</td>
                                                     <td >{{x.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
                                                     <td >{{x.product.pdescripcion}}</td>
                                                     <td>{{x.product.pvalor}}</td>
@@ -170,23 +158,20 @@
                         <ng-template ngbTabContent>
                             <div class="table-responsive">
                                 <div class="container ">
-                                    <div class="card">
+                                    <div class="card text-center" style="width: 1000px;">
                                         <div class="card-header">
                                             <h3>Inventario sano</h3>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-hover" id="table1">
+                                            <table class="table table-bordered" id="table1">
                                                 <thead>
                                                 <tr class="text-center">
                                                     <th>
-                                                        Código del producto
-                                                    </th>
-                                                    <th>
-                                                        Nombre descriptivo
+                                                        Nombre
                                                     </th>
                                                     <th>Précio</th>
                                                     <th>Stock</th>
-                                                    <th>Fecha vencimiento</th>
+                                                    <th>Fecha</th>
                                                     <th>Estado</th>
                                                 </tr>
                                                 </thead>
@@ -194,7 +179,6 @@
                                                 <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index "  >
                                                     <tr  class="text-center" id="tr1" (dblclick)="open2(content2, p)" >
                                                         <ng-container *ngIf="p.stock.pstock >= 10">
-                                                            <td id="td1">{{p.pcodigo  }}</td>
                                                             <td id="td2">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                                             <td id="td3">{{p.pvalor}}</td>
                                                             <td id="td4">{{p.stock.pstock}}</td>
@@ -209,18 +193,17 @@
                                             <pagination-controls (pageChange)="h = $event" previousLabel="Atras" nextLabel="Siguiente" id="pagination1"></pagination-controls>
                                         </div>
                                     </div>
-                                    <div class="card">
+                                    <div class="card text-center" style="width: 1000px;">
                                         <div class="card-header">
                                             <h3>Segundo inventario sano</h3>
                                         </div>
                                         <div class="card-body">
-                                            <table class="table table-hover" >
+                                            <table class="table table-bordered" >
                                                 <thead>
                                                 <tr class="text-center">
-                                                    <th>Fecha vencimiento</th>
-                                                    <th>Código producto</th>
+                                                    <th>Fecha/th>
                                                     <th>Categoría y marca</th>
-                                                    <th>Nombre descriptivo</th>
+                                                    <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Stock</th>
                                                 </tr>
@@ -230,7 +213,6 @@
                                                     <tr  class="text-center"  >
                                                         <ng-container *ngIf="u.cantidad_cambiadas >= 10">
                                                             <td >{{u.fecha_vencimiento  }}</td>
-                                                            <td >{{u.product.pcodigo}}</td>
                                                             <td >{{u.product.category.cnombre}}/{{u.product.brand.bnombre}}</td>
                                                             <td >{{u.product.pdescripcion}}</td>
                                                             <td>{{u.product.pvalor}}</td>

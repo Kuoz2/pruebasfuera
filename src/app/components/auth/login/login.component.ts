@@ -93,7 +93,6 @@ export class LoginComponent implements OnInit {
   }
 
   public guardarnuevoadmin(admin) {
-      console.log(admin.value.user.rut_user.slice(0, 10).split('.').join(''));
       admin.value.user.password = admin.value.user.rut_user.slice(0, 10).split('.').join('');
       admin.value.user.role = 'administrador';
       this.serviadmin.guardaradmin(admin.value);

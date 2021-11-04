@@ -1,8 +1,6 @@
-import { error } from 'selenium-webdriver';
 import { date_expiration, Stock } from './../../Modulos/Productos';
 import {ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {CartServiceService} from '../../../Service/cart-service.service';
-import {Item} from '../../Modulos/Item';
 import {Productos} from '../../Modulos/Productos';
 import {Medio} from '../../Modulos/Medio';
 import {PagosService} from '../../../Service/pagos.service';
@@ -19,7 +17,6 @@ import {Observable, Subject} from 'rxjs';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {takeUntil} from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-appsale',
@@ -136,13 +133,6 @@ imagenjpg;
 
     const data = '<head>' +
            '<style type="text/css">' +
-           '@page  { margin: 0 ; }' +
-           ' body.receipt.sheet { width: 570mm; height: 570mm;}  }}' +
-           ' body.receipt.sheet { width: 570mm; height: 570mm;} ' +
-           '  @media print { img {size: auto} .popup { display: block !important; } body.receipt { width:570mm }  .doNotPrint{display:none !important; } .noprint {' +
-           '    display:none !important;' + '    height:570mm !important;}} ' +
-           'header,footer,aside{display: none }' +
-           '\n' +
            'h2{   font-size: 28px;\n position: center;\n }' +
            'td,\n' +
            'th,\n' +
@@ -194,8 +184,11 @@ imagenjpg;
            '}' +
            '\n' +
            'img {\n' +
-           'width: 110mm;\n' +
-           '  height: 500px;' +
+           'width: 356px;\n' +
+           'filter: brightness(50%);'+
+           'display:block;'+
+           'margin: auto;' +
+           '  height: 200px;' +
            '}' +
            '</style>' +
            '<title></title></head>' +

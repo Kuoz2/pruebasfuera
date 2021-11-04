@@ -38,7 +38,8 @@ nuevomedio: Medio;
         this.medioForm.value.mpnombre = this.medioForm.value.mpnombre.toLowerCase()
         return this.medio.guardarmododepago( this.medioForm.value ).subscribe( res => {
           this.mediopago = res
-        } )
+        ;        this.medioForm.reset()
+      } )
       } else {
         alert( "El medio de pago ya existe" + this.medioForm.value.mpnombre.toLowerCase() )
       }

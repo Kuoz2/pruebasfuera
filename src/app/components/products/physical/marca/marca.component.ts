@@ -38,7 +38,7 @@ p: any
   }
 
   async informacionasync(){
-    this.elnombre = this.Smarca.buscarmarca2()
+    this.elnombre= this.Smarca.buscarmarca2()
   }
 nombre;
   ngOnInit(): void {

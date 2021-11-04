@@ -1,3 +1,5 @@
+
+import { VerificarTokenService } from './../../Service/verificar-token.service';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
@@ -27,6 +29,8 @@ import {MarcaComponent} from './physical/marca/marca.component';
 import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
 import { VencimientosComponent } from './physical/vencimientos/vencimientos.component';
 import {NgxSpinnerModule} from "ngx-spinner";
+import { CodbarraComponent } from './codbarra/codbarra.component';
+import { NgxBarcodeModule } from 'ngx-barcode';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -45,7 +49,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     PromocionesComponent,
     ImpuestosComponent,
     MarcaComponent,
-    VencimientosComponent],
+    VencimientosComponent,
+    CodbarraComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -59,12 +64,14 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
         SharedModule,
         NgxPaginationModule,
         Ng4LoadingSpinnerModule,
-        NgxSpinnerModule
-    ],
-  providers: [
+        NgxSpinnerModule,
+        NgxBarcodeModule,
+
+      ],
+  providers: [VerificarTokenService,
     {
       provide: DROPZONE_CONFIG,
-      useValue: DEFAULT_DROPZONE_CONFIG
+      useValue: DEFAULT_DROPZONE_CONFIG,
     },
     NgbActiveModal,
   ]

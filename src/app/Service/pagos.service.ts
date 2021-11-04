@@ -11,25 +11,21 @@ export class PagosService {
 
   constructor(private http: HttpClient) { }
 
-
-  Url = 'https://marketmini.herokuapp.com/payments';
-    urlmedio = 'https://marketmini.herokuapp.com/half_payments';
-
-      urlpaymentsprueba = 'http://localhost:3000/payments';
-        urlmediopagoprueba = 'http://localhost:3000/half_payments';
+      urlpaymentsprueba = 'https://multikart-norte.herokuapp.com/payments';
+        urlmediopagoprueba = 'https://multikart-norte.herokuapp.com/half_payments';
   mostrarpagos() {
-   return  this.http.get<Pagos[]>(this.Url);
+   return  this.http.get<Pagos[]>(this.urlpaymentsprueba);
   }
 
   guardapagos(pago: Pagos): Observable<Pagos> {
-   return  this.http.post<Pagos>(this.Url, pago);
+   return  this.http.post<Pagos>(this.urlpaymentsprueba, pago);
   }
 
   mostrarmediodepago() {
-    return   this.http.get<Medio[]>(this.urlmedio);
+    return   this.http.get<Medio[]>(this.urlmediopagoprueba);
   }
 
   guardarmododepago(med: Medio) {
-      return this.http.post<Medio>(this.urlmedio, med);
+      return this.http.post<Medio>(this.urlmediopagoprueba, med);
   }
 }

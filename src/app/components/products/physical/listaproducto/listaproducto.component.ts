@@ -61,7 +61,7 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
         this.ngxspinner.show();
         await  this.productosAsync();
         await this.busquedaAsync2();
-        await this.newinventario();
+        await this.newinventario().finally(() => { this.isloading = true; this.ngxspinner.hide(); });
         console.log('inventario 2', this.tomanuevoinventario);
 
     }
@@ -70,7 +70,7 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
      newinventario() {
       return this.prod.getnewinventario().then(
           res =>  {this.tomanuevoinventario = res; }
-      ).finally(() => { this.isloading = true; }).catch(
+      ).catch(
           err => { console.log('Ocurrio un error', err); }
       );
     }
@@ -106,7 +106,6 @@ export class ListaproductoComponent implements OnInit, OnDestroy {
        } catch (e) {
            console.log('Ocurrio un error', e);
        }
-       this.ngxspinner.hide();
        return this.listproductos;
    }
 

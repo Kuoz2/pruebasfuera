@@ -9,14 +9,13 @@ export class VentasService {
 
   constructor(private http: HttpClient) { }
 
-  Urlventas = 'https://marketmini.herokuapp.com/sales';
-  PruebaVentas = 'http://localhost:3000/sales';
+  PruebaVentas = 'https://multikart-norte.herokuapp.com/sales';
   mostrarventas() {
-   return this.http.get<Ventas>(this.Urlventas);
+   return this.http.get<Ventas>(this.PruebaVentas);
   }
 
   guardarventas(vebta: Ventas) {
-    return this.http.post<Ventas[]>(this.Urlventas, vebta);
+    return this.http.post<Ventas[]>(this.PruebaVentas, vebta);
   }
 
 }

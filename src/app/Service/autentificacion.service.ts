@@ -24,13 +24,14 @@ export class AutentificacionService {
 
     public data: boolean;
   constructor(private http: HttpClient, private router: Router) { }
-  AUT_SERVER = 'https://marketmini.herokuapp.com/';
+  AUT_SERVER = 'https://multikart-norte.herokuapp.com/';
   authSubject =  new BehaviorSubject(false);
   private token: string;
     // tslint:disable-next-line:variable-name
   private token_Role: string;
   private token_User: string;
   private token_Namber: string;
+  private jtli_namber: string;
 
   get isloggedIn(): Observable<boolean> {
       return this.loggedIn.asObservable();
@@ -45,14 +46,12 @@ export class AutentificacionService {
             .pipe(tap((ing) => {
                 if (ing.body.jti != null) {
                     this.saveRole( ing.body.role );
-
+                        this.savejtli(ing.body.jti)
                 } else {
                 }
             }))
             .subscribe( (res) => {
-                console.log(res)
                 const token = res.headers.get('authorization').replace('Bearer', '');
-                console.log(token)
                 if (token == null) {
                     alert( 'No tiene permiso para ingresar.' );
                 } else {
@@ -97,6 +96,7 @@ export class AutentificacionService {
       localStorage.removeItem('ACCESS_ROLE');
       localStorage.removeItem('ACCES_USER');
       localStorage.removeItem('ACCESS_NAMBER');
+      localStorage.removeItem('ACCESS_JTLI')
 
   }
 
@@ -106,6 +106,10 @@ export class AutentificacionService {
     //  expiretoken ? this.logout() : this.loggedIn.next(false)
 
 // }
+
+  private savejtli(Jtili:string){
+   localStorage.setItem('ACCESS_JTLI', Jtili)
+  }
 
   private saveRole(tokeRole: string): void {
       localStorage.setItem('ACCESS_ROLE', tokeRole);
@@ -142,6 +146,12 @@ export class AutentificacionService {
       return this.token_Namber;
   }
 
+  private getJtili():string {
+      if(!this.jtli_namber){
+          return this.jtli_namber = localStorage.getItem('ACCESS_JTLI')
+      }
+  }
+
   private getTokenUser(): string {
       if (!this.token_User) {
           this.token_User = localStorage.getItem('ACCES_USER');
@@ -158,11 +168,11 @@ export class AutentificacionService {
   }
 
   public mostrar_users(): Observable<user[]> {
-      return this.http.get<user[]>(`${'https://marketmini.herokuapp.com/'}mostrar_usuarios`);
+      return this.http.get<user[]>(`${'https://multikart-norte.herokuapp.com/'}mostrar_usuarios`);
   }
 
   public mostrarlosusers(): Observable<user[]> {
-      return this.http.get<user[]>(`${'localhost:3000/mostrar_los_usuarios'}`);
+      return this.http.get<user[]>(`${'https://multikart-norte.herokuapp.com/mostrar_los_usuarios'}`);
     }
 
 

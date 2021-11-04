@@ -46,8 +46,8 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 { path: '/products/physical/impuestos', rol: '', title: 'Impuestos', type: 'link'},
 {path: '/products/physical/marca', rol: '', title: 'Marcas', type: 'link'},
 {path: '/products/physical/category', rol: '', title: 'Categoría', type: 'link'},
-{path: '/products/physical/vencimiento', rol: '', title: 'Vencidos', type: 'link'	}
-
+{path: '/products/physical/vencimiento', rol: '', title: 'Vencidos', type: 'link'	},
+{path: '/products/codigo', rol: 'administrador', title:'Código', type:'link'}
 
 ]
 },
@@ -59,7 +59,8 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 				{path: '/pages/lista-pago', rol: '', title: 'Lista Pagos', type: 'link'},
 				{path: '/pages/medio-pago', rol: '', title: 'Medio de pago', type: 'link', },
 				{path: '/pages/app-pago', rol: '', title: 'App de pago', type: 'link'},
-				{path: '/pages/boleta', rol: 'administrador', title: 'Boleta', type: 'link'}
+				{path: '/pages/boleta', rol: 'administrador', title: 'Boleta', type: 'link'},
+				{path: '/pages/comparar', rol:'administrador', title:'Comparación', type: 'link'}
 			]
 		},
 
@@ -80,7 +81,15 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 					path: '/merma/solucion-merma', rol: '', title: 'Solucion Mrm', type: 'link'
 				}
 			]
+		}, 
+		{
+			title: 'botonesnavegacion', type: 'sub', rol:'', icon:'eye', active:false, children:[
+				{
+					path:'/pruebanavegacion/botoncillo', rol:'', title: 'navegable', type:'link'
+				}
+			]
 		}
+		
 
 	];
 	// Array

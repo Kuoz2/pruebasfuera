@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            <h5>Ingresé un número para generar el código</h5>
+        </div>            <div class="cod-barr">
+           <ngx-barcode [bc-value]="incodigo" [bc-display-value]="true" style="width: 100%; display: block; margin: auto;"></ngx-barcode>
+            </div>
+            <div class="card-body">
+              <label for="number"><p>Ingrese el número</p></label>
+              <input type="number" id="number" [(ngModel)]="incodigo" placeholder="ej: 111111111111">
+              <hr>
+              <button type="button" class="btn btn-warning" (click)="Verificarcode()">Imprimir código</button>
+              
+            </div>
+          </div>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>

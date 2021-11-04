@@ -1,3 +1,5 @@
+import { VerificarTokenService, respuesta } from './../../../../Service/verificar-token.service';
+
 import {Component, OnInit} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -16,24 +18,33 @@ export class CategoryComponent implements OnInit {
   categorias: Observable<Categories[]>;
   categoriaID: Categories = new Categories();
   p: any;
-  constructor(private modalService: NgbModal, private formBuilder: FormBuilder, private servi: CategoriasService) {
+  public existe:object;
+
+  constructor(private modalService: NgbModal,
+     private formBuilder: FormBuilder,
+      private servi: CategoriasService,
+      private verificar: VerificarTokenService) {
   }
 
-  ngOnInit() {
-    this.categoriasForm = this.formBuilder.group({
+ async ngOnInit() {
+   
+  this.categoriasForm = this.formBuilder.group({
       cnombre: ['']
     });
-
-    this.categoriaAsync();
+  
+  await  this.categoriaAsync();
   }
 
   categoriaAsync() {
     this.categorias = this.servi.mostrarcategorias();
   }
 
-  guardarcategoria() {
-    this.servi.guardarcategorias(this.categoriasForm.value);
-    this.categoriasForm.reset();
+ async guardarcategoria() {
+      //verificar si de verdad existe el jti.
+      await this.servi.guardarcategorias(this.categoriasForm.value).catch(res => {console.log(res)}).finally(() =>{ this.categoriasForm.reset();
+      })
+      
+    
   }
 
   open2(content2, catego: Categories): void {
@@ -48,8 +59,10 @@ export class CategoryComponent implements OnInit {
 
   }
 
-  editarcategoria(categoria: Categories) {
-    this.servi.actualizarcategoria(categoria).subscribe(data => {this.categoriaID = data; });
+  async editarcategoria(categoria: Categories) {
+   await this.verificar.probandojti()
+
+    await this.servi.actualizarcategoria(categoria).subscribe(data => {this.categoriaID = data; });
   }
 
   editar() {
@@ -74,7 +87,6 @@ export class CategoryComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-
 
 
 

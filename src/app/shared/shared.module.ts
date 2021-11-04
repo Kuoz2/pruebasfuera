@@ -31,6 +31,9 @@ import { Inventariosano2Pipe } from './Pipe/inventariosano2.pipe';
 import { Inventariogestion2Pipe } from './Pipe/inventariogestion2.pipe';
 import { Inventariosinstock2Pipe } from './Pipe/inventariosinstock2.pipe';
 import { Busqueda2inventarioPipe } from './Pipe/busqueda2inventario.pipe';
+import { RangodefechasPipe } from './Pipe/rangodefechas.pipe';
+import { Comproduc1Pipe } from './Pipe/comproduc1.pipe';
+import { Comproduc2Pipe } from './Pipe/comproduc2.pipe';
 
 
 @NgModule({
@@ -56,7 +59,7 @@ import { Busqueda2inventarioPipe } from './Pipe/busqueda2inventario.pipe';
     InventariopeligroPipe,
     BuscarmarcaPipe,
     CeparadorPipe,
-    Inventariosano2Pipe,    Inventariogestion2Pipe, Inventariosinstock2Pipe, Busqueda2inventarioPipe,
+    Inventariosano2Pipe,    Inventariogestion2Pipe, Inventariosinstock2Pipe, Busqueda2inventarioPipe, RangodefechasPipe, Comproduc1Pipe, Comproduc2Pipe,
 
   ],
   imports: [
@@ -80,6 +83,7 @@ import { Busqueda2inventarioPipe } from './Pipe/busqueda2inventario.pipe';
                  BuscarmarcaPipe,
                   CeparadorPipe,
                    Inventariosano2Pipe,
-                  Busqueda2inventarioPipe]
+                  Busqueda2inventarioPipe, 
+                  RangodefechasPipe]
 })
 export class SharedModule { }

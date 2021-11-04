@@ -10,27 +10,26 @@ export class ImpuestosService {
 
   constructor(private HTTP: HttpClient) { }
 
-  private HTTP_TAXES = 'https://marketmini.herokuapp.com/taxes';
     // uRL de prueba
-    public httptaxprueb = 'http://localhost:3000/taxes';
+    public httptaxprueb = 'https://multikart-norte.herokuapp.com/taxes';
 
   // Guardar impuesto
  async guardarIMP(im: Impuestos) {
-     this.HTTP.post<Impuestos>(this.HTTP_TAXES, im).subscribe();
+     this.HTTP.post<Impuestos>(this.httptaxprueb, im).subscribe();
   }
 
   // Obtener el impuesto
   obtneriIMP(): Observable<Impuestos[]> {
-    return this.HTTP.get<Impuestos[]>(this.HTTP_TAXES);
+    return this.HTTP.get<Impuestos[]>(this.httptaxprueb);
   }
 
   // Buscar por la id
   impuestosporID(id: number): Observable<Impuestos> {
-    return this.HTTP.get<Impuestos>(this.HTTP_TAXES + '/' + id);
+    return this.HTTP.get<Impuestos>(this.httptaxprueb + '/' + id);
   }
 
   actualizarimpuesto( imp: Impuestos) {
-    return this.HTTP.put<Impuestos>(this.HTTP_TAXES + '/' + imp.id, imp);
+    return this.HTTP.put<Impuestos>(this.httptaxprueb + '/' + imp.id, imp);
   }
 
 }

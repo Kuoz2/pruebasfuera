@@ -5,97 +5,124 @@ import {Voucher} from '../components/Modulos/Voucher';
 import {Observable} from 'rxjs';
 import {V_Producto} from '../components/Modulos/GANANCIAS';
 
-import {Reporte_grafico, Venta_mes_atras, Venta_por_mes, } from '../components/Modulos/reporte_grafico';
+import {Reporete_perdidas_grafico, Reporte_grafico, totalperdiaspriminv, totalventasrapidas, Venta_mes_atras, Venta_por_mes, } from '../components/Modulos/reporte_grafico';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoucherService {
 
-  Urldetallevaucher = 'https://marketmini.herokuapp.com/voucher_details'; // Muestra el detalle del detalle del voucher con el producto en general
-  Urlvoucher = 'https://marketmini.herokuapp.com/vouchers'; // Muestra el voucher completo
-  UrlUltvoucher = 'https://marketmini.herokuapp.com/vouchers/showlast'; // Muestra el ultimo producto vendido
-  URLVntMes = 'https://marketmini.herokuapp.com/show_date'; // Muestra el estado de las venta con el voucher y el producto vendido este mes.
-  UrlVentasTotal = 'https://marketmini.herokuapp.com/voucher_details/show_cantidad'; // Muesta la cantidad ganada este mes
-  URLmespasado = 'https://marketmini.herokuapp.com/voucher_details/show_after_month'; // Muestra las ganancas del mes anterior
-  URLproductosV = 'https://marketmini.herokuapp.com/voucher_details/producto_max_vend'; // Muestra los productos mas vendidos
-  UTLtotalganancias = 'https://marketmini.herokuapp.com/voucher_details/las_ganancias_totales_meses'; // Muestra el total de las ganancias.
-  URLTOTALGANANCIAS_FV = 'https://marketmini.herokuapp.com/vouchers/mostrar_ganancias_por_mes'; // MUESTRA LAS GANANCIAS POR CADA MES Y MUESTRA EL RESULTADO.
-  URLGuardarconfig = 'https://marketmini.herokuapp.com/config_vouchers'  ;
-  
   //de forma local se aran el ingreso.
-  Pruebaurldetallevoucher = 'http://localhost:3000/voucher_details';
-  PruebaUrlvoucher = 'http://localhost:3000/vouchers';
-  PruebaUrlultvoucher = 'http://localhost:3000/vouchers/showlast';
-  PruebaUrlVntMes = 'http://localhost:3000/show_date';
-  PruebaUrlVentasTotal = 'http://localhost:3000/voucher_details/show_cantidad';
-  PruebaUrlmespasado = 'http://localhost:3000/voucher_details/show_after_month';
-  PruebaUrlproductosV = 'http://localhost:3000/voucher_details/producto_max_vend';
-  PruebaUrltotalganacias = 'http://localhost:3000/voucher_details/las_ganancias_totales_meses';
-  PruebaUrltotalganancias_FV = 'http://localhost:3000/vouchers/mostrar_ganancias_por_mes';
-  PruebaUrlGuardarconfig = 'http://localhost:3000/config_vouchers';
-  PruebaInformeXML = 'https://marketmini.herokuapp.com/archives'
-  pruebaenvioxml = 'localhost:3000/archives/'
-
+  Pruebaurldetallevoucher = 'https://multikart-norte.herokuapp.com/voucher_details';
+  PruebaUrlvoucher = 'https://multikart-norte.herokuapp.com/vouchers';
+  PruebaUrlultvoucher = 'https://multikart-norte.herokuapp.com/vouchers/showlast';
+  PruebaUrlVntMes = 'https://multikart-norte.herokuapp.com/show_date';
+  PruebaUrlVentasTotal = 'https://multikart-norte.herokuapp.com/voucher_details/show_cantidad';
+  PruebaUrlmespasado = 'https://multikart-norte.herokuapp.com/voucher_details/show_after_month';
+  PruebaUrlproductosV = 'https://multikart-norte.herokuapp.com/voucher_details/producto_max_vend';
+  PruebaUrltotalganacias = 'https://multikart-norte.herokuapp.com/voucher_details/las_ganancias_totales_meses';
+  PruebaUrltotalganancias_FV = 'https://multikart-norte.herokuapp.com/vouchers/mostrar_ganancias_por_mes';
+  PruebaUrlGuardarconfig = 'https://multikart-norte.herokuapp.com/config_vouchers';
+  PruebaInformeXML = 'https://multikart-norte.herokuapp.com/archives'
+  pruebaenvioxml = 'https://multikart-norte.herokuapp.com/archives/'
+  prueba_perdidaxmes='https://multikart-norte.herokuapp.com/stocks/buscar_las_fechas_perdidas';
+  prueba_inventarioperdida2 ='https://multikart-norte.herokuapp.com/date_expirations/buscar_las_fechas_perdidas'
+  todaslasperdidas = 'https://multikart-norte.herokuapp.com/date_expirations/todaslasperdidasdos'
+  pruebatodaslasperdidasdinv1 ='https://multikart-norte.herokuapp.com/stocks/todaslasperdiadasinvprim'
+  pruebaquicksales = 'https://multikart-norte.herokuapp.com/quick_sales/ventarapida_fechas'
+  totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
   constructor(private http: HttpClient) { }
   // Ganancias totales del mes pasado.
   ganancia_mes_anterior(): Observable<Venta_mes_atras> {
-      return this.http.get<Venta_mes_atras>(this.URLmespasado);
+      return this.http.get<Venta_mes_atras>(this.PruebaUrlmespasado);
   }
 
   // Ganancias este mes
   cantidad_vendida(): Observable<Venta_por_mes> {
-      return this.http.get<Venta_por_mes>(this.UrlVentasTotal);
+      return this.http.get<Venta_por_mes>(this.PruebaUrlVentasTotal);
   }
 
   // Lista de productos vendidos.
     p_vendidos() {
-      return this.http.get<V_Producto[]>(this.URLproductosV);
+      return this.http.get<V_Producto[]>(this.PruebaUrlproductosV);
     }
     // Productos de este mes
   vnts_mes(): Observable<DetalleVoucher> {
-        return this.http.get<DetalleVoucher>(this.URLVntMes);
+        return this.http.get<DetalleVoucher>(this.PruebaUrlVntMes);
   }
 
   crearvoucher(deta: DetalleVoucher): Observable<DetalleVoucher> {
-    return this.http.post<DetalleVoucher>(this.Urldetallevaucher, deta);
+    return this.http.post<DetalleVoucher>(this.Pruebaurldetallevoucher, deta);
   }
   crearunvoucher(vouch: Voucher) {
-    return  this.http.post<Voucher>(this.Urlvoucher, vouch);
+    return  this.http.post<Voucher>(this.PruebaUrlvoucher, vouch);
   }
 
  ultimovoucher(): Observable<Voucher> {
-      return  this.http.get<Voucher>(this.UrlUltvoucher);
+      return  this.http.get<Voucher>(this.PruebaUrlultvoucher);
   }
 
   mostratodo() {
-    return this.http.get<DetalleVoucher>(this.Urldetallevaucher);
+    return this.http.get<DetalleVoucher>(this.Pruebaurldetallevoucher);
+  }
+
+  mostrar_promise(){
+    return this.http.get(this.Pruebaurldetallevoucher).toPromise();
   }
 
   detalledeventa(): Observable<DetalleVoucher[]> {
-      return this.http.get<DetalleVoucher[]>(this.Urldetallevaucher);
+      return this.http.get<DetalleVoucher[]>(this.Pruebaurldetallevoucher);
   }
-
-
+  
   mostrarvoucher(): Observable<Voucher[]> {
-    return this.http.get<Voucher[]>(this.Urlvoucher);
+    return this.http.get<Voucher[]>(this.PruebaUrlvoucher);
   }
 
   // Muesta todas las ganancias obtenidas asta ahora.
     muestra_todas_ganancias() {
-      return this.http.get<Reporte_grafico>(this.UTLtotalganancias);
+      return this.http.get<Reporte_grafico>(this.PruebaUrltotalganacias);
     }
     // Muesta el total de las ganancias este mes. CON LOS RESULTADOS Y EL MES.
     mostrar_ganancias_fv() {
-        return this.http.get<any[]>(this.URLTOTALGANANCIAS_FV);
+        return this.http.get<any[]>(this.PruebaUrltotalganancias_FV);
+    }
+      //Muestra las perdidas por mes.
+    mostrar_perdidasXmes(){
+      return this.http.get<any[]>(this.prueba_perdidaxmes)
     }
 
     guardarcambios(d) {
-      this.http.post(this.URLGuardarconfig, d);
+      this.http.post(this.PruebaUrlGuardarconfig, d);
     }
 
     // Guardar el xml para enviarlo por email.
     PostANDSendXML(xml){
       this.http.post(this.PruebaInformeXML, xml).subscribe(res => {console.log("envio",res)})
+    }
+
+
+    //Inventario 2 de perdidas.
+    perdidas_inventario2(){
+      return this.http.get<any[]>(this.prueba_inventarioperdida2)
+    }
+
+    //Muestra todas las perdidas
+    todaslasperdiadsinventario2(){
+        return this.http.get<Reporete_perdidas_grafico>(this.todaslasperdidas)
+    }
+
+    //Todas las perdidas del inventario primario.
+    todaslasperdidasdinventario1(){
+      return this.http.get<totalperdiaspriminv>(this.pruebatodaslasperdidasdinv1)
+    }
+
+    //Todas las ventas rapidas
+    ventasrapidas(){
+        return this.http.get<any[]>(this.pruebaquicksales)
+    }
+
+    //Total de las ventas rapidas
+    totalventasR(){
+      return this.http.get<totalventasrapidas>(this.totalventasrapidas)
     }
 }

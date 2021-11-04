@@ -50,7 +50,7 @@ export class VencimientosComponent implements OnInit {
    async ngOnInit() {
                 this.ngxspinner.show();
                 await this.estanPorvencer().finally(() => {this.isloading = true});
-                await this.productosquevenceran().finally(() => {this.isloading = true});
+                await this.productosquevenceran().finally(() => {this.isloading = true;  this.ngxspinner.hide();});
           console.log('segundas fechas', this.segundas_fechas)
    }
 
@@ -103,7 +103,7 @@ export class VencimientosComponent implements OnInit {
   ).catch(
          error => {console.log('error al obtener los datos', error); }
      );
-     this.ngxspinner.hide();
+    
   }
 
  // calculandofecha(){

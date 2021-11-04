@@ -1,3 +1,4 @@
+import { CodbarraComponent } from './codbarra/codbarra.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CategoryComponent} from './physical/category/category.component';
@@ -76,6 +77,14 @@ const routes: Routes = [
         data:{
           title:'Vencimiento',
           breadcrumb:'Productos vencidos'
+        }
+      },
+      {
+        path:'codigo',
+        component: CodbarraComponent,
+        data:{
+          title: 'Generar código de barra',
+          breadcrumb: 'Código de barra'
         }
       }
     ]

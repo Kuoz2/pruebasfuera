@@ -10,7 +10,6 @@ export class ConconcanService implements CanActivate{
 
 
   canActivate():boolean {
-
     if (!localStorage.getItem('ACCESS_TOKEN')){
       this.route.navigateByUrl('/login');
       return false

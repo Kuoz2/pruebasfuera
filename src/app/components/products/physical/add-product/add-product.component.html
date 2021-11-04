@@ -25,7 +25,7 @@
                                             <li *ngFor="let item of url; let i=index">
                                                 <div class="box-input-file">
                                                     <input class="upload" type="file" formControlName="ppicture" (change)="readUrl($event,i)">
-                                                    <img class="imgUpload"  alt=""  [src]="item.img"></div>
+                                                    <img class="imgUpload"  alt=""  [src]="item.img"  ></div>
                                                 <small>Ingresé una imagen aquí</small>
                                             </li>
                                             </form>

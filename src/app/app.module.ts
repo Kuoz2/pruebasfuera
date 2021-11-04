@@ -1,3 +1,4 @@
+import { VerificadorRoleService } from './Service/verificador-role.service';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
@@ -10,11 +11,12 @@ import {SharedModule} from './shared/shared.module';
 import {ProductsModule} from './components/products/products.module';
 import {PagesModule} from './components/pages/pages.module';
 import {UsersModule} from './components/users/users.module';
-
 import {AuthModule} from './components/auth/auth.module';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {MermaModule} from "./components/merma/merma.module";
-
+import {NgxPrintModule} from 'ngx-print'
+import {InfiniteScrollModule} from 'ngx-infinite-scroll'
+import { NgxBarcodeModule } from 'ngx-barcode';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,14 @@ import {MermaModule} from "./components/merma/merma.module";
         ReactiveFormsModule,
         HttpClientModule,
         MermaModule,
-        FormsModule
+        FormsModule,
+        NgxPrintModule,
+        InfiniteScrollModule,
+        NgxBarcodeModule
 
     ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
-export class AppModule { }
+export class AppModule {  }
