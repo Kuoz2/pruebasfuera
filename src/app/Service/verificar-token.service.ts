@@ -15,7 +15,12 @@ export class VerificarTokenService {
   public VupdateProdu = 'https://multikart-norte.herokuapp.com/products/verif_before_update'
   public verificaCate = 'https://multikart-norte.herokuapp.com/categories/verif_save_category'
   public verificaSbrand='https://multikart-norte.herokuapp.com/brands/verif_befores_save_brand'
-
+  private verificarTax = 'https://multikart-norte.herokuapp.com/taxes/verif_befores_save_taxe'
+  private verificarProvi = 'https://multikart-norte.herokuapp.com/providers/verif_befores_save_provi'
+  private verificaEBrand = 'https://multikart-norte.herokuapp.com/brands/verif_before_update_brand'
+  private verificaECate = 'https://multikart-norte.herokuapp.com/categories/verif_before_update_category'
+  private vericaEImp = 'https://multikart-norte.herokuapp.com/taxes/verif_before_update_taxe'
+  private mediopago= 'https://multikart-norte.herokuapp.com/half_payments/verif_befores_save_half'
  private informerespuesta = new Subject<respuesta>()
   constructor(private http: HttpClient) { }
   validacion: any;
@@ -33,9 +38,7 @@ export class VerificarTokenService {
   }
   VerficSaveProd(){
    return   this.http.post(this.VsaveProdu, this.informacion)
-   
   }
-
   VerificarUpdateProd(){
     return this.http.post(this.VupdateProdu, this.informacion)
   }
@@ -47,5 +50,24 @@ export class VerificarTokenService {
   verificaSaveBrand(){
     return this.http.post(this.verificaSbrand, this.informacion)
   }
+  verificarSaveTax(){
+    return this.http.post(this.verificarTax, this.informacion)
+  }
+  verificarSaveProv(){
+    return this.http.post(this.verificarProvi, this.informacion)
+  }
+  verificarSaveMedio(){
+    return this.http.post(this.mediopago, this.informacion)
+  }
+  verificarEditBrand(){
+    return this.http.post(this.verificaEBrand, this.informacion)
+  }
+  verificarEditCate(){
+    return this.http.post(this.verificaECate, this.informacion)
+  }
+  verificarEditImp(){
+    return this.http.post(this.vericaEImp, this.informacion)
+  }
+  
 }
 

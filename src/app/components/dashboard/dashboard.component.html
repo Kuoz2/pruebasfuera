@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Ganancia anterior</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mes_pasado?.mes_anterior_es | ceparador" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="ganancias_mes_pasado | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Mes anterior</small></h3>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="media-body col-8"><span class="m-0">Pérdida actual</span>
-                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_este_mes?.stock_lost | ceparador" [from]="0"
+                            <h3 class="mb-0">$ <span class="counter" [CountTo]="stock_perdidas_este_mes | ceparador" [from]="0"
                                     [duration]="2">0</span><small> Este mes</small></h3>
                         </div>
                     </div>
@@ -105,11 +105,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let i of lista_producto_vendido() | paginate:{itemsPerPage:5,currentPage:p}">
+                                <tr *ngFor="let i of productos_mas_vendidos | paginate:{itemsPerPage:5,currentPage:p}">
                                     <td>{{i.nombre}}</td>
                                     <td>{{i.valor}}</td>
                                     <td>{{i.cantidad}}</td>
                             </tbody>
+                            <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
                         </table>
 
                     </div>
@@ -217,7 +218,7 @@
                     <div class="media">
                         <div class="media-body">
                             <span>Total de pérdidas inventario 2</span>
-                            <h2 class="mb-0">{{total_perdidasobtenidas?.total_perdidas}}</h2>
+                            <h2 class="mb-0">{{todas_perdidasinventario2?.total_perdidas}}</h2>
                         </div>
                         <div class="bg-warning b-r-8">
                             <div class="small-box">

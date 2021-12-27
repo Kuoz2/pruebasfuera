@@ -1,3 +1,5 @@
+import { BreadcrumbComponent } from './../../shared/components/breadcrumb/breadcrumb.component';
+import { FacturaComponent } from './physical/factura/factura.component';
 import { CodbarraComponent } from './codbarra/codbarra.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
@@ -16,7 +18,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path:'physical/marca',
+        path:'brands/:marca',
         component: MarcaComponent,
         data:{
           title:"Marcas",
@@ -24,7 +26,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'physical/category',
+        path: 'categorias/:category',
         component: CategoryComponent,
         data: {
           title: "Categoarias",
@@ -85,6 +87,14 @@ const routes: Routes = [
         data:{
           title: 'Generar código de barra',
           breadcrumb: 'Código de barra'
+        }
+      },
+      {
+        path:'presupuesto', 
+        component: FacturaComponent,
+        data:{
+          title: 'Crear presupuesto',
+          BreadcrumbComponent:'presupuesto'
         }
       }
     ]

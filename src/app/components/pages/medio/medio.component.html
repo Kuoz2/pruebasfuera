@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>Agregar Medio</h3>
+            <h3>Agregar forma de pago</h3>
         </div>
         <div class="card-body">
             <form [formGroup]="medioForm" (submit)="guardarmedio()">
@@ -12,6 +12,46 @@
 
                 <button type="submit" class="btn btn-danger">Guardar</button>
             </form>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+               
+                <div class="card-body">
+                    <div id="batchDelete" class="custom-datatable">
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header" >
+                                        <h3>Mis lista de pagos</h3>
+                                    </div>
+                                    <div class="card-body" >
+                                        <table class="table table-bordered" >
+                                            <thead>
+                                            <tr>
+                                                <th>Nombre forma de pago</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let medio of (tomarmedio | paginate: {itemsPerPage:5, currentPage:p}) " >
+                                                <td>{{medio.mpnombre }}</td>
+                                               
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

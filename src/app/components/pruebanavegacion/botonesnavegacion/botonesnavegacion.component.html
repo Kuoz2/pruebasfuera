@@ -300,7 +300,7 @@
 
             <div class="form-group row">
                 <label for="codigo" class="col-xl-3 col-sm-4 mb-0">Código de barra:</label>
-                <input class="form-control col-xl-8 col-sm-7" formControlName="pcodigo" name="codigo" id="codigo" (dbclick)="InCode()"
+                <input class="form-control col-xl-8 col-sm-7" formControlName="pcodigo" name="codigo" id="codigo" (click)="InCode()"
                     type="number" autocomplete="off" required >
                     <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
                     class="text text-danger">
@@ -388,6 +388,18 @@
 
 <div class="container"> 
     <div class="row lign-items-start">
+        <div class="col align-self-center "><i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+            <button class=" btn btn-realizar-grafico btn-lg btn-block "routerLink="/dashboard/default">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+                  </svg>
+                       
+                <p class="texto-buton-in-prod">
+                Graficos
+            </p>
+            </button></div>
+           
+          <div class="w-100"></div>
       <div class="col align-self-center"><button class="btn btn-agregar-producto btn-lg btn-block" (click)="openModal(content1)">
         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="30" fill="currentColor" class="bi bi-journal-arrow-up" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5z"/>

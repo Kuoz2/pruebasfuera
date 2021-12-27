@@ -56,6 +56,10 @@
                                         <label for="validationCustom012" class="mb-1">Nombre del impuesto:</label>
                                         <input class="form-control" [(ngModel)]="impuestoID.tnombre" id="validationCustom012" type="text">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="validationCustom012" class="mb-1"> impuesto:</label>
+                                        <input class="form-control" [(ngModel)]="impuestoID.timpuesto" id="validationCustom012" type="text">
+                                    </div>
 
                                 </div>
                                 <div class="modal-footer">
@@ -72,7 +76,7 @@
                             <div class="container ">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3>Categorías</h3>
+                                        <h3>Lista de impuestos</h3>
                                     </div>
                                     <div class="card-body">
                                         <table class="table table-hover">
@@ -91,7 +95,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let IMP of (IMPs | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
+                                            <tr *ngFor="let IMP of (IMPs  | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
                                                 <td>{{IMP.id  }}</td>
                                                 <td>{{IMP.tnombre}}
                                                 <td>{{IMP.timpuesto}}</td>

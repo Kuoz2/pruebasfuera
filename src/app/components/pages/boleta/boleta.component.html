@@ -4,65 +4,67 @@
         ngxPrint> imprimir</button>-->
 
 
-<div class="container">
-    <div class=" lign-items-start">
-        <div id="ticket" class="ticket">
-            <section class="sheet">
-                <div class="centrarCaja">
-                    <div class=" ticket2">
-                        <div class=" card " style="width: 18rem;">
-                            <div class="centrado">
-                                <h2>NNNN</h2>
-                                <h2>Calama, NNNN #NNN</h2>
-                                <h2>Rut:NNNNN</h2>
-                                <h2>BOLETA ELECTRONICA No.</h2>
-                                <h2>Fecha:<span id="#fecha"></span></h2>
-                                <h2>Hora: <span id="#horas"></span>:<span id="#minutos"></span>:<span
+
+        <div id="ticket" class="ticket"  style="  align-items:center; width: 40rem; height: auto; margin: auto; background-color: #ffffff;">
+            <section class="sheet"  style="background-color: #ffffff;">
+                            <div class="centrado" style=" text-align: center;
+                            align-content: center; background-color: #ffffff;">
+                                <h2 style="background-color: #ffffff;">NNNN</h2>
+                                <h2 style="background-color: #ffffff;">Calama, NNNN #NNN</h2>
+                                <h2 style="background-color: #ffffff;">Rut:NNNNN</h2>
+                                <h2 style="background-color: #ffffff;">BOLETA ELECTRONICA No.</h2>
+                                <h2 style="background-color: #ffffff;">Fecha:<span id="#fecha"></span></h2>
+                                <h2 style="background-color: #ffffff;">Hora: <span id="#horas"></span>:<span id="#minutos"></span>:<span
                                         id="#segundos"></span><span id="#ampm"></span></h2>
                             </div>
-                            <table>
+                            <table style="  border-top: 1px ;text-align: center;
+                            align-content: center;   border-collapse: collapse; background-color: #ffffff;">
                                 <thead style="font-size: xx-small;">
-                                <tr>
-                                    <th class="cantidad">I</th>
-                                    <th class="cantidad">P</th>
-                                    <th class="cantidad">C</th>
-                                    <th class="cantidad">$$</th>
+                                <tr style="  border-top: 1px ;   border-collapse: collapse; background-color: #ffffff; ">
+                                    <th class="cantidad"style="  border-top: 1px ;   border-collapse: collapse; ">I</th>
+                                    <th class="cantidad"style="  border-top: 1px ;   border-collapse: collapse; ">P</th>
+                                    <th class="cantidad"style="  border-top: 1px ;   border-collapse: collapse; ">C</th>
+                                    <th class="cantidad" style="  border-top: 1px ;   border-collapse: collapse; ">$$</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr *ngFor="let product of item">
-                                    <td class="precio" *ngIf="product.sinventario == true">{{product.piva}}</td>
-                                    <td class="precio" *ngIf="product.sinventario == true">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
-                                    <td class="precio" *ngIf="product.sinventario == true">{{product.quantity}}</td>
-                                    <td class="precio" *ngIf="product.sinventario == true">{{product.pvalor}}</td>
+                                <tbody style="background-color: #ffffff;">
+                                <tr *ngFor="let product of item" style="  border-top: 1px ;   border-collapse: collapse; ">
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario == true">{{product.piva}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario == true">{{product.brand.bnombre}}{{product.pdescripcion}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario == true">{{product.quantity}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario == true">{{product.pvalor}}</td>
                                     
-                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.piva}}</td>
-                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.brand.bnombre}}{{product.product.pdescripcion}}</td>
-                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.quantity}}</td>
-                                    <td class="precio" *ngIf="product.sinventario2 == false">{{product.product.pvalor}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario2 == false">{{product.product.piva}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario2 == false">{{product.product.brand.bnombre}}{{product.product.pdescripcion}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario2 == false">{{product.quantity}}</td>
+                                    <td style="  border-top: 1px ;   border-collapse: collapse; " class="precio" *ngIf="product.sinventario2 == false">{{product.product.pvalor}}</td>
                                     
                                 </tr>
 
-                                <tr>
-                                    <td class="precio">Total:${{totalPrices || 0}}</td>
+                                <tr style="  border-top: 1px ;   border-collapse: collapse; background-color: #ffffff;">
+                                    <td style="  border-top: 1px ;   border-collapse: collapse;  background-color: #ffffff;" class="precio">Total:${{totalPrices || 0}}</td>
                                 </tr>
-                                <tr>
-                                    <td class="cantidad">IVA:{{totaliva}}</td>
+                                <tr style="  border-top: 1px ;   border-collapse: collapse; background-color: #ffffff;">
+                                    <td  style="  border-top: 1px ;   border-collapse: collapse;  background-color: #ffffff;" class="cantidad">IVA:{{totaliva}}</td>
                                 </tr>
                                 </tbody>
                             </table>
-
-                            <canvas id="barcode" hidden ></canvas>
-                            <img src="" id="imagen" style="width: 75%;" >
-
-                            <p class="centrado">¡GRACIAS POR SU COMPRA!</p>
-                        </div>
-                    </div>
-                </div>
+                            
+                            <canvas id="barcode" hidden style="background-color: #ffffff; text-align: center;
+                            align-content: center; " ></canvas>
+                            <img src="" id="imagen" style="width:401px;
+                            height: 200px;
+                            margin-top: 0px;
+                            margin-left: 0px;
+                            margin-right: 0px;
+                            margin-bottom: 0px;
+                            display: block;
+                            background-color: #ffffff;" >
+                                    
+                            <p class="centrado" style="background-color: #ffffff;">¡GRACIAS POR SU COMPRA!</p>
             </section>
         </div>
-    </div>
-</div>
+   
 
 <!-- Configuracion de la boleta -->
 <ng-container *ngIf="estadoConfi != true">

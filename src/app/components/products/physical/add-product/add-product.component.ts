@@ -32,6 +32,7 @@ export class AddProductComponent implements OnInit, OnDestroy {
       img: 'assets/images/beer-311090_1280.jpg',
   }
       ];
+      public articuloBusqueda: string;
   public proveedor: Provideer[];
 categorias: Categories[];
 marcas: Marca[];
@@ -148,7 +149,7 @@ file: File;
                 this.productForm.value.date_expiration.stock_expiration = this.productForm.value.stock.pstock;
                 this.productForm.value.stock.product_id = 0;
                 this.productForm.value.date_expiration.product_id = 0;
-                this.servi.guardarproductos( this.productForm.value )
+                this.servi.guardarproductos( this.productForm )
                 console.log( 'productos', this.productForm.value );
                // this.productForm.reset();
 
@@ -283,6 +284,41 @@ resetiarform() {
         console.log('fecha', this.productForm.value);
         // @ts-ignore
         console.log('fecha ngmodel', this.fechaguardada);
+    }
+
+    IngCodigo(){
+/*cordova.plugins.barcodeScanner.scan(
+      function (result) {
+
+           var variable =  <HTMLInputElement> document.getElementById("BusCodigo")
+
+        /  variable.value = result.text
+      },
+      function (error) {
+          alert("Scanning failed: " + error);
+      },
+      {
+          preferFrontCamera : true, // iOS and Android
+          showFlipCameraButton : true, // iOS and Android
+          showTorchButton : true, // iOS and Android
+          torchOn: true, // Android, launch with the torch switched on (if available)
+         saveHistory: true, // Android, save scan history (default false)
+          prompt : "Place a barcode inside the scan area", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats : "QR_CODE,PDF_417,UPC_A, UPC_E,EAN_8,EAN_13,CODE_128", // default: all but PDF_417 and RSS_EXPANDED
+          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations : true, // iOS
+          disableSuccessBeep: false // iOS and Android
+      }
+      );
+    */
+    }
+
+    limpiar_busqueda(){
+      this.articuloBusqueda = ""
+     const elemento = <HTMLInputElement> document.getElementById("validationCustom03");
+     elemento.value = ""
+            return
     }
 
 }

@@ -103,8 +103,8 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="validationCustom03" class="col-xl-3 col-sm-4 mb-0">Código producto:</label>
-                                        <input class="form-control col-xl-8 col-sm-7" id="validationCustom03"
-                                            type="number" formControlName="pcodigo" (keypress)="nosenvia($event)" required="">
+                                        <input class="form-control mr-sm-2" size="10" id="validationCustom03"
+                                            type="number" formControlName="pcodigo" [(ngModel)]="articuloBusqueda" (click)="IngCodigo()" (keypress)="nosenvia($event)" required=""><button type="button" class="ml-1 form-control btn btn-warning" (click)="limpiar_busqueda()">Limpiar</button>
                                         <div *ngIf="pcodigo.touched && pcodigo.errors?.required"
                                             class="text text-danger">
                                             Producto <Code></Code> Es requerido.

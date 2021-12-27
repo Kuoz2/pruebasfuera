@@ -90,7 +90,7 @@
 </ngx-spinner>
 <nav class="navbar navbar-light">
         <div class="shopping-cart-header">
-            <i class="fa fa-shopping-cart cart-icon" (click)="open2(content2)"></i><span class="badge">{{totalQuantity}}</span>
+           <button class="btn btn-primary btn-lg" (click)="open2(content2)"><i class="fa fa-shopping-cart cart-icon" ></i><span class="badge">{{totalQuantity}}</span></button> 
             <div class="shopping-cart-total">
                 <span class="lighter-text">Total:</span>
                 <span class="main-color-text"><h2>${{totalPrice}}</h2></span>
@@ -106,9 +106,15 @@
         </div>-->
         <label class="input-group-text " for="busqueda"> <i class="fa fa-search-plus"></i></label>
 
-        <input class="form-control mr-sm-2 border border-primary" id="busqueda" type="search" placeholder="Buscar" aria-label="Search" size="10" (input) = _buscadorProducto($event)>
+        <input class="form-control mr-sm-2 border border-primary"         
+         id="busqueda"
+         [(ngModel)]="articuloBusqueda"
+          placeholder="Buscar" aria-label="Search" size="10" (input) = _buscadorProducto($event) (click)="busqueda()"><button type="button" class="btn btn-warning" (click)="limpiar_busqueda()"><i class="fa fa-trash ">Limpiar</i> </button>
         </div>
 </nav>
 
 
 <img src="{{imagenjpg}}">
+<div id="my-node">
+hola mundo !
+</div>

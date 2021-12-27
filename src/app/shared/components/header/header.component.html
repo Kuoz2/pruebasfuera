@@ -1,3 +1,61 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title"><i class="fas fa-exclamation-circle"></i> Antes de ingresar un producto es necesario estos datos.</h5>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form class="needs-validation" [formGroup]="NuevoProdu" (ngSubmit)="guardarProd()">
+                <div class="form-group">
+                    <label for="cnombre" class="mb-1">Nombre de la categoría :</label>
+                    <input class="form-control" formControlName="cnombre" placeholder="ej: computadoras" id="cnombre" type="text" required>
+                    <div *ngIf="cnombre.touched && cnombre.errors?.required" class="text text-danger">
+                        Esta información es necesaria
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bnombre" class="mb-1">Nombre de la marca :</label>
+                    <input class="form-control" formControlName="bnombre" placeholder="ej: Intel" id="bnombre" type="text" required>
+                    <div *ngIf="bnombre.touched && bnombre.errors?.required" class="text text-danger">
+                        Esta información es necesaria
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nombre_provider" class="mb-1">Nombre de la proveedor :</label>
+                    <input class="form-control" formControlName="nombre_provider" placeholder="ej: Mi proveedor" id="nombre_provider" type="text" required>
+                    <div *ngIf="nombre_provider.touched && nombre_provider.errors?.required" class="text text-danger">
+                        Esta información es necesaria
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tnombre" class="mb-1">Nombre de la impuesto :</label>
+                    <input class="form-control" formControlName="tnombre" id="tnombre" placeholder="ej: IVA" type="text" required>
+                    <div *ngIf="tnombre.touched && tnombre.errors?.required" class="text text-danger">
+                        Esta información es necesaria
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="timpuesto" class="mb-1">Porcentaje del impuesto:</label>
+                    <input class="form-control" formControlName="timpuesto" name="timpuesto" id="timpuesto" maxlength="2" ng-maxlength="2" placeholder = "ej: 19" type="number" required>
+                    <div *ngIf="timpuesto.touched && timpuesto.errors?.required"  class="text text-danger">
+                        Esta información es necesaria
+                        
+                    </div>
+                    <div *ngIf="!timpuesto.errors?.maxlength" class="text text-danger">
+                        Es necesario un minomo de 2 digito
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" >Guardar</button>
+                
+            </div>
+        </form> 
+       </div>
+</ng-template>
+
+
+
 <div class="page-main-header" [class.open]="open">
     <div class="main-header-right row">
         <div class="main-header-left d-lg-none">

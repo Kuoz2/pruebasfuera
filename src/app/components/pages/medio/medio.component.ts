@@ -24,10 +24,15 @@ nuevomedio: Medio;
   mediopago = new Medio();
   tomarmedio:Medio[];
   ngOnInit() {
-    this.medio.mostrarmediodepago().subscribe(data => {this.tomarmedio = data})
+    this.ListFormPago()
   }
+  p = 1
+  medioPago
 
+  ListFormPago(){
+    this.medio.mostrarmediodepago().subscribe(data => {this.tomarmedio = data; console.log(data)})
 
+  }
   guardarmedio() {
     if (this.medioForm.valid) {
       const data = []
@@ -36,10 +41,10 @@ nuevomedio: Medio;
       }
       if (data.includes( this.medioForm.value.mpnombre.toLowerCase() ) != true) {
         this.medioForm.value.mpnombre = this.medioForm.value.mpnombre.toLowerCase()
-        return this.medio.guardarmododepago( this.medioForm.value ).subscribe( res => {
-          this.mediopago = res
-        ;        this.medioForm.reset()
-      } )
+      this.medio.guardarmododepago( this.medioForm )
+      setTimeout(() => {
+        this.ListFormPago()
+      }, 1500)
       } else {
         alert( "El medio de pago ya existe" + this.medioForm.value.mpnombre.toLowerCase() )
       }

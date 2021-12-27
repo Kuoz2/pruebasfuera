@@ -43,7 +43,6 @@ export class ListproductComponent implements OnInit {
     this.Productos_sin_id = res
   }).catch((err) => {console.log('Se, encontro un error', err)}).finally(() => {this.isloading = true})
 
-console.log('date expiration', this.Productos_sin_id)
   }
   PurificandoLink(dato):SafeUrl{
     return this.sanitizar.bypassSecurityTrustUrl(dato)

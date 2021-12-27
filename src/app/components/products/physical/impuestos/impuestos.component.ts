@@ -4,6 +4,7 @@ import {ImpuestosService} from "../../../../Service/impuestos.service";
 import {Impuestos} from "../../../Modulos/impuestos";
 import {Observable} from "rxjs";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import { map } from 'rxjs/internal/operators/map';
 
 @Component({
   selector: 'app-impuestos',
@@ -14,7 +15,7 @@ export class ImpuestosComponent implements OnInit {
     p: any;
   public closeResult: string;
   public impuestoID: Impuestos = new Impuestos();
-  public IMPs: Observable<Impuestos[]>;
+  public IMPs: Observable<any>;
   impuestos: FormGroup;
   constructor(private modalService: NgbModal, private servi: ImpuestosService,private formBuilder: FormBuilder) { }
 
@@ -34,7 +35,7 @@ export class ImpuestosComponent implements OnInit {
   }
 
   async Bimpuestos(){
-   return  this.IMPs = this.servi.obtneriIMP()
+   return   this.servi.obtneriIMP().pipe(map((x) => {this.IMPs =x})).subscribe()
   }
 
   open2(content2, impuestos: Impuestos):void
@@ -55,7 +56,10 @@ export class ImpuestosComponent implements OnInit {
   }
 
   editarimpuesto(impuesto: Impuestos){
-    this.servi.actualizarimpuesto(impuesto).subscribe(data => {this.impuestoID = data})
+    this.servi.actualizarimpuesto(impuesto)
+    setTimeout(()=> {
+     this.Bimpuestos()
+    }, 1500)
   }
 
   open(content) {

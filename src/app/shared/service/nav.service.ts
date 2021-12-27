@@ -44,10 +44,11 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 { path: '/products/physical/proveedor', rol: '', title: 'Proveedor', type: 'link'},
 { path: '/products/physical/promociones', rol: '', title: 'Promociones', type: 'link'},
 { path: '/products/physical/impuestos', rol: '', title: 'Impuestos', type: 'link'},
-{path: '/products/physical/marca', rol: '', title: 'Marcas', type: 'link'},
-{path: '/products/physical/category', rol: '', title: 'Categoría', type: 'link'},
+{path: '/products/brands/marca', rol: '', title: 'Marcas', type: 'link'},
+{path: '/products/categorias/category', rol: '', title: 'Categoría', type: 'link'},
 {path: '/products/physical/vencimiento', rol: '', title: 'Vencidos', type: 'link'	},
-{path: '/products/codigo', rol: 'administrador', title:'Código', type:'link'}
+{path: '/products/codigo', rol: 'administrador', title:'Código', type:'link'},
+{path: '/products/presupuesto', rol:'administrador', title:'Presupuesto', type:'link'}
 
 ]
 },

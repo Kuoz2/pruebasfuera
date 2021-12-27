@@ -17,6 +17,7 @@ import {MermaModule} from "./components/merma/merma.module";
 import {NgxPrintModule} from 'ngx-print'
 import {InfiniteScrollModule} from 'ngx-infinite-scroll'
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { NgxBarcodeModule } from 'ngx-barcode';
         NgxBarcodeModule
 
     ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],
   bootstrap: [AppComponent],
   
 })

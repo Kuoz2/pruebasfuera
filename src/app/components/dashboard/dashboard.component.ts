@@ -1,3 +1,4 @@
+import { ganancia_ateriores } from './../Modulos/respuesta';
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, } from '@angular/core';
 import {PagosService} from '../../Service/pagos.service';
 import {Pagos} from '../Modulos/Pagos';
@@ -15,7 +16,7 @@ import {Label} from 'ng2-charts';
 import {Mermas} from '../Modulos/mermas';
 import {NgxSpinnerService} from 'ngx-spinner';
 import { threadId } from 'worker_threads';
-
+import {stock_perdidos} from '../Modulos/respuesta'
 
 @Component({
   selector: 'app-dashboard',
@@ -38,6 +39,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
             size: "large",
             color: "white"
         });
+        await this.lista_producto_vendido()
         await this.pagosrealizados();
         await this.listaventasdetectadis();
         await this.ganancias_mepasado();
@@ -63,6 +65,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
        
 
          }// Fin del OnInit
+         public productos_mas_vendidos
     private unsubscribe$ = new Subject<void>();
     public mermas: Observable<Mermas[]>;
     public nmbrMerma = [];
@@ -82,9 +85,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         }
     };
 
-
     public pieChartLabels: Label[] = this.nmbrMerma;
-    public pieChartData: number[] = this.uniMerma;
+    public pieChartData: number[] = this.uniMerma ;
     public pieChartType: ChartType = 'pie';
     public pieChartLegend = true;
     public pieChartPlugins = [];
@@ -105,9 +107,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     public vouch_prod: DetalleVoucher[] = [];
     public list_produc: Productos[] = [];
     // Perdidas del mes anterior
-    public stock_perdidas_anterior: any;
+    public stock_perdidas_anterior: number;
     // variable para las perdidas de este mes
-    public stock_perdidas_este_mes: any;
+    public stock_perdidas_este_mes: number;
     // Lista de productos vendidos
     public lisprodsale: Sort_Prod[] = [];
     // Toma los productos perdidas del mes pasado
@@ -159,7 +161,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     fechas_registradas = [];
 
     // Ganancias del mes pasado
-    public ganancias_mes_pasado: Venta_mes_atras;
+    public ganancias_mes_pasado: number;
     // tslint:disable-next-line:variable-name
     public productos_vendidos: V_Producto[] = [];
     p = 1;
@@ -169,6 +171,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
 
     addSlice(): void {
+        if(this.nmbrMerma.length == 0){this.nmbrMerma.push('no hay mermas')}
         this.pieChartLabels.push([this.nmbrMerma.toString()]);
         this.pieChartData.push(400);
         this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
@@ -206,7 +209,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         } );
         matriz = Object.keys( matriz ).map( (producto) => {
 
-            return {
+            this.productos_mas_vendidos = {
                 nombre: JSON.parse( producto ).pdescripcion,
                 valor: JSON.parse( producto ).pvalor * matriz[producto],
                 cantidad: matriz[producto]
@@ -296,12 +299,18 @@ export class DashboardComponent implements OnInit, OnDestroy {
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
             const acumlador = 0;
             const datos = Object.values( res.reduce( (prev, next) => Object.assign( prev, {[(next.causaMrm )]: next} ), {} ) );
+            if(datos.length == 0){
+                this.nmbrMerma.push('prueba1','prueba2')
+                this.uniMerma.push(10,20)
+            }else{
             for (const i in datos) {
+                
                 // @ts-ignore
                 this.nmbrMerma.push(datos[i].causaMrm);
                 // @ts-ignore
                 this.uniMerma.push(datos[i].unidadesMrm);
             };
+        }
             this.cd.markForCheck();
         });
     }
@@ -323,7 +332,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         // Ganancias del mes pasado
         this.vouch.ganancia_mes_anterior().
         pipe(takeUntil(this.unsubscribe$)).
-        subscribe(res => {this.ganancias_mes_pasado  = res ; this.cd.markForCheck(); });
+        subscribe((res:ganancia_ateriores) => {this.ganancias_mes_pasado  = res.mes_anterior_es ; this.cd.markForCheck(); });
     }
 
     ganancias_mensual() {
@@ -353,14 +362,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
         // El stock de perdidas de este mes.
         this.produc.stock_perida_este_mes().
         pipe(takeUntil(this.unsubscribe$)).
-        subscribe(data => { this.stock_perdidas_este_mes = data; this.cd.markForCheck(); });
+        subscribe((data) => { this.stock_perdidas_este_mes = data[0].stock_lost; console.log('respuesta de data', this.stock_perdidas_este_mes); this.cd.markForCheck(); });
     }
 
     perdiasmesanterior() {
         // Stock peridasd del mes anterior
         this.produc.stock_perdida_anterior().
         pipe(takeUntil(this.unsubscribe$)).
-        subscribe( data => {this.stock_perdidas_anterior = data; this.cd.markForCheck(); });
+        subscribe( data => {this.stock_perdidas_anterior = data[0]; this.cd.markForCheck(); });
 
     }
 
@@ -494,10 +503,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
             } else {
                 vg2.push(0);
             }
-            const reducer = (accumulator, currentValue) =>   (currentValue % 100) / accumulator ;
-            const raiz = vg2.slice(-2).reduce(reducer);
-            // console.log("raiz", Math.sqrt(raiz).toFixed(2 ))
-            this.porcentaje_ventas = Math.sqrt(raiz).toFixed(2);
+            console.log(vg2)
+            if(vg2.length != 0){
+            var reducer = (accumulator, currentValue) =>   (currentValue % 100) / accumulator ;
+            var raiz = vg2.slice(-2).reduce(reducer) ;
+               // console.log("raiz", Math.sqrt(raiz).toFixed(2 ))
+               this.porcentaje_ventas = Math.sqrt(raiz).toFixed(2);
+            }
+         
             // Iniciando un grafico lineal para porcentajes
             this.porsentaje_venta = new Chart('ctx1', {
                 type: 'line',
@@ -618,10 +631,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
             } else {
                 vg2.push(0);
             }
+            if(vg2.length != 0){
             const reducer = (accumulator, currentValue) =>   (currentValue % 100) / accumulator ;
             const raiz = vg2.slice(-2).reduce(reducer);
             // console.log("raiz", Math.sqrt(raiz).toFixed(2 ))
             this.todas_perdidasinventario2 = Math.sqrt(raiz).toFixed(2);
+            }
             // Iniciando un grafico lineal para porcentajes
             this.todas_perdidainventario2 = new Chart('ctx3', {
                 type: 'line',
@@ -680,11 +695,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
             } else {
                 vg2.push(0);
             }
-
+            if(vg2.length != 0){
             const reducer = (accumulator, currentValue) =>   (currentValue % 100) / accumulator ;
             const raiz = vg2.slice(-2).reduce(reducer);
             // console.log("raiz", Math.sqrt(raiz).toFixed(2 ))
             this.ventas_rapidasrealizada = Math.sqrt(raiz).toFixed(2);
+            }
             // Iniciando un grafico lineal para porcentajes
             this.venta_rapidasgrafico = new Chart('ctx4', {
                 type: 'line',

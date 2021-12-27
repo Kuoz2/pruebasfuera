@@ -76,13 +76,13 @@
 
     exports = ___CSS_LOADER_API_IMPORT___(true); // Module
 
-    exports.push([module.i, "/* You can add global styles to this file, and also import other style files */", "", {
+    exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n@media screen and (max-width: 600px) {\n  table {\n    width: 100%;\n  }\n\n  thead {\n    display: none;\n  }\n\n  tr:nth-of-type(2n) {\n    background-color: inherit;\n  }\n\n  tr td:first-child {\n    background: #f0f0f0;\n    font-weight: bold;\n    font-size: 1.3em;\n  }\n\n  tbody td {\n    display: block;\n    text-align: center;\n  }\n\n  tbody td:before {\n    content: attr(data-th);\n    display: block;\n    text-align: center;\n  }\n}", "", {
       "version": 3,
-      "sources": ["C:\\Users\\kuoz2\\pruebadeproyecto/src\\styles.scss"],
+      "sources": ["C:\\Users\\kuoz2\\pruebadeproyecto/src\\styles.scss", "styles.scss"],
       "names": [],
-      "mappings": "AAAA,8EAAA",
+      "mappings": "AAAA,8EAAA;AACA;EACI;IACI,WAAA;ECCN;;EDCE;IACI,aAAA;ECEN;;EDAE;IACI,yBAAA;ECGN;;EDDE;IACI,mBAAA;IACA,iBAAA;IACA,gBAAA;ECIN;;EDFE;IACI,cAAA;IACA,kBAAA;ECKN;;EDHE;IACI,sBAAA;IACA,cAAA;IACA,kBAAA;ECMN;AACF",
       "file": "styles.scss",
-      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\r\n"]
+      "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\r\n@media screen and (max-width: 600px) {\r\n    table {\r\n        width:100%;\r\n    }\r\n    thead {\r\n        display: none;\r\n    }\r\n    tr:nth-of-type(2n) {\r\n        background-color: inherit;\r\n    }\r\n    tr td:first-child {\r\n        background: #f0f0f0;\r\n        font-weight:bold;\r\n        font-size:1.3em;\r\n    }\r\n    tbody td {\r\n        display: block;\r\n        text-align:center;\r\n    }\r\n    tbody td:before {\r\n        content: attr(data-th);\r\n        display: block;\r\n        text-align:center;\r\n    }\r\n}", "/* You can add global styles to this file, and also import other style files */\n@media screen and (max-width: 600px) {\n  table {\n    width: 100%;\n  }\n\n  thead {\n    display: none;\n  }\n\n  tr:nth-of-type(2n) {\n    background-color: inherit;\n  }\n\n  tr td:first-child {\n    background: #f0f0f0;\n    font-weight: bold;\n    font-size: 1.3em;\n  }\n\n  tbody td {\n    display: block;\n    text-align: center;\n  }\n\n  tbody td:before {\n    content: attr(data-th);\n    display: block;\n    text-align: center;\n  }\n}"]
     }]); // Exports
 
     module.exports = exports;
@@ -580,7 +580,7 @@
   },
 
   /***/
-  4:
+  5:
   /*!***************************************************************************************************************!*\
     !*** multi ./src/styles.scss ./src/assets/scss/style.scss ./node_modules/font-awesome/scss/font-awesome.scss ***!
     \***************************************************************************************************************/
@@ -602,5 +602,5 @@
     "./node_modules/font-awesome/scss/font-awesome.scss");
     /***/
   }
-}, [[4, "runtime"]]]);
+}, [[5, "runtime"]]]);
 //# sourceMappingURL=styles-es5.js.map

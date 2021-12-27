@@ -84,7 +84,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let marca of (elnombre | async | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
+                                            <tr *ngFor="let marca of (elnombre  | paginate: {itemsPerPage:5, currentPage:p}) " class="text-center">
                                                 <td>{{marca.id  }}</td>
                                                 <td>{{marca.bnombre }}</td>
                                                 <td>

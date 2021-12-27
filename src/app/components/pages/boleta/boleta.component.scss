@@ -1,8 +1,4 @@
 
-@media print {
-  .page-break { display: block; page-break-before: always; }
-}
-
 
 * {
   font-size: 12px;
@@ -54,7 +50,7 @@ th.precio {
 
 .ticket{
   align-items:center;
-  width: 100%;
+  width: 18rem;
   height: auto;
 }
 
@@ -64,16 +60,12 @@ th.precio {
   width: 100%;
   height: auto;
 }
-img{
- width: 75%;
+canvas{
+ width: 60%;
  height: auto;
  display: block;
  margin: auto;
 }
 
-@media screen and (max-width: 400px) {
-   .container{
-     width: 100%;
-   }
-}
+
 

@@ -154,8 +154,8 @@ export class BoletaComponent implements OnInit {
         PDF417.draw( code, canvas );
         // @ts-ignore
         imgObject.src = canvas.toDataURL( 'image/png' );
-        const imagenjpg = imgObject.src.toString();
-        document.getElementById( 'imagen' ).setAttribute( 'src', imagenjpg );
+   
+        document.getElementById( 'imagen' ).setAttribute( 'src',imgObject.src );
     }
 
 

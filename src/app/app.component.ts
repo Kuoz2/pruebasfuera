@@ -1,27 +1,29 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { findIndex } from 'rxjs/operators';
+
+import {  Component, OnInit, Input } from '@angular/core';
 import {UsuarioService} from './Service/usuario.service';
 import * as devTools from 'devtools-detect';
-import { Router } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 
 })
 export class AppComponent implements OnInit {
+  @Input() cambiosP:boolean = true
   title = 'paltanes';
-constructor(private userservi: UsuarioService) {
+constructor(private userservi: UsuarioService,
+
+   ) {
 
 }
 
-
+private isloading: boolean
 
  async ngOnInit() {
+   this.isloading = false
       //document.onkeydown = function(){return false}
      // document.oncontextmenu = function(){return false}
     //await this.navegador_habierto()
@@ -33,10 +35,13 @@ constructor(private userservi: UsuarioService) {
    // window.location.href = "https://errorconsole.herokuapp.com/"
   //}
 //});
-
 this.analizar_token()
   }
 
+
+
+  //Estara vacio las categorias?
+    
   navegador_habierto(){
       if(devTools.isOpen == true){
         window.location.href = "https://errorconsole.herokuapp.com/"
@@ -45,6 +50,7 @@ this.analizar_token()
   navegador(){
     if(window.navigator.appCodeName != "chrome"){}
   }
+
 
 
   //Muestra el contenido del token

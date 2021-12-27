@@ -1,6 +1,6 @@
 import { VerificarTokenService, respuesta } from './verificar-token.service';
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {date_expiration, Productos, Stock} from '../components/Modulos/Productos';
 import {Categories} from '../components/Modulos/Categories';
@@ -10,10 +10,11 @@ import {Provideer} from '../components/Modulos/Provideer';
 import {FormGroup} from '@angular/forms';
 import {Mermas} from '../components/Modulos/mermas';
 import {DateExpiration, Fecha_vencimiento} from '../components/Modulos/Fecha_vencimiento';
+import { proveedores_lista } from '../components/Modulos/respuesta';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductserviceService {
 // Variables publicas
@@ -29,7 +30,7 @@ export class ProductserviceService {
  UrlpruebaCategoria = 'https://multikart-norte.herokuapp.com/categories';
  urlpruebaProveedores = 'https://multikart-norte.herokuapp.com/providers';
  urlpruebastock = 'https://multikart-norte.herokuapp.com/stocks';
- stockperdida = 'https://multikart-norte.herokuapp.com/mostrar_stock_de_perdidas';
+ stockperdida = 'https://multikart-norte.herokuapp.com/stocks/mostrar_stock_de_perdidas';
  urlstockperdiudanaterior = 'https://multikart-norte.herokuapp.com/stocks/p_mes_anterior';
     // tslint:disable-next-line:variable-name
  prueba_guardar_stock = 'https://multikart-norte.herokuapp.com/stocks'
@@ -41,6 +42,8 @@ export class ProductserviceService {
  prueba_guardarfechainventario2 = 'https://multikart-norte.herokuapp.com/date_expirations'
  prueba_buscarnoproduct_id = 'https://multikart-norte.herokuapp.com/date_expirations/date_product_id_on'
  muestraCod = 'https://multikart-norte.herokuapp.com/products/codigos_debarra'
+ private URLvacios = 'https://multikart-norte.herokuapp.com/providers/verificar_blank_provider'
+ urlListprovider = 'https://multikart-norte.herokuapp.com/providers'
     // Actualizar la fecha al realizar una venta.
     
     codprod(){
@@ -81,18 +84,55 @@ export class ProductserviceService {
       console.log('stck', stck);
       return this.http.put<Stock>(this.urlpruebastock + '/' + stck.id, stck);
     }
+            // Guardar un proveedor
+            guardarProvider(c, ) {
+              this.verifica.verificarSaveProv().subscribe(
+                (res: respuesta) => {
+                  console.log(res)
+                  if (res.resultado == 'existe'){
+                    return this.http.post<Provideer>(this.urlpruebaProveedores, c.value).subscribe(res => { 
+                      if (Object.values(res)[0] == 'correctamente'){
+                        
+                        c.reset()
+                      }
+                    });
+                  }
+                });
+            }
+
+            //Lista de proveedores
+            ListaProveedor():Observable<any>{
+              const headers = new HttpHeaders()
+            .set("X-CustomHeader", "custom header value");
+              return this.http.get(this.urlListprovider, {headers})
+            }
+
+            //Guardar un nuevo producto
+            guardarnuevopro(c){
+              this.verifica.verificarSaveProv().subscribe(
+                (res: respuesta) => {
+                  if (res.resultado == 'existe'){
+                    return this.http.post<Provideer>(this.urlpruebaProveedores, c.value).subscribe(res => { 
+                      if (Object.values(res)[0] == 'correctamente'){
+                        c.reset()
+                      }
+                    });
+                  }
+                });            }
+        
     // Guardar un nuevo producto
   async guardarproductos(p) {
-  await  this.verifica.VerficSaveProd().subscribe(res => {
-    console.log(res)
-    this.resipiente_Resu.resultado = res
-    if(this.resipiente_Resu.resultado != 'existe') {return}
-      if(this.resipiente_Resu.resultado == 'existe'){
-        this.http.post<Productos>(this.UrlPrueba, p).subscribe(response => {console.log(response)})
-      } 
+  await  this.verifica.VerficSaveProd().subscribe((res:respuesta) => {
 
-    })
-  }
+    if(res.resultado != 'existe') {return}
+      if(res.resultado == 'existe'){
+        this.http.post<Productos>(this.UrlPrueba, p.value).subscribe(res => {
+          if(Object.values(res)[0] =='correctamente'){
+                p.reset()
+          }
+        })}}
+      )
+}
 
 
   // Tomar todas las categorias
@@ -139,11 +179,6 @@ export class ProductserviceService {
   // Aqui se conecta a los proveedores
     __tomaproveedores() {
       return this.http.get<Provideer[]>(this.urlpruebaProveedores);
-    }
-
-        // Guardar un proveedor
-    guardarProvider(c: Provideer) {
-      return this.http.post<Provideer>(this.urlpruebaProveedores, c);
     }
 
 
@@ -218,6 +253,11 @@ actualizar_stock_fecha(fchAct: date_expiration) {
 
   _actualizar_fechavence(dt: date_expiration){
       return this.http.put(this.pruebaActualizarFechaVenta + '/' + dt.id, dt)
+  }
+
+  //verificar si el proveedor esta vacio.
+  verificar_vacios(){
+    return this.http.get(this.URLvacios)
   }
 
 }

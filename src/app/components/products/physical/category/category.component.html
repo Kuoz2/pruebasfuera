@@ -1,5 +1,6 @@
 <!-- Container-fluid starts-->
-
+<ngx-spinner name="spinnerdashcategori">
+</ngx-spinner>
 
 <ng-template #content let-modal>
     <div class="modal-header">
@@ -14,7 +15,7 @@
             <div class="form">
                 <div class="form-group">
                     <label for="validationCustom01" class="mb-1">Nombre de la categoría :</label>
-                    <input class="form-control" formControlName="cnombre" id="validationCustom01" type="text">
+                    <input class="form-control" formControlName="cnombre" id="validationCustom01" type="text" required>
                 </div>
 
             </div>
@@ -25,6 +26,8 @@
             </div>
         </form>
     </div>
+</ng-template>
+
     <ng-template #content2 let-modal2>
         <div class="modal-header">
             <h5 class="modal-title f-w-600" id="exampleModalLabel2">Editar categoría</h5>
@@ -37,7 +40,7 @@
                 <div class="form">
                     <div class="form-group">
                         <label for="validationCustom012" class="mb-1">Nombre de la categoría :</label>
-                        <input class="form-control" [(ngModel)]="categoriaID.cnombre" id="validationCustom012" type="text">
+                        <input class="form-control" [(ngModel)]="categoriaID.cnombre" id="validationCustom012" type="text" required>
                     </div>
 
                 </div>
@@ -48,7 +51,6 @@
                 </div>
         </div>
 
-    </ng-template>
 </ng-template>
 <div class="container" >
     <div class="row">
@@ -77,8 +79,8 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr *ngFor="let category of (categorias | async | paginate: {itemsPerPage:5, currentPage:p}) " >
-                                                <td>{{category.id  }}</td>
+                                            <tr *ngFor="let category of (categorias  | paginate: {itemsPerPage:5, currentPage:p}) " >
+                                                <td>{{category.id   }}</td>
                                                 <td>{{category.cnombre }}</td>
                                                 <td>
                                                     <button  class="btn btn-warning" (click)="open2(content2, category)">Editar</button>
@@ -99,5 +101,5 @@
         </div>
     </div>
 </div>
-
+<button (click)="apretrando()">apretar</button>
 <!-- Container-fluid Ends-->

@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"components-auth-auth-module-ngfactory":"components-auth-auth-module-ngfactory","components-dashboard-dashboard-module-ngfactory":"components-dashboard-dashboard-module-ngfactory","components-merma-merma-module-ngfactory":"components-merma-merma-module-ngfactory","components-pages-pages-module-ngfactory":"components-pages-pages-module-ngfactory","components-products-products-module-ngfactory":"components-products-products-module-ngfactory","components-users-users-module-ngfactory":"components-users-users-module-ngfactory"}[chunkId]||chunkId) + "-es2015.js"
+/******/ 		return __webpack_require__.p + "" + ({"components-auth-auth-module-ngfactory":"components-auth-auth-module-ngfactory","components-dashboard-dashboard-module-ngfactory":"components-dashboard-dashboard-module-ngfactory","components-merma-merma-module-ngfactory":"components-merma-merma-module-ngfactory","components-pages-pages-module-ngfactory":"components-pages-pages-module-ngfactory","components-products-products-module-ngfactory":"components-products-products-module-ngfactory","components-pruebanavegacion-pruebanavegacion-module-ngfactory":"components-pruebanavegacion-pruebanavegacion-module-ngfactory","components-users-users-module-ngfactory":"components-users-users-module-ngfactory"}[chunkId]||chunkId) + "-es2015.js"
 /******/ 	}
 /******/
 /******/ 	// The require function

@@ -13,10 +13,15 @@ import {Voucher} from '../../Modulos/Voucher';
 import {Ventas} from '../../Modulos/Ventas';
 import {VentasService} from '../../../Service/ventas.service';
 import {VoucherService} from '../../../Service/voucher.service';
-import {Observable, Subject} from 'rxjs';
+import { Observable, Subject} from 'rxjs';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {takeUntil} from 'rxjs/operators';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { getEnabledCategories } from 'trace_events';
+import html2canvas from 'html2canvas';
+import { createElementCssSelector } from '@angular/compiler';
 
 @Component({
   selector: 'app-appsale',
@@ -40,6 +45,8 @@ export class AppsaleComponent implements OnInit, OnDestroy {
   public efectivo = 0;
   public devolucion = 0;
   public closeResult: string;
+  public articuloBusqueda: string;
+  private imgPrinting = [];
   @Output()
   public textoCambiado: EventEmitter<string> = new EventEmitter();
   @Output()
@@ -83,7 +90,6 @@ imagenjpg;
   async ngOnInit() {
     this.spinner.show();
     this.datos$ = this.secoind.getInfoReloj();
-
     this.fecha =  this.datos$.subscribe( x => {
           this.hora = x.diaymes + 'T' + x.hora.toString() + ':' + x.minutos + ':' + x.segundo;
           this.fechaE = x.diaymes;
@@ -96,11 +102,9 @@ imagenjpg;
         x => {
           
           if (x) { 
-          
-
             this.items = x;
             this.totalQuantity = x.length;
-            this.totalPrice = x.reduce((sum, current) => sum + (current.pvalor || current.product.pvalor * current.quantity), 0 )
+            this.totalPrice = x.reduce((sum, current) => sum + ((current.pvalor || current.product.pvalor) * current.quantity), 0 )
             this.cd.markForCheck();
           }
         
@@ -128,7 +132,7 @@ imagenjpg;
 
 
   // Modulo para imprimir.
-     imprimir(register) {
+   async  imprimir(register) {
     this.fecha.unsubscribe();
 
     const data = '<head>' +
@@ -195,7 +199,7 @@ imagenjpg;
            '<body >' +
            document.getElementById( register ).innerHTML +
            '</body>';
-    const mywindow = window.open( '', '_blank' );
+   /* const mywindow = window.open( '', '_blank' );
     mywindow.opener;
 
     mywindow.document.open();
@@ -206,10 +210,56 @@ imagenjpg;
             mywindow.focus();
             mywindow.print();
        };
-    this.se_Imprio = true;
+
+*/
 
 
-     }
+
+
+var info ;
+        var imagen = document.getElementById('ticket').innerHTML
+  var e = this. createElement(imagen)
+  console.log(e)
+  document.body.appendChild(e)
+  await html2canvas( e , { width:400, scale:2}).then( function(canvas) {
+  
+    console.log(canvas)
+    canvas.style.width = "219px"
+    canvas.hidden = true
+    
+     console.log(canvas.toDataURL('image/png'))
+     info = canvas.toDataURL('image/png')
+
+  })
+  console.log(info)
+  await this.imprimirinfo(info)
+
+  e.hidden = true
+}
+
+imprimirinfo(info){
+ /*BTPrinter.connect(function(data){
+    console.log("Success");
+    console.log(data)
+  },function(err){
+    console.log("Error");
+    console.log(err)
+  }, "IposPrinter");
+  BTPrinter.printBase64(function(data){
+    console.log("Success");
+    console.log(data);
+},function(err){
+    console.log("Error");
+    console.log(err);
+}, info,'0');*/
+}
+ createElement(str)
+{
+  var div = <HTMLElement> document.createElement('div');
+  div.innerHTML = str;
+  return div
+}
+  
      // Probrando si se imprimio el documento
   Imprimcion() {
   }
@@ -235,9 +285,7 @@ remover_producto(producto) {
   }
 // Aca se guardaran las ventas cuando se precione guardar luego se actualizara
    guardarVentaApp() {
-    if (this.se_Imprio == false) {
-      alert('No se puede guardar, debe imprimir la boleta');
-    } else {
+
       try {
         this.fecha.unsubscribe();
         this.detallevoucher.voucher.vtotal = this.totalPrice;
@@ -304,7 +352,7 @@ remover_producto(producto) {
         console.log('ocurrio un error', e);
       }
 
-    }
+    
   }
 
   devolucion_app() {
@@ -335,4 +383,39 @@ remover_producto(producto) {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
+  busqueda(){
+  /*cordova.plugins.barcodeScanner.scan(
+      function (result) {
+
+           var variable =  <HTMLInputElement> document.getElementById("BusCodigo")
+
+        /  variable.value = result.text
+      },
+      function (error) {
+          alert("Scanning failed: " + error);
+      },
+      {
+          preferFrontCamera : true, // iOS and Android
+          showFlipCameraButton : true, // iOS and Android
+          showTorchButton : true, // iOS and Android
+          torchOn: true, // Android, launch with the torch switched on (if available)
+         saveHistory: true, // Android, save scan history (default false)
+          prompt : "Place a barcode inside the scan area", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats : "QR_CODE,PDF_417,UPC_A, UPC_E,EAN_8,EAN_13,CODE_128", // default: all but PDF_417 and RSS_EXPANDED
+          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations : true, // iOS
+          disableSuccessBeep: false // iOS and Android
+      }
+      );
+    */
+  }
+  limpiar_busqueda(){
+    this.articuloBusqueda = ""
+    this.textoCambiado.emit("");
+   const elemento = <HTMLInputElement> document.getElementById("busqueda");
+   elemento.value = ""
+          return
+  }
+
 }

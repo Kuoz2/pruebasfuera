@@ -1,3 +1,8 @@
+<!-- Container-fluid starts-->
+<ngx-spinner name="spinnerdashcategori">
+</ngx-spinner>
+
+
 <div class="container-fluid"  >
     <div class="row">
         <div class="col-sm-12">
@@ -29,6 +34,47 @@
                                 </div>
 
                             </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+               
+                <div class="card-body">
+                    
+                    <div id="batchDelete" class="custom-datatable">
+                        <div class="table-responsive">
+                            <div class="container ">
+                                <div class="card">
+                                    <div class="card-header" >
+                                        <h3>Mis proveedores</h3>
+                                    </div>
+                                    <div class="card-body" >
+                                        <table class="table table-bordered" >
+                                            <thead>
+                                            <tr>
+                                                <th>Nombre proveedor</th>                                              
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let provedor of (provedor|  paginate: {itemsPerPage:3, currentPage:p}) " >
+                                                <td>{{provedor.nombre_provider  }}</td>
+                                             
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

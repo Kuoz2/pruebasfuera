@@ -1,28 +1,41 @@
-import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import {MarcaService} from "../../../../Service/marca.service";
 import {Marca} from "../../../Modulos/Marca";
 import {Observable} from "rxjs";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { map } from 'rxjs/internal/operators/map';
+import { WebsocketService } from 'src/app/Service/websocket.service';
 
 
 @Component({
   selector: 'app-marca',
   templateUrl: './marca.component.html',
   styleUrls: ['./marca.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MarcaComponent implements OnInit {
+export class MarcaComponent implements OnInit, AfterViewInit {
 p: any
-  constructor(private Smarca: MarcaService,private modalService: NgbModal, private fb:FormBuilder) {
+  constructor(private Smarca: MarcaService,
+    private modalService: NgbModal,
+     private fb:FormBuilder,
+     private cd: ChangeDetectorRef,
+      private cookie: CookieService, private router: ActivatedRoute, 
+      private socketwebservice: WebsocketService,
+      ) {
       this.marcasForm = this.fb.group({
           bnombre:['', [Validators.required]]
       })
 
   }
-
+  ngAfterViewInit(): void {
+    }
+  route: string;
   marcasForm:FormGroup;
 
-  elnombre:Observable<Marca[]>
+  elnombre:Marca
     public closeResult: string;
     marcaId: Marca = new Marca();
 
@@ -37,17 +50,29 @@ p: any
     return informacion()
   }
 
-  async informacionasync(){
-    this.elnombre= this.Smarca.buscarmarca2()
+   informacionasync(){
+     this.Smarca.buscarmarca().subscribe((x:Marca) => {
+      this.elnombre= x
+     })
   }
 nombre;
   ngOnInit(): void {
 
     this.informacionasync();
     console.log(this.elnombre);
-    this.Smarca.buscarmarca();
-  }
+      
 
+      this.socketwebservice.Marcallback.subscribe((res:Marca) =>{
+        this.cookie.delete('marca')
+        console.log(res)
+        console.log("hola", Object.values(res)[0]  )
+        this.elnombre =  Object.values(res)[0] 
+        this.cd.detectChanges();
+       return this.elnombre
+        
+      }) 
+  }
+ 
     open2(content2, marca: Marca):void
     {
         this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -68,7 +93,11 @@ nombre;
         });
     }
     editarcategoria(marca: Marca){
-        this.Smarca.actualizarmarca(marca).subscribe()
+        this.Smarca.actualizarmarca(marca)
+        setTimeout(() => {
+          this.marcaId
+          this.informacionasync()
+        }, 1500)
 
     }
 
@@ -88,8 +117,14 @@ nombre;
     }
 
     guardarmarca(fbm) {
+        if(this.marcasForm.valid){
+            this.Smarca.guardarmarca(this.marcasForm);
+            this.route = this.router.snapshot.paramMap.get('marca')
+            console.log(this.route)
+            this.cookie.set('marca', this.route)
 
-            this.Smarca.guardarmarca(fbm.value);
-            this.marcasForm.reset()
+            this.Smarca.buscarmarca().subscribe(res =>  this.socketwebservice.emitEventMarca({res}))
+
           }
+    }
 }

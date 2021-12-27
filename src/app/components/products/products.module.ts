@@ -31,6 +31,9 @@ import { VencimientosComponent } from './physical/vencimientos/vencimientos.comp
 import {NgxSpinnerModule} from "ngx-spinner";
 import { CodbarraComponent } from './codbarra/codbarra.component';
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { FacturaComponent } from './physical/factura/factura.component';
+import { ListProvidersComponent } from './list-providers/list-providers.component';
+import { ListacomponentesComponent } from './physical/listacomponentes/listacomponentes.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   maxFilesize: 50,
@@ -50,7 +53,10 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ImpuestosComponent,
     MarcaComponent,
     VencimientosComponent,
-    CodbarraComponent],
+    CodbarraComponent,
+    FacturaComponent,
+    ListProvidersComponent,
+    ListacomponentesComponent,],
     imports: [
         CommonModule,
         FormsModule,

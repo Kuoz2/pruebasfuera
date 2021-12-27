@@ -34,7 +34,7 @@ import { Busqueda2inventarioPipe } from './Pipe/busqueda2inventario.pipe';
 import { RangodefechasPipe } from './Pipe/rangodefechas.pipe';
 import { Comproduc1Pipe } from './Pipe/comproduc1.pipe';
 import { Comproduc2Pipe } from './Pipe/comproduc2.pipe';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import { Comproduc2Pipe } from './Pipe/comproduc2.pipe';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [NavService, WINDOW_PROVIDERS],
     exports: [FeatherIconsComponent,
