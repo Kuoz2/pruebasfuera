@@ -10,7 +10,7 @@ app.get('/*', function (req, res) {
 });
 
 app.listen(process.env.PORT || 8080);
-
+//    origin: "http://localhost:4200",
 var server = require('http').Server(app);
 const io = require('socket.io')(server, {
   cors: {
@@ -23,18 +23,20 @@ const io = require('socket.io')(server, {
   allowEIO3: true
   
 });
+//    res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
+
 app.use((req, res ,next) => {
-   res.setHeader('Access-Control-Allow-Origin','https://pruebasocketinject.herokuapp.com/');
-   res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-   res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
-   next();
+    res.setHeader('Access-Control-Allow-Origin','https://pruebasocketinject.herokuapp.com/');
+    res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
+    next();
 })
 app.use(express.static(__dirname))
 
 io.on('connection', (socket) => {
-  // socket.on('disconnect', () => {
-    //   console.log('user disconnected');
-    //});
+   // socket.on('disconnect', () => {
+     //   console.log('user disconnected');
+     //});
 const idHandShake = socket.id
 const {nameRoom} = socket.handshake.query
 
@@ -42,17 +44,17 @@ console.log(`hola dispositivo ${idHandShake} --> ${nameRoom}`)
 
 socket.join(nameRoom)
 socket.on('event', (res) => {
- console.log(res)
- socket.emit('event',res);
- socket.to(nameRoom).emit('event', res);
+  console.log(res)
+  socket.emit('event',res);
+  socket.to(nameRoom).emit('event', res);
 })
 socket.on('marcaEvnt', (res) => {
- console.log(res)
- socket.emit('marcaEvnt',res);
- socket.to(nameRoom).emit('marcaEvnt', res);
+  console.log(res)
+  socket.emit('marcaEvnt',res);
+  socket.to(nameRoom).emit('marcaEvnt', res);
 })
 })
-var port = process.env.port || 3000
-server.listen(port, () => {
-   console.log("server conectado por el puerto 5000")
-})
+//var port = process.env.PORT || 3000
+//server.listen(5000, () => {
+  //  console.log("server conectado por el puerto 5000")
+//})
