@@ -10,16 +10,15 @@ app.get('/*', function (req, res) {
 });
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log("conectado en", process.env.PORT)
 });
 //    origin: "http://localhost:4200",
-var server = require('http').Server(app);
+var server = require('https').Server(app);
 const io = require('socket.io')(server, {
   cors: {
     origin: "https://pruebasocketinject.herokuapp.com:3000",
     methods: ["GET", "POST"],
     credentials: true,
-    transports: ['websocket', 'polling'],
+    //transports: ['websocket', 'polling'],
 
   },
   allowEIO3: true
@@ -33,7 +32,7 @@ app.use((req, res ,next) => {
     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
     next();
 })
-app.use(express.static(__dirname))
+app.use(express.static(__dirname + '/dist/multikart-admin/index.html'))
 
 io.on('connection', (socket) => {
    // socket.on('disconnect', () => {
