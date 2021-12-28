@@ -9,7 +9,7 @@ app.get('/*', function (req, res) {
    res.setFile(path.join(__dirname + '/dist/multikart-admin/index.html'))
 });
 
-app.listen(process.env.PORT || 8080, () => {
+app.listen(8080, () => {
   console.log("conectado en", process.env.PORT)
 });
 //    origin: "http://localhost:4200",
