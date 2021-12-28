@@ -9,18 +9,6 @@ app.get('/*', function (req, res) {
    res.setFile(path.join(__dirname + '/dist/multikart-admin/index.html'))
 });
 
-app.listen(process.env.PORT || 8080, () => {
-});
-
-
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-server.listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-/*
 //    origin: "http://localhost:4200",
 var server = require('https').Server(app);
 const io = require('socket.io')(server, {
@@ -42,7 +30,8 @@ app.use((req, res ,next) => {
     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
     next();
 })
-app.use(express.static(__dirname + '/dist/multikart-admin/index.html'))
+
+//app.use(express.static(__dirname + '/dist/multikart-admin/index.html'))
 
 io.on('connection', (socket) => {
    // socket.on('disconnect', () => {
@@ -68,4 +57,12 @@ socket.on('marcaEvnt', (res) => {
 var port = process.env.PORT || 3000
 server.listen(3000, () => {
     console.log("server conectado por el puerto 5000")
-})*/
+})
+app.listen(process.env.PORT || 8080, () => {
+
+  console.log(process.env.PORT)
+});
+
+
+
+
