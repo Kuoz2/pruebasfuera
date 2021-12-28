@@ -32,10 +32,7 @@ app.use((req, res ,next) => {
 })
 
 //app.use(express.static(__dirname + '/dist/multikart-admin/index.html'))
-io.configure(function ()  { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-}); 
+
 io.on('connection', (socket) => {
    // socket.on('disconnect', () => {
      //   console.log('user disconnected');
