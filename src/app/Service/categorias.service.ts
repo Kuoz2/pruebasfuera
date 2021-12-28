@@ -34,7 +34,7 @@ export class CategoriasService {
     // if (respuesta.resultado != 'existe') { return; }
      //if (respuesta.resultado == 'existe') {
 
-       this.http.post<Categories>('http://localhost:3000/categories', c.value).subscribe( res => {
+       this.http.post<Categories>(this.UrlpruebaCategoria, c.value).subscribe( res => {
           c.reset()
           
          this.resiviendoinfo.next(res)
