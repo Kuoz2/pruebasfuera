@@ -19,7 +19,7 @@ export class CategoriasService {
   UrlEstaravacio = 'https://multikart-norte.herokuapp.com/categories'
 // Mostrar
  mostrarcategorias(){
-     return this.http.get('http://localhost:3000/categories')
+     return this.http.get(this.UrlpruebaCategoria)
   }
 
   
