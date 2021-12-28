@@ -14,10 +14,10 @@ const INDEX = '/index.html';
 const server = express()
   .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
 server.listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-/*
 app.listen(process.env.PORT || 8080, () => {
 });
+/*
+
 //    origin: "http://localhost:4200",
 var server = require('https').Server(app);
 const io = require('socket.io')(server, {
