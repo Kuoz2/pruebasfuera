@@ -13,7 +13,7 @@ app.get('/*', function (req, res) {
 var server = require('https').Server(app);
 const io = require('socket.io')(server, {
   cors: {
-    origin: "https://pruebasocketinject.herokuapp.com:3000",
+    origin: "https://pruebasocketinject.herokuapp.com",
     methods: ["GET", "POST"],
     credentials: true,
     //transports: ['websocket', 'polling'],
@@ -25,7 +25,7 @@ const io = require('socket.io')(server, {
 //    res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
 
 app.use((req, res ,next) => {
-    res.setHeader('Access-Control-Allow-Origin','https://pruebasocketinject.herokuapp.com:3000');
+    res.setHeader('Access-Control-Allow-Origin','https://pruebasocketinject.herokuapp.comgit');
     res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
     next();
