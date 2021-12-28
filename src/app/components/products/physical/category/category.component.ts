@@ -118,10 +118,10 @@ intervalo
   }
 
   editarcategoria(categoria: Categories) {
-   this.servi.actualizarcategoria(categoria)
-   setTimeout(() => {
-    this.categoriaAsync()
-   }, 1500)
+    this.servi.actualizarcategoria(categoria)
+    setTimeout(() => {
+      this.categoriaAsync()
+    }, 1500)
   }
 
   editar() {
