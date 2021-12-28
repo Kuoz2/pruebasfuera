@@ -28,19 +28,19 @@ export class CategoriasService {
   return this.http.get<Categories>(this.UrlpruebaCategoria + '/' + id);
   }
 // Guardar
-  guardarcategorias(c) {
-//  await this.verificar.verificarSaveCate().subscribe((respuesta: respuesta) => {
-  //   console.log(respuesta);
-    // if (respuesta.resultado != 'existe') { return; }
-     //if (respuesta.resultado == 'existe') {
+async guardarcategorias(c) {
+  await this.verificar.verificarSaveCate().subscribe((respuesta: respuesta) => {
+     console.log(respuesta);
+     if (respuesta.resultado != 'existe') { return; }
+     if (respuesta.resultado == 'existe') {
 
        this.http.post<Categories>(this.UrlpruebaCategoria, c.value).subscribe( res => {
           c.reset()
           
          this.resiviendoinfo.next(res)
         })
- //    }
-   //})
+    }
+   })
    return this.resiviendoinfo.asObservable()
   }
   async guardainicialc(c){
