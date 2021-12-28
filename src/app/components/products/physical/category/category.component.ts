@@ -92,9 +92,7 @@ intervalo
   guardarcategoria():Observable<Categories> {
       //verificar si de verdad existe el jti.
       if(this.categoriasForm.valid){
-      ( this.servi.guardarcategorias(this.categoriasForm)).subscribe(
-          res => { this.otracategoria = res;console.log(this.otracategoria) }
-        )
+       this.servi.guardarcategorias(this.categoriasForm)
         this.room = this.router.snapshot.paramMap.get('category')
         this.cookies.set('categoria', this.room) 
      
