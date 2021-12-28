@@ -11,6 +11,15 @@ app.get('/*', function (req, res) {
 
 app.listen(process.env.PORT || 8080, () => {
 });
+
+
+const PORT = process.env.PORT || 3000;
+const INDEX = '/index.html';
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+server.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
 /*
 //    origin: "http://localhost:4200",
 var server = require('https').Server(app);
