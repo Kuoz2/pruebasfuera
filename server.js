@@ -10,7 +10,7 @@ app.get('/*', function (req, res) {
 });
 
 //    origin: "http://localhost:4200",
-var server = require('https').Server(app);
+var server =  express()
 const io = require('socket.io')(server, {
   cors: {
     origin: "https://pruebasocketinject.herokuapp.com",
