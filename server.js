@@ -9,7 +9,7 @@ app.get('/*', function (req, res) {
    res.setFile(path.join(__dirname + '/dist/multikart-admin/index.html'))
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("conectado en", process.env.PORT)
 });
 //    origin: "http://localhost:4200",
@@ -56,7 +56,7 @@ socket.on('marcaEvnt', (res) => {
   socket.to(nameRoom).emit('marcaEvnt', res);
 })
 })
-//var port = process.env.PORT || 3000
-//server.listen(5000, () => {
-  //  console.log("server conectado por el puerto 5000")
-//})
+var port = process.env.PORT || 3000
+server.listen(port, () => {
+    console.log("server conectado por el puerto 5000")
+})

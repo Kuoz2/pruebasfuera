@@ -12,7 +12,7 @@ export class WebsocketService extends Socket  {
  // url:'http://localhost:5000'
   constructor(private cooki: CookieService) { 
     super({
-      url:'https://pruebasocketinject.herokuapp.com:8080',
+      url:'https://pruebasocketinject.herokuapp.com:3000',
       options:{
         query:{
           nameRoom: cooki.get('categoria') || cooki.get('marca'),
