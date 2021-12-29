@@ -62,7 +62,7 @@ server.listen(port, () => {
 })
 app.listen(process.env.PORT || 8080, () => {
 
-  console.log(process.env.PORT)
+  console.log('puerto del server',process.env.PORT)
 });
 
 
