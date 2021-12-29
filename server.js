@@ -8,7 +8,12 @@ app.use(express.static(__dirname + '/dist/multikart-admin'));
 app.get('/*', function (req, res) {
    res.setFile(path.join(__dirname + '/dist/multikart-admin/index.html'))
 });
-/*
+var HOST = location.origin.replace(/^http/, 'ws')
+var ws = new WebSocket(HOST);
+var el = document.getElementById('server-time');
+console.log(el)
+
+
 //    origin: "http://localhost:4200",
 var server = require('http').Server(app);
 const io = require('socket.io')(server, {
@@ -58,22 +63,6 @@ var port = process.env.PORT || 3000
 server.listen(3000, () => {
     console.log("server conectado por el puerto 5000")
 })
-*/
-const socketIO = require('socket.io');
-
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-const io = socketIO(server);
-
-io.on('connection', (socket) => {
-  console.log('Client connected');
-  socket.on('disconnect', () => console.log('Client disconnected'));
-});
 app.listen(process.env.PORT || 8080, () => {
 
   console.log(process.env.PORT)
