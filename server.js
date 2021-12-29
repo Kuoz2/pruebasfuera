@@ -14,17 +14,7 @@ app.get('/*', function (req, res) {
 //    origin: "http://localhost:4200",
 //var server = require('http').Server(app);
 var server = require('http').createServer(app);
-const io = require('socket.io')(server, {
-  cors: {
-    origin: "https://pruebasocketinject.herokuapp.com",
-    methods: ["GET", "POST"],
-    credentials: true,
-    //transports: ['websocket', 'polling'],
-
-  },
-  allowEIO3: true
-  
-});
+const io = require('socket.io')
 //    res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
 
 app.use((req, res ,next) => {
