@@ -57,7 +57,7 @@ socket.on('marcaEvnt', (res) => {
 })
 })
 var port = process.env.PORT || 3000
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log("server conectado por el puerto 5000")
 })
 app.listen(process.env.PORT || 8080, () => {
