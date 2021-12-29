@@ -8,10 +8,7 @@ app.use(express.static(__dirname + '/dist/multikart-admin'));
 app.get('/*', function (req, res) {
    res.setFile(path.join(__dirname + '/dist/multikart-admin/index.html'))
 });
-var HOST = location.origin.replace(/^http/, 'ws')
-var ws = new WebSocket(HOST);
-var el = document.getElementById('server-time');
-console.log(el)
+
 
 
 //    origin: "http://localhost:4200",
