@@ -56,17 +56,6 @@ socket.on('marcaEvnt', (res) => {
   socket.to(nameRoom).emit('marcaEvnt', res);
 })
 })
-var port = process.env.PORT || 8080
-server.listen(port, () => {
-    console.log("server conectado por el puerto 5000")
-})
-app.listen(process.env.PORT || 8080, () => {
-
-  console.log(process.env.PORT)
-});
-
-
-
 
   app.listen(process.env.PORT || 8080, () => {
 
