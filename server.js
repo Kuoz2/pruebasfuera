@@ -51,7 +51,7 @@ socket.on('disconnect', () => {
 })
 })
 
-  server.listen(process.env.PORT || 8080, () => {
+  server.listen(process.env.PORT || 3000, () => {
 
     console.log(process.env.PORT)
   });
