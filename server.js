@@ -46,9 +46,7 @@ socket.on('marcaEvnt', (res) => {
   socket.emit('marcaEvnt',res);
   socket.to(nameRoom).emit('marcaEvnt', res);
 })
-socket.on('disconnect', () => {
-  console.log("usuario desconectado")
-})
+
 })
 
   server.listen(process.env.PORT || 3000, () => {
