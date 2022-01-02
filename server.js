@@ -13,7 +13,7 @@ app.get('/*', function (req, res) {
 
 //    origin: "http://localhost:4200",
 //var server = require('http').Server(app);
-var server = require('https').createServer(app);
+var server = require('http').createServer(app);
 const io = require('socket.io')(app)
 //    res.setHeader('Access-Control-Allow-Origin','http://localhost:4200');
 
