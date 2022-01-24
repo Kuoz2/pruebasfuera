@@ -1,3 +1,5 @@
+import { VerificarTokenService } from './verificar-token.service';
+import { VerificadorService } from './verificador.service';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DetalleVoucher} from '../components/Modulos/DetalleVoucher';
@@ -6,10 +8,12 @@ import {Observable} from 'rxjs';
 import {V_Producto} from '../components/Modulos/GANANCIAS';
 
 import {Reporete_perdidas_grafico, Reporte_grafico, totalperdiaspriminv, totalventasrapidas, Venta_mes_atras, Venta_por_mes, } from '../components/Modulos/reporte_grafico';
+import { respuesta } from '../components/Modulos/respuesta';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class VoucherService {
 
   //de forma local se aran el ingreso.
@@ -31,7 +35,7 @@ export class VoucherService {
   pruebatodaslasperdidasdinv1 ='https://multikart-norte.herokuapp.com/stocks/todaslasperdiadasinvprim'
   pruebaquicksales = 'https://multikart-norte.herokuapp.com/quick_sales/ventarapida_fechas'
   totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient , private verificar: VerificarTokenService) { }
   // Ganancias totales del mes pasado.
   ganancia_mes_anterior(): Observable<Venta_mes_atras> {
       return this.http.get<Venta_mes_atras>(this.PruebaUrlmespasado);
@@ -51,8 +55,15 @@ export class VoucherService {
         return this.http.get<DetalleVoucher>(this.PruebaUrlVntMes);
   }
 
-  crearvoucher(deta: DetalleVoucher): Observable<DetalleVoucher> {
-    return this.http.post<DetalleVoucher>(this.Pruebaurldetallevoucher, deta);
+   crearvoucher(deta: DetalleVoucher){
+     console.log(deta)
+    this.verificar.verificarSaveVouchDetai().subscribe((res: respuesta) => {
+      if (res.resultado != 'existe') { return; }
+      if (res.resultado == 'existe') {
+        console.log(res)
+    return this.http.post<DetalleVoucher>(this.Pruebaurldetallevoucher, deta).subscribe(res => console.log(res));
+  }
+})
   }
   crearunvoucher(vouch: Voucher) {
     return  this.http.post<Voucher>(this.PruebaUrlvoucher, vouch);

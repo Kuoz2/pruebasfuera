@@ -23,7 +23,7 @@ p: any
      private fb:FormBuilder,
      private cd: ChangeDetectorRef,
       private cookie: CookieService, private router: ActivatedRoute, 
-      private socketwebservice: WebsocketService,
+     // private socketwebservice: WebsocketService,
       ) {
       this.marcasForm = this.fb.group({
           bnombre:['', [Validators.required]]
@@ -31,6 +31,15 @@ p: any
 
   }
   ngAfterViewInit(): void {
+   /* this.socketwebservice.Marcallback.subscribe((res:Marca) =>{
+      this.cookie.delete('marca')
+      console.log(res)
+      console.log("hola", Object.values(res)[0]  )
+      this.elnombre =  Object.values(res)[0] 
+      this.cd.detectChanges();
+     return this.elnombre
+      
+    })*/ 
     }
   route: string;
   marcasForm:FormGroup;
@@ -51,7 +60,7 @@ p: any
   }
 
    informacionasync(){
-     this.Smarca.buscarmarca().subscribe((x:Marca) => {
+     this.Smarca.buscarmarca2().subscribe((x:Marca) => {
       this.elnombre= x
      })
   }
@@ -62,15 +71,7 @@ nombre;
     console.log(this.elnombre);
       
 
-      this.socketwebservice.Marcallback.subscribe((res:Marca) =>{
-        this.cookie.delete('marca')
-        console.log(res)
-        console.log("hola", Object.values(res)[0]  )
-        this.elnombre =  Object.values(res)[0] 
-        this.cd.detectChanges();
-       return this.elnombre
-        
-      }) 
+   
   }
  
     open2(content2, marca: Marca):void
@@ -123,7 +124,7 @@ nombre;
             console.log(this.route)
             this.cookie.set('marca', this.route)
 
-            this.Smarca.buscarmarca().subscribe(res =>  this.socketwebservice.emitEventMarca({res}))
+           // this.Smarca.buscarmarca().subscribe(res =>  this.socketwebservice.emitEventMarca({res}))
 
           }
     }

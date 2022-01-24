@@ -37,19 +37,19 @@ export class CategoryComponent implements OnInit, OnDestroy, AfterViewInit {
       private servi: CategoriasService,
       private cd: ChangeDetectorRef,
       private cookies: CookieService,
-      private socketwebservice: WebsocketService,
+     // private socketwebservice: WebsocketService,
       private verificar: VerificarTokenService, private spinner: NgxSpinnerService, private router: ActivatedRoute ) {
          
   }
   ngAfterViewInit():void {
-    this.socketwebservice.callback.subscribe((res:Categories) =>{
+  /*  this.socketwebservice.callback.subscribe((res:Categories) =>{
       this.cookies.delete('category')
       console.log("hola", Object.values(res)[0]  )
       this.categorias =  Object.values(res)[0] 
       this.cd.detectChanges()
      return this.categorias
       
-    })
+    })*/
   }
  
 
@@ -96,7 +96,7 @@ intervalo
         this.room = this.router.snapshot.paramMap.get('category')
         this.cookies.set('categoria', this.room) 
      
-        this.servi.mostrarcategorias().subscribe(res =>  this.socketwebservice.emitEvent({res}))
+      //  this.servi.mostrarcategorias().subscribe(res =>  this.socketwebservice.emitEvent({res}))
 
       return this.otracategoria
       }

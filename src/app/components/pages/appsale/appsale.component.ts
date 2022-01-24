@@ -17,11 +17,7 @@ import { Observable, Subject} from 'rxjs';
 import {HoraActualService, valorReloj} from '../../../Service/hora-actual.service';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {takeUntil} from 'rxjs/operators';
-import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
-import { getEnabledCategories } from 'trace_events';
 import html2canvas from 'html2canvas';
-import { createElementCssSelector } from '@angular/compiler';
 
 @Component({
   selector: 'app-appsale',
@@ -115,8 +111,7 @@ imagenjpg;
       this.selecciondecomra =  res;  this.cd.markForCheck(); });
     await this.serviCat.categorias().pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
       this.categorias = data;  this.cd.markForCheck();     this.spinner.hide(); });
-    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data; this.cd.markForCheck();
-    } ,  );
+  
 
     this.Imprimcion();
 
@@ -284,7 +279,7 @@ remover_producto(producto) {
     this.textoCambiado2.emit(valor.target.value);
   }
 // Aca se guardaran las ventas cuando se precione guardar luego se actualizara
-   guardarVentaApp() {
+  async guardarVentaApp() {
 
       try {
         this.fecha.unsubscribe();
@@ -293,10 +288,10 @@ remover_producto(producto) {
         this.detallevoucher.fecha_emision = this.fecha_emision;
         this.detallevoucher.hora_emision = this.hora_emision;
         this.detallevoucher.voucher.vhora = this.hora_emision
-        this.detallevoucher.voucher.vfecha = this.fecha_emision
         this.detallevoucher.voucher.vdia = this.dia
         for (const i of this.items) {
-          if(i.sinventario == true && i.sinventario != false){
+          if(i.sinventario === true && i.sinventario !== false){
+            alert("entro aca")
             this.detallevoucher.product_id = i.id;
             this.detallevoucher.dvcantidad = i.quantity;
             this.productos_add.stock = i.stock;
@@ -304,45 +299,35 @@ remover_producto(producto) {
             this.productos_add.date_expiration = i.date_expiration;
             console.log("la id que falla", i.id)
             this.productos_add.date_expiration.stock_expiration = i.date_expiration.stock_expiration - i.quantity;
-            console.log('actualizaciones', this.productos_add)
+            console.log('voucher', this.detallevoucher)
             // Guardar el voucher generado.
-              this.vouchservicio.crearvoucher( this.detallevoucher ).subscribe( res => {
-            return res;
-          } );
+              this.vouchservicio.crearvoucher( this.detallevoucher )
           // Actualiza el stcok generado.
-          this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
+         await this.serviCat.actualizarstock( this.productos_add.stock ).subscribe( res => {
           return res;
           } );
-          this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
+        await  this.serviCat.actualizar_stock_fecha(this.productos_add.date_expiration).subscribe(res => res);
           }
-
-          if(i.sinventario2 == false && i.sinvventario2 != true){
+              console.log("lo que entra ene el i", i)
+          if(i.sinventario2 === false && i.sinvventario2 !== true){
             this.detallevoucher.product_id = i.product.id;
             this.detallevoucher.dvcantidad = i.quantity;
             this.stockvencimiento.id = i.id;
             this.fechavencimiento.id = i.date_expiration.id
+            console.log(this.detallevoucher)
             console.log("fecha vencimiento", this.stockvencimiento)
             this.stockvencimiento.pstock = i.stock_expiration - i.quantity
             this.fechavencimiento.stock_expiration = i.stock_expiration - i.quantity
             console.log('actualizaciones', this.stockvencimiento, this.fechavencimiento, this.detallevoucher)
             //Guardar registro al voucher.
-            this.vouchservicio.crearvoucher(this.detallevoucher).subscribe(res  => {console.log('respuesta', res)})
+            this.vouchservicio.crearvoucher(this.detallevoucher)
             this.serviCat.actualizarstock(this.stockvencimiento).subscribe(res => {console.log('respuesta stock', res); err => {console.log('error', err)}})
             this.serviCat._actualizar_fechavence(this.fechavencimiento).subscribe(res => {console.log('respues fecha', res); err => {console.log('error', err)}})
           }
           
        
         }
-
-        this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
-       this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
-       this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
-       this.cancelar2.voucher_id = this.voucher_add.id;
-
-        // Se guarda lo cancelado
-        this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
-        return res;
-       } );
+          console.log(this.voucher_add)
 
         this.app_venta.reset();
         this.items.splice( 0, this.items.length );
@@ -353,6 +338,19 @@ remover_producto(producto) {
       }
 
     
+  }
+  cancelarventa(){
+    this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data; this.cd.markForCheck();
+    } ,  );
+    this.cancelar2.payment_id.pagomonto = this.app_venta.value.efectivo;
+    this.cancelar2.payment_id.pagovuelto = this.devolucion_app();
+    this.cancelar2.payment_id.half_payment_id = this.app_venta.value.loseleccionadodelacompra.id;
+     this.cancelar2.voucher_id = this.voucher_add.id;
+
+     // Se guarda lo cancelado
+     this.vent.guardarventas( this.cancelar2 ).subscribe( res => {
+     return res;
+    } );
   }
 
   devolucion_app() {

@@ -117,9 +117,7 @@ export class TicketComponent implements OnInit, OnDestroy {
                 this.productos_actualizado = i;
                 this.productos_actualizado.stock.pstock = i.stock.pstock - i.cantidad;
                 //se generea la boleta para realizar el pago
-                this.vouchservicio.crearvoucher( this.ingresodeunvaucher ).subscribe( res => {
-                    return res
-                } );
+                this.vouchservicio.crearvoucher( this.ingresodeunvaucher )
                 //Actualizar el stock del producto
                 this.prodi.actualizarstock( this.productos_actualizado.stock ).subscribe()
             }

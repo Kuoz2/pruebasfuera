@@ -56,7 +56,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll'
         Ng4LoadingSpinnerModule,
         NgxSpinnerModule,
         NgxPrintModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
     ],
     providers:[HoraActualService],
     schemas:[

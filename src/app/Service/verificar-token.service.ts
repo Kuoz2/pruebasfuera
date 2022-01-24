@@ -21,6 +21,8 @@ export class VerificarTokenService {
   private verificaECate = 'https://multikart-norte.herokuapp.com/categories/verif_before_update_category'
   private vericaEImp = 'https://multikart-norte.herokuapp.com/taxes/verif_before_update_taxe'
   private mediopago= 'https://multikart-norte.herokuapp.com/half_payments/verif_befores_save_half'
+  private verificarVoucherDetails= 'https://multikart-norte.herokuapp.com/voucher_details/verif_befores_save_d_voucher'
+
  private informerespuesta = new Subject<respuesta>()
   constructor(private http: HttpClient) { }
   validacion: any;
@@ -37,6 +39,7 @@ export class VerificarTokenService {
     })
   }
   VerficSaveProd(){
+    console.log(this.informacion)
    return   this.http.post(this.VsaveProdu, this.informacion)
   }
   VerificarUpdateProd(){
@@ -68,6 +71,9 @@ export class VerificarTokenService {
   verificarEditImp(){
     return this.http.post(this.vericaEImp, this.informacion)
   }
+  verificarSaveVouchDetai(){
+    return this.http.post(this.verificarVoucherDetails, this.informacion)
+   }
   
 }
 

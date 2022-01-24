@@ -35,7 +35,7 @@ export class AddProductComponent implements OnInit, OnDestroy {
       public articuloBusqueda: string;
   public proveedor: Provideer[];
 categorias: Categories[];
-marcas: Marca[];
+marcas: any;
 public immp: Observable<Impuestos[]>;
 file: File;
     productForm: FormGroup;

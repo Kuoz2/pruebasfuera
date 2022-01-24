@@ -6,5 +6,4 @@ export class Voucher {
     created_at:string;
     vhora: string;
     vdia: string;
-    vfecha:string;
 }

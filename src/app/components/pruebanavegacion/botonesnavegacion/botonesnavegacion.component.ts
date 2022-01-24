@@ -28,7 +28,7 @@ export class BotonesnavegacionComponent implements OnInit {
     public immp: Observable<Impuestos[]>;
     public proveedor: Provideer[];
     public categorias: Categories[];
-    public marcas: Marca[];
+    public marcas: any;
 
     get pactivado() {return this.Frmproducto.get('pactivado'); }
     get pdescripcion() { return this.Frmproducto.get('pdescripcion'); }
@@ -186,13 +186,25 @@ calImp(imp, valor): number {
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+
+  
   }
   open10(content10){
-    this.modalService.open(content10, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    this.modalService.open(content10, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
+    const pdescripcion = <HTMLInputElement> window.document.getElementById('pdescripcion')
+    const pcodigo = <HTMLInputElement> window.document.getElementById('pcodigo')
+    const categoria = <HTMLInputElement> window.document.getElementById('categoria')
+    const marca = <HTMLInputElement> window.document.getElementById('marca')
+    const precio = <HTMLInputElement> window.document.getElementById('valor')
+    pdescripcion.value = this.Frmproducto.value.pdescripcion
+    pcodigo.value = this.Frmproducto.value.pcodigo
+    categoria.value = this.Frmproducto.value.category_id.cnombre
+    marca.value = this.Frmproducto.value.brand_id.bnombre
+    precio.value = this.Frmproducto.value.pvalor
   }
 
   private getDismissReason(reason: any): string {
@@ -232,7 +244,7 @@ calImp(imp, valor): number {
     );*/
   }
 
-  Guardaregistro(){
+  Guardaregistro(a){
     if (!this.Frmproducto.valid) {
       try {
           this.Frmproducto.value.category_id = this.Frmproducto.value.category_id.id;
@@ -243,10 +255,11 @@ calImp(imp, valor): number {
           this.Frmproducto.value.date_expiration.stock_expiration = this.Frmproducto.value.stock.pstock;
           this.Frmproducto.value.stock.product_id = 0;
           this.Frmproducto.value.date_expiration.product_id = 0;
-          this.servi.guardarproductos( this.Frmproducto.value );
+          this.servi.guardarproductos( this.Frmproducto, a );
           console.log( 'productos', this.Frmproducto.value );
          // this.productForm.reset();
-         //this.Frmproducto.reset()
+        const restFormulario = <HTMLInputElement> window.document.getElementById('formproducto')
+        //this.Frmproducto.reset()
 
       } catch (e) {
           console.log( 'ocurrio un error', e );
@@ -254,5 +267,7 @@ calImp(imp, valor): number {
   }
 
   }
-
+  cerrarguardar(a){
+    
+  }
 }

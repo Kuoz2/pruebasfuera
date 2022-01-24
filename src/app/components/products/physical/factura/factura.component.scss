@@ -37,8 +37,9 @@
   }
 
   .tamaño-imagen{
+
+    min-width: 100px;
     max-width: 150px;
-    max-height: 150px;
   }
   
   .card{
@@ -48,3 +49,19 @@
     text-align: left;
   }
  
+  .btn-peligro{
+    color: #ffffff;
+    background-color: #7cc;
+    border-color: #5bc2c2;
+    margin-bottom: 5px;
+    font-family: arial;
+    font-weight: 100;
+    font-weight: 200;
+    font-weight: 300;
+    font-weight: 400;
+    font-weight: 500;
+    font-weight: 600;
+    font-weight: 700;
+    font-weight: 800;
+    font-weight: 900;
+  }

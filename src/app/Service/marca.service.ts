@@ -20,8 +20,8 @@ public SubMarca = new Subject<resivendoMarca>()
   buscarmarca() {
    return  this.http.get<Marca>( 'http://localhost:3000/brands' );
   }
-  buscarmarca2(): Observable<any> {
-  return this.http.get<Marca>(this.UrlPrueba);
+  buscarmarca2() {
+  return this.http.get(this.UrlPrueba);
   }
 
   // Guardar una marca.

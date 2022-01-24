@@ -7,25 +7,78 @@
       </button>
   </div>
   <div class="modal-body">
-    <form class="needs-validation" [formGroup]="cotizacion" (ngSubmit)="guardarcategoria()">
+    <form class="needs-validation" [formGroup]="cotizacion" (ngSubmit)="generarCotizar()">
 
         <div class="form-row">
             <div class="col-3">
-                <label for="vzalidationCustom01" class="mb-1">Cliente o empresa :</label>
-                <input class="form-control" formControlName="cliente" id="validationCustom01" type="text" required>
+                <label for="vzalidationCustom01" class="mb-1">Persona o empresa :</label>
+                <input class="form-control" formControlName="cliente" formControlName="cliente" [(ngModel)]="persempresa" id="validationCustom01" type="text" required>
             </div>
-            <div class="col">
-              <label for="telefono" class="mb-1">Télefono:</label>
-                  <input type="text" class="form-control" id="telefono">
+            <div class="col-3">
+              <label for="télefono" class="mb-1">Télefono:</label>
+                  <input type="text" class="form-control" formControlName="telefonos" [(ngModel)]="telefono" id="telefono">
+            </div>
+            <div class="col-3">
+              <label for="correo" class="mb-1">Correo</label>
+              <input type="text" class="form-control" formControlName="corre" [(ngModel)]="correo" id="correo">
             </div>
         </div>
-  
-    <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" >Guardar</button>
-      <button class="btn btn-secondary" type="button" data-dismiss="modal"
-              (click)="modal.dismiss('Cross click')">Cerrar</button>
+        <div class="form-row">
+          <div class="col-3">
+            <label for="validesF">Vencimiento</label>
+            <input type="date" class="form-control" formControlName="fecha" [(ngModel)]="vencimiento" id="validesF">
+          </div>
+          <div class="col-3">
+            <label for="metodo"> Metodo de pago</label>
+            <select class="form-control" name="metodo" formControlName="formapago" [(ngModel)]="metodopago" id="metodo">
+              <option value=""></option>
+              <option value="efectivo"> efectivo</option>
+              <option value="debito"> Debito</option>
+              <option value="credito">Credito</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" >Guardar</button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                  (click)="modal.dismiss('Cross click')">Cerrar</button>
+      </div>
+      </form> 
+  <hr>
+  <div class="row">
+    <div class="col">
+      <label for="busqueda">Buscar</label>
+      <input type="text" class="form-control" placeholder="Buscar por código de producto" [(ngModel)]="encontrandoApp" id="busqueda">
+    </div>
   </div>
-  </form>     
+  <table class="table table-borderless">
+    <thead>
+      <tr >
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Disponibles</th>
+        <th scope="col">Agregar</th>
+        <th scope="col">Descuento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of GetProduct |async | busquedaApp:encontrandoApp|  paginate: {itemsPerPage:5, currentPage:p} ; let i = index ">
+        <th scope="row" >{{item.pcodigo}}</th>
+        <td>{{item.category.cnombre}} {{item.brand.bnombre}} {{item.pdescripcion}}</td>
+        <td>{{item.pvalor}}</td>
+        <td>{{item.stock.pstock}}</td>
+        <td><input type="number"  size="4" id="descontar" [(ngModel)]="descontar[i]" (change)="generarDesc(descontar, i, item.pvalor)" ></td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" (click)="addCart(item)" class="bi bi-plus-lg" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+        </svg></td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+
+     
   </div>
 </ng-template>
 
@@ -40,7 +93,10 @@
       <div class="row my-3">
         <div class="col-10">
           <h1>V&T Computación</h1>
-          <p>Av. Balmaceda #3624</p>        
+          <p>Av. Balmaceda #3624</p>  
+          <p>adolfotyther@gmail.com</p>
+          <p>www.vytcomputacion.cl</p>
+          <p>Avenida Balmaceda #3624. Calama</p>      
         </div>
         <div class="col-2">
           <img class="tamaño-imagen" src="../../../../../assets/images/vyt.png" />
@@ -54,63 +110,74 @@
   <div class="row fact-info mt-3">
     <div class="col-3">
       <h5>Cotizar a</h5>
-      <p>dasda</p>
+      <p>{{persempresa}}</p>
     </div>
     <div class="col-3">
       <h5>Enviar a</h5>
       <p>
-        Cotui, Sanchez Ramirez
-        Santa Fe, #19
-        arianmanuel75@gmail.com
+        {{correo}}
       </p>
           </div>
     <div class="col-3">
-      <h5>Télefono</h5>
+      <h5>Teléfono</h5>
       <h5>Fecha</h5>
       <h5>Valides de la oferta</h5>
       <h5>Metodo de pago</h5>
     </div>
     <div class="col-3">
-      <h5>103</h5>
-      <p>09/05/2019</p>
-      <p>15/05/2020</p>
-      <p>Contado</p>
+      <h5>{{telefono}}</h5>
+      <p>{{vencimiento}}</p>
+      <p>{{fecha_emision}}</p>
+      <p>{{metodopago}}</p>
     </div>
   </div>
+  <hr>
+  
   <div class="row my-5">
+    
+      <div class="col-12" >
+        <div style="text-align: right;">
+          <button class="btn-peligro"> Imprimir</button>
+        </div>
+      </div>    
     <table class="table table-borderless factura">
       <thead>
         <tr>
-          <th>Cant.</th>
+          <th>#</th>
           <th>Descripcion</th>
           <th>Precio Unitario</th>
-          <th>Descuento</th>
-          <th>Importe</th>
+          <th>Cantidad</th>
+          <th>Valor descuento</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Clases de Cha-Cha-Cha</td>
-          <td>3,000.00</td>
-          <td>30%</td>
-          <td>3,000.00</td>
+        <tr *ngFor="let item of items; let i = index ">
+          <td>{{item.pcodigo}}</td>
+          <td>{{item.category.cnombre}} {{item.brand.bnombre}} {{item.pdescripcion}}</td>
+          <td>{{item.pvalor}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{arreglo[i]}}</td>
         </tr>
-        <tr>
-          <td>3</td>
-          <td>Clases de Salsa</td>
-          <td>4,000.00</td>
-          <td>30%</td>
-          <td>12,000.00</td>
-        </tr>
+        
       </tbody>
       <tfoot>
         <tr>
           <th></th>
           <th></th>
           <th></th>
-          <th>Total Factura</th>
-          <th>RD$15,000.00</th>
+          <th>Total</th>
+          <th>{{totalPrice}}</th>
+          <th></th>
+        
+        </tr>
+      </tfoot>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Total Descuento</th>
+          <th>{{totaldescuento}}</th>
         </tr>
       </tfoot>
     </table>

@@ -121,16 +121,32 @@ export class ProductserviceService {
                 });            }
         
     // Guardar un nuevo producto
-  async guardarproductos(p) {
+  async guardarproductos(p, a) {
+    
   await  this.verifica.VerficSaveProd().subscribe((res:respuesta) => {
-
+      console.log(res)
+      console.log(p.value)
     if(res.resultado != 'existe') {return}
       if(res.resultado == 'existe'){
-        this.http.post<Productos>(this.UrlPrueba, p.value).subscribe(res => {
+        console.log("enviando", p.value)
+        this.http.post(this.UrlPrueba, p.value).subscribe(res => {
+          console.log(res)
+
           if(Object.values(res)[0] =='correctamente'){
-                p.reset()
+
+            const Swal = require('sweetalert2')
+            Swal.fire({
+              title: 'Exitoso!!',
+              text: 'El producto fue guardado correctamente.',
+              icon: 'success',
+              confirmButtonText: 'cerrar'
+            })
+           a.dismiss('Cross click')
+
+            return p.reset()
           }
-        })}}
+        })
+      }}
       )
 }
 

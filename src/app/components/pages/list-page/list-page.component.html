@@ -148,7 +148,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let bl of (boletas |async | rangodefechas: fechaIni : fechaFin  | paginate: {id: 'paginacion',itemsPerPage:5, currentPage:p}) "  class="text-center">
+                            <tr *ngFor="let bl of (boletas |async  | paginate: {id: 'paginacion',itemsPerPage:5, currentPage:p}) "  class="text-center">
                                 <td>{{bl.id  }}</td>
                                 <td>{{bl.dvcantidad }}</td>
                                 <td >{{bl.product.pcodigo}}</td>

@@ -7,21 +7,41 @@
         </button>
     </div>
     <div class="modal-body">
-        <form [formGroup]="Frmproducto" (ngSubmit)="Guardaregistro()" #form="ngForm">
+        <form [formGroup]="Frmproducto" (ngSubmit)="Guardaregistro(modal10)" #form="ngForm" >
 
-            <ul class="list-group">
-                <li class="list-group-item">{{Frmproducto.value.pdescripcion}}</li>
-                <li class="list-group-item">{{Frmproducto.value.category_id.cnombre}}</li>
-                <li class="list-group-item">{{Frmproducto.value.brand_id.bnombre}}</li>
-                <li class="list-group-item">{{Frmproducto.value.pcodigo}}</li>
-                <li class="list-group-item">{{Frmproducto.value.pvalor}}</li>
-                <li class="list-group-item">{{Frmproducto.value.date_expiration.fecha_vencimiento}}</li>
-                <li class="list-group-item">{{Frmproducto.value.stock.pstock}}</li>
-                <li class="list-group-item">{{Frmproducto.value.stock.stock_lost}}</li>
-              </ul>
+            <div class="row">
+                
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Código" id="pcodigo">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Descripcion" id="pdescripcion">
+                  </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Categoría" id="categoria">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Marca" id="marca">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Precio" id="valor">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Inventario" id="stock">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Fecha vencimiento" id="fecha">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Perdidas" id="perdidas">
+                  </div>
+              </div>
+              
             <div class="btn-group row " role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-primary" (click)="modal10.dismiss('Cross click'); open9(content9)">Atras</button>
-                <button type="submit" class="btn btn-primary" (click)="guardar" > Guardar </button>
+                <button type="submit" class="btn btn-primary" > Guardar </button>
               </div>  
               <hr>
               <div class="alert alert-success" role="alert">
@@ -457,3 +477,79 @@
     </div>
     
   </div> 
+
+  <div class="row">
+          <div class="card">
+            <div class="col">
+                <div class="card-header" style="border: solid;">
+                    <img class="imagen-marca card-img-top" src="../../../../assets/images/regostered.png">
+                </div>
+              <div class="card-body">
+                <h1 class="titulos-card  card-title" style="border: solid;">Marca</h1>
+              </div>
+          </div>
+      </div>
+      <div class="card">
+        <div class="col">
+            <div class="card-header" style="border: solid;">
+                <img class="imagen-categoria" src="../../../../assets/images/etiqueta-categoria-920x515.jpg">
+            </div>
+            <div class="card-body">
+                <h1 class="titulos-card card-title "> Categoría</h1>
+            </div>
+      </div>
+      </div>
+      <div class="card">
+        <div class="col">
+            <div class="card-header" style="border: solid;">
+                <img class="imagen-inventario" src="../../../../assets/images/box-gb3cb967f9_1280.png">
+            </div>
+            <div class="card-body">
+                <h1 class="titulos-card  card-title">Inventario</h1>
+            </div>
+        </div>
+      </div>
+      <div class="card">
+          <div class="col">
+              <div class="card-header" style="border: solid;">
+                <img class="imagen-inventario" src="../../../../assets/images/carritocompra.png" alt="">
+              </div>
+              <div class="card-body">
+                <h1 class="titulos-card  card-title">Ventas</h1>
+              </div>
+          </div>
+      </div>
+      <div class="card">
+          <div class="col">
+              <div class="card-header" style="border: solid;">
+                <img class="imagen-inventario" src="../../../../assets/images/ventarapida.png" alt="">
+              </div>
+              <div class="card-body">
+                  <h1 class="titulos-card  card-title">Venta rapida</h1>
+              </div>
+          </div>
+      </div>
+      <div class="card">
+          <div class="col">
+              <div class="card-header" style="border: solid;">
+                <img class="imagen-inventario" src="../../../../assets/images/misventas.png" alt="">
+              </div>
+              <div class="card-body">
+                <h1 class="titulos-card  card-title">Mis ventas</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="card">
+          <div class="col">
+              <div class="card-header" style="border: solid;">
+            <img class="imagen-inventario" src="../../../../assets/images/cotizacion.png" alt="">
+            </div>
+            <div class="card-body">
+                <h1 class="titulos-card  card-title">Cotizar</h1>
+            </div>
+          </div>
+      </div>
+  </div>
