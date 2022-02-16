@@ -26,8 +26,9 @@ import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {NgxPrintModule} from 'ngx-print';
 import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta.component';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll'
-
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component'
+import { NgxBarcodeModule } from 'ngx-barcode';
 @NgModule({
   declarations:
       [
@@ -43,7 +44,8 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll'
       CierrecajaComponent,
       ListPageComponent,
       ActualizarbolComponent,
-      ComparacionVentaComponent],
+      ComparacionVentaComponent,
+      CurrentvoucherComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,
@@ -56,7 +58,9 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll'
         Ng4LoadingSpinnerModule,
         NgxSpinnerModule,
         NgxPrintModule,
-        InfiniteScrollModule,
+        InfiniteScrollModule,NgxBarcodeModule
+        
+
     ],
     providers:[HoraActualService],
     schemas:[

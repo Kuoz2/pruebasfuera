@@ -1,3 +1,4 @@
+import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component';
 import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
@@ -9,6 +10,7 @@ import {BoletaComponent} from "./boleta/boleta.component";
 import {CierrecajaComponent} from "./cierrecaja/cierrecaja.component";
 import {ListPageComponent} from "./list-page/list-page.component";
 import {ActualizarbolComponent} from "./actualizarbol/actualizarbol.component";
+import { ImageElementContainer } from 'html2canvas/dist/types/dom/replaced-elements/image-element-container';
 
 
 const routes: Routes = [
@@ -97,7 +99,15 @@ const routes: Routes = [
           title: 'Comparar ventas',
           breadcrumb: 'Compare sus ventas'
         }
-      }
+      },
+      {
+        path: 'imagenesventa',
+        component: CurrentvoucherComponent,
+        data:{
+          title:'Generar voucher Minimarket',
+          breadcrumb: 'Crear voucher'
+        },
+      },
     ]
   }
 ];

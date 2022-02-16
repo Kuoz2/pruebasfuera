@@ -35,6 +35,7 @@ import { RangodefechasPipe } from './Pipe/rangodefechas.pipe';
 import { Comproduc1Pipe } from './Pipe/comproduc1.pipe';
 import { Comproduc2Pipe } from './Pipe/comproduc2.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MinimarketfilterPipe } from './Pipe/minimarketfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     InventariopeligroPipe,
     BuscarmarcaPipe,
     CeparadorPipe,
-    Inventariosano2Pipe,    Inventariogestion2Pipe, Inventariosinstock2Pipe, Busqueda2inventarioPipe, RangodefechasPipe, Comproduc1Pipe, Comproduc2Pipe,
+    Inventariosano2Pipe,  
+      Inventariogestion2Pipe,
+       Inventariosinstock2Pipe,
+        Busqueda2inventarioPipe, 
+        RangodefechasPipe, 
+        Comproduc1Pipe, 
+        Comproduc2Pipe, 
+        MinimarketfilterPipe,
 
   ],
   imports: [
@@ -85,6 +93,6 @@ import { ReactiveFormsModule } from '@angular/forms';
                   CeparadorPipe,
                    Inventariosano2Pipe,
                   Busqueda2inventarioPipe, 
-                  RangodefechasPipe]
+                  RangodefechasPipe, MinimarketfilterPipe]
 })
 export class SharedModule { }

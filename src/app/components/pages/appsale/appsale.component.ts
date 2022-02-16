@@ -118,7 +118,7 @@ imagenjpg;
   }
   // Habrir el modal al precionar el carrito de compra
   open2(content2): void {
-    this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    this.modalService.open(content2, { ariaLabelledBy: 'modal-basic-title',size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

@@ -61,7 +61,8 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 				{path: '/pages/medio-pago', rol: '', title: 'Medio de pago', type: 'link', },
 				{path: '/pages/app-pago', rol: '', title: 'App de pago', type: 'link'},
 				{path: '/pages/boleta', rol: 'administrador', title: 'Boleta', type: 'link'},
-				{path: '/pages/comparar', rol:'administrador', title:'Comparación', type: 'link'}
+				{path: '/pages/imagenesventa', rol:'', title:'Minimarket', type:'link'},
+				{path: '/pages/comparar', rol:'administrador', title:'Comparación', type: 'link'},
 			]
 		},
 

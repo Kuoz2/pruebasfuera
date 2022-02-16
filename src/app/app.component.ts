@@ -1,8 +1,10 @@
+import { HttpResponse } from '@angular/common/http';
 
 import {  Component, OnInit, Input } from '@angular/core';
 import {UsuarioService} from './Service/usuario.service';
 import * as devTools from 'devtools-detect';
-
+import hsp from 'heroku-self-ping';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -23,7 +25,8 @@ constructor(private userservi: UsuarioService,
 private isloading: boolean
 
  async ngOnInit() {
-   this.isloading = false
+  hsp(process.env.HEROKU_APP_NAME)
+  this.isloading = false
       //document.onkeydown = function(){return false}
      // document.oncontextmenu = function(){return false}
     //await this.navegador_habierto()

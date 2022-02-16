@@ -18,6 +18,8 @@ import {NgxPrintModule} from 'ngx-print'
 import {InfiniteScrollModule} from 'ngx-infinite-scroll'
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { CookieService } from 'ngx-cookie-service';
+import 'lodash';
+import 'rxjs';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { CookieService } from 'ngx-cookie-service';
         FormsModule,
         NgxPrintModule,
         InfiniteScrollModule,
-        NgxBarcodeModule
+        NgxBarcodeModule,
+       
 
     ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],

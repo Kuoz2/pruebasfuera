@@ -96,7 +96,7 @@ const routes: Routes = [
           title: 'Crear presupuesto',
           BreadcrumbComponent:'presupuesto'
         }
-      }
+      },
     ]
   }
 ];
