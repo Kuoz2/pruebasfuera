@@ -29,6 +29,7 @@ import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component'
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 @NgModule({
   declarations:
       [
@@ -45,7 +46,8 @@ import { NgxBarcodeModule } from 'ngx-barcode';
       ListPageComponent,
       ActualizarbolComponent,
       ComparacionVentaComponent,
-      CurrentvoucherComponent],
+      CurrentvoucherComponent,
+      BuscarvoucheremitComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

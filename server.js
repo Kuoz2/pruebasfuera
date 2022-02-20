@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 require('heroku-self-ping').default("http://your-app-url");
-import { environment } from 'src/environments/environment';
 const app = express();
 
 app.use(express.static(__dirname + '/dist/multikart-admin'));
@@ -31,7 +30,6 @@ io.on('connection', (socket) => {
    // socket.on('disconnect', () => {
      //   console.log('user disconnected');
      //});
-     hsp(`https://${environment.HEROKU_APP_NAME}.herokuapp.com`);
 const idHandShake = socket.id
 const {nameRoom} = socket.handshake.query
 

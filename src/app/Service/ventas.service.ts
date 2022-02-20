@@ -20,7 +20,7 @@ export class VentasService {
   }
 
   consultar_code(code){
-      return this.http.put(this.consu_code +"/"+ code.id, code).subscribe(res => {console.log(res)})
+      return this.http.post(this.consu_code ,code).subscribe(res => {console.log(res)})
   }
 
 }

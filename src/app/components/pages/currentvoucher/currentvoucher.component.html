@@ -57,9 +57,33 @@
       <div class="shopping-cart-total">
       </div>      
   </div> <!--end shopping-cart-header -->
-  
- 
 </nav>
+<hr>
+    <div class="card">
+      <div class="card-header">
+          <label for="buscarcboleta">Buscar Voucher</label>
+          <input type="text" name="buscarboleta" id="buscarboleta" class="form-control" placeholder="Ingrese el Código del voucher" [(ngModel)]="buscarpanaderia">
+      </div>
+      <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Código del voucher</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Origen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of consultarvoucher | buscarproductopanaderia:buscarpanaderia">
+                  <th *ngIf="item.panaderia==true">{{item.cod_panaderia}}</th>
+                  <td *ngIf="item.panaderia==true">{{item.product.category.cnombre}} {{item.product.pdescripcion}}</td>
+                  <td *ngIf="item.panaderia==true">{{item.panaderia}}</td>
+                </tr>         
+              </tbody>
+            </table>
+        </div>
+      </div>
+<hr>
 <div class="container">
   <div class="card">
     <div class="card-header">

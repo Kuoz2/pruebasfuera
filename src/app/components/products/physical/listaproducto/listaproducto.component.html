@@ -34,7 +34,7 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody id="tbody3">
-                                                    <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:3, currentPage:j} ; let i=index"  (dblclick)="open2(content2, p)" class="text-center" id="tr3" >
+                                                    <tr *ngFor="let p of (listproductosG | async| inventariopeligro ) | paginate: {id:'pagination3',itemsPerPage:5, currentPage:j} ; let i=index"  (dblclick)="open2(content2, p)" class="text-center" id="tr3" >
                                                         <td id="td222">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                                         <td id="td333">{{p.pvalor}}</td>
                                                         <td id="td444">{{p.stock.pstock}}</td>

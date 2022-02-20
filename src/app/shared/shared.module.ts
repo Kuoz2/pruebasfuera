@@ -36,6 +36,8 @@ import { Comproduc1Pipe } from './Pipe/comproduc1.pipe';
 import { Comproduc2Pipe } from './Pipe/comproduc2.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MinimarketfilterPipe } from './Pipe/minimarketfilter.pipe';
+import { BusquedaVoucherEmitPipe } from './Pipe/busqueda-voucher-emit.pipe';
+import { BuscarproductopanaderiaPipe } from './Pipe/buscarproductopanaderia.pipe';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,7 @@ import { MinimarketfilterPipe } from './Pipe/minimarketfilter.pipe';
         RangodefechasPipe, 
         Comproduc1Pipe, 
         Comproduc2Pipe, 
-        MinimarketfilterPipe,
+        MinimarketfilterPipe, BusquedaVoucherEmitPipe, BuscarproductopanaderiaPipe,
 
   ],
   imports: [
@@ -93,6 +95,6 @@ import { MinimarketfilterPipe } from './Pipe/minimarketfilter.pipe';
                   CeparadorPipe,
                    Inventariosano2Pipe,
                   Busqueda2inventarioPipe, 
-                  RangodefechasPipe, MinimarketfilterPipe]
+                  RangodefechasPipe, MinimarketfilterPipe, BusquedaVoucherEmitPipe,BuscarproductopanaderiaPipe]
 })
 export class SharedModule { }

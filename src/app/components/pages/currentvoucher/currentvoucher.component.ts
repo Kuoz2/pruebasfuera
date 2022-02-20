@@ -1,3 +1,4 @@
+import { VoucherService } from './../../../Service/voucher.service';
 import { VentasService } from './../../../Service/ventas.service';
 import { Documentos } from './../../Modulos/Documentos';
 import { ProductserviceService } from './../../../Service/productservice.service';
@@ -22,7 +23,8 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
      private carservice:CartServiceService,
      private cd: ChangeDetectorRef,private modalService: NgbModal,
      private spinner: NgxSpinnerService,
-     private code_consu: VentasService) { }
+     private code_consu: VentasService,
+     private consultarcode: VoucherService) { }
      
   ngOnDestroy(): void { 
     this.unsubscribe$.next();
@@ -34,6 +36,8 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     public Fproducto
     private unsubscribe$ = new Subject<void>();
     public closeResult: string;
+    public consultarvoucher:any;
+    public buscarpanaderia:string = "";
 
     items: Array<any>;
     totalQuantity = 0;
@@ -41,6 +45,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
 
     p: any;
   ngOnInit(): void {
+    this.buscarvoucheremitido()
     this.spinner.show('spinnerdashcategori')
     console.log(this.imagenes.length)
     this.obtenerCategorias()
@@ -203,7 +208,11 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
        };
   }
   consultar_code(){
-    const code ={id: 1,hora_emision: '3', market: true, cod_market: 21, product_id: 1 }
+    const code ={hora_emision: '3', market: true, product_id: 1 }
       return this.code_consu.consultar_code(code)
+  }
+
+  buscarvoucheremitido(){
+    return this.consultarcode.buscaVoucherEmitido().subscribe(res => {this.consultarvoucher = res})
   }
 }

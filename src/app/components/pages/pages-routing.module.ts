@@ -1,3 +1,4 @@
+import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component';
 import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta.component';
 import {NgModule} from '@angular/core';
@@ -108,6 +109,14 @@ const routes: Routes = [
           breadcrumb: 'Crear voucher'
         },
       },
+      {
+        path:'buqueda',
+        component: BuscarvoucheremitComponent,
+        data:{
+          title: 'Buscar un voucher emitidos',
+          breadcrumb: 'Buscar voucher'
+        }
+      }
     ]
   }
 ];
