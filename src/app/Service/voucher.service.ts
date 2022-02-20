@@ -35,6 +35,7 @@ export class VoucherService {
   pruebatodaslasperdidasdinv1 ='https://multikart-norte.herokuapp.com/stocks/todaslasperdiadasinvprim'
   pruebaquicksales = 'https://multikart-norte.herokuapp.com/quick_sales/ventarapida_fechas'
   totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
+  codeVoucher = 'https://multikart-norte.herokuapp.com/codes'
   constructor(private http: HttpClient , private verificar: VerificarTokenService) { }
   // Ganancias totales del mes pasado.
   ganancia_mes_anterior(): Observable<Venta_mes_atras> {
@@ -135,5 +136,10 @@ export class VoucherService {
     //Total de las ventas rapidas
     totalventasR(){
       return this.http.get<totalventasrapidas>(this.totalventasrapidas)
+    }
+
+    //Busqueda del voucher emitidos
+    buscaVoucherEmitido(){
+      return this.http.get(this.codeVoucher)
     }
 }
