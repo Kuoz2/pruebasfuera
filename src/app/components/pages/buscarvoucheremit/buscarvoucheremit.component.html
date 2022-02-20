@@ -1,0 +1,46 @@
+
+<div class="container ">
+    <div class="row">
+    <div class="col-6 d-flex justify-content-md-center">
+        <div class="card ">
+            <div class="card-header">
+                <h5>Buscar voucher emitidos</h5>
+                </div>
+                <div class="card-body ">
+                 <div class="d-flex justify-content-center">
+                        <input type="text" class="form-control " [(ngModel)]="buscarCode">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Resultado</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <caption>List of users</caption>
+                        <thead>
+                          <tr class="table-activ" >
+                            <th scope="col">Código</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Origen</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of losvoucher | busquedaVoucherEmit:buscarCode">
+                            <th scope="row">{{item.cod_market}}//{{item.cod_panaderia}}</th>
+                            <td>{{item.product.category.cnombre}} {{item.product.pdescripcion}}</td>
+                            <td>{{item.market}} {{item.panaderia}}</td>
+                          </tr>
+                       
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
