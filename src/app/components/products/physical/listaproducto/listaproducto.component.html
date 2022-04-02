@@ -9,6 +9,8 @@
                 <div class="card-header">
                     <h5>Inventario</h5>
                 </div>
+                <input type="text" class="form-control" id="Binvsano" placeholder="Ingrese el codigo del producto" [(ngModel)]="buscarinventariosano">
+
                 <ngb-tabset justify="fill">
                     <ngb-tab>
                         <ng-template ngbTabTitle><b>Inventario</b> sin stock</ng-template>
@@ -68,6 +70,7 @@
                                                             <td >{{l.product.pdescripcion}}</td>
                                                             <td>{{l.product.pvalor}}</td>
                                                             <td>{{l.stock_expiration}}</td>
+                                                            <td><button>Eliminar</button></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -110,7 +113,7 @@
                                                     <td id="td44">{{p.stock.pstock}}</td>
                                                     <td>{{p.date_expiration.fecha_vencimiento}}</td>
                                                     <td [attr.id]="'gestionar' + i + d "  >{{cambiarColorGestion(p.stock.pstock,i, d)}}</td>
-
+                                                    <td><button (click)="eliminarproducto()">Eliminar</button></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -162,13 +165,16 @@
                                         <div class="card-header">
                                             <h3>Inventario sano</h3>
                                         </div>
+                                        <label for="Binvsano">Buscar</label>
                                         <div class="card-body">
                                             <table class="table table-bordered" id="table1">
                                                 <thead>
                                                 <tr class="text-center">
+                                                    <th>Código</th>
                                                     <th>
                                                         Nombre
                                                     </th>
+                        
                                                     <th>Précio</th>
                                                     <th>Stock</th>
                                                     <th>Fecha</th>
@@ -176,15 +182,16 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody id="tbody1">
-                                                <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index "  >
+                                                <ng-container *ngFor="let p of (listproductosG  |async |inventarionsano| buscarproductinventario:buscarinventariosano ) | paginate: {id:'pagination1',itemsPerPage:3, currentPage:h}; let i=index "  >
                                                     <tr  class="text-center" id="tr1" (dblclick)="open2(content2, p)" >
                                                         <ng-container *ngIf="p.stock.pstock >= 10">
+                                                            <td>{{p.pcodigo}}</td>
                                                             <td id="td2">{{p.category.cnombre}}/{{p.pdescripcion}}</td>
                                                             <td id="td3">{{p.pvalor}}</td>
                                                             <td id="td4">{{p.stock.pstock}}</td>
                                                             <td>{{p.date_expiration.fecha_vencimiento}}</td>
                                                             <td [attr.id]="'estado' + i + h">{{cambiadColor(p.stock.pstock, i, h)}}</td>
-
+                                                            <td><button (click)="eliminarproducto(p)">Eliminar</button></td>
                                                         </ng-container>
                                                     </tr>
                                                 </ng-container>
@@ -283,11 +290,16 @@
                                         <label for="montoneto" class="mb-1">Monto neto :</label>
                                         <input class="form-control" [(ngModel)]="productoporid.pvneto" id="montoneto" type="text">
                                     </div>
+                                   
 
                                     <div class="form-group">
                                         <label for="validationCustom0122" class="mb-1">Detalle del producto :</label>
                                         <textarea class="form-control" [(ngModel)]="productoporid.pdetalle" id="validationCustom0122" rows="5" cols="10" type="text">
                                         </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nuevostock" class="mb-1">Stock Actual:</label>
+                                        <input type="number" [(ngModel)]="newstock" class="for m-control" id = "validationCustom01222" >
                                     </div>
                                     <div class="form-group">
                                         <label for="validationCustom01222" class="mb-1">Stock Actual:</label>
@@ -370,6 +382,7 @@
                                         <label for="montoneto1" class="mb-1">Monto neto :</label>
                                         <input class="form-control" [ngModel]="inventario2?.product?.pvneto" id="montoneto1" type="text">
                                     </div>
+                                    
 
                                     <div class="form-group">
                                         <label for="datelleproducto" class="mb-1">Detalle del producto :</label>

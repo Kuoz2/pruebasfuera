@@ -54,6 +54,10 @@ export const
     path:"pruebanavegacion",
     loadChildren: () => import('../../components/pruebanavegacion/pruebanavegacion.module').then(m => m.PruebanavegacionModule)
   },
+  {
+    path: 'estacionaimiento',
+    loadChildren: () => import('../../components/estacionamiento/estacionamiento.module'). then(m => m.EstacionamientoModule)
+  },
 
 ];
 

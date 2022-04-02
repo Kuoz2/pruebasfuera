@@ -10,15 +10,16 @@ export class CartServiceService {
   public currentDataCart$ = this.cart.asObservable(); //Observable con el valor actual
   constructor() { }
 
-  public changeCart(newData:Item){
+  public changeCart(newData:any){
     //Obtener el valor actual
-
+    console.log("lo que entra en el carro", newData)
     let listCart = this.cart.getValue();
     //Si no es el primer item del carrito
     if(listCart){
       //Buscamos si ya cargamos ese item en el carrito
       let objIndex = listCart.findIndex((obj => obj.id == newData.id));
-    if(objIndex != -1){
+      let objcod = listCart.findIndex((obj => obj.pcodigo == "1111"))
+    if(objIndex != -1 && objcod == -1){
       //Si ya cargamos uno aumentamos su cantidad
       listCart[objIndex].quantity += 1;
     }else {

@@ -1,3 +1,4 @@
+import { EstacionamientoModule } from './components/estacionamiento/estacionamiento.module';
 import { VerificadorRoleService } from './Service/verificador-role.service';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -18,8 +19,6 @@ import {NgxPrintModule} from 'ngx-print'
 import {InfiniteScrollModule} from 'ngx-infinite-scroll'
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { CookieService } from 'ngx-cookie-service';
-import 'lodash';
-import 'rxjs';
 
 @NgModule({
   declarations: [
@@ -42,6 +41,7 @@ import 'rxjs';
         NgxPrintModule,
         InfiniteScrollModule,
         NgxBarcodeModule,
+        EstacionamientoModule
        
 
     ],

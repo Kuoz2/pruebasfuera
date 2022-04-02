@@ -14,7 +14,7 @@ export class BuscarproductopanaderiaPipe implements PipeTransform {
       console.log('entrante', args)
 
       for (const p in value) {
-        if ( value[p].cod_panaderia.toString().indexOf( args ) > -1 ) {
+        if ( value[p].cod_panaderia.toString().indexOf( args ) > -1 && value[p].panaderia == true && value[p].market == false && value[p].cod_panaderia == args) {
           voucherpanaderia.push( value[p] )
         }
       }

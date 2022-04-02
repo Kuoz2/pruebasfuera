@@ -63,7 +63,8 @@ title: 'Productos' , icon: 'box', rol: '', type: 'sub', active: false,  children
 				{path: '/pages/boleta', rol: 'administrador', title: 'Boleta', type: 'link'},
 				{path: '/pages/imagenesventa', rol:'', title:'Minimarket', type:'link'},
 				{path: '/pages/comparar', rol:'administrador', title:'Comparación', type: 'link'},
-				{path: '/pages/buqueda', rol:'', title:'Voucher emitido', type: 'link' }
+				{path: '/pages/buqueda', rol:'', title:'Voucher emitido', type: 'link' },
+				{path: '/pages/panaderia', rol:'', title:'Voucher Panaderia', type: 'link' }
 			]
 		},
 

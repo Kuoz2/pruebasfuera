@@ -1,0 +1,130 @@
+<ngx-spinner name="spinnerdashcategori">
+</ngx-spinner>
+<ng-template #content let-modal>
+  <div class="modal-header">
+      <h5 class="modal-title f-w-600" id="exampleModalLabel">Lista de productos</h5>
+      <button type="button" class="close" aria-label="Close"
+          (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="card">
+    <div class="card-header">
+        <label for="buscarcboleta">Buscar Voucher</label>
+        <input type="text" name="buscarboleta" id="buscarboletaPana" (click)="busquedaPan()" class="form-control" placeholder="Ingrese el Código del voucher si se emitio en panaderia" [(ngModel)]="buscarpanaderia">
+    </div>
+    <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Código del voucher</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Origen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of consultarvoucher | busquedaprodutomarket:buscarpanaderia">
+                <td *ngIf="item.market==true">{{item.cod_panaderia}}</td>
+                <td *ngIf="item.market==true">{{item.product.category.cnombre}}   {{item.product.pdescripcion}}</td>
+                <td *ngIf="item.market==true">{{item.market}}</td>
+              </tr>       
+              <button (click)="guardarPanaderia(buscarpanaderia)">Guardar</button> 
+            </tbody>
+          </table>
+      </div>
+    </div>
+  <div class="modal-body">
+      <form  >
+        <div id="tablaventa" > 
+        <table class="table table-bordered" >
+          <thead>
+            <tr>
+              <th scope="col">CAN</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Pres</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.quantity}}</td>
+              <td>{{item.category.cnombre}} {{item.pdescripcion}}</td>
+              <td>{{item.pvalor }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="col text-center" >
+            <h2 class="totalprice">Total: {{totalPrice}}</h2>
+        </div>
+        <div class="text-center bardcode " id="bardcode">
+          <ngx-barcode [bc-value]="codigobarra" [bc-display-value]="true"></ngx-barcode>
+
+        </div>
+      </div>
+        <!--guardar los registros generar un voucher-->
+          <div class="modal-footer">
+            <button (click)="guardarregistro()" class="btn btn-info">GUARDAR</button>
+              <button type="button"  class="btn btn-primary" (click)="imprimirvoleta('tablaventa', 'totalprice','bardcode')" >IMPRIMIR</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal"
+                      (click)="modal.dismiss('Cross click')">Cerrar</button>
+          </div>
+      </form>
+  </div>
+</ng-template>
+
+
+<nav class="navbar navbar-light">
+  <div class="shopping-cart-header">
+     <button class="btn btn-primary btn-lg" (click)="open(content)">  <i class="fa fa-shopping-cart cart-icon" ></i><span class="badge"></span> Ver productos</button> 
+      <div class="shopping-cart-total">
+      </div>      
+  </div> <!--end shopping-cart-header -->
+</nav>
+<hr>
+   
+<hr>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3>Filtrar por categorías Panaderia</h3>
+    </div>
+    <div class="card-body">
+  <div class="row">
+  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of (categorias  | paginate: {itemsPerPage:12, currentPage:p}); let i = index " >
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="checatecogira{{i}}" [value]="item.cnombre" (click)="boxClick(item, i)" >
+      <label class="form-check-label" for="inlineCheckbox1">{{item.cnombre}}</label>
+    </div>
+  </div>
+  </div>
+  </div>
+    <div class="row">
+      <div class="col">
+        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+<div class="col">
+<span class="main-color-text" style="  text-align: center;"><h2></h2></span>
+<div class="row" style="margin-bottom: 40px;">
+  <input type="text" class="form-control form-control-lg" name="fproducto" id="fproducto" [(ngModel)]="Fproducto" placeholder="Busar por el código del producto">
+</div>
+</div>
+</div>
+<div class="container" >
+<div class="row" style=" padding-bottom: 20px;" >
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of producto | minimarketfilter:Fproducto"  >
+        <div class="card" style="width: 18rem; ">
+            <img class="card-img-top" src="../../../../../assets/images/user.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{item.category.cnombre}} {{item.brand.bnombre}} {{item.pdescripcion}}</h5>
+              <p class="font-weight-bold">Precio</p> <h2>${{item.pvalor + item.piva}}</h2>
+              <button type="button" (click)="mandarcarro(item)" class="btn btn-primary">Go somewhere </button>
+            </div>
+          </div>
+          
+    </div>
+</div>
+</div>

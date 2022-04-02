@@ -44,3 +44,7 @@ export class resivendoMarca{
         this.created_at = created_at
     }
 }
+
+export class dada {
+    id:number
+}

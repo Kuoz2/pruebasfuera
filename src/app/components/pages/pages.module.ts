@@ -30,6 +30,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component'
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
+import { PanaderiaComponent } from './panaderia/panaderia.component';
 @NgModule({
   declarations:
       [
@@ -47,7 +48,8 @@ import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremi
       ActualizarbolComponent,
       ComparacionVentaComponent,
       CurrentvoucherComponent,
-      BuscarvoucheremitComponent],
+      BuscarvoucheremitComponent,
+      PanaderiaComponent],
     imports: [
         CommonModule,
         PagesRoutingModule,

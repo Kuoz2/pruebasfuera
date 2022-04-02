@@ -276,4 +276,17 @@ actualizar_stock_fecha(fchAct: date_expiration) {
     return this.http.get(this.URLvacios)
   }
 
+
+  eliminardatos(a){
+    const Swal = require('sweetalert2')
+
+    this.http.delete(this.UrlPrueba + '/' + a.id).subscribe(
+      res => {
+        Swal.fire({
+          title: "Eliminado correctamente",
+          text: 'Producto eliminado. ',
+          icon: 'alert',
+      })
+    })
+  }
 }

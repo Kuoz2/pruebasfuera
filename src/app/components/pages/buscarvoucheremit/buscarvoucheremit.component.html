@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body ">
                  <div class="d-flex justify-content-center">
-                        <input type="text" class="form-control " [(ngModel)]="buscarCode">
+                        <input type="text" class="form-control " (click)="busquedaEmit()" [(ngModel)]="buscarCode" id="buscarEmitido">
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="card-body">
                     <table class="table">
-                        <caption>List of users</caption>
+                        <caption>Lista de productos</caption>
                         <thead>
                           <tr class="table-activ" >
                             <th scope="col">Código</th>
@@ -36,7 +36,7 @@
                             <td>{{item.product.category.cnombre}} {{item.product.pdescripcion}}</td>
                             <td>{{item.market}} {{item.panaderia}}</td>
                           </tr>
-                       
+                            
                         </tbody>
                       </table>
                 </div>

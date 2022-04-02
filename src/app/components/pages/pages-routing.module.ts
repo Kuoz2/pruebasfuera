@@ -1,3 +1,4 @@
+import { PanaderiaComponent } from './panaderia/panaderia.component';
 import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.component';
 import { ComparacionVentaComponent } from './comparacion-venta/comparacion-venta.component';
@@ -115,6 +116,14 @@ const routes: Routes = [
         data:{
           title: 'Buscar un voucher emitidos',
           breadcrumb: 'Buscar voucher'
+        }
+      },
+      {
+        path:'panaderia',
+        component: PanaderiaComponent,
+        data:{
+          title: 'Emitir boleta panaderia',
+          breadcrumb: 'Emitir panaderia'
         }
       }
     ]

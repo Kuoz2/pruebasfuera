@@ -6,10 +6,12 @@ import { Categories } from './../../Modulos/Categories';
 import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 import { CartServiceService } from 'src/app/Service/cart-service.service';
-import { takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { VucherParameter } from '../../Modulos/voucherparameter';
+import { Productos } from '../../Modulos/Productos';
 
 @Component({
   selector: 'app-currentvoucher',
@@ -18,14 +20,42 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class CurrentvoucherComponent implements OnInit, OnDestroy {
   elcodigo
+  public vouchermarket: VucherParameter;
+  productosen:Productos
+  public codigobarra:number = 0
+  Cnumero
+  n7="7"
+  n8="8"
+  n9="9"
+  ndiv="/"
+  n4="4"
+  n5="5"
+  n6="6"
+  npor="*"
+  n1="1"
+  n2="2"
+  n3="3"
+  nrest="-"
+  n0="0"
+  nigual="="
+  nC="C"
+  nmas="+"
+   valorVisor = 0;
+   numeroA;
+   numeroB;
+   operacao;
+    total = 0;
+    ultimoTotal = 0;
   constructor(private categori: CategoriasService,
      private productos: ProductserviceService,
-     private carservice:CartServiceService,
-     private cd: ChangeDetectorRef,private modalService: NgbModal,
+     private carservice:CartServiceService, //esto debe ser cambiado mas adelante y crear uno independiente.
+     private cd: ChangeDetectorRef,
+     private modalService: NgbModal,
      private spinner: NgxSpinnerService,
      private code_consu: VentasService,
      private consultarcode: VoucherService) { }
-     
+     public codigovoucher:any;
+
   ngOnDestroy(): void { 
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
@@ -62,7 +92,6 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
       
       }
   );
-  this.consultar_code()
   }
 
   boxClick(a,b ){
@@ -86,25 +115,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
    return this.productos.products().subscribe(res =>{ this.producto = res; console.log('productos',this.producto)})
   }
 
-  mandarcarro(product: any){
-    delete product.sinventario
-    delete product.sinventario2
-    console.log('lo que entra', product)
 
-    if(product.pcodigo){
-      Object.assign(product, {sinventario:true})
-    }else{
-      Object.assign(product, {sinventario2:false})
-    }
-    const data = product;
-    const elemento = {quantity: 1};
-    if (data.quantity >= elemento.quantity){
-      this.carservice.changeCart(data)
-    }else {
-      const cambio = Object.assign( product, elemento )
-      this.carservice.changeCart(cambio)
-  }
-  }
 
   open(content){
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
@@ -193,7 +204,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
            '<title></title></head>' +
            '<body >' +
               '<div class="ticket ">' +
-              window.document.getElementById(tabla).innerHTML +
+              window.document.getElementById(bardcode).innerHTML +
               '</div>'+
             '</body>';
     const mywindow = window.open( '', '_blank' );
@@ -208,11 +219,259 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
        };
   }
   consultar_code(){
-    const code ={hora_emision: '3', market: true, product_id: 1 }
-      return this.code_consu.consultar_code(code)
+  
+    this.consultarcode.buscarultimosemitidos().subscribe((res) => {
+      res ? null : res = {id: 0}
+      this.codigovoucher = res; 
+      this.codigobarra = this.codigovoucher.id
+      console.log("r4espuesta", res)
+    for(const d in this.items){
+      console.log("los items", this.items)
+      Object.assign(this.items[d], {cod_market: this.codigovoucher.id})
+        if(this.items[d].panaderia  == true ){
+          console.log("items 1", this.items[d])
+            const code ={hora_emision: '3',
+              market: this.items[d].market,
+              product_id: this.items[d].product.id,
+              cod_market: this.items[d].cod_panaderia,
+              cod_panaderia: this.items[d].cod_panaderia,
+              pvalor: this.items[d].pvalor }
+              this.code_consu.consultar_code(code)
+        }
+      }
+          for(const h in this.items)
+          {
+            Object.assign(this.items[h], {cod_market: this.codigovoucher.id})
+
+            if(this.items[h].market == true && this.items[h].panaderia == false){
+
+              const code ={hora_emision: '3',
+              panaderia: this.items[h].panaderia, 
+              market: this.items[h].market,
+              product_id: this.items[h].id,
+              cod_panaderia: 0,
+              cod_market: this.items[h].cod_market, 
+              pvalor: this.items[h].pvalor}
+              this.code_consu.consultar_code(code)
+            }
+          }   
+   
+  })
+      
+      console.log(this.items)
+
+    /*if(i.cod_panaderia != 0){
+      var code ={hora_emision: '3',
+      panaderia: true, 
+      market:true,
+      product_id: i.id,
+      cod_market: i.cod_panaderia,
+      cod_panaderia: i.cod_panaderia, 
+      
+   }*/
+    
+     // return this.code_consu.consultar_code(code)
   }
 
   buscarvoucheremitido(){
     return this.consultarcode.buscaVoucherEmitido().subscribe(res => {this.consultarvoucher = res})
   }
+  guardarPanaderia(a){
+//Lee si hay un pago realizado en la panaderia y rellena la tabla
+      for(const i of this.consultarvoucher){
+       if(i.cod_panaderia == a && i.panaderia == true ){
+         this. mandarcarro(i.product, i.cod_panaderia, i.panaderia)
+       }
+      
+      }
+  }
+
+  
+   botao(dado) {
+  
+    var agora = new Date;
+    var data = <HTMLInputElement> document.getElementById("visor");
+    var auxiliar = data.value // auxiliar recebe o valor pressionado no visor
+    var info = <HTMLInputElement> document.getElementById("visor") ; // visor recebe o valor de auxiliar e concatena com dado
+    info.value = auxiliar + dado
+
+
+    var mierda = <HTMLInputElement> document.getElementById("visor") 
+  mierda.value = auxiliar + dado;
+  this. valorVisor = parseInt(mierda.value)
+    //document.getElementById("historico").innerHTML = agora.getHours();
+    
+    // mostrar a saudação acima do visor
+    var hora = agora.getHours();
+    
+    if(hora >= 0 && hora <= 12){
+      document.getElementById("historico").textContent = "Bom dia";
+    }
+    if(hora >= 13 && hora <= 17){
+      document.getElementById("historico").textContent = "Boa tarde";
+    }
+    if(hora >= 18 && hora <= 23){
+      document.getElementById("historico").textContent = "Boa noite";
+    }
+}
+
+ btn_soma(caracter){
+
+  this.numeroA = this.valorVisor;
+    this.operacao = "+";
+    this.calcular(caracter)
+    this.limpar();
+    //document.getElementById("historico").innerHTML += operacao;
+}
+
+ btn_subtrai(caracter){
+ 
+  
+  this.numeroA = this.valorVisor;
+  this.operacao = "-";
+  this.calcular(caracter)
+
+  this.limpar();
+}
+
+ btn_multiplica(caracter){
+  
+  
+  this.numeroA = this.valorVisor;
+  this.operacao = "*";
+  this.calcular(caracter)
+
+  this.limpar();
+}
+
+ btn_divide(caracter){
+
+  this.numeroA = this.valorVisor;
+  this.operacao = "/";
+  this.calcular(caracter)
+  this.limpar();
+}
+
+ reset(nC) {
+ 
+  
+    // limpar visor
+   var limpiar = <HTMLInputElement> document.getElementById('visor');
+   limpiar.value =   ''
+    this.valorVisor = 0;
+    this.operacao = "";
+}
+ limpar(){
+   const data = <HTMLInputElement> document.getElementById('visor')
+    data.value = '';
+    
+}
+
+ btn_igual(nigual){
+
+  
+    this.numeroB = this.valorVisor;
+    this.calcular(this.numeroB);
+}
+
+ calcular(operacao) {
+  
+  
+    // faz o calculo, pega o resultado e colocar no visor
+    //document.getElementById('visor').value = eval(resultado);
+
+    //document.getElementById('visor').value = resultado;
+    //document.getElementById('visor').value = eval(valorVisor);
+    console.log(this.numeroB)
+ 
+      switch(operacao){
+        case "+":
+         this.total = parseFloat(this.numeroA) + parseFloat(this.numeroB);
+          break;
+        case "-":
+          this.total = parseFloat(this.numeroA) - parseFloat(this.numeroB);
+            break;
+        case "*":
+          this.total = parseFloat(this.numeroA) * parseFloat(this.numeroB);
+          break;
+        case "/":
+          this.total = parseFloat(this.numeroA) / parseFloat(this.numeroB);
+          break;
+      }
+      this. ultimoTotal = this.total;
+      this.reset(this.numeroA);
+     var DATO = <HTMLInputElement> document.getElementById('visor');
+     DATO.value  = this.total.toString();
+      this.valorVisor = this.ultimoTotal;
+      console.log("valor",this.valorVisor)
+
+}
+
+  mandarcarro(product: any, _b:number, panaderia){
+    //manda los productos del voucher.
+   console.log(product)
+    if(panaderia != undefined && panaderia == true){
+      Object.assign(product, {panaderia: panaderia})
+    }else{
+      Object.assign(product, {panaderia: false})
+      Object.assign(product, {market: true})
+
+    } 
+    delete product.sinventario
+    delete product.sinventario2
+      //Object.assign(product, {cod_market:})
+    if(product.pcodigo || product.product.pcodigo){
+      Object.assign(product, {sinventario:true})
+    }else{
+      Object.assign(product, {sinventario2:false})
+    }
+    console.log('el producto',product)
+    const data = product;
+    const elemento = {quantity: 1};
+    if (data.quantity >= elemento.quantity){
+      this.carservice.changeCart(data)
+    }else {
+      const cambio = Object.assign( product, elemento )
+      this.carservice.changeCart(cambio)
+  }
+  }
+  guardarnumero(Cnumero){
+    console.log(Cnumero)
+    const valor = <HTMLInputElement> document.getElementById('visor')
+    console.log("valor", valor.value)
+    var newProduct = {}
+    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}})    
+
+    const a = 1;
+    const b = false
+    console.log("guardarnumero", newProduct)
+    this.mandarcarro(newProduct, a, b)
+  }
+  busquedaMark(){
+    /*cordova.plugins.barcodeScanner.scan(
+        function (result) {
+  
+             var variable =  <HTMLInputElement> document.getElementById("buscarboleta")
+  
+          /  variable.value = result.text
+        },
+        function (error) {
+            alert("Scanning failed: " + error);
+        },
+        {
+            preferFrontCamera : true, // iOS and Android
+            showFlipCameraButton : true, // iOS and Android
+            showTorchButton : true, // iOS and Android
+            torchOn: true, // Android, launch with the torch switched on (if available)
+           saveHistory: true, // Android, save scan history (default false)
+            prompt : "Place a barcode inside the scan area", // Android
+            resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+            formats : "QR_CODE,PDF_417,UPC_A, UPC_E,EAN_8,EAN_13,CODE_128", // default: all but PDF_417 and RSS_EXPANDED
+            orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+            disableAnimations : true, // iOS
+            disableSuccessBeep: false // iOS and Android
+        }
+        );
+      */
+    }
 }

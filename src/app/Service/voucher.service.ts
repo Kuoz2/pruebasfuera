@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 import {V_Producto} from '../components/Modulos/GANANCIAS';
 
 import {Reporete_perdidas_grafico, Reporte_grafico, totalperdiaspriminv, totalventasrapidas, Venta_mes_atras, Venta_por_mes, } from '../components/Modulos/reporte_grafico';
-import { respuesta } from '../components/Modulos/respuesta';
+import { dada, respuesta } from '../components/Modulos/respuesta';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +36,7 @@ export class VoucherService {
   pruebaquicksales = 'https://multikart-norte.herokuapp.com/quick_sales/ventarapida_fechas'
   totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
   codeVoucher = 'https://multikart-norte.herokuapp.com/codes'
+  ultimoemitido = 'https://multikart-norte.herokuapp.com/codes/last_code'
   constructor(private http: HttpClient , private verificar: VerificarTokenService) { }
   // Ganancias totales del mes pasado.
   ganancia_mes_anterior(): Observable<Venta_mes_atras> {
@@ -141,5 +142,11 @@ export class VoucherService {
     //Busqueda del voucher emitidos
     buscaVoucherEmitido(){
       return this.http.get(this.codeVoucher)
+    }
+
+    //encontrar los ultimos emitidos
+
+    buscarultimosemitidos(){
+      return this.http.get(this.ultimoemitido)
     }
 }
