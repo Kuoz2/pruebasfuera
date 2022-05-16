@@ -26,14 +26,14 @@
                         <thead>
                           <tr class="table-activ" >
                             <th scope="col">Código</th>
-                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
                             <th scope="col">Origen</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let item of losvoucher | busquedaVoucherEmit:buscarCode">
                             <th scope="row">{{item.cod_market}}//{{item.cod_panaderia}}</th>
-                            <td>{{item.product.category.cnombre}} {{item.product.pdescripcion}}</td>
+                            <td>{{item.pvalor}}</td>
                             <td>{{item.market}} {{item.panaderia}}</td>
                           </tr>
                             

@@ -1,10 +1,10 @@
+import { CarServicePanaderiaService } from './../../../Service/car-service-panaderia.service';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
-import { CartServiceService } from 'src/app/Service/cart-service.service';
 import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ProductserviceService } from 'src/app/Service/productservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { findIndex, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { VentasService } from 'src/app/Service/ventas.service';
@@ -21,9 +21,32 @@ import { dada } from '../../Modulos/respuesta';
 export class PanaderiaComponent implements OnInit, OnDestroy {
 public Fproducto
 public codigovoucher:any;
+Cnumero
+n7="7"
+n8="8"
+n9="9"
+ndiv="/"
+n4="4"
+n5="5"
+n6="6"
+npor="*"
+n1="1"
+n2="2"
+n3="3"
+nrest="-"
+n0="0"
+nigual="="
+nC="C"
+nmas="+"
+ valorVisor = 0;
+ numeroA;
+ numeroB;
+ operacao;
+ total = 0;
+    ultimoTotal = 0;
   constructor(private categori: CategoriasService,
     private productos: ProductserviceService,
-    private carservice:CartServiceService, //esto debe ser cambiado mas adelante y crear uno independiente.
+    private carservice:CarServicePanaderiaService, //esto debe ser cambiado mas adelante y crear uno independiente.
      private cd: ChangeDetectorRef,
      private modalService: NgbModal,
      private spinner: NgxSpinnerService,
@@ -111,48 +134,70 @@ public codigovoucher:any;
   }
 
 
-  guardarregistro(){
-    this.consultarcode.buscarultimosemitidos().subscribe((res) => {
+  verificar_si(a){
+    console.log("cambiar el vengo de",a)
+    for( let i in a){
+      if(!a[i].vengo_de){
+        
+        return Object.assign(a, {vengo_de: 'si'})
+      }
+    }
+  }
+  async guardarregistro(){
+    this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
       this.codigobarra = this.codigovoucher.id
       console.log("se guardan", this.items)
-    for(const d in this.items){
-      Object.assign(this.items[d], {cod_panaderia: this.codigovoucher.id})
-        if(this.items[d].market  == true && this.items[d].panaderia == false){
-          console.log("items 1", this.items[d])
+      var nuevoregistro = []
+      console.log(this.verificar_si(this.items))
+     await nuevoregistro.push(this.verificar_si(this.items))
+     console.log('nuevosd registros', nuevoregistro[0] )
+    for(const d in nuevoregistro[0]){
+      Object.assign(nuevoregistro[0][d], {cod_panaderia: this.codigovoucher.id})
+        if(nuevoregistro[0][d].market  == true && nuevoregistro[0][d].panaderia == false && nuevoregistro[0][d].cod_market != nuevoregistro[0][d].cod_panaderia && nuevoregistro[0][d].vengo_de == 'si'){
+          console.log("items 1", nuevoregistro[0][d])
+          
             const code ={hora_emision: '3',
-              market: this.items[d].market,
-              product_id: this.items[d].product.id,
-              cod_market: this.items[d].cod_market,
-              cod_panaderia: this.items[d].cod_market, 
-              pvalor: this.items[d].pvalor
+              market: nuevoregistro[0][d].market,
+              panaderia: nuevoregistro[0][d].market,
+              product_id: nuevoregistro[0][d].product.id,
+              cod_market: nuevoregistro[0][d].cod_market, 
+              cod_panaderia: nuevoregistro[0][d].cod_market, 
+              pvalor: nuevoregistro[0][d].pvalor
             }
             console.log("Registro a guardar", code)
               this.code_consu.consultar_code(code)
+              
         }
       }
-          for(const h in this.items)
-          {
-            Object.assign(this.items[h], {cod_panaderia: this.codigovoucher.id})
+          for(const h in nuevoregistro[0])
+          {            console.log("antes de for", nuevoregistro[0][h])
 
-            if(this.items[h].panaderia == true && this.items[h].market == false){
-              console.log("items 2", this.items[h])
+
+            Object.assign(nuevoregistro[0][h], {cod_panaderia: this.codigovoucher.id})
+
+            if(nuevoregistro[0][h].panaderia == true && nuevoregistro[0][h].market == false && nuevoregistro[0][h].cod_market == 0 && nuevoregistro[0][h].vengo_de == undefined){
+              console.log("items 3", nuevoregistro[0][h]) 
 
               console.log("entro por la segunda opcion")
               const code ={hora_emision: '3',
-              panaderia: this.items[h].panaderia, 
-              market: this.items[h].market,
-              product_id: this.items[h].id,
+              panaderia: nuevoregistro[0][h].panaderia, 
+              market: nuevoregistro[0][h].market,
+              product_id: nuevoregistro[0][h].id,
               cod_market: 0,
-              cod_panaderia: this.items[h].cod_panaderia,
-              pvalor: this.items[h].pvalor
+              cod_panaderia: nuevoregistro[0][h].cod_panaderia,
+              pvalor: nuevoregistro[0][h].pvalor
              }
+             console.log("registro a guardar 2 ", code)
+
               this.code_consu.consultar_code(code)
+              
             }
           }   
    
   })
+
 
   /*if(i.cod_panaderia != 0){
     var code ={hora_emision: '3',
@@ -171,9 +216,13 @@ public codigovoucher:any;
           for(const i of this.consultarvoucher){
             console.log("lo que esta en el item", i)
            if(i.cod_market == a && i.market == true && i.cod_market == "1111" && i.voucher_vendido == false ){
+            Object.assign(i, {cod_market: i.cod_market})
+            Object.assign(i, {vengo_de: 'si'})
              this. mandarcarro(i.product, i.cod_panaderia, i.market)
            }
            if(i.cod_market == a && i.market == true && i.cod_market != "1111" && i.voucher_vendido == false ){
+             Object.assign(i, {cod_market: i.cod_market})
+             Object.assign(i, {vengo_de: 'si'})
             this. mandarcarro(i , i.cod_panaderia, i.market)
           }
           }
@@ -182,6 +231,43 @@ public codigovoucher:any;
     //manda los productos del voucher.
     var vouchercodigo: any 
       
+    if(product.quantity == undefined)
+    {
+      Object.assign(product, {quantity: 1})
+    }
+    if(product.category == undefined)
+    {
+      Object.assign(product, {category:{cnombnre: 'sin categoria'}})
+    }
+    if(market != undefined && market == true){
+      Object.assign(product, {market: market})
+    }else{
+      Object.assign(product, {market: false})
+      Object.assign(product, {panaderia: true})
+    }
+    
+    delete product.sinventario
+    delete product.sinventario2
+    console.log("cantidad ", product)
+      //Object.assign(product, {cod_market:})
+    if(product.pcodigo || product.product.pcodigo){
+      Object.assign(product, {sinventario:true})
+    }else{
+      Object.assign(product, {sinventario2:false})
+    }
+    console.log(product)
+    const data = product;
+    const elemento = {quantity: 1};
+    if (data.quantity >= elemento.quantity){
+      this.carservice.changeCart(data)
+    }else {
+      const cambio = Object.assign( product, elemento )
+      this.carservice.changeCart(cambio)
+  }
+  }
+  mandarcarro_primeraforma(product: any, _b:number, market){
+    var vouchercodigo: any 
+      Object.assign(product, {cod_market: 0})
     if(product.quantity == undefined)
     {
       Object.assign(product, {quantity: 1})
@@ -301,7 +387,140 @@ public codigovoucher:any;
             mywindow.print();
        };
   }
+  guardarnumero(Cnumero){
+    console.log(Cnumero)
+    const valor = <HTMLInputElement> document.getElementById('visor')
+    console.log("valor", valor.value)
+    var newProduct = {}
+    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}})    
 
+    const a = 1;
+    const b = false
+    console.log("guardarnumero", newProduct)
+    this.mandarcarro(newProduct, a, b)
+    var limpiar = <HTMLInputElement> document.getElementById('visor');
+    limpiar.value =   ''
+     this.valorVisor = 0;
+     this.operacao = "";
+  }
+  botao(dado) {
+  
+    var agora = new Date;
+    var data = <HTMLInputElement> document.getElementById("visor");
+    var auxiliar = data.value // auxiliar recebe o valor pressionado no visor
+    var info = <HTMLInputElement> document.getElementById("visor") ; // visor recebe o valor de auxiliar e concatena com dado
+    info.value = auxiliar + dado
+
+
+    var mierda = <HTMLInputElement> document.getElementById("visor") 
+  mierda.value = auxiliar + dado;
+  this. valorVisor = parseInt(mierda.value)
+    //document.getElementById("historico").innerHTML = agora.getHours();
+    
+    // mostrar a saudação acima do visor
+    var hora = agora.getHours();
+    
+    if(hora >= 0 && hora <= 12){
+      document.getElementById("historico").textContent = "Bom dia";
+    }
+    if(hora >= 13 && hora <= 17){
+      document.getElementById("historico").textContent = "Boa tarde";
+    }
+    if(hora >= 18 && hora <= 23){
+      document.getElementById("historico").textContent = "Boa noite";
+    }
+}
+btn_soma(caracter){
+
+  this.numeroA = this.valorVisor;
+    this.operacao = "+";
+    this.calcular(caracter)
+    this.limpar();
+    //document.getElementById("historico").innerHTML += operacao;
+}
+
+ btn_subtrai(caracter){
+ 
+  
+  this.numeroA = this.valorVisor;
+  this.operacao = "-";
+  this.calcular(caracter)
+
+  this.limpar();
+}
+
+ btn_multiplica(caracter){
+  
+  
+  this.numeroA = this.valorVisor;
+  this.operacao = "*";
+  this.calcular(caracter)
+
+  this.limpar();
+}
+
+ btn_divide(caracter){
+
+  this.numeroA = this.valorVisor;
+  this.operacao = "/";
+  this.calcular(caracter)
+  this.limpar();
+}
+
+ reset(nC) {
+ 
+  
+    // limpar visor
+   var limpiar = <HTMLInputElement> document.getElementById('visor');
+   limpiar.value =   ''
+    this.valorVisor = 0;
+    this.operacao = "";
+}
+ limpar(){
+   const data = <HTMLInputElement> document.getElementById('visor')
+    data.value = '';
+    
+}
+
+ btn_igual(nigual){
+
+  
+    this.numeroB = this.valorVisor;
+    this.calcular(this.numeroB);
+}
+
+ calcular(operacao) {
+  
+  
+    // faz o calculo, pega o resultado e colocar no visor
+    //document.getElementById('visor').value = eval(resultado);
+
+    //document.getElementById('visor').value = resultado;
+    //document.getElementById('visor').value = eval(valorVisor);
+    console.log(this.numeroB)
+ 
+      switch(operacao){
+        case "+":
+         this.total = parseFloat(this.numeroA) + parseFloat(this.numeroB);
+          break;
+        case "-":
+          this.total = parseFloat(this.numeroA) - parseFloat(this.numeroB);
+            break;
+        case "*":
+          this.total = parseFloat(this.numeroA) * parseFloat(this.numeroB);
+          break;
+        case "/":
+          this.total = parseFloat(this.numeroA) / parseFloat(this.numeroB);
+          break;
+      }
+      this. ultimoTotal = this.total;
+      this.reset(this.numeroA);
+     var DATO = <HTMLInputElement> document.getElementById('visor');
+     DATO.value  = this.total.toString();
+      this.valorVisor = this.ultimoTotal;
+      console.log("valor",this.valorVisor)
+
+}
   busquedaPan(){
     /*cordova.plugins.barcodeScanner.scan(
         function (result) {

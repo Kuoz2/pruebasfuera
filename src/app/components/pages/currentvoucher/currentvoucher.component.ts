@@ -1,3 +1,4 @@
+import { CarServiceMinimarketService } from './../../../Service/car-service-minimarket.service';
 import { VoucherService } from './../../../Service/voucher.service';
 import { VentasService } from './../../../Service/ventas.service';
 import { Documentos } from './../../Modulos/Documentos';
@@ -48,7 +49,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     ultimoTotal = 0;
   constructor(private categori: CategoriasService,
      private productos: ProductserviceService,
-     private carservice:CartServiceService, //esto debe ser cambiado mas adelante y crear uno independiente.
+     private carservice:CarServiceMinimarketService, //esto debe ser cambiado mas adelante y crear uno independiente.
      private cd: ChangeDetectorRef,
      private modalService: NgbModal,
      private spinner: NgxSpinnerService,
@@ -257,7 +258,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
           }   
    
   })
-      
+
       console.log(this.items)
 
     /*if(i.cod_panaderia != 0){
@@ -278,12 +279,15 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   }
   guardarPanaderia(a){
 //Lee si hay un pago realizado en la panaderia y rellena la tabla
-      for(const i of this.consultarvoucher){
-       if(i.cod_panaderia == a && i.panaderia == true ){
-         this. mandarcarro(i.product, i.cod_panaderia, i.panaderia)
-       }
-      
-      }
+for(const i of this.consultarvoucher){
+  console.log("lo que esta en el item", i)
+ if(i.cod_panaderia == a && i.panaderia == true && i.cod_panaderia == "1111" && i.voucher_vendido == false ){
+   this.mandarcarro(i.product, i.cod_market, i.panaderia)
+ }
+ if(i.cod_panaderia == a && i.panaderia == true && i.cod_panaderia != "1111" && i.voucher_vendido == false ){
+  this.mandarcarro(i , i.cod_market, i.panaderia)
+}
+}
   }
 
   
@@ -410,6 +414,14 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   mandarcarro(product: any, _b:number, panaderia){
     //manda los productos del voucher.
    console.log(product)
+   if(product.quantity == undefined)
+   {
+     Object.assign(product, {quantity: 1})
+   }
+   if(product.category == undefined)
+    {
+      Object.assign(product, {category:{cnombnre: 'sin categoria'}})
+    }
     if(panaderia != undefined && panaderia == true){
       Object.assign(product, {panaderia: panaderia})
     }else{
@@ -446,6 +458,10 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     const b = false
     console.log("guardarnumero", newProduct)
     this.mandarcarro(newProduct, a, b)
+    var limpiar = <HTMLInputElement> document.getElementById('visor');
+    limpiar.value =   ''
+     this.valorVisor = 0;
+     this.operacao = "";
   }
   busquedaMark(){
     /*cordova.plugins.barcodeScanner.scan(
