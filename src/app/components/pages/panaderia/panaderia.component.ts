@@ -21,6 +21,7 @@ import { dada } from '../../Modulos/respuesta';
 export class PanaderiaComponent implements OnInit, OnDestroy {
 public Fproducto
 public codigovoucher:any;
+public UnCodExiste = [];
 Cnumero
 n7="7"
 n8="8"
@@ -150,6 +151,7 @@ nmas="+"
       this.codigobarra = this.codigovoucher.id
       console.log("se guardan", this.items)
       var nuevoregistro = []
+      console.log("cambios de los items", this.items)
       console.log(this.verificar_si(this.items))
      await nuevoregistro.push(this.verificar_si(this.items))
      console.log('nuevosd registros', nuevoregistro[0] )
@@ -181,6 +183,7 @@ nmas="+"
               console.log("items 3", nuevoregistro[0][h]) 
 
               console.log("entro por la segunda opcion")
+              console.log("COdigo del market", nuevoregistro[0][h].cod_market )
               const code ={hora_emision: '3',
               panaderia: nuevoregistro[0][h].panaderia, 
               market: nuevoregistro[0][h].market,
@@ -211,21 +214,40 @@ nmas="+"
   
    // return this.code_consu.consultar_code(code)
 }
-  guardarPanaderia(a){
+  verificar_codmarket(a){
+      for( let i in a  ){
+        if(a[i].cod_market != 0){
+          this.UnCodExiste.push(a[i].cod_market)
+        }
+        console.log("arreglo", this.UnCodExiste )
+       
+      }
+      for(let u in a ){
+        if(a[u].cod_market == 0){
+          a[u].cod_market = this.UnCodExiste[0]
+        }
+      }
+      return a
+  }
+ async guardarPanaderia(a){
     //Lee si hay un pago realizado en la panaderia y rellena la tabla
+    console.log("items ya en entrantes en panaderia", this.items)
           for(const i of this.consultarvoucher){
-            console.log("lo que esta en el item", i)
-           if(i.cod_market == a && i.market == true && i.cod_market == "1111" && i.voucher_vendido == false ){
+           if(i.cod_market == a && i.market == true && i.pcodigo == "1111" && i.voucher_vendido == false ){
+            console.log("primera decision", i.cod_market)
+
             Object.assign(i, {cod_market: i.cod_market})
             Object.assign(i, {vengo_de: 'si'})
              this. mandarcarro(i.product, i.cod_panaderia, i.market)
            }
-           if(i.cod_market == a && i.market == true && i.cod_market != "1111" && i.voucher_vendido == false ){
+           if(i.cod_market == a && i.market == true && i.pcodigo != "1111" && i.voucher_vendido == false ){
+            console.log("segund decision", i.cod_market)
              Object.assign(i, {cod_market: i.cod_market})
              Object.assign(i, {vengo_de: 'si'})
             this. mandarcarro(i , i.cod_panaderia, i.market)
           }
           }
+        await  this.verificar_codmarket(this.items)
       }
    mandarcarro(product: any, _b:number, market){
     //manda los productos del voucher.
@@ -267,6 +289,7 @@ nmas="+"
   }
   mandarcarro_primeraforma(product: any, _b:number, market){
     var vouchercodigo: any 
+    console.log("items en vandeja", this.items)
       Object.assign(product, {cod_market: 0})
     if(product.quantity == undefined)
     {
@@ -392,7 +415,7 @@ nmas="+"
     const valor = <HTMLInputElement> document.getElementById('visor')
     console.log("valor", valor.value)
     var newProduct = {}
-    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}})    
+    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}, cod_market: 0})    
 
     const a = 1;
     const b = false
