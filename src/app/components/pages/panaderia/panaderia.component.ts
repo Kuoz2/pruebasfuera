@@ -5,7 +5,7 @@ import { ProductserviceService } from 'src/app/Service/productservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { VentasService } from 'src/app/Service/ventas.service';
 import { dada } from '../../Modulos/respuesta';
@@ -22,6 +22,7 @@ export class PanaderiaComponent implements OnInit, OnDestroy {
 public Fproducto
 public codigovoucher:any;
 public UnCodExiste = [];
+public nuevosItems = [];
 Cnumero
 n7="7"
 n8="8"
@@ -144,22 +145,39 @@ nmas="+"
       }
     }
   }
+
+  keynoexiste(a){
+
+  }
   async guardarregistro(){
+    console.log("se guardan", this.items)
     this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
       this.codigobarra = this.codigovoucher.id
-      console.log("se guardan", this.items)
       var nuevoregistro = []
-      console.log("cambios de los items", this.items)
       console.log(this.verificar_si(this.items))
      await nuevoregistro.push(this.verificar_si(this.items))
      console.log('nuevosd registros', nuevoregistro[0] )
-    for(const d in nuevoregistro[0]){
+     if(this.nuevosItems.length != 0){
+       
+       for ( const i in this.nuevosItems){
+        if( !this.nuevosItems[i].product ) { Object.assign(this.nuevosItems[i], {product:{id: this.nuevosItems[i].id}}); console.log("agregandi",this.nuevosItems[i] )}
+          const code ={hora_emision: '3',
+              market: this.nuevosItems[i].market,
+              panaderia: this.nuevosItems[i].market,
+              product_id: this.nuevosItems[i].product.id ,
+              cod_market: this.nuevosItems[i].cod_market, 
+              cod_panaderia: this.nuevosItems[i].cod_market, 
+              pvalor: this.nuevosItems[i].pvalor
+            }
+            this.code_consu.consultar_code(code)
+       }
+     }
+    /*for(const d in this.items){
       Object.assign(nuevoregistro[0][d], {cod_panaderia: this.codigovoucher.id})
-        if(nuevoregistro[0][d].market  == true && nuevoregistro[0][d].panaderia == false && nuevoregistro[0][d].cod_market != nuevoregistro[0][d].cod_panaderia && nuevoregistro[0][d].vengo_de == 'si'){
-          console.log("items 1", nuevoregistro[0][d])
-          
+        if(this.items[d].market  == true && this.items[d].panaderia == false && this.items[d].cod_market == this.items[d].cod_panaderia ){
+          console.log("items 1", nuevoregistro[0][d])  
             const code ={hora_emision: '3',
               market: nuevoregistro[0][d].market,
               panaderia: nuevoregistro[0][d].market,
@@ -172,7 +190,10 @@ nmas="+"
               this.code_consu.consultar_code(code)
               
         }
-      }
+      }*/
+      console.log("items vacios", this.nuevosItems)
+
+      if(this.nuevosItems.length == 0){
           for(const h in nuevoregistro[0])
           {            console.log("antes de for", nuevoregistro[0][h])
 
@@ -198,7 +219,7 @@ nmas="+"
               
             }
           }   
-   
+        }
   })
 
 
@@ -214,7 +235,7 @@ nmas="+"
   
    // return this.code_consu.consultar_code(code)
 }
-  verificar_codmarket(a){
+  verificar_codmarket(a): Observable<any>{
       for( let i in a  ){
         if(a[i].cod_market != 0){
           this.UnCodExiste.push(a[i].cod_market)
@@ -225,6 +246,7 @@ nmas="+"
       for(let u in a ){
         if(a[u].cod_market == 0){
           a[u].cod_market = this.UnCodExiste[0]
+          Object.assign(a[u], {cod_panaderia: this.UnCodExiste[0]})
         }
       }
       return a
@@ -247,7 +269,10 @@ nmas="+"
             this. mandarcarro(i , i.cod_panaderia, i.market)
           }
           }
-        await  this.verificar_codmarket(this.items)
+       await  this.verificar_codmarket(this.items)
+        this.items.forEach((resp) => {this.nuevosItems.push(resp)})
+        console.log("nuevos items subidos", this.nuevosItems)
+       return this.items
       }
    mandarcarro(product: any, _b:number, market){
     //manda los productos del voucher.
