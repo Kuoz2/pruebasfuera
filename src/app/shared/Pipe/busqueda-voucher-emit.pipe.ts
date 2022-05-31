@@ -16,6 +16,7 @@ export class BusquedaVoucherEmitPipe implements PipeTransform {
 
       for (const p in value) {
         if (value[p].cod_market.toString().indexOf( args ) > -1 || value[p].cod_panaderia.toString().indexOf( args ) > -1 && value[p].cod_market == args || value[p].cod_panaderia == args) {
+<<<<<<< HEAD
           this. Existengiguales(value[p], voucherencontrado, args) || this. ExisteNoiguales(value[p], voucherencontrado)
 
           console.log("valor3es nuevamente" , voucherencontrado)
@@ -33,6 +34,9 @@ export class BusquedaVoucherEmitPipe implements PipeTransform {
           }
         */
 
+=======
+          voucherencontrado.push(value[p])
+>>>>>>> 9ca04b872183686028e8da936a14d95c60a6e18e
         }
       }
       

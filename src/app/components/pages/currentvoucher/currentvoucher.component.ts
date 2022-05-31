@@ -1,12 +1,9 @@
 import { CarServiceMinimarketService } from './../../../Service/car-service-minimarket.service';
 import { VoucherService } from './../../../Service/voucher.service';
 import { VentasService } from './../../../Service/ventas.service';
-import { Documentos } from './../../Modulos/Documentos';
 import { ProductserviceService } from './../../../Service/productservice.service';
-import { Categories } from './../../Modulos/Categories';
 import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
-import { CartServiceService } from 'src/app/Service/cart-service.service';
 import { map, takeUntil } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -262,6 +259,10 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
       if(this.nuevosItems.length == 0){
           for(const h in nuevoregistro[0])
           {            console.log("antes de for", nuevoregistro[0][h])
+
+
+            Object.assign(nuevoregistro[0][h], {cod_market: this.codigovoucher.id})
+
 
 
             Object.assign(nuevoregistro[0][h], {cod_market: this.codigovoucher.id})
