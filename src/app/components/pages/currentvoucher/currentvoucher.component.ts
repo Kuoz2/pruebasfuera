@@ -8,7 +8,7 @@ import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 import { CartServiceService } from 'src/app/Service/cart-service.service';
 import { map, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { VucherParameter } from '../../Modulos/voucherparameter';
@@ -24,6 +24,9 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   public vouchermarket: VucherParameter;
   productosen:Productos
   public codigobarra:number = 0
+  public UnCodExiste = [];
+  public nuevosItems = [];
+
   Cnumero
   n7="7"
   n8="8"
@@ -219,75 +222,124 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
             mywindow.print();
        };
   }
+  verificar_si(a){
+    console.log("cambiar el vengo de",a)
+    for( let i in a){
+      if(!a[i].vengo_de){
+        
+        return Object.assign(a, {vengo_de: 'si'})
+      }
+    }
+  }
+
   consultar_code(){
-  
-    this.consultarcode.buscarultimosemitidos().subscribe((res) => {
+    console.log("se guardan", this.items)
+    this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
       this.codigobarra = this.codigovoucher.id
-      console.log("r4espuesta", res)
-    for(const d in this.items){
-      console.log("los items", this.items)
-      Object.assign(this.items[d], {cod_market: this.codigovoucher.id})
-        if(this.items[d].panaderia  == true ){
-          console.log("items 1", this.items[d])
-            const code ={hora_emision: '3',
-              market: this.items[d].market,
-              product_id: this.items[d].product.id,
-              cod_market: this.items[d].cod_panaderia,
-              cod_panaderia: this.items[d].cod_panaderia,
-              pvalor: this.items[d].pvalor }
-              this.code_consu.consultar_code(code)
-        }
-      }
-          for(const h in this.items)
-          {
-            Object.assign(this.items[h], {cod_market: this.codigovoucher.id})
+      var nuevoregistro = []
+      console.log(this.verificar_si(this.items))
+     await nuevoregistro.push(this.verificar_si(this.items))
+     console.log('nuevosd registros', nuevoregistro[0] )
+     if(this.nuevosItems.length != 0){
+       
+       for ( const i in this.nuevosItems){
+        if( !this.nuevosItems[i].product ) { Object.assign(this.nuevosItems[i], {product:{id: this.nuevosItems[i].id}}); console.log("agregandi",this.nuevosItems[i] )}
+          const code ={hora_emision: '3',
+              market: this.nuevosItems[i].panaderia,
+              panaderia: this.nuevosItems[i].panaderia,
+              product_id: this.nuevosItems[i].product.id ,
+              cod_market: this.nuevosItems[i].cod_market, 
+              cod_panaderia: this.nuevosItems[i].cod_panaderia, 
+              pvalor: this.nuevosItems[i].pvalor
+            }
+            this.code_consu.consultar_code(code)
+       }
+     }
+ 
 
-            if(this.items[h].market == true && this.items[h].panaderia == false){
+      if(this.nuevosItems.length == 0){
+          for(const h in nuevoregistro[0])
+          {            console.log("antes de for", nuevoregistro[0][h])
 
+
+            Object.assign(nuevoregistro[0][h], {cod_market: this.codigovoucher.id})
+
+            if(nuevoregistro[0][h].market == true && nuevoregistro[0][h].panaderia == false && nuevoregistro[0][h].cod_panaderia == 0 && nuevoregistro[0][h].vengo_de == undefined){
+              console.log("items 3", nuevoregistro[0][h]) 
+
+              console.log("entro por la segunda opcion")
+              console.log("COdigo del market", nuevoregistro[0][h].cod_panaderia )
               const code ={hora_emision: '3',
-              panaderia: this.items[h].panaderia, 
-              market: this.items[h].market,
-              product_id: this.items[h].id,
-              cod_panaderia: 0,
-              cod_market: this.items[h].cod_market, 
-              pvalor: this.items[h].pvalor}
+              panaderia: nuevoregistro[0][h].market, 
+              market: nuevoregistro[0][h].panaderia,
+              product_id: nuevoregistro[0][h].id,
+              cod_market: 0,
+              cod_panaderia: nuevoregistro[0][h].cod_market,
+              pvalor: nuevoregistro[0][h].pvalor
+             }
+             console.log("registro a guardar 2 ", code)
+
               this.code_consu.consultar_code(code)
+              
             }
           }   
-   
+        }
   })
 
-      console.log(this.items)
 
-    /*if(i.cod_panaderia != 0){
-      var code ={hora_emision: '3',
-      panaderia: true, 
-      market:true,
-      product_id: i.id,
-      cod_market: i.cod_panaderia,
-      cod_panaderia: i.cod_panaderia, 
-      
-   }*/
+  /*if(i.cod_panaderia != 0){
+    var code ={hora_emision: '3',
+    panaderia: true, 
+    market:true,
+    product_id: i.id,
+    cod_market: i.cod_panaderia,
+    cod_panaderia: i.cod_panaderia, 
     
-     // return this.code_consu.consultar_code(code)
+ }*/
+  
+   // return this.code_consu.consultar_code(code)
   }
 
   buscarvoucheremitido(){
     return this.consultarcode.buscaVoucherEmitido().subscribe(res => {this.consultarvoucher = res})
   }
-  guardarPanaderia(a){
+  verificar_codmarket(a): Observable<any>{
+    for( let i in a  ){
+      if(a[i].cod_panaderia != 0){
+        this.UnCodExiste.push(a[i].cod_panaderia)
+      }
+      console.log("arreglo", this.UnCodExiste )
+     
+    }
+    for(let u in a ){
+      if(a[u].cod_panaderia == 0){
+        a[u].cod_panaderia = this.UnCodExiste[0]
+        Object.assign(a[u], {cod_market: this.UnCodExiste[0]})
+      }
+    }
+    return a
+}
+ async guardarPanaderia(a){
 //Lee si hay un pago realizado en la panaderia y rellena la tabla
 for(const i of this.consultarvoucher){
   console.log("lo que esta en el item", i)
- if(i.cod_panaderia == a && i.panaderia == true && i.cod_panaderia == "1111" && i.voucher_vendido == false ){
+ if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo == "1111" && i.voucher_vendido == false ){
+  Object.assign(i, {cod_market: i.cod_market})
+  Object.assign(i, {vengo_de: 'si'})
    this.mandarcarro(i.product, i.cod_market, i.panaderia)
  }
- if(i.cod_panaderia == a && i.panaderia == true && i.cod_panaderia != "1111" && i.voucher_vendido == false ){
+ if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo != "1111" && i.voucher_vendido == false ){
+  Object.assign(i, {cod_market: i.cod_market})
+  Object.assign(i, {vengo_de: 'si'})
   this.mandarcarro(i , i.cod_market, i.panaderia)
 }
 }
+await  this.verificar_codmarket(this.items)
+this.items.forEach((resp) => {this.nuevosItems.push(resp)})
+return this.items
+
   }
 
   
