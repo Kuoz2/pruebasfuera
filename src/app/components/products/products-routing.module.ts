@@ -18,7 +18,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path:'brands/:marca',
+        path:'physical/marca',
         component: MarcaComponent,
         data:{
           title:"Marcas",
@@ -26,7 +26,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'categorias/:category',
+        path: 'physical/category',
         component: CategoryComponent,
         data: {
           title: "Categoarias",

@@ -15,7 +15,7 @@ export class MarcaService {
 public SubMarca = new Subject<resivendoMarca>()
   constructor(private http: HttpClient, private verificar: VerificarTokenService) { }
   // Buscarunamarca
-    UrlPrueba = 'https://multikart-norte.herokuapp.com/brands';
+  UrlPrueba  = 'https://multikart-norte.herokuapp.com/brands';
     private urlverificacion = 'https://multikart-norte.herokuapp.com/brands/verificar_blank_marca'
   buscarmarca() {
    return  this.http.get<Marca>( 'http://localhost:3000/brands' );
@@ -26,17 +26,17 @@ public SubMarca = new Subject<resivendoMarca>()
 
   // Guardar una marca.
  async guardarmarca(m) {
-   //await this.verificar.verificaSaveBrand().subscribe((res:respuesta) => {
+   await this.verificar.verificaSaveBrand().subscribe((res:respuesta) => {
      //console.log(res)
-   // if (res.resultado != 'existe'){return}
-   // if(res.resultado == 'existe'){
-       this.http.post('http://localhost:3000/brands' , m.value).subscribe( (res:resivendoMarca) => {console.log(res);
+   if (res.resultado != 'existe'){return}
+    if(res.resultado == 'existe'){
+       this.http.post(this.UrlPrueba , m.value).subscribe( (res:resivendoMarca) => {console.log(res);
           this.SubMarca.next(res)
          return m.reset()
         
       });
-      //} 
-    //})
+      } 
+    })
     return this.SubMarca.asObservable()
   }
 
