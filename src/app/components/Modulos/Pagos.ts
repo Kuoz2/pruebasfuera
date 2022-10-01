@@ -8,3 +8,7 @@ export class Pagos {
     id: number;
     created_at: string;
 }
+
+export class PagoHecho {
+    total:number = 0
+}

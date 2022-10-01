@@ -11,10 +11,12 @@ export class BusquedaprodutomarketPipe implements PipeTransform {
     if(args == ''){ return []}
 
     if (typeof (args) != 'undefined') {
-      console.log('entrante', args)
+      console.log('entrante panaderia', args)
 
       for (const p in value) {
         if ( value[p].cod_market.toString().indexOf( args ) > -1 && value[p].market == true && value[p].panaderia == false && value[p].cod_market == args ) {
+          console.log(value[p])
+
           voucherpanaderia.push( value[p] )
         }
       }

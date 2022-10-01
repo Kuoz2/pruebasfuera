@@ -24,7 +24,7 @@ constructor(private userservi: UsuarioService,
 }
 
 private isloading: boolean
-intervalo(){
+/*intervalo(){
   const servio =this.categoria.mostrarcategorias().subscribe()
   const http = this.http
 setInterval(function() {
@@ -32,9 +32,9 @@ setInterval(function() {
     console.log("hola", servio)
 }, 1000 * 60 * 20);
 
-}
+}*/
  async ngOnInit() {
- this.intervalo()
+// this.intervalo()
   this.isloading = false
       //document.onkeydown = function(){return false}
      // document.oncontextmenu = function(){return false}
@@ -47,7 +47,7 @@ setInterval(function() {
    // window.location.href = "https://errorconsole.herokuapp.com/"
   //}
 //});
-this.analizar_token()
+//this.analizar_token()
   }
 
 

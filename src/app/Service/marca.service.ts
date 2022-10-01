@@ -28,16 +28,16 @@ public SubMarca = new Subject<resivendoMarca>()
  async guardarmarca(m) {
    await this.verificar.verificaSaveBrand().subscribe((res:respuesta) => {
      //console.log(res)
-   if (res.resultado != 'existe'){return}
-    if(res.resultado == 'existe'){
-       this.http.post(this.UrlPrueba , m.value).subscribe( (res:resivendoMarca) => {console.log(res);
-          this.SubMarca.next(res)
-         return m.reset()
-        
-      });
-      } 
-    })
-    return this.SubMarca.asObservable()
+      if (res.resultado != 'existe'){return}
+        if(res.resultado == 'existe'){
+          this.http.post(this.UrlPrueba , m.value).subscribe( (res:resivendoMarca) => {console.log(res);
+              this.SubMarca.next(res)
+            return m.reset()
+            
+          });
+          } 
+        })
+        return this.SubMarca.asObservable()
   }
 
   //guarda el inicio del sistema.

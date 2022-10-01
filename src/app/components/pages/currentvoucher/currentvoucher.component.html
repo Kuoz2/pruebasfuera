@@ -1,9 +1,5 @@
 <ngx-spinner name="spinnerdashcategori">
 </ngx-spinner>
-
-
-
-
 <ng-template #content let-modal>
   <div class="modal-header">
       <h5 class="modal-title f-w-600" id="exampleModalLabel">Lista de productos</h5>
@@ -22,7 +18,7 @@
             <thead>
               <tr>
                 <th scope="col">Código del voucher</th>
-                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
                 <th scope="col">Origen</th>
               </tr>
             </thead>
@@ -59,130 +55,106 @@
         <div class="col text-center" >
             <h2 class="totalprice">Total: {{totalPrice}}</h2>
         </div>
-        <div class="text-center bardcode bardcode" >
+        <div class="text-center bardcode " id="bardcode">
           <ngx-barcode [bc-value]="codigobarra" [bc-display-value]="true"></ngx-barcode>
 
         </div>
       </div>
-
+        <!--guardar los registros generar un voucher-->
           <div class="modal-footer">
-            <button (click)="consultar_code()" class="btn btn-info">GUARDAR</button>
-              <button type="button"  class="btn btn-primary" (click)="imprimirvoleta('tablaventa', 'totalprice','bardcode')" >IMPRIMIR</button>
-              <button class="btn btn-secondary" type="button" data-dismiss="modal"
-                      (click)="modal.dismiss('Cross click')">Cerrar</button>
+            <button (click)="consultar_code()" class=" btn-info">GUARDAR</button>
+            <button type="button"  class=" btn-primary" (click)="imprimirvoleta('tablaventa', 'totalprice','bardcode')" >IMPRIMIR</button>
+            <button class=" btn-secondary" type="button" data-dismiss="modal"
+                    (click)="modal.dismiss('Cross click')">Cerrar</button>
           </div>
       </form>
   </div>
 </ng-template>
 
 
-<nav class="navbar navbar-light">
-  <div class="shopping-cart-header">
-     <button class="btn btn-primary btn-lg" (click)="open(content)">  <i class="fa fa-shopping-cart cart-icon" ></i><span class="badge">{{totalQuantity}}</span> Ver productos</button> 
-      <div class="shopping-cart-total">
-      </div>      
-  </div> <!--end shopping-cart-header -->
-</nav>
-<hr>
-   <div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h3>Filtrar por categorías</h3>
-    </div>
-    <div class="card-body">
+<div class="container" id="contendor-inicial">
   <div class="row">
-  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of (categorias  | paginate: {itemsPerPage:12, currentPage:p}); let i = index " >
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="checatecogira{{i}}" [value]="item.cnombre" (click)="boxClick(item, i)" >
-      <label class="form-check-label" for="inlineCheckbox1">{{item.cnombre}}</label>
-    </div>
-  </div>
-  </div>
-  </div>
-    <div class="row">
-      <div class="col">
-        <pagination-controls (pageChange)="p = $event " previousLabel="Atras" nextLabel="Siguiente"></pagination-controls>
-      </div>
-    </div>
-  </div>
-</div>
-<hr>
- <div class="container">
-        <div class="row">
-            <div class="col-xs-12" id="titulo">
-                <h3 >Calculadora Básica</h3>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xs-12 col-sm-6 col-md-3 fundo-mod margem borda">
-                    
-                <div class="justify-content-center centro">
-                    
-                    <table class="table table-dark">
-                        <tr>
-                            
-                            <td colspan="4" ><div id="historico" onclick="mostrarHora();"></div></td>
-                        </tr>
-                        <tr>
-                            
-                            <td colspan="4"><input type="text" name="visor" id="visor" class="col-xs-12 col-sm-12 col-md-12"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" id="botao7" value="7" [(ngModel)]="n7" class="btn btn-secondary mesmo-tamanho" (click)="botao(n7);"/></td>
-                            <td><input type="button" id="botao8" value="8" [(ngModel)]="n8" class="btn btn-secondary mesmo-tamanho" (click)="botao(n8);"/></td>
-                            <td><input type="button" id="botao9" value="9" [(ngModel)]="n9" class="btn btn-secondary mesmo-tamanho" (click)="botao(n9);"/></td>
-                            <td><input type="button" id="botao/" value="/" [(ngModel)]="ndiv" class="btn btn-info mesmo-tamanho" (click)="btn_divide(ndiv);" /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" id="botao4" value="4" [(ngModel)]="n4" class="btn btn-secondary mesmo-tamanho" (click)="botao(n4);"/></td>
-                            <td><input type="button" id="botao5" value="5" [(ngModel)]="n5" class="btn btn-secondary mesmo-tamanho" (click)="botao(n5);"/></td>
-                            <td><input type="button" id="botao6" value="6" [(ngModel)]="n6" class="btn btn-secondary mesmo-tamanho" (click)="botao(n6);"/></td>
-                            <td><input type="button" id="botao*" value="*" [(ngModel)]="npor" class="btn btn-info mesmo-tamanho" (click)="btn_multiplica(npor);"/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" id="botao1" value="1" [(ngModel)]="n1" class="btn btn-secondary mesmo-tamanho" (click)="botao(n1);"/></td>
-                            <td><input type="button" id="botao2" value="2" [(ngModel)]="n2" class="btn btn-secondary mesmo-tamanho" (click)="botao(n2);"/></td>
-                            <td><input type="button" id="botao3" value="3" [(ngModel)]="n3" class="btn btn-secondary mesmo-tamanho" (click)="botao(n3);"/></td>
-                            <td><input type="button" id="botao-" value="-" [(ngModel)]="nrest" class="btn btn-info mesmo-tamanho" (click)="btn_subtrai(nrest);" /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" id="botao0" value="0" [(ngModel)]="n0" class="btn btn-secondary mesmo-tamanho" (click)="botao(n0);"/></td>
-                            <td><input type="button" id="botao=" value="=" [(ngModel)]="nigual" class="btn btn-info mesmo-tamanho" (click)="btn_igual(nigual);"/></td>
-                            <td><input type="button" id="botaoC" value="C" [(ngModel)]="nC" class="btn btn-danger mesmo-tamanho" (click)="reset(nC);"/></td>
-                            <td><input type="button" id="soma" value="+" [(ngModel)]="nmas" class="btn btn-info mesmo-tamanho" (click)="btn_soma(nmas);"/></td>
-                        </tr>
-                    </table> 
-                </div>
-                <div style="border: solid;">
-                  <button class="form-control btn btn-warning" (click)="guardarnumero(Cnumero)">Guardar</button>
-                </div>
+    <div class="col">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+</svg>    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
 
+    <button id="gooey-button" (click)="crecimiento()">
+        INICIAR 
+        <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+    </button>
+    </div>
+  </div>
+ </div>
+      <div class="container-fluid  mx-0" id="contenedor">
+        <form name="calculater" class=" d-inline">
+
+        <div class="row">
+            <input type="textfield" name="visor" class="form-control"  id="visor" value=""  autocomplete="off" readonly/>
+        </div>
+        <div class="row" >
+          <div class="col-xs col-3 mx-0 px-0" style="width: 100%;"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='7'">7</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='8'">8</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='9'">9</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value+='/'">/</button></div>
+        </div>
+        <div class="row">
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='4'">4</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='5'">5</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='6'">6</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value+='*'">*</button></div>
+        </div>
+        <div class="row">
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='1'">1</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='2'">2</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='3'">3</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value+='-'">-</button></div>
+        </div>
+        <div class="row">
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block primeralinea" onclick="document.calculater.visor.value+='0'">0</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value=eval(document.calculater.visor.value)">=</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value=''">C</button></div>
+          <div class="col-xs col-3 mx-0 px-0"><button type="button" class="btn btn-lg btn-block simbolos" onclick="document.calculater.visor.value+='+'">+</button></div>
+        </div>
+        <div class="row">
+            <div class="col mx-0 px-0">
+              <button class="btn btn-lg btn-block guardar_valor" (click)="guardarnumero(Cnumero)">Guardar</button>
+            </div>
+            <div class="col mx-0 px-0">
+              <button class="btn btn-lg btn-block buscar-valor" (click)="open(content)">Ver&Buscar</button>
             </div>
         </div>
-    </div>
-<hr>
-<div class="container">
-<div class="col">
-<span class="main-color-text" style="  text-align: center;"><h2></h2></span>
-<div class="row" style="margin-bottom: 40px;">
-  <input type="text" class="form-control form-control-lg" name="fproducto" id="fproducto" [(ngModel)]="Fproducto" placeholder="Busar por el código del producto">
-</div>
-</div>
-</div>
-<div class="container" >
-<div class="row" style=" padding-bottom: 20px;" >
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of producto | minimarketfilter:Fproducto"  >
-        <div class="card" style="width: 18rem; ">
-            <img class="card-img-top" src="../../../../../assets/images/user.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{item.category.cnombre}} {{item.brand.bnombre}} {{item.pdescripcion}}</h5>
-              <p class="font-weight-bold">Precio</p> <h2>${{item.pvalor + item.piva}}</h2>
-              <button type="button" (click)="mandarcarro(item)" class="btn btn-primary">Go somewhere </button>
-            </div>
-          </div>
-          
-    </div>
-</div>
-</div>
+      </form>
+      </div>
+
+
+
+
+

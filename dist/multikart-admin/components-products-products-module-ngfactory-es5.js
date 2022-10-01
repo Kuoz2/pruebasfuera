@@ -299,11 +299,11 @@
         return [[{
           path: "",
           children: [{
-            path: "brands/:marca",
+            path: "physical/marca",
             component: _physical_marca_marca_component__WEBPACK_IMPORTED_MODULE_34__["MarcaComponent"],
             data: _products_routing_module__WEBPACK_IMPORTED_MODULE_28__["ɵ0"]
           }, {
-            path: "categorias/:category",
+            path: "physical/category",
             component: _physical_category_category_component__WEBPACK_IMPORTED_MODULE_35__["CategoryComponent"],
             data: _products_routing_module__WEBPACK_IMPORTED_MODULE_28__["ɵ1"]
           }, {

@@ -1,5 +1,5 @@
 import { CarServicePanaderiaService } from './../../../Service/car-service-panaderia.service';
-import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy, AfterViewInit  } from '@angular/core';
 import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ProductserviceService } from 'src/app/Service/productservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -9,6 +9,8 @@ import { Subject, Observable } from 'rxjs';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { VentasService } from 'src/app/Service/ventas.service';
 import { dada } from '../../Modulos/respuesta';
+import { Screenfull } from 'screenfull';
+import * as screenfull from 'screenfull';
 
 @Component({
   selector: 'app-panaderia',
@@ -18,11 +20,14 @@ import { dada } from '../../Modulos/respuesta';
 
 
 
-export class PanaderiaComponent implements OnInit, OnDestroy {
+export class PanaderiaComponent implements OnInit, OnDestroy, AfterViewInit  {
 public Fproducto
 public codigovoucher:any;
 public UnCodExiste = [];
 public nuevosItems = [];
+public elemento_click
+public nCode
+private elemento_crecera
 Cnumero
 n7="7"
 n8="8"
@@ -41,13 +46,14 @@ nigual="="
 nC="C"
 nmas="+"
  valorVisor = 0;
+ semantieneoculto = true
  numeroA;
  numeroB;
  operacao;
  total = 0;
     ultimoTotal = 0;
   constructor(private categori: CategoriasService,
-    private productos: ProductserviceService,
+   // private productos: ProductserviceService,
     private carservice:CarServicePanaderiaService, //esto debe ser cambiado mas adelante y crear uno independiente.
      private cd: ChangeDetectorRef,
      private modalService: NgbModal,
@@ -56,6 +62,9 @@ nmas="+"
      private code_consu: VentasService,
 
      ) { }
+  ngAfterViewInit(): void {
+    
+  }
      private unsubscribe$ = new Subject<void>();
      public codigobarra:number = 0
   ngOnDestroy(): void {
@@ -73,11 +82,12 @@ nmas="+"
  
      p: any;
   ngOnInit(): void {
-
+     document.getElementById('contenedor').hidden = true
+     
     this.buscarvoucheremitido()
     this.spinner.show('spinnerdashcategori')
     this.obtenerCategorias()
-    this.obtenerproductos()
+    //this.obtenerproductos()
      this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
       x => {
         if (x) { 
@@ -92,7 +102,18 @@ nmas="+"
       }
   );
   }
+  crecimiento(){
+    document.getElementById('contenedor').hidden = true
+    document.getElementById('contendor-inicial').hidden = true;
+     var elemento = document.getElementById('contenedor'); 
+     this.agrandar(elemento)
 
+  }
+  agrandar(elemento){
+    document.getElementById('contenedor').hidden = false
+    document.getElementById('gooey-button').hidden = true
+
+  }
   open(content){
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -106,13 +127,23 @@ nmas="+"
     const precionado = <HTMLInputElement> window.document.getElementById('checatecogira' + b)
     const inpudisable = <HTMLInputElement> window.document.getElementById('fproducto')
     console.log("valor box",precionado.value)
-    if(precionado.checked){
-      inpudisable.disabled = true
-      this.Fproducto=""
-      this.Fproducto = precionado.value
-    }else{inpudisable.disabled=false}
-    console.log("numero", a)
+   
+    
+    this.elemento_click = a
+    console.log("numero", this.elemento_click)
+    return this.elemento_click
   }
+
+  desabilitiar(i){
+    let precionado = <HTMLInputElement>  window.document.getElementById('checatecogira' + i)
+    if(precionado.checked){
+      precionado.checked = false
+    }
+      this.elemento_click = ""
+    console.log(precionado.value)
+    return 
+  }
+
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -124,9 +155,9 @@ nmas="+"
     }
   }
 
-  obtenerproductos(){
-    return this.productos.products().subscribe(res =>{ this.producto = res; console.log('productos',this.producto)})
-   }
+  //obtenerproductos(){
+    //return this.productos.products().subscribe(res =>{   this.producto = res; console.log("productos", this.producto)})
+   //}
    obtenerCategorias(){
     this.categori.mostrarcategorias().subscribe(( res) =>{this.categorias = res; this.spinner.hide('spinnerdashcategori')})
    
@@ -154,7 +185,6 @@ nmas="+"
     this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
-      this.codigobarra = this.codigovoucher.id
       var nuevoregistro = []
       console.log(this.verificar_si(this.items))
      await nuevoregistro.push(this.verificar_si(this.items))
@@ -171,8 +201,12 @@ nmas="+"
               cod_panaderia: this.nuevosItems[i].cod_market, 
               pvalor: this.nuevosItems[i].pvalor
             }
+            if( this.nuevosItems[i].id !== 1){
+              Object.assign(code, {id: this.nuevosItems[i].id})
+              this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
+          }else{ 
             this.code_consu.consultar_code(code)
-       }
+          }       }
      }
     /*for(const d in this.items){
       Object.assign(nuevoregistro[0][d], {cod_panaderia: this.codigovoucher.id})
@@ -201,10 +235,7 @@ nmas="+"
             Object.assign(nuevoregistro[0][h], {cod_panaderia: this.codigovoucher.id})
 
             if(nuevoregistro[0][h].panaderia == true && nuevoregistro[0][h].market == false && nuevoregistro[0][h].cod_market == 0 && nuevoregistro[0][h].vengo_de == undefined){
-              console.log("items 3", nuevoregistro[0][h]) 
-
-              console.log("entro por la segunda opcion")
-              console.log("COdigo del market", nuevoregistro[0][h].cod_market )
+              this.codigobarra = this.codigovoucher.id
               const code ={hora_emision: '3',
               panaderia: nuevoregistro[0][h].panaderia, 
               market: nuevoregistro[0][h].market,
@@ -213,10 +244,30 @@ nmas="+"
               cod_panaderia: nuevoregistro[0][h].cod_panaderia,
               pvalor: nuevoregistro[0][h].pvalor
              }
-             console.log("registro a guardar 2 ", code)
-
               this.code_consu.consultar_code(code)
-              
+              function zfill(number, width) {
+                var numberOutput = Math.abs(number); /* Valor absoluto del número */
+                var length = number.toString().length; /* Largo del número */ 
+                var zero = "0"; /* String de cero */  
+                
+                if (width <= length) {
+                    if (number < 0) {
+                         return ("-" + numberOutput.toString()); 
+                    } else {
+                         return numberOutput.toString(); 
+                    }
+                } else {
+                    if (number < 0) {
+                        return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
+                    } else {
+                        return ((zero.repeat(width - length)) + numberOutput.toString()); 
+                    }
+                }
+            }
+            this. nCode  = zfill(this.codigobarra, 13)
+
+            
+           await this.imprimirVoucherMiniMarket(this.nCode)
             }
           }   
         }
@@ -234,6 +285,41 @@ nmas="+"
  }*/
   
    // return this.code_consu.consultar_code(code)
+}
+
+imprimirVoucherMiniMarket(nCode){
+
+  var system = 4; /* Barcode system, defined as "m" at https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=128 */
+  var data = nCode; /* Barcode data, according to barcode system */
+  console.log("info de la data",data)
+  var align = 1; /* 0, 1, 2 */
+  var position = 2; /* Text position: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=125 */
+
+  var font = 0; /* Font for HRI characters: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=126 */
+  var height = 50; /* Set barcode height: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=127*/
+/*
+BTPrinter.connect(function(data){
+      console.log("Success");
+      console.log(data)
+    },function(err){
+      console.log("Error");
+      console.log(err)
+    }, "IposPrinter");
+BTPrinter.printBarcode(function(data){
+console.log("Success");
+console.log(data);
+},function(err){
+console.log("Error");
+console.log(err);
+}, system, data, align, position, font, height);
+BTPrinter.disconnect(function(data){
+console.log("Success");
+console.log(data)
+},function(err){
+console.log("Error");
+console.log(err)
+}, "IposPrinter");
+*/
 }
   verificar_codmarket(a): Observable<any>{
       for( let i in a  ){
@@ -595,5 +681,8 @@ btn_soma(caracter){
         }
         );
       */
+    }
+    //Conectar a sqlite
+    conncect_sqlite(){
     }
   }

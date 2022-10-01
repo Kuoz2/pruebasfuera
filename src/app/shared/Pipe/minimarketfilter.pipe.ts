@@ -13,8 +13,10 @@ export class MinimarketfilterPipe implements PipeTransform {
       console.log('entrante', args)
 
       for (const p in value) {
+        producto_app.slice(0, value.length)
         if (value[p].pcodigo.toString().indexOf( args ) > -1 || value[p].category.cnombre.toString().indexOf(args.cnombre) > -1) {
           producto_app.push( value[p] )
+          console.log("lo que guarda",producto_app)
         }
       }
       return producto_app

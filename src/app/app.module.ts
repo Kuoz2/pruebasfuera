@@ -28,7 +28,7 @@ import { CookieService } from 'ngx-cookie-service';
         BrowserAnimationsModule,
         BrowserModule.withServerTransition( {appId: 'serverApp'} ),
         AppRoutingModule,
-        DashboardModule,
+       // DashboardModule,
         AuthModule,
         SharedModule,
         ProductsModule,
@@ -36,13 +36,12 @@ import { CookieService } from 'ngx-cookie-service';
         UsersModule,
         ReactiveFormsModule,
         HttpClientModule,
-        MermaModule,
+       // MermaModule,
         FormsModule,
         NgxPrintModule,
         InfiniteScrollModule,
         NgxBarcodeModule,
-        EstacionamientoModule
-       
+        EstacionamientoModule,
 
     ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy}, CookieService],

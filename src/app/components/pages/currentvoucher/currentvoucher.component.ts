@@ -3,13 +3,16 @@ import { VoucherService } from './../../../Service/voucher.service';
 import { VentasService } from './../../../Service/ventas.service';
 import { ProductserviceService } from './../../../Service/productservice.service';
 import { CategoriasService } from 'src/app/Service/categorias.service';
-import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { map, takeUntil } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { VucherParameter } from '../../Modulos/voucherparameter';
 import { Productos } from '../../Modulos/Productos';
+import html2canvas from 'html2canvas';
+import { Screenfull } from 'screenfull';
+import * as screenfull from 'screenfull';
 
 @Component({
   selector: 'app-currentvoucher',
@@ -18,12 +21,14 @@ import { Productos } from '../../Modulos/Productos';
 })
 export class CurrentvoucherComponent implements OnInit, OnDestroy {
   elcodigo
+  public Fproducto
   public vouchermarket: VucherParameter;
   productosen:Productos
   public codigobarra:number = 0
   public UnCodExiste = [];
   public nuevosItems = [];
-
+  public nCode
+  elemento_click
   Cnumero
   n7="7"
   n8="8"
@@ -48,7 +53,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     total = 0;
     ultimoTotal = 0;
   constructor(private categori: CategoriasService,
-     private productos: ProductserviceService,
+    // private productos: ProductserviceService,
      private carservice:CarServiceMinimarketService, //esto debe ser cambiado mas adelante y crear uno independiente.
      private cd: ChangeDetectorRef,
      private modalService: NgbModal,
@@ -64,7 +69,6 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     public imagenes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
     public categorias
     public producto
-    public Fproducto
     private unsubscribe$ = new Subject<void>();
     public closeResult: string;
     public consultarvoucher:any;
@@ -77,10 +81,12 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     p: any;
   ngOnInit(): void {
     this.buscarvoucheremitido()
+    document.getElementById('contenedor').hidden = true
+
     this.spinner.show('spinnerdashcategori')
     console.log(this.imagenes.length)
     this.obtenerCategorias()
-    this.obtenerproductos()
+    //this.obtenerproductos()
      this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
       x => {
         
@@ -100,21 +106,27 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     const precionado = <HTMLInputElement> window.document.getElementById('checatecogira' + b)
     const inpudisable = <HTMLInputElement> window.document.getElementById('fproducto')
     console.log("valor box",precionado.value)
-    if(precionado.checked){
-      inpudisable.disabled = true
-      this.Fproducto=""
-      this.Fproducto = precionado.value
-    }else{inpudisable.disabled=false}
-    console.log("numero", a)
+    this.elemento_click = a
+    console.log("numero", this.elemento_click)
+    return this.elemento_click
   }
+  desabilitiar(i){
+    let precionado = <HTMLInputElement>  window.document.getElementById('checatecogira' + i)
+    if(precionado.checked){
+      precionado.checked = false
+    }
+      this.elemento_click = ""
+    console.log(precionado.value)
+    return 
+  }
+
  obtenerCategorias(){
     this.categori.mostrarcategorias().subscribe(( res) =>{this.categorias = res; this.spinner.hide('spinnerdashcategori')})
    
   }
-
-  obtenerproductos(){
-   return this.productos.products().subscribe(res =>{ this.producto = res; console.log('productos',this.producto)})
-  }
+//obtenerproductos(){
+  // return this.productos.products().subscribe(res =>{ this.producto = res; console.log('productos',this.producto)})
+  //}
 
 
 
@@ -134,90 +146,29 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
       return `with: ${reason}`;
     }
   }
-
-  imprimirvoleta(tabla,totalprice, bardcode){
-    const data = '<head>' +
-           '<style type="text/css">' +
-           '@page {  size: 58mm 100mm;'+
-            'height: 58mm;'+
-            'width: 100mm; '+
-            'margin: 0;}'+
-           'h2{   font-size: 28px;\n position: center;\n }' +
-           'td,\n' +
-           'th,\n' +
-           'tr,\n' +
-           'table {\n' +
-           'margin: auto;' +
-           '  border-collapse: collapse;\n' +
-           '}\n' +
-           '\n' +
-           'td.producto,\n' +
-           'th.producto {\n' +
-           '  font-size: 25px;\n' +
-           '  font-family: \\\'Times New Roman\\\', serif;\n' +
-           '  width: 100px;\n' +
-           '  max-width: 80px;\n' +
-           '}\n' +
-           '.centrarCaja {\n' +
-           'margin: 0;' +
-           '  position:center;\n' +
-           '}\n' +
-           'td.cantidad,\n' +
-           'th.cantidad {\n' +
-           '  width: 80px;\n' +
-           'font-size: 30px;\n' +
-           'font-family:Times New Roman, serif;\n' +
-           '  max-width: 80px;\n' +
-           '  word-break: break-all;\n' +
-           'margin: auto;\n' +
-           '}\n' +
-           '\n' +
-           'td.precio,\n' +
-           'th.precio {\n' +
-           'text-align: center;\n' +
-           'font-size: 30px;\n' +
-           '  width: 110px;\n' +
-           '  max-width: 110mm;\n' +
-           '  word-break: 100mm;\n' +
-           '}\n' +
-           '\n' +
-           '.centrado {\n' +
-           '  text-align: center;\n' +
-           '  align-content: center;\n' +
-           '}\n' 
-           + '.totalprice { text-align: center;}'+
-           '.bardcode {text-align: center}'+
-           '\n' +
-           '\n' +
-           '.ticket {\n' +
-           '  width: 570px;\n' +
-           '  max-width: 600px;\n' +
-           '}' +
-           '\n' +
-           'img {\n' +
-           'width: 356px;\n' +
-           'filter: brightness(50%);'+
-           'display:block;'+
-           'margin: auto;' +
-           '  height: 200px;' +
-           '}' +
-           '</style>' +
-           '<title></title></head>' +
-           '<body >' +
-              '<div class="ticket ">' +
-              window.document.getElementById(bardcode).innerHTML +
-              '</div>'+
-            '</body>';
-    const mywindow = window.open( '', '_blank' );
-    mywindow.opener;
-    mywindow.document.open();
-    mywindow.document.write( data );
-    mywindow.document.close();
-
-    mywindow.onload = function() {
-            mywindow.focus();
-            mywindow.print();
-       };
+  createElement(str)
+  {
+    var div = <HTMLElement> document.createElement('div');
+    div.innerHTML = str;
+    return div
+  }
+ async imprimirvoleta(tabla,totalprice, bardcode){
+    var info
+    var imagen = window.document.getElementById(bardcode).innerHTML 
+    var e = this. createElement(imagen)
+    console.log(e)
+    document.body.appendChild(e)
+    await html2canvas( e , { width:400, scale:2}).then( function(canvas) {
+    
+      console.log(canvas)
+      canvas.style.width = "219px"
+      canvas.hidden = true
+      
+       console.log(canvas.toDataURL('image/png'))
+       info = canvas.toDataURL('image/png')
+  
+    })
+    
   }
   verificar_si(a){
     console.log("cambiar el vengo de",a)
@@ -229,29 +180,33 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     }
   }
 
-  consultar_code(){
+ async consultar_code(){
     console.log("se guardan", this.items)
     this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
-      this.codigobarra = this.codigovoucher.id
       var nuevoregistro = []
       console.log(this.verificar_si(this.items))
      await nuevoregistro.push(this.verificar_si(this.items))
      console.log('nuevosd registros', nuevoregistro[0] )
      if(this.nuevosItems.length != 0){
-       
+       console.log("entro aqui solo guarda un registro ", this.nuevosItems)
        for ( const i in this.nuevosItems){
         if( !this.nuevosItems[i].product ) { Object.assign(this.nuevosItems[i], {product:{id: this.nuevosItems[i].id}}); console.log("agregandi",this.nuevosItems[i] )}
           const code ={hora_emision: '3',
               market: this.nuevosItems[i].panaderia,
               panaderia: this.nuevosItems[i].panaderia,
               product_id: this.nuevosItems[i].product.id ,
-              cod_market: this.nuevosItems[i].cod_market, 
+              cod_market: this.nuevosItems[i].cod_panaderia, 
               cod_panaderia: this.nuevosItems[i].cod_panaderia, 
               pvalor: this.nuevosItems[i].pvalor
             }
-            this.code_consu.consultar_code(code)
+            if( this.nuevosItems[i].id !== 1){
+                Object.assign(code, {id: this.nuevosItems[i].id})
+                this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
+            }else{ 
+              this.code_consu.consultar_code(code)
+            }
        }
      }
  
@@ -261,29 +216,55 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
           {            console.log("antes de for", nuevoregistro[0][h])
 
 
+          
             Object.assign(nuevoregistro[0][h], {cod_market: this.codigovoucher.id})
 
-
-
-            Object.assign(nuevoregistro[0][h], {cod_market: this.codigovoucher.id})
-
-            if(nuevoregistro[0][h].market == true && nuevoregistro[0][h].panaderia == false && nuevoregistro[0][h].cod_panaderia == 0 && nuevoregistro[0][h].vengo_de == undefined){
-              console.log("items 3", nuevoregistro[0][h]) 
+            if(nuevoregistro[0][h].market == true && nuevoregistro[0][h].panaderia == false && nuevoregistro[0][h].cod_panaderia == 0 && nuevoregistro[0][h].vengo_de == undefined)
+            {
+              console.log("solo esta guardando registros vinientes de otro lado ") 
+              this.codigobarra = this.codigovoucher.id
 
               console.log("entro por la segunda opcion")
               console.log("COdigo del market", nuevoregistro[0][h].cod_panaderia )
               const code ={hora_emision: '3',
-              panaderia: nuevoregistro[0][h].market, 
-              market: nuevoregistro[0][h].panaderia,
+              panaderia: nuevoregistro[0][h].panaderia, 
+              market: nuevoregistro[0][h].market,
               product_id: nuevoregistro[0][h].id,
-              cod_market: 0,
-              cod_panaderia: nuevoregistro[0][h].cod_market,
+              cod_market: nuevoregistro[0][h].cod_market,
+              cod_panaderia: 0,
               pvalor: nuevoregistro[0][h].pvalor
              }
              console.log("registro a guardar 2 ", code)
 
               this.code_consu.consultar_code(code)
-              
+
+              function zfill(number, width) {
+                var numberOutput = Math.abs(number); /* Valor absoluto del número */
+                var length = number.toString().length; /* Largo del número */ 
+                var zero = "0"; /* String de cero */  
+                
+                if (width <= length) {
+                    if (number < 0) {
+                         return ("-" + numberOutput.toString()); 
+                    } else {
+                         return numberOutput.toString(); 
+                    }
+                } else {
+                    if (number < 0) {
+                        return ("-" + (zero.repeat(width - length)) + numberOutput.toString()); 
+                    } else {
+                        return ((zero.repeat(width - length)) + numberOutput.toString()); 
+                    }
+                }
+            }
+            this. nCode  = zfill(this.codigobarra, 13)
+
+            
+           await this.imprimirVoucherMiniMarket(this.nCode)
+
+
+
+
             }
           }   
         }
@@ -302,6 +283,41 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   
    // return this.code_consu.consultar_code(code)
   }
+
+   imprimirVoucherMiniMarket(nCode){
+
+    var system = 4; /* Barcode system, defined as "m" at https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=128 */
+    var data = nCode; /* Barcode data, according to barcode system */
+    console.log("info de la data",data)
+    var align = 1; /* 0, 1, 2 */
+    var position = 2; /* Text position: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=125 */
+
+    var font = 0; /* Font for HRI characters: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=126 */
+    var height = 50; /* Set barcode height: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=127*/
+/*
+BTPrinter.connect(function(data){
+        console.log("Success");
+        console.log(data)
+      },function(err){
+        console.log("Error");
+        console.log(err)
+      }, "IposPrinter");
+BTPrinter.printBarcode(function(data){
+console.log("Success");
+console.log(data);
+},function(err){
+console.log("Error");
+console.log(err);
+}, system, data, align, position, font, height);
+BTPrinter.disconnect(function(data){
+console.log("Success");
+console.log(data)
+},function(err){
+console.log("Error");
+console.log(err)
+}, "IposPrinter");
+*/
+}
 
   buscarvoucheremitido(){
     return this.consultarcode.buscaVoucherEmitido().subscribe(res => {this.consultarvoucher = res})
@@ -327,12 +343,12 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
 for(const i of this.consultarvoucher){
   console.log("lo que esta en el item", i)
  if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo == "1111" && i.voucher_vendido == false ){
-  Object.assign(i, {cod_market: i.cod_market})
+  Object.assign(i, {cod_panaderia: i.cod_panaderia})
   Object.assign(i, {vengo_de: 'si'})
    this.mandarcarro(i.product, i.cod_market, i.panaderia)
  }
  if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo != "1111" && i.voucher_vendido == false ){
-  Object.assign(i, {cod_market: i.cod_market})
+  Object.assign(i, {cod_panaderia: i.cod_panaderia})
   Object.assign(i, {vengo_de: 'si'})
   this.mandarcarro(i , i.cod_market, i.panaderia)
 }
@@ -382,13 +398,10 @@ return this.items
 }
 
  btn_subtrai(caracter){
- 
-  
-  this.numeroA = this.valorVisor;
-  this.operacao = "-";
-  this.calcular(caracter)
-
-  this.limpar();
+    this.numeroA = this.valorVisor;
+    this.operacao = "-";
+    this.calcular(caracter)
+    this.limpar();
 }
 
  btn_multiplica(caracter){
@@ -416,7 +429,7 @@ return this.items
    var limpiar = <HTMLInputElement> document.getElementById('visor');
    limpiar.value =   ''
     this.valorVisor = 0;
-    this.operacao = "";
+    this.operacao = ""
 }
  limpar(){
    const data = <HTMLInputElement> document.getElementById('visor')
@@ -446,7 +459,7 @@ return this.items
          this.total = parseFloat(this.numeroA) + parseFloat(this.numeroB);
           break;
         case "-":
-          this.total = parseFloat(this.numeroA) - parseFloat(this.numeroB);
+            this.total = parseFloat(this.numeroA) - parseFloat(this.numeroB);
             break;
         case "*":
           this.total = parseFloat(this.numeroA) * parseFloat(this.numeroB);
@@ -456,10 +469,8 @@ return this.items
           break;
       }
       this. ultimoTotal = this.total;
-      this.reset(this.numeroA);
      var DATO = <HTMLInputElement> document.getElementById('visor');
      DATO.value  = this.total.toString();
-      this.valorVisor = this.ultimoTotal;
       console.log("valor",this.valorVisor)
 
 }
@@ -467,6 +478,7 @@ return this.items
   mandarcarro(product: any, _b:number, panaderia){
     //manda los productos del voucher.
    console.log(product)
+
    if(product.quantity == undefined)
    {
      Object.assign(product, {quantity: 1})
@@ -500,12 +512,52 @@ return this.items
       this.carservice.changeCart(cambio)
   }
   }
+
+  mandarcarro_primeraforma(product: any, _b:number, panaderia){
+    var vouchercodigo: any 
+    console.log("items en vandeja", this.items)
+      Object.assign(product, {cod_panaderia: 0})
+    if(product.quantity == undefined)
+    {
+      Object.assign(product, {quantity: 1})
+    }
+    if(product.category == undefined)
+    {
+      Object.assign(product, {category:{cnombnre: 'sin categoria'}})
+    }
+    if(panaderia != undefined && panaderia == true){
+      Object.assign(product, {market: panaderia})
+    }else{
+      Object.assign(product, {market: false})
+      Object.assign(product, {panaderia: true})
+    }
+    
+    delete product.sinventario
+    delete product.sinventario2
+    console.log("cantidad ", product)
+      //Object.assign(product, {cod_market:})
+    if(product.pcodigo || product.product.pcodigo){
+      Object.assign(product, {sinventario:true})
+    }else{
+      Object.assign(product, {sinventario2:false})
+    }
+    console.log(product)
+    const data = product;
+    const elemento = {quantity: 1};
+    if (data.quantity >= elemento.quantity){
+      this.carservice.changeCart(data)
+    }else {
+      const cambio = Object.assign( product, elemento )
+      this.carservice.changeCart(cambio)
+  }
+  }
+
   guardarnumero(Cnumero){
     console.log(Cnumero)
     const valor = <HTMLInputElement> document.getElementById('visor')
     console.log("valor", valor.value)
     var newProduct = {}
-    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}})    
+    Object.assign(newProduct, { pcodigo:"1111", pvalor: valor.value, quantity:1, id:1, category:{cnombre:'sin categoria'}, cod_panaderia: 0})    
 
     const a = 1;
     const b = false
@@ -515,6 +567,20 @@ return this.items
     limpiar.value =   ''
      this.valorVisor = 0;
      this.operacao = "";
+  }
+
+
+  crecimiento(){
+    document.getElementById('contenedor').hidden = true
+    document.getElementById('contendor-inicial').hidden = true;
+     var elemento = document.getElementById('contenedor'); 
+     this.agrandar(elemento)
+
+  }
+  agrandar(elemento){
+    document.getElementById('contenedor').hidden = false
+    document.getElementById('gooey-button').hidden = true
+
   }
   busquedaMark(){
     /*cordova.plugins.barcodeScanner.scan(

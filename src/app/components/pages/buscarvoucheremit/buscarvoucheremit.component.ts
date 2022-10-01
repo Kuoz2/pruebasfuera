@@ -1,5 +1,9 @@
+import { PagoHecho } from './../../Modulos/Pagos';
+import { Observable, Subject } from 'rxjs';
+import { VentasService } from 'src/app/Service/ventas.service';
 import { VoucherService } from './../../../Service/voucher.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-buscarvoucheremit',
@@ -9,17 +13,40 @@ import { Component, OnInit } from '@angular/core';
 export class BuscarvoucheremitComponent implements OnInit {
 public buscarCode:String="";
 public losvoucher:any;
-  constructor(private Code:VoucherService) { }
-
+public calcular;
+public totalObtenido = new Subject<PagoHecho>();
+@Input() datoVouchers
+  constructor(private Code:VoucherService, 
+    private bsventa: VentasService,
+    private ngxspinner: NgxSpinnerService,
+    ) { }
+  itemcomprados = [] 
+  sumatotales:number=0
   ngOnInit(): void {
+    this.ngxspinner.show();
+
+    console.log("respuesta", this.bsventa.moduloVentaExport.total)    
+    document.getElementById('busqueda').addEventListener('input', () => {
+      console.log("respuesta", this.bsventa.moduloVentaExport.total)
+      this.sumatotales = this.bsventa.moduloVentaExport.total    
+    })
+    this.totalObtenido.next()
     this.buscarElVoucher()
   }
-
-
+ 
+  trackByFn(index: number, item) {
+    var dato =[]
+    dato.push(item)
+    console.log("track", dato)
+    return item.id;
+    }
 
   buscarElVoucher(){
-    return this.Code.buscaVoucherEmitido().subscribe(res => { this.losvoucher = res})
+     this.Code.buscaVoucherEmitido().subscribe(res => { this.losvoucher = res;
+      this.ngxspinner.hide("spinnerdashcategori")
+    })
   }
+
 
   busquedaEmit(){
     /*cordova.plugins.barcodeScanner.scan(

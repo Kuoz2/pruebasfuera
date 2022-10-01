@@ -18,6 +18,7 @@ import { ImageElementContainer } from 'html2canvas/dist/types/dom/replaced-eleme
 const routes: Routes = [
   {
     path: '',
+    //component: PanaderiaComponent
     children: [
 
       {

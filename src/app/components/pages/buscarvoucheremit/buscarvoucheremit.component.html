@@ -1,46 +1,36 @@
+<ngx-spinner name="spinnerdashcategori" type="pacman">
+</ngx-spinner>
+  <form id="form-total" name="form-total">
+    <div class="container">
+      <div class="col-xs pt-2">
+        <input type="number" class="form-control " name="busqueda" id="busqueda" [(ngModel)]="buscarCode"  >
+      </div>
+     <div class="m-0 row justify-content-center">
+      <table  class="table table-borderless" name="tabla-conten" id="tabla-conten">
+              <thead>
+                <tr class="table-activ" >
+                  <th scope="col">Código</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+                
+                <tr *ngFor="let item of losvoucher | busquedaVoucherEmit:buscarCode; let i = index;let fina = last ; "   >
+                    <div *datos_sumar="item.pvalor"></div>
+                    <td class="row">{{item.cod_market}}//{{item.cod_panaderia}}</td>
+                    <td id="totales" >{{item.pvalor }}</td>
+                    </tr >  
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>Total: {{sumatotales}}</td>
+                    </tr>
+                                    
+              </tbody>
+      </table>
+      <input type="number" class="form-control" id="fin_total" name="fin_total" autocomplete="off" readonly  >
+     </div>
+    </div>
+  </form>
 
-<div class="container ">
-    <div class="row">
-    <div class="col-6 d-flex justify-content-md-center">
-        <div class="card ">
-            <div class="card-header">
-                <h5>Buscar voucher emitidos</h5>
-                </div>
-                <div class="card-body ">
-                 <div class="d-flex justify-content-center">
-                        <input type="text" class="form-control " (click)="busquedaEmit()" [(ngModel)]="buscarCode" id="buscarEmitido">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6 ">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Resultado</h5>
-                </div>
-                <div class="card-body">
-                    <table class="table">
-                        <caption>Lista de productos</caption>
-                        <thead>
-                          <tr class="table-activ" >
-                            <th scope="col">Código</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Origen</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr *ngFor="let item of losvoucher | busquedaVoucherEmit:buscarCode">
-                            <th scope="row">{{item.cod_market}}//{{item.cod_panaderia}}</th>
-                            <td>{{item.pvalor}}</td>
-                            <td>{{item.market}} {{item.panaderia}}</td>
-                          </tr>
-                            
-                        </tbody>
-                      </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

@@ -1,3 +1,4 @@
+import { PagesRoutingModule } from './components/pages/pages-routing.module';
 import { BoletaComponent } from './components/pages/boleta/boleta.component';
 import { BotonesnavegacionComponent } from './components/pruebanavegacion/botonesnavegacion/botonesnavegacion.component';
 import { NgModule, Component } from '@angular/core';
@@ -7,13 +8,14 @@ import {ContentLayoutComponent} from './shared/layout/content-layout/content-lay
 
 import {LoginComponent} from "./components/auth/login/login.component";
 import {ConconcanService} from "./Service/conconcan.service";
+import { PagesModule } from './components/pages/pages.module';
 
 const routes: Routes = [
   
   {
     path: '',
-    component: ContentLayoutComponent,
-    canActivate: [ConconcanService],
+    //component: PagesModule ,
+  //  canActivate: [ConconcanService],
     children: content,
   },
 
@@ -25,9 +27,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled'
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'  })
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
