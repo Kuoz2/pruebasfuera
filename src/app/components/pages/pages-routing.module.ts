@@ -18,8 +18,8 @@ import { ImageElementContainer } from 'html2canvas/dist/types/dom/replaced-eleme
 const routes: Routes = [
   {
     path: '',
-    //component: PanaderiaComponent
-    children: [
+    component: BuscarvoucheremitComponent,
+   /* children: [
 
       {
         path: 'medio-pago',
@@ -111,6 +111,15 @@ const routes: Routes = [
           breadcrumb: 'Crear voucher'
         },
       },
+    
+      {
+        path:'panaderia',
+        component: PanaderiaComponent,
+        data:{
+          title: 'Emitir boleta panaderia',
+          breadcrumb: 'Emitir panaderia'
+        }
+      },
       {
         path:'buqueda',
         component: BuscarvoucheremitComponent,
@@ -119,15 +128,7 @@ const routes: Routes = [
           breadcrumb: 'Buscar voucher'
         }
       },
-      {
-        path:'panaderia',
-        component: PanaderiaComponent,
-        data:{
-          title: 'Emitir boleta panaderia',
-          breadcrumb: 'Emitir panaderia'
-        }
-      }
-    ]
+    ]*/
   }
 ];
 

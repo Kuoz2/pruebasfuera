@@ -9,14 +9,15 @@ import {ContentLayoutComponent} from './shared/layout/content-layout/content-lay
 import {LoginComponent} from "./components/auth/login/login.component";
 import {ConconcanService} from "./Service/conconcan.service";
 import { PagesModule } from './components/pages/pages.module';
+import { PagerComponent } from 'ng2-smart-table/lib/components/pager/pager.component';
 
 const routes: Routes = [
   
   {
     path: '',
-    //component: PagesModule ,
+    component: PagesModule ,
   //  canActivate: [ConconcanService],
-    children: content,
+   // children: content,
   },
 
   {
@@ -30,6 +31,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'  })
     ],
-  exports: [RouterModule]
+  exports: [RouterModule, PagesRoutingModule]
 })
 export class AppRoutingModule { }

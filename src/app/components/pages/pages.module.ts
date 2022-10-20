@@ -31,7 +31,7 @@ import { CurrentvoucherComponent } from './currentvoucher/currentvoucher.compone
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 import { PanaderiaComponent } from './panaderia/panaderia.component';
-import { CalcularTotalVoucherDirective } from './calcular-total-voucher.directive';
+import { CalcularTotalVoucherDirective, DestacarDirective } from './calcular-total-voucher.directive';
 @NgModule({
   declarations:
       [
@@ -51,7 +51,8 @@ import { CalcularTotalVoucherDirective } from './calcular-total-voucher.directiv
       CurrentvoucherComponent,
       BuscarvoucheremitComponent,
       PanaderiaComponent,    
-      CalcularTotalVoucherDirective
+      CalcularTotalVoucherDirective,
+      DestacarDirective,
 
       ],
     imports: [
@@ -67,7 +68,6 @@ import { CalcularTotalVoucherDirective } from './calcular-total-voucher.directiv
         NgxSpinnerModule,
         NgxPrintModule,
         InfiniteScrollModule,NgxBarcodeModule,
-       
     ],
     providers:[HoraActualService],
     schemas:[

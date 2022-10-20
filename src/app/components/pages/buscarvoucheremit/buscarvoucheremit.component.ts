@@ -1,4 +1,6 @@
-import { PagoHecho } from './../../Modulos/Pagos';
+import { WebsocketService } from 'src/app/Service/websocket.service';
+import { NgxSpinner } from 'ngx-spinner/lib/ngx-spinner.enum';
+import { actualizarPago, PagoHecho } from './../../Modulos/Pagos';
 import { Observable, Subject } from 'rxjs';
 import { VentasService } from 'src/app/Service/ventas.service';
 import { VoucherService } from './../../../Service/voucher.service';
@@ -11,27 +13,34 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./buscarvoucheremit.component.scss']
 })
 export class BuscarvoucheremitComponent implements OnInit {
+  @Input() itemsdelfor = []
 public buscarCode:String="";
 public losvoucher:any;
 public calcular;
 public totalObtenido = new Subject<PagoHecho>();
+public constante = []
+public ModuloPago:actualizarPago
 @Input() datoVouchers
   constructor(private Code:VoucherService, 
     private bsventa: VentasService,
     private ngxspinner: NgxSpinnerService,
+    private wwbsocket: WebsocketService,
     ) { }
   itemcomprados = [] 
   sumatotales:number=0
   ngOnInit(): void {
-    this.ngxspinner.show();
-
+    console.log("item", this.itemsdelfor)
+    this.losvoucher = this.bsventa.recuperaremitido()
+    console.log('resultado del socket emiter',this.losvoucher)
+    //this.ngxspinner.show("spinnerdashcategori");
+    this.consultar()
     console.log("respuesta", this.bsventa.moduloVentaExport.total)    
-    document.getElementById('busqueda').addEventListener('input', () => {
-      console.log("respuesta", this.bsventa.moduloVentaExport.total)
+    document.getElementById('busqueda').addEventListener('input', (e) => {
       this.sumatotales = this.bsventa.moduloVentaExport.total    
-    })
-    this.totalObtenido.next()
-    this.buscarElVoucher()
+      this.totalObtenido.next()
+    }) 
+   // this.buscarElVoucher()
+ 
   }
  
   trackByFn(index: number, item) {
@@ -74,5 +83,25 @@ public totalObtenido = new Subject<PagoHecho>();
         }
         );
       */
+    }
+    GuardarVenta(){
+
+    }
+
+    buscador(){
+      this.ngxspinner.show("guardactualizar")
+      this.bsventa.acutalizarlosregistros()
+      setTimeout(()=> {this.ngxspinner.hide("guardactualizar")},5000)
+    }
+
+    apretar(){
+      this.bsventa.emiitir_alsocket()
+    }
+
+
+    consultar(){
+    this.losvoucher =   this.wwbsocket.emitodos()
+    
+      console.log('RESULTADO DEL SOCKET', this.losvoucher)
     }
 }

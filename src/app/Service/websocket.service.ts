@@ -1,37 +1,38 @@
+import { Observable } from 'rxjs';
+import * as io from 'socket.io-client'
 import { CookieService } from 'ngx-cookie-service';
 import { Injectable, EventEmitter } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { ThrowStmt } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
-export class WebsocketService extends Socket  {
+export class WebsocketService     {
 
   outEvebt: EventEmitter<any> = new EventEmitter();
   callback: EventEmitter<any> = new EventEmitter();
   Marcallback:  EventEmitter<any> = new EventEmitter();
  // url:'http://localhost:5000'
-  constructor(private cooki: CookieService) { 
-    super({
-      url:'https://pruebasocketinject.herokuapp.com',
-      options:{
-        query:{
-          nameRoom: cooki.get('categoria') || cooki.get('marca'),
-          
-        },
-      }
-    })
-    this.Listen() 
-  }
-  Listen(){
-    this.ioSocket.on('event', res => this.callback.emit(res))
-    this.ioSocket.on('marcaEvnt', res => this.Marcallback.emit(res) )
+  databd: any
+ io = io.io('https://pruebasocketinject.herokuapp.com/', {
+  withCredentials: false,
+  autoConnect: true,
+ })
+  constructor(private cooki: CookieService) {
+   
   }
 
-  emitEvent = (payload = {}) => {
-    this.ioSocket.emit('event', payload)
+  emitir_unescucha(){
+    this.io.emit('test')
+  
   }
-  emitEventMarca = (payload = {})=> {
-    this.ioSocket.emit('marcaEvnt', payload)
+  
+
+  emitodos():Array<object>{
+    this.io.on('test2', res => {
+      console.log("emitiendo", res)
+      this.databd = res
+     })
+     return  this.databd
   }
 }
 

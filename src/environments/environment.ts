@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  HEROKU_APP_NAME: 'multikart-norte'
+  HEROKU_APP_NAME: 'multikart-norte',
 };
 
 /*

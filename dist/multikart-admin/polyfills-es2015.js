@@ -3239,7 +3239,7 @@ window.global = window;
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./src/polyfills.ts ***!
   \********************************/
@@ -3251,5 +3251,5 @@ module.exports = __webpack_require__(/*! C:\Users\kuoz2\pruebadeproyecto\src\pol
 
 /***/ })
 
-},[[2,"runtime"]]]);
+},[[3,"runtime"]]]);
 //# sourceMappingURL=polyfills-es2015.js.map

@@ -9,7 +9,6 @@ export class CalcularTotalVoucherDirective implements OnInit {
   @Output() guardar_Datos
   constructor(private almacenamiento: VentasService) { }
   ngOnInit() {
-   
     this.calcular_Total(this.datos_sumar)
   }
   itemcomprados=[]
@@ -17,4 +16,17 @@ export class CalcularTotalVoucherDirective implements OnInit {
    this.guardar_Datos = this.almacenamiento.guardar_aqui(a)
    console.log("resultado", this.guardar_Datos)
   }
+}
+@Directive({
+  selector: '[dats_busq]'
+})
+export class DestacarDirective implements OnInit{
+  @Input() dats_busq:any[] = []
+
+  constructor(private vnt:VentasService) { }
+  ngOnInit(): void {
+    this.vnt.obtener_items2(this.dats_busq)
+    console.log("datos de busqueda", this.dats_busq)
+  }
+ 
 }

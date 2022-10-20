@@ -581,7 +581,7 @@ module.exports = exported;
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***************************************************************************************************************************************************************!*\
   !*** multi ./src/styles.scss ./src/assets/scss/style.scss ./node_modules/font-awesome/scss/font-awesome.scss ./node_modules/bootstrap/dist/css/bootstrap.css ***!
   \***************************************************************************************************************************************************************/
@@ -596,5 +596,5 @@ module.exports = __webpack_require__(/*! C:\Users\kuoz2\pruebadeproyecto\node_mo
 
 /***/ })
 
-},[[3,"runtime"]]]);
+},[[4,"runtime"]]]);
 //# sourceMappingURL=styles-es2015.js.map

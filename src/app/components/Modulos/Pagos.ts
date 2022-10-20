@@ -12,3 +12,9 @@ export class Pagos {
 export class PagoHecho {
     total:number = 0
 }
+
+export class actualizarPago{
+    id:number;
+    voucher_vendido:boolean;
+    entrante:Array<any>
+}

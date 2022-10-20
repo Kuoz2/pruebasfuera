@@ -58,7 +58,6 @@ export class CategoryComponent implements OnInit, OnDestroy, AfterViewInit {
     this.unsubscribe$.complete();
     
   }
-intervalo 
  ngOnInit() {
      this.spinner.show("spinnerdashcategori", {
     type: "pacman",
