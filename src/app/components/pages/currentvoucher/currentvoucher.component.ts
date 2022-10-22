@@ -13,6 +13,7 @@ import { Productos } from '../../Modulos/Productos';
 import html2canvas from 'html2canvas';
 import { Screenfull } from 'screenfull';
 import * as screenfull from 'screenfull';
+import { WebsocketService } from 'src/app/Service/websocket.service';
 
 @Component({
   selector: 'app-currentvoucher',
@@ -59,7 +60,9 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
      private modalService: NgbModal,
      private spinner: NgxSpinnerService,
      private code_consu: VentasService,
-     private consultarcode: VoucherService) { }
+     private consultarcode: VoucherService,
+     private wwbsocket: WebsocketService,
+     ) { }
      public codigovoucher:any;
 
   ngOnDestroy(): void { 
@@ -82,7 +85,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.buscarvoucheremitido()
     document.getElementById('contenedor').hidden = true
-
+    this.consultar()
     this.spinner.show('spinnerdashcategori')
     console.log(this.imagenes.length)
     this.obtenerCategorias()
@@ -131,6 +134,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
 
 
   open(content){
+    this.consultar()
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -204,8 +208,10 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
             if( this.nuevosItems[i].id !== 1){
                 Object.assign(code, {id: this.nuevosItems[i].id})
                 this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
+                this.apretar()
             }else{ 
               this.code_consu.consultar_code(code)
+              this.apretar()
             }
        }
      }
@@ -259,7 +265,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
             }
             this. nCode  = zfill(this.codigobarra, 13)
 
-            
+            this.apretar()
            await this.imprimirVoucherMiniMarket(this.nCode)
 
 
@@ -608,5 +614,18 @@ return this.items
         }
         );
       */
+    }
+
+
+    apretar(){
+      this.code_consu.emiitir_alsocket()
+    }
+
+
+    consultar(){
+      this.consultarvoucher.splice(0, this.consultarvoucher.length)
+      console.log('voucher encontrados',this.consultarvoucher)
+    this.consultarvoucher =   this.wwbsocket.emitodos()
+      console.log('RESULTADO DEL SOCKET', this.consultarvoucher)
     }
 }

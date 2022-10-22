@@ -39,12 +39,13 @@ const pool = new Pool(
    {
    user: "postgres",
    host: "localhost",
+   database: 'prijectoeccommerspostsale_development2',
    connectionString: "postgres://pwrkxyiwtxxxae:73608ca4dc377cc17857923749436bd7e0cb19860e98fd5ce5a58674624221e2@ec2-54-204-148-110.compute-1.amazonaws.com:5432/dhgldkuecjs2q",
    password: "Krabe10251989",
    port: 5432,
    ssl: {
-      rejectUnauthorized: false
-    }
+     rejectUnauthorized: false
+   }
  });
 
 io.on("connection", (socket) => {
@@ -53,22 +54,30 @@ io.on("connection", (socket) => {
   console.log("conectado y escuchando", socket.id)
    socket.on('test', (a) => {
       console.log("estoy escuchando el test")
-      pool.connect()
-      pool.query(`select * from codes`, (err, result) =>  {
-         console.log(result)
-         for(let j of result.rows)
-         {
-            if(j.voucher_vendido == false){
-               i.push(j)
+      try {
+         pool.connect()
+         pool.query(`select * from codes`, (err, result) =>  {
+            console.log(result)
+            for(let j of result.rows)
+            {
+               if(j.voucher_vendido == false){
+                  i.push(j)
+               }
             }
-         }
-        
-         socket.broadcast.emit('test2', i)
+           
+            socket.broadcast.emit('test2', i)
+            })
+      } catch (error) {
+         console.log('error en la base de datos', error)
+      }
+     
+         socket.on('disconnect', () => {
+            console.log('desconectado', socket.connected)
          })
-
+            pool.end
    })
 
-   
+  
  
 })
 

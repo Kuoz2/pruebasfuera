@@ -18,8 +18,8 @@ import { ImageElementContainer } from 'html2canvas/dist/types/dom/replaced-eleme
 const routes: Routes = [
   {
     path: '',
-    component: BuscarvoucheremitComponent,
-   /* children: [
+    //component: BuscarvoucheremitComponent,
+   children: [
 
       {
         path: 'medio-pago',
@@ -128,7 +128,7 @@ const routes: Routes = [
           breadcrumb: 'Buscar voucher'
         }
       },
-    ]*/
+    ]
   }
 ];
 

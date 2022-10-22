@@ -95,13 +95,19 @@ public ModuloPago:actualizarPago
     }
 
     apretar(){
-      this.bsventa.emiitir_alsocket()
+      try {
+        this.bsventa.emiitir_alsocket()
+
+      } catch (error) {
+        console.log('error', error)
+      }
     }
 
 
     consultar(){
+      this.losvoucher.splice(0, this.losvoucher.length)
+      console.log('voucher encontrados',this.losvoucher)
     this.losvoucher =   this.wwbsocket.emitodos()
-    
       console.log('RESULTADO DEL SOCKET', this.losvoucher)
     }
 }

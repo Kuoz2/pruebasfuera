@@ -11,6 +11,7 @@ import { VentasService } from 'src/app/Service/ventas.service';
 import { dada } from '../../Modulos/respuesta';
 import { Screenfull } from 'screenfull';
 import * as screenfull from 'screenfull';
+import { WebsocketService } from 'src/app/Service/websocket.service';
 
 @Component({
   selector: 'app-panaderia',
@@ -60,6 +61,7 @@ nmas="+"
      private spinner: NgxSpinnerService,
      private consultarcode: VoucherService,
      private code_consu: VentasService,
+     private wwbsocket: WebsocketService,
 
      ) { }
   ngAfterViewInit(): void {
@@ -76,6 +78,7 @@ nmas="+"
     public closeResult: string;
     public consultarvoucher:any;
     public buscarmarket:string = "";
+    public buscarpanaderia: any;
      items: Array<any>;
      totalQuantity = 0;
      totalPrice = 0;
@@ -83,10 +86,11 @@ nmas="+"
      p: any;
   ngOnInit(): void {
      document.getElementById('contenedor').hidden = true
-     
     this.buscarvoucheremitido()
     this.spinner.show('spinnerdashcategori')
     this.obtenerCategorias()
+    this.consultarvoucher = this.code_consu.recuperaremitido()
+    this.consultar()
     //this.obtenerproductos()
      this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
       x => {
@@ -115,6 +119,7 @@ nmas="+"
 
   }
   open(content){
+    this.consultar()
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -204,8 +209,10 @@ nmas="+"
             if( this.nuevosItems[i].id !== 1){
               Object.assign(code, {id: this.nuevosItems[i].id})
               this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
+              this.apretar()
           }else{ 
             this.code_consu.consultar_code(code)
+            this.apretar()
           }       }
      }
     /*for(const d in this.items){
@@ -266,7 +273,7 @@ nmas="+"
             }
             this. nCode  = zfill(this.codigobarra, 13)
 
-            
+            this.apretar()
            await this.imprimirVoucherMiniMarket(this.nCode)
             }
           }   
@@ -682,7 +689,16 @@ btn_soma(caracter){
         );
       */
     }
-    //Conectar a sqlite
-    conncect_sqlite(){
+   
+    apretar(){
+      this.code_consu.emiitir_alsocket()
+    }
+
+
+    consultar(){
+      this.consultarvoucher.splice(0, this.consultarvoucher.length)
+      console.log('voucher encontrados',this.consultarvoucher)
+    this.consultarvoucher =   this.wwbsocket.emitodos()
+      console.log('RESULTADO DEL SOCKET', this.consultarvoucher)
     }
   }
