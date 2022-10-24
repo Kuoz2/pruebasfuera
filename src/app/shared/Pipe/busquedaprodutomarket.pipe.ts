@@ -8,6 +8,8 @@ export class BusquedaprodutomarketPipe implements PipeTransform {
   transform(value: any[], args: string): any {
     //Esta condicional almacena lo buscado.
     const voucherpanaderia = [];
+    console.log('el ingreso de busqueda', args)
+    console.log('valores de busqueda', args)
     if(args == ''){ return []}
 
     if (typeof (args) != 'undefined') {

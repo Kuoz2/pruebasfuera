@@ -83,10 +83,9 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
 
     p: any;
   ngOnInit(): void {
-    this.buscarvoucheremitido()
+    //this.buscarvoucheremitido()
     document.getElementById('contenedor').hidden = true
     this.consultar()
-    this.spinner.show('spinnerdashcategori')
     console.log(this.imagenes.length)
     this.obtenerCategorias()
     //this.obtenerproductos()
@@ -201,6 +200,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
               market: this.nuevosItems[i].panaderia,
               panaderia: this.nuevosItems[i].panaderia,
               product_id: this.nuevosItems[i].product.id ,
+              pcodigo: this.nuevosItems[i].pcodigo,
               cod_market: this.nuevosItems[i].cod_panaderia, 
               cod_panaderia: this.nuevosItems[i].cod_panaderia, 
               pvalor: this.nuevosItems[i].pvalor
@@ -236,6 +236,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
               panaderia: nuevoregistro[0][h].panaderia, 
               market: nuevoregistro[0][h].market,
               product_id: nuevoregistro[0][h].id,
+              pcodigo: nuevoregistro[0][h].pcodigo,
               cod_market: nuevoregistro[0][h].cod_market,
               cod_panaderia: 0,
               pvalor: nuevoregistro[0][h].pvalor
@@ -623,7 +624,7 @@ return this.items
 
 
     consultar(){
-      this.consultarvoucher.splice(0, this.consultarvoucher.length)
+      //this.consultarvoucher.splice(0, this.consultarvoucher.length)
       console.log('voucher encontrados',this.consultarvoucher)
     this.consultarvoucher =   this.wwbsocket.emitodos()
       console.log('RESULTADO DEL SOCKET', this.consultarvoucher)

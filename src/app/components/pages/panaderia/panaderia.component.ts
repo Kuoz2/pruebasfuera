@@ -86,7 +86,7 @@ nmas="+"
      p: any;
   ngOnInit(): void {
      document.getElementById('contenedor').hidden = true
-    this.buscarvoucheremitido()
+   // this.buscarvoucheremitido()
     this.spinner.show('spinnerdashcategori')
     this.obtenerCategorias()
     this.consultarvoucher = this.code_consu.recuperaremitido()
@@ -119,6 +119,9 @@ nmas="+"
 
   }
   open(content){
+  if(this.consultarvoucher === undefined){
+    this.code_consu.emiitir_alsocket()
+  }
     this.consultar()
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -198,19 +201,23 @@ nmas="+"
        
        for ( const i in this.nuevosItems){
         if( !this.nuevosItems[i].product ) { Object.assign(this.nuevosItems[i], {product:{id: this.nuevosItems[i].id}}); console.log("agregandi",this.nuevosItems[i] )}
-          const code ={hora_emision: '3',
+          const code ={
+              hora_emision: '3',
               market: this.nuevosItems[i].market,
               panaderia: this.nuevosItems[i].market,
-              product_id: this.nuevosItems[i].product.id ,
+              //product_id: this.nuevosItems[i].product.id ,
+              pcodigo: this.nuevosItems[i].pcodigo,
               cod_market: this.nuevosItems[i].cod_market, 
               cod_panaderia: this.nuevosItems[i].cod_market, 
               pvalor: this.nuevosItems[i].pvalor
             }
             if( this.nuevosItems[i].id !== 1){
+              console.log('entro en el valor que no es igual a 0', code)
               Object.assign(code, {id: this.nuevosItems[i].id})
               this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
               this.apretar()
           }else{ 
+            console.log('entro si el valor es 0')
             this.code_consu.consultar_code(code)
             this.apretar()
           }       }
@@ -246,11 +253,14 @@ nmas="+"
               const code ={hora_emision: '3',
               panaderia: nuevoregistro[0][h].panaderia, 
               market: nuevoregistro[0][h].market,
-              product_id: nuevoregistro[0][h].id,
+              //product_id: nuevoregistro[0][h].id,
+              pcodigo: nuevoregistro[0][h].pcodigo,
               cod_market: 0,
               cod_panaderia: nuevoregistro[0][h].cod_panaderia,
               pvalor: nuevoregistro[0][h].pvalor
              }
+             console.log('se esta guardando para imprimr el primer voucher', code)
+
               this.code_consu.consultar_code(code)
               function zfill(number, width) {
                 var numberOutput = Math.abs(number); /* Valor absoluto del número */
@@ -271,6 +281,7 @@ nmas="+"
                     }
                 }
             }
+
             this. nCode  = zfill(this.codigobarra, 13)
 
             this.apretar()
@@ -370,7 +381,6 @@ console.log(err)
    mandarcarro(product: any, _b:number, market){
     //manda los productos del voucher.
     var vouchercodigo: any 
-      
     if(product.quantity == undefined)
     {
       Object.assign(product, {quantity: 1})
@@ -529,6 +539,7 @@ console.log(err)
        };
   }
   guardarnumero(Cnumero){
+
     console.log(Cnumero)
     const valor = <HTMLInputElement> document.getElementById('visor')
     console.log("valor", valor.value)
@@ -696,9 +707,10 @@ btn_soma(caracter){
 
 
     consultar(){
-      this.consultarvoucher.splice(0, this.consultarvoucher.length)
-      console.log('voucher encontrados',this.consultarvoucher)
+     // this.consultarvoucher.splice(0, this.consultarvoucher.length)
     this.consultarvoucher =   this.wwbsocket.emitodos()
+    console.log('numero de busqueda', this.consultarvoucher)
+    this.consultarvoucher = this.code_consu.recuperaremitido()
       console.log('RESULTADO DEL SOCKET', this.consultarvoucher)
     }
   }

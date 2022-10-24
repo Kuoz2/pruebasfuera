@@ -55,6 +55,7 @@ io.on("connection", (socket) => {
    socket.on('test', (a) => {
       console.log("estoy escuchando el test")
       try {
+         
          pool.connect()
          pool.query(`select * from codes`, (err, result) =>  {
             console.log(result)
@@ -64,7 +65,7 @@ io.on("connection", (socket) => {
                   i.push(j)
                }
             }
-           
+           console.log(pool.connect())
             socket.broadcast.emit('test2', i)
             })
       } catch (error) {

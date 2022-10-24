@@ -32,7 +32,7 @@ export class VentasService {
   }
 
   consultar_code(code){
-    console.log(code)
+    console.log('entra esto antes del guardar',code)
       return this.http.post(this.consu_code ,code).subscribe(res => {console.log("servicio panaderia",res)})
   }
   
