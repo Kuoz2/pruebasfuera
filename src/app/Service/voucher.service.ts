@@ -35,7 +35,7 @@ export class VoucherService {
   pruebatodaslasperdidasdinv1 ='https://multikart-norte.herokuapp.com/stocks/todaslasperdiadasinvprim'
   pruebaquicksales = 'https://multikart-norte.herokuapp.com/quick_sales/ventarapida_fechas'
   totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
-  codeVoucher = 'https://multikart-norte.herokuapp.com/codes'
+  codeVoucher = 'https://multikart-norte.herokuapp.com/codes/no_mitidos'
   ultimoemitido = 'https://multikart-norte.herokuapp.com/codes/last_code'
   constructor(private http: HttpClient , private verificar: VerificarTokenService) { }
   // Ganancias totales del mes pasado.

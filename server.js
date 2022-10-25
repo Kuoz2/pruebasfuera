@@ -75,10 +75,13 @@ io.on("connection", (socket) => {
          socket.on('disconnect', () => {
             console.log('desconectado', socket.connected)
          })
-            pool.end
-   })
 
-  
+         
+   })
+   socket.on('connected', () => {
+      console.log('conectados', socket.id)
+   })
+   
  
 })
 

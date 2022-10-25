@@ -84,6 +84,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     p: any;
   ngOnInit(): void {
     //this.buscarvoucheremitido()
+    this.consultarvoucher
     document.getElementById('contenedor').hidden = true
     this.consultar()
     console.log(this.imagenes.length)
@@ -91,7 +92,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
     //this.obtenerproductos()
      this.carservice.currentDataCart$.pipe(takeUntil(this.unsubscribe$)).subscribe(
       x => {
-        
+        console.log('lo que entra en el servicio',x)
         if (x) { 
           this.items = x;
           this.totalQuantity = x.length;
@@ -133,7 +134,12 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
 
 
   open(content){
+    console.log('return en el open',this.consultar())
     this.consultar()
+
+    if(this.consultar() === undefined ){
+      this.buscarvoucheremitido()
+    }
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -184,7 +190,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
   }
 
  async consultar_code(){
-    console.log("se guardan", this.items)
+    console.log("se guardan lo que viene de la panaderia", this.items)
     this.consultarcode.buscarultimosemitidos().subscribe(async (res) => {
       res ? null : res = {id: 0}
       this.codigovoucher = res; 
@@ -208,10 +214,10 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
             if( this.nuevosItems[i].id !== 1){
                 Object.assign(code, {id: this.nuevosItems[i].id})
                 this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
-                this.apretar()
+              await  this.apretar()
             }else{ 
               this.code_consu.consultar_code(code)
-              this.apretar()
+             await this.apretar()
             }
        }
      }
@@ -266,7 +272,7 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
             }
             this. nCode  = zfill(this.codigobarra, 13)
 
-            this.apretar()
+            await this.apretar()
            await this.imprimirVoucherMiniMarket(this.nCode)
 
 
@@ -347,17 +353,19 @@ console.log(err)
 }
  async guardarPanaderia(a){
 //Lee si hay un pago realizado en la panaderia y rellena la tabla
+alert('entramos aqui')
+console.log("lo que esta en el item", this.consultarvoucher)
 for(const i of this.consultarvoucher){
-  console.log("lo que esta en el item", i)
+  
  if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo == "1111" && i.voucher_vendido == false ){
   Object.assign(i, {cod_panaderia: i.cod_panaderia})
   Object.assign(i, {vengo_de: 'si'})
-   this.mandarcarro(i.product, i.cod_market, i.panaderia)
+   this.mandarcarro(i, i.cod_market, i.panaderia)
  }
  if(i.cod_panaderia == a && i.panaderia == true && i.pcodigo != "1111" && i.voucher_vendido == false ){
   Object.assign(i, {cod_panaderia: i.cod_panaderia})
   Object.assign(i, {vengo_de: 'si'})
-  this.mandarcarro(i , i.cod_market, i.panaderia)
+  this.mandarcarro(i.product , i.cod_market, i.panaderia)
 }
 }
 await  this.verificar_codmarket(this.items)
@@ -484,17 +492,17 @@ return this.items
 
   mandarcarro(product: any, _b:number, panaderia){
     //manda los productos del voucher.
-   console.log(product)
+   console.log('productos en el carro',product)
 
-   if(product.quantity == undefined)
+   if(product.quantity === undefined)
    {
      Object.assign(product, {quantity: 1})
    }
-   if(product.category == undefined)
+   if(product.category === undefined)
     {
       Object.assign(product, {category:{cnombnre: 'sin categoria'}})
     }
-    if(panaderia != undefined && panaderia == true){
+    if(panaderia !== undefined && panaderia === true){
       Object.assign(product, {panaderia: panaderia})
     }else{
       Object.assign(product, {panaderia: false})
@@ -619,14 +627,16 @@ return this.items
 
 
     apretar(){
+      console.log('enviando solicitud desde el market')
       this.code_consu.emiitir_alsocket()
     }
 
 
-    consultar(){
+    consultar(): any[]{
       //this.consultarvoucher.splice(0, this.consultarvoucher.length)
       console.log('voucher encontrados',this.consultarvoucher)
     this.consultarvoucher =   this.wwbsocket.emitodos()
       console.log('RESULTADO DEL SOCKET', this.consultarvoucher)
+      return this.consultarvoucher
     }
 }

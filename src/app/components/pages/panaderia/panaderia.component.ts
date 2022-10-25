@@ -119,10 +119,12 @@ nmas="+"
 
   }
   open(content){
-  if(this.consultarvoucher === undefined){
-    this.code_consu.emiitir_alsocket()
-  }
+    console.log('return en el open',this.consultar())
     this.consultar()
+
+    if(this.consultar() === undefined ){
+      this.buscarvoucheremitido()
+    }
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' ,size: <any>'xl ' }).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -215,11 +217,11 @@ nmas="+"
               console.log('entro en el valor que no es igual a 0', code)
               Object.assign(code, {id: this.nuevosItems[i].id})
               this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
-              this.apretar()
+             await this.apretar()
           }else{ 
             console.log('entro si el valor es 0')
             this.code_consu.consultar_code(code)
-            this.apretar()
+           await this.apretar()
           }       }
      }
     /*for(const d in this.items){
@@ -284,7 +286,7 @@ nmas="+"
 
             this. nCode  = zfill(this.codigobarra, 13)
 
-            this.apretar()
+           await this.apretar()
            await this.imprimirVoucherMiniMarket(this.nCode)
             }
           }   
@@ -357,20 +359,20 @@ console.log(err)
   }
  async guardarPanaderia(a){
     //Lee si hay un pago realizado en la panaderia y rellena la tabla
-    console.log("items ya en entrantes en panaderia", this.items)
+    console.log("items ya en entrantes en panaderia", this.consultarvoucher)
           for(const i of this.consultarvoucher){
            if(i.cod_market == a && i.market == true && i.pcodigo == "1111" && i.voucher_vendido == false ){
             console.log("primera decision", i.cod_market)
 
             Object.assign(i, {cod_market: i.cod_market})
             Object.assign(i, {vengo_de: 'si'})
-             this. mandarcarro(i.product, i.cod_panaderia, i.market)
+             this. mandarcarro(i, i.cod_panaderia, i.market)
            }
            if(i.cod_market == a && i.market == true && i.pcodigo != "1111" && i.voucher_vendido == false ){
             console.log("segund decision", i.cod_market)
              Object.assign(i, {cod_market: i.cod_market})
              Object.assign(i, {vengo_de: 'si'})
-            this. mandarcarro(i , i.cod_panaderia, i.market)
+            this. mandarcarro(i.product , i.cod_panaderia, i.market)
           }
           }
        await  this.verificar_codmarket(this.items)
@@ -380,8 +382,8 @@ console.log(err)
       }
    mandarcarro(product: any, _b:number, market){
     //manda los productos del voucher.
-    var vouchercodigo: any 
-    if(product.quantity == undefined)
+    console.log('productos desde el minimarket a la panaderia', product)
+    if(product.quantity === undefined)
     {
       Object.assign(product, {quantity: 1})
     }
@@ -702,6 +704,7 @@ btn_soma(caracter){
     }
    
     apretar(){
+      console.log('enviando solicitudes')
       this.code_consu.emiitir_alsocket()
     }
 
@@ -710,7 +713,7 @@ btn_soma(caracter){
      // this.consultarvoucher.splice(0, this.consultarvoucher.length)
     this.consultarvoucher =   this.wwbsocket.emitodos()
     console.log('numero de busqueda', this.consultarvoucher)
-    this.consultarvoucher = this.code_consu.recuperaremitido()
-      console.log('RESULTADO DEL SOCKET', this.consultarvoucher)
+
+      return this.consultarvoucher
     }
   }
