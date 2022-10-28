@@ -1,11 +1,6 @@
-import { CategoriasService } from 'src/app/Service/categorias.service';
-import { HttpResponse } from '@angular/common/http';
 
 import {  Component, OnInit, Input } from '@angular/core';
-import {UsuarioService} from './Service/usuario.service';
 import * as devTools from 'devtools-detect';
-import hsp from 'heroku-self-ping';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -17,8 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   @Input() cambiosP:boolean = true
   title = 'paltanes';
-constructor(private userservi: UsuarioService,
-    private categoria: CategoriasService, public http: HttpClient
+constructor( public http: HttpClient
    ) {
 
 }

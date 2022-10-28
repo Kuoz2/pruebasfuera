@@ -219,7 +219,9 @@ nmas="+"
               this.code_consu.actualizar_voucher(code, this.nuevosItems[i].id)
              await this.apretar()
           }else{ 
-            console.log('entro si el valor es 0')
+            console.log('entro si el valor es 0', code)
+            code.market = true
+            code.panaderia = true
             this.code_consu.consultar_code(code)
            await this.apretar()
           }       }
@@ -243,7 +245,7 @@ nmas="+"
       }*/
       console.log("items vacios", this.nuevosItems)
 
-      if(this.nuevosItems.length == 0){
+      if(this.nuevosItems.length === 0){
           for(const h in nuevoregistro[0])
           {            console.log("antes de for", nuevoregistro[0][h])
 
@@ -305,9 +307,10 @@ nmas="+"
  }*/
   
    // return this.code_consu.consultar_code(code)
+   
 }
 
-imprimirVoucherMiniMarket(nCode){
+  async imprimirVoucherMiniMarket(nCode){
 
   var system = 4; /* Barcode system, defined as "m" at https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=128 */
   var data = nCode; /* Barcode data, according to barcode system */
@@ -340,6 +343,14 @@ console.log("Error");
 console.log(err)
 }, "IposPrinter");
 */
+
+
+await this.items.forEach(res => {
+  Object.assign(res , {id: +1})
+  console.log(res)
+  this.carservice.removeElementCart(res)
+
+})
 }
   verificar_codmarket(a): Observable<any>{
       for( let i in a  ){
@@ -391,7 +402,7 @@ console.log(err)
     {
       Object.assign(product, {category:{cnombnre: 'sin categoria'}})
     }
-    if(market != undefined && market == true){
+    if(market !== undefined && market === true){
       Object.assign(product, {market: market})
     }else{
       Object.assign(product, {market: false})

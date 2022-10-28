@@ -4,13 +4,11 @@ import {
     HttpHeaders,
 
 } from '@angular/common/http';
-import {JwtResponse} from '../components/Modulos/jwt-response';
 import {tap} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {user} from '../components/Modulos/User';
 import 'rxjs-compat/add/operator/map';
 import {JtwResponsei} from '../components/Modulos/jtw-responsei';
-import {Http2ServerResponse} from 'http2';
 import {Router} from '@angular/router';
 
 // const helper = new JwtHelperService();

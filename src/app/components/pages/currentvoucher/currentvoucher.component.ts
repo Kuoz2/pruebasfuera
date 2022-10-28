@@ -5,7 +5,7 @@ import { ProductserviceService } from './../../../Service/productservice.service
 import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ChangeDetectorRef, Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 import { map, takeUntil } from 'rxjs/operators';
-import { Observable, Subject } from 'rxjs';
+import { empty, Observable, Subject } from 'rxjs';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { VucherParameter } from '../../Modulos/voucherparameter';
@@ -295,9 +295,15 @@ export class CurrentvoucherComponent implements OnInit, OnDestroy {
  }*/
   
    // return this.code_consu.consultar_code(code)
+    
+    await this.consultarvoucher == "";
+    await this.buscarpanaderia == "";
+    await this. nCode == 0
+    
+
   }
 
-   imprimirVoucherMiniMarket(nCode){
+   async imprimirVoucherMiniMarket(nCode){
 
     var system = 4; /* Barcode system, defined as "m" at https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=128 */
     var data = nCode; /* Barcode data, according to barcode system */
@@ -330,6 +336,13 @@ console.log("Error");
 console.log(err)
 }, "IposPrinter");
 */
+
+await this.items.forEach(res => {
+  Object.assign(res , {id: +1})
+  console.log(res)
+  this.carservice.removeElementCart(res)
+
+})
 }
 
   buscarvoucheremitido(){
@@ -353,7 +366,6 @@ console.log(err)
 }
  async guardarPanaderia(a){
 //Lee si hay un pago realizado en la panaderia y rellena la tabla
-alert('entramos aqui')
 console.log("lo que esta en el item", this.consultarvoucher)
 for(const i of this.consultarvoucher){
   
@@ -370,6 +382,8 @@ for(const i of this.consultarvoucher){
 }
 await  this.verificar_codmarket(this.items)
 this.items.forEach((resp) => {this.nuevosItems.push(resp)})
+console.log("nuevos items subidos", this.nuevosItems)
+
 return this.items
 
   }

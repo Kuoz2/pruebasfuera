@@ -27,20 +27,20 @@ export class BusquedaVoucherEmitPipe implements PipeTransform {
       for (const p in value) {
         console.log('argumentossdadas', value[p].cod_market.toString().indexOf( args[0] ) > -1 )
 
-        if (value[p].cod_market.toString().indexOf( numerico ) > -1 || value[p].cod_panaderia.toString().indexOf( numerico ) > -1 && value[p].cod_market == numerico || value[p].cod_panaderia == numerico ) {
+        if (value[p].voucher_vendido !== true && value[p].cod_market.toString().indexOf( numerico ) > -1 || value[p].cod_panaderia.toString().indexOf( numerico ) > -1 && value[p].cod_market == numerico || value[p].cod_panaderia == numerico ) {
           if(value[p].voucher_vendido == false){
 
           console.log('entro verificando si hay alguno', args[0].length)
 
-          if(value[p].cod_market == value[p].cod_panaderia && 
-            value[p].cod_panaderia == args || value[p].cod_market == numerico &&
-             value[p].market ==  true  && 
-             value[p].panaderia == true &&
+          if(value[p].cod_market === value[p].cod_panaderia && 
+            value[p].cod_panaderia === args || value[p].cod_market === numerico &&
+             value[p].market ===  true  && 
+             value[p].panaderia === true &&
              value[p].cod_market !== 0 &&
              value[p].cod_panaderia !== 0){
+              console.log("panaderia y market" , value[p])  
 
           voucherencontrado.push( value[p] ) 
-          console.log("panaderia y market" , voucherencontrado)  
           }
         
             if(value[p].cod_market !== 0 &&
@@ -60,23 +60,23 @@ export class BusquedaVoucherEmitPipe implements PipeTransform {
             }
         }
       }
-      if(MvoucherEmit.length !== 0){
-        console.log("elimine aqui market true false", MvoucherEmit.length)
-          
-        return MvoucherEmit
-      }
-      if(voucherencontrado.length !== 0){
-        console.log("elimine aqui true true", voucherencontrado.length)
-        return voucherencontrado
-      }
     
-      if(PvoucherEmit.length !== 0){
- 
-        return PvoucherEmit
-      }
       
     }
+    if(MvoucherEmit.length !== 0){
+      console.log("elimine aqui market true false", MvoucherEmit.length)
+        
+      return MvoucherEmit
+    }
+    if(voucherencontrado.length !== 0){
+      console.log("elimine aqui true true", voucherencontrado.length)
+      return voucherencontrado
+    }
   
+    if(PvoucherEmit.length !== 0){
+
+      return PvoucherEmit
+    }
     return []
   }
 }

@@ -94,7 +94,7 @@ export class TicketComponent implements OnInit, OnDestroy {
    ventimp.close()
   }
 
-  guardareldetallevoucher(detallevaucher, busquedavoucher):void {
+ /* guardareldetallevoucher(detallevaucher, busquedavoucher):void {
         console.log("ticketform", this.ticketForm.value)
 
         if (!this.ticketForm.valid)
@@ -134,7 +134,7 @@ export class TicketComponent implements OnInit, OnDestroy {
 
         }
 
-  }
+  }*/
 
 
 

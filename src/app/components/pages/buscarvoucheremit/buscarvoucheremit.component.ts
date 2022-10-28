@@ -29,11 +29,14 @@ public ModuloPago:actualizarPago
   itemcomprados = [] 
   sumatotales:number=0
   ngOnInit(): void {
+    this.igual_trece()
     console.log("item", this.itemsdelfor)
     this.losvoucher = this.bsventa.recuperaremitido()
     console.log('resultado del socket emiter',this.losvoucher)
     //this.ngxspinner.show("spinnerdashcategori");
     this.consultar()
+    console.log('esto debe ser trece', this.buscarCode)
+    console.log('entrante antes del trece',this. losvoucher)
     console.log("respuesta", this.bsventa.moduloVentaExport.total)    
     document.getElementById('busqueda').addEventListener('input', (e) => {
       this.sumatotales = this.bsventa.moduloVentaExport.total    
@@ -52,7 +55,6 @@ public ModuloPago:actualizarPago
 
   buscarElVoucher(){
      this.Code.buscaVoucherEmitido().subscribe(res => { this.losvoucher = res;
-      this.ngxspinner.hide("spinnerdashcategori")
     })
   }
 
@@ -91,7 +93,12 @@ public ModuloPago:actualizarPago
     buscador(){
       this.ngxspinner.show("guardactualizar")
       this.bsventa.acutalizarlosregistros()
-      setTimeout(()=> {this.ngxspinner.hide("guardactualizar")},5000)
+      this.sumatotales = 0
+      this.buscarCode = ''
+      
+      setTimeout(()=> {this.ngxspinner.hide("guardactualizar");
+        this. buscarElVoucher()
+    },5000)
     }
 
     apretar(){
@@ -107,6 +114,16 @@ public ModuloPago:actualizarPago
     consultar(){
       console.log('voucher encontrados',this.losvoucher)
     this.losvoucher =   this.wwbsocket.emitodos()
+
+    if(this.losvoucher === undefined){
+      this.buscarElVoucher()
+    }
       console.log('RESULTADO DEL SOCKET', this.losvoucher)
+    }
+    // Si el el buscador no es igual a 13
+
+    igual_trece(){
+        console.log('esto debe ser trece', this.buscarCode)
+        console.log('entrante antes del trece',this. losvoucher)
     }
 }

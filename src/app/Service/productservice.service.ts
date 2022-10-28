@@ -1,16 +1,14 @@
 import { VerificarTokenService, respuesta } from './verificar-token.service';
-import { Injectable, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {date_expiration, Productos, Stock} from '../components/Modulos/Productos';
 import {Categories} from '../components/Modulos/Categories';
 import {Stock_productos} from '../components/Modulos/stock_productos';
 import {Perdidas_este_mes} from '../components/Modulos/reporte_grafico';
 import {Provideer} from '../components/Modulos/Provideer';
-import {FormGroup} from '@angular/forms';
 import {Mermas} from '../components/Modulos/mermas';
-import {DateExpiration, Fecha_vencimiento} from '../components/Modulos/Fecha_vencimiento';
-import { proveedores_lista } from '../components/Modulos/respuesta';
+import { Fecha_vencimiento} from '../components/Modulos/Fecha_vencimiento';
 
 
 @Injectable({
@@ -134,13 +132,13 @@ export class ProductserviceService {
 
           if(Object.values(res)[0] =='correctamente'){
 
-            const Swal = require('sweetalert2')
-            Swal.fire({
-              title: 'Exitoso!!',
-              text: 'El producto fue guardado correctamente.',
-              icon: 'success',
-              confirmButtonText: 'cerrar'
-            })
+           // const Swal = require('sweetalert2')
+            //Swal.fire({
+             // title: 'Exitoso!!',
+             // text: 'El producto fue guardado correctamente.',
+              //icon: 'success',
+              //confirmButtonText: 'cerrar'
+            //})
            a.dismiss('Cross click')
 
             return p.reset()
@@ -278,15 +276,15 @@ actualizar_stock_fecha(fchAct: date_expiration) {
 
 
   eliminardatos(a){
-    const Swal = require('sweetalert2')
+  //  const Swal = require('sweetalert2')
 
     this.http.delete(this.UrlPrueba + '/' + a.id).subscribe(
       res => {
-        Swal.fire({
-          title: "Eliminado correctamente",
-          text: 'Producto eliminado. ',
-          icon: 'alert',
-      })
+       // Swal.fire({
+         // title: "Eliminado correctamente",
+          //text: 'Producto eliminado. ',
+          //icon: 'alert',
+      //})
     })
   }
 }

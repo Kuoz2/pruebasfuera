@@ -279,7 +279,7 @@ remover_producto(producto) {
     this.textoCambiado2.emit(valor.target.value);
   }
 // Aca se guardaran las ventas cuando se precione guardar luego se actualizara
-  async guardarVentaApp() {
+/*  async guardarVentaApp() {
 
       try {
         this.fecha.unsubscribe();
@@ -338,7 +338,7 @@ remover_producto(producto) {
       }
 
     
-  }
+  }*/
   cancelarventa(){
     this.vouchservicio.ultimovoucher().subscribe(data => {this.voucher_add =  data; this.cd.markForCheck();
     } ,  );

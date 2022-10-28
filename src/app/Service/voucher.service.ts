@@ -1,5 +1,3 @@
-import { VerificarTokenService } from './verificar-token.service';
-import { VerificadorService } from './verificador.service';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {DetalleVoucher} from '../components/Modulos/DetalleVoucher';
@@ -37,7 +35,7 @@ export class VoucherService {
   totalventasrapidas = 'https://multikart-norte.herokuapp.com/quick_sales/totalventasrapidas'
   codeVoucher = 'https://multikart-norte.herokuapp.com/codes/no_mitidos'
   ultimoemitido = 'https://multikart-norte.herokuapp.com/codes/last_code'
-  constructor(private http: HttpClient , private verificar: VerificarTokenService) { }
+  constructor(private http: HttpClient ) { }
   // Ganancias totales del mes pasado.
   ganancia_mes_anterior(): Observable<Venta_mes_atras> {
       return this.http.get<Venta_mes_atras>(this.PruebaUrlmespasado);
@@ -57,7 +55,7 @@ export class VoucherService {
         return this.http.get<DetalleVoucher>(this.PruebaUrlVntMes);
   }
 
-   crearvoucher(deta: DetalleVoucher){
+   /*crearvoucher(deta: DetalleVoucher){
      console.log(deta)
     this.verificar.verificarSaveVouchDetai().subscribe((res: respuesta) => {
       if (res.resultado != 'existe') { return; }
@@ -67,9 +65,12 @@ export class VoucherService {
   }
 })
   }
-  crearunvoucher(vouch: Voucher) {
-    return  this.http.post<Voucher>(this.PruebaUrlvoucher, vouch);
-  }
+  */
+
+
+//  crearunvoucher(vouch: Voucher) {
+  //  return  this.http.post<Voucher>(this.PruebaUrlvoucher, vouch);
+ // }
 
  ultimovoucher(): Observable<Voucher> {
       return  this.http.get<Voucher>(this.PruebaUrlultvoucher);
