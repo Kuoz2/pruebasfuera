@@ -328,6 +328,13 @@ console.log(data);
 console.log("Error");
 console.log(err);
 }, system, data, align, position, font, height);
+BTPrinter.printTextSizeAlign(function(data){
+    console.log("Success");
+    console.log(data)
+},function(err){
+    console.log("Error");
+    console.log(err)
+}, "String to Print",'0','0')//string, size, align
 BTPrinter.disconnect(function(data){
 console.log("Success");
 console.log(data)

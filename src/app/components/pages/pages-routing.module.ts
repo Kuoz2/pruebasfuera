@@ -1,6 +1,6 @@
-import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { BuscarvoucheremitComponent } from './buscarvoucheremit/buscarvoucheremit.component';
 
 
 const routes: Routes = [

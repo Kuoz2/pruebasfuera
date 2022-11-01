@@ -4,7 +4,7 @@ import { CategoriasService } from 'src/app/Service/categorias.service';
 import { ProductserviceService } from 'src/app/Service/productservice.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { takeUntil } from 'rxjs/operators';
+import { ignoreElements, takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { VoucherService } from 'src/app/Service/voucher.service';
 import { VentasService } from 'src/app/Service/ventas.service';
@@ -320,7 +320,9 @@ nmas="+"
 
   var font = 0; /* Font for HRI characters: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=126 */
   var height = 50; /* Set barcode height: https://reference.epson-biz.com/modules/ref_escpos/index.php?content_id=127*/
-/*
+
+    
+  /*
 BTPrinter.connect(function(data){
       console.log("Success");
       console.log(data)
@@ -335,6 +337,13 @@ console.log(data);
 console.log("Error");
 console.log(err);
 }, system, data, align, position, font, height);
+  BTPrinter.printTextSizeAlign(function(data){
+                        console.log("Success");
+                        console.log(data)
+                    },function(err){
+                        console.log("Error");
+                        console.log(err)
+                    }, "String to Print",'0','0')//string, size, align
 BTPrinter.disconnect(function(data){
 console.log("Success");
 console.log(data)
@@ -343,7 +352,6 @@ console.log("Error");
 console.log(err)
 }, "IposPrinter");
 */
-
 
 await this.items.forEach(res => {
   Object.assign(res , {id: +1})

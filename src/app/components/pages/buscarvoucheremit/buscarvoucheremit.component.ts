@@ -95,7 +95,7 @@ public ModuloPago:actualizarPago
       this.bsventa.acutalizarlosregistros()
       this.sumatotales = 0
       this.buscarCode = ''
-      
+      this.bsventa.guardarLimpiarVenta()
       setTimeout(()=> {this.ngxspinner.hide("guardactualizar");
         this. buscarElVoucher()
     },5000)
